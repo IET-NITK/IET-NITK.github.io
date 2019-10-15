@@ -1,7 +1,10 @@
-name: IET NITK
+title: IET NITK
 linkedin: ietnitkl
 twitter: ietnitkt
 facebook: ietnitkf
+author: Nirmal Khedkar
 description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society.
 email: ietnitk@nitk.ac.in
 phone: +91-9999999999
+plugins:
+  - jekyll-seo-tag
