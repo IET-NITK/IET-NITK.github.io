@@ -2,87 +2,41 @@
 title: Official Website
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <title>{{ site.title }} | {{ page.title }}</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-  <link rel="stylesheet" href={{ "/assets/fonts/icomoon/style.css" | relative_url }}>
-
-  <link rel="stylesheet" href={{ "/assets/css/bootstrap.min.css" | relative_url }}>
-  <link rel="stylesheet" href={{ "/assets/css/jquery-ui.css" | relative_url }}>
-  <link rel="stylesheet" href={{ "/assets/css/owl.carousel.min.css" | relative_url }}>
-  <link rel="stylesheet" href={{ "/assets/css/owl.theme.default.min.css" | relative_url }}>
-  <link rel="stylesheet" href={{ "/assets/css/owl.theme.default.min.css" | relative_url }}>
-
-  <link rel="stylesheet" href={{ "/assets/css/jquery.fancybox.min.css" | relative_url }}>
-
-  <link rel="stylesheet" href={{ "/assets/css/bootstrap-datepicker.css" | relative_url }}>
-
-  <link rel="stylesheet" href={{ "/assets/fonts/flaticon/font/flaticon.css" | relative_url }}>
-
-  <link rel="stylesheet" href={{ "/assets/css/aos.css" | relative_url }}>
-  <link href={{ "/assets/css/jquery.mb.YTPlayer.min.css" | relative_url }} media="all" rel="stylesheet" type="text/css">
-
-  <link rel="stylesheet" href={{ "/assets/css/style.css" | relative_url }}>
-
-  {% seo %}
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{{ site.title}} - {{ page.title }}</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="assets/css/Data-Table-1.css">
+    <link rel="stylesheet" href="assets/css/Data-Table.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/Loading-Div.css">
+    <link rel="stylesheet" href="assets/css/Newsletter-Subscription-Form.css">
+    <link rel="stylesheet" href="assets/css/smoothproducts.css">
+    <link rel="stylesheet" href="assets/css/Footer-Dark.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-  <div class="site-wrap">
-
-    {% include mobilemenu.html %}
-    {% include topbar.html %}
-    {% include navbar.html %}
-
-
-    
-
+<body>
+ <!--
+ <div id="ldiv" class="loadingdiv"><img class="loadingdivimg" src="assets/img/loading.gif"></div>
+ -->
+   {% include navbar.html %}
     {{ content }}
-
     {% include subscribe.html %}
-
-
     {% include footer.html %}
-
-
-  </div>
-  <!-- .site-wrap -->
-
-
-  <!-- loader -->
-  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-        stroke="#51be78" /></svg></div>
-
-  <script src={{ "/assets/js/jquery-3.3.1.min.js" | relative_url }}></script>
-  <script src={{ "/assets/js/jquery-migrate-3.0.1.min.js" | relative_url }}></script>
-  <script src={{ "/assets/js/jquery-ui.js" | relative_url }}></script>
-  <script src={{ "/assets/js/popper.min.js" | relative_url }}></script>
-  <script src={{ "/assets/js/bootstrap.min.js" | relative_url }}></script>
-  <script src={{ "/assets/js/owl.carousel.min.js" | relative_url }}></script>
-  <script src={{ "/assets/js/jquery.stellar.min.js" | relative_url }}></script>
-  <script src={{ "/assets/js/jquery.countdown.min.js" | relative_url }}></script>
-  <script src={{ "/assets/js/bootstrap-datepicker.min.js" | relative_url }}></script>
-  <script src={{ "/assets/js/jquery.easing.1.3.js" | relative_url }}></script>
-  <script src={{ "/assets/js/aos.js" | relative_url }}></script>
-  <script src={{ "/assets/js/jquery.fancybox.min.js" | relative_url }}></script>
-  <script src={{ "/assets/js/jquery.sticky.js" | relative_url }}></script>
-  <script src={{ "/assets/js/jquery.mb.YTPlayer.min.js" | relative_url }}></script>
-
-
-
-
-  <script src={{ "/assets/js/main.js" | relative_url }}></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/smoothproducts.min.js"></script>
+    <script src="assets/js/theme.js"></script>
 </body>
 
 </html>
