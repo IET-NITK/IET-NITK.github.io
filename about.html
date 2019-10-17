@@ -6,90 +6,69 @@ layout: default
 <main class="page">
   <section class="clean-block about-us">
     <div class="container">
+      
+  
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <img src="assets/img/beach.jpg" style="width:100%;height:auto">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+         <h2 class="text-info">About Us</h2>
+        
+        <p>IET NITK Chapter is a exclusive technical club under IET Bangalore Division. We are actively involved in inculcating a
+        passion for innovation and appreciation for scientific temperament in the minds of those who have the potential to
+        change the future. We conducts seminars and workshops throughout the academic calendar striving to impart techincal
+        , social and managerial skills to the students. </p>
+        
+        <p>IET also plays an integral role in planning and organizing various events in the techno-cultural fests of the institute ie ENGINEER and INCIDENT.</p>
+        </div>
+        </div>
+        
+  
+    </div>
+  </section>
+  <section class="clean-block about-us">
+    <div class="container">
       <div class="block-heading">
-        <h2 class="text-info">Our Team</h2>
+        <h2 class="text-info">Our SIGs</h2>
+        <p>IET NITK consists of three different Special Interest Groups:
+        </p>
+      </div>
+      <div class="row justify-content-center">
+        {% for s in site.data.sig %}
+        <div class="col-md-5 col-lg-4" style="margin-bottom: 1em">
+          <div class="clean-pricing-item" style="height:100%">
+            <div class="heading">
+              <h3>{{ s.name}}</h3>
+            </div>
+            <p>{{ s.description }}</p>
+            <a href="{{ s.link }}" style="text-decoration: none;">
+              <button class="btn btn-outline-primary btn-block" type="button">Read More</button>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="clean-block about-us">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Our Family</h2>
       </div>
       
       <div class="row justify-content-center">
-        {% for member in site.data.members %}
-        <div class="col-sm-6 col-lg-4">
-          <div class="card clean-card text-center"><img class="card-img-top w-100 d-block"
-              src="assets/img/avatars/avatar1.jpg">
-            <div class="card-body info">
-              <h4 class="card-title">{{ member.name }}</h4>
-              <p class="card-text">{{member.position}}</p>
-              <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
-                    class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
-            </div>
-          </div>
-        </div>  
-        <div class="col-sm-6 col-lg-4">
+        {% for member in site.data.members %} 
+        <div class="col-sm-6 col-lg-4" style="padding-bottom: 3em">
           <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
             <div class="card-body info">
               <h4 class="card-title">{{ member.name }}</h4>
               <p class="card-text">{{member.position}}</p>
-              <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
-                    class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
-            <div class="card-body info">
-              <h4 class="card-title">{{ member.name }}</h4>
-              <p class="card-text">{{member.position}}</p>
-              <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
-                    class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
-            <div class="card-body info">
-              <h4 class="card-title">{{ member.name }}</h4>
-              <p class="card-text">{{member.position}}</p>
-              <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
-                    class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
-            <div class="card-body info">
-              <h4 class="card-title">{{ member.name }}</h4>
-              <p class="card-text">{{member.position}}</p>
-              <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
-                    class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
-            <div class="card-body info">
-              <h4 class="card-title">{{ member.name }}</h4>
-              <p class="card-text">{{member.position}}</p>
-              <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
-                    class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
-            <div class="card-body info">
-              <h4 class="card-title">{{ member.name }}</h4>
-              <p class="card-text">{{member.position}}</p>
-              <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
-                    class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
-            <div class="card-body info">
-              <h4 class="card-title">{{ member.name }}</h4>
-              <p class="card-text">{{member.position}}</p>
-              <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i
-                    class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
+              <div class="icons">
+                <a href="{{member.facebook}}"><i class="icon-social-facebook"></i></a>
+                <a href="{{member.linkedin}}"><i class="icon-social-linkedin"></i></a>
+                <a href="{{member.github}}"><i class="icon-social-github"></i></a>
+              </div>
             </div>
           </div>
         </div>

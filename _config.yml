@@ -1,10 +1,16 @@
 title: IET NITK
-linkedin: ietnitkl
-twitter: ietnitkt
-facebook: ietnitkf
+linkedin: company/ietnitk/
+facebook: ietnitk
+github: IET-NITK
+instagram: ietnitk
 author: Nirmal Khedkar
 description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society.
 email: ietnitk@nitk.ac.in
 phone: +91-9999999999
 plugins:
   - jekyll-seo-tag
+  - jekyll-analytics
+jekyll_analytics:
+  GoogleAnalytics:          # Add, if you want to track with Google Analytics
+    id: xxxx          # Required - replace with your tracking id
+    anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking

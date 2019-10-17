@@ -6,5 +6,6 @@
   description: Torsion SIG brings together people interested in Mechanical, Civil, Chemical and Material Sciences.
 - name: Inkheart
   description: Inkheart is our new Lit&Phil SIG for people who are passionate about literature, music etc
+  no-link: true
 - name: Medium
   description: Medium SIG is dedicated to people interested in Media and Marketing.

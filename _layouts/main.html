@@ -6,8 +6,10 @@ layout: default
   <section class="clean-block clean-hero"
     style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:#a046b480">
     <div class="text">
-      <h2>Lorem ipsum dolor sit amet.</h2>
-      <p>Official Website of {{site.title}}</p>
+      <h1>
+        This is {{site.title}}
+      </h1>
+      <p>Cheesy Tagline</p>
       <button class="btn btn-outline-light btn-lg" type="button">Continue</button>
     </div>
   </section>
@@ -35,18 +37,18 @@ layout: default
     <div class="container">
       <div class="block-heading">
         <h2 class="text-info">Our SIGs</h2>
-        <p>IET NITK consists of three different Special Interest Groups
+        <p>IET NITK consists of three different Special Interest Groups:
         </p>
       </div>
       <div class="row justify-content-center">
         {% for s in site.data.sig %}
-        <div class="col-md-5 col-lg-4">
-          <div class="clean-pricing-item">
+        <div class="col-md-5 col-lg-4" style="margin-bottom: 1em">
+          <div class="clean-pricing-item" style="height:100%">
             <div class="heading">
               <h3>{{ s.name}}</h3>
             </div>
             <p>{{ s.description }}</p>
-            <a href="{{ s.link }}" style="text-decoration: none">
+            <a href="{{ s.link }}" style="text-decoration: none;">
               <button class="btn btn-outline-primary btn-block" type="button">Read More</button>
             </a>
           </div>
@@ -61,29 +63,54 @@ layout: default
       <div class="article-list">
         <div class="container">
           <div class="intro">
-            <h2 class="text-center">Latest Articles</h2>
+            <h2 class="text-info text-center">Latest Articles</h2>
             <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat,
               pellentesque ut laoreet vitae. </p>
           </div>
-          <div class="row articles">
-            <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="desk.jpg" /></a>
-              <h3 class="name">Article Title</h3>
-              <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in
-                tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i
-                  class="fa fa-arrow-circle-right"></i></a>
+          <div class="row articles" style="padding-top:2em">
+            <div class="col-sm-6 col-md-4 item">
+              <div class="card">
+                <img class="card-img-top w-100 d-block" src="assets/img/building.jpg" />
+                <div class="card-body">
+                  <h4 class="card-title">Title</h4>
+                  <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
+                  <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis
+                    in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                    <div style="text-align: center">
+                      <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="building.jpg" /></a>
-              <h3 class="name">Article Title</h3>
-              <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in
-                tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i
-                  class="fa fa-arrow-circle-right"></i></a>
+            <div class="col-sm-6 col-md-4 item">
+              <div class="card">
+                <img class="card-img-top w-100 d-block" src="assets/img/building.jpg" />
+                <div class="card-body">
+                  <h4 class="card-title">Title</h4>
+                  <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
+                  <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis
+                    in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                  <div style="text-align: center">
+                    <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="loft.jpg" /></a>
-              <h3 class="name">Article Title</h3>
-              <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in
-                tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a class="action" href="#"><i
-                  class="fa fa-arrow-circle-right"></i></a>
+            <div class="col-sm-6 col-md-4 item">
+              <div class="card">
+                <img class="card-img-top w-100 d-block" src="assets/img/building.jpg" />
+                <div class="card-body">
+                  <h4 class="card-title">Title</h4>
+                  <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
+                  <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis
+                    in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                  <div style="text-align: center">
+                    <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+              </div>
             </div>
+            
           </div>
         </div>
       </div>
@@ -98,43 +125,42 @@ layout: default
             <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat,
               pellentesque ut laoreet vitae. </p>
           </div>
-          <div class="row projects">
-            <div class="col-sm-6 item">
-              <div class="row">
-                <div class="col">
-                  <h3 class="name">Project Name</h3>
-                  <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam
-                    in tellus eu gravida.</p>
+          <div class="row projects" style="margin-top: 2em">
+            <div class="col-sm-4 item" style="margin-bottom: 2em">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Project Name</h4>
+                  <h6 class="text-muted card-subtitle mb-2">SIG</h6>
+                  <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis
+                    in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                  <div style="text-align: right">
+                    <a class="action" style="text-decoration: none" href="#">Read More <i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 item">
-              <div class="row">
-      
-                <div class="col">
-                  <h3 class="name">Project Name</h3>
-                  <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam
-                    in tellus eu gravida.</p>
+            <div class="col-sm-4 item" style="margin-bottom: 2em">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Project Name</h4>
+                  <h6 class="text-muted card-subtitle mb-2">SIG</h6>
+                  <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis
+                    in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                  <div style="text-align: right">
+                    <a class="action" style="text-decoration: none" href="#">Read More <i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6 item">
-              <div class="row">
-      
-                <div class="col">
-                  <h3 class="name">Project Name</h3>
-                  <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam
-                    in tellus eu gravida.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 item">
-              <div class="row">
-      
-                <div class="col">
-                  <h3 class="name">Project Name</h3>
-                  <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam
-                    in tellus eu gravida.</p>
+            </div><div class="col-sm-4 item" style="margin-bottom: 2em">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Project Name</h4>
+                  <h6 class="text-muted card-subtitle mb-2">SIG</h6>
+                  <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis
+                    in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                  <div style="text-align: right">
+                    <a class="action" style="text-decoration: none" href="#">Read More <i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -143,5 +169,4 @@ layout: default
       </div>
     </div>
   </section>
-  
 </main>

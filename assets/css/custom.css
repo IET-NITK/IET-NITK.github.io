@@ -1,0 +1,14 @@
+.no-underline{
+  text-decoration: none!important;
+}
+.header-colored {
+  width: 100%;
+  padding-top:1em;
+  padding-bottom: 1em;
+  background-size: cover;
+  background-image: linear-gradient(#aac81e, #afc81e);
+  color:white!important;
+}
+h2.header-colored{
+  color:white!important;
+}

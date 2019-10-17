@@ -3,21 +3,29 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-md-3 item">
-          <h3>Services</h3>
+          <h3>Important Links</h3>
           <ul>
-            <li><a href="#">Web design</a></li>
-            <li><a href="#">Development</a></li>
-            <li><a href="#">Hosting</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#family">Our Family</a></li>
+
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Say Hi!</a></li>
+
           </ul>
         </div>
         <div class="col-sm-6 col-md-3 item">
-          <h3>About</h3>
+          <h3>Special Interest Groups</h3>
           <ul>
-            <li><a href="#">Company</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Careers</a></li>
+            {% for s in site.data.sig %}
+            {% if s.no-link!=true %}
+            <li><a href="sig/{{s.name}}.html">{{s.name}}</a></li>
+            {% endif %}
+            {% endfor %}
           </ul>
         </div>
+        
         <div class="col-md-6 item text">
           <div class="text-right">
 <h3>{{ site.title }}</h3>
@@ -26,11 +34,13 @@
           </div>
           
         </div>
-        <div class="col item social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
-              class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-snapchat"></i></a><a
-            href="#"><i class="fa fa-instagram"></i></a></div>
+        <div class="col item social">
+          <a href="https://www.facebook.com/{{site.facebook}}"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/{{site.linkedin}}"><i class="fa fa-linkedin"></i></a>
+          <a href="https://www.github.com/{{site.github}}"><i class="fa fa-github"></i></a>
+          <a href="https://www.instagram.com/{{site.instagram}}"><i class="fa fa-instagram"></i></a></div>
       </div>
-      <p class="copyright">Company Name © 2017</p>
+      <p class="copyright"><i class="fa fa-heart"></i> IET NITK | <a class="text-white" href="https://nirmalhk7.github.io">Made by Nirmal Khedkar</a></p>
     </div>
   </footer>
 </div>
