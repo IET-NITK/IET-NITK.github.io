@@ -7,9 +7,12 @@ author: Nirmal Khedkar
 description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society.
 email: ietnitk@nitk.ac.in
 phone: +91-9999999999
+url: "http://iet-nitk.github.io/newweb" # the base hostname & protocol for your site
 plugins:
+  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-analytics
+  - jekyll-feed
 jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: xxxx          # Required - replace with your tracking id

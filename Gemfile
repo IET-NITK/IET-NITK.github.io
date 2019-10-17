@@ -1,3 +1,5 @@
 gem 'jekyll'
 gem 'jekyll-seo-tag'
 gem 'jekyll-analytics'
+gem 'jekyll-sitemap'
+gem 'jekyll-feed'
