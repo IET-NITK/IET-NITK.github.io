@@ -8,6 +8,9 @@ description: To inspire, inform and influence the global engineering community, 
 email: ietnitk@nitk.ac.in
 phone: +91-9999999999
 url: "http://iet-nitk.github.io/newweb" # the base hostname & protocol for your site
+collections:
+  authors:
+    output: true
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

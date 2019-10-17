@@ -1,22 +1,24 @@
 <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-  <div class="container"><a class="navbar-brand logo" href="/"><img src="assets/logo.png" style="height:auto;max-width: 7em;"></a><button data-toggle="collapse"
+  <div class="container"><a class="navbar-brand logo" href="/"><img src={{ "assets/logo.png" | relative_url }} style="height:auto;max-width: 7em;"></a><button data-toggle="collapse"
       class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
         class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item" role="presentation"><a class="nav-link active" href="/">Home</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href="blog.html">Blog</a></li>
-        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false"
-            href="#">Projects </a>
+        <li class="nav-item" role="presentation"><a class="nav-link active" href={{ "/" | relative_url }}>Home</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" href={{ "about.html" | relative_url }}>About Us</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" href={{ "blog.html" | relative_url }}>Blog</a></li>
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false"
+            href={{ "#" | relative_url }}>Projects </a>
           <div class="dropdown-menu" role="menu">
             {% for s in site.data.sig %}
             {% if s.no-link!=true %}
             <a class="dropdown-item" role="presentation" href="sig/{{s.name}}">{{s.name}}</a>
             {% endif %}
             {% endfor %}
+          </div>
         </li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" href={{ "contact-us.html" | relative_url }}>Contact Us</a></li>
       </ul>
     </div>
   </div>

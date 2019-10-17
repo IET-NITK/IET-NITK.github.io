@@ -3,15 +3,16 @@ title: About Us
 layout: default
 ---
 <main class="page">
-<section class="header-colored">
+<section class="clean-block about-us">
   <div class="container">
-    <div class="article-list">
-      <div class="container">
-        <div class="intro">
-          <h2 class="text-info text-center">Latest Articles</h2>
-          <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat,
-            pellentesque ut laoreet vitae. </p>
-        </div>
+    
+        <ul class="myposts" style="padding:3em;">
+          {% for post in site.posts %}
+          <li><a href="{{ post.url }}">{{ post.title}}</a>
+            <span class="postDate">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>

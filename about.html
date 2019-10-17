@@ -58,21 +58,21 @@ layout: default
       </div>
       
       <div class="row justify-content-center">
-        {% for member in site.data.members %} 
+        {% for author in site.authors %}
         <div class="col-sm-6 col-lg-4" style="padding-bottom: 3em">
-          <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
+          <div class="card clean-card text-center">
+            <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
             <div class="card-body info">
-              <h4 class="card-title">{{ member.name }}</h4>
-              <p class="card-text">{{member.position}}</p>
+              <h4 class="card-title">{{ author.name }}</h4>
+              <p class="card-text">{{ author.position }}</p>
               <div class="icons">
-                <a href="{{member.facebook}}"><i class="icon-social-facebook"></i></a>
-                <a href="{{member.linkedin}}"><i class="icon-social-linkedin"></i></a>
-                <a href="{{member.github}}"><i class="icon-social-github"></i></a>
+                <a href="https://www.facebook.com/{{author.facebook}}"><i class="icon-social-facebook"></i></a>
+                <a href="https://www.linkedin.com/{{author.linkedin}}"><i class="icon-social-linkedin"></i></a>
+                <a href="https://www.github.com/{{author.github}}"><i class="icon-social-github"></i></a>
               </div>
             </div>
           </div>
         </div>
-
         {% endfor %}
       </div>
       
