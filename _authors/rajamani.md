@@ -1,6 +1,6 @@
 ---
-short_name: Likitha
-name: Likitha D.
+short_name: Rajamani
+name: Rajamani Ayyer
 position: Member
 facebook: 
 github: 

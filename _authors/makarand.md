@@ -1,6 +1,6 @@
 ---
-short_name: Likitha
-name: Likitha D.
+short_name: Makarand
+name: Makarand Ingavale
 position: Member
 facebook: 
 github: 

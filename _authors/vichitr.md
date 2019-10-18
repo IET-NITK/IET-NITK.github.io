@@ -1,6 +1,6 @@
 ---
-short_name: Likitha
-name: Likitha D.
+short_name: Vichitr
+name: Vichitr Gandas
 position: Member
 facebook: 
 github: 

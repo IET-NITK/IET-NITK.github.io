@@ -12,3 +12,20 @@
 h2.header-colored{
   color:white!important;
 }
+.mt05{
+  margin-top:0.5em!important;
+}
+
+.mb05{
+  margin-top:0.5em!important;
+}
+
+.card {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #333;
+  transition: all 1.5s ease;
+}
+.card:hover {
+  box-shadow: 0 0 32px #333;
+}

@@ -13,12 +13,12 @@
           <div class="dropdown-menu" role="menu">
             {% for s in site.data.sig %}
             {% if s.no-link!=true %}
-            <a class="dropdown-item" role="presentation" href="sig/{{s.name}}">{{s.name}}</a>
+            <a class="dropdown-item" role="presentation" href="{{ 'sig' | relative_url }}/{{s.name}}">{{s.name}}</a>
             {% endif %}
             {% endfor %}
           </div>
         </li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href={{ "contact-us.html" | relative_url }}>Contact Us</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" href={{ "contact.html" | relative_url }}>Contact Us</a></li>
       </ul>
     </div>
   </div>
