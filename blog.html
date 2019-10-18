@@ -1,12 +1,12 @@
 ---
-title: About Us
+title: Official Blog
 layout: default
 ---
 <main class="page blog-post-list">
   <section class="clean-block clean-blog-list dark">
     <div class="container">
       <div class="block-heading">
-        <h2 class="text-info">Official IET NITK Blog</h2>
+        <h2 class="text-info">Official {{site.title}} Blog</h2>
         <p>We post cool stuff. Subscribe to our Newsletter to stay updated!</p>
       </div>
       <div class="block-content">
@@ -17,7 +17,8 @@ layout: default
             <div class="col-lg-5"><img class="rounded img-fluid" src="assets/img/blog/{{post.image}}" style="width:100%; height:auto;"></div>
             <div class="col-lg-7">
               <h3>{{post.title}}</h3>
-              <div class="info"><span class="text-muted">{{ post.date | date_to_long_string }} by&nbsp;<a href="{{author.url | relative_url}}">{{author.name}}</a></span></div>
+              <div class="info"><span class="text-muted">{{ post.date | date_to_long_string }} by&nbsp;<a href="{{author.url | relative_url}}">{{author.name}}</a>. 
+                <br>ERT {{ post.content | reading_time | pluralize: "minute" }}</p></span></div>
               <p>{{post.excerpt }}</p><a href="{{post.url | relative_url}}" class="no-underline"><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></a>
             </div>
           </div>

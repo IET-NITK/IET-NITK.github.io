@@ -4,9 +4,55 @@ layout: default
 <main class="page">
   <section class="clean-block about-us">
     <div class="container">
-      <h1>{{ page.name }}</h1>
-      <h2>{{ page.position }}</h2>
-      {{content}}
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+          <img style="height:auto;width:100%;" src="/assets/img/avatars/avatar3.jpg">
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+          <h1>{{ page.name }}</h1>
+          <h2>{{ page.position }}</h2>
+          {{content}}
+        </div>
+    
+        
+<style>
+.author .fa {
+  padding: 20px;
+  width:55px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+
+.author .fa:hover {
+    opacity: 0.7;transform: scale(1.1);
+}
+
+.author .fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.author .fa-github {
+  background: #333;
+  color: white;
+}
+
+.author .fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+</style>
+        <div class="author">
+        <a href="https://github.com/{{page.github}}"><i class="fa fa-github"></i></a>
+        <a href="https://linkedin.com/{{page.linkedin}}"><i class="fa fa-linkedin"></i></a>
+        <a href="https://facebook.com/{{page.facebook}}"><i class="fa fa-facebook"></i></a>
+        </div>
+      </div>
+      
       <h2>Posts</h2>
       <ul>
         {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
@@ -21,22 +67,20 @@ layout: default
       {% if cipher_projects.size!=0 and torsion_projects.size!=0 and rovisp_projects.size!=0 %}
       <h2>Projects</h2>
       <ul>
-       
+      
         {% for project in cipher_projects %}
         <li><a href="/sig/Cipher.html#{{project.title}}">{{ project.title }} (Cipher)</a></li>
         {% endfor %}
-        
+      
         {% for project in torsion_projects %}
         <li><a href="/sig/Cipher.html#{{project.title}}">{{ project.title }} (Torsion)</a></li>
         {% endfor %}
-        
+      
         {% for project in torsion_projects %}
         <li><a href="/sig/Cipher.html#{{project.title}}">{{ project.title }} (Rovisp)</a></li>
         {% endfor %}
       </ul>
       {% endif %}
-    </div>
-    </div>
     </div>
   </section>
 </main>

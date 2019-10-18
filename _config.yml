@@ -18,6 +18,8 @@ plugins:
   - jekyll-seo-tag
   - jekyll-analytics
   - jekyll-feed
+  - liquid_reading_time
+  - liquid_pluralize
 jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: xxxx          # Required - replace with your tracking id
