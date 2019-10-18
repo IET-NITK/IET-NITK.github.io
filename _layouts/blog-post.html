@@ -1,18 +1,23 @@
 ---
 layout: default
 ---
-<main class="page">
-  <section class="clean-block about-us">
+<main class="page blog-post">
+  <section class="clean-block clean-post dark">
     <div class="container">
-<h1>{{ page.title }}</h1>
-      {{content}}
-  {{ page.date | date_to_string }}
-  {% assign author = site.authors | where: 'short_name', page.author | first %}
-  {% if author %}
-  - <a href="{{ author.url }}">{{ author.name }}</a>
-  {% endif %}
-    </div>
-    </div>
+      <div class="block-content">
+        <div class="post-image" style='background-image:url(&quot;/assets/img/blog/{{page.image}}&quot;);'></div>
+        <div class="post-body">
+          <h3>{{page.title}}</h3>
+          {% assign author = site.authors | where: 'short_name', page.author | first %}
+          <div class="post-info">
+            <span>
+              By <b><a class="no-underline" href="{{author.url | relative_url}}">{{ author.name }}</a></b>
+            </span>
+               - 
+            <span>{{ page.date | date_to_string }}</span></div>
+          {{content}}
+        </div>
+      </div>
     </div>
   </section>
 </main>
