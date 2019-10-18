@@ -5,8 +5,10 @@ github: IET-NITK
 instagram: ietnitk
 author: Nirmal Khedkar
 description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society.
-email: ietnitk@nitk.ac.in
-phone: +91-9999999999
+
+contactname: Name 1
+contactemail: Email 1
+contactphone: phone 1
 url: "http://iet-nitk.github.io/newweb" # the base hostname & protocol for your site
 collections:
   authors:

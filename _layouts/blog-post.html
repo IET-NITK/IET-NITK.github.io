@@ -5,7 +5,7 @@ layout: default
   <section class="clean-block clean-post dark">
     <div class="container">
       <div class="block-content">
-        <div class="post-image" style='background-image:url(&quot;{{/assets/img/blog/{{page.image}}&quot;);'></div>
+        <div class="post-image" style='background-image:url(&quot;../../../assets/img/blog/{{page.image}}&quot;);'></div>
         <div class="post-body">
           <h3>{{page.title}}</h3>
           {% assign author = site.authors | where: 'short_name', page.author | first %}

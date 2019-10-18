@@ -13,8 +13,7 @@ layout: default
         <p>{{ project.description }}</p>
         {{project.url}}
         {% assign author = site.authors | where: 'short_name', project.owner | first %}
-        {{author.url}}
-        <p>{{ project.owner }}</p>
+        <a href={{author.url}} class="no-underline">{{project.owner}}</a>
 
       {% endfor %}
 
