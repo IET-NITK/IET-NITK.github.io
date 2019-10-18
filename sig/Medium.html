@@ -1,0 +1,23 @@
+---
+title: Cipher
+layout: default
+---
+
+<main class="page">
+  <section class="clean-block about-us">
+    <div class="container">
+
+      {% for project in site.data.projects.Medium %}
+      <h2>{{ project.title }}</h2>
+      <h3>{{ project.owner }}</h3>
+      <p>{{ project.description }}</p>
+      {{project.url}}
+      {% assign author = site.authors | where: 'short_name', project.owner %}
+      {{author.url}}
+      <p>{{ project.owner }}</p>
+
+      {% endfor %}
+
+    </div>
+  </section>
+</main>

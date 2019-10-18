@@ -2,6 +2,7 @@
 title: Audio Production
 layout: blog-post
 author: Rajamani
+image: audio.jpg
 ---
 
 How is music produced?

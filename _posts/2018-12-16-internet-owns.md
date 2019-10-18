@@ -2,6 +2,7 @@
 title: Who Owns the Internet
 layout: blog-post
 author: Makarand
+image: internet.png
 ---
 Ever thought how internet comes to you? How you are connected to different websites?
 

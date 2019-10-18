@@ -1,0 +1,15 @@
+Cipher:
+- title: Emotion Music Player
+  description: Sorting all the musics on the phone based upon emotion.
+  owner: Sanjay
+  url: https://github.com/IET-NITK/Emotion-Detector
+- title: Face Emotion Detection
+  description: Detects human emotions.
+  owner: Name
+  url: https://github.com/IET-NITK/Emotion-Detector
+
+Medium:
+- title: Video Editing
+  description: Video Editing using Adobe Creative Cloud
+  owner:
+  url:

@@ -48,9 +48,16 @@ layout: default
               <h3>{{ s.name}}</h3>
             </div>
             <p>{{ s.description }}</p>
-            <a href="{{ s.link }}" style="text-decoration: none;">
+            {% if s.name == "Inkheart" %}
+            <a href="#" style="text-decoration: none;">
               <button class="btn btn-outline-primary btn-block" type="button">Read More</button>
             </a>
+            {% else %}
+            <a href="{{ 'sig' | relative_url }}/{{s.name}}.html" style="text-decoration: none;">
+              <button class="btn btn-outline-primary btn-block" type="button">Read More</button>
+            </a>
+            {% endif %}
+            
           </div>
         </div>
         {% endfor %}
