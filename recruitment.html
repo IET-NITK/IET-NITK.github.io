@@ -1,0 +1,27 @@
+---
+title: Recruitment
+layout: default
+---
+<main class="page faq-page">
+  <section class="clean-block clean-faq dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">FAQ</h2>
+        <p>2019 Recruitment FAQs and Details</p>
+      </div>
+      <div class="block-content">
+        {% for faq in site.data.recrfaq %}
+        <div class="faq-item">
+          <h4 class="question">{{faq.question}}</h4>
+          <div class="answer">
+            {{faq.answer}}
+          </div>
+        </div>
+        {% endfor %}
+        Please stay tuned to our FB page for updates.
+        
+        
+      </div>
+    </div>
+  </section>
+</main>
