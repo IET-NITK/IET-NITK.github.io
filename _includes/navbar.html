@@ -5,12 +5,11 @@ transition: top 0.3s;
   
   
 </style>
-<div class="fixed-top" >
+<div class="fixed-top"  id="navbar">
 <div id="topContent">
   {% include topbar.html %}
 </div>
-
-<nav class="navbar navbar-light navbar-expand-lg bg-white clean-navbar"style="border-bottom: 1px solid #c2c2c2"  id="navbar">
+<nav class="navbar navbar-light navbar-expand-lg bg-white clean-navbar"style="border-bottom: 1px solid #c2c2c2" >
   
   <div class="container">
     
@@ -19,9 +18,10 @@ transition: top 0.3s;
         class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item" role="presentation"><a class="nav-link active" href={{ "/" | relative_url }}>Home</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href={{ "about.html" | relative_url }}>About Us</a></li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href={{ "blog.html" | relative_url }}>Blog</a></li>
+        {% assign current = page.url | downcase | split: '/' %}
+        <li class="nav-item" role="presentation"><a class="nav-link {% if page.url== '/' %} active {% endif %}" href={{ "/" | relative_url }}>Home</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link {% if current[1]== 'about.html' %} active {% endif %}" href={{ "about.html" | relative_url }}>About Us</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link {% if current[1]== 'blog.html' %} active {% endif %}" href={{ "blog.html" | relative_url }}>Blog</a></li>
         <li class="nav-item dropdown">
           <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false"
             href={{ "#" | relative_url }}>Projects </a>
@@ -33,7 +33,7 @@ transition: top 0.3s;
             {% endfor %}
           </div>
         </li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href={{ "contact.html" | relative_url }}>Contact Us</a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link {% if current[1]== 'contact.html' %} active {% endif %}" href={{ "contact.html" | relative_url }}>Contact Us</a></li>
       </ul>
     </div>
     

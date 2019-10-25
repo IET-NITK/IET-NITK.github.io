@@ -9,7 +9,7 @@ _____
 \-\-\-
 title: *title-of-blog*
 
-layout: blog-post
+
 
 author: *short-name*
 

@@ -25,3 +25,19 @@ jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: xxxx          # Required - replace with your tracking id
     anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "blog-post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

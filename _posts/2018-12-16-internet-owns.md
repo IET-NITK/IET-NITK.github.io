@@ -1,6 +1,6 @@
 ---
 title: Who Owns the Internet
-layout: blog-post
+
 author: Makarand
 image: internet.png
 ---

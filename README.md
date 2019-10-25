@@ -24,9 +24,6 @@ Its basically a Jekyll website, with all theme files under *assets/modern* folde
 ## Bugs
 * In case you find bugs on the website, please create an Issue under the Issue Tab or [email](nirmalhk7@gmail.com) one of the developers.
 
-## Wiki
-
-
 ## License
 This theme is free and open source software, distributed under the The MIT License. 
 

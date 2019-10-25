@@ -29,7 +29,7 @@ linkedin: *linkedin-handle*
 
 img: *image-of-author*
 
-layout: author
+
 \-\-\-
 _____
 **Make sure the short-name mentioned in these forms are used in the blogs too.** The short-name is like a username for the website, and all authors are identified by this username.

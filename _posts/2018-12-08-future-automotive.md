@@ -1,6 +1,6 @@
 ---
 title: The Future of Automotive Industry
-layout: blog-post
+
 author: Likitha
 image: autoind.jpg
 ---

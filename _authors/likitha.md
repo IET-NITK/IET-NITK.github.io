@@ -6,5 +6,5 @@ facebook:
 github: 
 linkedin: 
 img: beach.jpg
-layout: author
+
 ---

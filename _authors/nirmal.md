@@ -6,5 +6,5 @@ facebook:
 github: nirmalhk7 
 linkedin: nirmalhk7
 img: beach.jpg
-layout: author
+
 ---
