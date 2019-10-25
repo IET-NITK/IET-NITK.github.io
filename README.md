@@ -10,64 +10,28 @@ ___
 
 This repository contains the official website for IET NITK Surathkal. 
 
-### Blog Guidelines
-All blogs must be in markdown. All blog assets (images,videos,gifs,etc. ) must be saved under "assets" folder.
+## How It Works
+Its basically a Jekyll website, with all theme files under *assets/modern* folder.
 
-### Site Guidelines
-All words italicised in this section are variables which should be replaced with appropriate details of the member. 
+## Contributing to Blog
+* For guidelines on how to post Blog articles, check out [Contributing Guidelines](CONTRIBUTING.md).
 
-#### Recruitment Update
-All FAQ's of Recruitment are listede under "_data/recrfaq.yml". Please follow the format that has previously been used in the file.
+## Contributing to Website
+* Currently under development, the IET-NITK Wiki will provide all information regarding **How to Contribute** to the website and blog development.
+* Since the website is built with Jekyll, we do not expect any requirements for maintaining the codebase of this website. If such time comes, details would be posted under the Wikis.
+* For any guidelines on changing other details in the website, please check [GUidelines for Site Administrators](SITEGUIDE.md).
 
-#### Project Update
-All projects are listed under "_data/projects.yml". Please follow the format that has previously been used in the file.
+## Bugs
+* In case you find bugs on the website, please create an Issue under the Issue Tab or [email](nirmalhk7@gmail.com) one of the developers.
 
-#### Team Update
-All members of IET NITK would have a page on the website which would list their IET projects and the blog articles they have written. 
+## Wiki
 
-To make this happen, every author must fill up the Google Form (collect it from any Core member) with their details. Once the form is filled, the site administrator should make a new folder under "_authors" folder, with filename *short-name*.md 
 
-In this file, please follow the following format:
-_____
-\-\-\-
-short_name: *short_name*
+## License
+This theme is free and open source software, distributed under the The MIT License. 
 
-name: *full-member-name*
 
-position: *position-of-club*
-
-facebook: *facebook-handle*
-
-github: *github-handle*
-
-linkedin: *linkedin-handle*
-
-img: *image-of-author*
-
-layout: author
-\-\-\-
-_____
-**Make sure the short-name mentioned in these forms are used in the blogs too.** The short-name is like a username for the website, and all authors are identified by this username.
-
-#### Blog Update
-To add blogs to the website, create a *YYYY-MM-DD-short-file-name*.md file under "_posts" folder.
-Please follow the following format:
-_____
-\-\-\-
-title: *title-of-blog*
-
-layout: blog-post
-
-author: *short-name*
-
-image: *cover-image*
-\-\-\-
-
-*blog-body*
-_____
 
 ## Makers
 [Nirmal Khedkar](https://nirmalhk7.github.io) with help from Bhargav S.
 
-## Maintainers
-- Bhargav S.
