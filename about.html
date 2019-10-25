@@ -38,50 +38,57 @@ layout: default
   <section class="clean-block about-us">
     <div class="container">
       <div class="block-heading">
-        <h2 class="text-info">Our SIGs</h2>
-        <p>{{site.title}} consists of three different Special Interest Groups:
-        </p>
-      </div>
-      
-      <div class="row justify-content-center">
-        {% for s in site.data.sig %}
-        <div class="col-md-5 col-lg-4" style="margin-bottom: 1em">
-          <div class="clean-pricing-item" style="height:100%">
-            <div class="heading">
-              <h3>{{ s.name}}</h3>
-            </div>
-            <p>{{ s.description }}</p>
-            <a href="{{ s.link }}" style="text-decoration: none;">
-              <button class="btn btn-outline-primary btn-block" type="button">Read More</button>
-            </a>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  <section class="clean-block about-us">
-    <div class="container">
-      <div class="block-heading">
         <h2 class="text-info">Our Family</h2>
       </div>
       
       <div class="row justify-content-center">
-        {% for author in site.authors %}
-        <div class="col-sm-6 col-lg-4" style="padding-bottom: 3em">
-          <div class="card clean-card text-center">
-            <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
-            <div class="card-body info">
-              <h4 class="card-title">{{ author.name }}</h4>
-              <p class="card-text">{{ author.position }}</p>
-              <div class="icons">
-                <a href="https://www.facebook.com/{{author.facebook}}"><i class="icon-social-facebook"></i></a>
-                <a href="https://www.linkedin.com/{{author.linkedin}}"><i class="icon-social-linkedin"></i></a>
-                <a href="https://www.github.com/{{author.github}}"><i class="icon-social-github"></i></a>
+        {% assign coremembers = site.authors | where: 'position', 'Core' %}
+        {% for author in coremembers %}
+          <div class="col-sm-6 col-lg-4" style="padding-bottom: 3em">
+            <div class="card clean-card text-center">
+              <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
+              <div class="card-body info">
+                <h4 class="card-title">{{ author.name }}</h4>
+                <p class="card-text">{{ author.position }}</p>
+                <div class="icons">
+                  {% if author.facebook != blank %}
+                  <a href="https://www.facebook.com/{{author.facebook}}"><i class="icon-social-facebook"></i></a>
+                  {% endif %}
+                  {% if author.linkedin != blank %}
+                  <a href="https://www.linkedin.com/{{author.linkedin}}"><i class="icon-social-linkedin"></i></a>
+                  {% endif %}
+                  {% if author.github != blank %}
+                  <a href="https://www.github.com/{{author.github}}"><i class="icon-social-github"></i></a>
+                  {% endif %}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        {% endfor %}
+      </div>
+      <div class="row justify-content-center">
+        {% for author in site.authors %}
+        {% unless author.position == "Core" %}
+          <div class="col-sm-6 col-lg-4" style="padding-bottom: 3em">
+            <div class="card clean-card text-center">
+              <div class="card-body info">
+                <h4 class="card-title">{{ author.name }}</h4>
+                <p class="card-text">{{ author.position }}</p>
+                <div class="icons">
+                  {% if author.facebook != blank %}
+                  <a href="https://www.facebook.com/{{author.facebook}}"><i class="icon-social-facebook"></i></a>
+                  {% endif %}
+                  {% if author.linkedin != blank %}
+                  <a href="https://www.linkedin.com/{{author.linkedin}}"><i class="icon-social-linkedin"></i></a>
+                  {% endif %}
+                  {% if author.github != blank %}
+                  <a href="https://www.github.com/{{author.github}}"><i class="icon-social-github"></i></a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endunless %}
         {% endfor %}
       </div>
       

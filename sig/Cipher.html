@@ -3,20 +3,29 @@ title: Cipher
 layout: default
 ---
 
-<main class="page">
-  <section class="clean-block about-us">
+
+<main class="page blog-post-list">
+  <section class="clean-block clean-blog-list dark">
     <div class="container">
-
-      {% for project in site.data.projects.Cipher %}
-        <h2>{{ project.name }}</h2>
-        <h3>{{ project.owner }}</h3>
-        <p>{{ project.description }}</p>
-        {{project.url}}
-        {% assign author = site.authors | where: 'short_name', project.owner | first %}
-        <a href={{author.url}} class="no-underline">{{project.owner}}</a>
-
-      {% endfor %}
-
+      <div class="block-heading">
+        <h2 class="text-info">Cipher Projects</h2>
+        <p>We do stuff.</p>
+      </div>
+      <div class="block-content">
+        {% for project in site.data.projects.Cipher %}
+        <div class="clean-blog-post">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3>{{ project.title }}</h3>
+              {% assign author = site.authors | where: 'short_name', project.owner | first %}
+              <div class="info"><span class="text-muted">By <a href="{{author.url}}">{{ project.owner }}</a></span></div>
+              <p>{{ project.description }}</p>
+              <a href="{{project.url}}"><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
   </section>
 </main>

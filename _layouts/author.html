@@ -1,85 +1,144 @@
 ---
 layout: default
 ---
-<main class="page">
+<style>
+  author a {
+    padding: 0.5rem;
+    font-weight: 600;
+    font-size: .8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none !important;
+    transition: all 0.5s ease-in-out;
+  }
+
+  author a:hover {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  author .fa:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+
+  author .fa-facebook,
+  .fb {
+    color: #3B5998 !important;
+  }
+
+  author .fa-github,
+  .git {
+    color: #333;
+  }
+
+  author .fa-linkedin,
+  .linke {
+    color: #007bb5;
+  }
+ .statistic{
+    font-weight: 300;
+    text-align: center;
+    font-size: .7rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    text-decoration: none !important;
+    transition: all 0.5s ease-in-out;
+  }
+  .statistic_no{
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    text-decoration: none !important;
+    transition: all 0.5s ease-in-out;
+  }
+</style>
+<main class="page" style="margin-bottom: 3em;">
   <section class="clean-block about-us">
     <div class="container">
       <div class="row">
+
         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-          <img style="height:auto;width:100%;" src="/assets/img/avatars/avatar3.jpg">
+          <div class="card">
+            <img style="height:auto;width:100%;" src="/assets/img/avatars/avatar3.jpg">
+            <div class="card-body">
+              <h4 class="card-title">{{page.name}}</h4>
+              <h6 class="text-muted card-subtitle mb-2">{{page.position}} @IET-NITK</h6>
+              <p class="card-text">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="statistic_no">
+                      {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
+                      {{filtered_posts | size}}
+                    </div>
+                    <div class="statistic">
+                      Blogs
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="statistic_no">
+                      {% assign cipher_projects = site.data.projects.Cipher | where: 'owner', page.short_name %}
+                      {% assign torsion_projects= site.data.projects.Torsion | where: 'owner', page.short_name %}
+                      {% assign rovisp_projects= site.data.projects.Rovisp | where: 'owner', page.short_name %}
+                      {% assign csize= cipher_projects | size %}
+                      {% assign rsize= rovisp_projects | size %}
+                      {% assign tsize= torsion_projects | size %}
+                      {{ csize |plus:rsize | plus:tsize }}
+                    </div>
+                    <div class="statistic">
+                      Projects
+                    </div>
+                  </div>
+                </div>
+              </p>
+              <div style="text-align: center">
+                <author>
+                  <a class="git" href="https://github.com/{{page.github}}"><i class="fa fa-github"></i>&nbsp;&nbsp;Github</a>
+                  <br>
+                  <a class="linke" href="https://linkedin.com/{{page.linkedin}}"><i class="fa fa-linkedin"></i>&nbsp;&nbsp;Linkedin</a>
+                  <br>
+                  {% if page.github != blank %}
+                  <a class="fb" href="https://facebook.com/{{page.facebook}}"> <i class="fa fa-facebook"></i>&nbsp;&nbsp;Facebook</a>
+                  {% endif %}
+                </author>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-          <h1>{{ page.name }}</h1>
-          <h2>{{ page.position }}</h2>
-          {{content}}
+          <h2>Posts</h2>
+          <ul>
+            {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
+            {% for post in filtered_posts %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
+          {% assign cipher_projects = site.data.projects.Cipher | where: 'owner', page.short_name %}
+          {% assign torsion_projects= site.data.projects.Torsion | where: 'owner', page.short_name %}
+          {% assign rovisp_projects= site.data.projects.Rovisp | where: 'owner', page.short_name %}
+
+          {% if cipher_projects.size!=0 and torsion_projects.size!=0 and rovisp_projects.size!=0 %}
+          <h2>Projects</h2>
+          <ul>
+
+            {% for project in cipher_projects %}
+            <li><a href="/sig/Cipher.html#{{project.title}}">{{ project.title }} (Cipher)</a></li>
+            {% endfor %}
+
+            {% for project in torsion_projects %}
+            <li><a href="/sig/Cipher.html#{{project.title}}">{{ project.title }} (Torsion)</a></li>
+            {% endfor %}
+
+            {% for project in torsion_projects %}
+            <li><a href="/sig/Cipher.html#{{project.title}}">{{ project.title }} (Rovisp)</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
         </div>
-    
-        
-<style>
-author a {
-  padding: 0.5rem;
-  font-weight: 600;
-  font-size: .8rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-size: 0.8rem;
-  text-decoration: none!important;
-  transition: all 0.5s ease-in-out;
-}
-author a:hover{
-  text-decoration: underline;
-  color:inherit;
-}
-author .fa:hover {
-    opacity: 0.7;transform: scale(1.1);
-}
-
-author .fa-facebook, .fb{
-  color: #3B5998!important;
-}
-author .fa-github, .git{
-  color: #333;
-}
-
-author .fa-linkedin, .linke{
-  color: #007bb5;
-}
-</style>
-      <author>
-  <a class="git" href="https://github.com/{{page.github}}"><i class="fa fa-github"></i>Github</a>
-  <a class="linke" href="https://linkedin.com/{{page.linkedin}}"><i class="fa fa-linkedin"></i>Linkedin</a>
-  <a class="fb" https://facebook.com/{{page.facebook}}"><i class="fa fa-facebook"></i>Facebook</a>
-      </author>
       </div>
-      
-      <h2>Posts</h2>
-      <ul>
-        {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
-        {% for post in filtered_posts %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-      {% assign cipher_projects = site.data.projects.Cipher | where: 'owner', page.short_name %}
-      {% assign torsion_projects= site.data.projects.Torsion | where: 'owner', page.short_name %}
-      {% assign rovisp_projects= site.data.projects.Rovisp | where: 'owner', page.short_name %}
-      
-      {% if cipher_projects.size!=0 and torsion_projects.size!=0 and rovisp_projects.size!=0 %}
-      <h2>Projects</h2>
-      <ul>
-      
-        {% for project in cipher_projects %}
-        <li><a href="/sig/Cipher.html#{{project.title}}">{{ project.title }} (Cipher)</a></li>
-        {% endfor %}
-      
-        {% for project in torsion_projects %}
-        <li><a href="/sig/Cipher.html#{{project.title}}">{{ project.title }} (Torsion)</a></li>
-        {% endfor %}
-      
-        {% for project in torsion_projects %}
-        <li><a href="/sig/Cipher.html#{{project.title}}">{{ project.title }} (Rovisp)</a></li>
-        {% endfor %}
-      </ul>
-      {% endif %}
     </div>
   </section>
 </main>

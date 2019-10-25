@@ -1,7 +1,7 @@
 ---
 short_name: Makarand
 name: Makarand Ingavale
-position: Member
+position: Core
 facebook: 
 github: 
 linkedin: 
