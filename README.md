@@ -1,4 +1,13 @@
 # Official Website for IET-NITK
+___
+
+
+![GitHub forks](https://img.shields.io/github/forks/IET-NITK/newweb.svg)
+![GitHub stars](https://img.shields.io/github/stars/IET-NITK/newweb.svg)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/iet-nitk)
+![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)
+
 This repository contains the official website for IET NITK Surathkal. 
 
 ### Blog Guidelines
@@ -22,12 +31,19 @@ In this file, please follow the following format:
 _____
 \-\-\-
 short_name: *short_name*
+
 name: *full-member-name*
+
 position: *position-of-club*
+
 facebook: *facebook-handle*
+
 github: *github-handle*
+
 linkedin: *linkedin-handle*
+
 img: *image-of-author*
+
 layout: author
 \-\-\-
 _____
@@ -39,8 +55,11 @@ Please follow the following format:
 _____
 \-\-\-
 title: *title-of-blog*
+
 layout: blog-post
+
 author: *short-name*
+
 image: *cover-image*
 \-\-\-
 
