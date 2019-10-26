@@ -51,3 +51,7 @@ var accordion = (function () {
 $(document).ready(function () {
   accordion.init({ speed: 300, oneOpen: true });
 });
+
+$(window).on('load', function () { 
+  $('#ldiv').delay(200).fadeOut('slow');
+});

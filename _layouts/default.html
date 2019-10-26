@@ -50,9 +50,10 @@ title: Official Website
 </head>
 
 <body>
- <!--
- <div id="ldiv" class="loadingdiv"><img class="loadingdivimg" src="assets/img/loading.gif"></div>
- -->
+ <div id="ldiv" class="loadingdiv">
+   <img class="loadingdivimg" src={{ "assets/img/loading.gif" | relative_url }}>
+  </div>
+
    {% include navbar.html %}
     {{ content }}
     {% include subscribe.html %}
