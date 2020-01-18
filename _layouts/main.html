@@ -68,58 +68,34 @@ layout: default
         <div class="container">
           <div class="intro">
             <h2 class="text-info text-center" style="font-weight: 500;">Latest Articles</h2>
-            <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat,
-              pellentesque ut laoreet vitae. </p>
+            <p class="text-center">We love to write!</p>
           </div>
           <div class="row articles" style="padding-top:2em">
+            {% for post in site.posts limit:3 %}
+            {% assign author = site.authors | where: 'short_name', post.author | first %}
             <div class="col-sm-6 col-md-4 item">
               <div class="card">
-                <img class="card-img-top w-100 d-block" src="assets/img/building.jpg" />
+                <img class="card-img-top w-100 d-block" src="assets/img/blog/{{post.image}}" />
                 <div class="card-body">
-                  <h4 class="card-title">Title</h4>
-                  <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                  <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis
-                    in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                  <h4 class="card-title">{{post.title}}</h4>
+                  <h6 class="text-muted card-subtitle mb-2">{{author.name}}</h6>
+                  <p class="card-text">
+                    {{post.excerpt}}
+                  </p>
                     <div style="text-align: center">
-                      <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
+                      <a class="" style="text-decoration: none" href="{{post.url | relative_url}}">
+                        Read More <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
               </div>
             </div>
-            <div class="col-sm-6 col-md-4 item">
-              <div class="card">
-                <img class="card-img-top w-100 d-block" src="assets/img/building.jpg" />
-                <div class="card-body">
-                  <h4 class="card-title">Title</h4>
-                  <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                  <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis
-                    in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                  <div style="text-align: center">
-                    <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 item">
-              <div class="card">
-                <img class="card-img-top w-100 d-block" src="assets/img/building.jpg" />
-                <div class="card-body">
-                  <h4 class="card-title">Title</h4>
-                  <h6 class="text-muted card-subtitle mb-2">Subtitle</h6>
-                  <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis
-                    in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                  <div style="text-align: center">
-                    <a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="clean-block about-us">
+  <!-- <section class="clean-block about-us">
     <div class="container">
       <div class="projects-horizontal">
         <div class="container">
@@ -171,5 +147,5 @@ layout: default
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </main>
