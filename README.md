@@ -1,12 +1,11 @@
 # Official Website for IET-NITK
 ___
 
-
-![GitHub forks](https://img.shields.io/github/forks/IET-NITK/newweb.svg)
-![GitHub stars](https://img.shields.io/github/stars/IET-NITK/newweb.svg)
+![Build](https://github.com/IET-NITK/newweb/workflows/Build/badge.svg)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/iet-nitk)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)
+![powered by Jekyll](https://img.shields.io/badge/powered_by-Jekyll-green.svg)
 
 This repository contains the official website for IET NITK Surathkal. 
 
