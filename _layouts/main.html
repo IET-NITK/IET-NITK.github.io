@@ -3,7 +3,7 @@ title: My First Post
 layout: default
 ---
 <main class="page landing-page">
-  <section class="clean-block clean-hero"
+  <!-- <section class="clean-block clean-hero"
     style="background-image:url(&quot;assets/img/iet-upview.jpg&quot;);color:#a046b480;">
     <div class="text">
       <h1 style="color: white;font-size: 40px;">
@@ -11,7 +11,15 @@ layout: default
       </h1>
       <p>Integrity. Excellence. Teamwork. Ambition</p>
     </div>
+  </section> -->
+  <section class="clean-block clean-hero"
+    style="color:#a046b480;position:absolute;z-index: 0;width:100vw;height:90vh;">
+    
   </section>
+  <div class="video-hero">
+    <iframe class="ytplayer" style="width:100vw;height:90vh;z-index: 1;" src="https://www.youtube.com/embed/TI2rX3Oiku8?modestbranding=1&autoplay=1&rel=0&controls=0&mute=1&loop=1&autohide=10" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
   <section class="clean-block about-us" id="about-us">
     <div class="container">
       <div class="block-heading">
@@ -19,11 +27,7 @@ layout: default
       </div>
       <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <div class="video-container">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/TI2rX3Oiku8" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
+        <img src="assets/img/iet-upview.jpg" style="width: 100%;height:auto">
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         {{ content }}

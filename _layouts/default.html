@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {% seo %}
 
     <style>
+      .ytplayer {
+pointer-events: none;
+}
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
@@ -47,7 +50,11 @@
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" style="padding-top: 0px;"></i></button>
 
-    {% include navbar.html %} {{ content }} {% include subscribe.html %} {% include footer.html %}
+    {% include navbar.html %} 
+    {% if page.url != "/" %}
+    <div style="padding-top: 3em;"></div>
+    {% endif %}
+    {{ content }}{% include subscribe.html %} {% include footer.html %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
