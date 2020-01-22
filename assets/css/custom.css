@@ -161,3 +161,7 @@ main {
 #myBtn:hover {
     background-color: #ee7520;
 }
+
+.sig-logo{
+    max-width: 50px;
+}
