@@ -42,22 +42,22 @@ title: About Us
       </div>
       
       <div class="row justify-content-center">
-        {% assign coremembers = site.authors | where: 'position', 'Core' %}
+        {% assign coremembers = site.data.authors | where: 'position', 'Core' %}
         {% for author in coremembers %}
-          <div class="col-sm-6 col-lg-4" style="padding-bottom: 3em">
+          <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em">
             <div class="card clean-card text-center">
               <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
               <div class="card-body info">
                 <h4 class="card-title">{{ author.name }}</h4>
                 <p class="card-text">{{ author.position }}</p>
                 <div class="icons">
-                  {% if author.facebook != blank %}
+                  {% if author.facebook %}
                   <a href="https://www.facebook.com/{{author.facebook}}"><i class="icon-social-facebook"></i></a>
                   {% endif %}
-                  {% if author.linkedin != blank %}
+                  {% if author.linkedin %}
                   <a href="https://www.linkedin.com/in/{{author.linkedin}}"><i class="icon-social-linkedin"></i></a>
                   {% endif %}
-                  {% if author.github != blank %}
+                  {% if author.github %}
                   <a href="https://www.github.com/{{author.github}}"><i class="icon-social-github"></i></a>
                   {% endif %}
                 </div>
@@ -67,21 +67,21 @@ title: About Us
         {% endfor %}
       </div>
       <div class="row justify-content-center">
-        {% for author in site.authors %}
+        {% for author in site.data.authors %}
         {% unless author.position == "Core" %}
-          <div class="col-sm-6 col-lg-4" style="padding-bottom: 3em">
-            <div class="card clean-card text-center">
+          <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em">
+            <div class="card clean-card text-center" style="box-shadow: 0 0 0px;">
               <div class="card-body info">
                 <h4 class="card-title">{{ author.name }}</h4>
                 <p class="card-text">{{ author.position }}</p>
                 <div class="icons">
-                  {% if author.facebook != blank %}
+                  {% if author.facebook %}
                   <a href="https://www.facebook.com/{{author.facebook}}"><i class="icon-social-facebook"></i></a>
                   {% endif %}
-                  {% if author.linkedin != blank %}
+                  {% if author.linkedin %}
                   <a href="https://www.linkedin.com/in/{{author.linkedin}}"><i class="icon-social-linkedin"></i></a>
                   {% endif %}
-                  {% if author.github != blank %}
+                  {% if author.github %}
                   <a href="https://www.github.com/{{author.github}}"><i class="icon-social-github"></i></a>
                   {% endif %}
                 </div>

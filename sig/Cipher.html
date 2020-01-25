@@ -1,6 +1,5 @@
 ---
-title: Cipher
-
+title: Cipher Projects
 ---
 
 
@@ -10,7 +9,7 @@ title: Cipher
       <div class="block-heading">
         <img src={{ "assets/img/Cipher-logo.png" | relative_url }} class="sig-logo">
         <h2 class="text-info">Cipher Projects</h2>
-        <p>We do stuff.</p>
+        <p>01000111 01000101 01000101 01001011 01001100 01001001 01000110 01000101 </p>
       </div>
       <div class="block-content">
         {% for project in site.data.projects.Cipher %}
@@ -18,8 +17,14 @@ title: Cipher
           <div class="row">
             <div class="col-lg-12">
               <h3>{{ project.title }}</h3>
-              {% assign author = site.authors | where: 'short_name', project.owner | first %}
-              <div class="info"><span class="text-muted">By <a href="{{author.url}}">{{ project.owner }}</a></span></div>
+              
+              <div class="info"><span class="text-muted">By 
+                {% for author in site.data.authors %}
+                  {% if author.short_name==project.owner %}
+                    <a href="{{author.url}}">{{ author.name }}</a>
+                  {% endif %}
+                {% endfor %}
+              </span></div>
               <p>{{ project.description }}</p>
               <a href="{{project.url}}"><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></a>
             </div>
