@@ -42,10 +42,10 @@ title: About Us
       </div>
       
       <div class="row justify-content-center">
-        {% assign coremembers = site.data.authors | where: 'position', 'Core' %}
+        {% assign coremembers = site.data.authors | where: 'status', 'Core' %}
         {% for author in coremembers %}
           <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em">
-            <div class="card clean-card text-center">
+            <div class="card clean-card text-center" style="">
               <img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
               <div class="card-body info">
                 <h4 class="card-title">{{ author.name }}</h4>
@@ -68,7 +68,7 @@ title: About Us
       </div>
       <div class="row justify-content-center">
         {% for author in site.data.authors %}
-        {% unless author.position == "Core" %}
+        {% unless author.status == "Core" %}
           <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em">
             <div class="card clean-card text-center" style="box-shadow: 0 0 0px;">
               <div class="card-body info">

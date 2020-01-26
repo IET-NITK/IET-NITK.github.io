@@ -8,6 +8,7 @@
 - short_name: Makarand
   name: Makarand Ingavale
   position: Core
+  status: Core
   facebook: 
   github: 
   linkedin: 
@@ -31,5 +32,6 @@
   position: Cipher Head
   facebook: vichitrgandas
   github: vichitr
+  status: Core
   linkedin: vichitrgandas
   img: beach.jpg
