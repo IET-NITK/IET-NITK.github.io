@@ -5,6 +5,8 @@
   github: 
   linkedin: 
   img: beach.jpg
+  sig: Cipher
+  alumni: false
 - short_name: Makarand
   name: Makarand Ingavale
   position: Core
@@ -13,6 +15,7 @@
   github: 
   linkedin: 
   img: beach.jpg
+  alumni: false
 - short_name: Nirmal
   name: Nirmal Khedkar
   position: Member
@@ -20,6 +23,7 @@
   github: nirmalhk7 
   linkedin: nirmalhk7
   img: beach.jpg
+  alumni: false
 - short_name: Rajamani
   name: Rajamani Ayyer
   position: Member
@@ -35,3 +39,4 @@
   status: Core
   linkedin: vichitrgandas
   img: beach.jpg
+## Previously Done

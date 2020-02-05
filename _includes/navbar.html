@@ -13,9 +13,10 @@ transition: top 0.3s;
   
   <div class="container">
     
-    <a class="navbar-brand logo" href="/"><img src={{ "assets/img/logo.png" | relative_url }} style="height:auto;max-width: 7em;"></a><button data-toggle="collapse"
-      class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
-        class="navbar-toggler-icon"></span></button>
+    <a class="navbar-brand logo" href="/"><img src={{ "assets/img/logo.png" | relative_url }} style="height:auto;max-width: 7em;"></a>
+    <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="navbar-toggler-icon" style="margin:0px"></span></button>
     <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="nav navbar-nav ml-auto">
         {% assign current = page.url | downcase | split: '/' %}

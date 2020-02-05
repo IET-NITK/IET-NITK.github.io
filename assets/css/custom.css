@@ -164,3 +164,9 @@ main {
 .sig-logo{
     max-width: 50px;
 }
+a{
+    outline: none;
+}
+.btn{
+    transition:0.3s;
+}
