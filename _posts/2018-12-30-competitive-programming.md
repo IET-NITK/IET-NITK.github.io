@@ -1,6 +1,5 @@
 ---
 title: Competitive Programming as a Sport
-
 author: Vichitr
 image: cp.jpg
 ---
