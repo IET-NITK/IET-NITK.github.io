@@ -15,6 +15,3 @@ This repository contains the official website for IET NITK Surathkal.
 ## License
 This Website is free and open source software, distributed under the The MIT License. 
 
-## Makers
-[Nirmal Khedkar](https://nirmalhk7.github.io) with help from Bhargav S.
-
