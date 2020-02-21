@@ -170,3 +170,21 @@ a{
 .btn{
     transition:0.3s;
 }
+@media only screen and (max-width: 1050px) {
+    #purple-overlay{
+        display: none;
+    }
+    #video{
+        display: none;
+    }
+}
+@media only screen and (max-width: 1050px) {
+    .mobile-center-laptop-right{
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 1050px) {
+    .mobile-center-laptop-right{
+        text-align: right;
+    }
+}
