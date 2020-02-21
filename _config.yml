@@ -5,7 +5,7 @@ github: IET-NITK
 instagram: ietnitk
 author: Nirmal Khedkar
 description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society.
-
+permalink: /:title/
 contactname: Name 1
 contactemail: Email 1
 contactphone: phone 1

@@ -1,5 +1,5 @@
 ### Blog Guidelines
-All blogs must be in markdown. All blog assets (images,videos,gifs,etc. ) must be saved under "assets" folder.
+All blogs must be in markdown. All blog assets (images,videos,gifs,etc. ) must be saved under "/assets" folder.
 
 
 #### Blog Update
