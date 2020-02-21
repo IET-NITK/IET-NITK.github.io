@@ -7,10 +7,6 @@ Cipher:
   description: Detects human emotions.
   owner: Rajamani
   url: https://github.com/IET-NITK/Emotion-Detector
-- title: Dummy
-  description: Dummy2
-  owner: Nirmal
-  url: 
 Medium:
 - title: Video Editing
   description: Video Editing using Adobe Creative Cloud
