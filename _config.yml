@@ -7,9 +7,9 @@ author: Nirmal Khedkar
 description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society.
 permalink: /:title/
 contactname: Name 1
-contactemail: Email 1
-contactphone: phone 1
-url: "http://iet-nitk.github.io/newweb" # the base hostname & protocol for your site
+contactemail: dummy@gmail.com
+contactphone: 9898998989
+# the base hostname & protocol for your site
 collections:
   authors:
     output: true
@@ -20,8 +20,12 @@ plugins:
   - liquid_reading_time
   - liquid_pluralize
   - jekyll-admin
+  - jekyll-analytics
 
-
+jekyll_analytics:
+  GoogleAnalytics:          # Add, if you want to track with Google Analytics
+    id: UA-133733565-3          # Required - replace with your tracking id
+    anonymizeIp: false 
 defaults:
   - scope:
       path: ""

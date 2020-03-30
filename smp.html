@@ -1,5 +1,5 @@
 ---
-title: SMP-2020
+title: SMP 2020
 bigtitle: Summer Mentorship Programme, 2020
 ---
 <main class="page">
@@ -12,16 +12,34 @@ bigtitle: Summer Mentorship Programme, 2020
   </div>
 </section>
 </main>
-<div class="site-section">
+<div class="site-section" style="padding-top:1em;">
   <div class="container">
+    {% assign smpcount=1 %}
     {% assign sigs = site.data.smp | group_by: "sig" | sort: "title" %}
     {% for sig in sigs %}
-    <h3>{{sig.name}}</h3>
-    <row>
-      {% for smp in sig.items %}
-      <div class="col-lg-6 col-md-6 col-sm-12">{{smp.title}}</div>
-      {%endfor%}
-    </row>
+    <div class="row">
+      <div class="col-lg-6 col-md-8 col-sm-12">
+        <h3 id="{{sig.name}}" class="smp-signames">{{sig.name}}</h3>
+        <div id="accordion">
+          {% for smp in sig.items %}
+          <h5 id="{{smp.title}}">&rArr; {{smp.title}}</h5>
+          <div>
+            <p>
+              {{smp.description}}.
+              <br>
+              <strong>Mentors:</strong> {{smp.mentors}}
+              <br>
+              <a href="{{smp.link}}">Click to register</a>
+            </p>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
+        <img class="mobile-invisible smp-logo" style="max-width:200px;padding-top: 2em;" src="/assets/img/{{sig.name}}-logo.png" alt="{{sig.name}}">
+      </div>
+    </div>
+    <hr>
     {% endfor %}
   </div>
 </div>

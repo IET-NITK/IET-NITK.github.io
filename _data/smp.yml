@@ -1,12 +1,15 @@
 - title: Arduino
   description: Learn basics of AutoCAD.
-  sig: Rovsip
+  sig: Rovisp
   link: link
+  mentors: Nirmal Khedkar
 - title: Machine Learning
   description: Learn basics of ML.
   sig: Cipher
   link: link2
+  mentors: Nirmal Khedkar
 - title: Engines
+  mentors: Nirmal Khedkar
   description: Learn basics of Engines
   sig: Torsion
   link: link
@@ -14,15 +17,19 @@
   description: Learn basics of Engines
   sig: Torsion
   link: link
+  mentors: Nirmal Khedkar
 - title: Engines
   description: Learn basics of Engines
   sig: Torsion
   link: link
+  mentors: Nirmal Khedkar
 - title: Engines
   description: Learn basics of Engines
   sig: Torsion
   link: link
+  mentors: Nirmal Khedkar
 - title: Engines
   description: Learn basics of Engines
   sig: Torsion
+  mentors: Nirmal Khedkar
   link: link
