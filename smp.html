@@ -1,0 +1,27 @@
+---
+title: SMP-2020
+bigtitle: Summer Mentorship Programme, 2020
+---
+<main class="page">
+<section class="clean-block about-us">
+  <div class="container">
+    <div class="block-heading">
+      <h2 class="text-info">{{page.bigtitle}}</h2>
+      <p>IET NITK's Official Mentorship Program, exclusive for first and second years.</p>
+    </div>
+  </div>
+</section>
+</main>
+<div class="site-section">
+  <div class="container">
+    {% assign sigs = site.data.smp | group_by: "sig" | sort: "title" %}
+    {% for sig in sigs %}
+    <h3>{{sig.name}}</h3>
+    <row>
+      {% for smp in sig.items %}
+      <div class="col-lg-6 col-md-6 col-sm-12">{{smp.title}}</div>
+      {%endfor%}
+    </row>
+    {% endfor %}
+  </div>
+</div>
