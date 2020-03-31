@@ -1,6 +1,20 @@
 .no-underline {
     text-decoration: none!important;
 }
+.smp-logo{
+    max-width:300px;
+    height:auto;
+    text-align: center;
+}
+.smp-logo-div{
+    display: table-cell!important;
+    text-align: center;
+    vertical-align:middle!important;
+}
+.smp-signames{
+    font-family: 'Changa', sans-serif;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -182,9 +196,16 @@ a{
     .mobile-center-laptop-right{
         text-align: center;
     }
+    .mobile-invisible{
+        display: none;
+    }
+    .mobile-marginx2{
+        margin-top:2em;
+    }
 }
 @media only screen and (min-width: 1050px) {
     .mobile-center-laptop-right{
         text-align: right;
     }
 }
+

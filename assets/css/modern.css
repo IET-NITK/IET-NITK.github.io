@@ -740,12 +740,6 @@
 
 /* ---------------------------------- Smooth Products ----------------------------------------- */
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-}
-
 .sp-loading {
     text-align: center;
     max-width: 270px;
@@ -920,3 +914,4 @@ body {
         bottom: 25px;
     }
 }
+
