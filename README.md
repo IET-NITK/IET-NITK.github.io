@@ -1,7 +1,7 @@
 # Official Website for IET-NITK
 ___
 
-![Build](https://github.com/IET-NITK/newweb/workflows/Build/badge.svg)
+![Build](https://github.com/IET-NITK/iet-nitk.github.io/workflows/Build/badge.svg)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/iet-nitk)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)

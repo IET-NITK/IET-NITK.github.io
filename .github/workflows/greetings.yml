@@ -10,4 +10,4 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: 'Message that will be displayed on users'' first issue'
-        pr-message: 'Message that will be displayed on users'' first pr'
+        pr-message: 'Hi! Thank you for your PR. Please make sure you follow the contribution guidelines before creating a PR'
