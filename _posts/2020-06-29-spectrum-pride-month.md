@@ -1,17 +1,17 @@
 ---
 title: Effect of technology on rights and freedoms of the queer community
-
 author: Feyaz 
 image: spectrumbanner.png
+displayOnBlog: false
 ---
 
-# Effect of technology on rights and freedoms of the queer community
+Exploring how technology has affected the queer community
 
 Today the entire world is just one screen away, with technology turning from an option to a necessity. And in recent years we’ve seen the internet turn from an online repository of information to a tool for spreading knowledge to cause change. So it becomes our duty to stand for what we believe in, and show our support in humans everywhere.
 
 We at IET NITK stand with NITK spectrum, and we’d like to raise awareness of how advances made in tech in the last decade have done wonders for queer representation and queer rights. We believe no one should force your opinions, so we aim to provide our opinion, and leave you to decide what to do with it. 
 
-## Queer rights
+#### Queer rights
 Isn’t it strange to think that a significant percentage of people are being persecuted for being the way they think or feel, and are trapped in a system that treats them like second class citizens? For many places around the world, this is still a reality, but the advent of technology has done much to remove the stigma around the issue. With more and more people putting their lives and experiences forward, we can help decriminalise the act of being who we are.
 
 Let’s start off in India, where nearly two years ago Section 377 still hadn’t been amended. Section 377 was a section of the IPC initiated in British Raj, which treated consenting homosexual sex between adults as a punishable offence, with up to 10 years of imprisonment. You may remember the many peaceful demonstrations and parades held to draw attention to how it criminalised approximately 2.5 million Indians. That small victory, to be treated as citizens equal to anyone else, was the culmination of about 150 years of being trapped on the wrong side of the mob. So what do you think changed?
@@ -20,7 +20,7 @@ Undoubtedly, the people changed. The general view on queer rights changed, socie
 
 Until the internet came along.
 
-## Tech for queer rights
+#### Tech for queer rights
 
 Historically, improved communication has forced issues that were previously ignored to come to light. It’s really easy to not address an issue you don’t know about, but when enough people know about something and feel it has to stop harming others, then change can really start to spread. When the queer community is ostracised in society and treated poorly, it’s society turning a blind eye to a problem that it doesn’t know how to solve. In a 2014 survey, it was shown that the number of people who were definitively against homosexuality dropped from 89% in 1990, to a mere 24%. And this was even before the decriminalisation of Section 377, which goes to show how much work went into the movement.  
 
@@ -37,7 +37,7 @@ NITK Spectrum was created with this very aim in mind, and since its conception i
 
 Join us at [@thenitkspectrum](https://www.instagram.com/thenitkspectrum/), and follow us on our [FB page](https://www.facebook.com/thenitkspectrum/) and other socials to learn more about how you can spread a little joy in someone’s life.
 
-## How you can help
+#### How you can help
 We still need your support, and it’s still an uphill battle for many of us around the world. Spreading awareness is something we can all do, so if you have the time, take a few moments out of your schedule and spread the word in your own social circles. 
 
 Speak out for people when you can, and try to make a difference. This is a group of people trying to do good by them, and everyone is an Ally. It doesn’t take much to just be mindful of people and their hardships, so let’s all try and be a little more caring and understanding of everyone.

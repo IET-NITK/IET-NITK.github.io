@@ -10,8 +10,10 @@ p img  {
   <section class="clean-block clean-post dark">
     <div class="container">
       <div class="block-content">
+        {% if page.displayOnBlog!=false %}
         <div class="post-image" style='background-image:url(&quot;../../../assets/img/blog/{{page.image}}&quot;);background-attachment: fixed;
     background-repeat: no-repeat;'></div>
+    {% endif %}
         <div class="post-body">
           <h3>{{page.title}}</h3>
           {% assign author = page.authors | where: 'short_name', page.author | first %}
