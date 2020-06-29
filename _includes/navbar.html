@@ -25,7 +25,7 @@ transition: top 0.3s;
         <li class="nav-item" role="presentation"><a class="nav-link {% if current[1]== 'blog' %} active {% endif %}" href={{ "blog" | relative_url }}>Blog</a></li>
         <li class="nav-item dropdown">
           <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false"
-            href={{ "#" | relative_url }}>Projects </a>
+            href={{ "#" | relative_url }}>SIGs</a>
           <div class="dropdown-menu" role="menu">
             {% for s in site.data.sig %}
             {% if s.no-link!=true %}

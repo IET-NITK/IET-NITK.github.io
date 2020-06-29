@@ -1,14 +1,25 @@
-title: IET NITK
+
 linkedin: company/ietnitk/
-facebook: ietnitk
+
 github: IET-NITK
 instagram: ietnitk
-author: Nirmal Khedkar
-description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society.
+
 permalink: /:title/
 contactname: Name 1
 contactemail: dummy@gmail.com
 contactphone: 9898998989
+
+# Jekyll-SEO
+title: IET NITK
+tagline: Official Website of Insitute of Engineering and Technology, NITK Chapter
+description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society.
+url: https://iet-nitk.github.io/
+author: IET NITK Web Team
+facebook: ietnitk
+logo: /assets/img/logo.png
+social:
+  links:
+    - 
 # the base hostname & protocol for your site
 collections:
   authors:

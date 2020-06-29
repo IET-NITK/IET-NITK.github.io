@@ -45,7 +45,7 @@ title: About Us
         {% assign coremembers = site.data.authors | where: 'status', 'Core' %}
         {% for author in coremembers %}
           <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em;">
-            <div class="card clean-card text-center" style="height:100%">
+            <div class="card clean-card text-center" style="height:100%" id="{{ author.short_name }}">
               <img class="card-img-top w-100 d-block" src="/assets/img/avatars/avatar1.jpg">
               <div class="card-body info">
                 <h4 class="card-title">{{ author.name }}</h4>

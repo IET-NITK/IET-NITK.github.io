@@ -5,9 +5,14 @@
 <html>
 
 <head>
+  {% seo %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>{{ site.title}} - {{ page.title }}</title>
+    {% if page.url== '/' %}
+      <title>IET NITK Official Website</title>
+    {% else %}
+      <title>{{ site.title}} - {{ page.title }}</title>
+    {% endif %}
     <link rel="stylesheet" href={{ "/assets/css/bootstrap.min.css" | relative_url }}>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
@@ -41,7 +46,7 @@ pointer-events: none;
             height: 100%;
         }
     </style>
-    {% seo %}
+    
 </head>
 
 <body>

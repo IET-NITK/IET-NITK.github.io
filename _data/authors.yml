@@ -18,11 +18,12 @@
   alumni: false
 - short_name: Nirmal
   name: Nirmal Khedkar
-  position: Member
+  position: Webmaster
   facebook: 
   github: nirmalhk7 
   linkedin: nirmalhk7
   img: beach.jpg
+  status: Core
   alumni: false
 - short_name: Rajamani
   name: Rajamani Ayyer
@@ -39,4 +40,11 @@
   status: Core
   linkedin: vichitrgandas
   img: beach.jpg
-## Previously Done
+- short_name: Feyaz
+  name: Feyaz Baker
+  position:
+  facebook:
+  github:
+  status: Core
+  linkedin: vichitrgandas
+  img: beach.jpg
