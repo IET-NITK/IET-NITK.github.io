@@ -1,3 +1,10 @@
+---
+title: Effect of technology on rights and freedoms of the queer community
+
+author: Feyaz 
+image: spectrumbanner.png
+---
+
 # Effect of technology on rights and freedoms of the queer community
 
 Today the entire world is just one screen away, with technology turning from an option to a necessity. And in recent years we’ve seen the internet turn from an online repository of information to a tool for spreading knowledge to cause change. So it becomes our duty to stand for what we believe in, and show our support in humans everywhere.
