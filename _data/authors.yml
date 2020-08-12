@@ -1,27 +1,47 @@
-- short_name: AbhaWadjikar
-  name: Abha Wadjikar
+- short_name: SkandaUpadhyaya
+  name: Skanda Upadhyaya
   linkedin: 
-  email: abhawadjikar.171co102@nitk.edu.in
+  email: skandaupadhyaya1999@gmail.com
   facebook: 
   github: 
-  position: Inkheart And Medium Lead
+  position: Co-Convenor
   image: 
-- short_name: VishwaMohanTiwari
-  name: Vishwa Mohan Tiwari
+- short_name: PalashAgrawal
+  name: Palash Agrawal
   linkedin: 
-  email: vishwamohan63@gmail.com
+  email: agrawalpalash643@gmail.com
   facebook: 
   github: 
-  position: Public Relations And Social Media Assistant Manager
+  position: Co-Convenor
   image: 
-- short_name: FeyazBaker
-  name: Feyaz Baker
+
+
+- short_name: YuvrajDalia
+  name: Yuvraj Dalia
   linkedin: 
-  email: feyazabubaker@gmail.com
+  email: yuvrajdalia98@gmail.com
   facebook: 
   github: 
-  position: Public Relations And Social Media Manager
+  position: Secretary
+  image:
+- short_name: AbhishekChoudhary
+  name: Abhishek Choudhary 
+  linkedin: 
+  email: choudharyabhishek51999@gmail.com
+  facebook: 
+  github: 
+  position: Chair
   image: 
+- short_name: VisheshChavan
+  name: Vishesh Chavan
+  linkedin: 
+  email: visheshchavan.171ec253@nitk.edu.in
+  facebook: 
+  github: 
+  position: Vice-Chair
+  image: 
+
+
 - short_name: PratigyaRanjan
   name: Pratigya Ranjan
   linkedin: 
@@ -38,6 +58,7 @@
   github: 
   position: Rovisp Lead
   image: 
+
 - short_name: RithikAgrawal
   name: Rithik Agrawal
   linkedin: 
@@ -54,22 +75,7 @@
   github: 
   position: Torsion Lead
   image: 
-- short_name: SowmyaG
-  name: Sowmya G 
-  linkedin: 
-  email: sowmyagumma2@gmail.com
-  facebook: 
-  github: 
-  position: Treasurer
-  image: 
-- short_name: NirmalKhedkar
-  name: Nirmal Khedkar
-  linkedin: nirmalhk7
-  email: nirmalhk7@gmail.com
-  facebook: 
-  github: nirmalhk7
-  position: Webmaster
-  image: nirmalhk7
+
 - short_name: NikithaKM
   name: Nikitha K M
   linkedin: 
@@ -86,46 +92,25 @@
   github: 
   position: Cipher Lead
   image: 
-- short_name: SkandaUpadhyaya
-  name: Skanda Upadhyaya
+
+- short_name: AbhaWadjikar
+  name: Abha Wadjikar
   linkedin: 
-  email: skandaupadhyaya1999@gmail.com
+  email: abhawadjikar.171co102@nitk.edu.in
   facebook: 
   github: 
-  position: Co-Convenor
+  position: Inkheart And Medium Lead
   image: 
-- short_name: YuvrajDalia
-  name: Yuvraj Dalia
-  linkedin: 
-  email: yuvrajdalia98@gmail.com
+
+
+- short_name: NirmalKhedkar
+  name: Nirmal Khedkar
+  linkedin: nirmalhk7
+  email: nirmalhk7@gmail.com
   facebook: 
-  github: 
-  position: Secretary
-  image: 
-- short_name: VisheshChavan
-  name: Vishesh Chavan
-  linkedin: 
-  email: visheshchavan.171ec253@nitk.edu.in
-  facebook: 
-  github: 
-  position: Vice-Chair
-  image: 
-- short_name: PalashAgrawal
-  name: Palash Agrawal
-  linkedin: 
-  email: agrawalpalash643@gmail.com
-  facebook: 
-  github: 
-  position: Co-Convenor
-  image: 
-- short_name: AbhishekChoudhary
-  name: Abhishek Choudhary 
-  linkedin: 
-  email: choudharyabhishek51999@gmail.com
-  facebook: 
-  github: 
-  position: Chair
-  image: 
+  github: nirmalhk7
+  position: Webmaster
+  image: nirmalhk7
 - short_name: SachinPandey
   name: Sachin Pandey
   linkedin: 
@@ -133,6 +118,32 @@
   facebook: 
   github: 
   position: Assistant Webmaster
+  image: 
+
+- short_name: FeyazBaker
+  name: Feyaz Baker
+  linkedin: 
+  email: feyazabubaker@gmail.com
+  facebook: 
+  github: 
+  position: Public Relations And Social Media Manager
+  image: 
+- short_name: VishwaMohanTiwari
+  name: Vishwa Mohan Tiwari
+  linkedin: 
+  email: vishwamohan63@gmail.com
+  facebook: 
+  github: 
+  position: Public Relations And Social Media Assistant Manager
+  image: 
+
+- short_name: SowmyaG
+  name: Sowmya G 
+  linkedin: 
+  email: sowmyagumma2@gmail.com
+  facebook: 
+  github: 
+  position: Treasurer
   image: 
 - short_name: RameshwarDhakad
   name: Rameshwar Dhakad
@@ -142,6 +153,9 @@
   github: 
   position: Event Coordinator
   image: 
+
+
+# Executive Members
 - short_name: DhruvAgja
   name: Dhruv Agja
   linkedin: 
