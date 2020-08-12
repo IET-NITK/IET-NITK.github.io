@@ -24,6 +24,7 @@ social:
 collections:
   authors:
     output: true
+recruitmentOpen: true
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

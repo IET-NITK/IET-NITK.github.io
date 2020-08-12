@@ -40,13 +40,14 @@ title: About Us
       <div class="block-heading">
         <h2 class="text-info">Our Family</h2>
       </div>
-      
+  
       <div class="row justify-content-center">
-        {% assign coremembers = site.data.authors | where: 'status', 'Core' %}
+        {% assign coremembers = site.data.authors | where_exp: "item", "item.position != 'Executive Member'"%}
+        {% assign execmembers = site.data.authors | where_exp: "item", "item.position == 'Executive Member'"%}
         {% for author in coremembers %}
           <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em;">
             <div class="card clean-card text-center" style="height:100%" id="{{ author.short_name }}">
-              <img class="card-img-top w-100 d-block" src="/assets/img/avatars/avatar1.jpg">
+              <!-- <img class="card-img-top w-100 d-block" src="/assets/img/avatars/avatar1.jpg"> -->
               <div class="card-body info">
                 <h4 class="card-title">{{ author.name }}</h4>
                 <p class="card-text">{{ author.position }}</p>
@@ -66,9 +67,9 @@ title: About Us
           </div>
         {% endfor %}
       </div>
+      <hr/>
       <div class="row justify-content-center">
-        {% for author in site.data.authors %}
-        {% unless author.status == "Core" %}
+        {% for author in execmembers %}
           <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em">
             <div class="card clean-card text-center" style="box-shadow: 0 0 0px;height:100%">
               <div class="card-body info">
@@ -88,7 +89,6 @@ title: About Us
               </div>
             </div>
           </div>
-        {% endunless %}
         {% endfor %}
       </div>
       
