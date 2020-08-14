@@ -1,6 +1,6 @@
 ---
 title: Effect of technology on rights and freedoms of the queer community
-author: Feyaz 
+author: FeyazBaker
 image: spectrumbanner.png
 displayOnBlog: false
 ---

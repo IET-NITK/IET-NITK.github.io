@@ -49,26 +49,7 @@ layout: default
         <p>{{site.title}} consists of three different Special Interest Groups:
         </p>
       </div>
-      <div class="row justify-content-center">
-        {% for s in site.data.sig %}
-        <div class="col-md-5 col-lg-4" style="margin-bottom: 1em">
-          <div class="clean-pricing-item" style="height:100%">
-            <div class="heading">
-              <h3>{{ s.name}}</h3>
-            </div>
-            <p>{{ s.description }}</p>
-            {% if s.no-link == true %}
-            
-            {% else %}
-            <a href="{{ 'sig' | relative_url }}/{{s.name}}" style="text-decoration: none;">
-              <button class="btn btn-outline-primary btn-block" type="button">Read More</button>
-            </a>
-            {% endif %}
-            
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+      {% include sig.html %}
     </div>
   </section>
   

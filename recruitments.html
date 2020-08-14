@@ -1,0 +1,42 @@
+---
+title: Recruitments 2020
+---
+
+<main class="page faq-page">
+  <section class="clean-block about-us">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">We're Looking For You!</h2>
+        <p>{{site.title}} is looking for smart people willing to reach out to others! Check out where we're recruiting:
+        </p>
+      </div>
+      {% include sig.html %}
+    </div>
+  </section>
+  <div class="clean-block add-on newsletter-sign-up blue" style="background-color:#803391;padding:30px 0px;">
+    <h2>
+      Fill the Application Forms Now
+    </h2>
+    
+    <button class="btn btn-light btn-lg ml-5" type="button">Join Us</button>
+  </div>
+  <section class="clean-block clean-faq dark">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Recruitments FAQ</h2>
+        <p><script>document.write(new Date().getFullYear())</script> Recruitment FAQs and Details</p>
+      </div>
+      <div class="block-content">
+        {% for faq in site.data.recrfaq %}
+        <div class="faq-item">
+          <h4 class="question">{{faq.question}}</h4>
+          <div class="answer">
+            {{faq.answer}}
+          </div>
+        </div>
+        {% endfor %}
+        Please stay tuned to our social media pages for updates.  
+      </div>
+    </div>
+  </section>
+</main>
