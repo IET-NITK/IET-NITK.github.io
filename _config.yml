@@ -5,9 +5,12 @@ github: IET-NITK
 instagram: ietnitk
 
 permalink: /:title/
-contactname: Name 1
-contactemail: dummy@gmail.com
-contactphone: 9898998989
+contactdetails:
+  - name: Skanda
+    phone: 9481141528
+  - name: Palash 
+    phone: 9870036171
+contactemail: iet@nitk.ac.in
 
 # Jekyll-SEO
 title: IET NITK
@@ -23,8 +26,8 @@ social:
 # the base hostname & protocol for your site
 collections:
   authors:
-    output: true
 recruitmentOpen: true
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

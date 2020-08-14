@@ -45,7 +45,7 @@ alx: f4
         {% assign coremembers = site.data.authors | where_exp: "item", "item.position != 'Executive Member'"%}
         {% assign execmembers = site.data.authors | where_exp: "item", "item.position == 'Executive Member'"%}
         {% for author in coremembers %}
-          <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em;">
+          <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em;" id="{{author.name}}">
             <div class="card clean-card text-center" style="height:100%" id="{{ author.short_name }}">
               <!-- <img class="card-img-top w-100 d-block" src="/assets/img/avatars/avatar1.jpg"> -->
               <div class="card-body info">
@@ -70,7 +70,7 @@ alx: f4
       <hr/>
       <div class="row justify-content-center">
         {% for author in execmembers %}
-          <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em">
+          <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em"  id="{{author.name}}">
             <div class="card clean-card text-center" style="box-shadow: 0 0 0px;height:100%">
               <div class="card-body info">
                 <h4 class="card-title">{{ author.name }}</h4>

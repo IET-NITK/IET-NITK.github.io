@@ -1,6 +1,7 @@
 ---
 title: Effect of technology on rights and freedoms of the queer community
-author: FeyazBaker
+short_name: FeyazBaker
+fullname: Feyaz Baker
 image: spectrumbanner.png
 displayOnBlog: false
 ---
@@ -45,9 +46,9 @@ Speak out for people when you can, and try to make a difference. This is a group
 
 If you’re feeling adventurous, read more at :
 
-https://www.glaad.org/publications/talkingabout/terminology
+[https://www.glaad.org/publications/talkingabout/terminology](https://www.glaad.org/publications/talkingabout/terminology)
 
-https://engage.youth.gov/resources/being-ally-lgbt-people
+[https://engage.youth.gov/resources/being-ally-lgbt-people](https://engage.youth.gov/resources/being-ally-lgbt-people)
 
 
 

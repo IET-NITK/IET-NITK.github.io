@@ -16,17 +16,17 @@ p img  {
     {% endif %}
         <div class="post-body">
           <h3>{{page.title}}</h3>
-          {% assign author = page.authors | where: 'short_name', page.author | first %}
-          {% assign authorFullName = site.data.authors | where: 'short_name', page.author | first %}
+          {% assign author = page.authors | where: 'short_name', page.short_name | first %}
+          {% assign authorFullName = site.data.authors | where: 'short_name', page.short_name | first %}
           <div class="post-info">
             <span>
-              By <b><a class="no-underline" href="{{author.url | relative_url}}">{{ page.author }}</a></b>
+              By <b><a class="no-underline" href="/about#{{authorFullName.name}}">{{ authorFullName.name }}</a></b>
             </span>
               - 
             <span>{{ page.date | date_to_string }}</span></div>
             {{content}}
             <span>
-              Written by <b><a class="no-underline" href="{{author.url | relative_url}}">{{ authorFullName.name }}</a> on {{ page.date | date_to_string }}</b>
+              Written by <b><a class="no-underline" href="/about#{{authorFullName.name}}">{{ authorFullName.name }}</a> on {{ page.date | date_to_string }}</b>
             </span>
           <br>
         </div>

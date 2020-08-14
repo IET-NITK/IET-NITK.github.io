@@ -11,7 +11,7 @@ title: Official Blog
       </div>
       <div class="block-content">
         {% for post in site.posts %}
-        {% assign author = site.data.authors | where: 'short_name', post.author | first %}
+        {% assign author = site.data.authors | where: 'short_name', post.short_name | first %}
         <div class="clean-blog-post">
           <div class="row">
             <div class="col-lg-5"><img class="rounded img-fluid" src="/assets/img/blog/{{post.image}}" style="width:100%; height:auto;"></div>
@@ -20,7 +20,7 @@ title: Official Blog
               <div class="info">
                 <span class="text-muted">
                   {{ post.date | date_to_long_string }} by&nbsp;
-                  <a href="/about#{{ author.short_name }}">{{author.short_name}}</a>
+                  <a href="/about#{{ author.short_name }}">{{author.name}}</a>
                   <br>
                   {% assign words = content | number_of_words %}
                 </span>

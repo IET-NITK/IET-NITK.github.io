@@ -11,8 +11,12 @@ title: Say Hi!
       </p>
     </div>
     <div style="text-align: center">
-        <h4 class="card-title">{{ site.contactname }}</h4>
-        <p class="card-text">{{ site.contactphone }}<br>{{site.contactemail}}</p>
+        {% for person in site.contactdetails %}
+          <h4 class="card-title">{{ person.name }}</h4>
+          <p class="card-text">{{ person.phone }}</p>
+        {% endfor %}
+        <br/>
+        Email: {{site.contactemail}}
 
     </div>
     <div class="block-heading">
