@@ -18,7 +18,3 @@ image: *cover-image*
 
 *blog-body*
 _____
-
-## Maintainers
-- Nirmal Khedkar
-- Bhargav S.

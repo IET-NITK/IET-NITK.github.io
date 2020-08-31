@@ -1,6 +1,6 @@
 ---
 title: Competitive Programming as a Sport
-author: Vichitr
+author: VichitrGandas
 image: cp.jpg
 ---
 Exploring and understanding competitive programming.

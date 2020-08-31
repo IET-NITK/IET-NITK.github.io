@@ -10,7 +10,15 @@ ___
 This repository contains the official website for IET NITK Surathkal. 
 
 ## Bugs
-* In case you find bugs on the website, please create an Issue under the Issue Tab or [email](mailto:nirmalhk7@gmail.com?Subject=IETNITK%20Website) one of the developers.
+* In case you find bugs on the website, please create an Issue.
+
+## IET NITK Web Team
+Of course all of IET NITK is behind the website it is today, but it couldnt have been possible without the work of these people who really made it happen:
+- Bhargav S. (Convenor 2019-20)
+- Skanda Upadhyay (Co-Convenor)
+- Palash Aggarwal (Co-Convenor)
+- Nirmal Khedkar (Webmaster)
+- Sachin Pandey (Asst. Webmaster)
 
 ## License
 This Website is free and open source software, distributed under the The MIT License. 

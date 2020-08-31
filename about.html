@@ -45,26 +45,36 @@ alx: f4
         {% assign coremembers = site.data.authors | where_exp: "item", "item.position != 'Executive Member'"%}
         {% assign execmembers = site.data.authors | where_exp: "item", "item.position == 'Executive Member'"%}
         {% for author in coremembers %}
+          {% if author.alumni != true %}
           <div class="col-sm-6 col-md-4 col-lg-3" style="padding-bottom: 3em;" id="{{author.name}}">
-            <div class="card clean-card text-center" style="height:100%" id="{{ author.short_name }}">
+            <div class="card clean-card text-center {%if author.alumni==true%} bg-primary text-light {% endif %}" style="height:100%" id="{{ author.short_name }}">
               <!-- <img class="card-img-top w-100 d-block" src="/assets/img/avatars/avatar1.jpg"> -->
               <div class="card-body info">
                 <h4 class="card-title">{{ author.name }}</h4>
-                <p class="card-text">{{ author.position }}</p>
+                <p class="card-text">
+                  {{ author.position }}
+                </p>
                 <div class="icons">
                   {% if author.facebook %}
-                  <a href="https://www.facebook.com/{{author.facebook}}"><i class="icon-social-facebook"></i></a>
+                    <a href="https://www.facebook.com/{{author.facebook}}">
+                      <i class="icon-social-facebook {%if author.alumni==true%} text-light {% endif %}"></i>
+                    </a>
                   {% endif %}
                   {% if author.linkedin %}
-                  <a href="https://www.linkedin.com/in/{{author.linkedin}}"><i class="icon-social-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/{{author.linkedin}}">
+                      <i class="icon-social-linkedin {%if author.alumni==true%} text-light {% endif %}"></i>
+                    </a>
                   {% endif %}
                   {% if author.github %}
-                  <a href="https://www.github.com/{{author.github}}"><i class="icon-social-github"></i></a>
+                    <a href="https://www.github.com/{{author.github}}">
+                      <i class="icon-social-github {%if author.alumni==true%} text-light {% endif %}"></i>
+                    </a>
                   {% endif %}
                 </div>
               </div>
             </div>
           </div>
+          {% endif %}
         {% endfor %}
       </div>
       <hr/>

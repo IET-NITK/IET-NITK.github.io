@@ -1,3 +1,19 @@
+# ALUMNI
+- short_name: VichitrGandas
+  name: Vichitr Gandas
+  alumni: true
+  
+- short_name: Rajamani
+  name: Rajamani
+  alumni: true
+- short_name: Makarand
+  name: Makarand
+  alumni: true
+- short_name: Likitha
+  name: Likitha
+  alumni: true
+# CURRENT
+## CORE
 - short_name: SkandaUpadhyaya
   name: Skanda Upadhyaya
   linkedin: 
@@ -155,7 +171,7 @@
   image: 
 
 
-# Executive Members
+## EXEC MEMBERS
 - short_name: DhruvAgja
   name: Dhruv Agja
   linkedin: 

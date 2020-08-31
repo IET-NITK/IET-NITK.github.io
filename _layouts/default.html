@@ -5,10 +5,10 @@
 <html>
 
 <head>
-  {% seo %}
+    {% seo %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    {% if page.url == '/' %}
+    {% if page.url == "/" %}
       <title>IET NITK Official Website</title>
     {% else %}
       <title>{{ site.title}} - {{ page.title }}</title>
@@ -24,6 +24,27 @@
     <link rel="stylesheet" href={{ "/assets/css/custom.css" | relative_url }}>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> {% seo %}
     <link href="https://fonts.googleapis.com/css?family=Changa:600&display=swap" rel="stylesheet">
+    {% if jekyll.environment == 'production' %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+        ga('create', '{{ site.jekyll_analytics.GoogleAnalytics.id }}', 'auto');
+        ga('send', 'pageview');
+      
+      </script>
+    {% endif %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133733565-3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-133733565-3');
+    </script>
     <style>
       .ytplayer {
 pointer-events: none;

@@ -2,31 +2,29 @@
 title: Cipher Projects
 ---
 
-
 <main class="page blog-post-list">
   <section class="clean-block clean-blog-list dark">
     <div class="container">
       <div class="block-heading">
-        <img src={{ "/assets/img/Cipher-logo.png" | relative_url }} class="sig-logo" style="max-width:200px">
+        <img src={{ "/assets/img/siglogo/Cipher-logo.png" | relative_url }} class="sig-logo" style="max-width:200px">
         <h2 class="text-info" style="padding-top: 1em;">Cipher Projects</h2>
         <p>01000111 01000101 01000101 01001011 01001100 01001001 01000110 01000101 </p>
       </div>
       <div class="block-content">
-        {% for project in site.data.projects.Cipher %}
+        {% assign cipherProjects = site.data.projects | where_exp: "item", "item.sig == 'Cipher'"%}
+        {% for project in cipherProjects %}
         <div class="clean-blog-post">
           <div class="row">
             <div class="col-lg-12">
               <h3>{{ project.title }}</h3>
               
               <div class="info"><span class="text-muted">By 
-                {% for author in site.data.authors %}
-                  {% if author.short_name==project.owner %}
-                    <a href="{{author.url}}">{{ author.name }}</a>
-                  {% endif %}
-                {% endfor %}
+              <a href="{{author.url}}">{{ project.builtBy }}</a>
               </span></div>
               <p>{{ project.description }}</p>
-              <a href="{{project.url}}"><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></a>
+              {% if project.url %}
+                <a href="{{project.url}}"><button class="btn btn-outline-primary btn-sm" type="button">Read More</button></a>
+              {% endif %}
             </div>
           </div>
         </div>

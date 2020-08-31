@@ -15,7 +15,7 @@ contactemail: iet@nitk.ac.in
 # Jekyll-SEO
 title: IET NITK
 tagline: Official Website of Insitute of Engineering and Technology, NITK Chapter
-description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society.
+description: To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society. We are IET NITK.
 url: https://iet-nitk.github.io/
 author: IET NITK Web Team
 facebook: ietnitk
@@ -26,6 +26,7 @@ social:
 # the base hostname & protocol for your site
 collections:
   authors:
+
 recruitmentOpen: true
 
 plugins:
@@ -41,6 +42,7 @@ jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: UA-133733565-3          # Required - replace with your tracking id
     anonymizeIp: false 
+
 defaults:
   - scope:
       path: ""
