@@ -1,44 +1,51 @@
 - title: OCR API
   sig: Cipher
   description: An API powered by a neural network model trained to recognize handwritten text from images
-  builtBy: NirmalKhedkar JayeshSoni ShreyaChandra 
+  builtBy: NirmalKhedkar JayeshKumarSoni ShreyaChandra  
   ongoing: true
   year: 2019
   URL: 
 - title: Currency Analyzer
   sig: Cipher
   description: To build a model to identify and classify Indian Currency bills into 10 Rs note, 20 Rs note, 50 Rs note and so on. The model will be built using convolutional neural networks and image processing techniques.
-  builtBy: SkandaU RhevanthM  
+  builtBy: SkandaUpadhyaya RhevanthM   
   ongoing: false
   year: 
   URL: 
 - title: Chatbot
   sig: Cipher
   description: To build a bot which would reply to our questions and make simple conversations.
-  builtBy: RahulGite AgjaDhruv  
+  builtBy: RahulGite DhruvAgja   
   ongoing: false
   year: 
   URL: 
 - title: Human Activity Recognition
   sig: Cipher
   description: This project is to build a model that predicts the human activities such as Walking, Walking_Upstairs, Walking_Downstairs, Sitting, Standing or Laying using the data recorded through accelerometer and gyroscope sensors.
-  builtBy: VarshaP Dhanasekar  
+  builtBy: VarshaP Dhanasekhar   
   ongoing: false
   year: 
   URL: 
 - title: Pose Correction - AI Trainer
   sig: Cipher
   description: An intelligent system for workout posture evaluation with Ensemble Deep Neural Models. It assists the user by providing feedback regarding if the workout posture for a given workout is correct or not.
-  builtBy: Yuvraj   
+  builtBy: YuvrajDalia    
   ongoing: false
   year: 
   URL: 
 - title: The VR Project
   sig: Cipher
   description: A method to convert the given 2D sketch of the structure into a full fledged 3D structure which is ready to be experienced in VR.
-  builtBy: RhevanthM Uday Sachin Sowmya,Poojitha
+  builtBy: RhevanthM UdayKumar SachinPandey SowmyaG KrishnaPoojithaVantakula
   ongoing: true
   year: 
+  URL: 
+- title: Tic-Tac-Toe AI Player
+  sig: Cipher
+  description: 
+  builtBy: NirmalKhedkar FeyazBaker   
+  ongoing: true
+  year: 2020
   URL: 
 - title: Automatic Medicine Pill Dispenser
   sig: Rovisp
@@ -78,7 +85,6 @@
 - title: Smart Car Parking System
   sig: Rovisp
   description: Parking Slots booking with Smartphones. Car enters by showing RFID card, Presence of car is detected by IR sensors. Real time updates on server
-
   builtBy: 
   ongoing: false
   year: 
@@ -100,7 +106,7 @@
 - title: Eastern western note classifier
   sig: Rovisp
   description: We were able to analyze a simple series of musical sounds and determine each of their respective note simultaneously..
-  builtBy: 
+  builtBy: SharufBaig    
   ongoing: false
   year: 
   URL: 
@@ -135,7 +141,6 @@
 - title: Line Following and Obstacle Detection Robot
   sig: Torsion
   description: Obstacle Avoiding Robot, Automatically sense the obstacle . Robot navigates in unknown environment by avoiding collisions.
-
   builtBy: 
   ongoing: false
   year: 
@@ -156,11 +161,11 @@
   URL: 
 - title: Net Zero Energy Building
   sig: Torsion
-  description: 
-  builtBy: 
-  ongoing: false
-  year: 
-  URL: 
+  description: The Net Zero Energy Buildings (NZEB) platform is a one-stop shop to learn about NZEB fundamentals, build alliances with professionals and organizations, find inspiration from case studies, explore the latest technology/policies/ideas and everything NZEB. India emerges as a global leader for energy efficiency and renewable energy integration in buildings, with a thriving market and conducive policy environment for NZEBs.
+  builtBy: RithikAgrawal    
+  ongoing: true
+  year: 2020
+  URL: https://nzeb.in/
 - title: Material Optimization of Spur Gear Tooth
   sig: Torsion
   description: 

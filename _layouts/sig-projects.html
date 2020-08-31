@@ -16,8 +16,9 @@ layout: default
         </p>
       </div>
       <div class="block-content">
-        {% assign cipherProjects = site.data.projects | where_exp: "item",
-        "item.sig == signame"%} {% for project in cipherProjects %}
+        {% assign cipherProjects = site.data.projects | where_exp: "item", "item.sig == signame"%} 
+        {% for project in cipherProjects %}
+        {% assign projectBuilders= project.builtBy | split: " "%}
         <div class="clean-blog-post">
           <div class="row">
             <div class="col-lg-12">
@@ -26,7 +27,18 @@ layout: default
               <div class="info">
                 <span class="text-muted"
                   >By
-                  <a href="{{author.url}}">{{ project.builtBy }}</a>
+                  {% for builder in projectBuilders %}
+                  {% assign builderFullName = site.data.authors | where: 'short_name', builder | first %}
+                  {% unless forloop.first %}
+                    {% if forloop.last %}
+                      and
+                    {% else %}
+                      ,
+                    {% endif %} 
+                  {% endunless %}
+                  <a href="/about#{{builder}}">{{ builderFullName.name }}</a>
+
+                  {% endfor %}
                 </span>
               </div>
               <p>{{ project.description }}</p>
