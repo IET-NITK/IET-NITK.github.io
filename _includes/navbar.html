@@ -29,7 +29,7 @@ transition: top 0.3s;
           <div class="dropdown-menu" role="menu">
             {% for s in site.data.sig %}
             {% if s.no-link!=true %}
-            <a class="dropdown-item" role="presentation" href="{{ 'sig' | relative_url }}/{{s.name}}">{{s.name}}</a>
+            <a class="dropdown-item" role="presentation" href="{{ 'sig' | relative_url}}/{{s.name | downcase}}">{{s.name}}</a>
             {% endif %}
             {% endfor %}
           </div>

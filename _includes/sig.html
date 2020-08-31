@@ -8,7 +8,7 @@
             <p>{{ s.description }}</p>
             {% unless s.no-link == true %}
                 {% if page.url=="/" %}
-                    <a href="{{ 'sig' | relative_url }}/{{s.name}}" style="text-decoration: none;">
+                    <a href="{{ 'sig' | relative_url }}/{{s.name | downcase }}" style="text-decoration: none;">
                         <button class="btn btn-outline-primary btn-block" type="button">Read More</button>
                     </a>
                 {% endif %}
