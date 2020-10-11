@@ -1,0 +1,12 @@
+- name: Cipher
+  description: Cipher SIG brings together people interested in Computer Science and Information Technology.
+- name: Rovisp
+  description: Rovisp SIG brings together people who are passionate about Electronics and Electrical Technology.
+- name: Torsion
+  description: Torsion SIG brings together people interested in Mechanical, Civil, Chemical and Material Sciences.
+- name: Inkheart
+  description: Inkheart is our new Lit&Phil SIG for people who are passionate about literature, music etc
+  no_link: true
+- name: Medium
+  description: Medium SIG is dedicated to people interested in Media and Marketing.
+  no_link: true

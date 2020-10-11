@@ -1,117 +1,107 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const fs = require("fs")
+const yaml = require("js-yaml")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const authorTemplate = path.resolve(`./src/templates/author-page.js`)
+  const authors = yaml.safeLoad(
+    fs.readFileSync("./content/yml/authors.yaml", "utf-8")
+  )
+  authors.forEach(element => {
+    console.log("Member: Endpoint for " + element.name)
+    createPage({
+      path: "member/" + element.name,
+      component: authorTemplate,
+      context: {
+        pathSlug: element.name,
+        memberDetails: element,
+      },
+    })
+  })
 
-  // Get all markdown blog posts sorted by date
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
+  const sigTemplate = path.resolve(`./src/templates/sig-page.js`)
+  const sigs = yaml.safeLoad(fs.readFileSync("./content/yml/sig.yml", "utf-8"))
+  sigs.forEach(element => {
+    if (element.no_link !== true) {
+      console.log("SIG: Endpoint for " + element.name)
+      createPage({
+        path: "sig/" + element.name.toLowerCase(),
+        component: sigTemplate,
+        context: {
+          pathSlug: element.name,
+          sigDetails: element,
+        },
+      })
+    }
+  })
+
+  const blogTemplate = path.resolve("./src/templates/blog-post.js")
+  try {
+    graphql(`
+      query {
+        allFile(
+          filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
         ) {
           nodes {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-            }
+            relativeDirectory
           }
         }
       }
-    `
-  )
-
-  if (result.errors) {
-    reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
-      result.errors
-    )
-    return
-  }
-
-  const posts = result.data.allMarkdownRemark.nodes
-
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
-
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1]
-      const next = index === 0 ? null : posts[index - 1]
-
-      createPage({
-        path: post.fields.slug,
-        component: blogPost,
-        context: {
-          slug: post.fields.slug,
-          previous,
-          next,
-        },
+    `).then(result => {
+      let titleArray = result.data.allFile.nodes
+      titleArray.forEach(element => {
+        console.log("Blog: Endpoint for " + element.relativeDirectory)
+        createPage({
+          path: "blog/" + element.relativeDirectory,
+          component: blogTemplate,
+          context: {
+            pathSlug: element.relativeDirectory,
+          },
+        })
       })
     })
+  } catch {
+    throw Error("Error in generating pages for Blogs")
   }
-}
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  // const projects = yaml.safeLoad(
+  //   fs.readFileSync("./content/yml/projects.yml", "utf-8")
+  // )
+  // const project = path.resolve(`./src/templates/project.js`)
+  // projects.forEach(element => {
+  //   graphql(
+  //     `query MyQuery {
+  //         allFile(filter: {sourceInstanceName: {eq: "project-reports"}, relativeDirectory: {eq: "${element.title.toLowerCase()}"}}) {
+  //           edges {
+  //             node {
+  //               sourceInstanceName
+  //               childMarkdownRemark {
+  //                 frontmatter {
+  //                   title
+  //                 }
+  //               }
+  //               relativeDirectory
+  //             }
+  //           }
+  //         }
+  //       }
+  //       `
+  //   ).then(result => {
+  //     if (result.data.allFile.edges.length !== 0) {
+  //       console.log("Projects: Endpoint for " + element.title);
+  //       createPage({
+  //         path: "project/" + element.title,
+  //         component: project,
+  //         context: {
+  //           pathSlug: element.title,
+  //           projectDetails: element,
+  //         },
+  //       })
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
-
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-
-  // Explicitly define the siteMetadata {} object
-  // This way those will always be defined even if removed from gatsby-config.js
-
-  // Also explicitly define the Markdown frontmatter
-  // This way the "MarkdownRemark" queries will return `null` even when no
-  // blog posts are stored inside "content/blog" instead of returning an error
-  createTypes(`
-    type SiteSiteMetadata {
-      author: Author
-      siteUrl: String
-      social: Social
-    }
-
-    type Author {
-      name: String
-      summary: String
-    }
-
-    type Social {
-      twitter: String
-    }
-
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-      fields: Fields
-    }
-
-    type Frontmatter {
-      title: String
-      description: String
-      date: Date @dateformat
-    }
-
-    type Fields {
-      slug: String
-    }
-  `)
+  //     }
+  //   })
+  // })
 }
