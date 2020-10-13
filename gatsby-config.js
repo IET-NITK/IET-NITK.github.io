@@ -6,9 +6,6 @@ module.exports = {
     },
     description: `To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society. We are IET NITK.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
-    social: {
-      twitter: `kylemathews`,
-    },
   },
   plugins: [
     {
@@ -16,6 +13,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/img`,
+        name: `images`,
       },
     },
     {

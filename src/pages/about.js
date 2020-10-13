@@ -1,8 +1,17 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
+import { Link } from "gatsby"
+import members from "../../content/yml/authors.yaml"
+import Img_Beach from "../assets/img/beach.jpg"
 export const About = props => {
+  let alumni = members.filter(mem => mem.alumni)
+  let core = members.filter(
+    mem => mem.position !== "Executive Member" && mem.alumni !== true
+  )
+  let others = members.filter(
+    mem => mem.position === "Executive Member" && mem.alumni !== true
+  )
   return (
     <Layout location={props.location.pathname} title={"Main"}>
       <SEO title="Official Website of IET NITK" />
@@ -15,7 +24,7 @@ export const About = props => {
                   <div class="row justify-content-center">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                       <img
-                        src="/assets/img/beach.jpg"
+                        src={Img_Beach}
                         style={{ width: "100%", height: "auto" }}
                       />
                     </div>
@@ -55,73 +64,81 @@ export const About = props => {
 {% assign execmembers = site.data.authors | where_exp: "item", "item.position == 'Executive Member'"%}
 {% for author in coremembers %}
 {% if author.alumni != true %} */}
-              <div
-                class="col-sm-6 col-md-4 col-lg-3"
-                style={{ paddingBottom: "3em" }}
-                id="{{author.name}}"
-              >
+              {core.map((author, index) => (
                 <div
-                  class="card clean-card text-center {%if author.alumni==true%} bg-primary text-light {% endif %}"
-                  style={{ height: "100%" }}
-                  id="{{ author.short_name }}"
+                  to={`/member/${author.name}`}
+                  class="col-sm-6 col-md-4 col-lg-3"
+                  style={{ paddingBottom: "3em" }}
+                  id={author.name}
                 >
-                  {/* <!-- <img class="card-img-top w-100 d-block" src="/assets/img/avatars/avatar1.jpg"> --> */}
-                  <div class="card-body info">
-                    <h4 class="card-title">Author</h4>
-                    <p class="card-text">{/* {{ author.position }} */}</p>
-                    <div class="icons">
-                      {/* {% if author.facebook %} */}
-                      <a href="https://www.facebook.com/{{author.facebook}}">
-                        <i class="icon-social-facebook {%if author.alumni==true%} text-light {% endif %}"></i>
-                      </a>
-                      {/* {% endif %}
-{% if author.linkedin %} */}
-                      <a href="https://www.linkedin.com/in/{{author.linkedin}}">
-                        <i class="icon-social-linkedin {%if author.alumni==true%} text-light {% endif %}"></i>
-                      </a>
-                      {/* {% endif %}
-{% if author.github %} */}
-                      <a href="https://www.github.com/{{author.github}}">
-                        <i class="icon-social-github {%if author.alumni==true%} text-light {% endif %}"></i>
-                      </a>
-                      {/* {% endif %} */}
+                  <div
+                    class="card clean-card text-center"
+                    style={{ height: "100%" }}
+                    id={author.name}
+                  >
+                    <div class="card-body info">
+                      <Link to={`/member/${author.name}`}>
+                        <h4 class="card-title">{author.name}</h4>
+                      </Link>
+                      <p class="card-text">{author.position}</p>
+                      <div class="icons">
+                        <a href="https://www.facebook.com/{{author.facebook}}">
+                          <i class="icon-social-facebook {%if author.alumni==true%} text-light {% endif %}"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/{{author.linkedin}}">
+                          <i class="icon-social-linkedin {%if author.alumni==true%} text-light {% endif %}"></i>
+                        </a>
+                        <a href="https://www.github.com/{{author.github}}">
+                          <i class="icon-social-github {%if author.alumni==true%} text-light {% endif %}"></i>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              {/* {% endif %}
-{% endfor %} */}
+              ))}
             </div>
             <hr />
             <div class="row justify-content-center">
-              {/* {% for author in execmembers %} */}
-              <div
-                class="col-sm-6 col-md-4 col-lg-3"
-                style={{ paddingBottom: "3em" }}
-                id="{{author.name}}"
-              >
-                <div
-                  class="card clean-card text-center"
-                  style={{ boxShadow: "0 0 0px", height: "100%" }}
-                >
-                  <div class="card-body info">
-                    {/* <h4 class="card-title">{{ author.name }}</h4>
-<p class="card-text">{{ author.position }}</p> */}
-                    <div class="icons">
-                      {/* {% if author.facebook %}
-<a href="https://www.facebook.com/{{author.facebook}}"><i class="icon-social-facebook"></i></a>
-{% endif %}
-{% if author.linkedin %}
-<a href="https://www.linkedin.com/in/{{author.linkedin}}"><i class="icon-social-linkedin"></i></a>
-{% endif %}
-{% if author.github %}
-<a href="https://www.github.com/{{author.github}}"><i class="icon-social-github"></i></a>
-{% endif %} */}
+              {others.map((author, index) => (
+                <>
+                  {" "}
+                  <div
+                    class="col-sm-6 col-md-4 col-lg-3"
+                    style={{ paddingBottom: "3em" }}
+                    id={author.name}
+                  >
+                    <div
+                      class="card clean-card text-center"
+                      style={{ boxShadow: "0 0 0px", height: "100%" }}
+                    >
+                      <div class="card-body info">
+                        {" "}
+                        <Link to={`/member/${author.name}`}>
+                          <h4 class="card-title">{author.name}</h4>
+                        </Link>
+                        <p class="card-text">{author.position}</p>
+                        <div class="icons">
+                          {/* {% if author.facebook %} */}
+                          <a href="https://www.facebook.com/{{author.facebook}}">
+                            <i class="icon-social-facebook"></i>
+                          </a>
+                          {/* {% endif %} */}
+                          {/* {% if author.linkedin %} */}
+                          <a href="https://www.linkedin.com/in/{{author.linkedin}}">
+                            <i class="icon-social-linkedin"></i>
+                          </a>
+                          {/* {% endif %} */}
+                          {/* {% if author.github %} */}
+                          <a href="https://www.github.com/{{author.github}}">
+                            <i class="icon-social-github"></i>
+                          </a>
+                          {/* {% endif %} */}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              {/* {% endfor %} */}
+                </>
+              ))}
             </div>
           </div>
         </section>

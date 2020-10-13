@@ -1,5 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
+import IETLOGO from "./../../assets/img/logo.png"
+
 
 const TopNavbar = props => {
   return (
@@ -43,7 +45,7 @@ export const Navbar = props => {
           <div className="container">
             <a className="navbar-brand logo" href="/">
               <img
-                src="/assets/img/logo.png"
+                src={IETLOGO}
                 style={{height:"auto",maxWidth:"4em"}}
               />
             </a>
@@ -80,7 +82,6 @@ export const Navbar = props => {
                     className="dropdown-toggle nav-link"
                     data-toggle="dropdown"
                     aria-expanded="false"
-                    href="/"
                   >
                     SIGs
                   </a>

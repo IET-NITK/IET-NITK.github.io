@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Img_IETUpview from "../assets/img/iet-upview.jpg"
 
 const MainPage = props => {
   return (
@@ -38,8 +39,8 @@ const MainPage = props => {
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <img
-                  src="src/assets/img/iet-upview.jpg"
-                  // style="width: 100%;height:auto;padding-bottom: 1em;"
+                  src={Img_IETUpview}
+                  style={{width:"100%",height:"auto",paddingBottom:"1em"}}
                 />
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
