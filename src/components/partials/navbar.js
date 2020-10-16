@@ -5,27 +5,25 @@ import sigs from "../../../content/yml/sig.yml"
 
 const TopNavbar = props => {
   return (
-    <div className="fixed-top" id="navbar">
-      <div id="topContent">
-        <div className="py-2 bg-light">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-8 d-none d-lg-block">
-                <a href="/contact.html" className="small mr-3">
-                  <span className="icon-question-circle-o mr-2"></span>
-                  Any questions?
-                </a>
-              </div>
-              <div className="col-lg-4 d-lg-block text-right">
-                <a
-                  href="/recruitments"
-                  role="button"
-                  disabled
-                  className="btn btn-primary mr-3"
-                >
-                  Join IET NITK
-                </a>
-              </div>
+    <div id="topContent">
+      <div className="py-2 bg-light">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-8 d-none d-lg-block">
+              <a href="/contact.html" className="small mr-3">
+                <span className="icon-question-circle-o mr-2"></span>
+                Any questions?
+              </a>
+            </div>
+            <div className="col-lg-4 d-lg-block text-right">
+              <a
+                href="/recruitments"
+                role="button"
+                disabled
+                className="btn btn-primary mr-3"
+              >
+                Join IET NITK
+              </a>
             </div>
           </div>
         </div>
@@ -38,7 +36,7 @@ export const Navbar = props => {
   return (
     <>
       <div className="fixed-top" id="navbar">
-        {/* <TopNavbar /> */}
+        <TopNavbar />
         <nav
           className="navbar navbar-light navbar-expand-lg bg-white clean-navbar"
           style={{ borderBottom: "1px solid #c2c2c2" }}
@@ -77,21 +75,24 @@ export const Navbar = props => {
                 </li>
                 <li className="nav-item dropdown">
                   <div className="dropdown">
-                    <Link
+                    <a
                       className="nav-link dropdown-toggle"
                       data-toggle="dropdown"
                       href="#"
                     >
                       SIGS
-                    </Link>
+                    </a>
                     <ul
                       className="dropdown-menu"
                       role="menu"
                       aria-labelledby="dLabel"
                     >
                       {sigArray.map((element, index) => (
-                        <li>
-                          <Link className="dropdown-item" to={"/sig/"+element.name.toLowerCase()}>
+                        <li key={index}>
+                          <Link
+                            className="dropdown-item"
+                            to={"/sig/" + element.name.toLowerCase()}
+                          >
                             {element.name}
                           </Link>
                         </li>

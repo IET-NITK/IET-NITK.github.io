@@ -13,8 +13,8 @@ export const About = props => {
     mem => mem.position === "Executive Member" && mem.alumni !== true
   )
   return (
-    <Layout location={props.location.pathname} title={"Main"}>
-      <SEO title="Official Website of IET NITK" />
+    <Layout location={props.location.pathname} title={"About Us"}>
+      <SEO title="About Us" />
       <main className="page">
         <section className="clean-block about-us">
           <div className="container">

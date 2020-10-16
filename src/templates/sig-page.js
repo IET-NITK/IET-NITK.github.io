@@ -10,13 +10,13 @@ import Img_Inkheart from "../assets/img/siglogo/Inkheart-logo.png"
 export const SIG = props => {
   const { pageContext } = props
   const sig = pageContext.sigDetails
-  let image= null
-  if(sig.name==="Cipher") image=Img_Cipher
-  else if(sig.name==="Torsion") image=Img_Torsion
-  else if(sig.name==="Rovisp") image=Img_Rovisp
-  else if(sig.name==="Medium") image=Img_Medium
-  else if(sig.name==="Inkheart") image=Img_Inkheart
-  
+  let image = null
+  if (sig.name === "Cipher") image = Img_Cipher
+  else if (sig.name === "Torsion") image = Img_Torsion
+  else if (sig.name === "Rovisp") image = Img_Rovisp
+  else if (sig.name === "Medium") image = Img_Medium
+  else if (sig.name === "Inkheart") image = Img_Inkheart
+
   return (
     <Layout location={props.pathname && props.pathname.location}>
       <SEO title={sig.name} />
@@ -25,11 +25,12 @@ export const SIG = props => {
           <div className="container">
             <div className="block-heading">
               <img
+                alt={sig.name}
                 src={image}
                 className="sig-logo"
-                style={{maxWidth:"200px"}}
+                style={{ maxWidth: "200px" }}
               />
-              <h2 className="text-info" style={{paddingTop: "1em"}}>
+              <h2 className="text-info" style={{ paddingTop: "1em" }}>
                 {/* {sig.name} */}
               </h2>
               <p>{sig.description}</p>

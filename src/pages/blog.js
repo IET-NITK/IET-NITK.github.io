@@ -1,8 +1,11 @@
+import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-export const About = props => {
+export const Blog = props => {
+  let blogs = props.data.allFile.nodes
+  console.log(blogs)
   return (
     <Layout location={props.location.pathname} title={"Main"}>
       <SEO title="Blog" />
@@ -18,38 +21,44 @@ export const About = props => {
             <div className="block-content">
               {/* {% for post in site.posts %}
         {% assign author = site.data.authors | where: 'short_name', post.short_name | first %} */}
-              <div className="clean-blog-post">
-                <div className="row">
-                  <div className="col-lg-5">
-                    <img
-                      className="rounded img-fluid"
-                      src="/assets/img/blog/{{post.image}}"
-                      style={{width:'100%',height:'auto'}}
-                    />
-                  </div>
-                  <div className="col-lg-7">
-                    <h3>post.title</h3>
-                    <div className="info">
-                      {/* <span className="text-muted">
+              {blogs.map((element, index) => {
+                let link = element.relativeDirectory
+                let excerpt = element.childMarkdownRemark.excerpt
+                element = element.childMarkdownRemark.frontmatter
+                return (
+                  <div className="clean-blog-post">
+                    <div className="row">
+                      <div className="col-lg-5">
+                        <img
+                          alt="X"
+                          className="rounded img-fluid"
+                          src={element.image.childImageSharp.fluid.src}
+                          style={{ width: "100%", height: "auto" }}
+                        />
+                      </div>
+                      <div className="col-lg-7">
+                        <h3>{element.title}</h3>
+                        <div className="info">
+                          {/* <span className="text-muted">
                   {{ post.date | date_to_long_string }} by&nbsp;
                   <a href="/about#{{ author.short_name }}">{{author.name}}</a>
                   <br>
                   {% assign words = content | number_of_words %}
                 </span> */}
+                        </div>
+                        <p>{excerpt}</p>
+                        <Link
+                          to={link}
+                          className="btn btn-outline-primary btn-sm"
+                          type="button"
+                        >
+                          Read More
+                        </Link>
+                      </div>
                     </div>
-                    <p>"EXCERPT"</p>
-                    <a href="{{post.url | relative_url}}" className="no-underline">
-                      <button
-                        className="btn btn-outline-primary btn-sm"
-                        type="button"
-                      >
-                        Read More
-                      </button>
-                    </a>
                   </div>
-                </div>
-              </div>
-              {/* {% endfor %} */}
+                )
+              })}
             </div>
           </div>
         </section>
@@ -58,4 +67,33 @@ export const About = props => {
   )
 }
 
-export default About
+export const postQuery = graphql`
+  {
+    allFile(
+      filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
+      sort: { fields: birthTime, order: DESC }
+    ) {
+      nodes {
+        relativeDirectory
+        childMarkdownRemark {
+          timeToRead
+          excerpt(format: PLAIN)
+          frontmatter {
+            author
+            short_name
+            title
+            image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+export default Blog

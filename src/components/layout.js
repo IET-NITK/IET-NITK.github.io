@@ -7,7 +7,7 @@ const Layout = ({ location, title, children }) => {
   return (
     <>
       <Navbar />
-      <div style={{ paddingTop: "3em" }} />
+      <div style={{ paddingTop: `${location==='/'?'0em':'3em'}` }} />
       {children}
       <div
         className="clean-block add-on newsletter-sign-up blue"

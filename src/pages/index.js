@@ -4,9 +4,11 @@ import SEO from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
 
 const MainPage = props => {
+  let blog = props.data.allFile.nodes
+  console.log(blog)
   return (
     <Layout location={props.location.pathname} title={"Main"}>
-      <SEO />
+      <SEO title="We are IET NITK" />
       <main className="page landing-page">
         <section className="hero"></section>
         <section
@@ -26,9 +28,9 @@ const MainPage = props => {
             className="ytplayer"
             style={{ width: "100%", height: "90vh", zIndex: "1" }}
             src="https://www.youtube.com/embed/TI2rX3Oiku8?modestbranding=1&autoplay=1&rel=0&controls=0&mute=1&loop=1&autohide=10playlist=TI2rX3Oiku8"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
         <section className="clean-block about-us" id="about-us">
@@ -39,8 +41,13 @@ const MainPage = props => {
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <img
+                  alt="IET"
                   src={Img_IETUpview}
-                  style={{width:"100%",height:"auto",paddingBottom:"1em"}}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    paddingBottom: "1em",
+                  }}
                 />
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -89,7 +96,10 @@ const MainPage = props => {
                   </h2>
                   <p className="text-center">We love to write!</p>
                 </div>
-                <div className="row articles" style={{ paddingTop: "2em" }}></div>
+                <div
+                  className="row articles"
+                  style={{ paddingTop: "2em" }}
+                ></div>
               </div>
             </div>
           </div>
@@ -99,4 +109,30 @@ const MainPage = props => {
   )
 }
 
+export const postQuery = graphql`
+  {
+    allFile(
+      filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
+      sort: { fields: birthtime, order: DESC }
+      limit: 3
+    ) {
+      nodes {
+        relativeDirectory
+        childMarkdownRemark {
+          frontmatter {
+            author
+            title
+            image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 export default MainPage
