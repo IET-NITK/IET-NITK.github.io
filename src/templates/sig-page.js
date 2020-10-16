@@ -20,31 +20,31 @@ export const SIG = props => {
   return (
     <Layout location={props.pathname && props.pathname.location}>
       <SEO title={sig.name} />
-      <main class="page blog-post-list">
-        <section class="clean-block clean-blog-list dark">
-          <div class="container">
-            <div class="block-heading">
+      <main className="page blog-post-list">
+        <section className="clean-block clean-blog-list dark">
+          <div className="container">
+            <div className="block-heading">
               <img
                 src={image}
-                class="sig-logo"
+                className="sig-logo"
                 style={{maxWidth:"200px"}}
               />
-              <h2 class="text-info" style={{paddingTop: "1em"}}>
+              <h2 className="text-info" style={{paddingTop: "1em"}}>
                 {/* {sig.name} */}
               </h2>
               <p>{sig.description}</p>
             </div>
-            <div class="block-content">
+            <div className="block-content">
               {/* {% assign cipherProjects = site.data.projects | where_exp: "item", "item.sig == signame"%} 
         {% for project in cipherProjects %}
         {% assign projectBuilders= project.builtBy | split: " "%}
-        <div class="clean-blog-post">
-          <div class="row">
-            <div class="col-lg-12">
+        <div className="clean-blog-post">
+          <div className="row">
+            <div className="col-lg-12">
               <h3>{{ project.title }}</h3>
 
-              <div class="info">
-                <span class="text-muted"
+              <div className="info">
+                <span className="text-muted"
                   >By
                   {% for builder in projectBuilders %}
                   {% assign builderFullName = site.data.authors | where: 'short_name', builder | first %}
@@ -63,7 +63,7 @@ export const SIG = props => {
               <p>{{ project.description }}</p>
               {% if project.url %}
               <a href="{{project.url}}"
-                ><button class="btn btn-outline-primary btn-sm" type="button">
+                ><button className="btn btn-outline-primary btn-sm" type="button">
                   Read More
                 </button></a
               >

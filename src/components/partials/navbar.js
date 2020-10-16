@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import IETLOGO from "./../../assets/img/logo.png"
-
+import sigs from "../../../content/yml/sig.yml"
 
 const TopNavbar = props => {
   return (
@@ -34,20 +34,18 @@ const TopNavbar = props => {
   )
 }
 export const Navbar = props => {
+  let sigArray = sigs.filter(element => !element.no_link)
   return (
     <>
-      <div class="fixed-top" id="navbar">
+      <div className="fixed-top" id="navbar">
         {/* <TopNavbar /> */}
         <nav
           className="navbar navbar-light navbar-expand-lg bg-white clean-navbar"
-          style={{borderBottom:"1px solid #c2c2c2"}}
+          style={{ borderBottom: "1px solid #c2c2c2" }}
         >
           <div className="container">
             <a className="navbar-brand logo" href="/">
-              <img
-                src={IETLOGO}
-                style={{height:"auto",maxWidth:"4em"}}
-              />
+              <img src={IETLOGO} style={{ height: "auto", maxWidth: "4em" }} />
             </a>
             <button
               data-toggle="collapse"
@@ -78,21 +76,27 @@ export const Navbar = props => {
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
-                  <a
-                    className="dropdown-toggle nav-link"
-                    data-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    SIGs
-                  </a>
-                  <div className="dropdown-menu" role="menu">
+                  <div className="dropdown">
                     <Link
-                      className="dropdown-item"
-                      role="presentation"
-                      to="/sig/cipher"
+                      className="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      href="#"
                     >
-                      Cipher
+                      SIGS
                     </Link>
+                    <ul
+                      className="dropdown-menu"
+                      role="menu"
+                      aria-labelledby="dLabel"
+                    >
+                      {sigArray.map((element, index) => (
+                        <li>
+                          <Link className="dropdown-item" to={"/sig/"+element.name.toLowerCase()}>
+                            {element.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </li>
                 <li className="nav-item" role="presentation">

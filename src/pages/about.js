@@ -15,21 +15,21 @@ export const About = props => {
   return (
     <Layout location={props.location.pathname} title={"Main"}>
       <SEO title="Official Website of IET NITK" />
-      <main class="page">
-        <section class="clean-block about-us">
-          <div class="container">
-            <div class=" clean-card" style={{ boxShadow: "0px!important" }}>
-              <div class="card-body info">
-                <p class="card-text">
-                  <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <main className="page">
+        <section className="clean-block about-us">
+          <div className="container">
+            <div className=" clean-card" style={{ boxShadow: "0px!important" }}>
+              <div className="card-body info">
+                <p className="card-text">
+                  <div className="row justify-content-center">
+                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                       <img
                         src={Img_Beach}
                         style={{ width: "100%", height: "auto" }}
                       />
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                      <h2 class="text-info">About Us</h2>
+                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                      <h2 className="text-info">About Us</h2>
 
                       <p>
                         Chapter is a exclusive technical club under IET
@@ -53,13 +53,13 @@ export const About = props => {
             </div>
           </div>
         </section>
-        <section class="clean-block about-us">
-          <div class="container">
-            <div class="block-heading">
-              <h2 class="text-info">Our Family</h2>
+        <section className="clean-block about-us">
+          <div className="container">
+            <div className="block-heading">
+              <h2 className="text-info">Our Family</h2>
             </div>
 
-            <div class="row justify-content-center">
+            <div className="row justify-content-center">
               {/* {% assign coremembers = site.data.authors | where_exp: "item", "item.position != 'Executive Member'"%}
 {% assign execmembers = site.data.authors | where_exp: "item", "item.position == 'Executive Member'"%}
 {% for author in coremembers %}
@@ -67,29 +67,30 @@ export const About = props => {
               {core.map((author, index) => (
                 <div
                   to={`/member/${author.name}`}
-                  class="col-sm-6 col-md-4 col-lg-3"
+                  className="col-sm-6 col-md-4 col-lg-3"
                   style={{ paddingBottom: "3em" }}
                   id={author.name}
+                  key={index}
                 >
                   <div
-                    class="card clean-card text-center"
+                    className="card clean-card text-center"
                     style={{ height: "100%" }}
                     id={author.name}
                   >
-                    <div class="card-body info">
+                    <div className="card-body info">
                       <Link to={`/member/${author.name}`}>
-                        <h4 class="card-title">{author.name}</h4>
+                        <h4 className="card-title">{author.name}</h4>
                       </Link>
-                      <p class="card-text">{author.position}</p>
-                      <div class="icons">
+                      <p className="card-text">{author.position}</p>
+                      <div className="icons">
                         <a href="https://www.facebook.com/{{author.facebook}}">
-                          <i class="icon-social-facebook {%if author.alumni==true%} text-light {% endif %}"></i>
+                          <i className="icon-social-facebook {%if author.alumni==true%} text-light {% endif %}"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/{{author.linkedin}}">
-                          <i class="icon-social-linkedin {%if author.alumni==true%} text-light {% endif %}"></i>
+                          <i className="icon-social-linkedin {%if author.alumni==true%} text-light {% endif %}"></i>
                         </a>
                         <a href="https://www.github.com/{{author.github}}">
-                          <i class="icon-social-github {%if author.alumni==true%} text-light {% endif %}"></i>
+                          <i className="icon-social-github {%if author.alumni==true%} text-light {% endif %}"></i>
                         </a>
                       </div>
                     </div>
@@ -98,39 +99,39 @@ export const About = props => {
               ))}
             </div>
             <hr />
-            <div class="row justify-content-center">
+            <div className="row justify-content-center">
               {others.map((author, index) => (
                 <>
                   {" "}
                   <div
-                    class="col-sm-6 col-md-4 col-lg-3"
+                    className="col-sm-6 col-md-4 col-lg-3"
                     style={{ paddingBottom: "3em" }}
                     id={author.name}
                   >
                     <div
-                      class="card clean-card text-center"
+                      className="card clean-card text-center"
                       style={{ boxShadow: "0 0 0px", height: "100%" }}
                     >
-                      <div class="card-body info">
+                      <div className="card-body info">
                         {" "}
                         <Link to={`/member/${author.name}`}>
-                          <h4 class="card-title">{author.name}</h4>
+                          <h4 className="card-title">{author.name}</h4>
                         </Link>
-                        <p class="card-text">{author.position}</p>
-                        <div class="icons">
+                        <p className="card-text">{author.position}</p>
+                        <div className="icons">
                           {/* {% if author.facebook %} */}
                           <a href="https://www.facebook.com/{{author.facebook}}">
-                            <i class="icon-social-facebook"></i>
+                            <i className="icon-social-facebook"></i>
                           </a>
                           {/* {% endif %} */}
                           {/* {% if author.linkedin %} */}
                           <a href="https://www.linkedin.com/in/{{author.linkedin}}">
-                            <i class="icon-social-linkedin"></i>
+                            <i className="icon-social-linkedin"></i>
                           </a>
                           {/* {% endif %} */}
                           {/* {% if author.github %} */}
                           <a href="https://www.github.com/{{author.github}}">
-                            <i class="icon-social-github"></i>
+                            <i className="icon-social-github"></i>
                           </a>
                           {/* {% endif %} */}
                         </div>

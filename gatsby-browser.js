@@ -14,4 +14,6 @@ import "./src/assets/css/bootstrap.css"
 
 import "./src/assets/css/modern.css"
 import "./src/assets/css/custom.css"
-
+import Popper from 'popper.js'
+import $ from 'jquery'
+import 'bootstrap/dist/js/bootstrap.js';
