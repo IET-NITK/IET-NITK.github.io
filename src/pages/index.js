@@ -103,6 +103,7 @@ const MainPage = props => {
                       <div class="col-sm-6 col-md-4 item">
                         <div class="card">
                           <img
+                            alt={element.childMarkdownRemark.frontmatter.title}
                             class="card-img-top w-100 d-block"
                             src={element.childMarkdownRemark.frontmatter.image.childImageSharp.fluid.src}
                           />

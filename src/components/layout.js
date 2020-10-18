@@ -9,7 +9,7 @@ const Layout = ({ location, title, children }) => {
       <Navbar />
       <div style={{ paddingTop: `${location==='/'?'0em':'3em'}` }} />
       {children}
-      <div
+      {/* <div
         className="clean-block add-on newsletter-sign-up blue"
         style={{backgroundColor:'#803391',padding:'30px 0px'}}
       >
@@ -18,7 +18,7 @@ const Layout = ({ location, title, children }) => {
         <button className="btn btn-outline-light" type="button">
           Subscribe
         </button>
-      </div>
+      </div> */}
       <Footer />
     </>
   )

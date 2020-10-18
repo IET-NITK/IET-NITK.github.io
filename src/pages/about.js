@@ -32,6 +32,7 @@ const MemberSocialMedia = ({ linkedin, github, facebook }) => (
 )
 
 export const About = props => {
+  //eslint-ignore-next-line
   let alumni = members.filter(mem => mem.alumni)
   let core = members.filter(
     mem => mem.position !== "Executive Member" && mem.alumni !== true

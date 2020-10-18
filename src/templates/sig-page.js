@@ -51,10 +51,7 @@ export const SIG = props => {
                               <span className="text-muted">
                                 By
                                 {element.builtBy.map((name, index2) => (
-                                  <>
-                                    {index2 + 1 !== element.builtBy.length
-                                      ? ", "
-                                      : " and "}
+                                  <>{" "}
                                     <Link
                                       key={index2}
                                       to={
@@ -64,6 +61,8 @@ export const SIG = props => {
                                     >
                                       {name}
                                     </Link>
+
+                                    {index2+2===element.builtBy.length? " and": index2+1!==element.builtBy.length ? "," : ""}
                                   </>
                                 ))}
                               </span>
@@ -74,14 +73,6 @@ export const SIG = props => {
                         )}
 
                         <p> {element.description} </p>
-                        <a href="{{project.url}}">
-                          <button
-                            className="btn btn-outline-primary btn-sm"
-                            type="button"
-                          >
-                            Read More
-                          </button>
-                        </a>
                       </div>
                     </div>
                   </div>
