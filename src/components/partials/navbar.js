@@ -10,20 +10,28 @@ const TopNavbar = props => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-8 d-none d-lg-block">
-              <a href="/contact.html" className="small mr-3">
+              <Link to="/contact.html" className="small mr-3">
                 <span className="icon-question-circle-o mr-2"></span>
                 Any questions?
-              </a>
+              </Link>
             </div>
             <div className="col-lg-4 d-lg-block text-right">
-              <a
-                href="/recruitments"
+              <Link
+                to="/recruitment"
                 role="button"
                 disabled
                 className="btn btn-primary mr-3"
               >
                 Join IET NITK
-              </a>
+              </Link>
+              <Link
+                to="/smp"
+                role="button"
+                disabled
+                className="btn btn-outline-primary mr-3"
+              >
+                SMP
+              </Link>
             </div>
           </div>
         </div>

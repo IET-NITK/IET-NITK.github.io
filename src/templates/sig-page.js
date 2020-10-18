@@ -6,6 +6,8 @@ import Img_Rovisp from "../assets/img/siglogo/Rovisp-logo.png"
 import Img_Torsion from "../assets/img/siglogo/Torsion-logo.png"
 import Img_Medium from "../assets/img/siglogo/Medium-logo.png"
 import Img_Inkheart from "../assets/img/siglogo/Inkheart-logo.png"
+import projectyml from "../../content/yml/projects.yml"
+import { Link } from "gatsby"
 
 export const SIG = props => {
   const { pageContext } = props
@@ -16,7 +18,8 @@ export const SIG = props => {
   else if (sig.name === "Rovisp") image = Img_Rovisp
   else if (sig.name === "Medium") image = Img_Medium
   else if (sig.name === "Inkheart") image = Img_Inkheart
-
+  let projects = projectyml.filter(element => element.sig === sig.name)
+  console.log(projects)
   return (
     <Layout location={props.pathname && props.pathname.location}>
       <SEO title={sig.name} />
@@ -36,43 +39,54 @@ export const SIG = props => {
               <p>{sig.description}</p>
             </div>
             <div className="block-content">
-              {/* {% assign cipherProjects = site.data.projects | where_exp: "item", "item.sig == signame"%} 
-        {% for project in cipherProjects %}
-        {% assign projectBuilders= project.builtBy | split: " "%}
-        <div className="clean-blog-post">
-          <div className="row">
-            <div className="col-lg-12">
-              <h3>{{ project.title }}</h3>
+              {projects.map((element, index) => {
+                return (
+                  <div key={index} className="clean-blog-post">
+                    <div className="row">
+                      <div className="col-lg-12">
+                        <h3> {element.title} </h3>
+                        {element.builtBy !== null ? (
+                          <>
+                            <div className="info">
+                              <span className="text-muted">
+                                By
+                                {element.builtBy.map((name, index2) => (
+                                  <>
+                                    {index2 + 1 !== element.builtBy.length
+                                      ? ", "
+                                      : " and "}
+                                    <Link
+                                      key={index2}
+                                      to={
+                                        "/member/" +
+                                        name.toLowerCase().split(" ").join("")
+                                      }
+                                    >
+                                      {name}
+                                    </Link>
+                                  </>
+                                ))}
+                              </span>
+                            </div>
+                          </>
+                        ) : (
+                          <></>
+                        )}
 
-              <div className="info">
-                <span className="text-muted"
-                  >By
-                  {% for builder in projectBuilders %}
-                  {% assign builderFullName = site.data.authors | where: 'short_name', builder | first %}
-                  {% unless forloop.first %}
-                    {% if forloop.last %}
-                      and
-                    {% else %}
-                      ,
-                    {% endif %} 
-                  {% endunless %}
-                  <a href="/about#{{builder}}">{{ builderFullName.name }}</a>
-
-                  {% endfor %}
-                </span>
-              </div>
-              <p>{{ project.description }}</p>
-              {% if project.url %}
-              <a href="{{project.url}}"
-                ><button className="btn btn-outline-primary btn-sm" type="button">
-                  Read More
-                </button></a
-              >
-              {% endif %}
-            </div>
-          </div>
-        </div>
-        {% endfor %} */}
+                        <p> {element.description} </p>
+                        <a href="{{project.url}}">
+                          <button
+                            className="btn btn-outline-primary btn-sm"
+                            type="button"
+                          >
+                            Read More
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </section>
