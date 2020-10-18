@@ -6,11 +6,11 @@ const SMP = props => {
   return (
     <Layout>
       <SEO />
-      <main class="page">
-        <section class="clean-block about-us">
-          <div class="container">
-            <div class="block-heading">
-              <h2 class="text-info">IET NITK SMP</h2>
+      <main className="page">
+        <section className="clean-block about-us">
+          <div className="container">
+            <div className="block-heading">
+              <h2 className="text-info">IET NITK SMP</h2>
               <p>
                 IET NITK's Official Mentorship Program, exclusive for first and
                 second years.

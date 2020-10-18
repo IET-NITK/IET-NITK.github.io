@@ -9,26 +9,26 @@ export const BlogArticle = props => {
   const next = blog.next
   const current = blog.node.childMarkdownRemark
   // const currentBirthTime = 
-  console.log(blog, previous, next, current)
+  
   return (
     <Layout>
-      <main class="page blog-post">
-        <section class="clean-block clean-post dark">
-          <div class="container">
-            <div class="block-content">
+      <main className="page blog-post">
+        <section className="clean-block clean-post dark">
+          <div className="container">
+            <div className="block-content">
               <div
-                class="post-image"
+                className="post-image"
                 style={{backgroundImage:`url('${current.frontmatter.image.childImageSharp.fluid.src}')`,backgroundAttachment:"fixed","backgroundRepeat":"no-repeat"}}
               ></div>
 
-              <div class="post-body">
+              <div className="post-body">
                 <h3>{current.frontmatter.title}</h3>
-                <div class="post-info">
+                <div className="post-info">
                   <span>
                     By{" "}
                     <b>
                       <a
-                        class="no-underline"
+                        className="no-underline"
                         href={`/member/${current.frontmatter.author
                           .toLowerCase()
                           .split(" ")
@@ -45,7 +45,7 @@ export const BlogArticle = props => {
                   Written by{" "}
                   <b>
                     <a
-                      class="no-underline"
+                      className="no-underline"
                       href={`/member/${current.frontmatter.author
                         .toLowerCase()
                         .split(" ")

@@ -7,11 +7,11 @@ const SMP = props => {
   return (
     <Layout>
       <SEO title="Join Us!" />
-      <main class="page faq-page">
-        <section class="clean-block about-us">
-          <div class="container">
-            <div class="block-heading">
-              <h2 class="text-info">We're Looking For You!</h2>
+      <main className="page faq-page">
+        <section className="clean-block about-us">
+          <div className="container">
+            <div className="block-heading">
+              <h2 className="text-info">We're Looking For You!</h2>
               <p>
                 IET NITK is looking for smart people willing to reach out to
                 others! Check out where we're recruiting:
@@ -21,7 +21,7 @@ const SMP = props => {
           </div>
         </section>
         <div
-          class="clean-block add-on newsletter-sign-up blue"
+          className="clean-block add-on newsletter-sign-up blue"
           style={{
             backgroundColor: "#803391",
             padding: "30px 0px",
@@ -31,29 +31,29 @@ const SMP = props => {
           <h2>Fill the Application Forms Now</h2>
           <a
             href="https://forms.gle/TjVQ7YFAFZWQaVSV6"
-            class="btn btn-light btn-lg ml-5"
+            className="btn btn-light btn-lg ml-5"
             type="button"
           >
             Join Us
           </a>
         </div>
-        <section class="clean-block clean-faq dark">
-          <div class="container">
-            <div class="block-heading">
-              <h2 class="text-info">Recruitments FAQ</h2>
+        <section className="clean-block clean-faq dark">
+          <div className="container">
+            <div className="block-heading">
+              <h2 className="text-info">Recruitments FAQ</h2>
               <p>{new Date().getFullYear()} Recruitment FAQs and Details</p>
             </div>
 
-            <div class="block-content">
-              <div class="faq-item">
+            <div className="block-content">
+              <div className="faq-item">
                 {recruitmentQ.map((e, i) => (
                   <>
-                    <h4 class="question">{e.question}</h4>
-                    <div class="answer">{e.answer}</div>
+                    <h4 className="question">{e.question}</h4>
+                    <div className="answer">{e.answer}</div>
                   </>
                 ))}
               </div>
-              <p class="text-primary mt-5">
+              <p className="text-primary mt-5">
                 Please stay tuned to our social media pages for updates.{" "}
               </p>
             </div>

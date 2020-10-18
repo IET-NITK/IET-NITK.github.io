@@ -19,7 +19,7 @@ export const SIG = props => {
   else if (sig.name === "Medium") image = Img_Medium
   else if (sig.name === "Inkheart") image = Img_Inkheart
   let projects = projectyml.filter(element => element.sig === sig.name)
-  console.log(projects)
+
   return (
     <Layout location={props.pathname && props.pathname.location}>
       <SEO title={sig.name} />
@@ -39,45 +39,47 @@ export const SIG = props => {
               <p>{sig.description}</p>
             </div>
             <div className="block-content">
-              {projects.map((element, index) => {
-                return (
-                  <div key={index} className="clean-blog-post">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <h3> {element.title} </h3>
-                        {element.builtBy !== null ? (
-                          <>
-                            <div className="info">
-                              <span className="text-muted">
-                                By
-                                {element.builtBy.map((name, index2) => (
-                                  <>{" "}
-                                    <Link
-                                      key={index2}
-                                      to={
-                                        "/member/" +
-                                        name.toLowerCase().split(" ").join("")
-                                      }
-                                    >
-                                      {name}
-                                    </Link>
+              {projects.map((element, index) => (
+                <div key={index} className="clean-blog-post">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <h3> {element.title} </h3>
+                      {element.builtBy !== null ? (
+                        <>
+                          <div className="info">
+                            <span className="text-muted">
+                              By
+                              {element.builtBy.map((name, index2) => (
+                                <>
+                                  {" "}
+                                  <Link
+                                    key={"x" + index2}
+                                    to={
+                                      "/member/" +
+                                      name.toLowerCase().split(" ").join("")
+                                    }
+                                  >
+                                    {name}
+                                  </Link>
+                                  {index2 + 2 === element.builtBy.length
+                                    ? " and"
+                                    : index2 + 1 !== element.builtBy.length
+                                    ? ","
+                                    : ""}
+                                </>
+                              ))}
+                            </span>
+                          </div>
+                        </>
+                      ) : (
+                        <></>
+                      )}
 
-                                    {index2+2===element.builtBy.length? " and": index2+1!==element.builtBy.length ? "," : ""}
-                                  </>
-                                ))}
-                              </span>
-                            </div>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-
-                        <p> {element.description} </p>
-                      </div>
+                      <p> {element.description} </p>
                     </div>
                   </div>
-                )
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </section>

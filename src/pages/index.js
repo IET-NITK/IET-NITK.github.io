@@ -6,7 +6,7 @@ import Img_IETUpview from "../assets/img/iet-upview.jpg"
 
 const MainPage = props => {
   let blog = props.data.allFile.nodes
-  console.log(blog)
+  
   return (
     <Layout location={props.location.pathname} title={"Main"}>
       <SEO title="We are IET NITK" />
@@ -100,27 +100,27 @@ const MainPage = props => {
                 <div className="row articles" style={{ paddingTop: "2em" }}>
                   {props.data.allFile.nodes.map((element, index) => {
                     return (
-                      <div class="col-sm-6 col-md-4 item">
-                        <div class="card">
+                      <div className="col-sm-6 col-md-4 item">
+                        <div className="card">
                           <img
                             alt={element.childMarkdownRemark.frontmatter.title}
-                            class="card-img-top w-100 d-block"
+                            className="card-img-top w-100 d-block"
                             src={element.childMarkdownRemark.frontmatter.image.childImageSharp.fluid.src}
                           />
-                          <div class="card-body">
-                            <h4 class="card-title">{element.childMarkdownRemark.frontmatter.title}</h4>
-                            <h6 class="text-muted card-subtitle mb-2">
+                          <div className="card-body">
+                            <h4 className="card-title">{element.childMarkdownRemark.frontmatter.title}</h4>
+                            <h6 className="text-muted card-subtitle mb-2">
                               {"by "+element.childMarkdownRemark.frontmatter.author}
                             </h6>
-                            {/* <p class="card-text">ost.excerpt</p> */}
+                            {/* <p className="card-text">ost.excerpt</p> */}
                             <div style={{ textAlign: "center" }}>
                               <Link
-                                class=""
+                                className=""
                                 style={{ textDecoration: "none" }}
                                 to={"blog/"+element.relativeDirectory}
                               >
                                 Read More
-                                <i class="fa fa-arrow-circle-right ml-2"></i>
+                                <i className="fa fa-arrow-circle-right ml-2"></i>
                               </Link>
                             </div>
                           </div>

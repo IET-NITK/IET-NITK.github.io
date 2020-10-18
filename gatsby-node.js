@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const authorTemplate = path.resolve(`./src/templates/author-page.js`)
   const authors = yaml.safeLoad(
-    fs.readFileSync("./content/yml/authors.yaml", "utf-8")
+    fs.readFileSync("./content/yml/authors.yml", "utf-8")
   )
   authors.forEach(element => {
     console.log("Member: Endpoint for " + element.name.toLowerCase().split(" ").join(""))

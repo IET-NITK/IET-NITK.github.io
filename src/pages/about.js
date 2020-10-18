@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
-import members from "../../content/yml/authors.yaml"
+import members from "../../content/yml/authors.yml"
 import Img_Beach from "../assets/img/beach.jpg"
 
 const MemberSocialMedia = ({ linkedin, github, facebook }) => (

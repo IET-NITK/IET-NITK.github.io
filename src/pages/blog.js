@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 export const Blog = props => {
   let blogs = props.data.allFile.nodes
-  console.log(blogs)
+  
   return (
     <Layout location={props.location.pathname} title={"Main"}>
       <SEO title="Blog" />
