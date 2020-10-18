@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
@@ -96,10 +97,37 @@ const MainPage = props => {
                   </h2>
                   <p className="text-center">We love to write!</p>
                 </div>
-                <div
-                  className="row articles"
-                  style={{ paddingTop: "2em" }}
-                ></div>
+                <div className="row articles" style={{ paddingTop: "2em" }}>
+                  {props.data.allFile.nodes.map((element, index) => {
+                    return (
+                      <div class="col-sm-6 col-md-4 item">
+                        <div class="card">
+                          <img
+                            class="card-img-top w-100 d-block"
+                            src={element.childMarkdownRemark.frontmatter.image.childImageSharp.fluid.src}
+                          />
+                          <div class="card-body">
+                            <h4 class="card-title">{element.childMarkdownRemark.frontmatter.title}</h4>
+                            <h6 class="text-muted card-subtitle mb-2">
+                              {"by "+element.childMarkdownRemark.frontmatter.author}
+                            </h6>
+                            {/* <p class="card-text">ost.excerpt</p> */}
+                            <div style={{ textAlign: "center" }}>
+                              <Link
+                                class=""
+                                style={{ textDecoration: "none" }}
+                                to={"blog/"+element.relativeDirectory}
+                              >
+                                Read More
+                                <i class="fa fa-arrow-circle-right ml-2"></i>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
               </div>
             </div>
           </div>
@@ -136,3 +164,4 @@ export const postQuery = graphql`
   }
 `
 export default MainPage
+

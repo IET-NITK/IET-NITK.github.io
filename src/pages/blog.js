@@ -80,7 +80,6 @@ export const postQuery = graphql`
           excerpt(format: PLAIN)
           frontmatter {
             author
-            short_name
             title
             image {
               childImageSharp {

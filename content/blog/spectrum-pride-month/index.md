@@ -1,7 +1,7 @@
 ---
 title: Effect of technology on rights and freedoms of the queer community
-short_name: FeyazBaker
-fullname: Feyaz Baker
+author: Feyaz Baker
+fullname: Feyaz Baker 
 image: spectrumbanner.png
 displayOnBlog: false
 ---

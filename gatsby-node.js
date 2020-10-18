@@ -11,9 +11,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     fs.readFileSync("./content/yml/authors.yaml", "utf-8")
   )
   authors.forEach(element => {
-    console.log("Member: Endpoint for " + element.name)
+    console.log("Member: Endpoint for " + element.name.toLowerCase().split(" ").join(""))
     createPage({
-      path: "member/" + element.name,
+      path: "member/" + element.name.toLowerCase().split(" ").join(""),
       component: authorTemplate,
       context: {
         pathSlug: element.name,

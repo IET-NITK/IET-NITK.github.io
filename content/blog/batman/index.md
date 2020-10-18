@@ -1,7 +1,6 @@
 ---
 title: Analysis of Batman
-short_name: FeyazBaker
-fullname: Feyaz Baker
+author: Feyaz Baker
 image: batman.jpg
 ---
 

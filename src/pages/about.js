@@ -4,6 +4,33 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import members from "../../content/yml/authors.yaml"
 import Img_Beach from "../assets/img/beach.jpg"
+
+const MemberSocialMedia = ({ linkedin, github, facebook }) => (
+  <div className="icons">
+    {facebook ? (
+      <a href={"https://www.facebook.com/" + facebook}>
+        <i className="fa fa-facebook"></i>
+      </a>
+    ) : (
+      <></>
+    )}
+    {linkedin ? (
+      <a href={"https://www.linkedin.com/in/" + linkedin}>
+        <i className="fa fa-linkedin"></i>
+      </a>
+    ) : (
+      <></>
+    )}
+    {github ? (
+      <a href={"https://www.github.com/" + github}>
+        <i className="fa fa-github"></i>
+      </a>
+    ) : (
+      <></>
+    )}
+  </div>
+)
+
 export const About = props => {
   let alumni = members.filter(mem => mem.alumni)
   let core = members.filter(
@@ -20,7 +47,7 @@ export const About = props => {
           <div className="container">
             <div className=" clean-card" style={{ boxShadow: "0px!important" }}>
               <div className="card-body info">
-                <p className="card-text">
+                <div className="card-text">
                   <div className="row justify-content-center">
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                       <img
@@ -48,7 +75,7 @@ export const About = props => {
                       </p>
                     </div>
                   </div>
-                </p>
+                </div>
               </div>
             </div>
           </div>
@@ -66,7 +93,10 @@ export const About = props => {
 {% if author.alumni != true %} */}
               {core.map((author, index) => (
                 <div
-                  to={`/member/${author.name}`}
+                  to={`/member/${author.name
+                    .toLowerCase()
+                    .split(" ")
+                    .join("")}`}
                   className="col-sm-6 col-md-4 col-lg-3"
                   style={{ paddingBottom: "3em" }}
                   id={author.name}
@@ -78,21 +108,15 @@ export const About = props => {
                     id={author.name}
                   >
                     <div className="card-body info">
-                      <Link to={`/member/${author.name}`}>
+                      <Link to={`/member/${author.name.toLowerCase().split(" ").join("")}`}>
                         <h4 className="card-title">{author.name}</h4>
                       </Link>
                       <p className="card-text">{author.position}</p>
-                      <div className="icons">
-                        <a href="https://www.facebook.com/{{author.facebook}}">
-                          <i className="icon-social-facebook {%if author.alumni==true%} text-light {% endif %}"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/{{author.linkedin}}">
-                          <i className="icon-social-linkedin {%if author.alumni==true%} text-light {% endif %}"></i>
-                        </a>
-                        <a href="https://www.github.com/{{author.github}}">
-                          <i className="icon-social-github {%if author.alumni==true%} text-light {% endif %}"></i>
-                        </a>
-                      </div>
+                      <MemberSocialMedia
+                        linkedin={author.linkedin}
+                        facebook={author.facebook}
+                        github={author.github}
+                      />
                     </div>
                   </div>
                 </div>
@@ -102,11 +126,11 @@ export const About = props => {
             <div className="row justify-content-center">
               {others.map((author, index) => (
                 <>
-                  {" "}
                   <div
                     className="col-sm-6 col-md-4 col-lg-3"
                     style={{ paddingBottom: "3em" }}
                     id={author.name}
+                    key={index}
                   >
                     <div
                       className="card clean-card text-center"
@@ -114,27 +138,15 @@ export const About = props => {
                     >
                       <div className="card-body info">
                         {" "}
-                        <Link to={`/member/${author.name}`}>
+                        <Link to={`/member/${author.name.toLowerCase().split(" ").join("")}`}>
                           <h4 className="card-title">{author.name}</h4>
                         </Link>
                         <p className="card-text">{author.position}</p>
-                        <div className="icons">
-                          {/* {% if author.facebook %} */}
-                          <a href="https://www.facebook.com/{{author.facebook}}">
-                            <i className="icon-social-facebook"></i>
-                          </a>
-                          {/* {% endif %} */}
-                          {/* {% if author.linkedin %} */}
-                          <a href="https://www.linkedin.com/in/{{author.linkedin}}">
-                            <i className="icon-social-linkedin"></i>
-                          </a>
-                          {/* {% endif %} */}
-                          {/* {% if author.github %} */}
-                          <a href="https://www.github.com/{{author.github}}">
-                            <i className="icon-social-github"></i>
-                          </a>
-                          {/* {% endif %} */}
-                        </div>
+                        <MemberSocialMedia
+                          linkedin={author.linkedin}
+                          facebook={author.facebook}
+                          github={author.github}
+                        />
                       </div>
                     </div>
                   </div>

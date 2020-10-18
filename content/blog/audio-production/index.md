@@ -1,6 +1,5 @@
 ---
 title: Audio Production
-
 author: Rajamani
 image: audio.jpg
 ---
