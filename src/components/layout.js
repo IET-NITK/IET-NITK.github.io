@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Navbar from "./partials/navbar"
 import Footer from "./partials/footer"
 

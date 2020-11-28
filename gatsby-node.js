@@ -26,9 +26,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const sigs = yaml.safeLoad(fs.readFileSync("./content/yml/sig.yml", "utf-8"))
   sigs.forEach(element => {
     if (element.no_link !== true) {
-      console.log("SIG: Endpoint for " + element.name)
+      console.log("SIG: Endpoint for " + element.name.toLowerCase().split(" ").join(""))
       createPage({
-        path: "sig/" + element.name.toLowerCase(),
+        path: "sig/" + element.name.toLowerCase().split(" ").join(""),
         component: sigTemplate,
         context: {
           pathSlug: element.name,
@@ -53,7 +53,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `).then(result => {
       let titleArray = result.data.allFile.nodes
       titleArray.forEach(element => {
-        console.log("Blog: Endpoint for " + element.relativeDirectory)
+        console.log("Blog: Endpoint for " + element.relativeDirectory.toLowerCase().split(" ").join(""))
         createPage({
           path: "blog/" + element.relativeDirectory,
           component: blogTemplate,
@@ -67,41 +67,41 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     throw Error("Error in generating pages for Blogs")
   }
 
-  // const projects = yaml.safeLoad(
-  //   fs.readFileSync("./content/yml/projects.yml", "utf-8")
-  // )
-  // const project = path.resolve(`./src/templates/project.js`)
-  // projects.forEach(element => {
-  //   graphql(
-  //     `query MyQuery {
-  //         allFile(filter: {sourceInstanceName: {eq: "project-reports"}, relativeDirectory: {eq: "${element.title.toLowerCase()}"}}) {
-  //           edges {
-  //             node {
-  //               sourceInstanceName
-  //               childMarkdownRemark {
-  //                 frontmatter {
-  //                   title
-  //                 }
-  //               }
-  //               relativeDirectory
-  //             }
-  //           }
-  //         }
-  //       }
-  //       `
-  //   ).then(result => {
-  //     if (result.data.allFile.edges.length !== 0) {
-  //       console.log("Projects: Endpoint for " + element.title);
-  //       createPage({
-  //         path: "project/" + element.title,
-  //         component: project,
-  //         context: {
-  //           pathSlug: element.title,
-  //           projectDetails: element,
-  //         },
-  //       })
+  const projects = yaml.safeLoad(
+    fs.readFileSync("./content/yml/projects.yml", "utf-8")
+  )
+  const project = path.resolve(`./src/templates/project.js`)
+  projects.forEach(element => {
+    graphql(
+      `query MyQuery {
+          allFile(filter: {sourceInstanceName: {eq: "project-reports"}, relativeDirectory: {eq: "${element.title.toLowerCase()}"}}) {
+            edges {
+              node {
+                sourceInstanceName
+                childMarkdownRemark {
+                  frontmatter {
+                    title
+                  }
+                }
+                relativeDirectory
+              }
+            }
+          }
+        }
+        `
+    ).then(result => {
+      if (result.data.allFile.edges.length !== 0) {
+        console.log("Projects: Endpoint for " + element.title.toLowerCase().split(" ").join(""));
+        createPage({
+          path: "project/" + element.title,
+          component: project,
+          context: {
+            pathSlug: element.title,
+            projectDetails: element,
+          },
+        })
 
-  //     }
-  //   })
-  // })
+      }
+    })
+  })
 }

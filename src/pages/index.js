@@ -98,7 +98,7 @@ const MainPage = props => {
                   <p className="text-center">We love to write!</p>
                 </div>
                 <div className="row articles" style={{ paddingTop: "2em" }}>
-                  {props.data.allFile.nodes.map((element, index) => {
+                  {blog.map((element, index) => {
                     return (
                       <div className="col-sm-6 col-md-4 item">
                         <div className="card">

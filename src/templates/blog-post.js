@@ -5,21 +5,28 @@ import moment from "moment"
 
 export const BlogArticle = props => {
   const blog = props.data.allFile.edges[0]
-  const previous = blog.previous
-  const next = blog.next
+
   const current = blog.node.childMarkdownRemark
-  // const currentBirthTime = 
-  
+  // const currentBirthTime =
+
   return (
     <Layout>
       <main className="page blog-post">
         <section className="clean-block clean-post dark">
           <div className="container">
             <div className="block-content">
-              <div
-                className="post-image"
-                style={{backgroundImage:`url('${current.frontmatter.image.childImageSharp.fluid.src}')`,backgroundAttachment:"fixed","backgroundRepeat":"no-repeat"}}
-              ></div>
+              {current.frontmatter.displayOnBlog === false ? null : (
+                <>
+                  <div
+                    className="post-image"
+                    style={{
+                      backgroundImage: `url('${current.frontmatter.image.childImageSharp.fluid.src}')`,
+                      backgroundAttachment: "fixed",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  />
+                </>
+              )}
 
               <div className="post-body">
                 <h3>{current.frontmatter.title}</h3>
@@ -38,7 +45,10 @@ export const BlogArticle = props => {
                       </a>
                     </b>
                   </span>
-                  -<span>{moment(blog.node.birthtime).format("Do MMMM, YYYY")}</span>
+                  -
+                  <span>
+                    {moment(blog.node.birthtime).format("Do MMMM, YYYY")}
+                  </span>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: current.html }} />
                 <span>
@@ -51,7 +61,7 @@ export const BlogArticle = props => {
                         .split(" ")
                         .join("")}`}
                     >
-                      {current.frontmatter.author+" "}
+                      {current.frontmatter.author + " "}
                     </a>
                     on {moment(blog.node.birthtime).format("Do MMMM, YYYY")}
                   </b>
@@ -99,6 +109,7 @@ export const postQuery = graphql`
             frontmatter {
               author
               title
+              displayOnBlog
               image {
                 childImageSharp {
                   fluid {

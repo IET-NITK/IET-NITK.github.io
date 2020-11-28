@@ -5,7 +5,7 @@ export const Footer = props => {
     <>
       <div
         className="footer-dark"
-        // style="background-color: #2d3e50;color:white;padding:1.5em 0em"
+        style={{backgroundColor: '#2d3e50',color:'white',padding:"1.5em 0em"}}
       >
         <footer>
           <div className="container">

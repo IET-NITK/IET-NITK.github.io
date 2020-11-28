@@ -19,7 +19,6 @@ const TopNavbar = props => {
               <Link
                 to="/recruitment"
                 role="button"
-                disabled
                 className="btn btn-primary mr-3"
               >
                 Join IET NITK
@@ -50,9 +49,9 @@ export const Navbar = props => {
           style={{ borderBottom: "1px solid #c2c2c2" }}
         >
           <div className="container">
-            <a className="navbar-brand logo" href="/">
-              <img src={IETLOGO} style={{ height: "auto", maxWidth: "4em" }} />
-            </a>
+            <Link className="navbar-brand logo" to="/">
+              <img src={IETLOGO} style={{ height: "auto", maxWidth: "4em" }} alt=""/>
+            </Link>
             <button
               data-toggle="collapse"
               className="navbar-toggler"
@@ -83,17 +82,15 @@ export const Navbar = props => {
                 </li>
                 <li className="nav-item dropdown">
                   <div className="dropdown">
-                    <a
+                    <Link
                       className="nav-link dropdown-toggle"
                       data-toggle="dropdown"
-                      href="#"
+                      to="#"
                     >
                       SIGS
-                    </a>
+                    </Link>
                     <ul
                       className="dropdown-menu"
-                      role="menu"
-                      aria-labelledby="dLabel"
                     >
                       {sigArray.map((element, index) => (
                         <li key={index}>

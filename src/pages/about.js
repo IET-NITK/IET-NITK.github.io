@@ -5,35 +5,58 @@ import { Link } from "gatsby"
 import members from "../../content/yml/authors.yml"
 import Img_Beach from "../assets/img/beach.jpg"
 
-const MemberSocialMedia = ({ linkedin, github, facebook }) => (
-  <div className="icons">
-    {facebook ? (
-      <a href={"https://www.facebook.com/" + facebook}>
-        <i className="fa fa-facebook"></i>
-      </a>
-    ) : (
-      <></>
-    )}
-    {linkedin ? (
-      <a href={"https://www.linkedin.com/in/" + linkedin}>
-        <i className="fa fa-linkedin"></i>
-      </a>
-    ) : (
-      <></>
-    )}
-    {github ? (
-      <a href={"https://www.github.com/" + github}>
-        <i className="fa fa-github"></i>
-      </a>
-    ) : (
-      <></>
-    )}
-  </div>
-)
+const MemberDetails = ({ author, index }) => {
+  let textcolor=author.alumni===true?'text-light': ''
+  return (
+    <div
+      to={`/member/${author.name.toLowerCase().split(" ").join("")}`}
+      className='col-sm-6 col-md-4 col-lg-3'
+      style={{ paddingBottom: "3em" }}
+      id={author.name}
+      key={index}
+    >
+      <div
+        className={`card clean-card text-center  ${author.alumni===true ? 'bg-primary': ''}`}
+        style={{ height: "100%" }}
+        id={author.name}
+      >
+        <div className="card-body info">
+          <Link to={`/member/${author.name.toLowerCase().split(" ").join("")}`}>
+            <h4 className={`card-title ${textcolor}`}>{author.name}</h4>
+          </Link>
+          <p className={`card-text ${textcolor}`}>{author.position}</p>
+          <div className="icons">
+            {author.facebook ? (
+              <a href={"https://www.facebook.com/" + author.facebook}>
+                <i className={`fa fa-facebook ${textcolor}`}></i>
+              </a>
+            ) : (
+              <></>
+            )}
+            {author.linkedin ? (
+              <a href={"https://www.linkedin.com/in/" + author.linkedin}>
+                <i className={`fa fa-linkedin ${author.alumni===true ? 'text-light': ''}`}></i>
+              </a>
+            ) : (
+              <></>
+            )}
+            {author.github ? (
+              <a href={"https://www.github.com/" + author.github}>
+                <i className={`fa fa-github ${author.alumni===true ? 'text-light': ''}`}></i>
+              </a>
+            ) : (
+              <></>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export const About = props => {
   //eslint-ignore-next-line
-  let alumni = members.filter(mem => mem.alumni)
+  let alumni = members.filter(mem => mem.alumni===true)
   let core = members.filter(
     mem => mem.position !== "Executive Member" && mem.alumni !== true
   )
@@ -52,6 +75,7 @@ export const About = props => {
                   <div className="row justify-content-center">
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                       <img
+                      alt=""
                         src={Img_Beach}
                         style={{ width: "100%", height: "auto" }}
                       />
@@ -88,70 +112,17 @@ export const About = props => {
             </div>
 
             <div className="row justify-content-center">
-              {/* {% assign coremembers = site.data.authors | where_exp: "item", "item.position != 'Executive Member'"%}
-{% assign execmembers = site.data.authors | where_exp: "item", "item.position == 'Executive Member'"%}
-{% for author in coremembers %}
-{% if author.alumni != true %} */}
+              {alumni.map((author, index) => (
+                <MemberDetails author={author} key={index} />
+              ))}
               {core.map((author, index) => (
-                <div
-                  to={`/member/${author.name
-                    .toLowerCase()
-                    .split(" ")
-                    .join("")}`}
-                  className="col-sm-6 col-md-4 col-lg-3"
-                  style={{ paddingBottom: "3em" }}
-                  id={author.name}
-                  key={index}
-                >
-                  <div
-                    className="card clean-card text-center"
-                    style={{ height: "100%" }}
-                    id={author.name}
-                  >
-                    <div className="card-body info">
-                      <Link to={`/member/${author.name.toLowerCase().split(" ").join("")}`}>
-                        <h4 className="card-title">{author.name}</h4>
-                      </Link>
-                      <p className="card-text">{author.position}</p>
-                      <MemberSocialMedia
-                        linkedin={author.linkedin}
-                        facebook={author.facebook}
-                        github={author.github}
-                      />
-                    </div>
-                  </div>
-                </div>
+                <MemberDetails author={author} key={index} />
               ))}
             </div>
             <hr />
             <div className="row justify-content-center">
               {others.map((author, index) => (
-                <>
-                  <div
-                    className="col-sm-6 col-md-4 col-lg-3"
-                    style={{ paddingBottom: "3em" }}
-                    id={author.name}
-                    key={index}
-                  >
-                    <div
-                      className="card clean-card text-center"
-                      style={{ boxShadow: "0 0 0px", height: "100%" }}
-                    >
-                      <div className="card-body info">
-                        {" "}
-                        <Link to={`/member/${author.name.toLowerCase().split(" ").join("")}`}>
-                          <h4 className="card-title">{author.name}</h4>
-                        </Link>
-                        <p className="card-text">{author.position}</p>
-                        <MemberSocialMedia
-                          linkedin={author.linkedin}
-                          facebook={author.facebook}
-                          github={author.github}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </>
+                <MemberDetails author={author} key={index} />
               ))}
             </div>
           </div>
