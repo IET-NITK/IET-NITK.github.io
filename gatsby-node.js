@@ -3,6 +3,9 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const fs = require("fs")
 const yaml = require("js-yaml")
 
+const lcrs = name => {
+  return name.toLowerCase().split(" ").join("")
+}
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
@@ -11,9 +14,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     fs.readFileSync("./content/yml/authors.yml", "utf-8")
   )
   authors.forEach(element => {
-    console.log("Member: Endpoint for " + element.name.toLowerCase().split(" ").join(""))
+    console.log("Member:", "Endpoint for " + lcrs(element.name))
     createPage({
-      path: "member/" + element.name.toLowerCase().split(" ").join(""),
+      path: "member/" + lcrs(element.name),
       component: authorTemplate,
       context: {
         pathSlug: element.name,
@@ -26,9 +29,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const sigs = yaml.safeLoad(fs.readFileSync("./content/yml/sig.yml", "utf-8"))
   sigs.forEach(element => {
     if (element.no_link !== true) {
-      console.log("SIG: Endpoint for " + element.name.toLowerCase().split(" ").join(""))
+      console.log("SIG:", "Endpoint for " + lcrs(element.name))
       createPage({
-        path: "sig/" + element.name.toLowerCase().split(" ").join(""),
+        path: "sig/" + lcrs(element.name),
         component: sigTemplate,
         context: {
           pathSlug: element.name,
@@ -53,9 +56,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `).then(result => {
       let titleArray = result.data.allFile.nodes
       titleArray.forEach(element => {
-        console.log("Blog: Endpoint for " + element.relativeDirectory.toLowerCase().split(" ").join(""))
+        console.log("Blog:", "Endpoint for " + lcrs(element.relativeDirectory))
+        // eslint-disable-next-line
         createPage({
-          path: "blog/" + element.relativeDirectory,
+          path: "blog/" + lcrs(element.relativeDirectory),
           component: blogTemplate,
           context: {
             pathSlug: element.relativeDirectory,
@@ -70,38 +74,40 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const projects = yaml.safeLoad(
     fs.readFileSync("./content/yml/projects.yml", "utf-8")
   )
-  const project = path.resolve(`./src/templates/project.js`)
+  const projectReportTemplate = path.resolve("./src/templates/report-page.js")
+  const projectTemplate = path.resolve(`./src/templates/projects-page.js`)
   projects.forEach(element => {
-    graphql(
-      `query MyQuery {
-          allFile(filter: {sourceInstanceName: {eq: "project-reports"}, relativeDirectory: {eq: "${element.title.toLowerCase()}"}}) {
-            edges {
-              node {
-                sourceInstanceName
-                childMarkdownRemark {
-                  frontmatter {
-                    title
-                  }
-                }
-                relativeDirectory
-              }
-            }
-          }
+    console.log("Project:", "Endpoint for " + lcrs(element.title))
+    createPage({
+      path: "projects/" + lcrs(element.title),
+      component: projectTemplate,
+      context: {
+        pathSlug: element.title,
+        ...element
+      },
+    })
+    graphql(`
+    query {
+      allFile(filter: {sourceInstanceName: {eq: "project-reports"}, ext: {eq: ".md"}, relativeDirectory: {eq: "${element.title}"}}) {
+        nodes {
+          name
         }
-        `
-    ).then(result => {
-      if (result.data.allFile.edges.length !== 0) {
-        console.log("Projects: Endpoint for " + element.title.toLowerCase().split(" ").join(""));
-        createPage({
-          path: "project/" + element.title,
-          component: project,
-          context: {
-            pathSlug: element.title,
-            projectDetails: element,
-          },
-        })
-
       }
+    }
+    `).then(result => {
+        result.data.allFile.nodes.forEach(arr => {
+          console.log(
+            "Project Report:",
+            "Endpoint for " + arr.name + " (" + lcrs(element.title) + ")"
+          )
+          createPage({
+            path: "projects/" + lcrs(element.title) + "/" + lcrs(arr.name),
+            component: projectReportTemplate,
+            context: {
+              pathSlug: lcrs(element.title) + "/" + arr.name,
+            },
+          })
+        })
     })
   })
 }

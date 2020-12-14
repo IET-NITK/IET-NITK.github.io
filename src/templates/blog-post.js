@@ -116,7 +116,6 @@ export const postQuery = graphql`
                     src
                   }
                 }
-                birthtime
               }
             }
             html

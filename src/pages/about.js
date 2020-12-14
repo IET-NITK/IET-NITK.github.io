@@ -6,17 +6,19 @@ import members from "../../content/yml/authors.yml"
 import Img_Beach from "../assets/img/beach.jpg"
 
 const MemberDetails = ({ author, index }) => {
-  let textcolor=author.alumni===true?'text-light': ''
+  let textcolor = author.alumni === true ? "text-light" : ""
   return (
     <div
       to={`/member/${author.name.toLowerCase().split(" ").join("")}`}
-      className='col-sm-6 col-md-4 col-lg-3'
+      className="col-sm-6 col-md-4 col-lg-3"
       style={{ paddingBottom: "3em" }}
       id={author.name}
       key={index}
     >
       <div
-        className={`card clean-card text-center  ${author.alumni===true ? 'bg-primary': ''}`}
+        className={`card clean-card text-center  ${
+          author.alumni === true ? "bg-primary" : ""
+        }`}
         style={{ height: "100%" }}
         id={author.name}
       >
@@ -35,14 +37,22 @@ const MemberDetails = ({ author, index }) => {
             )}
             {author.linkedin ? (
               <a href={"https://www.linkedin.com/in/" + author.linkedin}>
-                <i className={`fa fa-linkedin ${author.alumni===true ? 'text-light': ''}`}></i>
+                <i
+                  className={`fa fa-linkedin ${
+                    author.alumni === true ? "text-light" : ""
+                  }`}
+                ></i>
               </a>
             ) : (
               <></>
             )}
             {author.github ? (
               <a href={"https://www.github.com/" + author.github}>
-                <i className={`fa fa-github ${author.alumni===true ? 'text-light': ''}`}></i>
+                <i
+                  className={`fa fa-github ${
+                    author.alumni === true ? "text-light" : ""
+                  }`}
+                ></i>
               </a>
             ) : (
               <></>
@@ -56,7 +66,7 @@ const MemberDetails = ({ author, index }) => {
 
 export const About = props => {
   //eslint-ignore-next-line
-  let alumni = members.filter(mem => mem.alumni===true)
+  let alumni = members.filter(mem => mem.alumni === true)
   let core = members.filter(
     mem => mem.position !== "Executive Member" && mem.alumni !== true
   )
@@ -75,7 +85,7 @@ export const About = props => {
                   <div className="row justify-content-center">
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                       <img
-                      alt=""
+                        alt=""
                         src={Img_Beach}
                         style={{ width: "100%", height: "auto" }}
                       />
@@ -110,7 +120,20 @@ export const About = props => {
             <div className="block-heading">
               <h2 className="text-info">Our Family</h2>
             </div>
-
+            <div class="btn-group w-100 mb-5" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-outline-primary">
+                All
+              </button>
+              <button type="button" class="btn btn-outline-primary">
+                Alumni
+              </button>
+              <button type="button" class="btn btn-outline-primary">
+                Core
+              </button>
+              <button type="button" class="btn btn-outline-primary">
+                Members
+              </button>
+            </div>
             <div className="row justify-content-center">
               {alumni.map((author, index) => (
                 <MemberDetails author={author} key={index} />

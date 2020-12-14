@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "ietnitk",
   "private": true,
   "description": "Official Blog of IET-NITK",
   "version": "0.1.0",
   "author": "Nirmal Khedkar <nirmalhk7@gmail.com>",
   "bugs": {
-    "url": "https://github.com/iet-nitk/iet-nitk.github.io/issues"
+    "url": "https://github.com/IET-NITK/ietnitk-v2/issues"
   },
   "dependencies": {
     "bootstrap": "^4.5.2",
@@ -47,13 +47,13 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "https://github.com/IET-NITK/ietnitk-v2.git"
   },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

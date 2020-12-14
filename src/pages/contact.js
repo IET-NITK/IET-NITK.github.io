@@ -19,7 +19,7 @@ class Contact extends React.Component{
       <SEO />
       <main className="page">
         <section className="clean-block about-us">
-          <div className="container">
+          <form className="container">
             <div className="block-heading">
               <h2 className="text-info">Say Hi!</h2>
               <p>For any assistance, contact us at:</p>
@@ -71,7 +71,7 @@ class Contact extends React.Component{
                 />
               </div>
             </div>
-          </div>
+          </form>
         </section>
       </main>
       </Layout>

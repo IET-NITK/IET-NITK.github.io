@@ -26,7 +26,7 @@ const TopNavbar = props => {
               <Link
                 to="/smp"
                 role="button"
-                disabled
+                disabled={true}
                 className="btn btn-outline-primary mr-3"
               >
                 SMP
