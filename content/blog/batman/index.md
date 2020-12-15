@@ -1,6 +1,6 @@
 ---
 title: Analysis of Batman
-author: Feyaz Baker
+authors: ['Feyaz Baker']
 image: batman.jpg
 ---
 

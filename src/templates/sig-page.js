@@ -8,6 +8,7 @@ import Img_Medium from "../assets/img/siglogo/Medium-logo.png"
 import Img_Inkheart from "../assets/img/siglogo/Inkheart-logo.png"
 import projectyml from "../../content/yml/projects.yml"
 import { Link } from "gatsby"
+import { RenderAuthors } from "../components/helper"
 
 export const SIG = props => {
   const { pageContext } = props
@@ -33,7 +34,7 @@ export const SIG = props => {
                 className="sig-logo"
                 style={{ maxWidth: "200px" }}
               />
-              <h2 className="text-info" style={{ paddingTop: "1em" }}>
+              <h2 className="text-primary" style={{ paddingTop: "1em" }}>
                 {/* {sig.name} */}
               </h2>
               <p>{sig.description}</p>
@@ -49,25 +50,7 @@ export const SIG = props => {
                           <div className="info">
                             <span className="text-muted">
                               By
-                              {element.builtBy.map((name, index2) => (
-                                <>
-                                  {" "}
-                                  <Link
-                                    key={"x" + index2}
-                                    to={
-                                      "/member/" +
-                                      name.toLowerCase().split(" ").join("")
-                                    }
-                                  >
-                                    {name}
-                                  </Link>
-                                  {index2 + 2 === element.builtBy.length
-                                    ? " and"
-                                    : index2 + 1 !== element.builtBy.length
-                                    ? ","
-                                    : ""}
-                                </>
-                              ))}
+                              {RenderAuthors(element.builtBy,"")}
                             </span>
                           </div>
                         </>

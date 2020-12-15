@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import moment from "moment"
 import SEO from "../components/seo"
+import { RenderAuthors } from "../components/helper"
 
 export const Blog = props => {
   let blogs = props.data.allFile.nodes
@@ -14,7 +15,7 @@ export const Blog = props => {
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-info">Official IET-NITK Blog</h2>
+              <h2 className="text-primary">Official IET-NITK Blog</h2>
               <p>
                 We post cool stuff. Subscribe to our Newsletter to stay updated!
               </p>
@@ -44,17 +45,7 @@ export const Blog = props => {
                         <div className="info">
                           <span className="text-muted">
                             By{" "}
-                            <a
-                              href={
-                                "/about#" +
-                                frontmatter.author
-                                  .toLowerCase()
-                                  .split(" ")
-                                  .join("")
-                              }
-                            >
-                              {frontmatter.author}
-                            </a>
+                            {RenderAuthors(frontmatter.authors,"")}
                             <br />
                             {moment(date).format("Do MMMM, YYYY")}
                           </span>
@@ -93,7 +84,7 @@ export const postQuery = graphql`
           timeToRead
           excerpt(format: PLAIN)
           frontmatter {
-            author
+            authors
             title
             image {
               childImageSharp {

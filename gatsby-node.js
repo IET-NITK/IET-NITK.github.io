@@ -19,8 +19,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: "member/" + lcrs(element.name),
       component: authorTemplate,
       context: {
-        pathSlug: element.name,
-        memberDetails: element,
+        tag: [element.name],
+        ...element,
       },
     })
   })
@@ -82,29 +82,36 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: "projects/" + lcrs(element.title),
       component: projectTemplate,
       context: {
-        pathSlug: element.title,
+        pathSlug: "/"+element.title+"/",
         ...element
       },
     })
     graphql(`
-    query {
-      allFile(filter: {sourceInstanceName: {eq: "project-reports"}, ext: {eq: ".md"}, relativeDirectory: {eq: "${element.title}"}}) {
+    query MyQuery {
+      allFile(filter: {sourceInstanceName: {eq: "project-reports"}, ext: {eq: ".md"}, relativeDirectory: {regex: "/${element.title}/"}}, sort: {fields: birthTime}) {
         nodes {
-          name
+          childMarkdownRemark {
+            frontmatter {
+              title
+            }
+          }
+          relativeDirectory
         }
       }
     }
+    
     `).then(result => {
         result.data.allFile.nodes.forEach(arr => {
+          let handle= arr.relativeDirectory.split('/').slice(-1)[0];
           console.log(
             "Project Report:",
-            "Endpoint for " + arr.name + " (" + lcrs(element.title) + ")"
+            "Endpoint for " + lcrs(element.title) + "/" + lcrs(handle)
           )
           createPage({
-            path: "projects/" + lcrs(element.title) + "/" + lcrs(arr.name),
+            path: "projects/" + lcrs(element.title) + "/" + lcrs(handle),
             component: projectReportTemplate,
             context: {
-              pathSlug: lcrs(element.title) + "/" + arr.name,
+              pathSlug: lcrs(element.title) + "/" + handle,
             },
           })
         })

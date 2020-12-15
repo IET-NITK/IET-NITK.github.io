@@ -90,7 +90,7 @@ export const postQuery = graphql`
           childMarkdownRemark {
             frontmatter {
               title
-              author
+              authors
             }
             timeToRead
           }
@@ -99,7 +99,7 @@ export const postQuery = graphql`
           childMarkdownRemark {
             frontmatter {
               title
-              author
+              authors
             }
             timeToRead
           }
@@ -107,7 +107,7 @@ export const postQuery = graphql`
         node {
           childMarkdownRemark {
             frontmatter {
-              author
+              authors
               title
               displayOnBlog
               image {

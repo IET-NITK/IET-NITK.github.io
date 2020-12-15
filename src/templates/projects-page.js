@@ -2,7 +2,9 @@ import { Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby"
+import moment from "moment"
+import { RenderAuthors } from "../components/helper"
 
 export const Project = props => {
   const reports = props.data && props.data.allFile && props.data.allFile.nodes
@@ -14,8 +16,8 @@ export const Project = props => {
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-info" style={{ paddingTop: "1em" }}>
-                {props.pageContext.pathSlug}
+              <h2 className="text-primary" style={{ paddingTop: "1em" }}>
+                {props.pageContext.title}
               </h2>
               <p>{props.pageContext.description}</p>
             </div>
@@ -30,18 +32,28 @@ export const Project = props => {
                             className="btn-link"
                             to={
                               "/projects/" +
-                              props.pageContext.pathSlug
+                              props.pageContext.title
                                 .toLowerCase()
                                 .split(" ")
                                 .join("") +
                               "/" +
-                              element.name.toLowerCase().split(" ").join("")
+                              element.childMarkdownRemark.frontmatter.title.toLowerCase().split(" ").join("")
                             }
                           >
                             {element.childMarkdownRemark.frontmatter.title}
                           </Link>
                         </h3>
-
+                        <div className="info">
+                          <span className="text-muted">
+                            By
+                            {RenderAuthors(
+                              element.childMarkdownRemark.frontmatter.authors,
+                              ""
+                            )}
+                            <br />
+                            {moment(element.birthTime).format("Do MMMM, YYYY")}
+                          </span>
+                        </div>
                         <p> {element.childMarkdownRemark.excerpt} </p>
                       </div>
                     </div>
@@ -61,11 +73,11 @@ export const postQuery = graphql`
       filter: {
         sourceInstanceName: { eq: "project-reports" }
         ext: { eq: ".md" }
-        relativeDirectory: { eq: $pathSlug }
+        relativeDirectory: { regex: $pathSlug }
       }
+      sort: { fields: birthTime }
     ) {
       nodes {
-        name
         childMarkdownRemark {
           frontmatter {
             title
@@ -73,7 +85,7 @@ export const postQuery = graphql`
           }
           excerpt
         }
-        birthtime
+        birthTime
       }
     }
   }

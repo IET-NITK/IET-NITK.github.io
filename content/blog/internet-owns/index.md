@@ -1,7 +1,7 @@
 ---
 title: Who Owns the Internet
 
-author: Makarand
+authors: ['Makarand']
 image: internet.png
 ---
 

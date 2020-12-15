@@ -21,7 +21,7 @@ class Contact extends React.Component{
         <section className="clean-block about-us">
           <form className="container">
             <div className="block-heading">
-              <h2 className="text-info">Say Hi!</h2>
+              <h2 className="text-primary">Say Hi!</h2>
               <p>For any assistance, contact us at:</p>
             </div>
             <div style={{ textAlign: "center" }}>

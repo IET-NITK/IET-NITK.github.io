@@ -11,7 +11,7 @@ const SMP = props => {
         <section className="clean-block about-us">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-info">We're Looking For You!</h2>
+              <h2 className="text-primary">We're Looking For You!</h2>
               <p>
                 IET NITK is looking for smart people willing to reach out to
                 others! Check out where we're recruiting:
@@ -40,7 +40,7 @@ const SMP = props => {
         <section className="clean-block clean-faq dark">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-info">Recruitments FAQ</h2>
+              <h2 className="text-primary">Recruitments FAQ</h2>
               <p>{new Date().getFullYear()} Recruitment FAQs and Details</p>
             </div>
 

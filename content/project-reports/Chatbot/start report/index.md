@@ -1,41 +1,9 @@
 ---
-title: Dummy Name
-authors: ['Nirmal','Nirmal2']
+title: Dummy Name2
+authors: ['Nirmal Khedkar','Rhevanth M']
 ---
 
-Yo wassup
 
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
-
-Yo wassup
 
 Yo wassup
 

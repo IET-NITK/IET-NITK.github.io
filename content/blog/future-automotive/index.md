@@ -1,7 +1,7 @@
 ---
 title: The Future of Automotive Industry
 
-author: Likitha
+authors: ['Likitha']
 image: autoind.jpg
 ---
 

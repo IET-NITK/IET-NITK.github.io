@@ -37,7 +37,7 @@ const MainPage = props => {
         <section className="clean-block about-us" id="about-us">
           <div className="container">
             <div className="block-heading mobile-marginx2">
-              <h2 className="text-info">Who are we?</h2>
+              <h2 className="text-primary">Who are we?</h2>
             </div>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -75,7 +75,7 @@ const MainPage = props => {
         <section className="clean-block about-us">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-info">Our SIGs</h2>
+              <h2 className="text-primary">Our SIGs</h2>
               <p>
                 IET NITK consists of three different Special Interest Groups:
               </p>
@@ -149,7 +149,7 @@ export const postQuery = graphql`
         relativeDirectory
         childMarkdownRemark {
           frontmatter {
-            author
+            authors
             title
             image {
               childImageSharp {

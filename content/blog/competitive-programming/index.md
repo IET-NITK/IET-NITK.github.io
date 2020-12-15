@@ -1,6 +1,6 @@
 ---
 title: Competitive Programming as a Sport
-author: Vichitr Gandas
+authors: ['Vichitr Gandas']
 image: cp.jpg
 ---
 

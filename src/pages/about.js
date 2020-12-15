@@ -91,7 +91,7 @@ export const About = props => {
                       />
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                      <h2 className="text-info">About Us</h2>
+                      <h2 className="text-primary">About Us</h2>
 
                       <p>
                         Chapter is a exclusive technical club under IET
@@ -118,7 +118,7 @@ export const About = props => {
         <section className="clean-block about-us">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-info">Our Family</h2>
+              <h2 className="text-primary">Our Family</h2>
             </div>
             <div class="btn-group w-100 mb-5" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-outline-primary">
