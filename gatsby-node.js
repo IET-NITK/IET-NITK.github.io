@@ -13,20 +13,35 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const authors = yaml.safeLoad(
     fs.readFileSync("./content/yml/authors.yml", "utf-8")
   )
+  const projects = yaml.safeLoad(
+    fs.readFileSync("./content/yml/projects.yml", "utf-8")
+  )
+  const projectReportTemplate = path.resolve("./src/templates/report-page.js")
+  const projectTemplate = path.resolve(`./src/templates/projects-page.js`)
+  const sigTemplate = path.resolve(`./src/templates/sig-page.js`)
+  const sigs = yaml.safeLoad(fs.readFileSync("./content/yml/sig.yml", "utf-8"))
+  const blogTemplate = path.resolve("./src/templates/blog-post.js")
+
   authors.forEach(element => {
-    console.log("Member:", "Endpoint for " + lcrs(element.name))
+    let projectsDone = projects.filter(e => {
+      return e.builtBy && e.builtBy.indexOf(element.name) > -1
+    })
+    console.log(
+      "Member:",
+      "Endpoint for " + lcrs(element.name),
+      projectsDone.length
+    )
     createPage({
       path: "member/" + lcrs(element.name),
       component: authorTemplate,
       context: {
         tag: [element.name],
         ...element,
+        projects: projectsDone,
       },
     })
   })
 
-  const sigTemplate = path.resolve(`./src/templates/sig-page.js`)
-  const sigs = yaml.safeLoad(fs.readFileSync("./content/yml/sig.yml", "utf-8"))
   sigs.forEach(element => {
     if (element.no_link !== true) {
       console.log("SIG:", "Endpoint for " + lcrs(element.name))
@@ -41,7 +56,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   })
 
-  const blogTemplate = path.resolve("./src/templates/blog-post.js")
   try {
     graphql(`
       query {
@@ -71,19 +85,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     throw Error("Error in generating pages for Blogs")
   }
 
-  const projects = yaml.safeLoad(
-    fs.readFileSync("./content/yml/projects.yml", "utf-8")
-  )
-  const projectReportTemplate = path.resolve("./src/templates/report-page.js")
-  const projectTemplate = path.resolve(`./src/templates/projects-page.js`)
   projects.forEach(element => {
     console.log("Project:", "Endpoint for " + lcrs(element.title))
     createPage({
       path: "projects/" + lcrs(element.title),
       component: projectTemplate,
       context: {
-        pathSlug: "/"+element.title+"/",
-        ...element
+        pathSlug: "/" + element.title + "/",
+        ...element,
       },
     })
     graphql(`
@@ -101,20 +110,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
     
     `).then(result => {
-        result.data.allFile.nodes.forEach(arr => {
-          let handle= arr.relativeDirectory.split('/').slice(-1)[0];
-          console.log(
-            "Project Report:",
-            "Endpoint for " + lcrs(element.title) + "/" + lcrs(handle)
-          )
-          createPage({
-            path: "projects/" + lcrs(element.title) + "/" + lcrs(handle),
-            component: projectReportTemplate,
-            context: {
-              pathSlug: lcrs(element.title) + "/" + handle,
-            },
-          })
+      result.data.allFile.nodes.forEach(arr => {
+        let handle = arr.relativeDirectory.split("/").slice(-1)[0]
+        console.log(
+          "Project Report:",
+          "Endpoint for " + lcrs(element.title) + "/" + lcrs(handle)
+        )
+        createPage({
+          path: "projects/" + lcrs(element.title) + "/" + lcrs(handle),
+          component: projectReportTemplate,
+          context: {
+            pathSlug: lcrs(element.title) + "/" + handle,
+          },
         })
+      })
     })
   })
 }
