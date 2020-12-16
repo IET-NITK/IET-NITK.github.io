@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
+import { RenderAuthors } from '../components/helper'
 
 const MainPage = props => {
   let blog = props.data.allFile.nodes
@@ -110,7 +111,8 @@ const MainPage = props => {
                           <div className="card-body">
                             <h4 className="card-title">{element.childMarkdownRemark.frontmatter.title}</h4>
                             <h6 className="text-muted card-subtitle mb-2">
-                              {"by "+element.childMarkdownRemark.frontmatter.author}
+                              {/* {"by "+element.childMarkdownRemark.frontmatter.author} */}
+                              By {RenderAuthors(element.childMarkdownRemark.frontmatter.authors,"")}
                             </h6>
                             {/* <p className="card-text">ost.excerpt</p> */}
                             <div style={{ textAlign: "center" }}>

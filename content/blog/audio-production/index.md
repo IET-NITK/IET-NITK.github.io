@@ -1,6 +1,6 @@
 ---
 title: Audio Production
-authors: ['Nirmal Khedkar']
+authors: ['Rajamani']
 image: audio.jpg
 ---
 

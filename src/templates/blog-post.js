@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import moment from "moment"
+import { RenderAuthors } from "../components/helper"
+
 
 export const BlogArticle = props => {
   const blog = props.data.allFile.edges[0]
@@ -34,15 +36,7 @@ export const BlogArticle = props => {
                   <span>
                     By{" "}
                     <b>
-                      <a
-                        className="no-underline"
-                        href={`/member/${current.frontmatter.author
-                          .toLowerCase()
-                          .split(" ")
-                          .join("")}`}
-                      >
-                        {current.frontmatter.author}
-                      </a>
+                    {RenderAuthors(current.frontmatter.authors,"")}
                     </b>
                   </span>
                   -
@@ -54,15 +48,8 @@ export const BlogArticle = props => {
                 <span>
                   Written by{" "}
                   <b>
-                    <a
-                      className="no-underline"
-                      href={`/member/${current.frontmatter.author
-                        .toLowerCase()
-                        .split(" ")
-                        .join("")}`}
-                    >
-                      {current.frontmatter.author + " "}
-                    </a>
+                    {RenderAuthors(current.frontmatter.authors,"")}
+                    <br/>
                     on {moment(blog.node.birthtime).format("Do MMMM, YYYY")}
                   </b>
                 </span>

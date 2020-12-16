@@ -79,10 +79,10 @@ const RenderProject = ({
   )
 }
 export const Author = props => {
-  const blogArticles = props.data.allFile.nodes.filter(
+  const blogArticles = props.data.content.nodes.filter(
     e => e.sourceInstanceName === "blog"
   )
-  const projectReports = props.data.allFile.nodes.filter(
+  const projectReports = props.data.content.nodes.filter(
     e => e.sourceInstanceName === "project-reports"
   )
   console.log(blogArticles, projectReports)
@@ -95,8 +95,8 @@ export const Author = props => {
             <div className="block-content">
               <div className="row">
                 <div className="col-lg-3 col-md-3 col-sm-12">
-                  Author page for {props.pageContext.name}, with all blogs and
-                  projects listed
+                  <img  class="img-fluid" style={{height:"10em"}} src={props.data.image.edges[0] && props.data.image.edges[0].node.childImageSharp.fluid.srcWebp} alt=""/>
+                  {/* <img src=""/> */}
                 </div>
                 <div className="col-lg-9 col-md-9 col-sm-12">
                   <div
@@ -148,25 +148,48 @@ export const Author = props => {
 }
 
 export const postQuery = graphql`
-  query($tag: [String]) {
-    allFile(
+  query($tag: [String], $image: String) {
+    image: allFile(
       filter: {
-        ext: { eq: ".md" }
-        childMarkdownRemark: { frontmatter: { authors: { in: $tag } } }
+        internal: {mediaType: {regex: "/image\\/*/"}}, 
+        relativeDirectory: {eq: "members"}, 
+        childImageSharp: {
+          fluid: {
+            originalName: {
+              eq: $image
+            }
+          }
+        }
       }
     ) {
-      nodes {
-        sourceInstanceName
-        childMarkdownRemark {
-          frontmatter {
-            title
-            authors
+      edges {
+        node {
+          childImageSharp {
+            fluid(maxWidth: 200, maxHeight: 400) {
+              srcWebp
+            }
           }
-          excerpt
         }
-        birthTime
       }
     }
+    content: allFile(
+        filter: {
+          ext: { eq: ".md" }
+          childMarkdownRemark: { frontmatter: { authors: { in: $tag } } }
+        }
+      ) {
+        nodes {
+          sourceInstanceName
+          childMarkdownRemark {
+            frontmatter {
+              title
+              authors
+            }
+            excerpt
+          }
+          birthTime
+        }
+      }
   }
 `
 export default Author

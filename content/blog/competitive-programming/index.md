@@ -19,36 +19,36 @@ Most prestigious coding contests are ACM-ICPC, Google Code Jam, Facebook Hacker 
 
 Codeforces:
 
-![Codeforces](/assets/img/blog/cp_codeforces.png)
+![Codeforces](cp_codeforces.png)
 This is the best available competitive coding platform today. It conducts 2-3 contests every week. It is known for regular contests. All codeforces contests contain very good problems. Mostly all contests are balanced on Codeforces. It also conducts Codeforces Educational Rounds. Goal of such rounds is to practice and educate rather than to compete.
 
 Codechef:
 
-![Codechef](/assets/img/blog/cp_codechef.png)
+![Codechef](cp_codechef.png)
 
 Codechef is also a good platform to learn and compete competitive coding. It conducts three contests each month – Long challenge, Lunchtime, Cook-off. Long challenge is meant to learn a lot of new concepts as it’s a 10-day long contest. Codechef problems mostly require very much thinking and debugging. You should keep trying.
 
 HackerEarth:
 
-![HackerEarth](/assets/img/blog/cp_hackerearth.png)
+![HackerEarth](cp_hackerearth.png)
 
 HackerEarth also conducts three contests every month – Easy, HourStorm and Circuits. HackerEarth problems are damn good if you want to learn. But most of the times, problem statements are not clear. Circuits is an 8-day long contest so you can learn and try.
 
 Hackerrank:
 
-![Hackerrank](/assets/img/blog/cp_hackerrank.png)
+![Hackerrank](cp_hackerrank.png)
 
 If you want to start coding then this is best platform to start with. Hackerrank problems are usually easy and simple. It conducts HourRank every month. And two other contests – Week of Code, Codesprint are held over a period of 2 to 3 months.
 
 AtCoder:
 
-![Codeforces](/assets/img/blog/cp_atcoder.png)
+![Codeforces](cp_atcoder.png)
 
 This is a famous Japanese judge. AtCoder problems are usually mathematical. It conducts three contests – ABC(AtCoder Beginner Contest), ARC(AtCoder Regular Contest) and AGC(AtCoder Grand Contest). AGC is held once a month. ABC and ARC are held 2-3 times every month.
 
 TopCoder:
 
-![Topcoder](/assets/img/blog/cp_topcoder.jpg)
+![Topcoder](cp_topcoder.jpg)
 
 Topcoder is not a cup of tea for everyone. As its design is very confusing and participants are required to write Class and Method to solve a problem instead of whole code. But its problems are very good. Most of topcoder problems are DP(Dynamic Programming) problems so if you want to master DP then give a try to topcoder. It conducts 2-3 SRMs every month.
 
