@@ -2,7 +2,7 @@
 title: SigProjects
 layout: default
 ---
-{% assign signame= page.name | split: "." %}
+{% assign signame= page.name  %}
 {% assign signame= signame[0] | capitalize %}
 <main class="page blog-post-list">
   <section class="clean-block clean-blog-list dark">
@@ -18,7 +18,7 @@ layout: default
       <div class="block-content">
         {% assign cipherProjects = site.data.projects | where_exp: "item", "item.sig == signame"%} 
         {% for project in cipherProjects %}
-        {% assign projectBuilders= project.builtBy | split: " "%}
+        {% assign projectBuilders= project.builtBy %}
         <div class="clean-blog-post">
           <div class="row">
             <div class="col-lg-12">

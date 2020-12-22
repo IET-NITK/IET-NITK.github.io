@@ -19,7 +19,7 @@ transition: top 0.3s;
       <span class="navbar-toggler-icon" style="margin:0px"></span></button>
     <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="nav navbar-nav ml-auto">
-        {% assign current = page.url | downcase | split: '/' %}
+        {% assign current = page.url | downcase %}
         <li class="nav-item" role="presentation"><a class="nav-link {% if page.url== '/' %} active {% endif %}" href={{ "/" | relative_url }}>Home</a></li>
         <li class="nav-item" role="presentation"><a class="nav-link {% if current[1]== 'about' %} active {% endif %}" href={{ "about" | relative_url }}>About Us</a></li>
         <li class="nav-item" role="presentation"><a class="nav-link {% if current[1]== 'blog' %} active {% endif %}" href={{ "blog" | relative_url }}>Blog</a></li>
