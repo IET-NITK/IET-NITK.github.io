@@ -1,11 +1,17 @@
 import React from "react"
+import { Link } from "gatsby"
+import SIG from "../../../content/yml/sig.yml"
 
 export const Footer = props => {
   return (
     <>
       <div
         className="footer-dark"
-        style={{backgroundColor: '#2d3e50',color:'white',padding:"1.5em 0em"}}
+        style={{
+          backgroundColor: "#2d3e50",
+          color: "white",
+          padding: "1.5em 0em",
+        }}
       >
         <footer>
           <div className="container">
@@ -14,41 +20,31 @@ export const Footer = props => {
                 <h3>Important Links</h3>
                 <ul>
                   <li>
-                    <a href="/">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <a href="about.html">About Us</a>
+                    <Link to="/about">About Us</Link>
                   </li>
                   <li>
-                    <a href="about.html#family">Our Family</a>
+                    <Link to="/about#family">Our Family</Link>
                   </li>
                   <li>
-                    <a href="blog.html">Blog</a>
+                    <Link to="/blog">Blog</Link>
                   </li>
                   <li>
-                    <a href="projects.html">Projects</a>
+                    <Link to="/projects">Projects</Link>
                   </li>
                   <li>
-                    <a href="contact.html">Say Hi!</a>
+                    <Link to="/contact">Say Hi!</Link>
                   </li>
                 </ul>
               </div>
               <div className="col-sm-6 col-md-3 item">
                 <h3>Special Interest Groups</h3>
                 <ul>
-                  <li>
-                    <a href="/sig/Cipher.html">Cipher</a>
-                  </li>
-
-                  <li>
-                    <a href="/sig/Rovisp.html">Rovisp</a>
-                  </li>
-
-                  <li>
-                    <a href="/sig/Torsion.html">Torsion</a>
-                  </li>
-                  <li>Inkheart</li>
-                  <li>Medium</li>
+                  {SIG.map((e, i) =>
+                    <li key={i}>{e.no_link === true ? e.name: <Link to={`/sig/${e.name.toLowerCase()}`}>{e.name}</Link>}</li>
+                  )}
                 </ul>
               </div>
               <div className="col-md-6 item text">

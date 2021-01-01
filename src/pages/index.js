@@ -3,13 +3,58 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
-import { RenderAuthors } from '../components/helper'
+import { RenderAuthors } from "../components/helper"
+import SIG from "../../content/yml/sig.yml"
 
-const MainPage = props => {
-  let blog = props.data.allFile.nodes
-  
+const SIGShowcase = ({ sigs, sig_images }) => {
+  let img_hash = {}
+  sig_images.forEach(element => {
+    img_hash[element.name] = element.childImageSharp.fluid.srcWebp
+  })
   return (
-    <Layout location={props.location.pathname} title={"Main"}>
+    <>
+      <div className="row justify-content-center">
+        {sigs.map((s, i) => (
+          <div
+            key={i}
+            className="col-md-5 col-lg-4"
+            style={{ marginBottom: "1em" }}
+          >
+            <div className="clean-pricing-item" style={{ height: "100%" }}>
+              <div style={{ width: "100%" }}>
+                <img
+                  alt=""
+                  src={img_hash[`${s.name}-logo`]}
+                  style={{
+                    width: "150px",
+                    height: "auto!important",
+                    display: "block",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                  }}
+                />
+              </div>
+              <p>{s.description}</p>
+              {s.no_link === false ? (
+                <>
+                  <Link
+                    to={`sig/${s.name.toLowerCase()}`}
+                    className="btn btn-outline-primary btn-block"
+                  >
+                    Read More
+                  </Link>
+                </>
+              ) : null}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  )
+}
+const MainPage = ({ location, data }) => {
+  return (
+    <Layout location={location.pathname} title={"Main"}>
       <SEO title="We are IET NITK" />
       <main className="page landing-page">
         <section className="hero"></section>
@@ -81,7 +126,7 @@ const MainPage = props => {
                 IET NITK consists of three different Special Interest Groups:
               </p>
             </div>
-            {/* {% include sig.html %} */}
+            <SIGShowcase sigs={SIG} sig_images={data.sig.nodes} />
           </div>
         </section>
 
@@ -99,37 +144,44 @@ const MainPage = props => {
                   <p className="text-center">We love to write!</p>
                 </div>
                 <div className="row articles" style={{ paddingTop: "2em" }}>
-                  {blog.map((element, index) => {
-                    return (
-                      <div className="col-sm-6 col-md-4 item">
-                        <div className="card">
-                          <img
-                            alt={element.childMarkdownRemark.frontmatter.title}
-                            className="card-img-top w-100 d-block"
-                            src={element.childMarkdownRemark.frontmatter.image.childImageSharp.fluid.src}
-                          />
-                          <div className="card-body">
-                            <h4 className="card-title">{element.childMarkdownRemark.frontmatter.title}</h4>
-                            <h6 className="text-muted card-subtitle mb-2">
-                              {/* {"by "+element.childMarkdownRemark.frontmatter.author} */}
-                              By {RenderAuthors(element.childMarkdownRemark.frontmatter.authors,"")}
-                            </h6>
-                            {/* <p className="card-text">ost.excerpt</p> */}
-                            <div style={{ textAlign: "center" }}>
-                              <Link
-                                className=""
-                                style={{ textDecoration: "none" }}
-                                to={"blog/"+element.relativeDirectory}
-                              >
-                                Read More
-                                <i className="fa fa-arrow-circle-right ml-2"></i>
-                              </Link>
-                            </div>
+                  {data.blog.nodes.map((element, index) => (
+                    <div key={index} className="col-sm-6 col-md-4 item">
+                      <div className="card">
+                        <img
+                          alt={element.childMarkdownRemark.frontmatter.title}
+                          className="card-img-top w-100 d-block"
+                          src={
+                            element.childMarkdownRemark.frontmatter.image
+                              .childImageSharp.fluid.src
+                          }
+                        />
+                        <div className="card-body">
+                          <h4 className="card-title">
+                            {element.childMarkdownRemark.frontmatter.title}
+                          </h4>
+                          <h6 className="text-muted card-subtitle mb-2">
+                            {/* {"by "+element.childMarkdownRemark.frontmatter.author} */}
+                            By{" "}
+                            {RenderAuthors(
+                              element.childMarkdownRemark.frontmatter.authors,
+                              ""
+                            )}
+                          </h6>
+                          {/* <p className="card-text">ost.excerpt</p> */}
+                          <div style={{ textAlign: "center" }}>
+                            <Link
+                              className=""
+                              style={{ textDecoration: "none" }}
+                              to={"blog/" + element.relativeDirectory}
+                            >
+                              Read More
+                              <i className="fa fa-arrow-circle-right ml-2"></i>
+                            </Link>
                           </div>
                         </div>
                       </div>
-                    )
-                  })}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -142,7 +194,7 @@ const MainPage = props => {
 
 export const postQuery = graphql`
   {
-    allFile(
+    blog: allFile(
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
       sort: { fields: birthtime, order: DESC }
       limit: 3
@@ -164,7 +216,16 @@ export const postQuery = graphql`
         }
       }
     }
+    sig: allFile(filter: { relativeDirectory: { eq: "siglogo" } }) {
+      nodes {
+        name
+        childImageSharp {
+          fluid {
+            srcWebp
+          }
+        }
+      }
+    }
   }
 `
 export default MainPage
-

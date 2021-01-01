@@ -60,7 +60,7 @@ const RenderProject = ({
         <div className="col-lg-12">
           <h3>
             <Link className="btn-link" to={"/projects/"+title.toLowerCase().split(" ").join("")}>
-              {title} ({year})<span class="badge badge-primary">{SIG}</span>
+              {title} ({year})<span className="badge badge-primary">{SIG}</span>
             </Link>
           </h3>
           <div className="info">
@@ -70,7 +70,7 @@ const RenderProject = ({
             </span>
           </div>
           <p> {description} </p>
-          <a href={"https://" + URL} class="card-link">
+          <a href={"https://" + URL} className="card-link">
             Read More
           </a>
         </div>
@@ -85,7 +85,6 @@ export const Author = props => {
   const projectReports = props.data.content.nodes.filter(
     e => e.sourceInstanceName === "project-reports"
   )
-  console.log(blogArticles, projectReports)
   return (
     <Layout location={props.location.pathname}>
       <SEO title={"About " + props.pageContext.name} />
@@ -95,7 +94,7 @@ export const Author = props => {
             <div className="block-content">
               <div className="row">
                 <div className="col-lg-3 col-md-3 col-sm-12">
-                  <img  class="img-fluid" style={{height:"10em"}} src={props.data.image.edges[0] && props.data.image.edges[0].node.childImageSharp.fluid.srcWebp} alt=""/>
+                  {/* <img  className="img-fluid" style={{height:"10em"}} src={props.data.image.edges[0] && props.data.image.edges[0].node.childImageSharp.fluid.srcWebp} alt=""/> */}
                   {/* <img src=""/> */}
                 </div>
                 <div className="col-lg-9 col-md-9 col-sm-12">

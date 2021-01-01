@@ -120,17 +120,17 @@ export const About = props => {
             <div className="block-heading">
               <h2 className="text-primary">Our Family</h2>
             </div>
-            <div class="btn-group w-100 mb-5" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-outline-primary">
+            <div className="btn-group w-100 mb-5" role="group" aria-label="Basic example">
+              <button type="button" className="btn btn-outline-primary">
                 All
               </button>
-              <button type="button" class="btn btn-outline-primary">
+              <button type="button" className="btn btn-outline-primary">
                 Alumni
               </button>
-              <button type="button" class="btn btn-outline-primary">
+              <button type="button" className="btn btn-outline-primary">
                 Core
               </button>
-              <button type="button" class="btn btn-outline-primary">
+              <button type="button" className="btn btn-outline-primary">
                 Members
               </button>
             </div>
