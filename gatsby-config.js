@@ -9,6 +9,7 @@ module.exports = {
         number: "999999999",
       },
     ],
+    contactEmail: 'iet@nitk.ac.in',
     siteUrl: `https://iet-nitk.netlify.app/`,
   },
 
