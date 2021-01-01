@@ -18,10 +18,13 @@ const RenderArticles = ({ articles, type }) => (
               <h3>
                 <Link
                   className="btn-link"
-                  to={"/blog/"+element.childMarkdownRemark.frontmatter.title
-                    .toLowerCase()
-                    .split(" ")
-                    .join("")}
+                  to={
+                    "/blog/" +
+                    element.childMarkdownRemark.frontmatter.title
+                      .toLowerCase()
+                      .split(" ")
+                      .join("")
+                  }
                 >
                   {element.childMarkdownRemark.frontmatter.title}
                 </Link>
@@ -59,7 +62,10 @@ const RenderProject = ({
       <div className="row">
         <div className="col-lg-12">
           <h3>
-            <Link className="btn-link" to={"/projects/"+title.toLowerCase().split(" ").join("")}>
+            <Link
+              className="btn-link"
+              to={"/projects/" + title.toLowerCase().split(" ").join("")}
+            >
               {title} ({year})<span className="badge badge-primary">{SIG}</span>
             </Link>
           </h3>
@@ -98,44 +104,53 @@ export const Author = props => {
                   {/* <img src=""/> */}
                 </div>
                 <div className="col-lg-9 col-md-9 col-sm-12">
-                  <div
-                    className="card clean-blog-post mb-3"
-                    style={{ paddingBottom: "10px" }}
-                  >
-                    <div className="card-body">                      <div className="card-title">
-                        <h4>Projects</h4>
+                  {props.pageContext.projects.length > 0 ? (
+                    <div
+                      className="card clean-blog-post mb-3"
+                      style={{ paddingBottom: "10px" }}
+                    >
+                      <div className="card-body">
+                        {" "}
+                        <div className="card-title">
+                          <h4>Projects</h4>
+                        </div>
+                        {props.pageContext.projects.map((e, i) => (
+                          <RenderProject {...e} />
+                        ))}
                       </div>
-                      {props.pageContext.projects.map((e, i) => (
-                        <RenderProject {...e} />
-                      ))}
                     </div>
-                  </div>
+                  ) : null}
 
-                  <div
-                    className="card clean-blog-post mb-3"
-                    style={{ paddingBottom: "10px" }}
-                  >
-                    <div className="card-body">
-                      <div className="card-title">
-                        <h4>Blog Articles</h4>
+                  {blogArticles.length > 0 ? (
+                    <div
+                      className="card clean-blog-post mb-3"
+                      style={{ paddingBottom: "10px" }}
+                    >
+                      <div className="card-body">
+                        <div className="card-title">
+                          <h4>Blog Articles</h4>
+                        </div>
+                        <RenderArticles articles={blogArticles} type="blog" />
                       </div>
-                      <RenderArticles articles={blogArticles} type="blog" />
                     </div>
-                  </div>
-                  <div
-                    className="card clean-blog-post mb-3"
-                    style={{ paddingBottom: "10px" }}
-                  >
-                    <div className="card-body">
-                      <div className="card-title">
-                        <h4>Project Reports</h4>
+                  ) : null}
+
+                  {projectReports.length > 0 ? (
+                    <div
+                      className="card clean-blog-post mb-3"
+                      style={{ paddingBottom: "10px" }}
+                    >
+                      <div className="card-body">
+                        <div className="card-title">
+                          <h4>Project Reports</h4>
+                        </div>
+                        <RenderArticles
+                          articles={projectReports}
+                          type="reports"
+                        />
                       </div>
-                      <RenderArticles
-                        articles={projectReports}
-                        type="reports"
-                      />
                     </div>
-                  </div>
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -150,15 +165,9 @@ export const postQuery = graphql`
   query($tag: [String], $image: String) {
     image: allFile(
       filter: {
-        internal: {mediaType: {regex: "/image\\/*/"}}, 
-        relativeDirectory: {eq: "members"}, 
-        childImageSharp: {
-          fluid: {
-            originalName: {
-              eq: $image
-            }
-          }
-        }
+        internal: { mediaType: { regex: "/image/*/" } }
+        relativeDirectory: { eq: "members" }
+        childImageSharp: { fluid: { originalName: { eq: $image } } }
       }
     ) {
       edges {
@@ -172,23 +181,23 @@ export const postQuery = graphql`
       }
     }
     content: allFile(
-        filter: {
-          ext: { eq: ".md" }
-          childMarkdownRemark: { frontmatter: { authors: { in: $tag } } }
-        }
-      ) {
-        nodes {
-          sourceInstanceName
-          childMarkdownRemark {
-            frontmatter {
-              title
-              authors
-            }
-            excerpt
-          }
-          birthTime
-        }
+      filter: {
+        ext: { eq: ".md" }
+        childMarkdownRemark: { frontmatter: { authors: { in: $tag } } }
       }
+    ) {
+      nodes {
+        sourceInstanceName
+        childMarkdownRemark {
+          frontmatter {
+            title
+            authors
+          }
+          excerpt
+        }
+        birthTime
+      }
+    }
   }
 `
 export default Author

@@ -1,11 +1,15 @@
 module.exports = {
   siteMetadata: {
     title: `IET NITK`,
-    author: {
-      name: `Nirmal Khedkar`,
-    },
+    author: `Nirmal Khedkar`,
     description: `To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society. We are IET NITK.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    contactDetails: [
+      {
+        name: "Nirmal Khedkar",
+        number: "999999999",
+      },
+    ],
+    siteUrl: `https://iet-nitk.netlify.app/`,
   },
 
   plugins: [
