@@ -2,10 +2,12 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import recruitmentQ from "../../content/yml/recrfaq.yml"
+import SIG from "../../content/yml/sig.yml"
+import { SIGShowcase } from "./index"
 
-const SMP = props => {
+const SMP = ({ location, data }) => {
   return (
-    <Layout>
+    <Layout location={location.pathname}>
       <SEO title="Join Us!" />
       <main className="page faq-page">
         <section className="clean-block about-us">
@@ -18,6 +20,7 @@ const SMP = props => {
               </p>
             </div>
             {/* {% include sig.html %} */}
+            <SIGShowcase sigs={SIG} hide_link={false} sig_images={data.allFile.nodes} />
           </div>
         </section>
         <div
@@ -48,8 +51,8 @@ const SMP = props => {
               <div className="faq-item">
                 {recruitmentQ.map((e, i) => (
                   <>
-                    <h4 className="question">{e.question}</h4>
-                    <div className="answer">{e.answer}</div>
+                    <h4 className="question mb-0">{e.question}</h4>
+                    <div className="answer mt-0 mb-2">{e.answer}</div>
                   </>
                 ))}
               </div>
@@ -63,5 +66,16 @@ const SMP = props => {
     </Layout>
   )
 }
+
+export const postQuery = graphql`
+  {
+    allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
+      nodes {
+        name
+        publicURL
+      }
+    }
+  }
+`
 
 export default SMP

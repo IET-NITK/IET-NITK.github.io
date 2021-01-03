@@ -30,10 +30,10 @@ const MemberDetails = ({ author, index }) => {
           <div className="icons">
             {author.facebook ? (
               <a href={"https://www.facebook.com/" + author.facebook}>
-                <i className={`fa fa-facebook ${textcolor}`}></i>
+                <i className={`fa fa-facebook ${textcolor}`}/>
               </a>
             ) : (
-              <></>
+              null
             )}
             {author.linkedin ? (
               <a href={"https://www.linkedin.com/in/" + author.linkedin}>
@@ -41,10 +41,10 @@ const MemberDetails = ({ author, index }) => {
                   className={`fa fa-linkedin ${
                     author.alumni === true ? "text-light" : ""
                   }`}
-                ></i>
+                />
               </a>
             ) : (
-              <></>
+              null
             )}
             {author.github ? (
               <a href={"https://www.github.com/" + author.github}>
@@ -52,10 +52,10 @@ const MemberDetails = ({ author, index }) => {
                   className={`fa fa-github ${
                     author.alumni === true ? "text-light" : ""
                   }`}
-                ></i>
+                />
               </a>
             ) : (
-              <></>
+              null
             )}
           </div>
         </div>

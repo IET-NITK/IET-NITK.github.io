@@ -48,7 +48,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         path: "sig/" + lcrs(element.name),
         component: sigTemplate,
         context: {
-          pathSlug: element.name,
+          pathSlug: `/^${element.name}/`,
           sigDetails: element,
         },
       })

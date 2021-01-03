@@ -10,8 +10,8 @@ const TopNavbar = props => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-8 d-none d-lg-block">
-              <Link to="/contact.html" className="small mr-3">
-                <span className="icon-question-circle-o mr-2"></span>
+              <Link to="/contact" className="small mr-3">
+                <span className="fa fa-question-circle-o mr-2 mt-0"/>
                 Any questions?
               </Link>
             </div>
@@ -61,7 +61,7 @@ export const Navbar = props => {
               <span
                 className="navbar-toggler-icon"
                 style={{ margin: "0px" }}
-              ></span>
+              />
             </button>
             <div className="collapse navbar-collapse" id="navcol-1">
               <ul className="nav navbar-nav ml-auto">

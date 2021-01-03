@@ -76,19 +76,19 @@ export const Footer = props => {
                 </div>
                 <div className="col item social">
                   <a href="https://www.facebook.com/ietnitk">
-                    <i className="fa fa-facebook"></i>
+                    <i className="fa fa-facebook"/>
                   </a>
                   <a href="https://www.linkedin.com/company/ietnitk/">
-                    <i className="fa fa-linkedin"></i>
+                    <i className="fa fa-linkedin"/>
                   </a>
                   <a href="https://www.github.com/IET-NITK">
-                    <i className="fa fa-github"></i>
+                    <i className="fa fa-github"/>
                   </a>
                   <a href="https://www.instagram.com/ietnitk">
-                    <i className="fa fa-instagram"></i>
+                    <i className="fa fa-instagram"/>
                   </a>
                   <a href="/feed.xml">
-                    <i className="fa fa-rss"></i>
+                    <i className="fa fa-rss"/>
                   </a>
                 </div>
               </div>

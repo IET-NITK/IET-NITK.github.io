@@ -6,7 +6,7 @@ import Img_IETUpview from "../assets/img/iet-upview.jpg"
 import { RenderAuthors } from "../components/helper"
 import SIG from "../../content/yml/sig.yml"
 
-const SIGShowcase = ({ sigs, sig_images }) => {
+export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
   let img_hash = {}
   sig_images.forEach(element => {
     img_hash[element.name] = element.publicURL
@@ -35,7 +35,7 @@ const SIGShowcase = ({ sigs, sig_images }) => {
                 />
               </div>
               <p>{s.description}</p>
-              {s.no_link === false ? (
+              {s.no_link === false && hide_link!==false ? (
                 <>
                   <Link
                     to={`sig/${s.name.toLowerCase()}`}
@@ -57,7 +57,7 @@ const MainPage = ({ location, data }) => {
     <Layout location={location.pathname} title={"Main"}>
       <SEO title="We are IET NITK" />
       <main className="page landing-page">
-        <section className="hero"></section>
+        <section className="hero"/>
         <section
           id="purple-overlay"
           className="clean-block clean-hero hero"
@@ -68,7 +68,7 @@ const MainPage = ({ location, data }) => {
             width: "100%",
             height: "90vh",
           }}
-        ></section>
+        />
         <div id="video" className="video-hero">
           <iframe
             title="Intro Youtube Video"
@@ -78,7 +78,7 @@ const MainPage = ({ location, data }) => {
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></iframe>
+          />
         </div>
         <section className="clean-block about-us" id="about-us">
           <div className="container">
@@ -175,7 +175,7 @@ const MainPage = ({ location, data }) => {
                               to={"blog/" + element.relativeDirectory}
                             >
                               Read More
-                              <i className="fa fa-arrow-circle-right ml-2"></i>
+                              <i className="fa fa-arrow-circle-right ml-2"/>
                             </Link>
                           </div>
                         </div>
