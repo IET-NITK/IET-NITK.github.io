@@ -27,7 +27,7 @@ const TopNavbar = props => {
                 to="/smp"
                 role="button"
                 disabled={true}
-                className="btn btn-outline-primary mr-3"
+                className="btn btn-outline-primary mr-3 disabled"
               >
                 SMP
               </Link>

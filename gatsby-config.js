@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/ietnitk",
+  pathPrefix: process.env.PATH_PREFIX || "",
   siteMetadata: {
     title: `IET NITK`,
     author: `Nirmal Khedkar`,
@@ -47,10 +47,18 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/assets/img`,
-        name: `images`,
+        path: `${__dirname}/src/assets/img/siglogo`,
+        name: `sig_logo`,
       },
     },
+
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/src/assets/img/members`,
+    //     name: `member_images`,
+    //   },
+    // },
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {

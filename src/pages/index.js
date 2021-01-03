@@ -216,7 +216,7 @@ export const postQuery = graphql`
         }
       }
     }
-    sig: allFile(filter: { relativeDirectory: { eq: "siglogo" } }) {
+    sig: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
       nodes {
         name
         childImageSharp {
