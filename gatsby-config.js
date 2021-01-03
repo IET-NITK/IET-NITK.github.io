@@ -1,16 +1,17 @@
 module.exports = {
+  pathPrefix: "/ietnitk",
   siteMetadata: {
     title: `IET NITK`,
     author: `Nirmal Khedkar`,
     description: `To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society. We are IET NITK.`,
     contactDetails: [
       {
-        name: "Nirmal Khedkar",
+        name: "Skanda Upadhyay",
         number: "999999999",
       },
     ],
     contactEmail: 'iet@nitk.ac.in',
-    siteUrl: `https://iet-nitk.netlify.app/`,
+    siteUrl: `https://iet.nitk.ac.in/`,
   },
 
   plugins: [
@@ -50,13 +51,13 @@ module.exports = {
         name: `images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/project-reports`,
-        name: `project-reports`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/content/project-reports`,
+    //     name: `project-reports`,
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

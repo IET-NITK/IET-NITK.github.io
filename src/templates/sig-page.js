@@ -44,13 +44,26 @@ export const SIG = props => {
                 <div key={index} className="clean-blog-post">
                   <div className="row">
                     <div className="col-lg-12">
-                      <h3><Link className="btn-link" to={"/projects/"+element.title.toLowerCase().split(" ").join("")}>{element.title}</Link>  </h3>
+                      <h3>
+                        {element.builtBy && element.URL ? (
+                          <Link
+                            to={
+                              "/projects/" +
+                              element.title.toLowerCase().split(" ").join("")
+                            }
+                          >
+                            {element.title}
+                          </Link>
+                        ) : (
+                          element.title
+                        )}
+                      </h3>
                       {element.builtBy !== null ? (
                         <>
                           <div className="info">
                             <span className="text-muted">
                               By
-                              {RenderAuthors(element.builtBy,"")}
+                              {RenderAuthors(element.builtBy, "")}
                             </span>
                           </div>
                         </>
