@@ -5,11 +5,11 @@ import moment from "moment"
 import SEO from "../components/seo"
 import { RenderAuthors } from "../components/helper"
 
-export const Blog = props => {
-  let blogs = props.data.allFile.nodes
+export const Blog = ({data,location}) => {
+  // let blogs = props.data.allFile.nodes
 
   return (
-    <Layout location={props.location.pathname} title={"Main"}>
+    <Layout location={location.pathname} title={"Main"}>
       <SEO title="Blog" />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
@@ -21,12 +21,7 @@ export const Blog = props => {
               </p>
             </div>
             <div className="block-content">
-              {blogs.map((element, index) => {
-                let link = element.relativeDirectory
-                let date = element.birthTime
-                let excerpt = element.childMarkdownRemark.excerpt
-                let ttr = element.childMarkdownRemark.timeToRead
-                let frontmatter = element.childMarkdownRemark.frontmatter
+              {data.allFile.nodes.map((element, index) => {
                 return (
                   <div key={index} className="clean-blog-post">
                     <div className="row">
@@ -34,24 +29,24 @@ export const Blog = props => {
                         <img
                           alt="X"
                           className="rounded img-fluid"
-                          src={frontmatter.image.childImageSharp.fluid.srcWebp}
+                          src={element.childMarkdownRemark.frontmatter.image.publicURL}
                           style={{ width: "100%", height: "auto" }}
                         />
                       </div>
                       <div className="col-lg-7">
-                        <h3 data-toggle="tooltip" title={ttr + " minute read"}>
-                          {frontmatter.title}
+                        <h3 data-toggle="tooltip" title={element.childMarkdownRemark.timeToRead+" minute read"}>
+                          {element.childMarkdownRemark.frontmatter.title}
                         </h3>
                         <div className="info">
                           <span className="text-muted">
-                            By {RenderAuthors(frontmatter.authors, "")}
+                            By {RenderAuthors(element.childMarkdownRemark.frontmatter.authors, "")}
                             <br />
-                            {moment(date).format("Do MMMM, YYYY")}
+                            {moment(element.birthTime).format("Do MMMM, YYYY")}
                           </span>
                         </div>
-                        <p>{excerpt}</p>
+                        <p>{element.childMarkdownRemark.excerpt}</p>
                         <Link
-                          to={link}
+                          to={"/blog/"+element.relativeDirectory}
                           className="btn btn-outline-primary btn-sm"
                           type="button"
                         >
@@ -86,11 +81,7 @@ export const postQuery = graphql`
             authors
             title
             image {
-              childImageSharp {
-                fluid {
-                  srcWebp
-                }
-              }
+              publicURL
             }
           }
         }

@@ -22,7 +22,7 @@ export const BlogArticle = props => {
                   <div
                     className="post-image"
                     style={{
-                      backgroundImage: `url('${current.frontmatter.image.childImageSharp.fluid.srcWebp}')`,
+                      backgroundImage: `url('${current.frontmatter.image.publicURL}')`,
                       backgroundAttachment: "fixed",
                       backgroundRepeat: "no-repeat",
                     }}
@@ -98,11 +98,7 @@ export const postQuery = graphql`
               title
               displayOnBlog
               image {
-                childImageSharp {
-                  fluid {
-                    srcWebp
-                  }
-                }
+                publicURL
               }
             }
             html
