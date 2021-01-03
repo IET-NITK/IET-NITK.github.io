@@ -34,7 +34,7 @@ export const Blog = props => {
                         <img
                           alt="X"
                           className="rounded img-fluid"
-                          src={frontmatter.image.childImageSharp.fluid.src}
+                          src={frontmatter.image.childImageSharp.fluid.srcWebp}
                           style={{ width: "100%", height: "auto" }}
                         />
                       </div>
@@ -44,8 +44,7 @@ export const Blog = props => {
                         </h3>
                         <div className="info">
                           <span className="text-muted">
-                            By{" "}
-                            {RenderAuthors(frontmatter.authors,"")}
+                            By {RenderAuthors(frontmatter.authors, "")}
                             <br />
                             {moment(date).format("Do MMMM, YYYY")}
                           </span>
@@ -89,7 +88,7 @@ export const postQuery = graphql`
             image {
               childImageSharp {
                 fluid {
-                  src
+                  srcWebp
                 }
               }
             }

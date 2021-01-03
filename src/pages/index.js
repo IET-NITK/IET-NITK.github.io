@@ -152,7 +152,7 @@ const MainPage = ({ location, data }) => {
                           className="card-img-top w-100 d-block"
                           src={
                             element.childMarkdownRemark.frontmatter.image
-                              .childImageSharp.fluid.src
+                              .childImageSharp.fluid.srcWebp
                           }
                         />
                         <div className="card-body">
@@ -208,7 +208,7 @@ export const postQuery = graphql`
             image {
               childImageSharp {
                 fluid {
-                  src
+                  srcWebp
                 }
               }
             }
