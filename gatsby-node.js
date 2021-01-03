@@ -28,8 +28,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
     console.log(
       "Member:",
-      "Endpoint for " + lcrs(element.name),
-      projectsDone.length
+      "Endpoint for " + lcrs(element.name)
     )
     createPage({
       path: "member/" + lcrs(element.name),

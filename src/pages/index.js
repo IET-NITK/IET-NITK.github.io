@@ -9,7 +9,7 @@ import SIG from "../../content/yml/sig.yml"
 const SIGShowcase = ({ sigs, sig_images }) => {
   let img_hash = {}
   sig_images.forEach(element => {
-    img_hash[element.name] = element.childImageSharp.fluid.srcWebp
+    img_hash[element.name] = element.publicURL
   })
   return (
     <>
@@ -152,7 +152,7 @@ const MainPage = ({ location, data }) => {
                           className="card-img-top w-100 d-block"
                           src={
                             element.childMarkdownRemark.frontmatter.image
-                              .childImageSharp.fluid.srcWebp
+                              .publicURL
                           }
                         />
                         <div className="card-body">
@@ -206,11 +206,7 @@ export const postQuery = graphql`
             authors
             title
             image {
-              childImageSharp {
-                fluid {
-                  srcWebp
-                }
-              }
+              publicURL
             }
           }
         }
@@ -219,11 +215,7 @@ export const postQuery = graphql`
     sig: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
       nodes {
         name
-        childImageSharp {
-          fluid {
-            srcWebp
-          }
-        }
+        publicURL
       }
     }
   }
