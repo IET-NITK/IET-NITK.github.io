@@ -2,14 +2,14 @@
   description: Learn basics of AutoCAD.
   sig: Rovisp
   link: link
-  mentors: Nirmal Khedkar
+  mentors: ['Nirmal Khedkar',"Jayesh Kumar Soni"]
 - title: Machine Learning
   description: Learn basics of ML.
   sig: Cipher
   link: link2
-  mentors: Nirmal Khedkar
+  mentors: ['Nirmal Khedkar']
 - title: Engines
-  mentors: Nirmal Khedkar
+  mentors: ['Nirmal Khedkar']
   description: Learn basics of Engines
   sig: Torsion
   link: link
@@ -17,19 +17,19 @@
   description: Learn basics of Engines
   sig: Torsion
   link: link
-  mentors: Nirmal Khedkar
+  mentors: ['Nirmal Khedkar']
 - title: Engines
   description: Learn basics of Engines
   sig: Torsion
   link: link
-  mentors: Nirmal Khedkar
+  mentors: ['Nirmal Khedkar']
 - title: Engines
   description: Learn basics of Engines
   sig: Torsion
   link: link
-  mentors: Nirmal Khedkar
+  mentors: ['Nirmal Khedkar']
 - title: Engines
   description: Learn basics of Engines
   sig: Torsion
-  mentors: Nirmal Khedkar
+  mentors: ['Nirmal Khedkar']
   link: link

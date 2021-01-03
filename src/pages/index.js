@@ -5,12 +5,10 @@ import SEO from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
 import { RenderAuthors } from "../components/helper"
 import SIG from "../../content/yml/sig.yml"
+import {generateSIGHash} from "../components/helper"
 
 export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
-  let img_hash = {}
-  sig_images.forEach(element => {
-    img_hash[element.name] = element.publicURL
-  })
+  let img_hash = generateSIGHash(sig_images)
   return (
     <>
       <div className="row justify-content-center">
