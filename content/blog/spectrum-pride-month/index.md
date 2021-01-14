@@ -3,6 +3,7 @@ title: Effect of technology on rights and freedoms of the queer community
 authors: ['Feyaz Baker']
 image: spectrumbanner.png
 displayOnBlog: false
+publishDate: "2020-01-01"
 ---
 
 Exploring how technology has affected the queer community

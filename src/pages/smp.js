@@ -5,7 +5,10 @@ import smp from "../../content/yml/smp.yml"
 import { RenderAuthors, generateSIGHash } from "../components/helper"
 import { Link } from "gatsby"
 import moment from "moment"
-const SMP = ({data, location}) => {
+
+import { graphql } from "gatsby"
+
+const SMP = ({ data, location }) => {
   let smp_by_sig = {}
   smp.forEach(element => {
     if (!smp_by_sig[element.sig]) {
@@ -14,10 +17,10 @@ const SMP = ({data, location}) => {
     smp_by_sig[element.sig].push(element)
   })
   Object.keys(smp_by_sig).map(e => smp_by_sig[e].sort())
-  let sig_images=generateSIGHash(data.allFile.nodes)
+  let sig_images = generateSIGHash(data.allFile.nodes)
   return (
     <Layout location={location.pathname}>
-      <SEO title={"SMP "+moment().year()}/>
+      <SEO title={"SMP " + moment().year()} />
       <main className="page">
         <section className="clean-block about-us">
           <div className="container">
@@ -38,7 +41,7 @@ const SMP = ({data, location}) => {
               <div className="row">
                 <div className="col-lg-6 col-md-8 col-sm-12">
                   <h3 id={sig} className="smp-signames">
-                    <Link to={'/sig/'+sig}>{sig}</Link>
+                    <Link to={"/sig/" + sig}>{sig}</Link>
                   </h3>
                   {smp_by_sig[sig].map((smp, i) => (
                     <>
@@ -62,7 +65,7 @@ const SMP = ({data, location}) => {
                   <img
                     className="mobile-invisible smp-logo"
                     style={{ maxWidth: "150px", paddingTop: "2em" }}
-                    src={sig_images[sig+"-logo"]}
+                    src={sig_images[sig + "-logo"]}
                     alt={sig}
                   />
                 </div>
@@ -75,7 +78,6 @@ const SMP = ({data, location}) => {
     </Layout>
   )
 }
-
 
 export const postQuery = graphql`
   {

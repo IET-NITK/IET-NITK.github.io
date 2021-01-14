@@ -161,25 +161,43 @@ export const Author = props => {
   )
 }
 
+
+// query($tag: [String], $image: String) {
+//   image: allFile(
+//     filter: {
+//       internal: { mediaType: { regex: "/image/*/" } }
+//       relativeDirectory: { eq: "members" }
+//       childImageSharp: { fluid: { originalName: { eq: $image } } }
+//     }
+//   ) {
+//     edges {
+//       node {
+//         publicURL
+//       }
+//     }
+//   }
+//   content: allFile(
+//     filter: {
+//       ext: { eq: ".md" }
+//       childMarkdownRemark: { frontmatter: { authors: { in: $tag } } }
+//     }
+//   ) {
+//     nodes {
+//       sourceInstanceName
+//       childMarkdownRemark {
+//         frontmatter {
+//           title
+//           authors
+//         }
+//         excerpt
+//       }
+//       birthTime
+//     }
+//   }
+// }
+
 export const postQuery = graphql`
-  query($tag: [String], $image: String) {
-    image: allFile(
-      filter: {
-        internal: { mediaType: { regex: "/image/*/" } }
-        relativeDirectory: { eq: "members" }
-        childImageSharp: { fluid: { originalName: { eq: $image } } }
-      }
-    ) {
-      edges {
-        node {
-          childImageSharp {
-            fluid(maxWidth: 200, maxHeight: 400) {
-              srcWebp
-            }
-          }
-        }
-      }
-    }
+  query($tag: [String]) {
     content: allFile(
       filter: {
         ext: { eq: ".md" }

@@ -2,6 +2,7 @@
 title: Audio Production
 authors: ['Rajamani']
 image: audio.jpg
+publishDate: "2020-02-01"
 ---
 
 How is music produced?

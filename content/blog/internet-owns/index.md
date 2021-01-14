@@ -3,6 +3,7 @@ title: Who Owns the Internet
 
 authors: ['Makarand']
 image: internet.png
+publishDate: "2020-01-01"
 ---
 
 Ever thought how internet comes to you? How you are connected to different websites?

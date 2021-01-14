@@ -2,6 +2,7 @@
 title: Analysis of Batman
 authors: ['Feyaz Baker']
 image: batman.jpg
+publishDate: "2020-01-01"
 ---
 
 Exploring one of the most popular characters ever.

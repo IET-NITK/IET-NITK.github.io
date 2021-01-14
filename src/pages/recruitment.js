@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import recruitmentQ from "../../content/yml/recrfaq.yml"
 import SIG from "../../content/yml/sig.yml"
 import { SIGShowcase } from "./index"
+import { graphql } from "gatsby"
 
 const SMP = ({ location, data }) => {
   return (
