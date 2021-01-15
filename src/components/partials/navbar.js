@@ -76,6 +76,11 @@ export const Navbar = props => {
                   </Link>
                 </li>
                 <li className="nav-item" role="presentation">
+                  <Link className="nav-link " to="/events">
+                    Events
+                  </Link>
+                </li>
+                <li className="nav-item" role="presentation">
                   <Link className="nav-link " to="/blog">
                     Blog
                   </Link>

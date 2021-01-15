@@ -9,7 +9,7 @@ import { RenderAuthors } from "../components/helper"
 export const Project = ({ data, pathname, pageContext }) => {
   return (
     <Layout location={pathname && pathname.location}>
-      <SEO title={pageContext.pathSlug} />
+      <SEO title={pageContext.title + " @" + pageContext.sig} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">
@@ -24,20 +24,23 @@ export const Project = ({ data, pathname, pageContext }) => {
                 <div className="col-lg-6">
                   <h4>Built by</h4>
                   <ul>
-                    {pageContext.builtBy && pageContext.builtBy.map((e, i) => (
-                      <li key={i}>{e}</li>
-                    ))}
+                    {pageContext.builtBy &&
+                      pageContext.builtBy.map((e, i) => <li key={i}>{e}</li>)}
                   </ul>
                 </div>
                 <div className="col-lg-6 text-right">
-                  <a href={pageContext.URL} className="btn btn-primary">
+                  <a href={'https://'+pageContext.URL} className="btn btn-primary">
                     <i className="fa fa-link" /> Project Link
                   </a>
                 </div>
               </div>
+              {data.allFile.nodes.length !== 0 ? (
+                <>
+                  <hr />
+                  <h4>Project Reports</h4>
+                </>
+              ) : null}
 
-              <hr />
-              <h4>Project Reports</h4>
               {data.allFile.nodes.map((element, index) => (
                 <div key={index} className="clean-blog-post">
                   <div className="row">

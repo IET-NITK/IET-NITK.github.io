@@ -21,6 +21,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const sigTemplate = path.resolve(`./src/templates/sig-page.js`)
   const sigs = yaml.safeLoad(fs.readFileSync("./content/yml/sig.yml", "utf-8"))
   const blogTemplate = path.resolve("./src/templates/blog-post.js")
+  const eventsTemplate = path.resolve('./src/templates/events-post.js')
 
   authors.forEach(element => {
     let projectsDone = projects.filter(e => {
@@ -74,6 +75,35 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         createPage({
           path: "blog/" + lcrs(element.relativeDirectory),
           component: blogTemplate,
+          context: {
+            pathSlug: element.relativeDirectory,
+          },
+        })
+      })
+    })
+  } catch {
+    throw Error("Error in generating pages for Blogs")
+  }
+
+  try {
+    graphql(`
+      query {
+        allFile(
+          filter: { sourceInstanceName: { eq: "events" }, ext: { eq: ".md" } }
+        ) {
+          nodes {
+            relativeDirectory
+          }
+        }
+      }
+    `).then(result => {
+      let titleArray = result.data.allFile.nodes
+      titleArray.forEach(element => {
+        console.log("Events:", "Endpoint for " + lcrs(element.relativeDirectory))
+        // eslint-disable-next-line
+        createPage({
+          path: "events/" + lcrs(element.relativeDirectory),
+          component: eventsTemplate,
           context: {
             pathSlug: element.relativeDirectory,
           },

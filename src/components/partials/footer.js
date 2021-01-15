@@ -40,6 +40,9 @@ export const Footer = props => {
                       <Link to="/about#family">Our Family</Link>
                     </li>
                     <li>
+                      <Link to="/events">Events</Link>
+                    </li>
+                    <li>
                       <Link to="/blog">Blog</Link>
                     </li>
                     <li>
