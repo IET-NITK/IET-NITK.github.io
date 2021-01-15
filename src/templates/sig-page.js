@@ -17,12 +17,14 @@ export const SIG = ({ pageContext, pathname, data }) => {
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <img
-                alt={sig.name}
-                src={data.file.publicURL}
-                className="sig-logo"
-                style={{ maxWidth: "200px" }}
-              />
+              <Link to={'/sig/'+sig.name.toLowerCase()}>
+                <img
+                  alt={sig.name}
+                  src={data.file.publicURL}
+                  className="sig-logo"
+                  style={{ maxWidth: "200px" }}
+                />
+              </Link>
               <p>{sig.description}</p>
             </div>
             <div className="block-content">
@@ -53,9 +55,7 @@ export const SIG = ({ pageContext, pathname, data }) => {
                             </span>
                           </div>
                         </>
-                      ) : (
-                        null
-                      )}
+                      ) : null}
 
                       <p> {element.description} </p>
                     </div>

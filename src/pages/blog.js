@@ -1,13 +1,10 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
-import moment from "moment"
 import SEO from "../components/seo"
 import { RenderAuthors } from "../components/helper"
 
-export const Blog = ({data,location}) => {
-  // let blogs = props.data.allFile.nodes
-
+export const Blog = ({ data, location }) => {
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SEO title="Blog" />
@@ -29,24 +26,37 @@ export const Blog = ({data,location}) => {
                         <img
                           alt="X"
                           className="rounded img-fluid"
-                          src={element.childMarkdownRemark.frontmatter.image.publicURL}
+                          src={
+                            element.childMarkdownRemark.frontmatter.image
+                              .publicURL
+                          }
                           style={{ width: "100%", height: "auto" }}
                         />
                       </div>
                       <div className="col-lg-7">
-                        <h3 data-toggle="tooltip" title={element.childMarkdownRemark.timeToRead+" minute read"}>
+                        <h3
+                          data-toggle="tooltip"
+                          title={
+                            element.childMarkdownRemark.timeToRead +
+                            " minute read"
+                          }
+                        >
                           {element.childMarkdownRemark.frontmatter.title}
                         </h3>
                         <div className="info">
                           <span className="text-muted">
-                            By {RenderAuthors(element.childMarkdownRemark.frontmatter.authors, "")}
+                            By{" "}
+                            {RenderAuthors(
+                              element.childMarkdownRemark.frontmatter.authors,
+                              ""
+                            )}
                             <br />
-                            {moment(element.birthTime).format("Do MMMM, YYYY")}
+                            {element.childMarkdownRemark.frontmatter.publishDate}
                           </span>
                         </div>
                         <p>{element.childMarkdownRemark.excerpt}</p>
                         <Link
-                          to={"/blog/"+element.relativeDirectory}
+                          to={"/blog/" + element.relativeDirectory}
                           className="btn btn-outline-primary btn-sm"
                           type="button"
                         >
@@ -69,11 +79,13 @@ export const postQuery = graphql`
   {
     allFile(
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
-      sort: { fields: birthTime, order: DESC }
+      sort: {
+        fields: childMarkdownRemark___frontmatter___publishDate
+        order: DESC
+      }
     ) {
       nodes {
         relativeDirectory
-        birthTime
         childMarkdownRemark {
           timeToRead
           excerpt(format: PLAIN)
@@ -83,6 +95,7 @@ export const postQuery = graphql`
             image {
               publicURL
             }
+            publishDate(formatString: "Do MMMM, YYYY")
           }
         }
       }

@@ -1,28 +1,24 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import moment from "moment"
 import { RenderAuthors } from "../components/helper"
+import SEO from "../components/seo"
 
-
-export const BlogArticle = props => {
-  const blog = props.data.allFile.edges[0]
-
-  const current = blog.node.childMarkdownRemark
-  // const currentBirthTime =
-
+export const BlogArticle = ({ data }) => {
   return (
     <Layout>
+      <SEO title={data.file.childMarkdownRemark.frontmatter.title}/>
       <main className="page blog-post">
         <section className="clean-block clean-post dark">
           <div className="container">
             <div className="block-content">
-              {current.frontmatter.displayOnBlog === false ? null : (
+              {data.file.childMarkdownRemark.frontmatter.displayOnBlog ===
+              false ? null : (
                 <>
                   <div
                     className="post-image"
                     style={{
-                      backgroundImage: `url('${current.frontmatter.image.publicURL}')`,
+                      backgroundImage: `url('${data.file.childMarkdownRemark.frontmatter.image.publicURL}')`,
                       backgroundAttachment: "fixed",
                       backgroundRepeat: "no-repeat",
                     }}
@@ -31,26 +27,36 @@ export const BlogArticle = props => {
               )}
 
               <div className="post-body">
-                <h3>{current.frontmatter.title}</h3>
+                <h3>{data.file.childMarkdownRemark.frontmatter.title}</h3>
                 <div className="post-info">
                   <span>
                     By{" "}
                     <b>
-                    {RenderAuthors(current.frontmatter.authors,"")}
+                      {RenderAuthors(
+                        data.file.childMarkdownRemark.frontmatter.authors,
+                        ""
+                      )}
                     </b>
                   </span>
                   -
                   <span>
-                    {moment(blog.node.birthtime).format("Do MMMM, YYYY")}
+                    {data.file.childMarkdownRemark.frontmatter.publishDate}
                   </span>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: current.html }} />
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.file.childMarkdownRemark.html,
+                  }}
+                />
                 <span>
                   Written by{" "}
                   <b>
-                    {RenderAuthors(current.frontmatter.authors,"")}
-                    <br/>
-                    on {moment(blog.node.birthtime).format("Do MMMM, YYYY")}
+                    {RenderAuthors(
+                      data.file.childMarkdownRemark.frontmatter.authors,
+                      ""
+                    )}
+                    <br />
+                    on {data.file.childMarkdownRemark.frontmatter.publishDate}
                   </b>
                 </span>
               </div>
@@ -64,47 +70,22 @@ export const BlogArticle = props => {
 
 export const postQuery = graphql`
   query($pathSlug: String!) {
-    allFile(
-      filter: {
-        sourceInstanceName: { eq: "blog" }
-        ext: { eq: ".md" }
-        relativeDirectory: { eq: $pathSlug }
-      }
-      sort: { fields: birthTime, order: DESC }
+    file(
+      sourceInstanceName: { eq: "blog" }
+      extension: { eq: "md" }
+      relativeDirectory: { eq: $pathSlug }
     ) {
-      edges {
-        next {
-          childMarkdownRemark {
-            frontmatter {
-              title
-              authors
-            }
-            timeToRead
+      childMarkdownRemark {
+        frontmatter {
+          authors
+          displayOnBlog
+          publishDate(formatString: "Do MMMM, YYYY")
+          title
+          image {
+            publicURL
           }
         }
-        previous {
-          childMarkdownRemark {
-            frontmatter {
-              title
-              authors
-            }
-            timeToRead
-          }
-        }
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              authors
-              title
-              displayOnBlog
-              image {
-                publicURL
-              }
-            }
-            html
-          }
-          birthtime
-        }
+        html
       }
     }
   }

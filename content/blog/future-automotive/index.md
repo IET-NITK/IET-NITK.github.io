@@ -3,7 +3,7 @@ title: The Future of Automotive Industry
 
 authors: ['Likitha']
 image: autoind.jpg
-publishDate: "2020-01-01"
+publishDate: "2018-12-08"
 ---
 
 What lies in the future of automotive industry?

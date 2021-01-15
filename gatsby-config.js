@@ -12,6 +12,14 @@ module.exports = {
     ],
     contactEmail: 'iet@nitk.ac.in',
     siteUrl: `https://iet.nitk.ac.in/`,
+    smp: {
+      allow: false,
+      link: ""
+    },
+    join: {
+      allow: false,
+      link: ""
+    }
   },
 
   plugins: [

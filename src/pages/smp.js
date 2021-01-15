@@ -17,7 +17,7 @@ const SMP = ({ data, location }) => {
     smp_by_sig[element.sig].push(element)
   })
   Object.keys(smp_by_sig).map(e => smp_by_sig[e].sort())
-  let sig_images = generateSIGHash(data.allFile.nodes)
+  let sig_images = generateSIGHash(data.sig.nodes)
   return (
     <Layout location={location.pathname}>
       <SEO title={"SMP " + moment().year()} />
@@ -41,7 +41,7 @@ const SMP = ({ data, location }) => {
               <div className="row">
                 <div className="col-lg-6 col-md-8 col-sm-12">
                   <h3 id={sig} className="smp-signames">
-                    <Link to={"/sig/" + sig}>{sig}</Link>
+                    <Link to={"/sig/" + sig.toLowerCase()}>{sig}</Link>
                   </h3>
                   {smp_by_sig[sig].map((smp, i) => (
                     <>
@@ -55,19 +55,21 @@ const SMP = ({ data, location }) => {
                             {RenderAuthors(smp.mentors, "")}
                           </span>
                           <br />
-                          <a href={smp.link}>Click to register</a>
+                          <a href={data.site_data.siteMetadata.smp.link}>Click to register</a>
                         </p>
                       </div>
                     </>
                   ))}
                 </div>
                 <div className="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
-                  <img
-                    className="mobile-invisible smp-logo"
-                    style={{ maxWidth: "150px", paddingTop: "2em" }}
-                    src={sig_images[sig + "-logo"]}
-                    alt={sig}
-                  />
+                  <Link to={"/sig/" + sig.toLowerCase()}>
+                    <img
+                      className="mobile-invisible smp-logo"
+                      style={{ maxWidth: "150px", paddingTop: "2em" }}
+                      src={sig_images[sig + "-logo"]}
+                      alt={sig}
+                    />
+                  </Link>
                 </div>
               </div>
               <hr />
@@ -81,10 +83,18 @@ const SMP = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
-    allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
+    sig: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
       nodes {
         name
         publicURL
+      }
+    }
+    site_data: site {
+      siteMetadata {
+        smp {
+          allow
+          link
+        }
       }
     }
   }

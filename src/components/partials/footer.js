@@ -43,9 +43,6 @@ export const Footer = props => {
                       <Link to="/blog">Blog</Link>
                     </li>
                     <li>
-                      <Link to="/projects">Projects</Link>
-                    </li>
-                    <li>
                       <Link to="/contact">Say Hi!</Link>
                     </li>
                   </ul>

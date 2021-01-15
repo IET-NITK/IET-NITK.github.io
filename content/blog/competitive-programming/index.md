@@ -2,7 +2,7 @@
 title: Competitive Programming as a Sport
 authors: ['Vichitr Gandas']
 image: cp.jpg
-publishDate: "2020-01-01"
+publishDate: "2018-12-30"
 ---
 
 Exploring and understanding competitive programming.

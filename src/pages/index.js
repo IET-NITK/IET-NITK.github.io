@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
 import { RenderAuthors } from "../components/helper"
 import SIG from "../../content/yml/sig.yml"
-import {generateSIGHash} from "../components/helper"
+import { generateSIGHash } from "../components/helper"
 
 export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
   let img_hash = generateSIGHash(sig_images)
@@ -20,20 +20,22 @@ export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
           >
             <div className="clean-pricing-item" style={{ height: "100%" }}>
               <div style={{ width: "100%" }}>
-                <img
-                  alt=""
-                  src={img_hash[`${s.name}-logo`]}
-                  style={{
-                    width: "150px",
-                    height: "auto!important",
-                    display: "block",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                  }}
-                />
+                <Link to={`/sig/${s.name.toLowerCase()}`}>
+                  <img
+                    alt=""
+                    src={img_hash[`${s.name}-logo`]}
+                    style={{
+                      width: "150px",
+                      height: "auto!important",
+                      display: "block",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                  />
+                </Link>
               </div>
               <p>{s.description}</p>
-              {s.no_link === false && hide_link!==false ? (
+              {s.no_link === false && hide_link !== false ? (
                 <>
                   <Link
                     to={`sig/${s.name.toLowerCase()}`}
@@ -55,7 +57,7 @@ const MainPage = ({ location, data }) => {
     <Layout location={location.pathname} title={"Main"}>
       <SEO title="We are IET NITK" />
       <main className="page landing-page">
-        <section className="hero"/>
+        <section className="hero" />
         <section
           id="purple-overlay"
           className="clean-block clean-hero hero"
@@ -163,7 +165,12 @@ const MainPage = ({ location, data }) => {
                             {RenderAuthors(
                               element.childMarkdownRemark.frontmatter.authors,
                               ""
-                            )}
+                            )}{" "}
+                            <br />
+                            {
+                              element.childMarkdownRemark.frontmatter
+                                .publishDate
+                            }
                           </h6>
                           {/* <p className="card-text">ost.excerpt</p> */}
                           <div style={{ textAlign: "center" }}>
@@ -173,7 +180,7 @@ const MainPage = ({ location, data }) => {
                               to={"blog/" + element.relativeDirectory}
                             >
                               Read More
-                              <i className="fa fa-arrow-circle-right ml-2"/>
+                              <i className="fa fa-arrow-circle-right ml-2" />
                             </Link>
                           </div>
                         </div>
@@ -194,7 +201,10 @@ export const postQuery = graphql`
   {
     blog: allFile(
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
-      sort: { fields: birthtime, order: DESC }
+      sort: {
+        fields: childMarkdownRemark___frontmatter___publishDate
+        order: DESC
+      }
       limit: 3
     ) {
       nodes {
@@ -206,6 +216,7 @@ export const postQuery = graphql`
             image {
               publicURL
             }
+            publishDate(formatString: "DD/MM/YYYY")
           }
         }
       }

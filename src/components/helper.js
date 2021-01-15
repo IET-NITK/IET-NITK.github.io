@@ -1,9 +1,14 @@
 import { Link } from "gatsby"
 import React from "react"
 
+export const redirectController = (control) => {
+  if(!control){
+    
+  }
+}
 export const generateSIGHash = (sig_images)=> {
   let img_hash = {}
-  sig_images.forEach(element => {
+  sig_images && sig_images.forEach(element => {
     img_hash[element.name] = element.publicURL
   })
   return img_hash
