@@ -5896,6 +5896,9 @@ button.bg-primary:hover {
 .bg-secondary {
   background-color: #6c757d !important;
 }
+.bg-green {
+  background-color: #004225!important;
+}
 a.bg-secondary:focus,
 a.bg-secondary:hover,
 button.bg-secondary:focus,
@@ -8982,6 +8985,10 @@ a.text-primary:hover {
 }
 .text-secondary {
   color: #6c757d !important;
+}
+
+.text-green {
+  color: #004225!important;
 }
 a.text-secondary:focus,
 a.text-secondary:hover {

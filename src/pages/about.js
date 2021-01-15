@@ -1,12 +1,20 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import members from "../../content/yml/authors.yml"
 import Img_Beach from "../assets/img/beach.jpg"
 
+const KEY_ALUMNI = "Alumni"
+const KEY_EXEC_MEMBERS = "Executive Members 2020"
+const KEY_CURR_CORE = "Core 2020"
+
 const MemberDetails = ({ author, index }) => {
-  let textcolor = author.alumni === true ? "text-light" : ""
+  let isntExecMember = author.position !== "Executive Member"
+  let isntAlumni = author.alumni !== true
+  let color_bg =
+    isntExecMember && isntAlumni ? "bg-primary" : isntAlumni ? "" : "bg-green"
+  let color_text = isntExecMember ? "text-light" : ""
   return (
     <div
       to={`/member/${author.name.toLowerCase().split(" ").join("")}`}
@@ -16,47 +24,33 @@ const MemberDetails = ({ author, index }) => {
       key={index}
     >
       <div
-        className={`card clean-card text-center  ${
-          author.alumni === true ? "bg-primary" : ""
-        }`}
-        style={{ height: "100%" }}
+        className={`h-100 card clean-card text-center  ${color_bg}`}
         id={author.name}
       >
         <div className="card-body info">
           <Link to={`/member/${author.name.toLowerCase().split(" ").join("")}`}>
-            <h4 className={`card-title ${textcolor}`}>{author.name}</h4>
+            <h4 className={`card-title ${color_text}`}>{author.name}</h4>
           </Link>
-          <p className={`card-text ${textcolor}`}>{author.position}</p>
-          <div className="icons">
+          <p className={`card-text ${color_text}`}>{author.position}</p>
+          <div className="icon">
             {author.facebook ? (
               <a href={"https://www.facebook.com/" + author.facebook}>
-                <i className={`fa fa-facebook ${textcolor}`}/>
+                &nbsp;
+                <i className={`fa fa-facebook ${color_text}`} />
               </a>
-            ) : (
-              null
-            )}
+            ) : null}
             {author.linkedin ? (
               <a href={"https://www.linkedin.com/in/" + author.linkedin}>
-                <i
-                  className={`fa fa-linkedin ${
-                    author.alumni === true ? "text-light" : ""
-                  }`}
-                />
+                &nbsp;
+                <i className={`fa fa-linkedin ${color_text}`} />
               </a>
-            ) : (
-              null
-            )}
+            ) : null}
             {author.github ? (
               <a href={"https://www.github.com/" + author.github}>
-                <i
-                  className={`fa fa-github ${
-                    author.alumni === true ? "text-light" : ""
-                  }`}
-                />
+                &nbsp;
+                <i className={`fa fa-github ${color_text}`} />
               </a>
-            ) : (
-              null
-            )}
+            ) : null}
           </div>
         </div>
       </div>
@@ -66,13 +60,16 @@ const MemberDetails = ({ author, index }) => {
 
 export const About = props => {
   //eslint-ignore-next-line
-  let alumni = members.filter(mem => mem.alumni === true)
-  let core = members.filter(
-    mem => mem.position !== "Executive Member" && mem.alumni !== true
-  )
-  let others = members.filter(
-    mem => mem.position === "Executive Member" && mem.alumni !== true
-  )
+  const [category, setCategory] = useState(KEY_CURR_CORE)
+  let members_hsx = {
+    [KEY_ALUMNI]: members.filter(mem => mem.alumni === true),
+    [KEY_CURR_CORE]: members.filter(
+      mem => mem.position !== "Executive Member" && mem.alumni !== true
+    ),
+    [KEY_EXEC_MEMBERS]: members.filter(
+      mem => mem.position === "Executive Member" && mem.alumni !== true
+    ),
+  }
   return (
     <Layout location={props.location.pathname} title={"About Us"}>
       <SEO title="About Us" />
@@ -120,31 +117,26 @@ export const About = props => {
             <div className="block-heading">
               <h2 className="text-primary">Our Family</h2>
             </div>
-            <div className="btn-group w-100 mb-5" role="group" aria-label="Basic example">
-              <button type="button" className="btn btn-outline-primary">
-                All
-              </button>
-              <button type="button" className="btn btn-outline-primary">
-                Alumni
-              </button>
-              <button type="button" className="btn btn-outline-primary">
-                Core
-              </button>
-              <button type="button" className="btn btn-outline-primary">
-                Members
-              </button>
-            </div>
-            <div className="row justify-content-center">
-              {alumni.map((author, index) => (
-                <MemberDetails author={author} key={index} />
-              ))}
-              {core.map((author, index) => (
-                <MemberDetails author={author} key={index} />
+            <div
+              className="btn-group w-100 mb-5"
+              role="group"
+              aria-label="Basic example"
+            >
+              {[KEY_ALUMNI, KEY_CURR_CORE, KEY_EXEC_MEMBERS].map((e, i) => (
+                <button
+                  type="button"
+                  key={i}
+                  className={`btn btn-outline-primary ${
+                    category === e ? "active" : ""
+                  }`}
+                  onClick={() => setCategory(e)}
+                >
+                  {e}
+                </button>
               ))}
             </div>
-            <hr />
             <div className="row justify-content-center">
-              {others.map((author, index) => (
+              {members_hsx[category].map((author, index) => (
                 <MemberDetails author={author} key={index} />
               ))}
             </div>

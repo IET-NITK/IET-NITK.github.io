@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import { RenderAuthors } from "../components/helper"
 import SEO from "../components/seo"
 
 export const BlogArticle = ({ data }) => {
