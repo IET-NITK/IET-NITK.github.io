@@ -16,9 +16,11 @@ const TopNavbar = props => {
               </Link>
             </div>
             <div className="col-lg-4 d-lg-block text-right">
+
               <Link
                 to="/recruitment"
                 role="button"
+                disabled={true}
                 className="btn btn-primary mr-3"
               >
                 Join IET NITK
