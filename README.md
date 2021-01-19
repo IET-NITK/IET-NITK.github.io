@@ -1,5 +1,5 @@
 # IET NITK's Official Website Repository
-![production](https://github.com/IET-NITK/ietnitk-v2/workflows/Netlify%20Production%20Workflow/badge.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/28e6fade-cb6c-4f32-bd05-1ddf7c049f09/deploy-status)](https://app.netlify.com/sites/ietnitk/deploys)
 
 ## Contributing?
 - If you're interested in contributing a piece to IET NITK's blog, check out [these guidelines](CONTRIBUTE/BLOG.md).
