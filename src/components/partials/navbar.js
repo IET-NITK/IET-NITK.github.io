@@ -10,25 +10,18 @@ const TopNavbar = props => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-8 d-none d-lg-block">
-              <Link to="/contact" className="small mr-3">
-                <span className="fa fa-question-circle-o mr-2 mt-0"/>
-                Any questions?
-              </Link>
             </div>
             <div className="col-lg-4 d-lg-block text-right">
-
               <Link
                 to="/recruitment"
                 role="button"
-                disabled={true}
-                className="btn btn-primary mr-3"
+                className="btn btn-primary mr-3 disabled"
               >
                 Join IET NITK
               </Link>
               <Link
                 to="/smp"
                 role="button"
-                disabled={true}
                 className="btn btn-outline-primary mr-3 disabled"
               >
                 SMP
@@ -42,6 +35,10 @@ const TopNavbar = props => {
 }
 export const Navbar = props => {
   let sigArray = sigs.filter(element => !element.no_link)
+  const commonLinkProps = {
+    className: "nav-link",
+    activeClassName: "active",
+  }
   return (
     <>
       <div className="fixed-top" id="navbar">
@@ -52,7 +49,11 @@ export const Navbar = props => {
         >
           <div className="container">
             <Link className="navbar-brand logo" to="/">
-              <img src={IETLOGO} style={{ height: "auto", maxWidth: "4em" }} alt=""/>
+              <img
+                src={IETLOGO}
+                style={{ height: "auto", maxWidth: "4em" }}
+                alt=""
+              />
             </Link>
             <button
               data-toggle="collapse"
@@ -60,30 +61,27 @@ export const Navbar = props => {
               data-target="#navcol-1"
             >
               <span className="sr-only">Toggle navigation</span>
-              <span
-                className="navbar-toggler-icon"
-                style={{ margin: "0px" }}
-              />
+              <span className="navbar-toggler-icon" style={{ margin: "0px" }} />
             </button>
             <div className="collapse navbar-collapse" id="navcol-1">
               <ul className="nav navbar-nav ml-auto">
                 <li className="nav-item" role="presentation">
-                  <Link className="nav-link" to="/">
+                  <Link to="/" {...commonLinkProps}>
                     Home
                   </Link>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link className="nav-link " to="/about">
+                  <Link {...commonLinkProps} to="/about">
                     About Us
                   </Link>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link className="nav-link " to="/events">
+                  <Link {...commonLinkProps} to="/events">
                     Events
                   </Link>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link className="nav-link " to="/blog">
+                  <Link {...commonLinkProps} to="/blog">
                     Blog
                   </Link>
                 </li>
@@ -93,16 +91,15 @@ export const Navbar = props => {
                       className="nav-link dropdown-toggle"
                       data-toggle="dropdown"
                       to="#"
+                      activeClassName="active"
                     >
                       SIGS
                     </Link>
-                    <ul
-                      className="dropdown-menu"
-                    >
+                    <ul className="dropdown-menu">
                       {sigArray.map((element, index) => (
                         <li key={index}>
                           <Link
-                            className="dropdown-item"
+                            className="nav-link pl-2 dropdown-item"
                             to={"/sig/" + element.name.toLowerCase()}
                           >
                             {element.name}
@@ -113,7 +110,7 @@ export const Navbar = props => {
                   </div>
                 </li>
                 <li className="nav-item" role="presentation">
-                  <Link className="nav-link " to="/contact">
+                  <Link {...commonLinkProps} to="/contact">
                     Contact Us
                   </Link>
                 </li>

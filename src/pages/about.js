@@ -9,6 +9,7 @@ const KEY_ALUMNI = "Alumni"
 const KEY_EXEC_MEMBERS = "Executive Members 2020"
 const KEY_CURR_CORE = "Core 2020"
 
+
 const MemberDetails = ({ author, index }) => {
   let isntExecMember = author.position !== "Executive Member"
   let isntAlumni = author.alumni !== true
@@ -59,7 +60,6 @@ const MemberDetails = ({ author, index }) => {
 }
 
 export const About = props => {
-  //eslint-ignore-next-line
   const [category, setCategory] = useState(KEY_CURR_CORE)
   let members_hsx = {
     [KEY_ALUMNI]: members.filter(mem => mem.alumni === true),

@@ -1,516 +1,563 @@
-# ALUMNI
-- short_name: VichitrGandas
-  name: Vichitr Gandas
-  alumni: true
-- short_name: Rajamani
-  name: Rajamani
-  alumni: true
-- short_name: Makarand
-  name: Makarand
-  alumni: true
-- short_name: Likitha
-  name: Likitha
-  alumni: true
-# CURRENT
-## CORE
-- short_name: SkandaUpadhyaya
-  name: Skanda Upadhyaya
-  linkedin: 
-  email: skandaupadhyaya1999@gmail.com
-  facebook: 
-  github: 
-  position: Co-Convenor
-  image: 
-- short_name: PalashAgrawal
-  name: Palash Agrawal
-  linkedin: 
-  email: agrawalpalash643@gmail.com
-  facebook: 
-  github: 
-  position: Co-Convenor
-  image: 
-
-
-- short_name: YuvrajDalia
-  name: Yuvraj Dalia
-  linkedin: 
-  email: yuvrajdalia98@gmail.com
-  facebook: 
-  github: 
-  position: Secretary
-  image:
-- short_name: AbhishekChoudhary
-  name: Abhishek Choudhary 
-  linkedin: 
-  email: choudharyabhishek51999@gmail.com
-  facebook: 
-  github: 
-  position: Chair
-  image: 
-- short_name: VisheshChavan
-  name: Vishesh Chavan
-  linkedin: 
-  email: visheshchavan.171ec253@nitk.edu.in
-  facebook: 
-  github: 
-  position: Vice-Chair
-  image: 
-
-
-- short_name: PratigyaRanjan
-  name: Pratigya Ranjan
-  linkedin: 
-  email: pratigya03ranjan@gmail.com
-  facebook: 
-  github: 
-  position: Rovisp Lead
-  image: 
-- short_name: SudhanshShekherSingh
-  name: Sudhansh Shekher Singh
-  linkedin: 
-  email: sss081098@gmail.com
-  facebook: 
-  github: 
-  position: Rovisp Lead
-  image: 
-
-- short_name: RithikAgrawal
-  name: Rithik Agrawal
-  linkedin: 
-  email: rithikagrawalsds30@gmail.com
-  facebook: 
-  github: 
-  position: Torsion Lead
-  image: 
-- short_name: NavneethRajesh
-  name: Navneeth Rajesh
-  linkedin: 
-  email: navneethrajesh08@gmail.com
-  facebook: 
-  github: 
-  position: Torsion Lead
-  image: 
-
-- short_name: NikithaKM
-  name: Nikitha K M
-  linkedin: 
-  email: nikithakamurthy@gmail.com
-  facebook: 
-  github: 
-  position: Cipher Lead
-  image: 
-- short_name: RhevanthM
-  name: Rhevanth M
-  linkedin: 
-  email: rhevuronaldo@gmail.com
-  facebook: 
-  github: 
-  position: Cipher Lead
-  image: 
-
-- short_name: AbhaWadjikar
-  name: Abha Wadjikar
-  linkedin: 
+- name: Abha Wadjikar
+  linkedin: null
   email: abhawadjikar.171co102@nitk.edu.in
-  facebook: 
-  github: 
+  facebook: null
+  github: null
   position: Inkheart And Medium Lead
-  image: 
-
-
-- short_name: NirmalKhedkar
-  name: Nirmal Khedkar
+  image: null
+- name: Abhay Kumar
+  linkedin: null
+  email: abhay.171me101@nitk.edu.in
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Abhinav Chandrasekar
+  linkedin: null
+  email: chandruabhi1968@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Abhishek C Hiremath
+  linkedin: null
+  email: hiremathac11@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Abhishek Choudhary
+  linkedin: null
+  email: choudharyabhishek51999@gmail.com
+  facebook: null
+  github: null
+  position: Chair
+  image: null
+- name: Abhishek Ranjan
+  linkedin: null
+  email: abhishek.171co203@nitk.edu.in
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Abin Sibichan
+  email: abinsibichan10@gmail.com
+  linkedin: abin-sibichan-34836b1a7
+  github: null
+  facebook: abin.palakkaparambil
+  position: Executive Member
+- name: Adithya Rao B
+  linkedin: null
+  email: b.adithyarao@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Aniket Srivastava
+  email: aiketshri0207@gmail.com
+  linkedin: Aniket Srivastava
+  github: Aniket-Srivastava-21
+  facebook: Aniket Shrivastava
+  position: Executive Member
+- name: Aprameya Dash
+  email: aprameyadash.191it209@nitk.edu.in
+  linkedin: aprameya-dash-468a431b9
+  github: aprameya2001
+  facebook: null
+  position: Executive Member
+- name: Arunava Mukhoti
+  linkedin: null
+  email: arunava.mukhoti@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Brij Raj Singh
+  linkedin: null
+  email: singhbrijraj29@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: D Raghavi
+  email: raghavidhanapal2001@gmail.com
+  linkedin: raghavi-d-0537871b7
+  github: null
+  facebook: null
+  position: Executive Member
+- name: Dhanasekhar
+  linkedin: null
+  email: sekhardhana529@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Dhruv Agja
+  linkedin: null
+  email: dhruvagja8808@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Feyaz Baker
+  linkedin: null
+  email: feyazabubaker@gmail.com
+  facebook: null
+  github: null
+  position: Public Relations And Social Media Manager
+  image: null
+- name: Gaurav Chaurasia
+  email: gaurav.181cv155@nitk.edu.in
+  linkedin: gaurav-chaurasia
+  github: gaurav-chaurasia
+  facebook: gkc.fb
+  position: Webmaster
+- name: Hardik Mittal
+  linkedin: null
+  email: hardikmittal171100@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Indhu Lekha Annam
+  email: annamindhulekha.191it207@nitk.edu.in
+  linkedin: null
+  github: iamindhu
+  facebook: indhulekha.annam.7
+  position: Executive Member
+- name: Jayesh Kumar Soni
+  linkedin: null
+  email: sonij1807@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Kavish Ramchandani
+  linkedin: null
+  email: kavish.171Me236@nitk.edu.in
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Krishna Poojitha Vantakula
+  linkedin: null
+  email: krishnapoojitha2001@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Lalit Nagar
+  email: lalitnagar.191cs227@nitk.edu.in
+  linkedin: lalit-nagar-a2b568188
+  github: mygithublalit
+  facebook: lalit.nagar.589100
+  position: Executive Member
+- name: Likitha
+  alumni: true
+- name: M Naveen Kumar
+  email: mnaveenkumar2009@gmail.com
+  linkedin: m-naveen-kumar
+  github: mnaveenkumar2009
+  facebook: lookdownthisistheurlofmytimeline
+  position: Cipher Lead (2019)
+- name: M Vaishnavi
+  linkedin: null
+  email: vaishnavimolagavalli@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: M.Govardhan
+  linkedin: null
+  email: marakagovardhanreddy536@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: M.T.Aakash Chandra
+  email: aakasharuna32@gmail.com
+  linkedin: aakash-chandra-0872b91a5
+  github: aakashabhi
+  facebook: aakash.abhi2
+  position: Executive Member
+- name: Maheshwari Mihir Premjibhai
+  email: mihirmaheshwari3101@gmail.com
+  linkedin: mihirpm
+  github: Mihir3101
+  facebook: mihir.maheshwari.3720
+  position: Executive Member
+- name: Makarand
+  alumni: true
+- name: Marmik Mundada
+  email: marmikmundada@gmail.com
+  linkedin: marmikmundada4789
+  github: marmik2001
+  facebook: marmik.mundada
+  position: Cipher Lead
+- name: Nadendla Sai Teja
+  email: nadendla.saiteja@gmail.com
+  linkedin: nadendla-sai-teja-36512a157
+  github: null
+  facebook: null
+  position: PR Manager (2019)
+- name: Naveen Shenoy
+  email: naveenshenoy10@gmail.com
+  linkedin: naveen-1001
+  github: Naveen-1001
+  facebook: null
+  position: Executive Member
+- name: Navneeth Rajesh
+  linkedin: null
+  email: navneethrajesh08@gmail.com
+  facebook: null
+  github: null
+  position: Torsion Lead
+  image: null
+- name: Nikitha K M
+  linkedin: null
+  email: nikithakamurthy@gmail.com
+  facebook: null
+  github: null
+  position: Cipher Lead
+  image: null
+- name: Nirmal Khedkar
   linkedin: nirmalhk7
   email: nirmalhk7@gmail.com
-  facebook: 
+  facebook: null
   github: nirmalhk7
   position: Webmaster
   image: Nirmal_IRIS.jpeg
-- short_name: SachinPandey
-  name: Sachin Pandey
-  linkedin: 
-  email: sachinpandey1710@gmail.com
-  facebook: 
-  github: 
-  position: Assistant Webmaster
-  image: 
-- short_name: FeyazBaker
-  name: Feyaz Baker
-  linkedin: 
-  email: feyazabubaker@gmail.com
-  facebook: 
-  github: 
-  position: Public Relations And Social Media Manager
-  image: 
-- short_name: VishwaMohanTiwari
-  name: Vishwa Mohan Tiwari
-  linkedin: 
-  email: vishwamohan63@gmail.com
-  facebook: 
-  github: 
-  position: Public Relations And Social Media Assistant Manager
-  image: 
-
-- short_name: SowmyaG
-  name: Sowmya G 
-  linkedin: 
-  email: sowmyagumma2@gmail.com
-  facebook: 
-  github: 
-  position: Treasurer
-  image: 
-- short_name: RameshwarDhakad
-  name: Rameshwar Dhakad
-  linkedin: 
-  email: dhakad.dakshana18@gmail.com
-  facebook: 
-  github: 
-  position: Event Coordinator
-  image: 
-
-
-## EXEC MEMBERS
-- short_name: DhruvAgja
-  name: Dhruv Agja
-  linkedin: 
-  email: dhruvagja8808@gmail.com
-  facebook: 
-  github: 
+- name: Nithin L N
+  email: nithinln.191ec135@nitk.edu.in
+  linkedin: 'https://www.linkedin.com/in/nithin-l-n-1a0282194'
+  github: null
+  facebook: null
   position: Executive Member
-  image: 
-- short_name: RahulGite
-  name: Rahul Gite
-  linkedin: 
-  email: rahul.gite11@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: Dhanasekhar
-  name: Dhanasekhar
-  linkedin: 
-  email: sekhardhana529@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: ShwetaHariharanIyer
-  name: Shweta Hariharan Iyer
-  linkedin: 
-  email: shwetahiyer@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: Shivani.K
-  name: Shivani.K
-  linkedin: 
-  email: kandimallashivani@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: MVaishnavi
-  name: M Vaishnavi
-  linkedin: 
-  email: vaishnavimolagavalli@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: SumitKanu
-  name: Sumit Kanu
-  linkedin: 
-  email: sumit.171ee245@nitk.edu.in
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: PrathameshG
-  name: Prathamesh G
-  linkedin: 
-  email: prathameshgachhi123@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: ShivaniP
-  name: Shivani P
-  linkedin: 
-  email: shivanip772@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: RakshathaVasudev
-  name: Rakshatha Vasudev 
-  linkedin: 
-  email: rakshathavasudev@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: VaranasiAkashKumar
-  name: Varanasi Akash Kumar
-  linkedin: 
-  email: vara1999akash@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: VarshaP
-  name: Varsha P
-  linkedin: 
-  email: vasthavip1998@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: SuhasGopinath
-  name: Suhas Gopinath 
-  linkedin: 
-  email: suhas.171it214@nitk.edu.in
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: UdayKumar
-  name: Uday Kumar
-  linkedin: 
-  email: uday09411@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: AbhayKumar
-  name: Abhay Kumar
-  linkedin: 
-  email: abhay.171me101@nitk.edu.in
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: BrijRajSingh
-  name: Brij Raj Singh
-  linkedin: 
-  email: singhbrijraj29@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: PradeepKumarModi
-  name: Pradeep Kumar Modi
-  linkedin: 
-  email: pradeepkumarmodi1998@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: AbhinavChandrasekar
-  name: Abhinav Chandrasekar
-  linkedin: 
-  email: chandruabhi1968@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: AdithyaRaoB
-  name: Adithya Rao B
-  linkedin: 
-  email: b.adithyarao@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: AbhishekRanjan
-  name: Abhishek Ranjan
-  linkedin: 
-  email: abhishek.171co203@nitk.edu.in
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: RaviGocher
-  name: Ravi Gocher
-  linkedin: 
-  email: ravigocher150@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: KavishRamchandani
-  name: Kavish Ramchandani
-  linkedin: 
-  email: kavish.171Me236@nitk.edu.in
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: ArunavaMukhoti
-  name: Arunava Mukhoti
-  linkedin: 
-  email: arunava.mukhoti@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: SomeshKartikeya
-  name: Somesh Kartikeya
-  linkedin: 
-  email: someshsomesh1714@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: TarunSAnur
-  name: Tarun S Anur
-  linkedin: 
-  email: tarunanur@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: VerupakaYashwanthReddy
-  name: Verupaka Yashwanth Reddy
-  linkedin: 
-  email: reddy.yashwanth195@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: HardikMittal
-  name: Hardik Mittal
-  linkedin: 
-  email: hardikmittal171100@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: TarunsaiPanguluru
-  name: Tarunsai Panguluru
-  linkedin: 
-  email: pangulurutarunsai@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: SharufBaig
-  name: Sharuf Baig
-  linkedin: 
-  email: sharufbaig321@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: M.Govardhan
-  name: M.Govardhan
-  linkedin: 
-  email: marakagovardhanreddy536@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: VenkatRohitMerugu
-  name: Venkat Rohit Merugu
-  linkedin: 
-  email: venkatarohit2012@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: JayeshKumarSoni
-  name: Jayesh Kumar Soni
-  linkedin: 
-  email: sonij1807@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: PutturuVenkatTarun
-  name: Putturu Venkat Tarun
-  linkedin: 
-  email: putturuvenkattarun@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: ShreyaChandra
-  name: Shreya Chandra
-  linkedin: 
-  email: chandra.shreyaa@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: KrishnaPoojithaVantakula
-  name: Krishna Poojitha Vantakula
-  linkedin: 
-  email: krishnapoojitha2001@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: RonakJugalkishorKhandelwal
-  name: Ronak Jugalkishor Khandelwal 
-  linkedin: 
-  email: ronakkhandelwal9359@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: Sagar
-  name: Sagar
-  linkedin: 
-  email: sagarbuntyror@gmail.com
-  facebook: 
-  github: 
-  position: Executive Member
-  image: 
-- short_name: PGopinathReddy
-  name: P Gopinath Reddy
-  linkedin: 
+- name: P Gopinath Reddy
+  linkedin: null
   email: palakolanugopinathreddy@gmail.com
-  facebook: 
-  github: 
+  facebook: null
+  github: null
   position: Executive Member
-  image: 
-- short_name: RamJanamYadav
-  name: Ram Janam Yadav
-  linkedin: 
+  image: null
+- name: Palash Agrawal
+  linkedin: null
+  email: agrawalpalash643@gmail.com
+  facebook: null
+  github: null
+  position: Co-Convenor
+  image: null
+- name: Pradeep Kumar Modi
+  linkedin: null
+  email: pradeepkumarmodi1998@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Prathamesh G
+  linkedin: null
+  email: prathameshgachhi123@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Pratigya Ranjan
+  linkedin: null
+  email: pratigya03ranjan@gmail.com
+  facebook: null
+  github: null
+  position: Rovisp Lead
+  image: null
+- name: Putturu Venkat Tarun
+  linkedin: null
+  email: putturuvenkattarun@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Rahul Gite
+  linkedin: null
+  email: rahul.gite11@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Rajamani
+  alumni: true
+- name: Rakshatha Vasudev
+  linkedin: null
+  email: rakshathavasudev@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Ram Janam Yadav
+  linkedin: null
   email: ramjanamjnvj1972@gmail.com
-  facebook: 
-  github: 
+  facebook: null
+  github: null
   position: Executive Member
-  image: 
-- short_name: AbhishekCHiremath
-  name: Abhishek C Hiremath
-  linkedin: 
-  email: hiremathac11@gmail.com
-  facebook: 
-  github: 
+  image: null
+- name: Rameshwar Dhakad
+  linkedin: null
+  email: dhakad.dakshana18@gmail.com
+  facebook: null
+  github: null
+  position: Event Coordinator
+  image: null
+- name: Ravi Gocher
+  linkedin: null
+  email: ravigocher150@gmail.com
+  facebook: null
+  github: null
   position: Executive Member
-  image: 
-- short_name: SuragP
-  name: Surag P
-  linkedin: 
+  image: null
+- name: Rhevanth M
+  linkedin: null
+  email: rhevuronaldo@gmail.com
+  facebook: null
+  github: null
+  position: Cipher Lead
+  image: null
+- name: Rithik Agrawal
+  linkedin: null
+  email: rithikagrawalsds30@gmail.com
+  facebook: null
+  github: null
+  position: Torsion Lead
+  image: null
+- name: Ronak Jugalkishor Khandelwal
+  linkedin: null
+  email: ronakkhandelwal9359@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Sachin Pandey
+  linkedin: null
+  email: sachinpandey1710@gmail.com
+  facebook: null
+  github: null
+  position: Assistant Webmaster
+  image: null
+- name: Sagar
+  linkedin: null
+  email: sagarbuntyror@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Sahana
+  email: sahana200136@gmail.com
+  linkedin: sahana-sedamkar-898b2019b
+  github: sahana136
+  facebook: sahana.sedamkar
+  position: Executive Member
+- name: Sharuf Baig
+  linkedin: null
+  email: sharufbaig321@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Shivani P
+  linkedin: null
+  email: shivanip772@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Shivani.K
+  linkedin: null
+  email: kandimallashivani@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Shloka Meena
+  email: shloka.meena@gmail.com
+  linkedin: 'https://www.linkedin.com/in/shloka-meena'
+  github: null
+  facebook: null
+  position: Executive Member
+- name: Shreya Chandra
+  linkedin: null
+  email: chandra.shreyaa@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Shreyas S Deshpande
+  email: deshpandeshreyas50@gmail.com
+  linkedin: Shreyas Deshpande
+  github: null
+  facebook: Shreyas Deshpande
+  position: Executive Member
+- name: Shweta Hariharan Iyer
+  linkedin: null
+  email: shwetahiyer@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Skanda Upadhyaya
+  linkedin: null
+  email: skandaupadhyaya1999@gmail.com
+  facebook: null
+  github: null
+  position: Co-Convenor
+  image: null
+- name: Somesh Kartikeya
+  linkedin: null
+  email: someshsomesh1714@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Sowmya G
+  linkedin: null
+  email: sowmyagumma2@gmail.com
+  facebook: null
+  github: null
+  position: Treasurer
+  image: null
+- name: Sudhansh Shekher Singh
+  linkedin: null
+  email: sss081098@gmail.com
+  facebook: null
+  github: null
+  position: Rovisp Lead
+  image: null
+- name: Suhas Gopinath
+  linkedin: null
+  email: suhas.171it214@nitk.edu.in
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Sumit Kanu
+  linkedin: null
+  email: sumit.171ee245@nitk.edu.in
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Surag P
+  linkedin: null
   email: surag.noreply@gmail.com
-  facebook: 
-  github: 
+  facebook: null
+  github: null
   position: Executive Member
-  image: 
-- short_name: UshasriDoddaboina
-  name: Ushasri Doddaboina
-  linkedin: 
+  image: null
+- name: Suyash Satish Chintawar
+  email: suyash.191it109@nitk.edu.in
+  linkedin: suyash-chintawar-8944351b3
+  github: Suyash-Chintawar
+  facebook: profile.php?id=100013210511822
+  position: Executive Member
+- name: Tarun S Anur
+  linkedin: null
+  email: tarunanur@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Tarunsai Panguluru
+  linkedin: null
+  email: pangulurutarunsai@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Uday Kumar
+  linkedin: null
+  email: uday09411@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Ushasri Doddaboina
+  linkedin: null
   email: usha.doddaboina@gmail.com
-  facebook: 
-  github: 
+  facebook: null
+  github: null
   position: Executive Member
-  image: 
-- short_name: VisheshKodwani
-  name: Vishesh Kodwani
-  linkedin: 
+  image: null
+- name: V Madhan Kumar
+  email: madhankumar.191cs260@nitk.edu.in
+  linkedin: madhan-kumar-v-0b0a07131
+  github: Madhan-Kumar22
+  facebook: null
+  position: Executive Member
+- name: VERUPAKA YASHWANTH REDDY
+  email: reddy.yashwanth195@gmail.com
+  linkedin: yashwanth-reddy-bb052a176
+  github: yashwanth195
+  facebook: yashwanth195
+  position: Executive Member
+- name: Varanasi Akash Kumar
+  linkedin: null
+  email: vara1999akash@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Varsha P
+  linkedin: null
+  email: vasthavip1998@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Venkat Rohit Merugu
+  linkedin: null
+  email: venkatarohit2012@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Verupaka Yashwanth Reddy
+  linkedin: null
+  email: reddy.yashwanth195@gmail.com
+  facebook: null
+  github: null
+  position: Executive Member
+  image: null
+- name: Vichitr Gandas
+  alumni: true
+- name: Vishesh Chavan
+  linkedin: null
+  email: visheshchavan.171ec253@nitk.edu.in
+  facebook: null
+  github: null
+  position: Vice-Chair
+  image: null
+- name: Vishesh Kodwani
+  linkedin: null
   email: visheshkodwani786@gmail.com
-  facebook: 
-  github: 
+  facebook: null
+  github: null
   position: Executive Member
-  image: 
+  image: null
+- name: Vishwa Mohan Tiwari
+  linkedin: null
+  email: vishwamohan63@gmail.com
+  facebook: null
+  github: null
+  position: Public Relations And Social Media Assistant Manager
+  image: null
+- name: Yuvraj Dalia
+  linkedin: null
+  email: yuvrajdalia98@gmail.com
+  facebook: null
+  github: null
+  position: Secretary
+  image: null
+- name: abhishek choudhary
+  email: choudharyabhishek51999@gmail.com
+  linkedin: abhishek-choudhary-28ba1a16b
+  github: null
+  facebook: null
+  position: Chair
+
+

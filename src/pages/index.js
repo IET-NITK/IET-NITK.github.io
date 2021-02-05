@@ -126,7 +126,7 @@ const MainPage = ({ location, data }) => {
                 IET NITK consists of three different Special Interest Groups:
               </p>
             </div>
-            <SIGShowcase sigs={SIG} sig_images={data.sig.nodes} />
+            <SIGShowcase sigs={SIG} sig_images={data && data.sig.nodes} />
           </div>
         </section>
 
