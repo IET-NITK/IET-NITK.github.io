@@ -96,13 +96,18 @@
   ongoing: false
   year: 
   URL: 
-- title: Reading Device for Blind 
+- title: Virtual Try-On
+  sig: Cipher
+  ongoing: true
+  year: 2020
+  url: https://github.com/aakashabhi/Virtual-Try-On
+  builtBy: [ 'M.T.Aakash Chandra' , 'Amal Majunu Vidya' , 'V.Madhan Kumar' ]
+- title: Smart Aid for Blind
   sig: Rovisp
-  description: 
-  builtBy: 
   ongoing: false
-  year: 
-  URL: 
+  year: 2018
+  url: 
+  builtBy: [ 'Pratigya Ranjan' , 'Ravi Gocher' , 'Jagan Mohan'  ]
 - title: Eastern western note classifier
   sig: Rovisp
   description: We were able to analyze a simple series of musical sounds and determine each of their respective note simultaneously..
