@@ -9,7 +9,6 @@ import { RenderAuthors } from "../components/helper"
 export const SIG = ({ pageContext, pathname, data }) => {
   const sig = pageContext.sigDetails
   let projects = projectyml.filter(element => element.sig === sig.name)
-  
   return (
     <Layout location={pathname && pathname.location}>
       <SEO title={sig.name} />
