@@ -70,7 +70,7 @@ export const postQuery = graphql`
         childMarkdownRemark {
           excerpt(format: PLAIN)
           frontmatter {
-            eventDate(formatString: "Do MMMM, YYYY")
+            eventDate(formatString: "MMMM Do, YYYY")
             title
           }
         }

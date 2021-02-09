@@ -79,7 +79,7 @@ export const postQuery = graphql`
         frontmatter {
           authors
           displayOnBlog
-          publishDate(formatString: "Do MMMM, YYYY")
+          publishDate(formatString: "MMMM Do, YYYY")
           title
           image {
             publicURL

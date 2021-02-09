@@ -4,22 +4,23 @@ module.exports = {
     title: `IET NITK`,
     author: `Nirmal Khedkar`,
     description: `To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society. We are IET NITK.`,
+    noticeBoard: [""],
     contactDetails: [
       {
         name: "Skanda Upadhyay",
         number: "999999999",
       },
     ],
-    contactEmail: 'iet@nitk.ac.in',
+    contactEmail: "iet@nitk.ac.in",
     siteUrl: `https://iet.nitk.ac.in/`,
     smp: {
       allow: false,
-      link: ""
+      link: "",
     },
     join: {
       allow: false,
-      link: ""
-    }
+      link: "",
+    },
   },
 
   plugins: [

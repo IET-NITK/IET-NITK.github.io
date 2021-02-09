@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
 import SIG from "../../../content/yml/sig.yml"
 
 export const Footer = props => {
+  const [state]=useState({
+    sig: SIG
+  })
   return (
     <StaticQuery
       query={graphql`
@@ -53,7 +56,7 @@ export const Footer = props => {
                 <div className="col-sm-6 col-md-3 item">
                   <h3>Special Interest Groups</h3>
                   <ul>
-                    {SIG.map((e, i) => (
+                    {state.sig.map((e, i) => (
                       <li key={i}>
                         {e.no_link === true ? (
                           e.name

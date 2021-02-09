@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import recruitmentQ from "../../content/yml/recrfaq.yml"
@@ -7,6 +7,9 @@ import { SIGShowcase } from "./index"
 import { graphql } from "gatsby"
 
 const SMP = ({ location, data }) => {
+  const [state]=useState({
+    recQ: recruitmentQ
+  })
   return (
     <Layout location={location.pathname}>
       <SEO title="Join Us!" />
@@ -50,7 +53,7 @@ const SMP = ({ location, data }) => {
 
             <div className="block-content">
               <div className="faq-item">
-                {recruitmentQ.map((e, i) => (
+                {state.recQ.map((e, i) => (
                   <>
                     <h4 className="question mb-0">{e.question}</h4>
                     <div className="answer mt-0 mb-2">{e.answer}</div>
@@ -58,7 +61,7 @@ const SMP = ({ location, data }) => {
                 ))}
               </div>
               <p className="text-primary mt-5">
-                Please stay tuned to our social media pages for updates.{" "}
+                Please stay tuned to our social media pages for updates.
               </p>
             </div>
           </div>

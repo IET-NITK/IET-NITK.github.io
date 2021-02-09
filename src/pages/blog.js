@@ -95,7 +95,7 @@ export const postQuery = graphql`
             image {
               publicURL
             }
-            publishDate(formatString: "Do MMMM, YYYY")
+            publishDate(formatString: "MMMM Do, YYYY")
           }
         }
       }

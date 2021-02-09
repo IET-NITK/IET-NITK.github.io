@@ -1,7 +1,9 @@
-import { Link } from "gatsby"
+import { Link, StaticQuery } from "gatsby"
 import React from "react"
 import IETLOGO from "./../../assets/img/logo.png"
 import sigs from "../../../content/yml/sig.yml"
+import Marquee from "react-simple-marquee"
+import { graphql } from 'gatsby'
 
 const TopNavbar = props => {
   return (
@@ -9,9 +11,40 @@ const TopNavbar = props => {
       <div className="py-2 bg-light">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-8 d-none d-lg-block">
+            <div className="col-lg-9 d-none d-lg-block">
+              <StaticQuery
+                query={graphql`
+                  query {
+                    site {
+                      siteMetadata {
+                        noticeBoard
+                      }
+                    }
+                  }
+                `}
+                render={({ site }) => {
+                  if(site.siteMetadata.noticeBoard.length===1 && site.siteMetadata.noticeBoard[0]===""){
+                    return null
+                  }
+                  return (
+                    <div className="alert alert-warning m-0">
+                      <Marquee
+                        speed={2} // Speed of the marquee (Optional)
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: site.siteMetadata.noticeBoard.join(
+                              "\u00A0".repeat(30)
+                            ),
+                          }}
+                        />
+                      </Marquee>
+                    </div>
+                  )
+                }}
+              />
             </div>
-            <div className="col-lg-4 d-lg-block text-right">
+            <div className="col-lg-3 d-lg-block text-right">
               <Link
                 to="/recruitment"
                 role="button"

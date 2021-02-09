@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import projectyml from "../../content/yml/projects.yml"
@@ -8,7 +8,10 @@ import { RenderAuthors } from "../components/helper"
 
 export const SIG = ({ pageContext, pathname, data }) => {
   const sig = pageContext.sigDetails
-  let projects = projectyml.filter(element => element.sig === sig.name)
+  const [state]=useState({
+    projects: projectyml.filter(element => element.sig === sig.name)
+  })
+  
   
   return (
     <Layout location={pathname && pathname.location}>
@@ -28,7 +31,7 @@ export const SIG = ({ pageContext, pathname, data }) => {
               <p>{sig.description}</p>
             </div>
             <div className="block-content">
-              {projects.map((element, index) => (
+              {state.projects.map((element, index) => (
                 <div key={index} className="clean-blog-post">
                   <div className="row">
                     <div className="col-lg-12">
