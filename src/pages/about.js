@@ -75,7 +75,7 @@ export const About = props => {
       <SEO title="About Us" />
       <main className="page">
         <section className="clean-block about-us">
-          <div className="container">
+          <div className="container" style={{marginTop:"5em"}}>
             <div className=" clean-card" style={{ boxShadow: "0px!important" }}>
               <div className="card-body info">
                 <div className="card-text">
@@ -91,7 +91,7 @@ export const About = props => {
                       <h2 className="text-primary">About Us</h2>
 
                       <p>
-                        Chapter is a exclusive technical club under IET
+                        IET NITK Chapter is a exclusive technical club under IET
                         Bangalore Division. We are actively involved in
                         inculcating a passion for innovation and appreciation
                         for scientific temperament in the minds of those who

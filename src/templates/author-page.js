@@ -88,6 +88,7 @@ export const Author = props => {
   const blogArticles = props.data.content.nodes.filter(
     e => e.sourceInstanceName === "blog"
   )
+  console.log(props.pageContext)
   const projectReports = props.data.content.nodes.filter(
     e => e.sourceInstanceName === "project-reports"
   )
@@ -101,41 +102,47 @@ export const Author = props => {
               <div className="row">
                 <div className="col-lg-3 col-md-3 col-sm-12">
                   {/* <img  className="img-fluid" style={{height:"10em"}} src={props.data.image.edges[0] && props.data.image.edges[0].node.childImageSharp.fluid.srcWebp} alt=""/> */}
-                  {/* <img src=""/> */}
+                  <div className="card">
+                    <div className="card-body">
+                      {props.pageContext.image ? (
+                        <img
+                          src={`https://drive.google.com/uc?export=view&id=${new URL(
+                            props.pageContext.image
+                          ).searchParams.get("id")}`}
+                          alt=""
+                          className="img-fluid"
+                        />
+                      ) : null}
+                    </div>
+                  </div>
                 </div>
                 <div className="col-lg-9 col-md-9 col-sm-12">
-                  {props.pageContext.projects.length > 0 ? (
-                    <div
-                      className="card clean-blog-post mb-3"
-                      style={{ paddingBottom: "10px" }}
-                    >
-                      <div className="card-body">
-                        {" "}
-                        <div className="card-title">
-                          <h4>Projects</h4>
-                        </div>
-                        {props.pageContext.projects.map((e, i) => (
-                          <RenderProject {...e} />
-                        ))}
+                  <div
+                    className="card clean-blog-post mb-3"
+                    style={{ paddingBottom: "10px" }}
+                  >
+                    <div className="card-body">
+                      {" "}
+                      <div className="card-title">
+                        <h4>Projects</h4>
                       </div>
+                      {props.pageContext.projects.map((e, i) => (
+                        <RenderProject {...e} />
+                      ))}
                     </div>
-                  ) : null}
-
-                  {blogArticles.length > 0 ? (
-                    <div
-                      className="card clean-blog-post mb-3"
-                      style={{ paddingBottom: "10px" }}
-                    >
-                      <div className="card-body">
-                        <div className="card-title">
-                          <h4>Blog Articles</h4>
-                        </div>
-                        <RenderArticles articles={blogArticles} type="blog" />
+                  </div>
+                  <div
+                    className="card clean-blog-post mb-3"
+                    style={{ paddingBottom: "10px" }}
+                  >
+                    <div className="card-body">
+                      <div className="card-title">
+                        <h4>Blog Articles</h4>
                       </div>
+                      <RenderArticles articles={blogArticles} type="blog" />
                     </div>
-                  ) : null}
+                  </div>
 
-                  {projectReports.length > 0 ? (
                     <div
                       className="card clean-blog-post mb-3"
                       style={{ paddingBottom: "10px" }}
@@ -150,7 +157,6 @@ export const Author = props => {
                         />
                       </div>
                     </div>
-                  ) : null}
                 </div>
               </div>
             </div>
@@ -160,7 +166,6 @@ export const Author = props => {
     </Layout>
   )
 }
-
 
 // query($tag: [String], $image: String) {
 //   image: allFile(

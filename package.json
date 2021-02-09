@@ -8,6 +8,7 @@
     "url": "https://github.com/IET-NITK/ietnitk-v2/issues"
   },
   "dependencies": {
+    "@seberm/react-marquee": "^1.1.9",
     "bootstrap": "^4.5.2",
     "font-awesome": "^4.7.0",
     "gatsby": "^2.24.67",
