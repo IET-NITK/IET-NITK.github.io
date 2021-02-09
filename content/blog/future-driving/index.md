@@ -2,7 +2,7 @@
 title: What's the Future of Driving?
 authors: ['Nirmal Khedkar']
 image: giphy.gif
-publishDate: "2020-01-31"
+publishDate: "2021-02-25"
 ---
 
 From someone who is a motorsports enthusiast, an enviromentalist and not a petrol-head.

@@ -29,7 +29,7 @@ const TopNavbar = props => {
                   return (
                     <div className="alert alert-warning m-0">
                       <Marquee
-                        speed={2} // Speed of the marquee (Optional)
+                        speed={1} // Speed of the marquee (Optional)
                       >
                         <div
                           dangerouslySetInnerHTML={{

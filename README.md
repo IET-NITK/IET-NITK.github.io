@@ -3,4 +3,5 @@
 
 ## Contributing?
 - If you're interested in contributing a piece to IET NITK's blog, check out [these guidelines](CONTRIBUTE/BLOG.md).
-- If you're interested in helping build this website, please check out [these guidelines](CONTRIBUTE/BUILD.md)
+- If you're interested in contributing a piece to IET NITK's event's list, check out [these guidelines](CONTRIBUTE/EVENTS.md).
+- If you're interested in helping build and maintain this website, please check out [these guidelines](CONTRIBUTE/BUILD.md)
