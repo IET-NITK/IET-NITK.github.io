@@ -11,6 +11,7 @@ export const Footer = props => {
       query={graphql`
         query {
           site {
+            buildTime(formatString: "MMMM Do")
             siteMetadata {
               title
               description
@@ -101,7 +102,7 @@ export const Footer = props => {
                   Made by IET NITK Web Team
                 </a>
                 <br />
-                Last updated on: August 31
+                Last updated on: {site.buildTime}
               </p>
             </div>
           </footer>
