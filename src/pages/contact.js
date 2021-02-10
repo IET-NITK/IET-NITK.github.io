@@ -43,10 +43,11 @@ class Contact extends React.Component {
                 <p>You can also reach us out here:</p>
               </div>
               <div className="form-group">
-                <label htmlFor="firstName">First Name</label>
+                <label htmlFor="firstName">Full Name</label>
                 <input
                   type="text"
                   id="firstName"
+                  name="name"
                   onChange={this.onChangeHandle}
                   className="form-control form-control-lg"
                 />
@@ -55,6 +56,7 @@ class Contact extends React.Component {
                 <label htmlFor="email">Email Address</label>
                 <input
                   type="text"
+                  name="email_add"
                   id="email"
                   onChange={this.onChangeHandle}
                   className="form-control form-control-lg"
@@ -67,6 +69,7 @@ class Contact extends React.Component {
                   id="message"
                   cols="30"
                   rows="10"
+                  name="message"
                   onChange={this.onChangeHandle}
                   className="form-control"
                 />

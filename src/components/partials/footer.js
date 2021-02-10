@@ -98,8 +98,8 @@ export const Footer = props => {
               </div>
               <p className="copyright">
                 <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK |{" "}
-                <a className="text-white" href="/">
-                  Made by IET NITK Web Team
+                <a className="text-white" href="https://nirmalhk7.tech">
+                  Made by Nirmal Khedkar
                 </a>
                 <br />
                 Last updated on: {site.buildTime}

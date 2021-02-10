@@ -108,11 +108,11 @@ export const Navbar = props => {
                     About Us
                   </Link>
                 </li>
-                <li className="nav-item" role="presentation">
+                {/* <li className="nav-item" role="presentation">
                   <Link {...commonLinkProps} to="/events">
                     Events
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item" role="presentation">
                   <Link {...commonLinkProps} to="/blog">
                     Blog
