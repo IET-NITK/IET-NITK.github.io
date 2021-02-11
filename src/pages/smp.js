@@ -55,7 +55,7 @@ const SMP = ({ data, location }) => {
                             {RenderAuthors(smp.mentors, "")}
                           </span>
                           <br />
-                          <a href={data.site_data.siteMetadata.smp.link}>Click to register</a>
+                          <a target="_blank" rel="noreferrer" href={data.site_data.siteMetadata.smp.link}>Click to register</a>
                         </p>
                       </div>
                     </>

@@ -25,11 +25,26 @@ export const Project = ({ data, pathname, pageContext }) => {
                   <h4>Built by</h4>
                   <ul>
                     {pageContext.builtBy &&
-                      pageContext.builtBy.map((e, i) => <li key={i}>{e}</li>)}
+                      pageContext.builtBy.map((e, i) => (
+                        <li key={i}>
+                          <Link
+                            to={
+                              "/member/" + e.toLowerCase().split(" ").join("")
+                            }
+                          >
+                            {e}
+                          </Link>
+                        </li>
+                      ))}
                   </ul>
                 </div>
                 <div className="col-lg-6 text-right">
-                  <a href={'https://'+pageContext.URL} className="btn btn-primary">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={"https://" + pageContext.URL}
+                    className="btn btn-primary"
+                  >
                     <i className="fa fa-link" /> Project Link
                   </a>
                 </div>

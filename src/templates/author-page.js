@@ -76,7 +76,7 @@ const RenderProject = ({
             </span>
           </div>
           <p> {description} </p>
-          <a href={"https://" + URL} className="card-link">
+          <a target="_blank" rel="noreferrer" href={"https://" + URL} className="card-link">
             Read More
           </a>
         </div>

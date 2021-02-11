@@ -77,29 +77,29 @@ export const Footer = props => {
                   </div>
                 </div>
                 <div className="col item social">
-                  <a href="https://www.facebook.com/ietnitk">
+                  <a target="_blank" rel="noreferrer" href="https://www.facebook.com/ietnitk">
                     <i className="fa fa-facebook" />
                   </a>
-                  <a href="https://www.linkedin.com/company/ietnitk/">
+                  <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/ietnitk/">
                     <i className="fa fa-linkedin" />
                   </a>
-                  <a href="https://www.github.com/IET-NITK">
+                  <a target="_blank" rel="noreferrer" href="https://www.github.com/IET-NITK">
                     <i className="fa fa-github" />
                   </a>
-                  <a href="https://www.youtube.com/c/IETNITK">
+                  <a target="_blank" rel="noreferrer" href="https://www.youtube.com/c/IETNITK">
                     <i className="fa fa-youtube" />
                   </a>
-                  <a href="https://www.instagram.com/ietnitk">
+                  <a target="_blank" rel="noreferrer" href="https://www.instagram.com/ietnitk">
                     <i className="fa fa-instagram" />
                   </a>
-                  <a href="/feed.xml">
+                  <a target="_blank" rel="noreferrer" href="/feed.xml">
                     <i className="fa fa-rss" />
                   </a>
                 </div>
               </div>
               <p className="copyright">
                 <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK |{" "}
-                <a className="text-white" href="https://nirmalhk7.tech">
+                <a target="_blank" rel="noreferrer" className="text-white" href="https://nirmalhk7.tech">
                   Made by Nirmal Khedkar
                 </a>
                 <br />

@@ -64,6 +64,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         ) {
           nodes {
             relativeDirectory
+            childMarkdownRemark {
+              frontmatter {
+                publishDate
+              }
+            }
           }
         }
       }
@@ -77,6 +82,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           component: blogTemplate,
           context: {
             pathSlug: element.relativeDirectory,
+            articleDate: element.childMarkdownRemark.frontmatter.publishDate
           },
         })
       })

@@ -35,19 +35,19 @@ const MemberDetails = ({ author, index }) => {
           <p className={`card-text ${color_text}`}>{author.position}</p>
           <div className="icon">
             {author.social.facebook ? (
-              <a className="mr-1 ml-1" href={"https://www.facebook.com/" + author.social.facebook}>
+              <a target="_blank" rel="noreferrer" className="mr-1 ml-1" href={"https://www.facebook.com/" + author.social.facebook}>
                 &nbsp;
                 <i className={`fa fa-facebook ${color_text}`} />
               </a>
             ) : null}
             {author.social.linkedin ? (
-              <a className="mr-1 ml-1" href={"https://www.linkedin.com/in/" + author.social.linkedin}>
+              <a target="_blank" rel="noreferrer" className="mr-1 ml-1" href={"https://www.linkedin.com/in/" + author.social.linkedin}>
                 &nbsp;
                 <i className={`fa fa-linkedin ${color_text}`} />
               </a>
             ) : null}
             {author.social.github ? (
-              <a className="mr-1 ml-1" href={"https://www.github.com/" + author.social.github}>
+              <a target="_blank" rel="noreferrer" className="mr-1 ml-1" href={"https://www.github.com/" + author.social.github}>
                 &nbsp;
                 <i className={`fa fa-github ${color_text}`} />
               </a>
