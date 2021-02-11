@@ -45,7 +45,7 @@ export const Project = ({ data, pathname, pageContext }) => {
                     href={"https://" + pageContext.URL}
                     className="btn btn-primary"
                   >
-                    <i className="fa fa-link" /> Project Link
+                    <i className="fa fa-link"/> Project Link
                   </a>
                 </div>
               </div>
