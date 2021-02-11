@@ -3,7 +3,7 @@ title: One Step to Bucket List Journey
 image: shimla.jpeg
 displayOnBlog: false
 authors: ['Laksh Sadhwani']
-publishDate: "2021-01-21"
+date: "2021-01-21"
 ---
 
 I remember this trip was during the winter vacations when I was in grade 11th. My family decided to go to Shimla . 

@@ -15,7 +15,7 @@ All blog content is located in `content/blog/`.
   title: Blog Title Here
   authors: ['Rajamani']
   image: image.jpg
-  publishDate: "YYYY-MM-DD"
+  date: "YYYY-MM-DD"
   ---
 
   Blog Excerpt: The first paragraph of your blog is what will be displayed as a preview in the Blogs page.

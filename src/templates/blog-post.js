@@ -20,7 +20,7 @@ const PreviewOther = ({ post, isPrevious }) => {
             </b>
           </span>
           <br />
-          <span>{post.childMarkdownRemark.frontmatter.publishDate}</span>
+          <span>{post.childMarkdownRemark.frontmatter.date}</span>
         </div>
         {post.childMarkdownRemark.excerpt}
       </div>
@@ -64,7 +64,7 @@ export const BlogArticle = ({ data }) => {
                   </span>
                   -
                   <span>
-                    {data.post.childMarkdownRemark.frontmatter.publishDate}
+                    {data.post.childMarkdownRemark.frontmatter.date}
                   </span>
                 </div>
                 <div
@@ -80,7 +80,7 @@ export const BlogArticle = ({ data }) => {
                       ""
                     )}
                     <br />
-                    on {data.post.childMarkdownRemark.frontmatter.publishDate}
+                    on {data.post.childMarkdownRemark.frontmatter.date}
                   </b>
                 </span>
               </div>
@@ -111,7 +111,7 @@ export const postQuery = graphql`
       childMarkdownRemark {
         frontmatter {
           authors
-          publishDate(formatString: "MMMM Do, YYYY")
+          date(formatString: "MMMM Do, YYYY")
           title
           image {
             publicURL
@@ -125,11 +125,11 @@ export const postQuery = graphql`
         sourceInstanceName: { eq: "blog" }
         ext: { eq: ".md" }
         childMarkdownRemark: {
-          frontmatter: { publishDate: { lt: $articleDate } }
+          frontmatter: { date: { lt: $articleDate } }
         }
       }
       sort: {
-        fields: childrenMarkdownRemark___frontmatter___publishDate
+        fields: childMarkdownRemark___frontmatter___date
         order: DESC
       }
       limit: 1
@@ -138,7 +138,7 @@ export const postQuery = graphql`
         relativeDirectory
         childMarkdownRemark {
           frontmatter {
-            publishDate(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM Do, YYYY")
             title
             authors
           }
@@ -152,11 +152,11 @@ export const postQuery = graphql`
         sourceInstanceName: { eq: "blog" }
         ext: { eq: ".md" }
         childMarkdownRemark: {
-          frontmatter: { publishDate: { gt: $articleDate } }
+          frontmatter: { date: { gt: $articleDate } }
         }
       }
       sort: {
-        fields: childrenMarkdownRemark___frontmatter___publishDate
+        fields: childMarkdownRemark___frontmatter___date
         order: DESC
       }
       limit: 1
@@ -165,7 +165,7 @@ export const postQuery = graphql`
         relativeDirectory
         childMarkdownRemark {
           frontmatter {
-            publishDate(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM Do, YYYY")
             title
             displayOnBlog
             authors

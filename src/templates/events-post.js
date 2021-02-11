@@ -17,7 +17,7 @@ export const BlogArticle = ({ data }) => {
                 <h3>{data.file.childMarkdownRemark.frontmatter.title}</h3>
                 <div className="post-info">
                   <span>
-                    {data.file.childMarkdownRemark.frontmatter.eventDate}
+                    {data.file.childMarkdownRemark.frontmatter.date}
                   </span>
                 </div>
                 <div
@@ -44,7 +44,7 @@ export const postQuery = graphql`
       childMarkdownRemark {
         excerpt(format: PLAIN)
         frontmatter {
-          eventDate(formatString: "MMMM Do, YYYY")
+          date(formatString: "MMMM Do, YYYY")
           title
         }
         html

@@ -13,7 +13,7 @@ All events content is located in `content/events/`.
   ```markdown
   ---
     title: Club Debate
-    eventDate: "2020-01-22"
+    date: "2020-01-22"
   ---
 
   Blog Excerpt: The first paragraph of your blog is what will be displayed as a preview in the Event's page (as an exerpt).

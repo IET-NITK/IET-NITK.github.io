@@ -29,7 +29,7 @@ const Events = ({ data, location }) => {
                         <h3>{element.childMarkdownRemark.frontmatter.title}</h3>
                         <div className="info">
                           <span className="text-muted">
-                            {element.childMarkdownRemark.frontmatter.eventDate}
+                            {element.childMarkdownRemark.frontmatter.date}
                           </span>
                         </div>
                         <p>{element.childMarkdownRemark.excerpt}</p>
@@ -58,7 +58,7 @@ export const postQuery = graphql`
     allFile(
       filter: { sourceInstanceName: { eq: "events" }, ext: { eq: ".md" } }
       sort: {
-        fields: childMarkdownRemark___frontmatter___eventDate
+        fields: childMarkdownRemark___frontmatter___date
         order: DESC
       }
     ) {
@@ -67,7 +67,7 @@ export const postQuery = graphql`
         childMarkdownRemark {
           excerpt(format: PLAIN)
           frontmatter {
-            eventDate(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM Do, YYYY")
             title
           }
         }

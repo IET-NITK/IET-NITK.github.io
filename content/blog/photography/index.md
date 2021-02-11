@@ -3,7 +3,7 @@ image: photo_2.jpeg
 displayOnBlog: false
 title: Snap what you feel
 authors: ['Nikitha Garapati']
-publishDate: "2020-12-22"
+date: "2020-12-22"
 ---
 
 The ability to capture the memorable moments with a device is the best invention of the mankind. And not all photographs require a DSLR camera. Many people today believe that mobile camera is good enough for most photography needs. And they are not wrong. A mobile camera is sufficient for most our needs. They are quicker, easier to carry and use.

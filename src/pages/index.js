@@ -169,7 +169,7 @@ const MainPage = ({ location, data }) => {
                             <br />
                             {
                               element.childMarkdownRemark.frontmatter
-                                .publishDate
+                                .date
                             }
                           </h6>
                           {/* <p className="card-text">ost.excerpt</p> */}
@@ -202,7 +202,7 @@ export const postQuery = graphql`
     blog: allFile(
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
       sort: {
-        fields: childMarkdownRemark___frontmatter___publishDate
+        fields: childMarkdownRemark___frontmatter___date
         order: DESC
       }
       limit: 3
@@ -216,7 +216,7 @@ export const postQuery = graphql`
             image {
               publicURL
             }
-            publishDate(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM Do, YYYY")
           }
         }
       }

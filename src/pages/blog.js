@@ -56,7 +56,7 @@ export const Blog = ({ data, location }) => {
                             <br />
                             {
                               element.childMarkdownRemark.frontmatter
-                                .publishDate
+                                .date
                             }
                           </span>
                         </div>
@@ -86,7 +86,7 @@ export const postQuery = graphql`
     allFile(
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
       sort: {
-        fields: childMarkdownRemark___frontmatter___publishDate
+        fields: childMarkdownRemark___frontmatter___date
         order: DESC
       }
     ) {
@@ -101,7 +101,7 @@ export const postQuery = graphql`
             image {
               publicURL
             }
-            publishDate(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM Do, YYYY")
           }
         }
       }

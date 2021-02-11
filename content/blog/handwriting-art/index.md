@@ -3,7 +3,7 @@ image: h_cover.jpeg
 displayOnBlog: false
 title: Is Handwriting a dying art?
 authors: ['Rameshwar Dhakad']
-publishDate: "2021-01-10"
+date: "2021-01-10"
 
 ---
 

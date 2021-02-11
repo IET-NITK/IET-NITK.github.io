@@ -2,7 +2,7 @@
 image: bird-formation-1.jpeg
 title: Birds that fly in v-formation use amazing tricks!
 authors: ['Sagar Ror']
-publishDate: "2020-10-20"
+date: "2020-10-20"
 ---
 
 "Use what talents you have; the woods would have little music if no bird sang their song except those who sang best" - Reverand Oliver G Wilson.
