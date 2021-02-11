@@ -17,12 +17,18 @@ class Contact extends React.Component {
   render() {
     return (
       <Layout location={this.props.location.pathname} title={"Main"}>
-        <SEO />
+        <SEO title="Contact Us" />
         <main className="page">
           <section className="clean-block about-us">
-           <form className="container" method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact">
-   <input type="hidden" name="bot-field" />
-   <input type="hidden" name="form-name" value="contact" />
+            <form
+              className="container"
+              method="post"
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+              name="contact"
+            >
+              <input type="hidden" name="bot-field" />
+              <input type="hidden" name="form-name" value="contact" />
               <div className="block-heading">
                 <h2 className="text-primary">Say Hi!</h2>
                 <p>For any assistance, contact us at:</p>
@@ -46,30 +52,30 @@ class Contact extends React.Component {
                 <label htmlFor="firstName">Full Name</label>
                 <input
                   type="text"
-                  id="firstName"
-                  name="name"
+                  id="c_name"
+                  name="c_name"
                   onChange={this.onChangeHandle}
                   className="form-control form-control-lg"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email Address</label>
+                <label>Email Address</label>
                 <input
                   type="text"
-                  name="email_add"
-                  id="email"
+                  name="c_email"
+                  id="c_email"
                   onChange={this.onChangeHandle}
                   className="form-control form-control-lg"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Message</label>
+                <label>Message</label>
                 <textarea
                   name=""
-                  id="message"
+                  id="c_message"
                   cols="30"
                   rows="10"
-                  name="message"
+                  name="c_message"
                   onChange={this.onChangeHandle}
                   className="form-control"
                 />

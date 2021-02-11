@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { RenderAuthors } from "../components/helper"
+import PaginationComponent from "../components/partials/pagination"
 
 export const Blog = ({ data, location }) => {
   return (
@@ -18,8 +19,10 @@ export const Blog = ({ data, location }) => {
               </p>
             </div>
             <div className="block-content">
-              {data.allFile.nodes.map((element, index) => {
-                return (
+              <PaginationComponent
+                max={5}
+                list={data.allFile.nodes}
+                item={(element, index) => (
                   <div key={index} className="clean-blog-post">
                     <div className="row">
                       <div className="col-lg-5">
@@ -51,7 +54,10 @@ export const Blog = ({ data, location }) => {
                               ""
                             )}
                             <br />
-                            {element.childMarkdownRemark.frontmatter.publishDate}
+                            {
+                              element.childMarkdownRemark.frontmatter
+                                .publishDate
+                            }
                           </span>
                         </div>
                         <p>{element.childMarkdownRemark.excerpt}</p>
@@ -65,8 +71,8 @@ export const Blog = ({ data, location }) => {
                       </div>
                     </div>
                   </div>
-                )
-              })}
+                )}
+              />
             </div>
           </div>
         </section>

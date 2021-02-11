@@ -1,6 +1,7 @@
 import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
+import PaginationComponent from "../components/partials/pagination"
 import SEO from "../components/seo"
 
 const Events = ({ data, location }) => {
@@ -18,21 +19,17 @@ const Events = ({ data, location }) => {
               </p>
             </div>
             <div className="block-content">
-              {data.allFile.nodes.map((element, index) => {
-                return (
+              <PaginationComponent
+                max={5}
+                list={data.allFile.nodes}
+                item={(element, index) => (
                   <div key={index} className="clean-blog-post">
                     <div className="row">
                       <div className="col-lg-7">
-                        <h3
-                        >
-                          {element.childMarkdownRemark.frontmatter.title}
-                        </h3>
+                        <h3>{element.childMarkdownRemark.frontmatter.title}</h3>
                         <div className="info">
                           <span className="text-muted">
-                            {
-                              element.childMarkdownRemark.frontmatter
-                                .eventDate
-                            }
+                            {element.childMarkdownRemark.frontmatter.eventDate}
                           </span>
                         </div>
                         <p>{element.childMarkdownRemark.excerpt}</p>
@@ -46,8 +43,8 @@ const Events = ({ data, location }) => {
                       </div>
                     </div>
                   </div>
-                )
-              })}
+                )}
+              />
             </div>
           </div>
         </section>
