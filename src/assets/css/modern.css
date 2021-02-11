@@ -2,13 +2,32 @@
 
 body {
   margin: 0;
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, sans-serif!important;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
   text-align: left;
   background-color: #fff;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff!important;
+}
+.clean-navbar .navbar-nav .nav-item {
+
+    padding-right: 2rem;
+
+}
+.clean-navbar .navbar-nav .nav-link {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .article-list {

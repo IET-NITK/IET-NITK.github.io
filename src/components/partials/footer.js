@@ -3,8 +3,8 @@ import { graphql, Link, StaticQuery } from "gatsby"
 import SIG from "../../../content/yml/sig.yml"
 
 export const Footer = props => {
-  const [state]=useState({
-    sig: SIG
+  const [state] = useState({
+    sig: SIG,
   })
   return (
     <StaticQuery
@@ -19,7 +19,7 @@ export const Footer = props => {
           }
         }
       `}
-      render={({site}) => (
+      render={({ site }) => (
         <div
           className="footer-dark"
           style={{
@@ -73,29 +73,27 @@ export const Footer = props => {
                 <div className="col-md-6 item text">
                   <div className="mobile-center-laptop-right">
                     <h3>{site.siteMetadata.title}</h3>
-                    <p>
-                      {site.siteMetadata.description}
-                    </p>
+                    <p>{site.siteMetadata.description}</p>
                   </div>
                 </div>
                 <div className="col item social">
                   <a href="https://www.facebook.com/ietnitk">
-                    <i className="fa fa-facebook"/>
+                    <i className="fa fa-facebook" />
                   </a>
                   <a href="https://www.linkedin.com/company/ietnitk/">
-                    <i className="fa fa-linkedin"/>
+                    <i className="fa fa-linkedin" />
                   </a>
                   <a href="https://www.github.com/IET-NITK">
-                    <i className="fa fa-github"/>
+                    <i className="fa fa-github" />
+                  </a>
+                  <a href="https://www.youtube.com/c/IETNITK">
+                    <i className="fa fa-youtube" />
                   </a>
                   <a href="https://www.instagram.com/ietnitk">
-                    <i className="fa fa-instagram"/>
-                  </a>
-                  <a href="https://www.youtube.com/ietnitk">
-                    <i className="fa fa-youtube"/>
+                    <i className="fa fa-instagram" />
                   </a>
                   <a href="/feed.xml">
-                    <i className="fa fa-rss"/>
+                    <i className="fa fa-rss" />
                   </a>
                 </div>
               </div>

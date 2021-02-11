@@ -136,7 +136,7 @@ const MainPage = ({ location, data }) => {
               <div className="container">
                 <div className="intro">
                   <h2
-                    className="text-info text-center"
+                    className="text-primary text-center"
                     style={{ fontWeight: "500" }}
                   >
                     Latest Articles

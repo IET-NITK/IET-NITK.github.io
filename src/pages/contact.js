@@ -53,29 +53,28 @@ class Contact extends React.Component {
                 <input
                   type="text"
                   id="c_name"
-                  name="c_name"
+                  name="name"
                   onChange={this.onChangeHandle}
                   className="form-control form-control-lg"
                 />
               </div>
               <div className="form-group">
-                <label>Email Address</label>
+                <label htmlFor="c_email">Email Address</label>
                 <input
                   type="text"
-                  name="c_email"
+                  name="email"
                   id="c_email"
                   onChange={this.onChangeHandle}
                   className="form-control form-control-lg"
                 />
               </div>
               <div className="form-group">
-                <label>Message</label>
+                <label htmlFor="c_message">Message</label>
                 <textarea
-                  name=""
                   id="c_message"
                   cols="30"
                   rows="10"
-                  name="c_message"
+                  name="message"
                   onChange={this.onChangeHandle}
                   className="form-control"
                 />

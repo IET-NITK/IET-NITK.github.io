@@ -38,6 +38,8 @@ const PaginationComponent = ({ max, list, item }) => {
             >
               <button
                 class="page-link"
+                data-toggle="tooltip"
+                title={`Page ${i+1}`}
                 onClick={() => {
                   document.body.scrollTop = 0
                   document.documentElement.scrollTop = 0

@@ -10272,11 +10272,7 @@ html {
     padding-top: 50px;
   }
 }
-.clean-navbar .navbar-nav .nav-link {
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
+
 .clean-navbar.fixed-bottom,
 .clean-navbar.fixed-top {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
