@@ -91,6 +91,9 @@ export const Footer = props => {
                   <a href="https://www.instagram.com/ietnitk">
                     <i className="fa fa-instagram"/>
                   </a>
+                  <a href="https://www.youtube.com/ietnitk">
+                    <i className="fa fa-youtube"/>
+                  </a>
                   <a href="/feed.xml">
                     <i className="fa fa-rss"/>
                   </a>

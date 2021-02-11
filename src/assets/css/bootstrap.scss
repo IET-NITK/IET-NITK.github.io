@@ -1,0 +1,28 @@
+
+// @import "../../../../node_modules/bootstrap/scss/functions";
+// import bootstrap defaults
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+// import customization
+
+@import "bootstrap-overrides.scss";
+
+
+$font-family-sans-serif: "Montserrat", sans-serif;
+$theme-colors: (
+  primary:#803391
+);
+
+
+
+$pagination-active-bg: #803991;
+$pagination-color: #803391;
+$pagination-hover-color: #803391;
+$dropdown-link-color: #803391;
+$link-color: #803391;
+// $component-active-bg: #803391;
+// $pagination-color: #803391;
+
+// finally, import Bootstrap to set the changes!
+@import "../../../node_modules/bootstrap/scss/bootstrap";

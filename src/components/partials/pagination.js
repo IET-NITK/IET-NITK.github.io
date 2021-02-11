@@ -7,6 +7,7 @@ const PaginationComponent = ({ max, list, item }) => {
   console.log((state.pno - 1) * max, (state.pno - 1) * max + max)
   return (
     <>
+    
       {state.pno !== 1 ? (
         <>
           <h6 className="text-primary">Page {state.pno}</h6>

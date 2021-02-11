@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@seberm/react-marquee": "^1.1.9",
-    "bootstrap": "^4.5.2",
+    "bootstrap": "4.5.2",
     "font-awesome": "^4.7.0",
     "gatsby": "^2.24.67",
     "gatsby-cli": "^2.16.2",
@@ -20,6 +20,7 @@
     "gatsby-plugin-manifest": "^2.4.33",
     "gatsby-plugin-offline": "^3.2.30",
     "gatsby-plugin-react-helmet": "^3.3.12",
+    "gatsby-plugin-sass": "^3.2.0",
     "gatsby-plugin-sharp": "^2.6.38",
     "gatsby-remark-copy-linked-files": "^2.3.18",
     "gatsby-remark-images": "^3.3.32",
@@ -43,6 +44,7 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "node-sass": "^5.0.0",
     "prettier": "2.1.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
