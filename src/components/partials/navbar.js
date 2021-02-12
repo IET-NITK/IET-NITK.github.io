@@ -48,14 +48,14 @@ const TopNavbar = props => {
               <Link
                 to="/recruitment"
                 role="button"
-                className="btn btn-primary mr-3 disabled"
+                className="btn btn-primary btn-sm mr-3 disabled"
               >
                 Join IET NITK
               </Link>
               <Link
                 to="/smp"
                 role="button"
-                className="btn btn-outline-primary mr-3 disabled"
+                className="btn btn-outline-primary btn-sm mr-3 disabled"
               >
                 SMP
               </Link>

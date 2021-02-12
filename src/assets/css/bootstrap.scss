@@ -1,4 +1,3 @@
-
 // @import "../../../../node_modules/bootstrap/scss/functions";
 // import bootstrap defaults
 @import "../../../node_modules/bootstrap/scss/functions";
@@ -6,14 +5,12 @@
 @import "../../../node_modules/bootstrap/scss/mixins";
 // import customization
 
-@import "bootstrap-overrides.scss";
 
 
 $font-family-sans-serif: "Montserrat", sans-serif;
 $theme-colors: (
-  primary:#803391
+  primary: #803391,
 );
-
 
 
 $pagination-active-bg: #803991;

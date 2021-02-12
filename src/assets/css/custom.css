@@ -199,6 +199,11 @@ a {
   outline: none;
 }
 
+.bg-green {
+  background-color: #004225 !important;
+}
+
+
 @media only screen and (max-width: 1050px) {
   #purple-overlay {
     display: none;

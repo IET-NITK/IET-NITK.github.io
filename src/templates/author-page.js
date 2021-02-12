@@ -76,7 +76,12 @@ const RenderProject = ({
             </span>
           </div>
           <p> {description} </p>
-          <a target="_blank" rel="noreferrer" href={"https://" + URL} className="card-link">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={"https://" + URL}
+            className="card-link"
+          >
             Read More
           </a>
         </div>
@@ -113,6 +118,57 @@ export const Author = props => {
                           className="img-fluid"
                         />
                       ) : null}
+
+                      <div className="text-center mt-4">
+                        <h5 className="text-primary">
+                          {props.pageContext.name}
+                        </h5>
+                        <small>{props.pageContext.social.email}</small>
+                        <p>
+                          {props.pageContext.social.facebook ? (
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              className="mr-1 ml-1"
+                              href={
+                                "https://www.facebook.com/" +
+                                props.pageContext.social.facebook
+                              }
+                            >
+                              &nbsp;
+                              <i className={`fa fa-facebook`} />
+                            </a>
+                          ) : null}
+                          {props.pageContext.social.linkedin ? (
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              className="mr-1 ml-1"
+                              href={
+                                "https://www.linkedin.com/in/" +
+                                props.pageContext.social.linkedin
+                              }
+                            >
+                              &nbsp;
+                              <i className={`fa fa-linkedin`} />
+                            </a>
+                          ) : null}
+                          {props.pageContext.social.github ? (
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              className="mr-1 ml-1"
+                              href={
+                                "https://www.github.com/" +
+                                props.pageContext.social.github
+                              }
+                            >
+                              &nbsp;
+                              <i className={`fa fa-github`} />
+                            </a>
+                          ) : null}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -143,20 +199,20 @@ export const Author = props => {
                     </div>
                   </div>
 
-                    <div
-                      className="card clean-blog-post mb-3"
-                      style={{ paddingBottom: "10px" }}
-                    >
-                      <div className="card-body">
-                        <div className="card-title">
-                          <h4>Project Reports</h4>
-                        </div>
-                        <RenderArticles
-                          articles={projectReports}
-                          type="reports"
-                        />
+                  <div
+                    className="card clean-blog-post mb-3"
+                    style={{ paddingBottom: "10px" }}
+                  >
+                    <div className="card-body">
+                      <div className="card-title">
+                        <h4>Project Reports</h4>
                       </div>
+                      <RenderArticles
+                        articles={projectReports}
+                        type="reports"
+                      />
                     </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -166,40 +222,6 @@ export const Author = props => {
     </Layout>
   )
 }
-
-// query($tag: [String], $image: String) {
-//   image: allFile(
-//     filter: {
-//       internal: { mediaType: { regex: "/image/*/" } }
-//       relativeDirectory: { eq: "members" }
-//       childImageSharp: { fluid: { originalName: { eq: $image } } }
-//     }
-//   ) {
-//     edges {
-//       node {
-//         publicURL
-//       }
-//     }
-//   }
-//   content: allFile(
-//     filter: {
-//       ext: { eq: ".md" }
-//       childMarkdownRemark: { frontmatter: { authors: { in: $tag } } }
-//     }
-//   ) {
-//     nodes {
-//       sourceInstanceName
-//       childMarkdownRemark {
-//         frontmatter {
-//           title
-//           authors
-//         }
-//         excerpt
-//       }
-//       birthTime
-//     }
-//   }
-// }
 
 export const postQuery = graphql`
   query($tag: [String]) {
