@@ -1,6 +1,6 @@
 import { Link, StaticQuery } from "gatsby"
 import React from "react"
-import IETLOGO from "./../../assets/img/logo.png"
+import IETLOGO from "./../../assets/img/logo-wide.png"
 import sigs from "../../../content/yml/sig.yml"
 import Marquee from "react-simple-marquee"
 import { graphql } from 'gatsby'
@@ -84,7 +84,7 @@ export const Navbar = props => {
             <Link className="navbar-brand logo" to="/">
               <img
                 src={IETLOGO}
-                style={{ height: "auto", maxWidth: "4em" }}
+                style={{ height: "auto", maxHeight: "2em" }}
                 alt=""
               />
             </Link>

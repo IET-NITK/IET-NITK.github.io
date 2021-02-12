@@ -66,7 +66,7 @@ export const Blog = ({ data, location }) => {
                           className="btn btn-outline-primary btn-sm"
                           type="button"
                         >
-                          Read On
+                          Read More 
                         </Link>
                       </div>
                     </div>

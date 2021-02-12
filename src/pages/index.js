@@ -6,6 +6,7 @@ import Img_IETUpview from "../assets/img/iet-upview.jpg"
 import { RenderAuthors } from "../components/helper"
 import SIG from "../../content/yml/sig.yml"
 import { generateSIGHash } from "../components/helper"
+// import 
 
 export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
   let img_hash = generateSIGHash(sig_images)
@@ -74,11 +75,12 @@ const MainPage = ({ location, data }) => {
             title="Intro Youtube Video"
             className="ytplayer"
             style={{ width: "100%", height: "90vh", zIndex: "1" }}
-            src="https://www.youtube.com/embed/TI2rX3Oiku8?modestbranding=1&autoplay=1&rel=0&controls=0&mute=1&loop=1&autohide=10playlist=TI2rX3Oiku8"
+            src="https://www.youtube.com/embed/rGz1NS3FEvw?autoplay=1&controls=0&loop=1&playlist=rGz1NS3FEvw&mute=1&modestbranding=1"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+
         </div>
         <section className="clean-block about-us" id="about-us">
           <div className="container">
@@ -167,10 +169,7 @@ const MainPage = ({ location, data }) => {
                               ""
                             )}{" "}
                             <br />
-                            {
-                              element.childMarkdownRemark.frontmatter
-                                .date
-                            }
+                            {element.childMarkdownRemark.frontmatter.date}
                           </h6>
                           {/* <p className="card-text">ost.excerpt</p> */}
                           <div style={{ textAlign: "center" }}>
@@ -201,10 +200,7 @@ export const postQuery = graphql`
   {
     blog: allFile(
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
-      sort: {
-        fields: childMarkdownRemark___frontmatter___date
-        order: DESC
-      }
+      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
       limit: 3
     ) {
       nodes {
