@@ -67,7 +67,13 @@ module.exports = {
         name: `sig_logo`,
       },
     },
-
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/img`,
+        name: `weblogo`,
+      },
+    },
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {

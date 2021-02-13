@@ -11,22 +11,25 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+  const { site_details, logo } = useStaticQuery(
     graphql`
       query {
-        site {
+        site_details: site {
           siteMetadata {
             title
             description
           }
         }
+        logo: file(name: {eq: "logo"}, sourceInstanceName: {eq: "weblogo"}) {
+          publicURL
+        }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
-  console.log(title,defaultTitle)
+  const metaDescription = description || site_details.siteMetadata.description
+  const defaultTitle = site_details.siteMetadata?.title
+  
   return (
     <Helmet
       htmlAttributes={{
@@ -37,7 +40,7 @@ const SEO = ({ description, lang, meta, title }) => {
       meta={[
         {
           name: `title`,
-          content: title
+          content: title,
         },
         {
           name: `description`,
@@ -49,7 +52,7 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:url`,
-          content: '/'
+          content: "/",
         },
         {
           property: `og:description`,
@@ -57,8 +60,12 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:image`,
-          content: `image`
-        }
+          content: logo.publicURL,
+        },
+        {
+          property: `og:type`,
+          content: `article`,
+        },
       ].concat(meta)}
     />
   )

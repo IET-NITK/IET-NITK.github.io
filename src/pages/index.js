@@ -6,7 +6,8 @@ import Img_IETUpview from "../assets/img/iet-upview.jpg"
 import { RenderAuthors } from "../components/helper"
 import SIG from "../../content/yml/sig.yml"
 import { generateSIGHash } from "../components/helper"
-// import 
+import video from "../../static/home.mp4"
+// import
 
 export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
   let img_hash = generateSIGHash(sig_images)
@@ -58,8 +59,7 @@ const MainPage = ({ location, data }) => {
     <Layout location={location.pathname} title={"Main"}>
       <SEO title="We are IET NITK" />
       <main className="page landing-page">
-        <section className="hero" />
-        <section
+        {/* <section
           id="purple-overlay"
           className="clean-block clean-hero hero"
           style={{
@@ -67,21 +67,22 @@ const MainPage = ({ location, data }) => {
             position: "absolute",
             zIndex: "0",
             width: "100%",
-            height: "90vh",
+            height: "100%",
+            // marginTop: "-2em",
           }}
-        />
-        <div id="video" className="video-hero">
-          <iframe
-            title="Intro Youtube Video"
-            className="ytplayer"
-            style={{ width: "100%", height: "90vh", zIndex: "1" }}
-            src="https://www.youtube.com/embed/rGz1NS3FEvw?autoplay=1&controls=0&loop=1&playlist=rGz1NS3FEvw&mute=1&modestbranding=1"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+        /> */}
+        <video
+          loop={true}
+          className="ytplayer"
+          style={{ width: "100%", zIndex: "1", backgroundColor: "black" }}
+          // style={{ width: "100vw", height: "90vh", zIndex: "1", backgroundColor:"black" }}
+          autoPlay={true}
+          muted={true}
+        >
+          <source src={video} type="video/mp4" />
+          Your browser does not support HTML video.
+        </video>
 
-        </div>
         <section className="clean-block about-us" id="about-us">
           <div className="container">
             <div className="block-heading mobile-marginx2">

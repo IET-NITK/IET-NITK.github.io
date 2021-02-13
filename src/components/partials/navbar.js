@@ -57,7 +57,7 @@ const TopNavbar = props => {
                 role="button"
                 className="btn btn-outline-primary btn-sm mr-3 disabled"
               >
-                SMP
+                SMP {new Date().getFullYear()}
               </Link>
             </div>
           </div>
