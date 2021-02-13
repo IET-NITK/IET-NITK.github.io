@@ -67,7 +67,9 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `article`,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="icon" href={logo.publicURL} />
+    </Helmet>
   )
 }
 

@@ -7,8 +7,8 @@ import { SIGShowcase } from "./index"
 import { graphql } from "gatsby"
 
 const SMP = ({ location, data }) => {
-  const [state]=useState({
-    recQ: recruitmentQ
+  const [state] = useState({
+    recQ: recruitmentQ,
   })
   return (
     <Layout location={location.pathname}>
@@ -24,11 +24,15 @@ const SMP = ({ location, data }) => {
               </p>
             </div>
             {/* {% include sig.html %} */}
-            <SIGShowcase sigs={SIG} hide_link={false} sig_images={data.allFile.nodes} />
+            <SIGShowcase
+              sigs={SIG}
+              hide_link={false}
+              sig_images={data.siglogo.nodes}
+            />
           </div>
         </section>
         <div
-          className="clean-block add-on newsletter-sign-up blue"
+          className="clean-block text-center text-light"
           style={{
             backgroundColor: "#803391",
             padding: "30px 0px",
@@ -55,7 +59,7 @@ const SMP = ({ location, data }) => {
               <div className="faq-item">
                 {state.recQ.map((e, i) => (
                   <>
-                    <h4 className="question mb-0">{e.question}</h4>
+                    <b className="question mb-0">{e.question}</b>
                     <div className="answer mt-0 mb-2">{e.answer}</div>
                   </>
                 ))}
@@ -73,10 +77,18 @@ const SMP = ({ location, data }) => {
 
 export const postQuery = graphql`
   {
-    allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
+    siglogo: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
       nodes {
         name
         publicURL
+      }
+    }
+    rec_check: site {
+      siteMetadata {
+        join {
+          allow
+          link
+        }
       }
     }
   }

@@ -59,25 +59,13 @@ const MainPage = ({ location, data }) => {
     <Layout location={location.pathname} title={"Main"}>
       <SEO title="We are IET NITK" />
       <main className="page landing-page">
-        {/* <section
-          id="purple-overlay"
-          className="clean-block clean-hero hero"
-          style={{
-            color: "#a046b480",
-            position: "absolute",
-            zIndex: "0",
-            width: "100%",
-            height: "100%",
-            // marginTop: "-2em",
-          }}
-        /> */}
         <video
           loop={true}
-          className="ytplayer"
-          style={{ width: "100%", zIndex: "1", backgroundColor: "black" }}
-          // style={{ width: "100vw", height: "90vh", zIndex: "1", backgroundColor:"black" }}
+          style={{ width: "100%", zIndex: "1", backgroundColor: "black", cursor:"none" }}
           autoPlay={true}
           muted={true}
+          oncontextmenu="return false;"
+          className="hero-video"
         >
           <source src={video} type="video/mp4" />
           Your browser does not support HTML video.
@@ -223,6 +211,12 @@ export const postQuery = graphql`
         name
         publicURL
       }
+    }
+    logo: file(
+      name: { eq: "logo-wide" }
+      sourceInstanceName: { eq: "weblogo" }
+    ) {
+      publicURL
     }
   }
 `

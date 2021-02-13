@@ -2,7 +2,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i");
 @import url("https://fonts.googleapis.com/css?family=Changa:600&display=swap");
 
-
+@media only screen and (max-width: 1050px) {
+  .hero-video{
+    display: none;
+  }
+}
+video::-webkit-media-controls { display: none !important; }
 
 .smp-logo {
   max-width: 300px;
@@ -185,14 +190,7 @@ a {
 }
 
 
-@media only screen and (max-width: 1050px) {
-  #purple-overlay {
-    display: none;
-  }
-  #video {
-    display: none;
-  }
-}
+
 @media only screen and (max-width: 1050px) {
   .mobile-center-laptop-right {
     text-align: center;
