@@ -127,6 +127,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: projectTemplate,
       context: {
         pathSlug: "/" + element.title + "/",
+        sigRegex: `/^${element.sig}/`
       },
     })
     graphql(`

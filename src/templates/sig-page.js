@@ -18,8 +18,8 @@ export const SIG = ({ pageContext, pathname, data }) => {
             <div className="block-heading">
               <Link to={"/sig/" + sigYaml.name.toLowerCase()}>
                 <img
-                  alt={sigYaml.name}
                   src={file.childImageSharp.fixed.srcWebp}
+                  alt={sigYaml.name}
                   className="sig-logo"
                   style={{ maxWidth: "200px" }}
                 />
