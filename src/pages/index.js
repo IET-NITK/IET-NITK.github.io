@@ -151,7 +151,7 @@ const MainPage = ({ location, data }) => {
                           className="card-img-top w-100 d-block"
                           src={
                             element.childMarkdownRemark.frontmatter.image
-                              .publicURL
+                              .childImageSharp.fixed.srcWebp
                           }
                         />
                         <div className="card-body">
@@ -207,7 +207,11 @@ export const postQuery = graphql`
             authors
             title
             image {
-              publicURL
+              childImageSharp {
+                fixed {
+                  srcWebp
+                }
+              }
             }
             date(formatString: "MMMM Do, YYYY")
           }
@@ -230,12 +234,6 @@ export const postQuery = graphql`
         no_link
         description
       }
-    }
-    logo: file(
-      name: { eq: "logo-wide" }
-      sourceInstanceName: { eq: "weblogo" }
-    ) {
-      publicURL
     }
   }
 `

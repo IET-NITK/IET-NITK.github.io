@@ -19,7 +19,7 @@ export const SIG = ({ pageContext, pathname, data }) => {
               <Link to={"/sig/" + sigYaml.name.toLowerCase()}>
                 <img
                   alt={sigYaml.name}
-                  src={file.publicURL}
+                  src={file.childImageSharp.fixed.srcWebp}
                   className="sig-logo"
                   style={{ maxWidth: "200px" }}
                 />
@@ -78,7 +78,11 @@ export default SIG
 export const postQuery = graphql`
   query x($pathSlug: String!, $signame: String!) {
     file(sourceInstanceName: { eq: "sig_logo" }, name: { regex: $pathSlug }) {
-      publicURL
+      childImageSharp {
+        fixed {
+          srcWebp
+        }
+      }
     }
     allProjectsYaml(filter: { sig: { eq: $signame } }, sort: { fields: URL }) {
       nodes {

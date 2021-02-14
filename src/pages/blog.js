@@ -27,11 +27,11 @@ export const Blog = ({ data, location }) => {
                     <div className="row">
                       <div className="col-lg-5">
                         <img
-                          alt="X"
+                          alt={element.childMarkdownRemark.frontmatter.title}
                           className="rounded img-fluid"
                           src={
                             element.childMarkdownRemark.frontmatter.image
-                              .publicURL
+                              .childImageSharp.fixed.srcWebp
                           }
                           style={{ width: "100%", height: "auto" }}
                         />
@@ -54,10 +54,7 @@ export const Blog = ({ data, location }) => {
                               ""
                             )}
                             <br />
-                            {
-                              element.childMarkdownRemark.frontmatter
-                                .date
-                            }
+                            {element.childMarkdownRemark.frontmatter.date}
                           </span>
                         </div>
                         <p>{element.childMarkdownRemark.excerpt}</p>
@@ -66,7 +63,7 @@ export const Blog = ({ data, location }) => {
                           className="btn btn-outline-primary btn-sm"
                           type="button"
                         >
-                          Read More 
+                          Read More
                         </Link>
                       </div>
                     </div>
@@ -85,10 +82,7 @@ export const postQuery = graphql`
   {
     allFile(
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
-      sort: {
-        fields: childMarkdownRemark___frontmatter___date
-        order: DESC
-      }
+      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
     ) {
       nodes {
         relativeDirectory
@@ -99,7 +93,11 @@ export const postQuery = graphql`
             authors
             title
             image {
-              publicURL
+              childImageSharp {
+                fixed {
+                  srcWebp
+                }
+              }
             }
             date(formatString: "MMMM Do, YYYY")
           }
