@@ -1,39 +1,35 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import projectyml from "../../content/yml/projects.yml"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { RenderAuthors } from "../components/helper"
 import PaginationComponent from "../components/partials/pagination"
 
 export const SIG = ({ pageContext, pathname, data }) => {
-  const sig = pageContext.sigDetails
-  const [state] = useState({
-    projects: projectyml.filter(element => element.sig === sig.name),
-  })
+  const { allProjectsYaml, file, sigYaml } = data
 
   return (
     <Layout location={pathname && pathname.location}>
-      <SEO title={sig.name} />
+      <SEO title={sigYaml.name} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <Link to={"/sig/" + sig.name.toLowerCase()}>
+              <Link to={"/sig/" + sigYaml.name.toLowerCase()}>
                 <img
-                  alt={sig.name}
-                  src={data.file.publicURL}
+                  alt={sigYaml.name}
+                  src={file.publicURL}
                   className="sig-logo"
                   style={{ maxWidth: "200px" }}
                 />
               </Link>
-              <p>{sig.description}</p>
+              <p>{sigYaml.description}</p>
             </div>
             <div className="block-content">
               <PaginationComponent
                 max={10}
-                list={state.projects}
+                list={allProjectsYaml.nodes}
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
                     <div className="row">
@@ -80,9 +76,21 @@ export const SIG = ({ pageContext, pathname, data }) => {
 export default SIG
 
 export const postQuery = graphql`
-  query x($pathSlug: String!) {
+  query x($pathSlug: String!, $signame: String!) {
     file(sourceInstanceName: { eq: "sig_logo" }, name: { regex: $pathSlug }) {
       publicURL
+    }
+    allProjectsYaml(filter: { sig: { eq: $signame } }, sort: { fields: URL }) {
+      nodes {
+        description
+        builtBy
+        title
+        URL
+      }
+    }
+    sigYaml(name: { eq: $signame }) {
+      name
+      description
     }
   }
 `

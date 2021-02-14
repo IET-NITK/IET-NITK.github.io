@@ -74,20 +74,14 @@ module.exports = {
         name: `weblogo`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/src/assets/img/members`,
-    //     name: `member_images`,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/content/project-reports`,
-    //     name: `project-reports`,
-    //   },
-    // },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./content/yml`,
+        name: `yaml`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -96,6 +90,7 @@ module.exports = {
         trackingId: `G-12DBVMVFZ2`,
       },
     },
+
     // `gatsby-plugin-feed`,
     // {
     //   resolve: `gatsby-plugin-manifest`,

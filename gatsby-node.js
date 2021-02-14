@@ -50,7 +50,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         component: sigTemplate,
         context: {
           pathSlug: `/^${element.name}/`,
-          sigDetails: element,
+          signame: element.name
         },
       })
     }
@@ -127,7 +127,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: projectTemplate,
       context: {
         pathSlug: "/" + element.title + "/",
-        ...element,
       },
     })
     graphql(`

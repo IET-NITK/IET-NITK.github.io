@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
 import { RenderAuthors } from "../components/helper"
-import SIG from "../../content/yml/sig.yml"
+
 import { generateSIGHash } from "../components/helper"
 import video from "../../static/home.mp4"
 // import
@@ -61,7 +61,12 @@ const MainPage = ({ location, data }) => {
       <main className="page landing-page">
         <video
           loop={true}
-          style={{ width: "100%", zIndex: "1", backgroundColor: "black", cursor:"none" }}
+          style={{
+            width: "100%",
+            zIndex: "1",
+            backgroundColor: "black",
+            cursor: "none",
+          }}
           autoPlay={true}
           muted={true}
           oncontextmenu="return false;"
@@ -117,7 +122,10 @@ const MainPage = ({ location, data }) => {
                 IET NITK consists of three different Special Interest Groups:
               </p>
             </div>
-            <SIGShowcase sigs={SIG} sig_images={data && data.sig.nodes} />
+            <SIGShowcase
+              sigs={data.sigdetails.nodes}
+              sig_images={data && data.sig.nodes}
+            />
           </div>
         </section>
 
@@ -209,7 +217,18 @@ export const postQuery = graphql`
     sig: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
       nodes {
         name
-        publicURL
+        childImageSharp {
+          fixed {
+            srcWebp
+          }
+        }
+      }
+    }
+    sigdetails: allSigYaml(sort: { fields: no_link }) {
+      nodes {
+        name
+        no_link
+        description
       }
     }
     logo: file(

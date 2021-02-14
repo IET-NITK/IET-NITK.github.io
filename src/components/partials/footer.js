@@ -1,11 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
-import SIG from "../../../content/yml/sig.yml"
 
 export const Footer = props => {
-  const [state] = useState({
-    sig: SIG,
-  })
   return (
     <StaticQuery
       query={graphql`
@@ -17,9 +13,15 @@ export const Footer = props => {
               description
             }
           }
+          allSigYaml(sort: { fields: no_link }) {
+            nodes {
+              name
+              no_link
+            }
+          }
         }
       `}
-      render={({ site }) => (
+      render={({ site, allSigYaml }) => (
         <div
           className="footer-dark"
           style={{
@@ -57,7 +59,7 @@ export const Footer = props => {
                 <div className="col-sm-6 col-md-3 item">
                   <h3>Special Interest Groups</h3>
                   <ul>
-                    {state.sig.map((e, i) => (
+                    {allSigYaml.nodes.map((e, i) => (
                       <li key={i}>
                         {e.no_link === true ? (
                           e.name
@@ -77,19 +79,39 @@ export const Footer = props => {
                   </div>
                 </div>
                 <div className="col item social">
-                  <a target="_blank" rel="noreferrer" href="https://www.facebook.com/ietnitk">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.facebook.com/ietnitk"
+                  >
                     <i className="fa fa-facebook" />
                   </a>
-                  <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/ietnitk/">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.linkedin.com/company/ietnitk/"
+                  >
                     <i className="fa fa-linkedin" />
                   </a>
-                  <a target="_blank" rel="noreferrer" href="https://www.github.com/IET-NITK">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.github.com/IET-NITK"
+                  >
                     <i className="fa fa-github" />
                   </a>
-                  <a target="_blank" rel="noreferrer" href="https://www.youtube.com/c/IETNITK">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.youtube.com/c/IETNITK"
+                  >
                     <i className="fa fa-youtube" />
                   </a>
-                  <a target="_blank" rel="noreferrer" href="https://www.instagram.com/ietnitk">
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.instagram.com/ietnitk"
+                  >
                     <i className="fa fa-instagram" />
                   </a>
                   <a target="_blank" rel="noreferrer" href="/feed.xml">
@@ -99,7 +121,12 @@ export const Footer = props => {
               </div>
               <p className="copyright">
                 <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK |{" "}
-                <a target="_blank" rel="noreferrer" className="text-white" href="https://nirmalhk7.tech">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white"
+                  href="https://nirmalhk7.tech"
+                >
                   Made by Nirmal Khedkar
                 </a>
                 <br />

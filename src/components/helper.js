@@ -9,7 +9,7 @@ export const redirectController = (control) => {
 export const generateSIGHash = (sig_images)=> {
   let img_hash = {}
   sig_images && sig_images.forEach(element => {
-    img_hash[element.name] = element.publicURL
+    img_hash[element.name] = element.childImageSharp.fixed.srcWebp
   })
   return img_hash
 }

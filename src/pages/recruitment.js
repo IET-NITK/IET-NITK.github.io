@@ -1,15 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import recruitmentQ from "../../content/yml/recrfaq.yml"
-import SIG from "../../content/yml/sig.yml"
 import { SIGShowcase } from "./index"
 import { graphql } from "gatsby"
 
 const SMP = ({ location, data }) => {
-  const [state] = useState({
-    recQ: recruitmentQ,
-  })
+
+  const {sigdata, rec_questions, siglogo}= data;
   return (
     <Layout location={location.pathname}>
       <SEO title="Join Us!" />
@@ -23,11 +20,10 @@ const SMP = ({ location, data }) => {
                 others! Check out where we're recruiting:
               </p>
             </div>
-            {/* {% include sig.html %} */}
             <SIGShowcase
-              sigs={SIG}
+              sigs={sigdata.nodes}
               hide_link={false}
-              sig_images={data.siglogo.nodes}
+              sig_images={siglogo.nodes}
             />
           </div>
         </section>
@@ -57,7 +53,7 @@ const SMP = ({ location, data }) => {
 
             <div className="block-content">
               <div className="faq-item">
-                {state.recQ.map((e, i) => (
+                {rec_questions.nodes.map((e, i) => (
                   <>
                     <b className="question mb-0">{e.question}</b>
                     <div className="answer mt-0 mb-2">{e.answer}</div>
@@ -80,7 +76,17 @@ export const postQuery = graphql`
     siglogo: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
       nodes {
         name
-        publicURL
+        childImageSharp {
+          fixed {
+            srcWebp
+          }
+        }
+      }
+    }
+    sigdata: allSigYaml(sort: { fields: no_link }) {
+      nodes {
+        name
+        description
       }
     }
     rec_check: site {
@@ -89,6 +95,12 @@ export const postQuery = graphql`
           allow
           link
         }
+      }
+    }
+    rec_questions: allRecrfaqYaml {
+      nodes {
+        answer
+        question
       }
     }
   }

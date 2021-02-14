@@ -8,18 +8,18 @@
   sig: Cipher
   link: link2
   mentors: ['Nirmal Khedkar']
-- title: Engines
+- title: Lngines
   mentors: ['Nirmal Khedkar']
   description: Learn basics of Engines
   sig: Torsion
   link: link
-- title: Engines
-  description: Learn basics of Engines
+- title: Angines
+  description: Aearn basics of Engines
   sig: Torsion
   link: link
   mentors: ['Nirmal Khedkar']
-- title: Engines
-  description: Learn basics of Engines
+- title: Zngines
+  description: Zearn basics of Engines
   sig: Torsion
   link: link
   mentors: ['Nirmal Khedkar']

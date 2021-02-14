@@ -2,13 +2,12 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
-import members from "../../content/yml/authors.yml"
+import { graphql } from "gatsby"
 import Img_Beach from "../assets/img/beach.jpg"
 
 const KEY_ALUMNI = "Alumni"
 const KEY_EXEC_MEMBERS = "Executive Members 2020"
 const KEY_CURR_CORE = "Core 2020"
-
 
 const MemberDetails = ({ author, index }) => {
   let isntExecMember = author.position !== "Executive Member"
@@ -35,19 +34,34 @@ const MemberDetails = ({ author, index }) => {
           <p className={`card-text ${color_text}`}>{author.position}</p>
           <div className="icon">
             {author.social.facebook ? (
-              <a target="_blank" rel="noreferrer" className="mr-1 ml-1" href={"https://www.facebook.com/" + author.social.facebook}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                className="mr-1 ml-1"
+                href={"https://www.facebook.com/" + author.social.facebook}
+              >
                 &nbsp;
                 <i className={`fa fa-facebook ${color_text}`} />
               </a>
             ) : null}
             {author.social.linkedin ? (
-              <a target="_blank" rel="noreferrer" className="mr-1 ml-1" href={"https://www.linkedin.com/in/" + author.social.linkedin}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                className="mr-1 ml-1"
+                href={"https://www.linkedin.com/in/" + author.social.linkedin}
+              >
                 &nbsp;
                 <i className={`fa fa-linkedin ${color_text}`} />
               </a>
             ) : null}
             {author.social.github ? (
-              <a target="_blank" rel="noreferrer" className="mr-1 ml-1" href={"https://www.github.com/" + author.social.github}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                className="mr-1 ml-1"
+                href={"https://www.github.com/" + author.social.github}
+              >
                 &nbsp;
                 <i className={`fa fa-github ${color_text}`} />
               </a>
@@ -59,23 +73,23 @@ const MemberDetails = ({ author, index }) => {
   )
 }
 
-export const About = props => {
+export const About = ({location, data}) => {
   const [category, setCategory] = useState(KEY_CURR_CORE)
   let members_hsx = {
-    [KEY_ALUMNI]: members.filter(mem => mem.alumni === true),
-    [KEY_CURR_CORE]: members.filter(
+    [KEY_ALUMNI]: data.members.nodes.filter(mem => mem.alumni === true),
+    [KEY_CURR_CORE]: data.members.nodes.filter(
       mem => mem.position !== "Executive Member" && mem.alumni !== true
     ),
-    [KEY_EXEC_MEMBERS]: members.filter(
+    [KEY_EXEC_MEMBERS]: data.members.nodes.filter(
       mem => mem.position === "Executive Member" && mem.alumni !== true
     ),
   }
   return (
-    <Layout location={props.location.pathname} title={"About Us"}>
+    <Layout location={location.pathname} title={"About Us"}>
       <SEO title="About Us" />
       <main className="page">
         <section className="clean-block about-us">
-          <div className="container" style={{marginTop:"5em"}}>
+          <div className="container" style={{ marginTop: "5em" }}>
             <div className=" clean-card" style={{ boxShadow: "0px!important" }}>
               <div className="card-body info">
                 <div className="card-text">
@@ -148,3 +162,22 @@ export const About = props => {
 }
 
 export default About
+
+export const postQuery = graphql`
+  {
+    members: allAuthorsYaml {
+      nodes {
+        alumni
+        passoutYr
+        position
+        name
+        social {
+          email
+          github
+          linkedin
+          facebook
+        }
+      }
+    }
+  }
+`
