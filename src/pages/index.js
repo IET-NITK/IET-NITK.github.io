@@ -9,6 +9,20 @@ import { generateSIGHash } from "../components/helper"
 import video from "../../static/home.mp4"
 // import
 
+function getRandom(arr, n) {
+  var result = new Array(n),
+    len = arr.length,
+    taken = new Array(len)
+  if (n > len)
+    throw new RangeError("getRandom: more elements taken than available")
+  while (n--) {
+    var x = Math.floor(Math.random() * len)
+    result[n] = arr[x in taken ? taken[x] : x]
+    taken[x] = --len in taken ? taken[len] : len
+  }
+  return result
+}
+
 export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
   let img_hash = generateSIGHash(sig_images)
   return (
@@ -22,19 +36,17 @@ export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
           >
             <div className="clean-pricing-item" style={{ height: "100%" }}>
               <div style={{ width: "100%" }}>
-                <Link to={`/sig/${s.name.toLowerCase()}`}>
-                  <img
-                    alt=""
-                    src={img_hash[`${s.name}-logo`]}
-                    style={{
-                      width: "150px",
-                      height: "auto!important",
-                      display: "block",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                  />
-                </Link>
+                <img
+                  alt=""
+                  src={img_hash[`${s.name}`]}
+                  style={{
+                    width: "150px",
+                    height: "auto!important",
+                    display: "block",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                  }}
+                />
               </div>
               <p>{s.description}</p>
               {s.no_link === false && hide_link !== false ? (
@@ -65,11 +77,11 @@ const MainPage = ({ location, data }) => {
             width: "100%",
             zIndex: "1",
             backgroundColor: "black",
-            cursor: "none",
+            // cursor: "none",
           }}
           autoPlay={true}
           muted={true}
-          oncontextmenu="return false;"
+          // oncontextmenu="return false;"
           className="hero-video"
         >
           <source src={video} type="video/mp4" />
@@ -188,6 +200,62 @@ const MainPage = ({ location, data }) => {
             </div>
           </div>
         </section>
+
+        <section className="clean-block about-us">
+          <div className="container">
+            <div className="article-list">
+              <div className="container">
+                <div className="intro">
+                  <h2
+                    className="text-primary text-center"
+                    style={{ fontWeight: "500", paddingBottom: "-1em" }}
+                  >
+                    Our Projects
+                  </h2>
+                  <p className="text-center">
+                    Find more <Link to="/projects">here</Link>
+                  </p>
+                </div>
+                <div className="articles row" style={{ paddingTop: "2em" }}>
+                  {getRandom(data.projects.nodes, 4).map((element, index) => (
+                    <div className="col-lg-6 col-md-6 mt-4">
+                      <div className="card h-100">
+                        <div className="card-body">
+                          <h6 className="card-title">
+                            {" "}
+                            <Link
+                              to={
+                                "/projects/" +
+                                element.title.toLowerCase().split(" ").join("")
+                              }
+                              class="card-link"
+                            >
+                              {element.title}
+                            </Link>
+                          </h6>
+                          <Link
+                            to={
+                              "/sig/" +
+                              element.sig.toLowerCase().split(" ").join("")
+                            }
+                          >
+                            <small className="text-uppercase text-muted card-subtitle mb-2">
+                              {element.sig}
+                            </small>
+                          </Link>
+                          <p className="card-text">
+                            Built by
+                            {RenderAuthors(element.builtBy || [], "")}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </Layout>
   )
@@ -233,6 +301,14 @@ export const postQuery = graphql`
         name
         no_link
         description
+      }
+    }
+    projects: allProjectsYaml(filter: { builtBy: { ne: null } }) {
+      nodes {
+        title
+        builtBy
+        description
+        sig
       }
     }
   }

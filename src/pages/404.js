@@ -13,10 +13,15 @@ const NotFoundPage = ({ data, location }) => {
           <div className="container">
             <div className="block-heading">
               <h2 className="text-primary">Sorry, thats a 404!</h2>
-              <p>
-                We do a lot of stuff, but unfortunately not on this page :)
-              </p>
+              <p>We do a lot of stuff, but unfortunately not on this page :)</p>
             </div>
+            <input
+              type="text"
+              id="c_name"
+              name="name"
+              // onChange={this.onChangeHandle}
+              className="form-control form-control-lg"
+            />
           </div>
         </section>
       </main>

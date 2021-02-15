@@ -1,6 +1,6 @@
 import { Link, StaticQuery } from "gatsby"
 import React from "react"
-import Marquee from "react-simple-marquee"
+// import Marquee from "react-simple-marquee"
 import { graphql } from "gatsby"
 
 const TopNavbar = ({ notice }) => {
@@ -10,9 +10,12 @@ const TopNavbar = ({ notice }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9 d-none d-lg-block">
-              {() => {
-                if (notice.length === 1 && notice[0] === "") {
-                  return null
+              {/* {() => {
+                if (notice.length === 1 || notice[0] === "") {
+                  console.log("RET")
+                  return(
+                    <>NITK Surathkal</>
+                  )
                 }
                 return (
                   <div className="alert alert-warning m-0">
@@ -27,7 +30,7 @@ const TopNavbar = ({ notice }) => {
                     </Marquee>
                   </div>
                 )
-              }}
+              }} */}
             </div>
             <div className="col-lg-3 d-lg-block text-right">
               <Link

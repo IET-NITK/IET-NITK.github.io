@@ -10,7 +10,9 @@ const PreviewOther = ({ post, isPrevious }) => {
       <div className="m-4">
         <b>
           {isPrevious === true ? "Previous Post: " : "Next Up: "}
-          <Link to={"/blog/"+post.relativeDirectory}>{post.childMarkdownRemark.frontmatter.title}</Link>
+          <Link to={"/blog/" + post.relativeDirectory}>
+            {post.childMarkdownRemark.frontmatter.title}
+          </Link>
         </b>
         <div className="post-info">
           <span>
@@ -47,6 +49,7 @@ export const BlogArticle = ({ data }) => {
                       backgroundRepeat: "no-repeat",
                     }}
                   />
+
                 </>
               )}
 
@@ -62,10 +65,7 @@ export const BlogArticle = ({ data }) => {
                       )}
                     </b>
                   </span>
-                  -
-                  <span>
-                    {data.post.childMarkdownRemark.frontmatter.date}
-                  </span>
+                  -<span>{data.post.childMarkdownRemark.frontmatter.date}</span>
                 </div>
                 <div
                   dangerouslySetInnerHTML={{
@@ -124,14 +124,9 @@ export const postQuery = graphql`
       filter: {
         sourceInstanceName: { eq: "blog" }
         ext: { eq: ".md" }
-        childMarkdownRemark: {
-          frontmatter: { date: { lt: $articleDate } }
-        }
+        childMarkdownRemark: { frontmatter: { date: { lt: $articleDate } } }
       }
-      sort: {
-        fields: childMarkdownRemark___frontmatter___date
-        order: DESC
-      }
+      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
       limit: 1
     ) {
       nodes {
@@ -151,14 +146,9 @@ export const postQuery = graphql`
       filter: {
         sourceInstanceName: { eq: "blog" }
         ext: { eq: ".md" }
-        childMarkdownRemark: {
-          frontmatter: { date: { gt: $articleDate } }
-        }
+        childMarkdownRemark: { frontmatter: { date: { gt: $articleDate } } }
       }
-      sort: {
-        fields: childMarkdownRemark___frontmatter___date
-        order: DESC
-      }
+      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
       limit: 1
     ) {
       nodes {

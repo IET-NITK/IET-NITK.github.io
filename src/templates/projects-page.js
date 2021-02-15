@@ -14,14 +14,14 @@ export const Project = ({ data, pathname, pageContext }) => {
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading row">
-              <div className="col-lg-6 col-md-6">
+              <div className="col-lg-9 col-md-9">
                 <h2 className="text-primary" style={{ paddingTop: "1em" }}>
                   {data.projectsYaml.title}
                 </h2>
                 <p>{data.projectsYaml.description}</p>
               </div>
 
-              <div className="col-lg-6 col-md-6">
+              <div className="col-lg-3 col-md-3 text-right">
                 <Link to={"/sig/" + data.projectsYaml.sig.toLowerCase()}>
                   <img
                     src={data.file.childImageSharp.fixed.srcWebp}

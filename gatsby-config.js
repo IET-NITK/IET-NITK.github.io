@@ -74,6 +74,7 @@ module.exports = {
         name: `weblogo`,
       },
     },
+    
     `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,

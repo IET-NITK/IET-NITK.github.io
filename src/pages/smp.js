@@ -66,7 +66,7 @@ const SMP = ({ data, location }) => {
                     <img
                       className="mobile-invisible smp-logo"
                       style={{ maxWidth: "150px", paddingTop: "2em" }}
-                      src={sig_images[e.fieldValue + "-logo"]}
+                      src={sig_images[e.fieldValue]}
                       alt={e.fieldValue}
                     />
                   </Link>

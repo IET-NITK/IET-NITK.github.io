@@ -66,7 +66,7 @@ const RenderProject = ({
               className="btn-link"
               to={"/projects/" + title.toLowerCase().split(" ").join("")}
             >
-              {title} ({year})<span className="badge badge-primary">{SIG}</span>
+              {title} {year ? `(${year})`:null}<span className="badge badge-primary">{SIG}</span>
             </Link>
           </h3>
           <div className="info">
