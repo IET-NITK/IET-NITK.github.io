@@ -218,7 +218,7 @@ const MainPage = ({ location, data }) => {
                 </div>
                 <div className="articles row" style={{ paddingTop: "2em" }}>
                   {getRandom(data.projects.nodes, 4).map((element, index) => (
-                    <div className="col-lg-6 col-md-6 mt-4">
+                    <div key={index} className="col-lg-6 col-md-6 mt-4">
                       <div className="card h-100">
                         <div className="card-body">
                           <h6 className="card-title">
@@ -228,7 +228,7 @@ const MainPage = ({ location, data }) => {
                                 "/projects/" +
                                 element.title.toLowerCase().split(" ").join("")
                               }
-                              class="card-link"
+                              className="card-link"
                             >
                               {element.title}
                             </Link>

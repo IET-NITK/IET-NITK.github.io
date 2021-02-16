@@ -1,30 +1,38 @@
 import React, { useState } from "react"
 
-const PaginationComponent = ({ max, list, item }) => {
+function scrollTop() {
+  if (document.body.scrollTop !== 0) {
+    document.body.scrollTop = 0
+  } else {
+    document.documentElement.scrollTop = 0
+  }
+}
+const PaginationComponent = ({ max, list, item, noneMessage }) => {
   const [state, setState] = useState({
     pno: 1,
   })
-  console.log((state.pno - 1) * max, (state.pno - 1) * max + max)
+  if (list.length === 0) {
+    return <div className="text-center">{noneMessage}</div>
+  }
+
   return (
     <>
-    
       {state.pno !== 1 ? (
         <>
           <h6 className="text-primary">Page {state.pno}</h6>
           <hr />
-          <br/>
+          <br />
         </>
       ) : null}
 
       {list.slice((state.pno - 1) * max, (state.pno - 1) * max + max).map(item)}
       <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class={`page-item ${state.pno === 1 ? "disabled" : ""}`}>
+        <ul className="pagination justify-content-center">
+          <li className={`page-item ${state.pno === 1 ? "disabled" : ""}`}>
             <button
-              class="page-link"
+              className="page-link"
               onClick={() => {
-                document.body.scrollTop = 0
-                document.documentElement.scrollTop = 0
+                scrollTop()
                 setState({ pno: state.pno - 1 })
               }}
             >
@@ -33,16 +41,15 @@ const PaginationComponent = ({ max, list, item }) => {
           </li>
           {[...Array(Math.ceil(list.length / max))].map((e, i) => (
             <li
-              class={`page-item ${state.pno === i + 1 ? "active" : ""}`}
+              className={`page-item ${state.pno === i + 1 ? "active" : ""}`}
               key={i + 1}
             >
               <button
-                class="page-link"
+                className="page-link"
                 data-toggle="tooltip"
-                title={`Page ${i+1}`}
+                title={`Page ${i + 1}`}
                 onClick={() => {
-                  document.body.scrollTop = 0
-                  document.documentElement.scrollTop = 0
+                  scrollTop()
                   setState({ pno: i + 1 })
                 }}
               >
@@ -51,15 +58,14 @@ const PaginationComponent = ({ max, list, item }) => {
             </li>
           ))}
           <li
-            class={`page-item ${
+            className={`page-item ${
               state.pno === Math.ceil(list.length / max) ? "disabled" : ""
             }`}
           >
             <button
-              class="page-link"
+              className="page-link"
               onClick={() => {
-                document.body.scrollTop = 0
-                document.documentElement.scrollTop = 0
+                scrollTop()
                 setState({ pno: state.pno + 1 })
               }}
             >

@@ -52,6 +52,9 @@ export const Footer = props => {
                       <Link to="/projects">Projects</Link>
                     </li>
                     <li>
+                      <Link to="/project-reports">Project Reports</Link>
+                    </li>
+                    <li>
                       <Link to="/blog">Blog</Link>
                     </li>
                     <li>
@@ -102,6 +105,13 @@ export const Footer = props => {
                     href="https://www.github.com/IET-NITK"
                   >
                     <i className="fa fa-github" />
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://t.me/IET_NITK"
+                  >
+                    <i className="fa fa-telegram" />
                   </a>
                   <a
                     target="_blank"
