@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
+import { Disqus } from "gatsby-plugin-disqus"
 import { RenderAuthors } from "../components/helper"
 import SEO from "../components/seo"
 
@@ -49,7 +50,6 @@ export const BlogArticle = ({ data }) => {
                       backgroundRepeat: "no-repeat",
                     }}
                   />
-
                 </>
               )}
 
@@ -84,6 +84,13 @@ export const BlogArticle = ({ data }) => {
                   </b>
                 </span>
               </div>
+              <Disqus
+                config={{
+                  url: "PAGE_URL",
+                  identifier: "PAGE_IDENTIFIER",
+                  title: "PAGE_TITLE",
+                }}
+              />
               <hr />
               <div className="row">
                 <div className="col-lg-6">

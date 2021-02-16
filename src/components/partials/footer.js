@@ -43,9 +43,6 @@ export const Footer = props => {
                       <Link to="/about">About Us</Link>
                     </li>
                     <li>
-                      <Link to="/about#family">Our Family</Link>
-                    </li>
-                    <li>
                       <Link to="/events">Events</Link>
                     </li>
                     <li>

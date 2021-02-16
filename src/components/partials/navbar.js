@@ -74,7 +74,7 @@ export const Navbar = props => {
                 noticeBoard
               }
             }
-            imageSharp(fixed: { originalName: { eq: "logo-wide.png" } }) {
+            imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
               fixed {
                 srcWebp
               }
