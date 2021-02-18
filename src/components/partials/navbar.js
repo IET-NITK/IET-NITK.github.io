@@ -1,36 +1,40 @@
 import { Link, StaticQuery } from "gatsby"
 import React from "react"
-// import Marquee from "react-simple-marquee"
+import Marquee from "react-simple-marquee"
 import { graphql } from "gatsby"
 
 const TopNavbar = ({ notice }) => {
+  //eslint-disable-next-line
+  const RenderMarquee = ({ notice }) => {
+    if (notice.length === 1 && notice[0] === "") {
+      return (
+        <>
+          <i className="fa fa-pin" />
+          NITK Surathkal, Srinivasanagar, Karnataka
+        </>
+      )
+    }
+    return (
+      <div className="alert alert-warning m-0">
+        <Marquee
+          speed={1} // Speed of the marquee (Optional)
+        >
+          <div
+            dangerouslySetInnerHTML={{
+              __html: notice && notice.join(" ".repeat(30+20*notice.length)),
+            }}
+          />
+        </Marquee>
+      </div>
+    )
+  }
   return (
     <div id="topContent">
       <div className="py-2 bg-light">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9 d-none d-lg-block">
-              {/* {() => {
-                if (notice.length === 1 || notice[0] === "") {
-                  console.log("RET")
-                  return(
-                    <>NITK Surathkal</>
-                  )
-                }
-                return (
-                  <div className="alert alert-warning m-0">
-                    <Marquee
-                      speed={1} // Speed of the marquee (Optional)
-                    >
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: notice.join("\u00A0".repeat(30)),
-                        }}
-                      />
-                    </Marquee>
-                  </div>
-                )
-              }} */}
+              {/* <RenderMarquee notice={notice} /> */}
             </div>
             <div className="col-lg-3 d-lg-block text-right">
               <Link
@@ -83,7 +87,7 @@ export const Navbar = props => {
         `}
         render={({ sigdetails, site, imageSharp }) => (
           <div className="fixed-top" id="navbar">
-            <TopNavbar notices={site.siteMetadata.noticeBoard} />
+            <TopNavbar notice={site.siteMetadata.noticeBoard} />
             <nav
               className="navbar navbar-light navbar-expand-lg bg-white clean-navbar"
               style={{ borderBottom: "1px solid #c2c2c2" }}
@@ -92,8 +96,8 @@ export const Navbar = props => {
                 <Link className="navbar-brand logo" to="/">
                   <img
                     src={imageSharp.fixed.srcWebp}
-                    style={{ height: "auto", maxHeight: "2em" }}
-                    alt=""
+                    style={{ height: "auto", maxHeight: "2.5em" }}
+                    alt="Institute of Engineering and Technology, NITK Surathkal Division"
                   />
                 </Link>
                 <button

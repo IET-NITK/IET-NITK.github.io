@@ -56,6 +56,8 @@ export const BlogArticle = ({ data }) => {
               <div className="post-body">
                 <h3>{data.post.childMarkdownRemark.frontmatter.title}</h3>
                 <div className="post-info">
+                  {data.post.childMarkdownRemark.timeToRead} minute read
+                  <br />
                   <span>
                     By{" "}
                     <b>
@@ -125,6 +127,7 @@ export const postQuery = graphql`
           }
         }
         html
+        timeToRead
       }
     }
     before: allFile(
