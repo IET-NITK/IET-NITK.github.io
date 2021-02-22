@@ -228,7 +228,7 @@ const MainPage = ({ location, data }) => {
                                 "/projects/" +
                                 element.title.toLowerCase().split(" ").join("")
                               }
-                              className="card-link"
+                              className="card-link text-capitalize"
                             >
                               {element.title}
                             </Link>

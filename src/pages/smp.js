@@ -1,13 +1,20 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { RenderAuthors, generateSIGHash } from "../components/helper"
 import { Link } from "gatsby"
-import { graphql } from "gatsby"
+import { graphql,navigate } from "gatsby"
+
+
 
 const SMP = ({ data, location }) => {
   const { sigImages, smp } = data
-  let sig_images = generateSIGHash(sigImages.nodes)
+  const sig_images = generateSIGHash(sigImages.nodes)
+  useEffect(()=>{
+    if(data.site_data.siteMetadata.smp.allow!==true){
+      navigate("/")
+    }
+  })
   return (
     <Layout location={location.pathname}>
       <SEO title={"SMP " + new Date().getFullYear()} />

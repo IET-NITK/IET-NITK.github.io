@@ -21,7 +21,8 @@ const TopNavbar = ({ notice }) => {
         >
           <div
             dangerouslySetInnerHTML={{
-              __html: notice && notice.join(" ".repeat(30+20*notice.length)),
+              __html:
+                notice && notice.join(" ".repeat(30 + 20 * notice.length)),
             }}
           />
         </Marquee>
@@ -123,11 +124,11 @@ export const Navbar = props => {
                         About Us
                       </Link>
                     </li>
-                    {/* <li className="nav-item" role="presentation">
-                  <Link {...commonLinkProps} to="/events">
-                    Events
-                  </Link>
-                </li> */}
+                    <li className="nav-item" role="presentation">
+                      <Link {...commonLinkProps} to="/events">
+                        Events
+                      </Link>
+                    </li>
                     <li className="nav-item" role="presentation">
                       <Link {...commonLinkProps} to="/blog">
                         Blog

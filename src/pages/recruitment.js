@@ -1,12 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { SIGShowcase } from "./index"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 
 const SMP = ({ location, data }) => {
-
   const {sigdata, rec_questions, siglogo}= data;
+  useEffect(()=>{
+    if(data.site_data.siteMetadata.join.allow!==true){
+      navigate("/")
+    }
+  })
   return (
     <Layout location={location.pathname}>
       <SEO title="Join Us!" />
@@ -89,7 +93,7 @@ export const postQuery = graphql`
         description
       }
     }
-    rec_check: site {
+    site_data: site {
       siteMetadata {
         join {
           allow

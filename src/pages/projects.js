@@ -28,7 +28,7 @@ const Events = ({ data, location }) => {
                 list={data.projects.nodes}
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
-                    <h3>{element.title}</h3>
+                    <h3 className="text-capitalize">{element.title}</h3>
                     <div className="info">
                       <span className="text-muted">{element.sig}</span>
                     </div>

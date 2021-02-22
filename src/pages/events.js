@@ -21,6 +21,8 @@ const Events = ({ data, location }) => {
             <div className="block-content">
               <PaginationComponent
                 max={5}
+
+                noneMessage="No event reports here. Come back soon!"
                 list={data.allFile.nodes}
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
