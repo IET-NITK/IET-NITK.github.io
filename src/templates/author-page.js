@@ -3,49 +3,40 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql, Link } from "gatsby"
 import { RenderAuthors } from "../components/helper"
-import moment from "moment"
-const RenderArticles = ({ articles, type }) => (
-  <>
-    {articles &&
-      articles.map((element, index) => (
-        <div
-          key={index}
-          className="clean-blog-post"
-          style={{ paddingBottom: "35px" }}
-        >
-          <div className="row">
-            <div className="col-lg-12">
-              <h3>
-                <Link
-                  className="btn-link"
-                  to={
-                    "/blog/" +
-                    element.childMarkdownRemark.frontmatter.title
-                      .toLowerCase()
-                      .split(" ")
-                      .join("")
-                  }
-                >
-                  {element.childMarkdownRemark.frontmatter.title}
-                </Link>
-              </h3>
-              <div className="info">
-                <span className="text-muted">
-                  By
-                  {RenderAuthors(
-                    element.childMarkdownRemark.frontmatter.authors,
-                    ""
-                  )}
-                  <br />
-                  {moment(element.birthTime).format("Do MMMM, YYYY")}
-                </span>
-              </div>
-              <p> {element.childMarkdownRemark.excerpt} </p>
-            </div>
-          </div>
+const RenderArticles = ({ articles, element, index }) => (
+  <div
+    key={index}
+    className="clean-blog-post"
+    style={{ paddingBottom: "35px" }}
+  >
+    <div className="row">
+      <div className="col-lg-12">
+        <h3>
+          <Link
+            className="btn-link"
+            to={
+              "/blog/" +
+              element.childMarkdownRemark.frontmatter.title
+                .toLowerCase()
+                .split(" ")
+                .join("")
+            }
+          >
+            {element.childMarkdownRemark.frontmatter.title}
+          </Link>
+        </h3>
+        <div className="info">
+          <span className="text-muted">
+            By
+            {RenderAuthors(element.childMarkdownRemark.frontmatter.authors, "")}
+            <br />
+            {element.birthTime}
+          </span>
         </div>
-      ))}
-  </>
+        <p> {element.childMarkdownRemark.excerpt} </p>
+      </div>
+    </div>
+  </div>
 )
 
 const RenderProject = ({
@@ -66,7 +57,8 @@ const RenderProject = ({
               className="btn-link"
               to={"/projects/" + title.toLowerCase().split(" ").join("")}
             >
-              {title} {year ? `(${year})`:null}<span className="badge badge-primary">{SIG}</span>
+              {title} {year ? `(${year})` : null}
+              <span className="badge badge-primary">{SIG}</span>
             </Link>
           </h3>
           <div className="info">
@@ -89,84 +81,47 @@ const RenderProject = ({
     </div>
   )
 }
-export const Author = props => {
-  const blogArticles = props.data.content.nodes.filter(
-    e => e.sourceInstanceName === "blog"
-  )
-  console.log(props.pageContext)
-  const projectReports = props.data.content.nodes.filter(
-    e => e.sourceInstanceName === "project-reports"
-  )
+
+export const Author = ({ data, location }) => {
+  const {
+    member_details,
+    member_projects,
+    member_articles,
+    member_reports,
+  } = data
+
   return (
-    <Layout location={props.location.pathname}>
-      <SEO title={"About " + props.pageContext.name} />
+    <Layout location={location.pathname}>
+      <SEO title={"About " + member_details.name} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container-fluid">
             <div className="block-content">
               <div className="row">
                 <div className="col-lg-3 col-md-3 col-sm-12">
-                  {/* <img  className="img-fluid" style={{height:"10em"}} src={props.data.image.edges[0] && props.data.image.edges[0].node.childImageSharp.fluid.srcWebp} alt=""/> */}
                   <div className="card">
                     <div className="card-body">
-                      {props.pageContext.image ? (
-                        <img
-                          src={`https://drive.google.com/uc?export=view&id=${new URL(
-                            props.pageContext.image
-                          ).searchParams.get("id")}`}
-                          alt=""
-                          className="img-fluid"
-                        />
-                      ) : null}
-
                       <div className="text-center mt-4">
-                        <h5 className="text-primary">
-                          {props.pageContext.name}
-                        </h5>
-                        <small>{props.pageContext.social.email}</small>
+                        <h5 className="text-primary">{member_details.name}</h5>
+                        <h6>{member_details.position}</h6>
+                        <small>{member_details.social.email}</small>
                         <p>
-                          {props.pageContext.social.facebook ? (
-                            <a
-                              target="_blank"
-                              rel="noreferrer"
-                              className="mr-1 ml-1"
-                              href={
-                                "https://www.facebook.com/" +
-                                props.pageContext.social.facebook
-                              }
-                            >
-                              &nbsp;
-                              <i className={`fa fa-facebook`} />
-                            </a>
-                          ) : null}
-                          {props.pageContext.social.linkedin ? (
-                            <a
-                              target="_blank"
-                              rel="noreferrer"
-                              className="mr-1 ml-1"
-                              href={
-                                "https://www.linkedin.com/in/" +
-                                props.pageContext.social.linkedin
-                              }
-                            >
-                              &nbsp;
-                              <i className={`fa fa-linkedin`} />
-                            </a>
-                          ) : null}
-                          {props.pageContext.social.github ? (
-                            <a
-                              target="_blank"
-                              rel="noreferrer"
-                              className="mr-1 ml-1"
-                              href={
-                                "https://www.github.com/" +
-                                props.pageContext.social.github
-                              }
-                            >
-                              &nbsp;
-                              <i className={`fa fa-github`} />
-                            </a>
-                          ) : null}
+                          {Object.keys(member_details.social).map(s =>
+                            member_details.social[s] && s!=="email" ? (
+                              <a
+                                target="_blank"
+                                rel="noreferrer"
+                                className="mr-1 ml-1"
+                                href={
+                                  "https://www.facebook.com/" +
+                                  member_details.social[s]
+                                }
+                              >
+                                &nbsp;
+                                <i className={`fa fa-${s}`} />
+                              </a>
+                            ) : null
+                          )}
                         </p>
                       </div>
                     </div>
@@ -178,11 +133,10 @@ export const Author = props => {
                     style={{ paddingBottom: "10px" }}
                   >
                     <div className="card-body">
-                      {" "}
                       <div className="card-title">
                         <h4>Projects</h4>
                       </div>
-                      {props.pageContext.projects.map((e, i) => (
+                      {member_projects.nodes.map((e, i) => (
                         <RenderProject {...e} />
                       ))}
                     </div>
@@ -195,7 +149,9 @@ export const Author = props => {
                       <div className="card-title">
                         <h4>Blog Articles</h4>
                       </div>
-                      <RenderArticles articles={blogArticles} type="blog" />
+                      {member_articles.nodes.map((e, i) => (
+                        <RenderArticles element={e} index={i} />
+                      ))}
                     </div>
                   </div>
 
@@ -207,10 +163,9 @@ export const Author = props => {
                       <div className="card-title">
                         <h4>Project Reports</h4>
                       </div>
-                      <RenderArticles
-                        articles={projectReports}
-                        type="reports"
-                      />
+                      {member_reports.nodes.map((e, i) => (
+                        <RenderArticles element={e} index={i} />
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -224,23 +179,72 @@ export const Author = props => {
 }
 
 export const postQuery = graphql`
-  query($tag: [String]) {
-    content: allFile(
-      filter: {
-        ext: { eq: ".md" }
-        childMarkdownRemark: { frontmatter: { authors: { in: $tag } } }
+  query($pathSlug: [String]
+  ) {
+    member_details: authorsYaml(name: { in: $pathSlug }) {
+      name
+      position
+      passoutYr
+      social {
+        email
+        github
+        linkedin
+        facebook
       }
+    }
+    member_projects: allProjectsYaml(
+      filter: { builtBy: { in: $pathSlug } }
+      sort: { fields: title }
     ) {
       nodes {
-        sourceInstanceName
+        builtBy
+        title
+        sig
+        year
+        description
+        URL
+      }
+    }
+    member_reports: allFile(
+      filter: {
+        childMarkdownRemark: {
+          frontmatter: { authors: { in: $pathSlug } }
+        }
+        sourceInstanceName: { eq: "project-reports" }
+        extension: { eq: "md" }
+      }
+      sort: { fields: childrenMarkdownRemark___frontmatter___title }
+    ) {
+      nodes {
         childMarkdownRemark {
           frontmatter {
-            title
             authors
+            date(formatString: "MMMM Do, YYYY")
+            title
           }
           excerpt
         }
-        birthTime
+      }
+    }
+    member_articles: allFile(
+      filter: {
+        childMarkdownRemark: {
+          frontmatter: { authors: { in: $pathSlug } }
+        }
+        sourceInstanceName: { eq: "blog" }
+        extension: { eq: "md" }
+      }
+      sort: { fields: childrenMarkdownRemark___frontmatter___title }
+    ) {
+      nodes {
+        childMarkdownRemark {
+          frontmatter {
+            authors
+            date(formatString: "MMMM Do, YYYY")
+            title
+          }
+          excerpt
+        }
       }
     }
   }

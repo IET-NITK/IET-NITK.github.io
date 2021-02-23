@@ -7,29 +7,29 @@ import { RenderAuthors } from "../components/helper"
 import PaginationComponent from "../components/partials/pagination"
 
 export const SIG = ({ pageContext, pathname, data }) => {
-  const { allProjectsYaml, file, sigYaml } = data
+  const { sig_details, sig_logo, sig_projects } = data
 
   return (
     <Layout location={pathname && pathname.location}>
-      <SEO title={sigYaml.name} />
+      <SEO title={sig_details.name} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <Link to={"/sig/" + sigYaml.name.toLowerCase()}>
+              <Link to={"/sig/" + sig_details.name.toLowerCase()}>
                 <img
-                  src={file.childImageSharp.fixed.srcWebp}
-                  alt={sigYaml.name}
+                  src={sig_logo.childImageSharp.fixed.srcWebp}
+                  alt={sig_details.name}
                   className="sig-logo"
                   style={{ maxWidth: "200px" }}
                 />
               </Link>
-              <p>{sigYaml.description}</p>
+              <p>{sig_details.description}</p>
             </div>
             <div className="block-content">
               <PaginationComponent
                 max={10}
-                list={allProjectsYaml.nodes}
+                list={sig_projects.nodes}
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
                     <div className="row">
@@ -76,23 +76,26 @@ export const SIG = ({ pageContext, pathname, data }) => {
 export default SIG
 
 export const postQuery = graphql`
-  query x($pathSlug: String!, $signame: String!) {
-    file(sourceInstanceName: { eq: "sig_logo" }, name: { regex: $pathSlug }) {
+  query x($pathSlug: String!) {
+    sig_logo: file(
+      sourceInstanceName: { eq: "sig_logo" }
+      name: { eq: $pathSlug }
+    ) {
       childImageSharp {
         fixed {
           srcWebp
         }
       }
     }
-    allProjectsYaml(filter: { sig: { eq: $signame } }, sort: { fields: URL }) {
+    sig_projects: allProjectsYaml(filter: {sig: {eq: $pathSlug}}, sort: {fields: builtBy}) {
       nodes {
-        description
-        builtBy
         title
         URL
+        builtBy
+        description
       }
     }
-    sigYaml(name: { eq: $signame }) {
+    sig_details: sigYaml(name: { eq: $pathSlug }) {
       name
       description
     }

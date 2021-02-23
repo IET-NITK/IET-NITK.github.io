@@ -1,6 +1,6 @@
 ---
 title: Audio Production
-authors: ['Rajamani']
+authors: ['Rajamani','Nirmal Khedkar']
 image: audio.jpg
 date: "2018-12-22"
 ---

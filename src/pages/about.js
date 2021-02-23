@@ -28,7 +28,7 @@ const MemberDetails = ({ author, index }) => {
         id={author.name}
       >
         <div className="card-body info">
-          <Link to={`/member/${author.name.toLowerCase().split(" ").join("")}`}>
+          <Link to={`/members/${author.name.toLowerCase().split(" ").join("")}`}>
             <h5 className={`card-title ${color_text}`}>{author.name}</h5>
           </Link>
           <p className={`card-text ${color_text}`}>{author.position}</p>

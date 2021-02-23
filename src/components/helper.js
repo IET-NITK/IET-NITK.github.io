@@ -20,7 +20,7 @@ export const RenderAuthors = (arr, cls) => (
       {" "}
       <Link
         key={"x" + index2}
-        to={"/member/" + name.toLowerCase().split(" ").join("")}
+        to={"/members/" + name.toLowerCase().split(" ").join("")}
       >
         {name}
       </Link>

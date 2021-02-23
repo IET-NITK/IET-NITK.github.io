@@ -41,13 +41,18 @@ const Events = ({ data, location }) => {
                         </p>
                       ) : null}
                     </p>
-                    <Link
-                      to={"/projects/" + element.title.toLowerCase().split(" ").join("")}
-                      className="btn btn-outline-primary btn-sm"
-                      type="button"
-                    >
-                      Read More
-                    </Link>
+                    {element.URL ? (
+                      <Link
+                        to={
+                          "/projects/" +
+                          element.title.toLowerCase().split(" ").join("")
+                        }
+                        className="btn btn-outline-primary btn-sm"
+                        type="button"
+                      >
+                        Read More
+                      </Link>
+                    ) : null}
                   </div>
                 )}
               />
@@ -61,12 +66,16 @@ const Events = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
-    projects: allProjectsYaml(filter: {builtBy: {}}, sort: {fields: builtBy}) {
+    projects: allProjectsYaml(
+      filter: { builtBy: {} }
+      sort: { fields: builtBy }
+    ) {
       nodes {
         title
         description
         sig
         builtBy
+        URL
       }
     }
   }

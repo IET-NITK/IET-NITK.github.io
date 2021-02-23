@@ -149,7 +149,7 @@ export const Navbar = props => {
                             <li key={index}>
                               <Link
                                 className="nav-link pl-2 dropdown-item"
-                                to={"/sig/" + element.name.toLowerCase()}
+                                to={"/sigs/" + element.name.toLowerCase()}
                               >
                                 {element.name}
                               </Link>

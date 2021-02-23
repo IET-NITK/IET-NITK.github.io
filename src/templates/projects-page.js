@@ -3,8 +3,6 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
-import moment from "moment"
-import { RenderAuthors } from "../components/helper"
 
 export const Project = ({ data, pathname, pageContext }) => {
   return (
@@ -22,9 +20,9 @@ export const Project = ({ data, pathname, pageContext }) => {
               </div>
 
               <div className="col-lg-3 col-md-3 text-right">
-                <Link to={"/sig/" + data.projectsYaml.sig.toLowerCase()}>
+                <Link to={"/sigs/" + data.projectsYaml.sig.toLowerCase()}>
                   <img
-                    src={data.file.childImageSharp.fixed.srcWebp}
+                    src={data.sig_logo.childImageSharp.fixed.srcWebp}
                     alt={data.projectsYaml.sig}
                     className="sig-logo"
                     style={{ maxWidth: "200px" }}
@@ -42,7 +40,7 @@ export const Project = ({ data, pathname, pageContext }) => {
                         <li key={i}>
                           <Link
                             to={
-                              "/member/" + e.toLowerCase().split(" ").join("")
+                              "/members/" + e.toLowerCase().split(" ").join("")
                             }
                           >
                             {e}
@@ -62,14 +60,14 @@ export const Project = ({ data, pathname, pageContext }) => {
                   </a>
                 </div>
               </div>
-              {data.allFile && data.allFile.nodes.length !== 0 ? (
+              {/* {data.allFile && data.allFile.nodes.length !== 0 ? (
                 <>
                   <hr />
                   <h4>Project Reports</h4>
                 </>
-              ) : null}
+              ) : null} */}
 
-              {data.allFile &&
+              {/* {data.allFile &&
                 data.allFile.nodes.map((element, index) => (
                   <div key={index} className="clean-blog-post">
                     <div className="row">
@@ -108,7 +106,7 @@ export const Project = ({ data, pathname, pageContext }) => {
                       </div>
                     </div>
                   </div>
-                ))}
+                ))} */}
             </div>
           </div>
         </section>
@@ -118,17 +116,20 @@ export const Project = ({ data, pathname, pageContext }) => {
 }
 
 export const postQuery = graphql`
-  query($pathSlug: String!, $sigRegex: String!) {
-    projectsYaml(title: { regex: $pathSlug }) {
-      title
+  query($pathSlug: String!, $sig: String) {
+    projectsYaml(title: {eq: $pathSlug}) {
       sig
+      title
       year
       description
       URL
       builtBy
       ongoing
     }
-    file(sourceInstanceName: { eq: "sig_logo" }, name: { regex: $sigRegex }) {
+    sig_logo: file(
+      sourceInstanceName: { eq: "sig_logo" }
+      name: { eq: $sig }
+    ) {
       childImageSharp {
         fixed {
           srcWebp
