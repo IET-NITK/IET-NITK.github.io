@@ -213,7 +213,7 @@ export const postQuery = graphql`
         sourceInstanceName: { eq: "project-reports" }
         extension: { eq: "md" }
       }
-      sort: { fields: childrenMarkdownRemark___frontmatter___title }
+      sort: { fields: childMarkdownRemark___frontmatter___title }
     ) {
       nodes {
         childMarkdownRemark {
@@ -234,7 +234,7 @@ export const postQuery = graphql`
         sourceInstanceName: { eq: "blog" }
         extension: { eq: "md" }
       }
-      sort: { fields: childrenMarkdownRemark___frontmatter___title }
+      sort: { fields: childMarkdownRemark___frontmatter___title }
     ) {
       nodes {
         childMarkdownRemark {
