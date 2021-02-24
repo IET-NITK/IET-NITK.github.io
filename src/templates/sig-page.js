@@ -16,7 +16,7 @@ export const SIG = ({ pageContext, pathname, data }) => {
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <Link to={"/sig/" + sig_details.name.toLowerCase()}>
+              <Link to={"/sigs/" + sig_details.name.toLowerCase()}>
                 <img
                   src={sig_logo.childImageSharp.fixed.srcWebp}
                   alt={sig_details.name}

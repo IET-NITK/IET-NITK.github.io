@@ -4,11 +4,20 @@
 
 ## Contributing Guidelines
 
-- If you're interested in contributing a piece to IET NITK's blog, check out [these guidelines](CONTRIBUTE/BLOG.md).
-- If you're interested in contributing a piece to IET NITK's event's list, check out [these guidelines](CONTRIBUTE/EVENTS.md).
-- If you're interested in helping build and maintain this website, please check out [these guidelines](CONTRIBUTE/BUILD.md)
+The content on the website can be divided into 4:
+- Blogs (find this under `content/blog`). 
+- Events (find this under `content/events`).
+- Project Reports (find this under `content/project-reports`).
+- SIG, member, projects, recruitment and SMP data (find this under `content/yml`).
 
-## Contributors ✨
+Note: 
+- All documentation regarding Blogs, Events and Project Reports can be found [here](CONTRIBUTE/WRITE.md).
+- All documentation regarding maintaining SIG, member, projects, recruitment and SMP data can be found [here](CONTRIBUTE/DATA.md)
+
+Any changes you have, download them and send it to [any one of the project contributors](https://github.com/IET-NITK/ietnitk#contributors-).
+
+
+## Contributors to this Repository ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 

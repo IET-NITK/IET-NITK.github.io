@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -67,26 +67,37 @@ export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
   )
 }
 const MainPage = ({ location, data }) => {
+
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SEO title="We are IET NITK" />
       <main className="page landing-page">
-        <video
-          loop={true}
-          style={{
-            width: "100%",
-            zIndex: "1",
-            backgroundColor: "black",
-            // cursor: "none",
-          }}
-          autoPlay={true}
-          muted={true}
-          // oncontextmenu="return false;"
-          className="hero-video"
-        >
-          <source src={video} type="video/mp4" />
-          Your browser does not support HTML video.
-        </video>
+        <div className="video-overlay-wrap">
+          <div
+            id="video-overlay"
+            style={{
+              // backgroundColor: "rgba(128, 51, 145, 0.44)",
+              width: "100vw",
+              height: "100vh",
+              position: "absolute",
+              zIndex: 2,
+            }}
+          />
+          <video
+            loop={true}
+            style={{
+              width: "100%",
+              zIndex: "1",
+              backgroundColor: "black",
+            }}
+            autoPlay={true}
+            muted={true}
+            id="hero-video"
+          >
+            <source src={video} type="video/mp4" />
+            Your browser does not support HTML video.
+          </video>
+        </div>
 
         <section className="clean-block about-us" id="about-us">
           <div className="container">
@@ -235,7 +246,7 @@ const MainPage = ({ location, data }) => {
                           </h6>
                           <Link
                             to={
-                              "/sig/" +
+                              "/sigs/" +
                               element.sig.toLowerCase().split(" ").join("")
                             }
                           >

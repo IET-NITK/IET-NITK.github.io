@@ -40,7 +40,7 @@ const SMP = ({ data, location }) => {
               <div className="row">
                 <div className="col-lg-6 col-md-8 col-sm-12">
                   <h3 id={e.fieldValue} className="smp-signames">
-                    <Link to={"/sig/" + e.fieldValue.toLowerCase()}>
+                    <Link to={"/sigs/" + e.fieldValue.toLowerCase()}>
                       {e.fieldValue}
                     </Link>
                   </h3>
@@ -69,7 +69,7 @@ const SMP = ({ data, location }) => {
                   ))}
                 </div>
                 <div className="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
-                  <Link to={"/sig/" + e.fieldValue.toLowerCase()}>
+                  <Link to={"/sigs/" + e.fieldValue.toLowerCase()}>
                     <img
                       className="mobile-invisible smp-logo"
                       style={{ maxWidth: "150px", paddingTop: "2em" }}
