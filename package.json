@@ -57,11 +57,7 @@
     "purgecss": "^4.0.2",
     "react-test-renderer": "^17.0.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+
   "lint-staged": {
     "*.{js,css,html}": [
       "prettier  --print-width 100 --write"
