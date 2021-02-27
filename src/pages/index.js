@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -67,7 +67,6 @@ export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
   )
 }
 const MainPage = ({ location, data }) => {
-
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SEO title="We are IET NITK" />
@@ -77,7 +76,7 @@ const MainPage = ({ location, data }) => {
             id="video-overlay"
             style={{
               // backgroundColor: "rgba(128, 51, 145, 0.44)",
-              width: "100vw",
+              width: "100%",
               height: "100vh",
               position: "absolute",
               zIndex: 2,
@@ -267,6 +266,67 @@ const MainPage = ({ location, data }) => {
             </div>
           </div>
         </section>
+        {data.events.nodes.length > 1 ? (
+          <section className="clean-block about-us">
+            <div className="container">
+              <div className="article-list">
+                <div className="container">
+                  <div className="articles row" style={{ paddingTop: "2em" }}>
+                    <div className="col-lg-6 col-md-6 mt-4">
+                      <div className="intro">
+                        <h2
+                          className="text-primary text-center"
+                          style={{ fontWeight: "500", paddingBottom: "-1em" }}
+                        >
+                          Our Events
+                        </h2>
+                        <p className="text-center">
+                          Find more <Link to="/events">here</Link>
+                        </p>
+                      </div>
+                    </div>
+                    {data.events.nodes.map((element, index) => (
+                      <div key={index} className="col-lg-6 col-md-6 mt-4">
+                        <div className="card h-100">
+                          <div className="card-body">
+                            <h6 className="card-title">
+                              <Link
+                                to={
+                                  "/projects/" +
+                                  element.title
+                                    .toLowerCase()
+                                    .split(" ")
+                                    .join("")
+                                }
+                                className="card-link text-capitalize"
+                              >
+                                {element.title}
+                              </Link>
+                            </h6>
+                            <Link
+                              to={
+                                "/sigs/" +
+                                element.sig.toLowerCase().split(" ").join("")
+                              }
+                            >
+                              <small className="text-uppercase text-muted card-subtitle mb-2">
+                                {element.sig}
+                              </small>
+                            </Link>
+                            <p className="card-text">
+                              Built by
+                              {RenderAuthors(element.builtBy || [], "")}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ) : null}
       </main>
     </Layout>
   )
@@ -278,6 +338,29 @@ export const postQuery = graphql`
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
       sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
       limit: 3
+    ) {
+      nodes {
+        relativeDirectory
+        childMarkdownRemark {
+          frontmatter {
+            authors
+            title
+            image {
+              childImageSharp {
+                fixed {
+                  srcWebp
+                }
+              }
+            }
+            date(formatString: "MMMM Do, YYYY")
+          }
+        }
+      }
+    }
+    events: allFile(
+      filter: { sourceInstanceName: { eq: "events" }, ext: { eq: ".md" } }
+      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
+      limit: 1
     ) {
       nodes {
         relativeDirectory
