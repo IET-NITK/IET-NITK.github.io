@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
 import { RenderAuthors } from "../components/helper"
-
 import { generateSIGHash } from "../components/helper"
 import video from "../../static/home.mp4"
 // import
