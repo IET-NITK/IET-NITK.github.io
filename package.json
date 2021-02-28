@@ -67,17 +67,7 @@
     "type": "git",
     "url": "https://github.com/IET-NITK/ietnitk-v2.git"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-    }
-  },
-  "lint-staged": {
-    "*.{js,css,html}": [
-      "prettier  --print-width 100 --write"
-    ],
-    "src/**/*.css": "purgecss --content src/**/*.js --output src/css --css"
-  },
+
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
