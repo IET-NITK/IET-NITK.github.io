@@ -30,8 +30,9 @@ export const Blog = ({ data, location }) => {
                           alt={element.childMarkdownRemark.frontmatter.title}
                           className="rounded img-fluid"
                           src={
-                            element.childMarkdownRemark.frontmatter.image
-                              .childImageSharp.fixed.srcWebp
+                            element.childMarkdownRemark.frontmatter.image && 
+                            element.childMarkdownRemark.frontmatter.image.childImageSharp.fixed.srcWebp
+                            || data.ietlogo.fixed.srcWebp
                           }
                           style={{ width: "100%", height: "auto" }}
                         />
@@ -80,6 +81,11 @@ export const Blog = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
+    ietlogo: imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
+      fixed {
+        srcWebp
+      }
+    }
     allFile(
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
       sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
