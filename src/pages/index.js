@@ -172,8 +172,10 @@ const MainPage = ({ location, data }) => {
                           alt={element.childMarkdownRemark.frontmatter.title}
                           className="card-img-top w-100 d-block"
                           src={
-                            element.childMarkdownRemark.frontmatter.image
-                              .childImageSharp.fixed.srcWebp
+                            (element.childMarkdownRemark.frontmatter.image &&
+                              element.childMarkdownRemark.frontmatter.image
+                                .childImageSharp.fixed.srcWebp) ||
+                            data.ietlogo.fixed.srcWebp
                           }
                         />
                         <div className="card-body">
@@ -395,6 +397,11 @@ export const postQuery = graphql`
         name
         no_link
         description
+      }
+    }
+    ietlogo: imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
+      fixed {
+        srcWebp
       }
     }
     projects: allProjectsYaml(filter: { builtBy: { ne: null } }) {

@@ -45,7 +45,11 @@ export const BlogArticle = ({ data }) => {
                   <div
                     className="post-image"
                     style={{
-                      backgroundImage: `url('${data.post.childMarkdownRemark.frontmatter.image.publicURL}')`,
+                      backgroundImage: `url('${
+                        data.post.childMarkdownRemark.frontmatter.image &&
+                        data.post.childMarkdownRemark.frontmatter.image
+                          .publicURL
+                      }')`,
                       backgroundAttachment: "fixed",
                       backgroundRepeat: "no-repeat",
                     }}
@@ -122,6 +126,7 @@ export const postQuery = graphql`
           authors
           date(formatString: "MMMM Do, YYYY")
           title
+          displayOnBlog
           image {
             publicURL
           }
