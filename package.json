@@ -71,7 +71,7 @@
     "*.{js,css,html}": [
       "prettier  --print-width 100 --write"
     ],
-    "src/**/*.css": "purgecss --content src/**/*.js --output src/css --css"
+    "src/**/*.min.css": "purgecss --content src/**/*.js --output src/css --css"
   },
   "scripts": {
     "build": "gatsby build",
