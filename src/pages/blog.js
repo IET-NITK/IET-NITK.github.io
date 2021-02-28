@@ -22,54 +22,55 @@ export const Blog = ({ data, location }) => {
               <PaginationComponent
                 max={5}
                 list={data.allFile.nodes}
-                item={(element, index) => (
-                  <div key={index} className="clean-blog-post">
-                    <div className="row">
-                      <div className="col-lg-5">
-                        <img
-                          alt={element.childMarkdownRemark.frontmatter.title}
-                          className="rounded img-fluid"
-                          src={
-                            element.childMarkdownRemark.frontmatter.image && 
-                            element.childMarkdownRemark.frontmatter.image.childImageSharp.fixed.srcWebp
-                            || data.ietlogo.fixed.srcWebp
-                          }
-                          style={{ width: "100%", height: "auto" }}
-                        />
-                      </div>
-                      <div className="col-lg-7">
-                        <h3
-                          data-toggle="tooltip"
-                          title={
-                            element.childMarkdownRemark.timeToRead +
-                            " minute read"
-                          }
-                        >
-                          {element.childMarkdownRemark.frontmatter.title}
-                        </h3>
-                        <div className="info">
-                          <span className="text-muted">
-                            By{" "}
-                            {RenderAuthors(
-                              element.childMarkdownRemark.frontmatter.authors,
-                              ""
-                            )}
-                            <br />
-                            {element.childMarkdownRemark.frontmatter.date}
-                          </span>
+                item={(element, index) => {
+                  let image = element.childMarkdownRemark.frontmatter.image
+                  image = image && image.childImageSharp.fixed.srcWebp
+                  image = image || data.ietlogo.fixed.srcWebp
+                  return (
+                    <div key={index} className="clean-blog-post">
+                      <div className="row">
+                        <div className="col-lg-5">
+                          <img
+                            alt={element.childMarkdownRemark.frontmatter.title}
+                            className="rounded img-fluid"
+                            src={image}
+                            style={{ width: "100%", height: "auto" }}
+                          />
                         </div>
-                        <p>{element.childMarkdownRemark.excerpt}</p>
-                        <Link
-                          to={"/blog/" + element.relativeDirectory}
-                          className="btn btn-outline-primary btn-sm"
-                          type="button"
-                        >
-                          Read More
-                        </Link>
+                        <div className="col-lg-7">
+                          <h3
+                            data-toggle="tooltip"
+                            title={
+                              element.childMarkdownRemark.timeToRead +
+                              " minute read"
+                            }
+                          >
+                            {element.childMarkdownRemark.frontmatter.title}
+                          </h3>
+                          <div className="info">
+                            <span className="text-muted">
+                              By{" "}
+                              {RenderAuthors(
+                                element.childMarkdownRemark.frontmatter.authors,
+                                ""
+                              )}
+                              <br />
+                              {element.childMarkdownRemark.frontmatter.date}
+                            </span>
+                          </div>
+                          <p>{element.childMarkdownRemark.excerpt}</p>
+                          <Link
+                            to={"/blog/" + element.relativeDirectory}
+                            className="btn btn-outline-primary btn-sm"
+                            type="button"
+                          >
+                            Read More
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  )
+                }}
               />
             </div>
           </div>

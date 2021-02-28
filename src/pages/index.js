@@ -165,48 +165,48 @@ const MainPage = ({ location, data }) => {
                   <p className="text-center">We love to write!</p>
                 </div>
                 <div className="row articles" style={{ paddingTop: "2em" }}>
-                  {data.blog.nodes.map((element, index) => (
-                    <div key={index} className="col-sm-6 col-md-4 item">
-                      <div className="card">
-                        <img
-                          alt={element.childMarkdownRemark.frontmatter.title}
-                          className="card-img-top w-100 d-block"
-                          src={
-                            (element.childMarkdownRemark.frontmatter.image &&
-                              element.childMarkdownRemark.frontmatter.image
-                                .childImageSharp.fixed.srcWebp) ||
-                            data.ietlogo.fixed.srcWebp
-                          }
-                        />
-                        <div className="card-body">
-                          <h4 className="card-title">
-                            {element.childMarkdownRemark.frontmatter.title}
-                          </h4>
-                          <h6 className="text-muted card-subtitle mb-2">
-                            {/* {"by "+element.childMarkdownRemark.frontmatter.author} */}
-                            By{" "}
-                            {RenderAuthors(
-                              element.childMarkdownRemark.frontmatter.authors,
-                              ""
-                            )}{" "}
-                            <br />
-                            {element.childMarkdownRemark.frontmatter.date}
-                          </h6>
-                          {/* <p className="card-text">ost.excerpt</p> */}
-                          <div style={{ textAlign: "center" }}>
-                            <Link
-                              className=""
-                              style={{ textDecoration: "none" }}
-                              to={"blog/" + element.relativeDirectory}
-                            >
-                              Read More
-                              <i className="fa fa-arrow-circle-right ml-2" />
-                            </Link>
+                  {data.blog.nodes.map((element, index) => {
+                    let image = element.childMarkdownRemark.frontmatter.image
+                    image = image && image.childImageSharp.fixed.srcWebp
+                    image = image || data.ietlogo.fixed.srcWebp
+                    return (
+                      <div key={index} className="col-sm-6 col-md-4 item">
+                        <div className="card">
+                          <img
+                            alt={element.childMarkdownRemark.frontmatter.title}
+                            className="card-img-top w-100 d-block"
+                            src={image}
+                          />
+                          <div className="card-body">
+                            <h4 className="card-title">
+                              {element.childMarkdownRemark.frontmatter.title}
+                            </h4>
+                            <h6 className="text-muted card-subtitle mb-2">
+                              {/* {"by "+element.childMarkdownRemark.frontmatter.author} */}
+                              By{" "}
+                              {RenderAuthors(
+                                element.childMarkdownRemark.frontmatter.authors,
+                                ""
+                              )}{" "}
+                              <br />
+                              {element.childMarkdownRemark.frontmatter.date}
+                            </h6>
+                            {/* <p className="card-text">ost.excerpt</p> */}
+                            <div style={{ textAlign: "center" }}>
+                              <Link
+                                className=""
+                                style={{ textDecoration: "none" }}
+                                to={"blog/" + element.relativeDirectory}
+                              >
+                                Read More
+                                <i className="fa fa-arrow-circle-right ml-2" />
+                              </Link>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             </div>
