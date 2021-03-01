@@ -67,7 +67,7 @@ export const Footer = props => {
                         {e.no_link === true ? (
                           e.name
                         ) : (
-                          <Link to={`/sig/${e.name.toLowerCase()}`}>
+                          <Link to={`/sigs/${e.name.toLowerCase()}`}>
                             {e.name}
                           </Link>
                         )}

@@ -13,11 +13,11 @@ const MemberDetails = ({ author, index }) => {
   let isntExecMember = author.position !== "Executive Member"
   let isntAlumni = author.alumni !== true
   let color_bg =
-    isntExecMember && isntAlumni ? "bg-primary" : isntAlumni ? "" : "bg-green"
+    isntExecMember && isntAlumni ? "bg-gradient-primary" : isntAlumni ? "" : "bg-gradient-alumni"
   let color_text = isntExecMember ? "text-light" : ""
   return (
     <div
-      to={`/member/${author.name.toLowerCase().split(" ").join("")}`}
+      to={`/members/${author.name.toLowerCase().split(" ").join("")}`}
       className="col-sm-6 col-md-4 col-lg-3"
       style={{ paddingBottom: "3em" }}
       id={author.name}
@@ -140,7 +140,7 @@ export const About = ({location, data}) => {
                 <button
                   type="button"
                   key={i}
-                  className={`btn btn-outline-primary ${
+                  className={`btn btn-outline-secondary ${
                     category === e ? "active" : ""
                   }`}
                   onClick={() => setCategory(e)}

@@ -52,7 +52,7 @@ export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
               {s.no_link === false && hide_link !== false ? (
                 <>
                   <Link
-                    to={`sig/${s.name.toLowerCase()}`}
+                    to={`sigs/${s.name.toLowerCase()}`}
                     className="btn btn-outline-primary btn-block"
                   >
                     Read More
