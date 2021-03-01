@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby"
 // import { Disqus } from "gatsby-plugin-disqus"
 import { RenderAuthors } from "../components/helper"
 import SEO from "../components/seo"
+import { ShareButtons } from "../components/partials/social"
 
 const PreviewOther = ({ post, isPrevious }) => {
   if (post)
@@ -31,7 +32,7 @@ const PreviewOther = ({ post, isPrevious }) => {
   else return null
 }
 
-export const BlogArticle = ({ data }) => {
+export const BlogArticle = ({ data, location }) => {
   return (
     <Layout>
       <SEO title={data.post.childMarkdownRemark.frontmatter.title} />
@@ -89,6 +90,12 @@ export const BlogArticle = ({ data }) => {
                     on {data.post.childMarkdownRemark.frontmatter.date}
                   </b>
                 </span>
+                <br />
+                <ShareButtons
+                  url={location.href}
+                  title={data.post.childMarkdownRemark.frontmatter.title}
+                  author={data.post.childMarkdownRemark.frontmatter.authors}
+                />
               </div>
               {/* <Disqus
                 config={{

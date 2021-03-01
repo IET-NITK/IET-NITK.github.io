@@ -1,23 +1,22 @@
 import { Link } from "gatsby"
 import React from "react"
 
-export const redirectController = (control) => {
-  if(!control){
-    
+export const redirectController = control => {
+  if (!control) {
   }
 }
-export const generateSIGHash = (sig_images)=> {
+export const generateSIGHash = sig_images => {
   let img_hash = {}
-  sig_images && sig_images.forEach(element => {
-    img_hash[element.name] = element.childImageSharp.fixed.srcWebp
-  })
+  sig_images &&
+    sig_images.forEach(element => {
+      img_hash[element.name] = element.childImageSharp.fixed.srcWebp
+    })
   return img_hash
 }
 
-export const RenderAuthors = (arr, cls) => (
+export const RenderAuthors = (arr, cls) =>
   arr.map((name, index2) => (
     <>
-      {" "}
       <Link
         key={"x" + index2}
         to={"/members/" + name.toLowerCase().split(" ").join("")}
@@ -31,4 +30,3 @@ export const RenderAuthors = (arr, cls) => (
         : ""}
     </>
   ))
-);
