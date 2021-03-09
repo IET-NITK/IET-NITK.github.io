@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
-// import { Disqus } from "gatsby-plugin-disqus"
+import { Disqus } from "gatsby-plugin-disqus"
 import { RenderAuthors } from "../components/helper"
 import SEO from "../components/seo"
 import { ShareButtons } from "../components/partials/social"
@@ -59,7 +59,7 @@ export const BlogArticle = ({ data, location }) => {
               )}
 
               <div className="post-body">
-                <h3>{data.post.childMarkdownRemark.frontmatter.title}</h3>
+                <h3 className="pt-4">{data.post.childMarkdownRemark.frontmatter.title}</h3>
                 <div className="post-info">
                   {data.post.childMarkdownRemark.timeToRead} minute read
                   <br />
@@ -73,6 +73,12 @@ export const BlogArticle = ({ data, location }) => {
                     </b>
                   </span>
                   -<span>{data.post.childMarkdownRemark.frontmatter.date}</span>
+                  <br />
+                  <ShareButtons
+                    url={location.href}
+                    title={data.post.childMarkdownRemark.frontmatter.title}
+                    author={data.post.childMarkdownRemark.frontmatter.authors}
+                  />
                 </div>
                 <div
                   dangerouslySetInnerHTML={{
@@ -97,13 +103,15 @@ export const BlogArticle = ({ data, location }) => {
                   author={data.post.childMarkdownRemark.frontmatter.authors}
                 />
               </div>
-              {/* <Disqus
-                config={{
-                  url: "PAGE_URL",
-                  identifier: "PAGE_IDENTIFIER",
-                  title: "PAGE_TITLE",
-                }}
-              /> */}
+              <div className="post-body pt-4 pb-4">
+                <Disqus
+                  config={{
+                    url: location.href,
+                    identifier: data.post.childMarkdownRemark.id,
+                    title: data.post.childMarkdownRemark.frontmatter.title+" | IET NITK",
+                  }}
+                />
+              </div>
               <hr />
               <div className="row">
                 <div className="col-lg-6">
@@ -139,6 +147,7 @@ export const postQuery = graphql`
           }
         }
         html
+        id
         timeToRead
       }
     }
@@ -153,6 +162,7 @@ export const postQuery = graphql`
     ) {
       nodes {
         relativeDirectory
+        
         childMarkdownRemark {
           frontmatter {
             date(formatString: "MMMM Do, YYYY")
