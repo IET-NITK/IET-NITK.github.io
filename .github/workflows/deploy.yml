@@ -9,18 +9,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Install NPM Packages
+        run: npm install
+      - name: Set up git
+        run: |
+          git config --global user.email "iet@nitk.edu.in"
+          git config --global user.name "IET NITK"
+      # Runs a set of commands using the runners shell
+      - name: Build script
+        run: npm run build
+      - name: Deploy script
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          node-version: 12.x
-      - run: npm install
-      - run: npm run build
-      - name: Deploy to netlify
-        uses: netlify/actions/cli@master
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
-        with:
-          args: deploy --dir=site --prod
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
