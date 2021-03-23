@@ -3,7 +3,7 @@ import React from "react"
 import Marquee from "react-simple-marquee"
 import { graphql } from "gatsby"
 
-const TopNavbar = ({ notice }) => {
+const TopNavbar = ({ notice, permissions }) => {
   //eslint-disable-next-line
   const RenderMarquee = ({ notice }) => {
     if (notice.length === 1 && notice[0] === "") {
@@ -34,23 +34,30 @@ const TopNavbar = ({ notice }) => {
       <div className="py-2 bg-light">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-9 d-none d-lg-block">
+            <div className="col-lg-8 d-none d-lg-block">
               {/* <RenderMarquee notice={notice} /> */}
             </div>
-            <div className="col-lg-3 d-lg-block text-right">
+            <div className="col-lg-4 d-lg-block text-right">
               <Link
                 to="/recruitment"
                 role="button"
-                className="btn btn-primary btn-sm mr-3 disabled"
+                className="btn btn-dark btn-sm mr-3 disabled"
               >
                 Join IET NITK
               </Link>
-              <Link
+              {/* <Link
                 to="/smp"
                 role="button"
                 className="btn btn-outline-primary btn-sm mr-3 disabled"
               >
                 SMP {new Date().getFullYear()}
+              </Link> */}
+              <Link
+                to="/expo"
+                role="button"
+                className={`btn btn-sm mr-3 ${permissions.expo.allow!==true? 'disabled':'btn-outline-primary'}`}
+              >
+                NITK Expo {new Date().getFullYear()}
               </Link>
             </div>
           </div>
@@ -79,6 +86,19 @@ export const Navbar = props => {
                 noticeBoard
               }
             }
+            permissions: site {
+              siteMetadata {
+                expo {
+                  allow
+                }
+                smp {
+                  allow
+                }
+                join {
+                  allow
+                }
+              }
+            }
             imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
               fixed {
                 srcWebp
@@ -86,9 +106,9 @@ export const Navbar = props => {
             }
           }
         `}
-        render={({ sigdetails, site, imageSharp }) => (
+        render={({ sigdetails, site, imageSharp, permissions }) => (
           <div className="fixed-top" id="navbar">
-            <TopNavbar notice={site.siteMetadata.noticeBoard} />
+            <TopNavbar notice={site.siteMetadata.noticeBoard} permissions={permissions.siteMetadata} />
             <nav
               className="navbar navbar-light navbar-expand-lg bg-white clean-navbar"
               style={{ borderBottom: "1px solid #c2c2c2" }}

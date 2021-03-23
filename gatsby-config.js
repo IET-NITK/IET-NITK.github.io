@@ -21,6 +21,10 @@ module.exports = {
       allow: false,
       link: "",
     },
+    expo: {
+      allow: true,
+      link: 'www.google.com'
+    }
   },
 
   plugins: [

@@ -115,6 +115,18 @@
   ongoing: false
   year: 
   URL: 
+- title: Street Light Glow
+  description: Street lights along highways during night time will be only ON when they detect vehicles on road,otherwise off.
+  sig: Rovisp
+  expo21: true
+- title: Mini Jarvis
+  description: Home automation demo using a Google voice assistant applet.
+  sig: Rovisp
+  expo21: true
+- title: Programmable DC Load
+  description: A programmable DC load is a test equipment for batteries which emulates the DC resistance load.
+  sig: Rovisp
+  expo21: true
 - title: UAV Project
   sig: Rovisp
   description: 
