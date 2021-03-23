@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import PaginationComponent from "../components/partials/pagination"
 import SEO from "../components/seo"
 
-const Events = ({ data, location }) => {
+const Expo = ({ data, location }) => {
   useEffect(() => {
     if (data.site_data.siteMetadata.expo.allow !== true) {
       navigate("/")
@@ -31,6 +31,8 @@ const Events = ({ data, location }) => {
               <PaginationComponent
                 max={10}
                 list={data.projects.nodes}
+                filterBy="sig"
+                filterLabel="Filter by SIG"
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
                     <h3 className="text-capitalize">{element.title}</h3>
@@ -93,4 +95,4 @@ export const postQuery = graphql`
     }
   }
 `
-export default Events
+export default Expo

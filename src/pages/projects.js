@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import PaginationComponent from "../components/partials/pagination"
 import SEO from "../components/seo"
 
-const Events = ({ data, location }) => {
+const Projects = ({ data, location }) => {
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SEO title="Projects" />
@@ -25,6 +25,7 @@ const Events = ({ data, location }) => {
               </div> */}
               <PaginationComponent
                 max={10}
+                filterBy="sig"
                 list={data.projects.nodes}
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
@@ -32,15 +33,13 @@ const Events = ({ data, location }) => {
                     <div className="info">
                       <span className="text-muted">{element.sig}</span>
                     </div>
-                    <p>
-                      {element.description || ""}
-                      {element.builtBy ? (
-                        <p>
-                          Built by
-                          {RenderAuthors(element.builtBy || [], "")}
-                        </p>
-                      ) : null}
-                    </p>
+                    {element.description || ""}
+                    {element.builtBy ? (
+                      <p>
+                        Built by
+                        {RenderAuthors(element.builtBy || [], "")}
+                      </p>
+                    ) : null}
                     {element.URL ? (
                       <Link
                         to={
@@ -81,4 +80,4 @@ export const postQuery = graphql`
   }
 `
 
-export default Events
+export default Projects

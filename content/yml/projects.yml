@@ -117,7 +117,7 @@
   URL: 
 - title: Street Light Glow
   description: Street lights along highways during night time will be only ON when they detect vehicles on road,otherwise off.
-  sig: Rovisp
+  sig: Cipher
   expo21: true
 - title: Mini Jarvis
   description: Home automation demo using a Google voice assistant applet.

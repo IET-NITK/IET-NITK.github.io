@@ -3,6 +3,8 @@ title: Audio Production
 authors: ['Rajamani','Nirmal Khedkar']
 image: audio.jpg
 date: "2018-12-22"
+projectName: "abc"
+sig: "axg"
 ---
 
 How is music produced?

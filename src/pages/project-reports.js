@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import PaginationComponent from "../components/partials/pagination"
 import SEO from "../components/seo"
 
-const Events = ({ data, location }) => {
+const ProjectReports = ({ data, location }) => {
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SEO title="Project Reports" />
@@ -30,22 +30,40 @@ const Events = ({ data, location }) => {
                 list={data.allFile.nodes}
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
-                    <h3>{element.title}</h3>
+                    <h3>{element.childMarkdownRemark.frontmatter.title}</h3>
                     <div className="info">
-                      <span className="text-muted">{element.sig}</span>
+                      <span className="text-muted">
+                        {element.relativeDirectory}&nbsp; (
+                        <Link
+                          to={
+                            "/sigs/" +
+                            element.childMarkdownRemark.frontmatter.sig.toLowerCase()
+                          }
+                        >
+                          {element.childMarkdownRemark.frontmatter.sig}
+                        </Link>
+                        )
+                      </span>
                     </div>
                     <p>
-                      {element.authors ? (
+                      {element.childMarkdownRemark.frontmatter.authors ? (
                         <p>
                           Built by
-                          {RenderAuthors(element.builtBy || [], "")}
+                          {RenderAuthors(
+                            element.childMarkdownRemark.frontmatter.authors ||
+                              [],
+                            ""
+                          )}
                         </p>
                       ) : null}
                     </p>
                     <Link
                       to={
                         "/projects/" +
-                        element.relativeDirectory.toLowerCase().split(" ").join("")
+                        element.relativeDirectory
+                          .toLowerCase()
+                          .split(" ")
+                          .join("")
                       }
                       className="btn btn-outline-primary btn-sm"
                       type="button"
@@ -77,6 +95,8 @@ export const postQuery = graphql`
         childMarkdownRemark {
           frontmatter {
             title
+            projectName
+            sig
             authors
             date
           }
@@ -86,4 +106,4 @@ export const postQuery = graphql`
   }
 `
 
-export default Events
+export default ProjectReports

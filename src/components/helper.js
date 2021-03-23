@@ -17,6 +17,7 @@ export const generateSIGHash = sig_images => {
 export const RenderAuthors = (arr, cls) =>
   arr.map((name, index2) => (
     <>
+      &nbsp;
       <Link
         key={"x" + index2}
         to={"/members/" + name.toLowerCase().split(" ").join("")}

@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import { SIGShowcase } from "./index"
 import { graphql, navigate } from "gatsby"
 
-const SMP = ({ location, data }) => {
+const Recruitments = ({ location, data }) => {
   const {sigdata, rec_questions, siglogo}= data;
   useEffect(()=>{
     if(data.site_data.siteMetadata.join.allow!==true){
@@ -110,4 +110,4 @@ export const postQuery = graphql`
   }
 `
 
-export default SMP
+export default Recruitments
