@@ -7,7 +7,7 @@ export const Footer = props => {
       query={graphql`
         query {
           site {
-            buildTime(formatString: "MMMM Do")
+            buildTime(formatString: "MMMM Do, YYYY")
             siteMetadata {
               title
               description

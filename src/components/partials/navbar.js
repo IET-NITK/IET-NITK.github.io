@@ -41,7 +41,7 @@ const TopNavbar = ({ notice, permissions }) => {
               <Link
                 to="/recruitment"
                 role="button"
-                className="btn btn-dark btn-sm mr-3 disabled"
+                className="btn btn-outline-dark btn-sm mr-3 disabled"
               >
                 Join IET NITK
               </Link>
@@ -55,7 +55,7 @@ const TopNavbar = ({ notice, permissions }) => {
               <Link
                 to="/expo"
                 role="button"
-                className={`btn btn-sm mr-3 ${permissions.expo.allow!==true? 'disabled':'btn-outline-primary'}`}
+                className={`btn btn-sm mr-3 ${permissions.expo.allow!==true? 'disabled':'btn-primary'}`}
               >
                 NITK Expo {new Date().getFullYear()}
               </Link>

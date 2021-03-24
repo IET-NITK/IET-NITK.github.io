@@ -26,10 +26,14 @@ const Projects = ({ data, location }) => {
               <PaginationComponent
                 max={10}
                 filterBy="sig"
+                filterLabel="Filter by SIG"
                 list={data.projects.nodes}
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
                     <h3 className="text-capitalize">{element.title}</h3>
+                    {element.label ? (
+                      <div className="badge badge-primary">{element.label}</div>
+                    ) : null}
                     <div className="info">
                       <span className="text-muted">{element.sig}</span>
                     </div>
@@ -74,6 +78,7 @@ export const postQuery = graphql`
         description
         sig
         builtBy
+        label
         URL
       }
     }

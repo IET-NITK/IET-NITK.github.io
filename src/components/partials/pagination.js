@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Dropdown from "react-bootstrap/Dropdown"
 
 function scrollTop() {
@@ -26,13 +26,13 @@ const PaginationComponent = ({
   if (state.list_state && state.list_state.length === 0) {
     return <div className="text-center">{noneMessage}</div>
   }
-  
+
   return (
     <>
       {filterBy && state.list_state ? (
         <Dropdown>
           <Dropdown.Toggle
-            variant="secondary"
+            variant="outline-primary"
             id={"dropdown-" + filterBy}
             size="sm"
           >
@@ -45,7 +45,7 @@ const PaginationComponent = ({
                 <Dropdown.Item
                   name={ex}
                   key={i}
-                  onClick={event => 
+                  onClick={event =>
                     setState({
                       ...state,
                       list_state: list.filter(e => {
@@ -72,7 +72,7 @@ const PaginationComponent = ({
               </Dropdown.Item>
             ) : null}
           </Dropdown.Menu>
-          <hr/>
+          <hr />
         </Dropdown>
       ) : null}
 
@@ -84,9 +84,10 @@ const PaginationComponent = ({
         </>
       ) : null}
 
-      {state.list_state && state.list_state
-        .slice((state.pno - 1) * max, (state.pno - 1) * max + max)
-        .map(item)}
+      {state.list_state &&
+        state.list_state
+          .slice((state.pno - 1) * max, (state.pno - 1) * max + max)
+          .map(item)}
       <nav aria-label="Page navigation example">
         <ul className="pagination justify-content-center">
           <li className={`page-item ${state.pno === 1 ? "disabled" : ""}`}>
@@ -94,40 +95,44 @@ const PaginationComponent = ({
               className="page-link"
               onClick={() => {
                 scrollTop()
-                setState({ pno: state.pno - 1 })
+                setState({ ...state, pno: state.pno - 1 })
               }}
             >
               Previous
             </button>
           </li>
-          {state.list_state && [...Array(Math.ceil(state.list_state.length / max))].map((e, i) => (
-            <li
-              className={`page-item ${state.pno === i + 1 ? "active" : ""}`}
-              key={"a" + i}
-            >
-              <button
-                className="page-link"
-                data-toggle="tooltip"
-                title={`Page ${i + 1}`}
-                onClick={() => {
-                  scrollTop()
-                  setState({ pno: i + 1 })
-                }}
+          {state.list_state &&
+            [...Array(Math.ceil(state.list_state.length / max))].map((e, i) => (
+              <li
+                className={`page-item ${state.pno === i + 1 ? "active" : ""}`}
+                key={"a" + i}
               >
-                {i + 1}
-              </button>
-            </li>
-          ))}
+                <button
+                  className="page-link"
+                  data-toggle="tooltip"
+                  title={`Page ${i + 1}`}
+                  onClick={() => {
+                    scrollTop()
+                    setState({ ...state, pno: i + 1 })
+                  }}
+                >
+                  {i + 1}
+                </button>
+              </li>
+            ))}
           <li
             className={`page-item ${
-              state.list_state && state.pno === Math.ceil(state.list_state.length / max) ? "disabled" : ""
+              state.list_state &&
+              state.pno === Math.ceil(state.list_state.length / max)
+                ? "disabled"
+                : ""
             }`}
           >
             <button
               className="page-link"
               onClick={() => {
                 scrollTop()
-                setState({ pno: state.pno + 1 })
+                setState({ ...state,pno: state.pno + 1 })
               }}
             >
               Next

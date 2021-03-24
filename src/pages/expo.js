@@ -37,17 +37,18 @@ const Expo = ({ data, location }) => {
                   <div key={index} className="clean-blog-post">
                     <h3 className="text-capitalize">{element.title}</h3>
                     <div className="info">
-                      <span className="text-muted">{element.sig}</span>
+                      <span className="text-muted">
+                        <Link to={"/sigs/"+element.sig.toLowerCase()}>{element.sig}</Link>
+                      </span>
                     </div>
-                    <p>
-                      {element.description || ""}
-                      {element.builtBy ? (
-                        <p>
-                          Built by
-                          {RenderAuthors(element.builtBy || [], "")}
-                        </p>
-                      ) : null}
-                    </p>
+                    {element.description || ""}
+                    {element.builtBy ? (
+                      <p>
+                        Built by
+                        {RenderAuthors(element.builtBy || [], "")}
+                      </p>
+                    ) : null}
+
                     {element.URL ? (
                       <Link
                         to={
@@ -82,7 +83,7 @@ export const postQuery = graphql`
       }
     }
     projects: allProjectsYaml(
-      filter: { builtBy: {}, expo21: { eq: true } }
+      filter: { builtBy: {}, label: { eq: "Expo 2021" } }
       sort: { fields: builtBy }
     ) {
       nodes {
