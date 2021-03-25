@@ -33,7 +33,7 @@ const MemberDetails = ({ author, index }) => {
           </Link>
           <p className={`card-text ${color_text}`}>{author.position}</p>
           <div className="icon">
-            {author.social.facebook ? (
+            {author.social && author.social.facebook ? (
               <a
                 target="_blank"
                 rel="noreferrer"
@@ -44,7 +44,7 @@ const MemberDetails = ({ author, index }) => {
                 <i className={`fa fa-facebook ${color_text}`} />
               </a>
             ) : null}
-            {author.social.linkedin ? (
+            {author.social && author.social.linkedin ? (
               <a
                 target="_blank"
                 rel="noreferrer"
@@ -55,7 +55,7 @@ const MemberDetails = ({ author, index }) => {
                 <i className={`fa fa-linkedin ${color_text}`} />
               </a>
             ) : null}
-            {author.social.github ? (
+            {author.social && author.social.github ? (
               <a
                 target="_blank"
                 rel="noreferrer"
