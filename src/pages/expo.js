@@ -51,7 +51,7 @@ const Expo = ({ data, location }) => {
                       </p>
                     ) : null}
 
-                    {element.URL ? (
+                    {element.url ? (
                       <Link
                         to={
                           "/projects/" +
@@ -93,7 +93,7 @@ export const postQuery = graphql`
         description
         sig
         builtBy
-        URL
+        url
       }
     }
   }

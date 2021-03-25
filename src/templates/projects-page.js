@@ -58,7 +58,7 @@ export const Project = ({ data, pathname, pageContext }) => {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href={"https://" + data.projectsYaml.URL}
+                    href={"https://" + data.projectsYaml.url}
                     className="btn btn-primary"
                   >
                     <i className="fa fa-link" /> Project Link
@@ -127,7 +127,7 @@ export const postQuery = graphql`
       title
       year
       description
-      URL
+      url
       builtBy
       label
       ongoing

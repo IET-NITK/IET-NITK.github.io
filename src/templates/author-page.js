@@ -46,7 +46,7 @@ const RenderProject = ({
   builtBy,
   ongoing,
   year,
-  URL,
+  url,
 }) => {
   return (
     <div className="clean-blog-post" style={{ paddingBottom: "35px" }}>
@@ -71,7 +71,7 @@ const RenderProject = ({
           <a
             target="_blank"
             rel="noreferrer"
-            href={"https://" + URL}
+            href={"https://" + url}
             className="card-link"
           >
             Read More
@@ -228,7 +228,7 @@ export const postQuery = graphql`
         sig
         year
         description
-        URL
+        url
       }
     }
     member_reports: allFile(

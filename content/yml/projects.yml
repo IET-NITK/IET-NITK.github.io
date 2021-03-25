@@ -2,25 +2,25 @@
   sig: Cipher
   description: An API powered by a neural network model trained to recognize handwritten text from images
   builtBy:
-    ["Nirmal Khedkar", "Jayesh Kumar Soni", "K Snehith Bhagavan", "Uday Kumar"]
+    ["Nirmal Khedkar", "Jayesh Kumar Soni", "K Snehith Bhagavan", "Uday Kumar","Govardhan"]
   ongoing: true
   label: Expo 2021
   year: 2019
-  URL: https://github.com/nirmalhk7/HandwritingRecognizer
+  url: https://github.com/nirmalhk7/HandwritingRecognizer
 - title: SC Voting App
   sig: Cipher
   label: Expo 2021
   description: Web application for Students' Council Election.This web application let's the voting mechanism of the current student council election to go entirely online.
-  builtBy: ["Tarun Anur", "Sahana", "Suhas G"]
+  builtBy: ["Tarun Anur", "Sahana", "Suhas Gopinath"]
 - title: Music Generation using Deep Learning
   sig: Cipher
   description: Generating music using deep learning architectures such as RNNs (Recurrent Neural Networks) and GANs (Generative adversial networks) that have been trained on datasets containing traditional songs.
-  URL: https://github.com/IET-NITK/Music-Generation-DL
+  url: https://github.com/IET-NITK/Music-Generation-DL
   label: Expo 2021
   builtBy:
-    ["Skanda Upadhyaya", "Aprameya Dash", "Mohammed Ibrahim", " Laksh Sadhwani"]
+    ["Skanda Upadhyaya", "Aprameya Dash", "Mohammed Ibrahim", "Laksh Sadhwani"]
 - title: Face Mask Detector
-  URL: https://github.com/Mihir3101/IETC-2020-Face-Mask
+  url: https://github.com/Mihir3101/IETC-2020-Face-Mask
   builtBy: ["Maheshwari Mihir Premjibhai", "Aniket Srivastava"]
   sig: Cipher
   label: Expo 2021
@@ -30,28 +30,28 @@
   builtBy: ["Skanda Upadhyaya", "Rhevanth M"]
   ongoing: false
   year:
-  URL:
+  url:
 - title: Chatbot
   sig: Cipher
   description: A real time chat bot is developed to answer queries related to IET.
   builtBy: ["Krishna Poojitha Vantakula", "Indhu Lekha", "Atul Kumar"]
   label: Expo 2021
-  URL:
+  url:
 - title: Web Security and User Tracking
   sig: Cipher
-  URL: https://github.com/rj-since-2000/IETC-2020
+  url: https://github.com/rj-since-2000/IETC-2020
   builtBy: ["Varsha P", "Rajan Jaiswal", "Satyam Jyotsana Gargee"]
   label: Expo 2021
 - title: Gender Identification from Speech
   description: Building a model to identify whether given speech is uttered by male or female
-  URL: https://github.com/venkatrohit219/gender-detection-from-speech
+  url: https://github.com/venkatrohit219/gender-detection-from-speech
   builtBy: ["Rohit V","Govardhan"]
   label: Expo 2021
   sig: "Cipher"
 - title: Face to Emoji
   sig: Cipher
   description: An emotion classifier that uses Resnet model it predicts 7 different emotions and according to that displays the appropriate emoji
-  URL: https://github.com/DikshaNegi13/face-to-emoji
+  url: https://github.com/DikshaNegi13/face-to-emoji
   builtBy:
     [
       "Sharuf Baig",
@@ -60,20 +60,48 @@
       "Akash Kumar Varanasi",
     ]
   label: Expo 2021
+- title: Jigsaw Puzzle Solver
+  sig: Torsion
+  builtBy: ["Rohit Behera","Diksha Negi"]
+  label: Expo 2021
 - title: Human Activity Recognition
   sig: Cipher
   description: This project is to build a model that predicts the human activities such as Walking, Walking_Upstairs, Walking_Downstairs, Sitting, Standing or Laying using the data recorded through accelerometer and gyroscope sensors.
   builtBy: ["Varsha P", "Dhanasekhar"]
   ongoing: false
   year:
-  URL:
+  url:
 - title: Pose Correction - AI Trainer
   sig: Cipher
   description: An intelligent system for workout posture evaluation with Ensemble Deep Neural Models. It assists the user by providing feedback regarding if the workout posture for a given workout is correct or not.
   builtBy: ["Yuvraj Dalia"]
   ongoing: false
   year:
-  URL:
+  url:
+- title: Blood Flow through stents in Artery
+  description: The study mainly focuses on CFD analysis of blood flow through stents, placed in an artery. Using CFD analysis, the phenomena of blood flow through a artery was done and recirculation of blood was found. Upon further analysis, stents were found to be the best solution to this problem and hence, a structural analysis of stent during its insertion into the artery was conducted using ANSYS.
+  builtBy: ["Nikitha Garapati","Abin Sibichan"]
+  label: Expo 2021
+  sig: Torsion
+- title: Rice Transporting Machine
+  description: Optimization of hand picking mechanism in rice Transplanter
+  builtBy: ["Shilpashree Venkatesh","Naveen Patidar","Nitish Kumar Kattimani"]
+  label: Expo 2021
+  sig: Torsion
+- title: Thermal Analysis of Disc Brakes
+  sig: Torsion
+  label: Expo 2021
+  builtBy: ["D Raghavi"]
+- title: CFD Analysis of Dimpled Wing of an Aircraft
+  sig: Torsion
+  label: Expo 2021
+  description: "The main objective of aircraft aerodynamics is to enhance the aerodynamic characteristics and maneuverability of the aircraft. This enhancement includes the reduction in drag and stall phenomenon. The dimpled
+  airfoil has comparatively lesser drag as compared to plain airfoil. Introducing dimples on the aircraft wing will create turbulence by creating vortices which delays the boundary layer separation resulting in decrease of pressure drag and also increase in the angle of stall. In addition, wake reduction leads to reduction in acoustic emission. The objective is to improve the aircraft maneuverability by delaying the flow separation point at stall and thereby reducing the drag by applying the dimple effect over the aircraft wing. A computational analysis has done to know the dimple effect on aircraft wing"
+  builtBy: ["Sudheer Kumar Verma","Shreyas Deshpande"]
+- title: FEA and CFD Analysis of Wind Turbine Blade
+  builtBy: ["Harhikrishnan S","S Sriram"]
+  sig: Torsion
+  label: Expo 2021
 - title: Experiencing Homes in VR
   sig: Cipher
   label: Expo 2021
@@ -90,63 +118,63 @@
     ]
   ongoing: true
   year:
-  URL:
+  url:
 - title: Tic-Tac-Toe AI Player
   sig: Cipher
   description:
   builtBy: ["Nirmal Khedkar", "Feyaz Baker"]
   ongoing: true
   year: 2020
-  URL:
+  url:
 - title: Automatic Medicine Pill Dispenser
   sig: Rovisp
   description: An IoT based project reminds elderly people with their pills with buzzer.
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Automatic Toll Collection
   sig: Rovisp
   description:
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: MiDi Drum Set
   sig: Rovisp
   description:
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Mouse Control
   sig: Rovisp
   description:
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Patient Monitor
   sig: Rovisp
   description:
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Smart Car Parking System
   sig: Rovisp
   description: Parking Slots booking with Smartphones. Car enters by showing RFID card, Presence of car is detected by IR sensors. Real time updates on server
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Stick Pick
   sig: Rovisp
   description:
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Virtual Try-On
   sig: Cipher
   ongoing: true
@@ -167,7 +195,7 @@
   builtBy: ["Sharuf Baig"]
   ongoing: false
   year:
-  URL:
+  url:
 - title: Street Light Glow
   description: Street lights along highways during night time will be only ON when they detect vehicles on road,otherwise off.
   sig: Rovisp
@@ -189,67 +217,68 @@
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Laser Turret
   sig: Torsion
   description: Advanced defense system with face and position detection
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Rubiks Cube Solver
   sig: Torsion
   description: It solves for any colour pattern. It has an arm and a rotating base.The mechanical arm flips the cube
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Quadcopter
   sig: Torsion
   description: Flying and surveillance done. Concepts of aerodynamic stability incorporated. Speed can be altered to through phone
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Line Following and Obstacle Detection Robot
   sig: Torsion
   description: Obstacle Avoiding Robot, Automatically sense the obstacle . Robot navigates in unknown environment by avoiding collisions.
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: MHD Propelled Boat
   sig: Torsion
-  description: Uses magnetohydrodynamics
-  builtBy:
+  description: Plasma Physics is not only applicable to earths core and the sun but did you ever wonder that it can propel a boat as a clear energy source of energy. Here we worked on an MHD (Magnetohydrodynamics) boat. An innovation for the future. The basic equations of plasma physics are analysed . Complex CFD simulations alongside a prototype is proposed for MHD boats.
+  builtBy: ["Vishwa Mohan Tiwari","Gopal Nath Reddy"]
   ongoing: false
+  label: Expo 2021
   year:
-  URL:
+  url:
 - title: Piezoelectric Shoes
   sig: Torsion
   description: A piezoelectric generator is placed in the shoe. The power that is generated by piezoelectric generator when a person walks is transferred to the device by using a mid-range wireless power transfer (WPT) which is a Resonance coupling technique
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Net Zero Energy Building
   sig: Torsion
   description: The Net Zero Energy Buildings (NZEB) platform is a one-stop shop to learn about NZEB fundamentals, build alliances with professionals and organizations, find inspiration from case studies, explore the latest technology/policies/ideas and everything NZEB. India emerges as a global leader for energy efficiency and renewable energy integration in buildings, with a thriving market and conducive policy environment for NZEBs.
   builtBy: ["Rithik Agrawal"]
   ongoing: true
   year: 2020
-  URL: https://nzeb.in/
+  url: https://nzeb.in/
 - title: Material Optimization of Spur Gear Tooth
   sig: Torsion
   description:
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:
 - title: Aerodynamic effects on cyclists
   sig: Torsion
   description:
   builtBy:
   ongoing: false
   year:
-  URL:
+  url:

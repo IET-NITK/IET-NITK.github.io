@@ -35,7 +35,7 @@ export const SIG = ({ pageContext, pathname, data }) => {
                     <div className="row">
                       <div className="col-lg-12">
                         <h3>
-                          {element.builtBy && element.URL ? (
+                          {element.builtBy && element.url ? (
                             <Link
                               to={
                                 "/projects/" +
@@ -98,7 +98,7 @@ export const postQuery = graphql`
     ) {
       nodes {
         title
-        URL
+        url
         builtBy
         label
         description

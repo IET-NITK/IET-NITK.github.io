@@ -46,7 +46,7 @@ const Projects = ({ data, location }) => {
                         {RenderAuthors(element.builtBy || [], "")}
                       </p>
                     ) : null}
-                    {element.URL ? (
+                    {element.url ? (
                       <Link
                         to={
                           "/projects/" +
@@ -81,7 +81,7 @@ export const postQuery = graphql`
         sig
         builtBy
         label
-        URL
+        url
       }
     }
   }
