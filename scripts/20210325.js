@@ -24,31 +24,29 @@ function sortObject(obj) {
     }, {})
 }
 
-projects = projects.map(e => {
-  e.builtBy &&
-    e.builtBy.map(authorname => {
-      if (!getAuthorsList().includes(authorname)) {
-        console.log(authorname)
-        let yamlStr = yaml.safeDump(
-          JSON.parse(
-            JSON.stringify(
-              authors.concat(authors, {
-                name: authorname,
-                position: "Executive Member",
-                social: {
-                  email: null,
-                  github: null,
-                  linkedin: null,
-                  facebook: null,
+fs.writeFileSync("../content/yml/projects.yml",yaml.safeDump(JSON.parse(JSON.stringify(projects.map(e => {
+    e.builtBy &&
+      e.builtBy.map(authorname => {
+        if (
+          !getAuthorsList().includes(authorname) &&
+          !missingAuthors.includes(authorname)
+        ) {
+          let yamlStr = yaml.safeDump(
+            JSON.parse(
+              JSON.stringify([
+                ...authors,
+                {
+                  name: authorname,
+                  position: "Executive Member",
                 },
-              })
+              ])
             )
           )
-        )
-        fs.writeFileSync("../content/yml/authors.yml", yamlStr, "utf8")
-      }
-    })
-  return sortObject(e)
-})
-// console.log("x",projects[0])
-// console.log(authors.map(e => e.name))
+          fs.writeFileSync("../content/yml/authors.yml", yamlStr, "utf8")
+          missingAuthors.push(authorname)
+        console.log(authorname)
+          // fs.appendFileSync
+        }
+      })
+    return sortObject(e)
+  })))),'utf8')

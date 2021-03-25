@@ -1,7 +1,7 @@
 const fs = require("fs")
 const yaml = require("js-yaml")
 
-const sorter = (arr, index, desc) => {
+export const sorter = (arr, index, desc) => {
   return arr.sort(function (a, b) {
     if (a[index] < b[index]) {
       return desc ? 1 : -1
@@ -26,7 +26,7 @@ const capitalize = s => {
 
 const passoutMarker = 2020
 try {
-  let fileContents = fs.readFileSync("../content/yml/authors-old.yml", "utf8")
+  let fileContents = fs.readFileSync("../content/yml/authors.yml", "utf8")
   let data = yaml.safeLoad(fileContents)
 
   let names_hash = {}
