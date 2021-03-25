@@ -1,202 +1,255 @@
-- title: OCR API
+- title: OCR for Handwritten Text
   sig: Cipher
   description: An API powered by a neural network model trained to recognize handwritten text from images
-  builtBy: ['Nirmal Khedkar','Jayesh Kumar Soni','Shreya Chandra']  
+  builtBy:
+    ["Nirmal Khedkar", "Jayesh Kumar Soni", "K Snehith Bhagavan", "Uday Kumar"]
   ongoing: true
+  label: Expo 2021
   year: 2019
-  URL: www.github.com
+  URL: https://github.com/nirmalhk7/HandwritingRecognizer
+- title: SC Voting App
+  sig: Cipher
+  label: Expo 2021
+  description: Web application for Students' Council Election.This web application let's the voting mechanism of the current student council election to go entirely online.
+  builtBy: ["Tarun Anur", "Sahana", "Suhas G"]
+- title: Music Generation using Deep Learning
+  sig: Cipher
+  description: Generating music using deep learning architectures such as RNNs (Recurrent Neural Networks) and GANs (Generative adversial networks) that have been trained on datasets containing traditional songs.
+  URL: https://github.com/IET-NITK/Music-Generation-DL
+  label: Expo 2021
+  builtBy:
+    ["Skanda Upadhyaya", "Aprameya Dash", "Mohammed Ibrahim", " Laksh Sadhwani"]
+- title: Face Mask Detector
+  URL: https://github.com/Mihir3101/IETC-2020-Face-Mask
+  builtBy: ["Maheshwari Mihir Premjibhai", "Aniket Srivastava"]
+  sig: Cipher
+  label: Expo 2021
 - title: Currency Analyzer
   sig: Cipher
   description: To build a model to identify and classify Indian Currency bills into 10 Rs note, 20 Rs note, 50 Rs note and so on. The model will be built using convolutional neural networks and image processing techniques.
-  builtBy: ['Skanda Upadhyaya','Rhevanth M']
+  builtBy: ["Skanda Upadhyaya", "Rhevanth M"]
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Chatbot
   sig: Cipher
-  description: To build a bot which would reply to our questions and make simple conversations.
-  builtBy: ['Rahul Gite','Dhruv Agja']   
-  ongoing: false
-  year: 
-  URL: 
+  description: A real time chat bot is developed to answer queries related to IET.
+  builtBy: ["Krishna Poojitha Vantakula", "Indhu Lekha", "Atul Kumar"]
+  label: Expo 2021
+  URL:
+- title: Web Security and User Tracking
+  sig: Cipher
+  URL: https://github.com/rj-since-2000/IETC-2020
+  builtBy: ["Varsha P", "Rajan Jaiswal", "Satyam Jyotsana Gargee"]
+  label: Expo 2021
+- title: Gender Identification from Speech
+  description: Building a model to identify whether given speech is uttered by male or female
+  URL: https://github.com/venkatrohit219/gender-detection-from-speech
+  builtBy: ["Rohit V","Govardhan"]
+  label: Expo 2021
+  sig: "Cipher"
+- title: Face to Emoji
+  sig: Cipher
+  description: An emotion classifier that uses Resnet model it predicts 7 different emotions and according to that displays the appropriate emoji
+  URL: https://github.com/DikshaNegi13/face-to-emoji
+  builtBy:
+    [
+      "Sharuf Baig",
+      "Diksha Negi",
+      "Adith Shekhar Gatty",
+      "Akash Kumar Varanasi",
+    ]
+  label: Expo 2021
 - title: Human Activity Recognition
   sig: Cipher
   description: This project is to build a model that predicts the human activities such as Walking, Walking_Upstairs, Walking_Downstairs, Sitting, Standing or Laying using the data recorded through accelerometer and gyroscope sensors.
-  builtBy: ['Varsha P','Dhanasekhar']   
+  builtBy: ["Varsha P", "Dhanasekhar"]
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Pose Correction - AI Trainer
   sig: Cipher
   description: An intelligent system for workout posture evaluation with Ensemble Deep Neural Models. It assists the user by providing feedback regarding if the workout posture for a given workout is correct or not.
-  builtBy: ['Yuvraj Dalia']    
+  builtBy: ["Yuvraj Dalia"]
   ongoing: false
-  year: 
-  URL: 
-- title: The VR Project
+  year:
+  URL:
+- title: Experiencing Homes in VR
   sig: Cipher
-  description: A method to convert the given 2D sketch of the structure into a full fledged 3D structure which is ready to be experienced in VR.
-  builtBy: ['Rhevanth M','Uday Kumar','Sachin Pandey','Sowmya G','Krishna Poojitha Vantakula']
+  label: Expo 2021
+  description: Walkaround and interact with objects and customize a home in virtual reality
+  builtBy:
+    [
+      "Rhevanth M",
+      "Yashwanth Reddy",
+      "Gaurav Chaurasia",
+      "Marmik Mundada",
+      "Sachin Pandey",
+      "Sowmya G",
+      "Krishna Poojitha Vantakula",
+    ]
   ongoing: true
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Tic-Tac-Toe AI Player
   sig: Cipher
-  description: 
-  builtBy: ['Nirmal Khedkar','Feyaz Baker']   
+  description:
+  builtBy: ["Nirmal Khedkar", "Feyaz Baker"]
   ongoing: true
   year: 2020
-  URL: 
+  URL:
 - title: Automatic Medicine Pill Dispenser
   sig: Rovisp
   description: An IoT based project reminds elderly people with their pills with buzzer.
-  builtBy: 
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Automatic Toll Collection
   sig: Rovisp
-  description: 
-  builtBy: 
+  description:
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: MiDi Drum Set
   sig: Rovisp
-  description: 
-  builtBy: 
+  description:
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Mouse Control
   sig: Rovisp
-  description: 
-  builtBy: 
+  description:
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Patient Monitor
   sig: Rovisp
-  description: 
-  builtBy: 
+  description:
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Smart Car Parking System
   sig: Rovisp
   description: Parking Slots booking with Smartphones. Car enters by showing RFID card, Presence of car is detected by IR sensors. Real time updates on server
-  builtBy: 
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Stick Pick
   sig: Rovisp
-  description: 
-  builtBy: 
+  description:
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Virtual Try-On
   sig: Cipher
   ongoing: true
   year: 2020
   url: https://github.com/aakashabhi/Virtual-Try-On
-  builtBy: [ 'M.T.Aakash Chandra' , 'Amal Majunu Vidya' , 'V.Madhan Kumar' ]
+  label: Expo 2021
+  builtBy:
+    ["M.T.Aakash Chandra", "Amal Majunu Vidya", "V.Madhan Kumar", "Agja Dhruv"]
 - title: Smart Aid for Blind
   sig: Rovisp
   ongoing: false
   year: 2018
-  url: 
-  builtBy: [ 'Pratigya Ranjan' , 'Ravi Gocher' , 'Jagan Mohan'  ]
+  url:
+  builtBy: ["Pratigya Ranjan", "Ravi Gocher", "Jagan Mohan"]
 - title: Eastern western note classifier
   sig: Rovisp
   description: We were able to analyze a simple series of musical sounds and determine each of their respective note simultaneously..
-  builtBy: ['Sharuf Baig']    
+  builtBy: ["Sharuf Baig"]
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Street Light Glow
   description: Street lights along highways during night time will be only ON when they detect vehicles on road,otherwise off.
   sig: Rovisp
-  builtBy: ['Rameshwar Dhakad','Venkat Rohit Merugu','Sharuf Baig']
-  label: "Expo 2021"
+  builtBy: ["Rameshwar Dhakad", "Venkat Rohit Merugu", "Sharuf Baig"]
+  label: Expo 2021
 - title: Mini Jarvis
-  builtBy: ['Nithin L N','Saurabh Gole','Ram Janam Yadav']
+  builtBy: ["Nithin L N", "Saurabh Gole", "Ram Janam Yadav"]
   description: Home automation demo using a Google voice assistant applet.
   sig: Rovisp
-  label: "Expo 2021"
+  label: Expo 2021
 - title: Programmable DC Load
   description: A programmable DC load is a test equipment for batteries which emulates the DC resistance load.
   sig: Rovisp
-  builtBy: ['Abhishek C Hiremath','Surag P','M Poojitha']
-  label: "Expo 2021"
+  builtBy: ["Abhishek C Hiremath", "Surag P", "M Poojitha"]
+  label: Expo 2021
 - title: UAV Project
   sig: Rovisp
-  description: 
-  builtBy: 
+  description:
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Laser Turret
   sig: Torsion
   description: Advanced defense system with face and position detection
-  builtBy: 
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Rubiks Cube Solver
   sig: Torsion
   description: It solves for any colour pattern. It has an arm and a rotating base.The mechanical arm flips the cube
-  builtBy: 
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Quadcopter
   sig: Torsion
   description: Flying and surveillance done. Concepts of aerodynamic stability incorporated. Speed can be altered to through phone
-  builtBy: 
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Line Following and Obstacle Detection Robot
   sig: Torsion
   description: Obstacle Avoiding Robot, Automatically sense the obstacle . Robot navigates in unknown environment by avoiding collisions.
-  builtBy: 
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: MHD Propelled Boat
   sig: Torsion
   description: Uses magnetohydrodynamics
-  builtBy: 
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Piezoelectric Shoes
   sig: Torsion
   description: A piezoelectric generator is placed in the shoe. The power that is generated by piezoelectric generator when a person walks is transferred to the device by using a mid-range wireless power transfer (WPT) which is a Resonance coupling technique
-  builtBy: 
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Net Zero Energy Building
   sig: Torsion
   description: The Net Zero Energy Buildings (NZEB) platform is a one-stop shop to learn about NZEB fundamentals, build alliances with professionals and organizations, find inspiration from case studies, explore the latest technology/policies/ideas and everything NZEB. India emerges as a global leader for energy efficiency and renewable energy integration in buildings, with a thriving market and conducive policy environment for NZEBs.
-  builtBy: ['Rithik Agrawal']    
+  builtBy: ["Rithik Agrawal"]
   ongoing: true
   year: 2020
   URL: https://nzeb.in/
 - title: Material Optimization of Spur Gear Tooth
   sig: Torsion
-  description: 
-  builtBy: 
+  description:
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:
 - title: Aerodynamic effects on cyclists
   sig: Torsion
-  description: 
-  builtBy: 
+  description:
+  builtBy:
   ongoing: false
-  year: 
-  URL: 
+  year:
+  URL:

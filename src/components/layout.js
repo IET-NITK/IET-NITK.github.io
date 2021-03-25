@@ -1,12 +1,12 @@
 import React from "react"
-import Navbar from "./partials/navbar"
+import XNavbar from "./partials/navbar"
 import Footer from "./partials/footer"
 
 const Layout = ({ location, title, children }) => {
   return (
     <div className="site">
       <div id="wrapper-navbar">
-        <Navbar />
+        <XNavbar />
       </div>
       <div style={{ paddingTop: `${location === "/" ? "0em" : "3em"}` }} />
       <div className="site-content">{children}</div>

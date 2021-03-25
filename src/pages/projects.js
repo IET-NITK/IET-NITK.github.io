@@ -35,7 +35,9 @@ const Projects = ({ data, location }) => {
                       <div className="badge badge-primary">{element.label}</div>
                     ) : null}
                     <div className="info">
-                      <span className="text-muted">{element.sig}</span>
+                      <span className="text-muted">
+                        <Link to={"/sigs/" + element.sig.toLowerCase()}>{element.sig}</Link>
+                      </span>
                     </div>
                     {element.description || ""}
                     {element.builtBy ? (

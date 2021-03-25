@@ -13,7 +13,7 @@ const Expo = ({ data, location }) => {
   })
   return (
     <Layout location={location.pathname} title={"Main"}>
-      <SEO title="Projects" />
+      <SEO title="Expo 2021" />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">
@@ -38,7 +38,9 @@ const Expo = ({ data, location }) => {
                     <h3 className="text-capitalize">{element.title}</h3>
                     <div className="info">
                       <span className="text-muted">
-                        <Link to={"/sigs/"+element.sig.toLowerCase()}>{element.sig}</Link>
+                        <Link to={"/sigs/" + element.sig.toLowerCase()}>
+                          {element.sig}
+                        </Link>
                       </span>
                     </div>
                     {element.description || ""}
@@ -84,7 +86,7 @@ export const postQuery = graphql`
     }
     projects: allProjectsYaml(
       filter: { builtBy: {}, label: { eq: "Expo 2021" } }
-      sort: { fields: builtBy }
+      sort: { fields: title, order: ASC }
     ) {
       nodes {
         title

@@ -19,4 +19,4 @@ import "./src/assets/css/custom.min.css"
 
 // import Popper from 'popper.js'
 // import $ from 'jquery'
-import 'bootstrap/dist/js/bootstrap.js';
+// import 'bootstrap/dist/js/bootstrap.js';
