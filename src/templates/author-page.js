@@ -46,6 +46,7 @@ const RenderProject = ({
   builtBy,
   ongoing,
   year,
+  label,
   url,
 }) => {
   return (
@@ -61,6 +62,9 @@ const RenderProject = ({
               <span className="badge badge-primary">{SIG}</span>
             </Link>
           </h3>
+          {label ? (
+            <div className="badge badge-primary">{label}</div>
+          ) : null}
           <div className="info">
             <span className="text-muted">
               By
@@ -105,7 +109,8 @@ export const Author = ({ data, location }) => {
                         <h5 className="text-primary">{member_details.name}</h5>
                         <h6>{member_details.position}</h6>
                         <p>
-                          {member_details.social.email ? (
+                          {member_details.social &&
+                          member_details.social.email ? (
                             <a
                               target="_blank"
                               rel="noreferrer"
@@ -116,7 +121,8 @@ export const Author = ({ data, location }) => {
                               <i className="fa fa-envelope" />
                             </a>
                           ) : null}
-                          {member_details.social.facebook ? (
+                          {member_details.social &&
+                          member_details.social.facebook ? (
                             <a
                               target="_blank"
                               rel="noreferrer"
@@ -127,7 +133,8 @@ export const Author = ({ data, location }) => {
                               <i className="fa fa-facebook" />
                             </a>
                           ) : null}
-                          {member_details.social.linkedin ? (
+                          {member_details.social &&
+                          member_details.social.linkedin ? (
                             <a
                               target="_blank"
                               rel="noreferrer"
@@ -138,7 +145,8 @@ export const Author = ({ data, location }) => {
                               <i className="fa fa-linkedin" />
                             </a>
                           ) : null}
-                          {member_details.social.github ? (
+                          {member_details.social &&
+                          member_details.social.github ? (
                             <a
                               target="_blank"
                               rel="noreferrer"
@@ -227,6 +235,7 @@ export const postQuery = graphql`
         title
         sig
         year
+        label
         description
         url
       }

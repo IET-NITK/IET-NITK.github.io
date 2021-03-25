@@ -1,7 +1,7 @@
 const fs = require("fs")
 const yaml = require("js-yaml")
 
-export const sorter = (arr, index, desc) => {
+const sorter = (arr, index, desc) => {
   return arr.sort(function (a, b) {
     if (a[index] < b[index]) {
       return desc ? 1 : -1
