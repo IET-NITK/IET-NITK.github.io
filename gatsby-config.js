@@ -21,6 +21,10 @@ module.exports = {
       allow: false,
       link: "",
     },
+    expo: {
+      allow: true,
+      link: 'www.google.com'
+    }
   },
 
   plugins: [
@@ -124,7 +128,7 @@ module.exports = {
     //     // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
     //   }
     // },
-    // Dropdowns on Navbar dont work because of this
+    // Dropdowns on XNavbar dont work because of this
     {
       resolve: `gatsby-plugin-disqus`,
       options: {

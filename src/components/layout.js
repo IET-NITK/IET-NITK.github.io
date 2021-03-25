@@ -1,13 +1,15 @@
 import React from "react"
-import Navbar from "./partials/navbar"
+import XNavbar from "./partials/navbar"
 import Footer from "./partials/footer"
 
 const Layout = ({ location, title, children }) => {
   return (
-    <>
-      <Navbar />
-      <div style={{ paddingTop: `${location==='/'?'0em':'3em'}` }} />
-      {children}
+    <div className="site">
+      <div id="wrapper-navbar">
+        <XNavbar />
+      </div>
+      <div style={{ paddingTop: `${location === "/" ? "0em" : "3em"}` }} />
+      <div className="site-content">{children}</div>
       {/* <div
         className="clean-block add-on newsletter-sign-up blue"
         style={{backgroundColor:'#803391',padding:'30px 0px'}}
@@ -18,8 +20,10 @@ const Layout = ({ location, title, children }) => {
           Subscribe
         </button>
       </div> */}
-      <Footer />
-    </>
+      <div id="wrapper-footer">
+        <Footer />
+      </div>
+    </div>
   )
 }
 

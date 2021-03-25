@@ -255,6 +255,11 @@ const MainPage = ({ location, data }) => {
                               {element.sig}
                             </small>
                           </Link>
+                          {element.label ? (
+                            <div className="ml-2  badge badge-primary">
+                              {element.label}
+                            </div>
+                          ) : null}
                           <p className="card-text">
                             Built by
                             {RenderAuthors(element.builtBy || [], "")}
@@ -294,7 +299,7 @@ const MainPage = ({ location, data }) => {
                             <h6 className="card-title">
                               <Link
                                 to={
-                                  "/projects/" +
+                                  "/events/" +
                                   element.title
                                     .toLowerCase()
                                     .split(" ")
@@ -410,6 +415,7 @@ export const postQuery = graphql`
         builtBy
         description
         sig
+        label
       }
     }
   }

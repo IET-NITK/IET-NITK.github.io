@@ -26,7 +26,7 @@ const capitalize = s => {
 
 const passoutMarker = 2020
 try {
-  let fileContents = fs.readFileSync("../content/yml/authors-old.yml", "utf8")
+  let fileContents = fs.readFileSync("../content/yml/authors.yml", "utf8")
   let data = yaml.safeLoad(fileContents)
 
   let names_hash = {}

@@ -1,22 +1,27 @@
-import { graphql, Link } from "gatsby"
-import React from "react"
+import { graphql, Link, navigate } from "gatsby"
+import React, { useEffect } from "react"
 import { RenderAuthors } from "../components/helper"
 import Layout from "../components/layout"
 import PaginationComponent from "../components/partials/pagination"
 import SEO from "../components/seo"
 
-const Projects = ({ data, location }) => {
+const Expo = ({ data, location }) => {
+  useEffect(() => {
+    if (data.site_data.siteMetadata.expo.allow !== true) {
+      navigate("/")
+    }
+  })
   return (
     <Layout location={location.pathname} title={"Main"}>
-      <SEO title="Projects" />
+      <SEO title="Expo 2021" />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-primary">Projects @ IET NITK</h2>
+              <h2 className="text-primary">IET NITK @ Expo 2021</h2>
               <p>
-                We do many projects throughtout the year, here's a glimpse of it
-                all
+                Expo '21 is a club-wide project showcase showing the best of the
+                products made by NITK. Here's some of ours.
               </p>
             </div>
             <div className="block-content">
@@ -25,18 +30,17 @@ const Projects = ({ data, location }) => {
               </div> */}
               <PaginationComponent
                 max={10}
+                list={data.projects.nodes}
                 filterBy="sig"
                 filterLabel="Filter by SIG"
-                list={data.projects.nodes}
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
                     <h3 className="text-capitalize">{element.title}</h3>
-                    {element.label ? (
-                      <div className="badge badge-primary">{element.label}</div>
-                    ) : null}
                     <div className="info">
                       <span className="text-muted">
-                        <Link to={"/sigs/" + element.sig.toLowerCase()}>{element.sig}</Link>
+                        <Link to={"/sigs/" + element.sig.toLowerCase()}>
+                          {element.sig}
+                        </Link>
                       </span>
                     </div>
                     {element.description || ""}
@@ -46,6 +50,7 @@ const Projects = ({ data, location }) => {
                         {RenderAuthors(element.builtBy || [], "")}
                       </p>
                     ) : null}
+
                     {element.url ? (
                       <Link
                         to={
@@ -71,20 +76,26 @@ const Projects = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
+    site_data: site {
+      siteMetadata {
+        expo {
+          allow
+          link
+        }
+      }
+    }
     projects: allProjectsYaml(
-      filter: { builtBy: {} }
-      sort: { fields: builtBy }
+      filter: { builtBy: {}, label: { eq: "Expo 2021" } }
+      sort: { fields: title, order: ASC }
     ) {
       nodes {
         title
         description
         sig
         builtBy
-        label
         url
       }
     }
   }
 `
-
-export default Projects
+export default Expo

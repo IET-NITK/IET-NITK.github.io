@@ -35,7 +35,7 @@ export const SIG = ({ pageContext, pathname, data }) => {
                     <div className="row">
                       <div className="col-lg-12">
                         <h3>
-                          {element.builtBy && element.URL ? (
+                          {element.builtBy && element.url ? (
                             <Link
                               to={
                                 "/projects/" +
@@ -48,6 +48,11 @@ export const SIG = ({ pageContext, pathname, data }) => {
                             element.title
                           )}
                         </h3>
+                        {element.label ? (
+                          <div className="badge badge-primary">
+                            {element.label}
+                          </div>
+                        ) : null}
                         {element.builtBy !== null ? (
                           <>
                             <div className="info">
@@ -87,11 +92,15 @@ export const postQuery = graphql`
         }
       }
     }
-    sig_projects: allProjectsYaml(filter: {sig: {eq: $pathSlug}}, sort: {fields: builtBy}) {
+    sig_projects: allProjectsYaml(
+      filter: { sig: { eq: $pathSlug } }
+      sort: { fields: builtBy }
+    ) {
       nodes {
         title
-        URL
+        url
         builtBy
+        label
         description
       }
     }

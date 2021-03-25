@@ -31,6 +31,11 @@ export const Project = ({ data, pathname, pageContext }) => {
               </div>
             </div>
             <div className="block-content">
+              {data.projectsYaml.label ? (
+                <div className="mb-2 badge badge-primary">
+                  {data.projectsYaml.label}
+                </div>
+              ) : null}
               <div className="row">
                 <div className="col-lg-6">
                   <h4>Built by</h4>
@@ -53,7 +58,7 @@ export const Project = ({ data, pathname, pageContext }) => {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href={"https://" + data.projectsYaml.URL}
+                    href={"https://" + data.projectsYaml.url}
                     className="btn btn-primary"
                   >
                     <i className="fa fa-link" /> Project Link
@@ -117,19 +122,17 @@ export const Project = ({ data, pathname, pageContext }) => {
 
 export const postQuery = graphql`
   query($pathSlug: String!, $sig: String) {
-    projectsYaml(title: {eq: $pathSlug}) {
+    projectsYaml(title: { eq: $pathSlug }) {
       sig
       title
       year
       description
-      URL
+      url
       builtBy
+      label
       ongoing
     }
-    sig_logo: file(
-      sourceInstanceName: { eq: "sig_logo" }
-      name: { eq: $sig }
-    ) {
+    sig_logo: file(sourceInstanceName: { eq: "sig_logo" }, name: { eq: $sig }) {
       childImageSharp {
         fixed {
           srcWebp

@@ -7,7 +7,7 @@ export const Footer = props => {
       query={graphql`
         query {
           site {
-            buildTime(formatString: "MMMM Do")
+            buildTime(formatString: "MMMM Do, YYYY")
             siteMetadata {
               title
               description
@@ -130,7 +130,7 @@ export const Footer = props => {
                 </div>
               </div>
               <p className="copyright">
-                <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK |{" "}
+                <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK |&nbsp;
                 <a
                   target="_blank"
                   rel="noreferrer"

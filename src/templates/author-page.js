@@ -46,7 +46,8 @@ const RenderProject = ({
   builtBy,
   ongoing,
   year,
-  URL,
+  label,
+  url,
 }) => {
   return (
     <div className="clean-blog-post" style={{ paddingBottom: "35px" }}>
@@ -61,6 +62,9 @@ const RenderProject = ({
               <span className="badge badge-primary">{SIG}</span>
             </Link>
           </h3>
+          {label ? (
+            <div className="badge badge-primary">{label}</div>
+          ) : null}
           <div className="info">
             <span className="text-muted">
               By
@@ -71,7 +75,7 @@ const RenderProject = ({
           <a
             target="_blank"
             rel="noreferrer"
-            href={"https://" + URL}
+            href={"https://" + url}
             className="card-link"
           >
             Read More
@@ -104,24 +108,55 @@ export const Author = ({ data, location }) => {
                       <div className="text-center mt-4">
                         <h5 className="text-primary">{member_details.name}</h5>
                         <h6>{member_details.position}</h6>
-                        <small>{member_details.social.email}</small>
                         <p>
-                          {Object.keys(member_details.social).map(s =>
-                            member_details.social[s] && s!=="email" ? (
-                              <a
-                                target="_blank"
-                                rel="noreferrer"
-                                className="mr-1 ml-1"
-                                href={
-                                  "https://www.facebook.com/" +
-                                  member_details.social[s]
-                                }
-                              >
-                                &nbsp;
-                                <i className={`fa fa-${s}`} />
-                              </a>
-                            ) : null
-                          )}
+                          {member_details.social &&
+                          member_details.social.email ? (
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              className="mr-1 ml-1"
+                              href={`mailto:${member_details.social.email}`}
+                            >
+                              &nbsp;
+                              <i className="fa fa-envelope" />
+                            </a>
+                          ) : null}
+                          {member_details.social &&
+                          member_details.social.facebook ? (
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              className="mr-1 ml-1"
+                              href={`www.facebook.com/${member_details.social.facebook}`}
+                            >
+                              &nbsp;
+                              <i className="fa fa-facebook" />
+                            </a>
+                          ) : null}
+                          {member_details.social &&
+                          member_details.social.linkedin ? (
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              className="mr-1 ml-1"
+                              href={`www.linkedin.com/in/${member_details.social.linkedin}`}
+                            >
+                              &nbsp;
+                              <i className="fa fa-linkedin" />
+                            </a>
+                          ) : null}
+                          {member_details.social &&
+                          member_details.social.github ? (
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              className="mr-1 ml-1"
+                              href={`www.github.com/${member_details.social.github}`}
+                            >
+                              &nbsp;
+                              <i className="fa fa-github" />
+                            </a>
+                          ) : null}
                         </p>
                       </div>
                     </div>
@@ -179,8 +214,7 @@ export const Author = ({ data, location }) => {
 }
 
 export const postQuery = graphql`
-  query($pathSlug: [String]
-  ) {
+  query($pathSlug: [String]) {
     member_details: authorsYaml(name: { in: $pathSlug }) {
       name
       position
@@ -201,15 +235,14 @@ export const postQuery = graphql`
         title
         sig
         year
+        label
         description
-        URL
+        url
       }
     }
     member_reports: allFile(
       filter: {
-        childMarkdownRemark: {
-          frontmatter: { authors: { in: $pathSlug } }
-        }
+        childMarkdownRemark: { frontmatter: { authors: { in: $pathSlug } } }
         sourceInstanceName: { eq: "project-reports" }
         extension: { eq: "md" }
       }
@@ -228,9 +261,7 @@ export const postQuery = graphql`
     }
     member_articles: allFile(
       filter: {
-        childMarkdownRemark: {
-          frontmatter: { authors: { in: $pathSlug } }
-        }
+        childMarkdownRemark: { frontmatter: { authors: { in: $pathSlug } } }
         sourceInstanceName: { eq: "blog" }
         extension: { eq: "md" }
       }

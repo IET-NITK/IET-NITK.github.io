@@ -2,8 +2,9 @@ import { Link, StaticQuery } from "gatsby"
 import React from "react"
 import Marquee from "react-simple-marquee"
 import { graphql } from "gatsby"
+import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 
-const TopNavbar = ({ notice }) => {
+const TopNavbar = ({ notice, permissions }) => {
   //eslint-disable-next-line
   const RenderMarquee = ({ notice }) => {
     if (notice.length === 1 && notice[0] === "") {
@@ -34,23 +35,32 @@ const TopNavbar = ({ notice }) => {
       <div className="py-2 bg-light">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-9 d-none d-lg-block">
+            <div className="col-lg-8 d-none d-lg-block">
               {/* <RenderMarquee notice={notice} /> */}
             </div>
-            <div className="col-lg-3 d-lg-block text-right">
+            <div className="col-lg-4 d-lg-block text-right">
               <Link
                 to="/recruitment"
                 role="button"
-                className="btn btn-primary btn-sm mr-3 disabled"
+                className="btn btn-outline-dark btn-sm mr-3 disabled"
               >
                 Join IET NITK
               </Link>
-              <Link
+              {/* <Link
                 to="/smp"
                 role="button"
                 className="btn btn-outline-primary btn-sm mr-3 disabled"
               >
                 SMP {new Date().getFullYear()}
+              </Link> */}
+              <Link
+                to="/expo"
+                role="button"
+                className={`btn btn-sm mr-3 ${
+                  permissions.expo.allow !== true ? "disabled" : "btn-primary"
+                }`}
+              >
+                NITK Expo {new Date().getFullYear()}
               </Link>
             </div>
           </div>
@@ -59,11 +69,7 @@ const TopNavbar = ({ notice }) => {
     </div>
   )
 }
-export const Navbar = props => {
-  const commonLinkProps = {
-    className: "nav-link",
-    activeClassName: "active",
-  }
+export const XNavbar = props => {
   return (
     <>
       <StaticQuery
@@ -79,6 +85,19 @@ export const Navbar = props => {
                 noticeBoard
               }
             }
+            permissions: site {
+              siteMetadata {
+                expo {
+                  allow
+                }
+                smp {
+                  allow
+                }
+                join {
+                  allow
+                }
+              }
+            }
             imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
               fixed {
                 srcWebp
@@ -86,10 +105,81 @@ export const Navbar = props => {
             }
           }
         `}
-        render={({ sigdetails, site, imageSharp }) => (
+        render={({ sigdetails, site, imageSharp, permissions }) => (
           <div className="fixed-top" id="navbar">
-            <TopNavbar notice={site.siteMetadata.noticeBoard} />
-            <nav
+            <TopNavbar
+              notice={site.siteMetadata.noticeBoard}
+              permissions={permissions.siteMetadata}
+            />
+            <Navbar
+            bg="white"
+            expand="lg"
+              className=" clean-navbar"
+              style={{ borderBottom: "1px solid #c2c2c2" }}
+            >
+              <div className="container">
+                <Navbar.Brand className="navbar-brand logo" href="/">
+                  <img
+                    src={imageSharp.fixed.srcWebp}
+                    style={{ height: "auto", maxHeight: "2.5em" }}
+                    alt="Institute of Engineering and Technology, NITK Surathkal Division"
+                  />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="ml-auto">
+                    <Nav.Link className="nav-link" href="/">
+                      Home
+                    </Nav.Link>
+                    <Nav.Link className="nav-link" href="/about">
+                      About Us
+                    </Nav.Link>
+                    <Nav.Link className="nav-link" href="/events">
+                      Events
+                    </Nav.Link>
+                    <Nav.Link className="nav-link" href="/blog">
+                      Blog
+                    </Nav.Link>
+                    <NavDropdown title="SIGs">
+                      {sigdetails.nodes.map((element, index) => (
+                        // <li key={index}>
+                        //   <Link
+                        //     className="nav-link pl-2 dropdown-item"
+                        //     to={"/sigs/" + element.name.toLowerCase()}
+                        //   >
+                        //     {element.name}
+                        //   </Link>
+                        <NavDropdown.Item
+                          className="nav-link"
+                          href={"/sigs/" + element.name.toLowerCase()}
+                        >
+                          {element.name}
+                        </NavDropdown.Item>
+                      ))}
+                      {/* <NavDropdown.Item href="#action/3.1">
+                        Action
+                      </NavDropdown.Item>
+
+                      <NavDropdown.Item href="#action/3.2">
+                        Another action
+                      </NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item href="#action/3.4">
+                        Separated link
+                      </NavDropdown.Item> */}
+                    </NavDropdown>
+                    <Nav.Link className="nav-link" href="/contact">
+                      Contact Us
+                    </Nav.Link>
+                  </Nav>
+                  {/* <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-success">Search</Button>
+    </Form> */}
+                </Navbar.Collapse>
+              </div>
+            </Navbar>
+            {/* <nav
               className="navbar navbar-light navbar-expand-lg bg-white clean-navbar"
               style={{ borderBottom: "1px solid #c2c2c2" }}
             >
@@ -166,7 +256,7 @@ export const Navbar = props => {
                   </ul>
                 </div>
               </div>
-            </nav>
+            </nav> */}
           </div>
         )}
       ></StaticQuery>
@@ -174,4 +264,4 @@ export const Navbar = props => {
   )
 }
 
-export default Navbar
+export default XNavbar

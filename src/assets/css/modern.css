@@ -16,21 +16,20 @@ body {
 #navbar{
   z-index: 100000000;
 }
-.clean-navbar .navbar-nav .nav-item {
-
-    padding-right: 2rem;
-
-}
-.clean-navbar .navbar-nav .nav-link {
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
 
 .navbar-expand-sm .navbar-nav .nav-link {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
+
+.clean-navbar .navbar-nav .nav-link {
+  font-weight: 600;
+  padding-right: 2rem!important;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+
 
 .article-list {
   color: #313437;
@@ -435,7 +434,7 @@ span {
   margin-bottom: 0;
 }
 
-/* -------------------------------- Navbar --------------------------------------- */
+/* -------------------------------- XNavbar --------------------------------------- */
 
 .topbar:hover {
   color: #803393;
