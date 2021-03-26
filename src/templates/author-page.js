@@ -47,6 +47,7 @@ const RenderProject = ({
   ongoing,
   year,
   label,
+  sig,
   url,
 }) => {
   return (
@@ -64,6 +65,9 @@ const RenderProject = ({
           </h3>
           {label ? (
             <div className="badge badge-primary">{label}</div>
+          ) : null}
+          {sig ? (
+            <div className="badge badge-warning ml-2 text-uppercase">{sig}</div>
           ) : null}
           <div className="info">
             <span className="text-muted">
