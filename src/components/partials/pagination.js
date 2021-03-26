@@ -32,13 +32,13 @@ const PaginationComponent = ({
       {filterBy && state.list_state ? (
         <Dropdown>
           <Dropdown.Toggle
+            className="mr-4"
             variant="outline-primary"
             id={"dropdown-" + filterBy}
             size="sm"
           >
             {state.filterType ? state.filterType : filterLabel}
           </Dropdown.Toggle>
-
           <Dropdown.Menu>
             {state.filterCategories &&
               state.filterCategories.map((ex, i) => (
@@ -72,6 +72,7 @@ const PaginationComponent = ({
               </Dropdown.Item>
             ) : null}
           </Dropdown.Menu>
+          {state.list_state.length} Items
           <hr />
         </Dropdown>
       ) : null}
@@ -132,7 +133,7 @@ const PaginationComponent = ({
               className="page-link"
               onClick={() => {
                 scrollTop()
-                setState({ ...state,pno: state.pno + 1 })
+                setState({ ...state, pno: state.pno + 1 })
               }}
             >
               Next
