@@ -75,7 +75,7 @@ const RenderProject = ({
           <a
             target="_blank"
             rel="noreferrer"
-            href={"https://" + url}
+            href={url}
             className="card-link"
           >
             Read More

@@ -3,7 +3,6 @@
     - Jayesh Kumar Soni
     - K Snehith Bhagavan
     - Uday Kumar
-    - Govardhan
   description: >-
     An API powered by a neural network model trained to recognize handwritten
     text from images
@@ -350,7 +349,7 @@
   year: null
 - builtBy:
     - Vishwa Mohan Tiwari
-    - Gopal Nath Reddy
+    - Gopinath Reddy
   description: >-
     Plasma Physics is not only applicable to earths core and the sun but did you
     ever wonder that it can propel a boat as a clear energy source of energy.
