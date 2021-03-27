@@ -32,14 +32,17 @@ const Projects = ({ data, location }) => {
                   <div key={index} className="clean-blog-post">
                     <h3 className="text-capitalize">{element.title}</h3>
                     {element.label ? (
-                      <div className="badge badge-primary">{element.label}</div>
+                      <div className="badge badge-primary mr-2 ">{element.label}</div>
                     ) : null}
-                    <div className="info">
-                      <span className="text-muted">
-                        <Link to={"/sigs/" + element.sig.toLowerCase()}>{element.sig}</Link>
-                      </span>
-                    </div>
-                    {element.description || ""}
+                    {element.sig ? (
+                      <Link
+                        to={"/sigs/" + element.sig.toLowerCase()}
+                        className="badge badge-info text-uppercase"
+                      >
+                        {element.sig}
+                      </Link>
+                    ) : null}
+                    <p>{element.description || ""}</p>
                     {element.builtBy ? (
                       <p>
                         Built by

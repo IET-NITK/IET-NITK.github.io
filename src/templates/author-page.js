@@ -55,19 +55,28 @@ const RenderProject = ({
       <div className="row">
         <div className="col-lg-12">
           <h3>
-            <Link
-              className="btn-link"
-              to={"/projects/" + title.toLowerCase().split(" ").join("")}
-            >
-              {title} {year ? `(${year})` : null}
-              <span className="badge badge-primary">{SIG}</span>
-            </Link>
+            {url ? (
+              <Link
+                className="btn-link"
+                to={"/projects/" + title.toLowerCase().split(" ").join("")}
+              >
+                {title} {year ? `(${year})` : null}
+                <span className="badge badge-primary">{SIG}</span>
+              </Link>
+            ) : (
+              <>
+                {title} {year ? `(${year})` : null}
+              </>
+            )}
           </h3>
-          {label ? (
-            <div className="badge badge-primary">{label}</div>
-          ) : null}
+          {label ? <div className="badge badge-primary">{label}</div> : null}
           {sig ? (
-            <div className="badge badge-warning ml-2 text-uppercase">{sig}</div>
+            <Link
+              to={"/sigs/" + sig.toLowerCase()}
+              className="badge badge-info ml-2 text-uppercase"
+            >
+              {sig}
+            </Link>
           ) : null}
           <div className="info">
             <span className="text-muted">
@@ -76,14 +85,6 @@ const RenderProject = ({
             </span>
           </div>
           <p> {description} </p>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={url}
-            className="card-link"
-          >
-            Read More
-          </a>
         </div>
       </div>
     </div>
