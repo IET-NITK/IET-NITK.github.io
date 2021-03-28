@@ -55,14 +55,26 @@ export const Project = ({ data, pathname, pageContext }) => {
                   </ul>
                 </div>
                 <div className="col-lg-6 text-right">
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href={"https://" + data.projectsYaml.url}
-                    className="btn btn-primary"
-                  >
-                    <i className="fa fa-link" /> Project Link
-                  </a>
+                  {new URL(data.projectsYaml.url).hostname ===
+                  "github.com" ? (
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href={data.projectsYaml.url}
+                      className="btn btn-outline-dark"
+                    >
+                      <i className="fa fa-github mr-2" /> Repository URL
+                    </a>
+                  ) : (
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href={data.projectsYaml.url}
+                      className="btn btn-primary"
+                    >
+                      <i className="fa fa-link" /> Project Link
+                    </a>
+                  )}
                 </div>
               </div>
               {/* {data.allFile && data.allFile.nodes.length !== 0 ? (

@@ -245,18 +245,16 @@ const MainPage = ({ location, data }) => {
                               {element.title}
                             </Link>
                           </h6>
-                          <Link
-                            to={
-                              "/sigs/" +
-                              element.sig.toLowerCase().split(" ").join("")
-                            }
-                          >
-                            <small className="text-uppercase text-muted card-subtitle mb-2">
+                          {element.sig ? (
+                            <Link
+                              to={"/sigs/" + element.sig.toLowerCase()}
+                              className="badge badge-info text-uppercase mr-2"
+                            >
                               {element.sig}
-                            </small>
-                          </Link>
+                            </Link>
+                          ) : null}
                           {element.label ? (
-                            <div className="ml-2  badge badge-primary">
+                            <div className="badge badge-primary ">
                               {element.label}
                             </div>
                           ) : null}

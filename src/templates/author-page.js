@@ -57,11 +57,9 @@ const RenderProject = ({
           <h3>
             {url ? (
               <Link
-                className="btn-link"
                 to={"/projects/" + title.toLowerCase().split(" ").join("")}
               >
                 {title} {year ? `(${year})` : null}
-                <span className="badge badge-primary">{SIG}</span>
               </Link>
             ) : (
               <>
@@ -69,11 +67,11 @@ const RenderProject = ({
               </>
             )}
           </h3>
-          {label ? <div className="badge badge-primary">{label}</div> : null}
+          {label ? <div className="badge badge-primary mr-2">{label}</div> : null}
           {sig ? (
             <Link
               to={"/sigs/" + sig.toLowerCase()}
-              className="badge badge-info ml-2 text-uppercase"
+              className="badge badge-info text-uppercase"
             >
               {sig}
             </Link>
