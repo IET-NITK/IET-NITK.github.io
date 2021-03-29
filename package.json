@@ -56,7 +56,7 @@
     "lint-staged": "10.5.4",
     "node-sass": "5.0.0",
     "prettier": "2.2.1",
-    "purgecss": "4.0.2",
+    "purgecss": "4.0.3",
     "react-test-renderer": "17.0.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
