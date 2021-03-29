@@ -13064,10 +13064,10 @@ react-dom@^16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-double-marquee@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.npmjs.org/react-double-marquee/-/react-double-marquee-1.0.7.tgz"
-  integrity sha512-y/2F8YUyfmLndBnUheLyZDDanq37yVh8nTMvT8M8995fz7anTTTmVzRNy8qJ21F8rEtQjmXEou0fzESPiOcK9g==
+react-double-marquee@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-double-marquee/-/react-double-marquee-1.1.0.tgz#9f718349427628721965e4c875b55af8f34cf4ce"
+  integrity sha512-MWsX3JeQDY23iC9VvRMS44fLZ+l1sJBRFLCsra+qstAtE51jG3AvVUArCx1Y51Pw2Z5IrrywwObHtDqhNh084g==
   dependencies:
     prop-types "^15.7.2"
     react "^16.13.1"
@@ -13987,14 +13987,6 @@ scheduler@^0.19.1:
   version "0.19.1"
   resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.19.1.tgz"
   integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
-scheduler@^0.20.2:
-  version "0.20.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
-  integrity sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
