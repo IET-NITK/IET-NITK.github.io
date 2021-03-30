@@ -1,10 +1,13 @@
 name: Deployment and Testing Workflow
 
 on:
+  # Trigger the workflow on push or pull request,
+  # but only for the daddy branch
   push:
     branches:
       - daddy
   pull_request:
+    branches:
       - daddy
 
 jobs:
