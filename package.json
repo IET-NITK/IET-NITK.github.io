@@ -39,7 +39,7 @@
     "react": "16.14.0",
     "react-bootstrap": "1.5.2",
     "react-dom": "16.14.0",
-    "react-double-marquee": "1.0.7",
+    "react-double-marquee": "1.1.0",
     "react-helmet": "6.1.0",
     "react-share": "4.4.0",
     "react-simple-marquee": "1.2.2",
