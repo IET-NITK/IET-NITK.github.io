@@ -1,22 +1,15 @@
 name: Deployment and Testing Workflow
 
-
-# on:
-#   push:
-#     branches:
-#       - daddy
-on: [push, pull_request]
-
+on:
+  push:
+    branches:
+      - daddy
+  pull_request:
+      - daddy
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    on:
-      push:
-        branches:
-          - main
-      pull_request:
-          - main
     steps:
       - uses: actions/checkout@v2
       - name: Install NPM Packages
@@ -32,10 +25,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: test
-    on:
-      push:
-        branches:
-          - main
+    if: github.ref=='refs/heads/daddy'
     steps:
       - name: Download hello world file
         uses: actions/download-artifact@v1
