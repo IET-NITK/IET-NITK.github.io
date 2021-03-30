@@ -14,13 +14,7 @@ const RenderArticles = ({ articles, element, index }) => (
         <h3>
           <Link
             className="btn-link"
-            to={
-              "/blog/" +
-              element.childMarkdownRemark.frontmatter.title
-                .toLowerCase()
-                .split(" ")
-                .join("")
-            }
+            to={"/blog/" + element.relativeDirectory}
           >
             {element.childMarkdownRemark.frontmatter.title}
           </Link>
@@ -271,6 +265,7 @@ export const postQuery = graphql`
       sort: { fields: childMarkdownRemark___frontmatter___title }
     ) {
       nodes {
+        relativeDirectory
         childMarkdownRemark {
           frontmatter {
             authors
