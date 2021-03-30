@@ -1,26 +1,44 @@
-name: Deployment Workflow
+name: Deployment and Testing Workflow
 
 on:
+  # Trigger the workflow on push or pull request,
+  # but only for the daddy branch
   push:
+    branches:
+      - daddy
+  pull_request:
     branches:
       - daddy
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
       - name: Install NPM Packages
         run: npm install
+      - name: Build script
+        run: npm run build
+      - name: Pass on build directory
+        uses: actions/upload-artifact@v2
+        with:
+          name: public
+          path: public
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref=='refs/heads/daddy'
+    steps:
+      - name: Download hello world file
+        uses: actions/download-artifact@v1
+        with:
+          name: public
       - name: Set up git
         run: |
           git config --global user.email "iet@nitk.edu.in"
           git config --global user.name "IET NITK"
       # Runs a set of commands using the runners shell
-      - name: Build script
-        run: npm run build
       - name: Deploy script
         uses: peaceiris/actions-gh-pages@v3
         with:
