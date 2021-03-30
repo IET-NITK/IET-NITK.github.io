@@ -5,6 +5,8 @@ name: Deployment and Testing Workflow
 #   push:
 #     branches:
 #       - daddy
+on: [push, pull_request]
+
 
 jobs:
   test:
