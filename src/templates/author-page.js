@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql, Link } from "gatsby"
 import { RenderAuthors } from "../components/helper"
+import { OverlayTrigger, Tooltip } from "react-bootstrap"
 const RenderArticles = ({ articles, element, index }) => (
   <div
     key={index}
@@ -12,10 +13,7 @@ const RenderArticles = ({ articles, element, index }) => (
     <div className="row">
       <div className="col-lg-12">
         <h3>
-          <Link
-            className="btn-link"
-            to={"/blog/" + element.relativeDirectory}
-          >
+          <Link className="btn-link" to={"/blog/" + element.relativeDirectory}>
             {element.childMarkdownRemark.frontmatter.title}
           </Link>
         </h3>
@@ -50,9 +48,7 @@ const RenderProject = ({
         <div className="col-lg-12">
           <h3>
             {url ? (
-              <Link
-                to={"/projects/" + title.toLowerCase().split(" ").join("")}
-              >
+              <Link to={"/projects/" + title.toLowerCase().split(" ").join("")}>
                 {title} {year ? `(${year})` : null}
               </Link>
             ) : (
@@ -61,7 +57,9 @@ const RenderProject = ({
               </>
             )}
           </h3>
-          {label ? <div className="badge badge-primary mr-2">{label}</div> : null}
+          {label ? (
+            <div className="badge badge-primary mr-2">{label}</div>
+          ) : null}
           {sig ? (
             <Link
               to={"/sigs/" + sig.toLowerCase()}
@@ -108,15 +106,15 @@ export const Author = ({ data, location }) => {
                         <p>
                           {member_details.social &&
                           member_details.social.email ? (
-                            <a
-                              target="_blank"
-                              rel="noreferrer"
-                              className="mr-1 ml-1"
-                              href={`mailto:${member_details.social.email}`}
+                            <OverlayTrigger
+                              placement="bottom"
+                              delay={{ show: 250, hide: 400 }}
+                              overlay={props => (
+                                <Tooltip {...props}>{member_details.social.email.replace("@"," [at] ").split(".").join(" [dot] ")}</Tooltip>
+                              )}
                             >
-                              &nbsp;
-                              <i className="fa fa-envelope" />
-                            </a>
+                              <i className="fa fa-envelope text-primary" />
+                            </OverlayTrigger>
                           ) : null}
                           {member_details.social &&
                           member_details.social.facebook ? (
@@ -124,7 +122,7 @@ export const Author = ({ data, location }) => {
                               target="_blank"
                               rel="noreferrer"
                               className="mr-1 ml-1"
-                              href={`www.facebook.com/${member_details.social.facebook}`}
+                              href={`https://www.facebook.com/${member_details.social.facebook}`}
                             >
                               &nbsp;
                               <i className="fa fa-facebook" />
@@ -136,7 +134,7 @@ export const Author = ({ data, location }) => {
                               target="_blank"
                               rel="noreferrer"
                               className="mr-1 ml-1"
-                              href={`www.linkedin.com/in/${member_details.social.linkedin}`}
+                              href={`https://www.linkedin.com/in/${member_details.social.linkedin}`}
                             >
                               &nbsp;
                               <i className="fa fa-linkedin" />
@@ -148,7 +146,7 @@ export const Author = ({ data, location }) => {
                               target="_blank"
                               rel="noreferrer"
                               className="mr-1 ml-1"
-                              href={`www.github.com/${member_details.social.github}`}
+                              href={`https://www.github.com/${member_details.social.github}`}
                             >
                               &nbsp;
                               <i className="fa fa-github" />

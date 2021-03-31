@@ -80,7 +80,6 @@ export const postQuery = graphql`
       siteMetadata {
         expo {
           allow
-          link
         }
       }
     }

@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Nirmal Khedkar <nirmalhk7@gmail.com>",
   "bugs": {
-    "url": "https://github.com/IET-NITK/ietnitk-v2/issues"
+    "url": "https://github.com/IET-NITK/iet-nitk.github.io/issues"
   },
   "dependencies": {
     "bootstrap": "4.6.0",
@@ -54,10 +54,9 @@
     "jest": "26.6.3",
     "lint-staged": "10.5.4",
     "node-sass": "5.0.0",
-    "prettier": "2.2.1",
-    "purgecss": "4.0.2"
+    "prettier": "2.2.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://iet.nitk.ac.in",
   "keywords": [
     "gatsby"
   ],
@@ -65,7 +64,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IET-NITK/ietnitk-v2.git"
+    "url": "https://github.com/IET-NITK/iet-nitk.github.io.git"
   },
   "lint-staged": {
     "*.{js,css,html}": [

@@ -234,8 +234,7 @@ const MainPage = ({ location, data }) => {
                       <div className="card h-100">
                         <div className="card-body">
                           <h6 className="card-title">
-                            {" "}
-                            <Link
+                            {element.url ? <Link
                               to={
                                 "/projects/" +
                                 element.title.toLowerCase().split(" ").join("")
@@ -243,7 +242,7 @@ const MainPage = ({ location, data }) => {
                               className="card-link text-capitalize"
                             >
                               {element.title}
-                            </Link>
+                            </Link>: element.title}
                           </h6>
                           {element.sig ? (
                             <Link
@@ -413,6 +412,7 @@ export const postQuery = graphql`
         builtBy
         description
         sig
+        url
         label
       }
     }

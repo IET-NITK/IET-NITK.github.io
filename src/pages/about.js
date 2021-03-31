@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import Img_Beach from "../assets/img/beach.jpg"
+import { OverlayTrigger, Tooltip } from "react-bootstrap"
 
 const KEY_ALUMNI = "Alumni"
 const KEY_EXEC_MEMBERS = "Executive Members 2020"
@@ -13,7 +14,11 @@ const MemberDetails = ({ author, index }) => {
   let isntExecMember = author.position !== "Executive Member"
   let isntAlumni = author.alumni !== true
   let color_bg =
-    isntExecMember && isntAlumni ? "bg-gradient-primary" : isntAlumni ? "" : "bg-gradient-alumni"
+    isntExecMember && isntAlumni
+      ? "bg-gradient-primary"
+      : isntAlumni
+      ? ""
+      : "bg-gradient-alumni"
   let color_text = isntExecMember ? "text-light" : ""
   return (
     <div
@@ -28,11 +33,26 @@ const MemberDetails = ({ author, index }) => {
         id={author.name}
       >
         <div className="card-body info">
-          <Link to={`/members/${author.name.toLowerCase().split(" ").join("")}`}>
+          <Link
+            to={`/members/${author.name.toLowerCase().split(" ").join("")}`}
+          >
             <h5 className={`card-title ${color_text}`}>{author.name}</h5>
           </Link>
           <p className={`card-text ${color_text}`}>{author.position}</p>
           <div className="icon">
+            {author.social && author.social.email ? (
+              <OverlayTrigger
+                placement="bottom"
+                delay={{ show: 250, hide: 400 }}
+                overlay={props => (
+                  <Tooltip {...props}>
+                    {author.social.email.replace("@"," [at] ").split(".").join(" [dot] ")}
+                  </Tooltip>
+                )}
+              >
+                <i className={`fa fa-envelope ${color_text}`} />
+              </OverlayTrigger>
+            ) : null}
             {author.social && author.social.facebook ? (
               <a
                 target="_blank"
@@ -73,7 +93,7 @@ const MemberDetails = ({ author, index }) => {
   )
 }
 
-export const About = ({location, data}) => {
+export const About = ({ location, data }) => {
   const [category, setCategory] = useState(KEY_CURR_CORE)
   let members_hsx = {
     [KEY_ALUMNI]: data.members.nodes.filter(mem => mem.alumni === true),

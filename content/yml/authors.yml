@@ -335,7 +335,7 @@
     github: null
     linkedin: null
     facebook: null
-- name: M.T.aakash Chandra
+- name: M.T.Aakash Chandra
   position: Executive Member
   image: 'https://drive.google.com/open?id=1li7zAAlMFlHFqU4W6yjKFiYFfUU7tS5v'
   passoutYr: 2023
@@ -385,7 +385,7 @@
   social:
     email: nithinln.191ec135@nitk.edu.in
     github: null
-    linkedin: 'https://www.linkedin.com/in/nithin-l-n-1a0282194'
+    linkedin: 'nithin-l-n-1a0282194'
     facebook: null
 - name: Gopinath Reddy
   position: Executive Member
@@ -509,7 +509,7 @@
   social:
     email: shloka.meena@gmail.com
     github: null
-    linkedin: 'https://www.linkedin.com/in/shloka-meena'
+    linkedin: 'shloka-meena'
     facebook: null
 - name: Shreya Chandra
   position: Executive Member
@@ -704,4 +704,8 @@
 - name: Govardhan
   position: Executive Member
 - name: K Snehith Bhagavan
+  position: Executive Member
+- name: Harsh Vardhan Sharma
+  position: Executive Member
+- name: Rohit Singh
   position: Executive Member

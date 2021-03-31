@@ -42,26 +42,28 @@ const TopNavbar = ({ notice, permissions }) => {
               <Link
                 to="/recruitment"
                 role="button"
-                className="btn btn-outline-dark btn-sm mr-3 disabled"
+                className={`btn btn-outline-primary btn-sm mr-3 ${permissions.join.allow!==true ? 'disabled':''}`}
               >
                 Join IET NITK
               </Link>
-              {/* <Link
-                to="/smp"
-                role="button"
-                className="btn btn-outline-primary btn-sm mr-3 disabled"
-              >
-                SMP {new Date().getFullYear()}
-              </Link> */}
-              <Link
-                to="/expo"
-                role="button"
-                className={`btn btn-sm mr-3 ${
-                  permissions.expo.allow !== true ? "disabled" : "btn-primary"
-                }`}
-              >
-                NITK Expo {new Date().getFullYear()}
-              </Link>
+ 
+              {permissions.expo.allow !== true ? (
+                <Link
+                  to="/smp"
+                  role="button"
+                  className={`btn btn-primary btn-sm mr-3 ${permissions.smp.allow!==true ? 'disabled':''}`}
+                >
+                  SMP {new Date().getFullYear()}
+                </Link>
+              ) : (
+                <Link
+                  to="/expo"
+                  role="button"
+                  className="btn btn-sm mr-3 btn-primary"
+                >
+                  NITK Expo {new Date().getFullYear()}
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -112,8 +114,8 @@ export const XNavbar = props => {
               permissions={permissions.siteMetadata}
             />
             <Navbar
-            bg="white"
-            expand="lg"
+              bg="white"
+              expand="lg"
               className=" clean-navbar"
               style={{ borderBottom: "1px solid #c2c2c2" }}
             >
@@ -156,107 +158,14 @@ export const XNavbar = props => {
                           {element.name}
                         </NavDropdown.Item>
                       ))}
-                      {/* <NavDropdown.Item href="#action/3.1">
-                        Action
-                      </NavDropdown.Item>
-
-                      <NavDropdown.Item href="#action/3.2">
-                        Another action
-                      </NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action/3.4">
-                        Separated link
-                      </NavDropdown.Item> */}
                     </NavDropdown>
                     <Nav.Link className="nav-link" href="/contact">
                       Contact Us
                     </Nav.Link>
                   </Nav>
-                  {/* <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
-    </Form> */}
                 </Navbar.Collapse>
               </div>
             </Navbar>
-            {/* <nav
-              className="navbar navbar-light navbar-expand-lg bg-white clean-navbar"
-              style={{ borderBottom: "1px solid #c2c2c2" }}
-            >
-              <div className="container">
-                <Link className="navbar-brand logo" to="/">
-                  <img
-                    src={imageSharp.fixed.srcWebp}
-                    style={{ height: "auto", maxHeight: "2.5em" }}
-                    alt="Institute of Engineering and Technology, NITK Surathkal Division"
-                  />
-                </Link>
-                <button
-                  data-toggle="collapse"
-                  className="navbar-toggler"
-                  data-target="#navcol-1"
-                >
-                  <span className="sr-only">Toggle navigation</span>
-                  <span
-                    className="navbar-toggler-icon"
-                    style={{ margin: "0px" }}
-                  />
-                </button>
-                <div className="collapse navbar-collapse" id="navcol-1">
-                  <ul className="nav navbar-nav ml-auto">
-                    <li className="nav-item" role="presentation">
-                      <Link to="/" {...commonLinkProps}>
-                        Home
-                      </Link>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                      <Link {...commonLinkProps} to="/about">
-                        About Us
-                      </Link>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                      <Link {...commonLinkProps} to="/events">
-                        Events
-                      </Link>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                      <Link {...commonLinkProps} to="/blog">
-                        Blog
-                      </Link>
-                    </li>
-                    <li className="nav-item dropdown">
-                      <div className="dropdown">
-                        <Link
-                          className="nav-link dropdown-toggle"
-                          data-toggle="dropdown"
-                          to="#"
-                          activeClassName="active"
-                        >
-                          SIGS
-                        </Link>
-                        <ul className="dropdown-menu">
-                          {sigdetails.nodes.map((element, index) => (
-                            <li key={index}>
-                              <Link
-                                className="nav-link pl-2 dropdown-item"
-                                to={"/sigs/" + element.name.toLowerCase()}
-                              >
-                                {element.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                      <Link {...commonLinkProps} to="/contact">
-                        Contact Us
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav> */}
           </div>
         )}
       ></StaticQuery>

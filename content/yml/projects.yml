@@ -6,11 +6,11 @@
   description: >-
     An API powered by a neural network model trained to recognize handwritten
     text from images
-  label: Expo 2021
+  label: ""
   ongoing: true
   sig: Cipher
   title: OCR for Handwritten Text
-  url: 'https://github.com/nirmalhk7/HandwritingRecognizer'
+  url: "https://github.com/nirmalhk7/HandwritingRecognizer"
   year: 2019
 - builtBy:
     - Tarun S Anur
@@ -20,7 +20,7 @@
     Web application for Students' Council Election.This web application let's
     the voting mechanism of the current student council election to go entirely
     online.
-  label: Expo 2021
+  label: ""
   sig: Cipher
   title: SC Voting App
 - builtBy:
@@ -32,17 +32,18 @@
     Generating music using deep learning architectures such as RNNs (Recurrent
     Neural Networks) and GANs (Generative adversial networks) that have been
     trained on datasets containing traditional songs.
-  label: Expo 2021
+  label: ""
   sig: Cipher
   title: Music Generation using Deep Learning
-  url: 'https://github.com/IET-NITK/Music-Generation-DL'
+  url: "https://github.com/IET-NITK/Music-Generation-DL"
 - builtBy:
     - Maheshwari Mihir Premjibhai
     - Aniket Srivastava
-  label: Expo 2021
+  description: Detects that a person is wearing mask or not.
+  label: ""
   sig: Cipher
   title: Face Mask Detector
-  url: 'https://github.com/Mihir3101/IETC-2020-Face-Mask'
+  url: "https://github.com/Mihir3101/IETC-2020-Face-Mask"
 - builtBy:
     - Skanda Upadhyaya
     - Rhevanth M
@@ -60,7 +61,7 @@
     - Indhu Lekha
     - Atul Kumar
   description: A real time chat bot is developed to answer queries related to IET.
-  label: Expo 2021
+  label: ""
   sig: Cipher
   title: Chatbot
   url: null
@@ -68,20 +69,20 @@
     - Varsha P
     - Rajan Jaiswal
     - Satyam Jyotsana Gargee
-  label: Expo 2021
+  label: ""
   sig: Cipher
   title: Web Security and User Tracking
-  url: 'https://github.com/rj-since-2000/IETC-2020'
+  url: "https://github.com/rj-since-2000/IETC-2020"
 - builtBy:
     - Venkat Rohit Merugu
     - Govardhan
   description: >-
     Building a model to identify whether given speech is uttered by male or
     female
-  label: Expo 2021
+  label: ""
   sig: Cipher
   title: Gender Identification from Speech
-  url: 'https://github.com/venkatrohit219/gender-detection-from-speech'
+  url: "https://github.com/venkatrohit219/gender-detection-from-speech"
 - builtBy:
     - Sharuf Baig
     - Diksha Negi
@@ -90,15 +91,17 @@
   description: >-
     An emotion classifier that uses Resnet model it predicts 7 different
     emotions and according to that displays the appropriate emoji
-  label: Expo 2021
+  label: ""
   sig: Cipher
   title: Face to Emoji
-  url: 'https://github.com/DikshaNegi13/face-to-emoji'
+  url: "https://github.com/DikshaNegi13/face-to-emoji"
 - builtBy:
     - Rohit Behera
     - Diksha Negi
-  label: Expo 2021
+  label: ""
   sig: Torsion
+  description: >-
+    The goal was to create a code where you input the pieces of any standard piece jigsaw puzzle, and the system solves the jigsaw automatically.We made use of computer vision (openCV) and basic image processing to solve the problem statement.The code is written in python and we used Jupyter notebook for running and evaluating the code
   title: Jigsaw Puzzle Solver
 - builtBy:
     - Varsha P
@@ -133,21 +136,24 @@
     analysis, stents were found to be the best solution to this problem and
     hence, a structural analysis of stent during its insertion into the artery
     was conducted using ANSYS.
-  label: Expo 2021
+  label: ""
   sig: Torsion
   title: Blood Flow through stents in Artery
 - builtBy:
     - Shilpashree Venkatesh
     - Naveen Patidar
     - Nitish Kumar Kattimani
-  description: Optimization of hand picking mechanism in rice Transplanter
-  label: Expo 2021
+  description: >-
+    The project aims at optimizing the transplanting mechanism of the Rice Transplanter, to get a better yield. This is done by optimising the four-bar linkage with the help of MATLAB. The CAD drawings of the parts were made using CATIA.
+  label: ""
   sig: Torsion
   title: Rice Transporting Machine
 - builtBy:
     - D Raghavi
-  label: Expo 2021
+  label: ""
   sig: Torsion
+  description: >-
+    Disc brake is used to reduce the speed or stop the motion of the vehicle. During this process heat is generated which may lead to failure and damage of the disc brake. In this project, we have tried to design two different models of disc brake based on the literature available. Then the steady state thermal analysis was carried out using Ansys. From this we can get to know about the heat dissipation in the two disc brakes and can come to a conclusion about which one is better.
   title: Thermal Analysis of Disc Brakes
 - builtBy:
     - Sudheer Kumar Verma
@@ -164,14 +170,16 @@
     maneuverability by delaying the flow separation point at stall and thereby
     reducing the drag by applying the dimple effect over the aircraft wing. A
     computational analysis has done to know the dimple effect on aircraft wing
-  label: Expo 2021
+  label: ""
   sig: Torsion
   title: CFD Analysis of Dimpled Wing of an Aircraft
 - builtBy:
     - Harhikrishnan S
     - S Sriram
-  label: Expo 2021
+  label: ""
   sig: Torsion
+  description: >-
+    Wind blades play a significant role in determining a wind turbine's efficiency. Although the theoretical maximum efficiency a wind turbine can achieve is 59% with proper designing of airfoils and blades, we can obtain efficiency close to 59 percent. This project mainly focuses on analyzing a real-life engineering problem on stresses and deformations caused by aerodynamic forces acting on a wind turbine's blades by performing CFD and FEA analysis.
   title: FEA and CFD Analysis of Wind Turbine Blade
 - builtBy:
     - Rhevanth M
@@ -181,15 +189,24 @@
     - Sachin Pandey
     - Sowmya G
     - Krishna Poojitha Vantakula
-  description: Walkaround and interact with objects and customize a home in virtual reality
-  label: Expo 2021
+  description: A computer vision and deep learning based project that enables the user to try on spectacles, watches and other accessories virtually.
+  label: ""
   ongoing: true
   sig: Cipher
   title: Experiencing Homes in VR
   url: null
   year: null
 - builtBy:
-    - Nirmal Khedkar
+    - Rohit Singh
+    - Harsh Vardhan Sharma
+  description: In our project we aims to analyse the NACA 0012 airfoil. In the presence of high velocity wind and turbulance we aims to see effect of velocity and pressure on airfoil. With the help of velocity contour, pressure contour and turbulent kinetic energy contour we will analyse 2D airfoil. Here we have taken all data in standard form as given by NASA for example rynolds number, viscosity cooficient, density and angle of attack for airfoil.
+  label: ""
+  ongoing: true
+  sig: Cipher
+  title: Experiencing Homes in VR
+  url: null
+  year: null
+- builtBy:
     - Feyaz Baker
   description: null
   ongoing: true
@@ -253,11 +270,11 @@
     - Amal Majunu Vidya
     - V Madhan Kumar
     - Dhruv Agja
-  label: Expo 2021
+  label: ""
   ongoing: true
   sig: Cipher
   title: Virtual Try-On
-  url: 'https://github.com/aakashabhi/Virtual-Try-On'
+  url: "https://github.com/aakashabhi/Virtual-Try-On"
   year: 2020
 - builtBy:
     - Pratigya Ranjan
@@ -285,7 +302,7 @@
   description: >-
     Street lights along highways during night time will be only ON when they
     detect vehicles on road,otherwise off.
-  label: Expo 2021
+  label: ""
   sig: Rovisp
   title: Street Light Glow
 - builtBy:
@@ -293,7 +310,7 @@
     - Saurabh Gole
     - Ram Janam Yadav
   description: Home automation demo using a Google voice assistant applet.
-  label: Expo 2021
+  label: ""
   sig: Rovisp
   title: Mini Jarvis
 - builtBy:
@@ -303,7 +320,7 @@
   description: >-
     A programmable DC load is a test equipment for batteries which emulates the
     DC resistance load.
-  label: Expo 2021
+  label: ""
   sig: Rovisp
   title: Programmable DC Load
 - builtBy: null
@@ -356,7 +373,7 @@
     Here we worked on an MHD (Magnetohydrodynamics) boat. An innovation for the
     future. The basic equations of plasma physics are analysed . Complex CFD
     simulations alongside a prototype is proposed for MHD boats.
-  label: Expo 2021
+  label: ""
   ongoing: false
   sig: Torsion
   title: MHD Propelled Boat
@@ -385,7 +402,7 @@
   ongoing: true
   sig: Torsion
   title: Net Zero Energy Building
-  url: 'https://nzeb.in/'
+  url: "https://nzeb.in/"
   year: 2020
 - builtBy: null
   description: null

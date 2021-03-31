@@ -11,7 +11,7 @@ module.exports = {
         number: "999999999",
       },
     ],
-    contactEmail: "iet@nitk.ac.in",
+    contactEmail: "iet@nitk.edu.in",
     siteUrl: `https://iet.nitk.ac.in/`,
     smp: {
       allow: false,
@@ -22,8 +22,7 @@ module.exports = {
       link: "",
     },
     expo: {
-      allow: true,
-      link: 'www.google.com'
+      allow: false
     }
   },
 
