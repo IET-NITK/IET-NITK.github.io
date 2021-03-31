@@ -106,7 +106,7 @@ const PaginationComponent = ({
             [...Array(Math.ceil(state.list_state.length / max))].map((e, i) => (
               <li
                 className={`page-item ${state.pno === i + 1 ? "active" : ""}`}
-                key={"a" + i}
+                key={i}
               >
                 <button
                   className="page-link"

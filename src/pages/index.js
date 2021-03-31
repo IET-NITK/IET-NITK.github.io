@@ -183,11 +183,11 @@ const MainPage = ({ location, data }) => {
                             </h4>
                             <h6 className="text-muted card-subtitle mb-2">
                               {/* {"by "+element.childMarkdownRemark.frontmatter.author} */}
-                              By{" "}
+                              By&nbsp;
                               {RenderAuthors(
                                 element.childMarkdownRemark.frontmatter.authors,
                                 ""
-                              )}{" "}
+                              )}&nbsp;
                               <br />
                               {element.childMarkdownRemark.frontmatter.date}
                             </h6>

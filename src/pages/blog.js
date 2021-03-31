@@ -22,12 +22,12 @@ export const Blog = ({ data, location }) => {
               <PaginationComponent
                 max={5}
                 list={data.allFile.nodes}
-                item={(element, index) => {
+                item={(element, inx) => {
                   let image = element.childMarkdownRemark.frontmatter.image
                   image = image && image.childImageSharp.fixed.srcWebp
                   image = image || data.ietlogo.fixed.srcWebp
                   return (
-                    <div key={index} className="clean-blog-post">
+                    <div key={inx} className="clean-blog-post">
                       <div className="row">
                         <div className="col-lg-5">
                           <img
@@ -49,7 +49,7 @@ export const Blog = ({ data, location }) => {
                           </h3>
                           <div className="info">
                             <span className="text-muted">
-                              By{" "}
+                              By&nbsp;
                               {RenderAuthors(
                                 element.childMarkdownRemark.frontmatter.authors,
                                 ""

@@ -18,7 +18,7 @@ const PreviewOther = ({ post, isPrevious }) => {
         </b>
         <div className="post-info">
           <span>
-            By{" "}
+            By&nbsp;
             <b>
               {RenderAuthors(post.childMarkdownRemark.frontmatter.authors, "")}
             </b>
@@ -64,7 +64,7 @@ export const BlogArticle = ({ data, location }) => {
                   {data.post.childMarkdownRemark.timeToRead} minute read
                   <br />
                   <span>
-                    By{" "}
+                    By&nbsp;
                     <b>
                       {RenderAuthors(
                         data.post.childMarkdownRemark.frontmatter.authors,
@@ -86,7 +86,7 @@ export const BlogArticle = ({ data, location }) => {
                   }}
                 />
                 <span>
-                  Written by{" "}
+                  Written by&nbsp;
                   <b>
                     {RenderAuthors(
                       data.post.childMarkdownRemark.frontmatter.authors,

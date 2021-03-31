@@ -144,15 +144,9 @@ export const XNavbar = props => {
                     </Nav.Link>
                     <NavDropdown title="SIGs">
                       {sigdetails.nodes.map((element, index) => (
-                        // <li key={index}>
-                        //   <Link
-                        //     className="nav-link pl-2 dropdown-item"
-                        //     to={"/sigs/" + element.name.toLowerCase()}
-                        //   >
-                        //     {element.name}
-                        //   </Link>
                         <NavDropdown.Item
                           className="nav-link"
+                          key={index}
                           href={"/sigs/" + element.name.toLowerCase()}
                         >
                           {element.name}

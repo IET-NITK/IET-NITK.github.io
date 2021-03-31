@@ -21,7 +21,7 @@ export const Project = props => {
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: current.html }} />
                 <span>
-                  Written by{" "}
+                  Written by&nbsp;
                   <b>
                     {RenderAuthors(current.frontmatter.authors, "")}
                     <br />
