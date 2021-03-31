@@ -31,9 +31,10 @@ jobs:
     if: github.ref=='refs/heads/daddy'
     steps:
       - name: Download hello world file
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v1
         with:
           name: public
+          path: public
       - name: Set up git
         run: |
           git config --global user.email "iet@nitk.edu.in"
@@ -43,5 +44,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: public
           cname: iet.nitk.ac.in
