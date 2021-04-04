@@ -8,7 +8,7 @@ module.exports = {
     contactDetails: [
       {
         name: "Skanda Upadhyay",
-        number: "999999999",
+        number: "9481141528",
       },
     ],
     contactEmail: "iet@nitk.edu.in",

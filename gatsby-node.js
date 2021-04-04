@@ -113,7 +113,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         // eslint-disable-next-line
         createPage({
           path: "events/" + lcrs(element.relativeDirectory),
-          component: eventsTemplate,
+          component: templateHash.events,
           context: {
             pathSlug: element.relativeDirectory,
           },
