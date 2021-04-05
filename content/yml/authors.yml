@@ -6,6 +6,128 @@
     github: null
     linkedin: null
     facebook: null
+- name: Abhishek Kamal
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Amogh Kumar P S
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Bhargav S S
+  alumni: true
+  passoutYr: 
+  position: Convenor (2019)
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Deepnika Jain
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Desaboina Teja Srinivasa Karthik
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Guntupalli Gayathri
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Nayan Sivakumar Nair
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Nidhi R
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Prajval Murali
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Rajeev
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Rohan Katkam
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Shreeharsha Raveendra
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Sujayendra Kulkarni
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Talluri Angel Supriya
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+- name: Vemuri VSSS Lalitha Padmini
+  alumni: true
+  passoutYr: 2020
+  social:
+    email: null
+    github: null
+    linkedin: null
+    facebook: null
+
 - name: M Naveen Kumar
   position: Cipher Lead (2019)
   image: null
@@ -353,7 +475,7 @@
     github: Mihir3101
     linkedin: mihirpm
     facebook: mihir.maheshwari.3720
-- name: Makarand
+- name: Makarand Ingavale
   alumni: true
   social:
     email: null
@@ -651,6 +773,7 @@
     facebook: yashwanth195
 - name: Vichitr Gandas
   alumni: true
+  passoutYr: 2020
   social:
     email: null
     github: null
