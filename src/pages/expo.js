@@ -83,7 +83,7 @@ export const postQuery = graphql`
         }
       }
     }
-    projects: allProjectsYaml(
+    projects: allProjects(
       filter: { builtBy: {}, label: { eq: "Expo 2021" } }
       sort: { fields: title, order: ASC }
     ) {

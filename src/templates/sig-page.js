@@ -92,7 +92,7 @@ export const postQuery = graphql`
         }
       }
     }
-    sig_projects: allProjectsYaml(
+    sig_projects: allProjects(
       filter: { sig: { eq: $pathSlug } }
       sort: { fields: builtBy }
     ) {

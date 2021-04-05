@@ -134,7 +134,7 @@ export const Project = ({ data, pathname, pageContext }) => {
 
 export const postQuery = graphql`
   query($pathSlug: String!, $sig: String) {
-    projectsYaml(title: { eq: $pathSlug }) {
+    projectsYaml: projects(title: { eq: $pathSlug }) {
       sig
       title
       year

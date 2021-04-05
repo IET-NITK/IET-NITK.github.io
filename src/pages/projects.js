@@ -74,7 +74,7 @@ const Projects = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
-    projects: allProjectsYaml(
+    projects: allProjects(
       filter: { builtBy: {} }
       sort: { fields: builtBy }
     ) {

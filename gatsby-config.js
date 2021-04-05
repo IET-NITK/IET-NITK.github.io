@@ -94,33 +94,7 @@ module.exports = {
         trackingId: `UA-187907527-1`,
       },
     },
-
-    // `gatsby-plugin-feed`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Gatsby Starter Blog`,
-    //     short_name: `GatsbyJS`,
-    //     start_url: `/`,
-    //     background_color: `#ffffff`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     icon: `content/assets/gatsby-icon.png`,
-    //   },
-    // },
     `gatsby-plugin-sass`,
-    // { 
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     printRejected: true, // Print removed selectors and processed file names
-    //     // develop: true, // Enable while using `gatsby develop`
-    //     // tailwind: true, // Enable tailwindcss support
-    //     // whitelist: ['whitelist'], // Don't remove this selector
-    //     // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-    //     // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-    //   }
-    // },
-    // Dropdowns on XNavbar dont work because of this
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
@@ -128,6 +102,20 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-firestore-easy`,
+      options: {
+        adminCredential: {
+          credential: require('./credentials.json'), //See details for this option
+          databaseURL: 'https://ietnitk-web-default-rtdb.firebaseio.com',
+        },
+        collections: [
+            'members',
+            'projects',
+            'smp'
+        ]
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

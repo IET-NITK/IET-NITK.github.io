@@ -20,12 +20,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   try {
     graphql(`
       query {
-        members: allAuthorsYaml {
+        members:   allMembers {
           nodes {
             link: name
           }
         }
-        projects: allProjectsYaml(filter: { url: { ne: null } }) {
+        projects: allProjects(filter: { url: { ne: null } }) {
           nodes {
             link: title
             sig

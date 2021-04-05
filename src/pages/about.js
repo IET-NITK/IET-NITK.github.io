@@ -185,7 +185,7 @@ export default About
 
 export const postQuery = graphql`
   {
-    members: allAuthorsYaml {
+    members: allMembers {
       nodes {
         alumni
         passoutYr

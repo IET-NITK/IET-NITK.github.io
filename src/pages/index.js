@@ -406,7 +406,7 @@ export const postQuery = graphql`
         srcWebp
       }
     }
-    projects: allProjectsYaml(filter: { builtBy: { ne: null } }) {
+    projects: allProjects(filter: { builtBy: { ne: null } }) {
       nodes {
         title
         builtBy

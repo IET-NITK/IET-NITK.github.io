@@ -210,7 +210,7 @@ export const Author = ({ data, location }) => {
 
 export const postQuery = graphql`
   query($pathSlug: [String]) {
-    member_details: authorsYaml(name: { in: $pathSlug }) {
+    member_details: members(name: { in: $pathSlug }) {
       name
       position
       passoutYr
@@ -221,7 +221,7 @@ export const postQuery = graphql`
         facebook
       }
     }
-    member_projects: allProjectsYaml(
+    member_projects: allProjects(
       filter: { builtBy: { in: $pathSlug } }
       sort: { fields: title }
     ) {
