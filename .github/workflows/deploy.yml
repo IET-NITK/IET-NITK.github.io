@@ -18,7 +18,10 @@ jobs:
       - name: Install NPM Packages
         run: npm install
       - name: Get secrets
-        run: echo "$BACKEND_TOKEN" > credentials.json
+        shell: bash
+        env:
+          BACKEND_TOKEN: ${{ secrets.BACKEND_TOKEN }}
+        run: echo $BACKEND_TOKEN > credentials.json
       - name: Build script
         run: npm run build
       - name: Pass on build directory
