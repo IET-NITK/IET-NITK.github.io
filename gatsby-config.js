@@ -4,7 +4,7 @@ module.exports = {
     title: `IET NITK`,
     author: `Nirmal Khedkar`,
     description: `To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society. We are IET NITK.`,
-    noticeBoard: [""],
+    noticeBoard: ["Registrations for PATN Open! Click **[here](/events/patn)** to know more and **[here](https://bit.ly/3u7IufJ)** to register!"],
     contactDetails: [
       {
         name: "Skanda Upadhyay",

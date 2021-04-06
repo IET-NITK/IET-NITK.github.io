@@ -3,55 +3,59 @@ import React from "react"
 import Marquee from "react-simple-marquee"
 import { graphql } from "gatsby"
 import { Navbar, Nav, NavDropdown } from "react-bootstrap"
+import ReactMarkdown from "react-markdown"
+
+const RenderMarquee = ({ notice }) => {
+  if (notice.length===1 && notice[0] === "") {
+    return (
+      <>
+        <i className="fa fa-pin" />
+        NITK Surathkal, Srinivasanagar, Karnataka
+      </>
+    )
+  }
+  console.log(notice.join(" ".repeat(30 + 20 * notice.length)))
+  return (
+    <div className="alert alert-warning m-0" style={{fontSize:'70%'}}>
+      <Marquee
+      speed={1}
+      id="message"
+      >
+        <ReactMarkdown className="mb-n4">{notice.join(" ".repeat(30 + 20 * notice.length))}</ReactMarkdown>
+      </Marquee>
+    </div>
+  )
+}
 
 const TopNavbar = ({ notice, permissions }) => {
   //eslint-disable-next-line
-  const RenderMarquee = ({ notice }) => {
-    if (notice.length === 1 && notice[0] === "") {
-      return (
-        <>
-          <i className="fa fa-pin" />
-          NITK Surathkal, Srinivasanagar, Karnataka
-        </>
-      )
-    }
-    return (
-      <div className="alert alert-warning m-0">
-        <Marquee
-          speed={1} // Speed of the marquee (Optional)
-        >
-          <div
-            dangerouslySetInnerHTML={{
-              __html:
-                notice && notice.join(" ".repeat(30 + 20 * notice.length)),
-            }}
-          />
-        </Marquee>
-      </div>
-    )
-  }
+
   return (
     <div id="topContent">
       <div className="py-2 bg-light">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-8 d-none d-lg-block">
-              {/* <RenderMarquee notice={notice} /> */}
+            <div className="col-lg-9 col-md-7 col-sm-12">
+              <RenderMarquee notice={notice} />
             </div>
-            <div className="col-lg-4 d-lg-block text-right">
+            <div className="col-lg-3 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link
                 to="/recruitment"
                 role="button"
-                className={`btn btn-outline-primary btn-sm mr-3 ${permissions.join.allow!==true ? 'disabled':''}`}
+                className={`btn btn-outline-primary btn-sm mr-3 ${
+                  permissions.join.allow !== true ? "disabled" : ""
+                }`}
               >
                 Join IET NITK
               </Link>
- 
+
               {permissions.expo.allow !== true ? (
                 <Link
                   to="/smp"
                   role="button"
-                  className={`btn btn-primary btn-sm mr-3 ${permissions.smp.allow!==true ? 'disabled':''}`}
+                  className={`btn btn-primary btn-sm mr-3 ${
+                    permissions.smp.allow !== true ? "disabled" : ""
+                  }`}
                 >
                   SMP {new Date().getFullYear()}
                 </Link>

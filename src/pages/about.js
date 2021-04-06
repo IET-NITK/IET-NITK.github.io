@@ -205,7 +205,7 @@ export default About
 
 export const postQuery = graphql`
   {
-    members: allMembers {
+    members: allMembers(sort: {fields: rank}) {
       nodes {
         alumni
         passoutYr

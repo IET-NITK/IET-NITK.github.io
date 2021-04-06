@@ -189,6 +189,10 @@ a {
   outline: none;
 }
 
+#message p {
+  margin-bottom: 0px!important;
+}
+
 .bg-green {
   background-color: #004225 !important;
 }
