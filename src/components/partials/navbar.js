@@ -1,12 +1,12 @@
 import { Link, StaticQuery } from "gatsby"
 import React from "react"
-import Marquee from "react-simple-marquee"
+
 import { graphql } from "gatsby"
 import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 import ReactMarkdown from "react-markdown"
-
+import Ticker from "react-ticker"
 const RenderMarquee = ({ notice }) => {
-  if (notice.length===1 && notice[0] === "") {
+  if (notice.length === 1 && notice[0] === "") {
     return (
       <>
         <i className="fa fa-pin" />
@@ -14,15 +14,16 @@ const RenderMarquee = ({ notice }) => {
       </>
     )
   }
-  console.log(notice.join(" ".repeat(30 + 20 * notice.length)))
+  
   return (
-    <div className="alert alert-warning m-0" style={{fontSize:'70%'}}>
-      <Marquee
-      speed={1}
-      id="message"
-      >
-        <ReactMarkdown className="mb-n4">{notice.join(" ".repeat(30 + 20 * notice.length))}</ReactMarkdown>
-      </Marquee>
+    <div className="alert alert-warning m-0" style={{ fontSize: "70%" }}>
+      <Ticker mode="await" speed={5} id="message">
+        {({ index }) => (
+          <ReactMarkdown className="mb-n3">
+            {notice[0]}
+          </ReactMarkdown>
+        )}
+      </Ticker>
     </div>
   )
 }
