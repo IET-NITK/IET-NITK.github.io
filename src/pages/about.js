@@ -16,15 +16,13 @@ const KEY_EXEC_MEMBERS = "Executive Members 2021"
 const KEY_CURR_CORE = "Core 2021"
 
 const MemberDetails = ({ author, index }) => {
-  let isntExecMember = author.position !== "Executive Member"
-  let isntAlumni = author.alumni !== true
-  let color_bg =
-    isntExecMember && isntAlumni
+  let color_bg = author.position !== "Executive Member" && author.alumni !== true
       ? "bg-gradient-primary"
-      : isntAlumni
+      : author.alumni !== true
       ? ""
       : "bg-gradient-alumni"
-  let color_text = isntExecMember ? "text-light" : ""
+  let color_text = author.position !== "Executive Member" || author.alumni === true ? "text-light" : ""
+  console.log(author.name,`is`,author.alumni===true?'an alumni and':'current member and',author.position,author.passoutYr)
   return (
     <div
       to={`/members/${author.name.toLowerCase().split(" ").join("")}`}

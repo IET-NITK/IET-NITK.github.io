@@ -1,7 +1,7 @@
 ﻿---
 title: All About Flying Cars
 authors: ['M Poojitha']
-image: cp.jpg
+image: jetsons.jpeg
 displayOnBlog: false
 date: "2021-03-09"
 ---

@@ -23,9 +23,16 @@ export const Blog = ({ data, location }) => {
                 max={5}
                 list={data.allFile.nodes}
                 item={(element, inx) => {
-                  let image = element.childMarkdownRemark.frontmatter.image
-                  image = image && image.childImageSharp.fixed.srcWebp
-                  image = image || data.ietlogo.fixed.srcWebp
+                  let imagelink = element.childMarkdownRemark.frontmatter.image
+                  if(imagelink){
+                    if(imagelink.childImageSharp){
+                      imagelink= imagelink.childImageSharp.fixed.srcWebp
+                    } else {
+                      imagelink= imagelink.publicURL
+                    }
+                  } else {
+                    imagelink = data.ietlogo.fixed.srcWebp
+                  }
                   return (
                     <div key={inx} className="clean-blog-post">
                       <div className="row">
@@ -33,7 +40,7 @@ export const Blog = ({ data, location }) => {
                           <img
                             alt={element.childMarkdownRemark.frontmatter.title}
                             className="rounded img-fluid"
-                            src={image}
+                            src={imagelink}
                             style={{ width: "100%", height: "auto" }}
                           />
                         </div>
@@ -100,6 +107,7 @@ export const postQuery = graphql`
             authors
             title
             image {
+              publicURL
               childImageSharp {
                 fixed {
                   srcWebp

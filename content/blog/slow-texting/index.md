@@ -2,6 +2,7 @@
 displayOnBlog: false
 title: The Art of Slow Texting
 authors: ['Madhan Kumar']
+image: sidthesloth.gif
 date: "2021-02-28"
 ---
 

@@ -162,27 +162,33 @@ const MainPage = ({ location, data }) => {
                   >
                     Latest Articles
                   </h2>
-                  <p className="text-center">We love to write!</p>
+                  <p className="text-center">We love to write! Check out more of our stuff on <Link to="/blog">the IET Blog</Link></p>
                 </div>
-                <div className="row articles" style={{ paddingTop: "2em" }}>
+                <div className="row" style={{ paddingTop: "2em" }}>
                   {data.blog.nodes.map((element, index) => {
-                    let image = element.childMarkdownRemark.frontmatter.image
-                    image = image && image.childImageSharp.fixed.srcWebp
-                    image = image || data.ietlogo.fixed.srcWebp
+                    let imagelink = element.childMarkdownRemark.frontmatter.image
+                    if(imagelink){
+                      if(imagelink.childImageSharp){
+                        imagelink= imagelink.childImageSharp.fixed.srcWebp
+                      } else {
+                        imagelink= imagelink.publicURL
+                      }
+                    } else {
+                      imagelink = data.ietlogo.fixed.srcWebp
+                    }
                     return (
-                      <div key={index} className="col-sm-6 col-md-4 item">
+                      <div key={index} className="col-sm-6 col-md-4 item h-100">
                         <div className="card">
                           <img
                             alt={element.childMarkdownRemark.frontmatter.title}
                             className="card-img-top w-100 d-block"
-                            src={image}
+                            src={imagelink}
                           />
                           <div className="card-body">
                             <h4 className="card-title">
                               {element.childMarkdownRemark.frontmatter.title}
                             </h4>
                             <h6 className="text-muted card-subtitle mb-2">
-                              {/* {"by "+element.childMarkdownRemark.frontmatter.author} */}
                               By&nbsp;
                               {RenderAuthors(
                                 element.childMarkdownRemark.frontmatter.authors,
@@ -270,7 +276,7 @@ const MainPage = ({ location, data }) => {
             </div>
           </div>
         </section>
-        {data.events.nodes.length > 1 ? (
+        {data.events.nodes.length > 3 ? (
           <section className="clean-block about-us">
             <div className="container">
               <div className="article-list">
@@ -350,6 +356,7 @@ export const postQuery = graphql`
             authors
             title
             image {
+              publicURL
               childImageSharp {
                 fixed {
                   srcWebp

@@ -5,13 +5,14 @@ import { graphql } from "gatsby"
 import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 import ReactMarkdown from "react-markdown"
 import Ticker from "react-ticker"
+
 const RenderMarquee = ({ notice }) => {
   if (notice.length === 1 && notice[0] === "") {
     return (
-      <>
-        <i className="fa fa-pin" />
-        NITK Surathkal, Srinivasanagar, Karnataka
-      </>
+      <small className="text-muted">
+        <i className="fa fa-map-marker mr-2" />
+        Srinivasnagar, Surathkal, Mangalore, Karnataka 575025
+      </small>
     )
   }
   
