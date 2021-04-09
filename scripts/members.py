@@ -44,7 +44,8 @@ with open('members.json') as data_file:
 
 def find(objl, condition, variable):
     for i in range(len(objl)):
-        if(objl[i][condition] == variable):
+        if(objl[i][condition] == variable.title()):
+            print("Found",variable)
             return i
     print("New entry", variable)
     return None
