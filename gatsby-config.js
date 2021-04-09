@@ -4,7 +4,9 @@ module.exports = {
     title: `IET NITK`,
     author: `Nirmal Khedkar`,
     description: `To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society. We are IET NITK.`,
-    noticeBoard: ["Registrations for PATN Open! Click **[here](/events/patn)** to know more and **[here](https://bit.ly/3u7IufJ)** to register!"],
+    noticeBoard: [
+      "Registrations for PATN Open! Click **[here](/events/patn)** to know more and **[here](https://bit.ly/3u7IufJ)** to register!",
+    ],
     contactDetails: [
       {
         name: "Skanda Upadhyay",
@@ -22,8 +24,8 @@ module.exports = {
       link: "",
     },
     expo: {
-      allow: false
-    }
+      allow: false,
+    },
   },
 
   plugins: [
@@ -106,14 +108,23 @@ module.exports = {
       resolve: `gatsby-source-firestore-easy`,
       options: {
         adminCredential: {
-          credential: require('./credentials.json'), //See details for this option
-          databaseURL: 'https://ietnitk-web-default-rtdb.firebaseio.com',
+          credential: require("./credentials.json"), //See details for this option
+          databaseURL: "https://ietnitk-web-default-rtdb.firebaseio.com",
         },
-        collections: [
-            'members',
-            'projects',
-            'smp'
-        ]
+        collections: ["members", "projects", "smp"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true, // Print removed selectors and processed file names
+        develop: true, // Enable while using `gatsby develop`
+        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+        purgeCSSOptions: {
+          // https://purgecss.com/configuration.html#options
+          // safelist: ['safelist'], // Don't remove this selector
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
