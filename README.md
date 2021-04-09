@@ -1,5 +1,5 @@
 # IET NITK's Official Website Repository
-
+[![](https://github.com/IET-NITK/IET-NITK.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/IET-NITK/IET-NITK.github.io/actions/workflows/deploy.yml)
 ## Contributing Guidelines
 
 The content on the website can be divided into 4:
