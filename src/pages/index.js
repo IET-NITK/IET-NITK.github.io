@@ -162,16 +162,20 @@ const MainPage = ({ location, data }) => {
                   >
                     Latest Articles
                   </h2>
-                  <p className="text-center">We love to write! Check out more of our stuff on <Link to="/blog">the IET Blog</Link></p>
+                  <p className="text-center">
+                    We love to write! Check out more of our stuff on{" "}
+                    <Link to="/blog">the IET Blog</Link>
+                  </p>
                 </div>
                 <div className="row" style={{ paddingTop: "2em" }}>
                   {data.blog.nodes.map((element, index) => {
-                    let imagelink = element.childMarkdownRemark.frontmatter.image
-                    if(imagelink){
-                      if(imagelink.childImageSharp){
-                        imagelink= imagelink.childImageSharp.fixed.srcWebp
+                    let imagelink =
+                      element.childMarkdownRemark.frontmatter.image
+                    if (imagelink) {
+                      if (imagelink.childImageSharp) {
+                        imagelink = imagelink.childImageSharp.fixed.srcWebp
                       } else {
-                        imagelink= imagelink.publicURL
+                        imagelink = imagelink.publicURL
                       }
                     } else {
                       imagelink = data.ietlogo.fixed.srcWebp
@@ -193,7 +197,8 @@ const MainPage = ({ location, data }) => {
                               {RenderAuthors(
                                 element.childMarkdownRemark.frontmatter.authors,
                                 ""
-                              )}&nbsp;
+                              )}
+                              &nbsp;
                               <br />
                               {element.childMarkdownRemark.frontmatter.date}
                             </h6>
@@ -231,7 +236,8 @@ const MainPage = ({ location, data }) => {
                     Our Projects
                   </h2>
                   <p className="text-center">
-                    Find more <Link to="/projects">here</Link>
+                    We love doing our projects! Find more{" "}
+                    <Link to="/projects">here</Link>
                   </p>
                 </div>
                 <div className="articles row" style={{ paddingTop: "2em" }}>
@@ -240,15 +246,22 @@ const MainPage = ({ location, data }) => {
                       <div className="card h-100">
                         <div className="card-body">
                           <h6 className="card-title">
-                            {element.url ? <Link
-                              to={
-                                "/projects/" +
-                                element.title.toLowerCase().split(" ").join("")
-                              }
-                              className="card-link text-capitalize"
-                            >
-                              {element.title}
-                            </Link>: element.title}
+                            {element.url ? (
+                              <Link
+                                to={
+                                  "/projects/" +
+                                  element.title
+                                    .toLowerCase()
+                                    .split(" ")
+                                    .join("")
+                                }
+                                className="card-link text-capitalize"
+                              >
+                                {element.title}
+                              </Link>
+                            ) : (
+                              element.title
+                            )}
                           </h6>
                           {element.sig ? (
                             <Link
@@ -276,67 +289,66 @@ const MainPage = ({ location, data }) => {
             </div>
           </div>
         </section>
-        {data.events.nodes.length > 3 ? (
-          <section className="clean-block about-us">
-            <div className="container">
-              <div className="article-list">
-                <div className="container">
-                  <div className="articles row" style={{ paddingTop: "2em" }}>
-                    <div className="col-lg-6 col-md-6 mt-4">
-                      <div className="intro">
-                        <h2
-                          className="text-primary text-center"
-                          style={{ fontWeight: "500", paddingBottom: "-1em" }}
-                        >
-                          Our Events
-                        </h2>
-                        <p className="text-center">
-                          Find more <Link to="/events">here</Link>
+        <section className="clean-block about-us">
+          <div className="container">
+            <div className="article-list">
+              <div className="container">
+                <div className="articles row" style={{ paddingTop: "2em" }}>
+                  <div className="col-lg-6 col-md-6 mt-4">
+                    <div className="intro">
+                      <h2
+                        className="text-primary text-center"
+                        style={{ fontWeight: "500", paddingBottom: "-1em" }}
+                      >
+                        Our Events
+                      </h2>
+                      <p className="text-center">
+                        Our latest event was{" "}
+                        {
+                          data.events.nodes[0].childMarkdownRemark.frontmatter
+                            .title
+                        }
+                        , but we conduct many events throughout the year. Find
+                        more <Link to="/events">here</Link>
+                      </p>
+                    </div>
+                  </div>
+                  {/* {data.events.nodes.map((element, index) => ( */}
+                  <div className="col-lg-6 col-md-6 mt-4">
+                    <div className="card h-100">
+                      <div className="card-body">
+                        <h6 className="card-title">
+                          <Link
+                            to={
+                              "/events/" +
+                              data.events.nodes[0].relativeDirectory
+                            }
+                            className="card-link text-capitalize"
+                          >
+                            {
+                              data.events.nodes[0].childMarkdownRemark
+                                .frontmatter.title
+                            }
+                          </Link>
+                        </h6>
+                        <div className="text-muted card-subtitle">
+                          {
+                            data.events.nodes[0].childMarkdownRemark.frontmatter
+                              .date
+                          }
+                        </div>
+                        <p className="card-text">
+                          {data.events.nodes[0].childMarkdownRemark.excerpt}
                         </p>
                       </div>
                     </div>
-                    {data.events.nodes.map((element, index) => (
-                      <div key={index} className="col-lg-6 col-md-6 mt-4">
-                        <div className="card h-100">
-                          <div className="card-body">
-                            <h6 className="card-title">
-                              <Link
-                                to={
-                                  "/events/" +
-                                  element.title
-                                    .toLowerCase()
-                                    .split(" ")
-                                    .join("")
-                                }
-                                className="card-link text-capitalize"
-                              >
-                                {element.title}
-                              </Link>
-                            </h6>
-                            <Link
-                              to={
-                                "/sigs/" +
-                                element.sig.toLowerCase().split(" ").join("")
-                              }
-                            >
-                              <small className="text-uppercase text-muted card-subtitle mb-2">
-                                {element.sig}
-                              </small>
-                            </Link>
-                            <p className="card-text">
-                              Built by
-                              {RenderAuthors(element.builtBy || [], "")}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
                   </div>
+                  {/* ))} */}
                 </div>
               </div>
             </div>
-          </section>
-        ) : null}
+          </div>
+        </section>
       </main>
     </Layout>
   )
@@ -377,17 +389,10 @@ export const postQuery = graphql`
         relativeDirectory
         childMarkdownRemark {
           frontmatter {
-            authors
             title
-            image {
-              childImageSharp {
-                fixed {
-                  srcWebp
-                }
-              }
-            }
             date(formatString: "MMMM Do, YYYY")
           }
+          excerpt
         }
       }
     }
