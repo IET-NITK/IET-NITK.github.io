@@ -2,12 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 
 const NotFoundPage = ({ data, location }) => {
   return (
     <Layout location={location.pathname}>
-      <SEO title="404" />
+      <SearchEngineOps title="404" />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">

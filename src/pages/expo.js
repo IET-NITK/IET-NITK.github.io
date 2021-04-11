@@ -3,7 +3,7 @@ import React, { useEffect } from "react"
 import { RenderAuthors } from "../components/helper"
 import Layout from "../components/layout"
 import PaginationComponent from "../components/partials/pagination"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 
 const Expo = ({ data, location }) => {
   useEffect(() => {
@@ -13,7 +13,7 @@ const Expo = ({ data, location }) => {
   })
   return (
     <Layout location={location.pathname} title={"Main"}>
-      <SEO title="Expo 2021" />
+      <SearchEngineOps title="Expo 2021" />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">

@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { graphql, Link } from "gatsby"
 import { Disqus } from "gatsby-plugin-disqus"
 import { RenderAuthors } from "../components/helper"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 import { ShareButtons } from "../components/partials/social"
 
 const PreviewOther = ({ post, isPrevious }) => {
@@ -32,10 +32,10 @@ const PreviewOther = ({ post, isPrevious }) => {
   else return null
 }
 
-export const BlogArticle = ({ data, location }) => {
+const BlogArticle = ({ data, location }) => {
   return (
     <Layout>
-      <SEO title={data.post.childMarkdownRemark.frontmatter.title} />
+      <SearchEngineOps title={data.post.childMarkdownRemark.frontmatter.title} />
       <main className="page blog-post">
         <section className="clean-block clean-post dark">
           <div className="container">

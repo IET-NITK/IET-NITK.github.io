@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 
-export const BlogArticle = ({ data }) => {
+const BlogArticle = ({ data }) => {
   return (
     <Layout>
-      <SEO
+      <SearchEngineOps
         title={data.file && data.file.childMarkdownRemark.frontmatter.title}
       />
       <main className="page blog-post">

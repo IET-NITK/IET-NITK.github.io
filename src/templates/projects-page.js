@@ -1,13 +1,13 @@
 import { Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 import { graphql } from "gatsby"
 
-export const Project = ({ data, pathname, pageContext }) => {
+const Project = ({ data, pathname, pageContext }) => {
   return (
     <Layout location={pathname && pathname.location}>
-      <SEO title={data.projectsYaml.title + " @" + data.projectsYaml.sig} />
+      <SearchEngineOps title={data.projectsYaml.title + " @" + data.projectsYaml.sig} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">

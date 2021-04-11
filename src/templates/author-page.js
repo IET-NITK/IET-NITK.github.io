@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 import { graphql, Link } from "gatsby"
 import { RenderAuthors } from "../components/helper"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
@@ -81,7 +81,7 @@ const RenderProject = ({
   )
 }
 
-export const Author = ({ data, location }) => {
+const Author = ({ data, location }) => {
   const {
     member_details,
     member_projects,
@@ -91,7 +91,7 @@ export const Author = ({ data, location }) => {
 
   return (
     <Layout location={location.pathname}>
-      <SEO title={"About " + member_details.name} />
+      <SearchEngineOps title={"About " + member_details.name} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container-fluid">

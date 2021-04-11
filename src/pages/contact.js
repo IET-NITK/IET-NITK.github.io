@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 import { graphql } from "gatsby"
 
 class Contact extends React.Component {
@@ -17,7 +17,7 @@ class Contact extends React.Component {
   render() {
     return (
       <Layout location={this.props.location.pathname} title={"Main"}>
-        <SEO title="Contact Us" />
+        <SearchEngineOps title="Contact Us" />
         <main className="page">
           <section className="clean-block about-us">
             <form

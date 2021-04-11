@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { SIGShowcase } from "./index"
+import SearchEngineOps from "../components/seo"
 import { graphql, navigate } from "gatsby"
+import { SIGShowcase } from "../components/SIGShowcase"
 
 const Recruitments = ({ location, data }) => {
   const {sigdata, rec_questions, siglogo}= data;
@@ -13,7 +13,7 @@ const Recruitments = ({ location, data }) => {
   })
   return (
     <Layout location={location.pathname}>
-      <SEO title="Join Us!" />
+      <SearchEngineOps title="Join Us!" />
       <main className="page faq-page">
         <section className="clean-block about-us">
           <div className="container">

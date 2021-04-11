@@ -2,12 +2,12 @@ import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import PaginationComponent from "../components/partials/pagination"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 
 const Events = ({ data, location }) => {
   return (
     <Layout location={location.pathname} title={"Main"}>
-      <SEO title="Events" />
+      <SearchEngineOps title="Events" />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">

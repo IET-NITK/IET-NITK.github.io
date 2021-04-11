@@ -1,17 +1,17 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { RenderAuthors } from "../components/helper"
 import PaginationComponent from "../components/partials/pagination"
 
-export const SIG = ({ pageContext, pathname, data }) => {
+const SIG = ({ pageContext, pathname, data }) => {
   const { sig_details, sig_logo, sig_projects } = data
 
   return (
     <Layout location={pathname && pathname.location}>
-      <SEO title={sig_details.name} />
+      <SearchEngineOps title={sig_details.name} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">

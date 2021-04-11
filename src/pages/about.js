@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import Img_Beach from "../assets/img/beach.jpg"
@@ -99,7 +99,7 @@ const MemberDetails = ({ author, index }) => {
   )
 }
 
-export const About = ({ location, data }) => {
+const About = ({ location, data }) => {
   const [category, setCategory] = useState(KEY_CURR_CORE)
   let members_hsx = {
     [KEY_CURR_CORE]: data.members.nodes.filter(
@@ -116,7 +116,7 @@ export const About = ({ location, data }) => {
   )
   return (
     <Layout location={location.pathname} title={"About Us"}>
-      <SEO title="About Us" />
+      <SearchEngineOps title="About Us" />
       <main className="page">
         <section className="clean-block about-us">
           <div className="container" style={{ marginTop: "5em" }}>

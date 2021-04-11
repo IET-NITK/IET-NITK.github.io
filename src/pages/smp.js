@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SearchEngineOps from "../components/seo"
 import { RenderAuthors, generateSIGHash } from "../components/helper"
 import { Link } from "gatsby"
 import { graphql,navigate } from "gatsby"
@@ -17,7 +17,7 @@ const SMP = ({ data, location }) => {
   })
   return (
     <Layout location={location.pathname}>
-      <SEO title={"SMP " + new Date().getFullYear()} />
+      <SearchEngineOps title={"SMP " + new Date().getFullYear()} />
       <main className="page">
         <section className="clean-block about-us">
           <div className="container">
