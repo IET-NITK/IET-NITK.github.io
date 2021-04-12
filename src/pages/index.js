@@ -104,7 +104,6 @@ const MainPage = ({ location, data }) => {
             </div>
             <SIGShowcase
               sigs={data.sigdetails.nodes}
-              sig_images={data && data.sig.nodes}
             />
           </div>
         </section>
@@ -354,21 +353,18 @@ export const postQuery = graphql`
         }
       }
     }
-    sig: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
+    sigdetails: allStrapiSigs(sort: {order: ASC, fields: no_link}) {
       nodes {
         name
-        childImageSharp {
-          fixed {
-            srcWebp
+        description
+        no_link
+        logo {
+          childImageSharp {
+            fixed {
+              srcWebp
+            }
           }
         }
-      }
-    }
-    sigdetails: allSigYaml(sort: { fields: no_link }) {
-      nodes {
-        name
-        no_link
-        description
       }
     }
     ietlogo: imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {

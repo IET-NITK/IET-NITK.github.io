@@ -7,8 +7,7 @@ import { RenderAuthors } from "../components/helper"
 import PaginationComponent from "../components/partials/pagination"
 
 const SIG = ({ pageContext, pathname, data }) => {
-  const { sig_details, sig_logo, sig_projects } = data
-
+  const { sig_details, sig_projects } = data
   return (
     <Layout location={pathname && pathname.location}>
       <SearchEngineOps title={sig_details.name} />
@@ -18,7 +17,7 @@ const SIG = ({ pageContext, pathname, data }) => {
             <div className="block-heading">
               <Link to={"/sigs/" + sig_details.name.toLowerCase()}>
                 <img
-                  src={sig_logo.childImageSharp.fixed.srcWebp}
+                  src={sig_details.logo.childImageSharp.fixed.srcWebp}
                   alt={sig_details.name}
                   className="sig-logo"
                   style={{ maxWidth: "200px" }}
@@ -104,9 +103,16 @@ export const postQuery = graphql`
         description
       }
     }
-    sig_details: sigYaml(name: { eq: $pathSlug }) {
+    sig_details: strapiSigs(name: { eq: $pathSlug }) {
       name
       description
+      logo {
+        childImageSharp {
+          fixed {
+            srcWebp
+          }
+        }
+      }
     }
   }
 `

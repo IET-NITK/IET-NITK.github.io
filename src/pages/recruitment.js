@@ -5,9 +5,9 @@ import { graphql, navigate } from "gatsby"
 import { SIGShowcase } from "../components/SIGShowcase"
 
 const Recruitments = ({ location, data }) => {
-  const {sigdata, rec_questions, siglogo}= data;
-  useEffect(()=>{
-    if(data.site_data.siteMetadata.join.allow!==true){
+  const { sigdata, rec_questions } = data
+  useEffect(() => {
+    if (data.site_data.siteMetadata.join.allow !== true) {
       navigate("/")
     }
   })
@@ -26,8 +26,7 @@ const Recruitments = ({ location, data }) => {
             </div>
             <SIGShowcase
               sigs={sigdata.nodes}
-              hide_link={false}
-              sig_images={siglogo.nodes}
+              hide_link={true}
             />
           </div>
         </section>
@@ -77,20 +76,18 @@ const Recruitments = ({ location, data }) => {
 
 export const postQuery = graphql`
   {
-    siglogo: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
-      nodes {
-        name
-        childImageSharp {
-          fixed {
-            srcWebp
-          }
-        }
-      }
-    }
-    sigdata: allSigYaml(sort: { fields: no_link }) {
+    sigdata: allStrapiSigs(sort: {order: ASC, fields: no_link}) {
       nodes {
         name
         description
+        no_link
+        logo {
+          childImageSharp {
+            fixed {
+              srcWebp
+            }
+          }
+        }
       }
     }
     site_data: site {

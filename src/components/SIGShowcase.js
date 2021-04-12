@@ -1,10 +1,10 @@
-import { generateSIGHash } from "../components/helper"
+
 import React from "react"
 import { Link } from "gatsby"
 
-export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
-    let img_hash = generateSIGHash(sig_images)
-    return (
+export const SIGShowcase = ({ sigs, hide_link }) => {
+    
+  return (
       <>
         <div className="row justify-content-center">
           {sigs.map((s, i) => (
@@ -17,7 +17,7 @@ export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
                 <div style={{ width: "100%" }}>
                   <img
                     alt=""
-                    src={img_hash[`${s.name}`]}
+                    src={s.logo.childImageSharp.fixed.srcWebp}
                     style={{
                       width: "150px",
                       height: "auto!important",
@@ -28,7 +28,7 @@ export const SIGShowcase = ({ sigs, sig_images, hide_link }) => {
                   />
                 </div>
                 <p>{s.description}</p>
-                {s.no_link === false && hide_link !== false ? (
+                {s.no_link === false && hide_link !== true ? (
                   <>
                     <Link
                       to={`sigs/${s.name.toLowerCase()}`}

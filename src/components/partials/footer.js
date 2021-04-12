@@ -13,7 +13,7 @@ export const Footer = props => {
               description
             }
           }
-          allSigYaml(sort: { fields: no_link }) {
+          sigs: allStrapiSigs(sort: {order: ASC, fields: no_link}) {
             nodes {
               name
               no_link
@@ -21,7 +21,7 @@ export const Footer = props => {
           }
         }
       `}
-      render={({ site, allSigYaml }) => (
+      render={({ site, sigs }) => (
         <div
           className="footer-dark"
           style={{
@@ -62,7 +62,7 @@ export const Footer = props => {
                 <div className="col-sm-6 col-md-3 item">
                   <h3>Special Interest Groups</h3>
                   <ul>
-                    {allSigYaml.nodes.map((e, i) => (
+                    {sigs.nodes.map((e, i) => (
                       <li key={i}>
                         {e.no_link === true ? (
                           e.name

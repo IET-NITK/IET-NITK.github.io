@@ -83,7 +83,7 @@ export const XNavbar = props => {
       <StaticQuery
         query={graphql`
           query {
-            sigdetails: allSigYaml(filter: { no_link: { ne: true } }) {
+            sigdetails:   allStrapiSigs(filter: {no_link: {ne: true}}) {
               nodes {
                 name
               }
