@@ -31,7 +31,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             sig
           }
         }
-        sigs:   allStrapiSigs(filter: {no_link: {ne: true}}) {
+        sigs: allSigYaml(filter: { no_link: { ne: true } }) {
           nodes {
             link: name
           }

@@ -114,32 +114,18 @@ module.exports = {
         collections: ["members", "projects", "smp"],
       },
     },
-    {
-      resolve: "gatsby-plugin-rollbar",
-      options: {
-        accessToken: "3aee484e0ba14579aaec98a9ef64224c",
-        // For all configuration options, see https://docs.rollbar.com/docs/rollbarjs-configuration-reference
-        captureUncaught: true,
-        captureUnhandledRejections: true,
-        payload: {
-          environment: "production",
-        },
-      },
-    },
-    {
-      resolve: "gatsby-source-strapi",
-      options: {
-        apiURL: "https://ietnitk-cms.herokuapp.com",
-        contentTypes: ["Blogs", "Events", "SMPS", "SIGS", "Projects"],
-        singleTypes: [
-          `recruitment-faq`,
-          
-          `summer-programs`,
-        ],
-        queryLimit: 10000,
-      },
-    },
-
+  {
+    resolve: "gatsby-plugin-rollbar",
+    options: {
+      accessToken: "3aee484e0ba14579aaec98a9ef64224c",
+      // For all configuration options, see https://docs.rollbar.com/docs/rollbarjs-configuration-reference
+      captureUncaught: true,
+      captureUnhandledRejections: true,
+      payload: {
+        environment: "production"
+      }
+    }
+  }
     // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {

@@ -12,34 +12,29 @@ const db = admin.firestore()
 let builtBy = []
 
 const members=[]
-db.collection("projects")
+db.collection("members")
   .get()
   .then(querySnapshot => {
     querySnapshot.forEach(doc => {
       // doc.data() is never undefined for query doc snapshots
     //   console.log(doc.id, " => ", doc.data())
     // console.log(doc.data().builtBy)
-      doc.data().builtBy && doc.data().builtBy.forEach(element => {
-        builtBy.push([{ title: doc.data().title, member: element, sig: doc.data().sig }])
-      })
-    })
-  })
-  .then(()=>{
-      db.collection("members").get().then(qs=>{
-        qs.forEach(doc=>{
-            if(doc.data().name){
-                members.push(doc.data().name)
-            }
-        })
+      console.log(doc.data())
+      const member= doc.data()
+      const id= doc.id()
+      const {data} = axios.post('http://localhost:1337/articles',  {
+        data: {
+          name: member.name,
+          alumni: member.alumni,
+          sigs:
+        },
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc2OTM4MTUwLCJleHAiOjE1Nzk1MzAxNTB9.UgsjjXkAZ-anD257BF7y1hbjuY3ogNceKfTAQtzDEsU'
+        }
       }).then(()=>{
-            console.log(members)
-            builtBy.forEach(x=>{
-                // console.log("Checking for",x[0])
-                if(!Object(members).includes(x[0].member)){
-                    console.log(x[0].member,x[0].title,x[0].sig)
-                }
-            })
-      })
+        console.log(member.name,"copied")
+      });
+    })
   })
   .catch(error => {
     console.log("Error getting documents: ", error)
