@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { graphql } from "gatsby"
+import Glimpse from "../components/partials/glimpse"
 
 const Project = ({ data, pathname, pageContext }) => {
   return (
@@ -128,6 +129,7 @@ const Project = ({ data, pathname, pageContext }) => {
           </div>
         </section>
       </main>
+      <Glimpse/>
     </Layout>
   )
 }

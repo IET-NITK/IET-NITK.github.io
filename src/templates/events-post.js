@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import SearchEngineOps from "../components/seo"
+import Glimpse from "../components/partials/glimpse"
 
 const BlogArticle = ({ data }) => {
   return (
@@ -30,6 +31,7 @@ const BlogArticle = ({ data }) => {
           </div>
         </section>
       </main>
+      <Glimpse/>
     </Layout>
   )
 }

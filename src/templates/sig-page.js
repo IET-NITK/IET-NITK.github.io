@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { RenderAuthors } from "../components/helper"
 import PaginationComponent from "../components/partials/pagination"
+import Glimpse from "../components/partials/glimpse"
 
 const SIG = ({ pageContext, pathname, data }) => {
   const { sig_details, sig_logo, sig_projects } = data
@@ -74,6 +75,7 @@ const SIG = ({ pageContext, pathname, data }) => {
           </div>
         </section>
       </main>
+      <Glimpse/>
     </Layout>
   )
 }

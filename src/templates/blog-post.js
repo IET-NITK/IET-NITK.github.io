@@ -5,6 +5,7 @@ import { Disqus } from "gatsby-plugin-disqus"
 import { RenderAuthors } from "../components/helper"
 import SearchEngineOps from "../components/seo"
 import { ShareButtons } from "../components/partials/social"
+import Glimpse from "../components/partials/glimpse"
 
 const PreviewOther = ({ post, isPrevious }) => {
   if (post)
@@ -125,6 +126,7 @@ const BlogArticle = ({ data, location }) => {
           </div>
         </section>
       </main>
+      <Glimpse/>
     </Layout>
   )
 }

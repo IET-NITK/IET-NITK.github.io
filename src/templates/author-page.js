@@ -4,6 +4,7 @@ import SearchEngineOps from "../components/seo"
 import { graphql, Link } from "gatsby"
 import { RenderAuthors } from "../components/helper"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
+import Glimpse from "../components/partials/glimpse"
 const RenderArticles = ({ articles, element, index }) => (
   <div
     key={index}
@@ -204,6 +205,7 @@ const Author = ({ data, location }) => {
           </div>
         </section>
       </main>
+      <Glimpse/>
     </Layout>
   )
 }
