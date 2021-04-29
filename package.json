@@ -26,6 +26,7 @@
     "gatsby-remark-smartypants": "4.0.0",
     "gatsby-source-filesystem": "3.2.0",
     "gatsby-source-firestore-easy": "1.0.0",
+    "gatsby-source-strapi": "^0.0.12",
     "gatsby-transformer-remark": "4.0.0",
     "gatsby-transformer-sharp": "3.2.0",
     "gatsby-transformer-yaml": "3.2.0",
@@ -75,7 +76,6 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }
