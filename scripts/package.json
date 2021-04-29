@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "firebase-admin": "9.6.0",
+    "firebase-admin": "9.7.0",
     "papaparse": "5.3.0"
   }
 }
