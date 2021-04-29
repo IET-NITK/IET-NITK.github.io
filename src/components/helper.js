@@ -9,13 +9,13 @@ export const generateSIGHash = sig_images => {
   let img_hash = {}
   sig_images &&
     sig_images.forEach(element => {
-      img_hash[element.name] = element.childImageSharp.fixed.srcWebp
+      img_hash[element.name] = element.logo.childImageSharp.fixed.srcWebp
     })
   return img_hash
 }
 
 export const RenderAuthors = (arr, cls) =>
-  arr.map((name, index2) => (
+  arr.map(({name}, index2) => (
     <>
       &nbsp;
       <Link

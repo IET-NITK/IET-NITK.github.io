@@ -34,7 +34,7 @@ const SIG = ({ pageContext, pathname, data }) => {
                     <div className="row">
                       <div className="col-lg-12">
                         <h3>
-                          {element.builtBy && element.url ? (
+                          {element.authors && element.url ? (
                             <Link
                               to={
                                 "/projects/" +
@@ -52,12 +52,12 @@ const SIG = ({ pageContext, pathname, data }) => {
                             {element.label}
                           </div>
                         ) : null}
-                        {element.builtBy !== null ? (
+                        {element.authors !== null ? (
                           <>
                             <div className="info">
                               <span className="text-muted">
                                 By
-                                {RenderAuthors(element.builtBy, "")}
+                                {RenderAuthors(element.authors, "")}
                               </span>
                             </div>
                           </>
@@ -80,27 +80,18 @@ const SIG = ({ pageContext, pathname, data }) => {
 export default SIG
 
 export const postQuery = graphql`
-  query x($pathSlug: String!) {
-    sig_logo: file(
-      sourceInstanceName: { eq: "sig_logo" }
-      name: { eq: $pathSlug }
-    ) {
-      childImageSharp {
-        fixed {
-          srcWebp
-        }
-      }
-    }
-    sig_projects: allProjects(
-      filter: { sig: { eq: $pathSlug } }
-      sort: { fields: builtBy }
+  query sigpage($pathSlug: String!) {
+    sig_projects: allStrapiProjects(
+      filter: { sig: { name: { eq: $pathSlug } } }
+      sort: { fields: authors___name }
     ) {
       nodes {
+        description
         title
         url
-        builtBy
-        label
-        description
+        authors {
+          name
+        }
       }
     }
     sig_details: strapiSigs(name: { eq: $pathSlug }) {

@@ -22,8 +22,6 @@ function getRandom(arr, n) {
   return result
 }
 
-
-
 const MainPage = ({ location, data }) => {
   return (
     <Layout location={location.pathname} title={"Main"}>
@@ -74,22 +72,7 @@ const MainPage = ({ location, data }) => {
                 />
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                The Institute of Engineering Technology - National Institute of
-                Technology Karnataka (IET-NITK) Student Chapter is actively
-                involved in inculcating a passion for innovation and
-                appreciation temperament in the minds of those who have
-                potential to change the future. We conduct workshops and
-                seminars throughout the academic calendar striving to impact
-                relevant skills to the students. Apart from this, we strive to
-                invite eminent personalities to conduct lectures for the benefit
-                of the club members and keeping doors opened for others
-                interested. We are affiliated to IET London, which is one of the
-                world’s leading professional societies for the engineering and
-                technology community, with more than 168,000 members in 150
-                countries and offices in Europe, North America and Asia-Pacific.
-                The IET provides a global knowledge network to facilitate the
-                exchange of ideas and promote the positive role of science,
-                engineering and technology in the world.
+                {data.about.main}
               </div>
             </div>
           </div>
@@ -102,9 +85,7 @@ const MainPage = ({ location, data }) => {
                 IET NITK consists of three different Special Interest Groups:
               </p>
             </div>
-            <SIGShowcase
-              sigs={data.sigdetails.nodes}
-            />
+            <SIGShowcase sigs={data.sigdetails.nodes} />
           </div>
         </section>
 
@@ -313,6 +294,9 @@ const MainPage = ({ location, data }) => {
 
 export const postQuery = graphql`
   {
+    about: strapiAboutClub {
+      main
+    }
     blog: allFile(
       filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
       sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
@@ -353,7 +337,7 @@ export const postQuery = graphql`
         }
       }
     }
-    sigdetails: allStrapiSigs(sort: {order: ASC, fields: no_link}) {
+    sigdetails: allStrapiSigs(sort: { order: ASC, fields: no_link }) {
       nodes {
         name
         description

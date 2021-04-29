@@ -13,6 +13,9 @@ export const Footer = props => {
               description
             }
           }
+          about:   strapiAboutClub {
+            footer
+          }
           sigs: allStrapiSigs(sort: {order: ASC, fields: no_link}) {
             nodes {
               name
@@ -21,7 +24,7 @@ export const Footer = props => {
           }
         }
       `}
-      render={({ site, sigs }) => (
+      render={({ site, sigs,about }) => (
         <div
           className="footer-dark"
           style={{
@@ -78,7 +81,7 @@ export const Footer = props => {
                 <div className="col-md-6 item text">
                   <div className="mobile-center-laptop-right">
                     <h3>{site.siteMetadata.title}</h3>
-                    <p>{site.siteMetadata.description}</p>
+                    <p>{about.footer}</p>
                   </div>
                 </div>
                 <div className="col item social">

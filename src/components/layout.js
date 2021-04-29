@@ -10,16 +10,6 @@ const Layout = ({ location, title, children }) => {
       </div>
       <div style={{ paddingTop: `${location === "/" ? "0em" : "3em"}` }} />
       <div className="site-content">{children}</div>
-      {/* <div
-        className="clean-block add-on newsletter-sign-up blue"
-        style={{backgroundColor:'#803391',padding:'30px 0px'}}
-      >
-        <h2>Join our Newsletter</h2>
-        <input type="text" className="form-control" placeholder="Email" />
-        <button className="btn btn-outline-light" type="button">
-          Subscribe
-        </button>
-      </div> */}
       <div id="wrapper-footer">
         <Footer />
       </div>

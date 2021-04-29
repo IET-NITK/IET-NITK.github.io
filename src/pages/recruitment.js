@@ -3,12 +3,13 @@ import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { graphql, navigate } from "gatsby"
 import { SIGShowcase } from "../components/SIGShowcase"
+import ReactMarkdown from "react-markdown"
 
 const Recruitments = ({ location, data }) => {
   const { sigdata, rec_questions } = data
   useEffect(() => {
     if (data.site_data.siteMetadata.join.allow !== true) {
-      navigate("/")
+      // navigate("/")
     }
   })
   return (
@@ -24,10 +25,7 @@ const Recruitments = ({ location, data }) => {
                 others! Check out where we're recruiting:
               </p>
             </div>
-            <SIGShowcase
-              sigs={sigdata.nodes}
-              hide_link={true}
-            />
+            <SIGShowcase sigs={sigdata.nodes} hide_link={true} />
           </div>
         </section>
         <div
@@ -56,16 +54,8 @@ const Recruitments = ({ location, data }) => {
 
             <div className="block-content">
               <div className="faq-item">
-                {rec_questions.nodes.map((e, i) => (
-                  <>
-                    <b className="question mb-0">{e.question}</b>
-                    <div className="answer mt-0 mb-2">{e.answer}</div>
-                  </>
-                ))}
+                <ReactMarkdown skipHtml={true}>{rec_questions.FAQ}</ReactMarkdown>
               </div>
-              <p className="text-primary mt-5">
-                Please stay tuned to our social media pages for updates.
-              </p>
             </div>
           </div>
         </section>
@@ -76,7 +66,7 @@ const Recruitments = ({ location, data }) => {
 
 export const postQuery = graphql`
   {
-    sigdata: allStrapiSigs(sort: {order: ASC, fields: no_link}) {
+    sigdata: allStrapiSigs(sort: { order: ASC, fields: no_link }) {
       nodes {
         name
         description
@@ -98,11 +88,9 @@ export const postQuery = graphql`
         }
       }
     }
-    rec_questions: allRecrfaqYaml {
-      nodes {
-        answer
-        question
-      }
+    rec_questions: strapiRecruitmentFaq {
+      FAQ
+      open
     }
   }
 `

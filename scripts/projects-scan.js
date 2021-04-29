@@ -1,6 +1,7 @@
 const Papa = require("papaparse")
 const fs = require("fs")
 const admin = require("firebase-admin")
+const { default: axios } = require("axios")
 // const members= require("./members.json")
 
 // let members = []
@@ -10,30 +11,31 @@ admin.initializeApp({
 const db = admin.firestore()
 
 let builtBy = []
-
-const members=[]
+const members = []
 db.collection("members")
   .get()
   .then(querySnapshot => {
+      console.log(`${querySnapshot.length} entries`)
     querySnapshot.forEach(doc => {
-      // doc.data() is never undefined for query doc snapshots
-    //   console.log(doc.id, " => ", doc.data())
-    // console.log(doc.data().builtBy)
-      console.log(doc.data())
-      const member= doc.data()
-      const id= doc.id()
-      const {data} = axios.post('http://localhost:1337/articles',  {
-        data: {
-          name: member.name,
-          alumni: member.alumni,
-          sigs:
+      axios.post(
+        "https://ietnitk-cms.herokuapp.com/members",
+        {
+          id: doc.id,
+          alumni: doc.data().alumni,
+          roll: doc.id,
+          passoutYr: doc.data().passoutYr,
+          position: doc.data().position,
+          contacts: doc.data().social,
+        //   image: doc.data().image,
+          name: doc.data().name,
+          sigs: [],
         },
-        headers: {
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc2OTM4MTUwLCJleHAiOjE1Nzk1MzAxNTB9.UgsjjXkAZ-anD257BF7y1hbjuY3ogNceKfTAQtzDEsU'
+        {
+          headers: {
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjE5MjU2NDkzLCJleHAiOjE2MjE4NDg0OTN9.Bo5OAWm5qwlxth_h53Y3mGL01IOhdgIKgPOiAXYNAt4`,
+          },
         }
-      }).then(()=>{
-        console.log(member.name,"copied")
-      });
+      ).catch(e=>console.log(`Error ${doc.data().name}`))
     })
   })
   .catch(error => {

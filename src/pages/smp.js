@@ -3,15 +3,12 @@ import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { RenderAuthors, generateSIGHash } from "../components/helper"
 import { Link } from "gatsby"
-import { graphql,navigate } from "gatsby"
-
-
+import { graphql, navigate } from "gatsby"
 
 const SMP = ({ data, location }) => {
-  const { sigImages, smp } = data
-  const sig_images = generateSIGHash(sigImages.nodes)
-  useEffect(()=>{
-    if(data.site_data.siteMetadata.smp.allow!==true){
+  const { smp } = data
+  useEffect(() => {
+    if (data.smp_basic.open !== true && false) {
       navigate("/")
     }
   })
@@ -25,10 +22,7 @@ const SMP = ({ data, location }) => {
               <h2 className="text-primary">
                 IET NITK SMP {new Date().getFullYear()}
               </h2>
-              <p>
-                IET NITK's Official Mentorship Program, exclusive for first and
-                second years.
-              </p>
+              <p>{data.smp_basic.description}</p>
             </div>
           </div>
         </section>
@@ -53,7 +47,7 @@ const SMP = ({ data, location }) => {
                           <br />
                           <span className="text-muted">
                             <strong>Mentors:</strong>
-                            {RenderAuthors(smp.mentors, "")}
+                            {/* {RenderAuthors(smp.mentors, "")} */}
                           </span>
                           <br />
                           <a
@@ -73,7 +67,7 @@ const SMP = ({ data, location }) => {
                     <img
                       className="mobile-invisible smp-logo"
                       style={{ maxWidth: "150px", paddingTop: "2em" }}
-                      src={sig_images[e.fieldValue]}
+                      src={e.nodes[0]["SIG"].logo.childImageSharp.fixed.srcWebp}
                       alt={e.fieldValue}
                     />
                   </Link>
@@ -90,34 +84,32 @@ const SMP = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
-    sigImages: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
-      nodes {
-        name
-        childImageSharp {
-          fixed {
-            srcWebp
-          }
-        }
-      }
+
+    smp_basic: strapiSummerPrograms {
+      open
+      description
     }
 
-    site_data: site {
-      siteMetadata {
-        smp {
-          allow
-          link
-        }
-      }
-    }
-    smp: allSmpYaml(sort: { fields: title }) {
-      group(field: sig) {
-        nodes {
-          title
-          description
-          link
-          mentors
-        }
+    smp: allStrapiSmps {
+      group(field: SIG___name) {
         fieldValue
+        nodes {
+          SIG {
+            logo {
+              childImageSharp {
+                fixed {
+                  srcWebp
+                }
+              }
+            }
+          }
+          description
+          title
+          url
+          members {
+            name
+          }
+        }
       }
     }
   }

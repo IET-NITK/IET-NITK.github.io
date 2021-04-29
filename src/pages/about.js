@@ -22,7 +22,6 @@ const MemberDetails = ({ author, index }) => {
       ? ""
       : "bg-gradient-alumni"
   let color_text = author.position !== "Executive Member" || author.alumni === true ? "text-light" : ""
-  console.log(author.name,`is`,author.alumni===true?'an alumni and':'current member and',author.position,author.passoutYr)
   return (
     <div
       to={`/members/${author.name.toLowerCase().split(" ").join("")}`}
@@ -135,19 +134,7 @@ const About = ({ location, data }) => {
                       <h2 className="text-primary">About Us</h2>
 
                       <p>
-                        IET NITK Chapter is a exclusive technical club under IET
-                        Bangalore Division. We are actively involved in
-                        inculcating a passion for innovation and appreciation
-                        for scientific temperament in the minds of those who
-                        have the potential to change the future. We conducts
-                        seminars and workshops throughout the academic calendar
-                        striving to impart technical , social and managerial
-                        skills to the students.
-                      </p>
-                      <p>
-                        IET also plays an integral role in planning and
-                        organizing various events in the techno-cultural fests
-                        of the institute ie ENGINEER and INCIDENT.
+                        {data.about.info}
                       </p>
                     </div>
                   </div>
@@ -216,6 +203,9 @@ export const postQuery = graphql`
           facebook
         }
       }
+    }
+    about:   strapiAboutClub {
+      info: about_us
     }
     passouts: allMembers(filter: { alumni: { eq: true } }) {
       group(field: passoutYr) {

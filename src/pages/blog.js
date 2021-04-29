@@ -14,58 +14,48 @@ const Blog = ({ data, location }) => {
           <div className="container">
             <div className="block-heading">
               <h2 className="text-primary">Official IET-NITK Blog</h2>
-              <p>
-                We post cool stuff. Subscribe to our Newsletter to stay updated!
-              </p>
+              <p>We post cool stuff. Stay updated!</p>
             </div>
             <div className="block-content">
               <PaginationComponent
                 max={5}
-                list={data.allFile.nodes}
+                list={data.blogs.nodes}
                 item={(element, inx) => {
-                  let imagelink = element.childMarkdownRemark.frontmatter.image
-                  if(imagelink){
-                    if(imagelink.childImageSharp){
-                      imagelink= imagelink.childImageSharp.fixed.srcWebp
-                    } else {
-                      imagelink= imagelink.publicURL
-                    }
-                  } else {
+                  let imagelink = element.header
+                  // if (imagelink) {
+                  //   if (imagelink.childImageSharp.fixed) {
+                  //     imagelink = imagelink.childImageSharp.fixed.srcWebp
+                  //   } else {
+                  //     imagelink = imagelink.childImageSharp.publicURL
+                  //   }
+                  // } else {
                     imagelink = data.ietlogo.fixed.srcWebp
-                  }
+                  // }
                   return (
                     <div key={inx} className="clean-blog-post">
                       <div className="row">
                         <div className="col-lg-5">
                           <img
-                            alt={element.childMarkdownRemark.frontmatter.title}
+                            alt={element.title}
                             className="rounded img-fluid"
                             src={imagelink}
                             style={{ width: "100%", height: "auto" }}
                           />
                         </div>
                         <div className="col-lg-7">
-                          <h3
-                            data-toggle="tooltip"
-                            title={
-                              element.childMarkdownRemark.timeToRead +
-                              " minute read"
-                            }
-                          >
-                            {element.childMarkdownRemark.frontmatter.title}
-                          </h3>
+                          <h3>{element.title}</h3>
                           <div className="info">
                             <span className="text-muted">
                               By&nbsp;
-                              {RenderAuthors(
+                              {/* {RenderAuthors(
                                 element.childMarkdownRemark.frontmatter.authors,
                                 ""
-                              )}
+                              )} */}
                               <br />
-                              {element.childMarkdownRemark.frontmatter.date}
+                              {element.date}
                             </span>
                           </div>
-                          <p>{element.childMarkdownRemark.excerpt}</p>
+                          <p>{element.excerpt}</p>
                           <Link
                             to={"/blog/" + element.relativeDirectory}
                             className="btn btn-outline-primary btn-sm"
@@ -92,6 +82,16 @@ export const postQuery = graphql`
     ietlogo: imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
       fixed {
         srcWebp
+      }
+    }
+    blogs: allStrapiBlogs(sort: { fields: date, order: DESC }) {
+      nodes {
+        title
+        date(formatString: "MMMM Do, YYYY")
+        authors {
+          name
+        }
+
       }
     }
     allFile(
