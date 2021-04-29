@@ -111,21 +111,37 @@ module.exports = {
           credential: require("./credentials.json"), //See details for this option
           databaseURL: "https://ietnitk-web-default-rtdb.firebaseio.com",
         },
-        collections: ["members", "projects", "smp"],
+        collections: ["members", "projects"],
       },
     },
-  {
-    resolve: "gatsby-plugin-rollbar",
-    options: {
-      accessToken: "3aee484e0ba14579aaec98a9ef64224c",
-      // For all configuration options, see https://docs.rollbar.com/docs/rollbarjs-configuration-reference
-      captureUncaught: true,
-      captureUnhandledRejections: true,
-      payload: {
-        environment: "production"
-      }
-    }
-  }
+    {
+      resolve: "gatsby-plugin-rollbar",
+      options: {
+        accessToken: "3aee484e0ba14579aaec98a9ef64224c",
+        // For all configuration options, see https://docs.rollbar.com/docs/rollbarjs-configuration-reference
+        captureUncaught: true,
+        captureUnhandledRejections: true,
+        payload: {
+          environment: "production",
+        },
+      },
+    },
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: "https://ietnitk-cms.herokuapp.com",
+        contentTypes: ["Blogs", "Events", "Members","Project-Reports","SMPS", "SIGS", "Projects"],
+        singleTypes: [
+          `recruitment-faq`,
+          `about-club`,
+          `expo`,
+          `wit`,
+          `summer-programs`,
+        ],
+        queryLimit: 10000,
+      },
+    },
+
     // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {

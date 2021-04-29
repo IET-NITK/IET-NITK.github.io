@@ -31,3 +31,21 @@ export const RenderAuthors = (arr, cls) =>
         : ""}
     </>
   ))
+
+  export const newRenderAuthors = (arr, cls) =>
+  arr.map(({name}, index2) => (
+    <>
+      &nbsp;
+      <Link
+        key={"x" + index2}
+        to={"/members/" + name.toLowerCase().split(" ").join("")}
+      >
+        {name}
+      </Link>
+      {index2 + 2 === arr.length
+        ? " and"
+        : index2 + 1 !== arr.length
+        ? ","
+        : ""}
+    </>
+  ))
