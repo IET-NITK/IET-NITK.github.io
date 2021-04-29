@@ -26,7 +26,7 @@
     "gatsby-remark-smartypants": "4.0.0",
     "gatsby-source-filesystem": "3.2.0",
     "gatsby-source-firestore-easy": "1.0.0",
-    "gatsby-source-strapi": "^0.0.12",
+    "gatsby-source-strapi": "0.0.12",
     "gatsby-transformer-remark": "4.0.0",
     "gatsby-transformer-sharp": "3.2.0",
     "gatsby-transformer-yaml": "3.2.0",
