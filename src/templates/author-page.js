@@ -210,15 +210,15 @@ const Author = ({ data, location }) => {
 
 export const postQuery = graphql`
   query($pathSlug: [String]) {
-    member_details: members(name: { in: $pathSlug }) {
+    member_details: strapiMembers(name: {in: $pathSlug}) {
       name
       position
       passoutYr
-      social {
+      social: contacts {
         email
+        facebook
         github
         linkedin
-        facebook
       }
     }
     member_projects: allProjects(

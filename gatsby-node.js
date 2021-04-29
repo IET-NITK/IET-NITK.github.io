@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   try {
     graphql(`
       query {
-        members:   allMembers {
+        members: allStrapiMembers {
           nodes {
             link: name
           }

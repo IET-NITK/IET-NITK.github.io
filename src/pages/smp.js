@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
-import { newRenderAuthors, generateSIGHash } from "../components/helper"
+import { newRenderAuthors } from "../components/helper"
 import { Link } from "gatsby"
 import { graphql, navigate } from "gatsby"
 
