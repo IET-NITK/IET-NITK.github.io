@@ -6,6 +6,7 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 import ReactMarkdown from "react-markdown"
 import Ticker from "react-ticker"
 
+// eslint-disable-next-line
 const RenderMarquee = ({ notice }) => {
   if (notice.length === 1 && notice[0] === "") {
     return (
@@ -15,21 +16,19 @@ const RenderMarquee = ({ notice }) => {
       </small>
     )
   }
-  
+
   return (
     <div className="alert alert-warning m-0" style={{ fontSize: "70%" }}>
       <Ticker mode="await" speed={5} id="message">
         {({ index }) => (
-          <ReactMarkdown className="mb-n3">
-            {notice[0]}
-          </ReactMarkdown>
+          <ReactMarkdown className="mb-n3">{notice[0]}</ReactMarkdown>
         )}
       </Ticker>
     </div>
   )
 }
 
-const TopNavbar = ({ notice, permissions }) => {
+const TopNavbar = ({ notice, smp, recr, expo }) => {
   //eslint-disable-next-line
 
   return (
@@ -38,25 +37,25 @@ const TopNavbar = ({ notice, permissions }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9 col-md-7 col-sm-12">
-              <RenderMarquee notice={notice} />
+              {/* <RenderMarquee notice={notice} /> */}
             </div>
             <div className="col-lg-3 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link
                 to="/recruitment"
                 role="button"
                 className={`btn btn-outline-primary btn-sm mr-3 ${
-                  permissions.join.allow !== true ? "disabled" : ""
+                  recr !== true ? "disabled" : ""
                 }`}
               >
                 Join IET NITK
               </Link>
 
-              {permissions.expo.allow !== true ? (
+              {expo !== true ? (
                 <Link
                   to="/smp"
                   role="button"
                   className={`btn btn-primary btn-sm mr-3 ${
-                    permissions.smp.allow !== true ? "disabled" : ""
+                    smp !== true ? "disabled" : ""
                   }`}
                 >
                   SMP {new Date().getFullYear()}
@@ -83,27 +82,9 @@ export const XNavbar = props => {
       <StaticQuery
         query={graphql`
           query {
-            sigdetails: allSigYaml(filter: { no_link: { ne: true } }) {
-              nodes {
-                name
-              }
-            }
             site {
               siteMetadata {
                 noticeBoard
-              }
-            }
-            permissions: site {
-              siteMetadata {
-                expo {
-                  allow
-                }
-                smp {
-                  allow
-                }
-                join {
-                  allow
-                }
               }
             }
             imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
@@ -111,13 +92,29 @@ export const XNavbar = props => {
                 srcWebp
               }
             }
+            smp_open: strapiSummerPrograms {
+              open
+            }
+            recr_open: strapiRecruitmentFaq {
+              open
+            }
+            expo_open: strapiExpo {
+              open
+            }
+            sigdetails: allStrapiSigs(filter: { no_link: { eq: false } }) {
+              nodes {
+                name
+              }
+            }
           }
         `}
-        render={({ sigdetails, site, imageSharp, permissions }) => (
+        render={({ sigdetails, site, imageSharp, smp_open, recr_open, expo_open }) => (
           <div className="fixed-top" id="navbar">
             <TopNavbar
               notice={site.siteMetadata.noticeBoard}
-              permissions={permissions.siteMetadata}
+              smp={smp_open.open}
+              recr={recr_open.open}
+              expo={expo_open.open}
             />
             <Navbar
               bg="white"
