@@ -2,29 +2,31 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import SearchEngineOps from "../components/seo"
+import ReactMarkdown from "react-markdown"
 
 const BlogArticle = ({ data }) => {
   return (
     <Layout>
       <SearchEngineOps
-        title={data.file && data.file.childMarkdownRemark.frontmatter.title}
+        title={data.event.title}
       />
       <main className="page blog-post">
         <section className="clean-block clean-post dark">
           <div className="container">
             <div className="block-content">
               <div className="post-body">
-                <h3>{data.file.childMarkdownRemark.frontmatter.title}</h3>
+                <h3>{data.event.title}</h3>
                 <div className="post-info">
                   <span>
-                    {data.file.childMarkdownRemark.frontmatter.date}
+                    {data.event.date}
                   </span>
                 </div>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.file.childMarkdownRemark.html,
-                  }}
-                />
+                <ReactMarkdown>
+                  {data.event.description}
+                </ReactMarkdown>
+                <span>
+                Last updated on {data.event.updated_at}
+              </span>
               </div>
             </div>
           </div>
@@ -36,19 +38,11 @@ const BlogArticle = ({ data }) => {
 
 export const postQuery = graphql`
   query($pathSlug: String!) {
-    file(
-      sourceInstanceName: { eq: "events" }
-      extension: { eq: "md" }
-      relativeDirectory: { eq: $pathSlug }
-    ) {
-      childMarkdownRemark {
-        excerpt(format: PLAIN)
-        frontmatter {
-          date(formatString: "MMMM Do, YYYY")
-          title
-        }
-        html
-      }
+    event: strapiEvents(route: {eq: $pathSlug}) {
+      title
+      updated_at(formatString: "MMMM Do, YYYY")
+      description
+      date(formatString: "MMMM Do, YYYY")
     }
   }
 `

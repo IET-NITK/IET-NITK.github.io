@@ -36,6 +36,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             link: name
           }
         }
+        events: allStrapiEvents {
+          nodes {
+            link: route
+          }
+        }
       }
     `).then(result => {
       Object.keys(result.data).forEach(key => {
@@ -46,7 +51,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             component: templateHash[key],
             context: {
               pathSlug: e.link,
-              sig: e.sig || null
+              sig: e.sig || null,
             },
           })
         })
@@ -56,7 +61,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     throw Error("Error in generating pages for Authors/Projects/SIGs")
   }
 
-  
   try {
     graphql(`
       query {
@@ -84,38 +88,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           context: {
             pathSlug: element.relativeDirectory,
             articleDate: element.childMarkdownRemark.frontmatter.date,
-          },
-        })
-      })
-    })
-  } catch {
-    throw Error("Error in generating pages for Blogs")
-  }
-
-  try {
-    graphql(`
-      query {
-        allFile(
-          filter: { sourceInstanceName: { eq: "events" }, ext: { eq: ".md" } }
-        ) {
-          nodes {
-            relativeDirectory
-          }
-        }
-      }
-    `).then(result => {
-      let titleArray = result.data.allFile.nodes
-      titleArray.forEach(element => {
-        console.log(
-          "Events:",
-          "Endpoint for " + lcrs(element.relativeDirectory)
-        )
-        // eslint-disable-next-line
-        createPage({
-          path: "events/" + lcrs(element.relativeDirectory),
-          component: templateHash.events,
-          context: {
-            pathSlug: element.relativeDirectory,
           },
         })
       })
