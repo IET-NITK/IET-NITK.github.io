@@ -142,6 +142,9 @@ export const XNavbar = props => {
                     <Nav.Link className="nav-link" href="/events">
                       Events
                     </Nav.Link>
+                    <Nav.Link className="nav-link" href="/projects">
+                      Projects
+                    </Nav.Link>
                     <Nav.Link className="nav-link" href="/blog">
                       Blog
                     </Nav.Link>
