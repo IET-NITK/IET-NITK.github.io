@@ -42,7 +42,7 @@ const SMP = ({ data, location }) => {
                   {e.nodes.map((e2, i) => (
                     <React.Fragment key={i}>
                       <h5 id={smp.title}>{e2.title}</h5>
-                      <div>
+                      <div className="pb-5">
                         <p>
                           {e2.description}.
                           <br />
@@ -51,18 +51,20 @@ const SMP = ({ data, location }) => {
                             {newRenderAuthors(e2.members, "")}
                           </span>
                           <br />
-                          {/* <a
+                          <a
                             target="_blank"
                             rel="noreferrer"
-                            href={data.site_data.siteMetadata.smp.link}
+                            className="btn btn-primary btn-sm mt-2"
+                            href={e2.url}
                           >
-                            Click to register
-                          </a> */}
+                            Course Curriculum
+                          </a>
                         </p>
                       </div>
                     </React.Fragment>
                   ))}
                 </div>
+
                 <div className="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
                   <Link to={"/sigs/" + e.fieldValue.toLowerCase()}>
                     <img
@@ -74,42 +76,58 @@ const SMP = ({ data, location }) => {
                   </Link>
                 </div>
               </div>
-              <hr />
+              {i !== smp.group.length - 1 ? <hr /> : null}
             </React.Fragment>
           ))}
         </div>
       </div>
-      <section className="clean-block clean-faq dark">
-          <div className="container">
-            <div className="block-heading">
-              <h2 className="text-primary">SMP {new Date().getFullYear()} FAQ</h2>
-              <p>{new Date().getFullYear()} SMP FAQs and Details</p>
-            </div>
+      <div
+        className="clean-block bg-primary text-center text-light"
+        style={{
+          padding: "30px 0px",
+          marginTop: "2em",
+        }}
+      >
+        <h2>Sign up for a Course Now!</h2>
 
-            <div className="block-content">
-              <ReactMarkdown>
-                {data.smp_basic.faq}
-              </ReactMarkdown>
-              <p className="text-primary mt-5">
-                Please stay tuned to our social media pages for updates.
-              </p>
-            </div>
+        <h2>
+          <a
+            href="https://forms.gle/TjVQ7YFAFZWQaVSV6"
+            className="btn btn-light btn-lg mt-5"
+            type="button"
+          >
+            Registration Form
+          </a>
+        </h2>
+      </div>
+      <section className="clean-block clean-faq dark">
+        <div className="container">
+          <div className="block-heading">
+            <h2 className="text-primary">SMP {new Date().getFullYear()} FAQ</h2>
+            <p>{new Date().getFullYear()} SMP FAQs and Details</p>
           </div>
-        </section>
+
+          <div className="block-content">
+            <ReactMarkdown>{data.smp_basic.faq}</ReactMarkdown>
+            <p className="text-primary mt-5">
+              Please stay tuned to our social media pages for updates.
+            </p>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }
 
 export const postQuery = graphql`
   {
-
     smp_basic: strapiSummerPrograms {
       open
       description
       faq
     }
 
-    smp: allStrapiSmps {
+    smp: allStrapiSmps(sort: { fields: title }) {
       group(field: SIG___name) {
         fieldValue
         nodes {
