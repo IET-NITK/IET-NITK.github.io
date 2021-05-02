@@ -71,7 +71,7 @@ const SMP = ({ data, location }) => {
                     <img
                       className="mobile-invisible smp-logo"
                       style={{ maxWidth: "150px", paddingTop: "2em" }}
-                      src={e.nodes[0].sig.logo.childImageSharp.fixed.srcWebp}
+                      src={e.nodes[0].sigx.logox.childImageSharp.fixed.srcWebp}
                       alt={e.fieldValue}
                     />
                   </Link>
@@ -128,12 +128,12 @@ export const postQuery = graphql`
       faq
     }
 
-    smp: allStrapiSmps(sort: { fields: title }) {
+    smp: allStrapiSmps {
       group(field: SIG___name) {
         fieldValue
         nodes {
-          sig: SIG {
-            logo {
+          sigx: SIG {
+            logox: logo {
               childImageSharp {
                 fixed {
                   srcWebp
