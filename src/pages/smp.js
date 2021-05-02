@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
-import { newRenderAuthors } from "../components/helper"
+import { generateSIGHash, newRenderAuthors } from "../components/helper"
 import { Link } from "gatsby"
 import { graphql, navigate } from "gatsby"
 import ReactMarkdown from "react-markdown"
@@ -13,6 +13,7 @@ const SMP = ({ data, location }) => {
       navigate("/")
     }
   })
+  // const sig_img=generateSIGHash(data.sigx)
   return (
     <Layout location={location.pathname}>
       <SearchEngineOps title={"SMP " + new Date().getFullYear()} />
