@@ -4,6 +4,7 @@ import SearchEngineOps from "../components/seo"
 import { newRenderAuthors } from "../components/helper"
 import { Link } from "gatsby"
 import { graphql, navigate } from "gatsby"
+import ReactMarkdown from "react-markdown"
 
 const SMP = ({ data, location }) => {
   const { smp } = data
@@ -27,7 +28,7 @@ const SMP = ({ data, location }) => {
           </div>
         </section>
       </main>
-      <div className="site-section" style={{ paddingTop: "1em" }}>
+      <div className="site-section pb-5" style={{ paddingTop: "1em" }}>
         <div className="container">
           {smp.group.map((e, i) => (
             <React.Fragment key={i}>
@@ -78,6 +79,23 @@ const SMP = ({ data, location }) => {
           ))}
         </div>
       </div>
+      <section className="clean-block clean-faq dark">
+          <div className="container">
+            <div className="block-heading">
+              <h2 className="text-primary">SMP {new Date().getFullYear()} FAQ</h2>
+              <p>{new Date().getFullYear()} SMP FAQs and Details</p>
+            </div>
+
+            <div className="block-content">
+              <ReactMarkdown>
+                {data.smp_basic.faq}
+              </ReactMarkdown>
+              <p className="text-primary mt-5">
+                Please stay tuned to our social media pages for updates.
+              </p>
+            </div>
+          </div>
+        </section>
     </Layout>
   )
 }
@@ -88,6 +106,7 @@ export const postQuery = graphql`
     smp_basic: strapiSummerPrograms {
       open
       description
+      faq
     }
 
     smp: allStrapiSmps {
