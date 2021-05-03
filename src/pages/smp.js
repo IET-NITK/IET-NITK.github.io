@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
-import { generateSIGHash, newRenderAuthors } from "../components/helper"
+import { newRenderAuthors } from "../components/helper"
 import { Link } from "gatsby"
 import { graphql, navigate } from "gatsby"
 import ReactMarkdown from "react-markdown"
@@ -13,7 +13,7 @@ const SMP = ({ data, location }) => {
       navigate("/")
     }
   })
-  // const sig_img=generateSIGHash(data.sigx)
+
   return (
     <Layout location={location.pathname}>
       <SearchEngineOps title={"SMP " + new Date().getFullYear()} />
@@ -82,40 +82,45 @@ const SMP = ({ data, location }) => {
           ))}
         </div>
       </div>
-      <div
-        className="clean-block bg-primary text-center text-light"
-        style={{
-          padding: "30px 0px",
-          marginTop: "2em",
-        }}
-      >
-        <h2>Sign up for a Course Now!</h2>
-
-        <h2>
+      {data.smp_basic.form_url ? (
+        <div
+          className="clean-block bg-primary text-center text-light"
+          style={{
+            padding: "30px 0px",
+            marginTop: "2em",
+          }}
+        >
+          <h2>Sign up for a Course Now!</h2>
           <a
-            href="https://forms.gle/TjVQ7YFAFZWQaVSV6"
+            href={data.smp_basic.form_url}
+            target="_blank"
+            rel="noreferrer"
             className="btn btn-light btn-lg mt-5"
             type="button"
           >
             Registration Form
           </a>
-        </h2>
-      </div>
-      <section className="clean-block clean-faq dark">
-        <div className="container">
-          <div className="block-heading">
-            <h2 className="text-primary">SMP {new Date().getFullYear()} FAQ</h2>
-            <p>{new Date().getFullYear()} SMP FAQs and Details</p>
-          </div>
-
-          <div className="block-content">
-            <ReactMarkdown>{data.smp_basic.faq}</ReactMarkdown>
-            <p className="text-primary mt-5">
-              Please stay tuned to our social media pages for updates.
-            </p>
-          </div>
         </div>
-      </section>
+      ) : null}
+      {data.smp_basic.faq ? (
+        <section className="clean-block clean-faq dark">
+          <div className="container">
+            <div className="block-heading">
+              <h2 className="text-primary">
+                SMP {new Date().getFullYear()} FAQ
+              </h2>
+              <p>{new Date().getFullYear()} SMP FAQs and Details</p>
+            </div>
+
+            <div className="block-content">
+              <ReactMarkdown>{data.smp_basic.faq}</ReactMarkdown>
+              <p className="text-primary mt-5">
+                Please stay tuned to our social media pages for updates.
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : null}
     </Layout>
   )
 }
@@ -126,6 +131,7 @@ export const postQuery = graphql`
       open
       description
       faq
+      form_url
     }
 
     smp: allStrapiSmps {
