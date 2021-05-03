@@ -6,27 +6,6 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 import ReactMarkdown from "react-markdown"
 import Ticker from "react-ticker"
 
-// eslint-disable-next-line
-const RenderMarquee = ({ notice }) => {
-  if (notice.length === 1 && notice[0] === "") {
-    return (
-      <small className="text-muted">
-        <i className="fa fa-map-marker mr-2" />
-        Srinivasnagar, Surathkal, Mangalore, Karnataka 575025
-      </small>
-    )
-  }
-
-  return (
-    <div className="alert alert-warning m-0" style={{ fontSize: "70%" }}>
-      <Ticker mode="await" speed={5} id="message">
-        {({ index }) => (
-          <ReactMarkdown className="mb-n3">{notice[0]}</ReactMarkdown>
-        )}
-      </Ticker>
-    </div>
-  )
-}
 
 const TopNavbar = ({ notice, smp, recr, expo }) => {
   //eslint-disable-next-line
@@ -37,7 +16,16 @@ const TopNavbar = ({ notice, smp, recr, expo }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9 col-md-7 col-sm-12">
-              {/* <RenderMarquee notice={notice} /> */}
+              <div
+                className="alert alert-warning m-0"
+                style={{ fontSize: "70%" }}
+              >
+                <Ticker mode="await" speed={4} id="message">
+                  {({ index }) => (
+                    <ReactMarkdown className="mb-n3">{notice}</ReactMarkdown>
+                  )}
+                </Ticker>
+              </div>
             </div>
             <div className="col-lg-3 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link
@@ -82,6 +70,9 @@ export const XNavbar = props => {
       <StaticQuery
         query={graphql`
           query {
+            about: strapiAboutClub {
+              message: topnavbar_marquee
+            }
             site {
               siteMetadata {
                 noticeBoard
@@ -108,10 +99,18 @@ export const XNavbar = props => {
             }
           }
         `}
-        render={({ sigdetails, site, imageSharp, smp_open, recr_open, expo_open }) => (
+        render={({
+          sigdetails,
+          site,
+          imageSharp,
+          smp_open,
+          recr_open,
+          expo_open,
+          about,
+        }) => (
           <div className="fixed-top" id="navbar">
             <TopNavbar
-              notice={site.siteMetadata.noticeBoard}
+              notice={about.message}
               smp={smp_open.open}
               recr={recr_open.open}
               expo={expo_open.open}
