@@ -72,7 +72,7 @@ const SMP = ({ data, location }) => {
                     <img
                       className="mobile-invisible smp-logo"
                       style={{ maxWidth: "150px", paddingTop: "2em" }}
-                      src={e.nodes[0].sigx.logox.childImageSharp.fixed.srcWebp}
+                      src={e.nodes[0].sigx.logox.publicURL}
                       alt={e.fieldValue}
                     />
                   </Link>
@@ -141,11 +141,7 @@ export const postQuery = graphql`
         nodes {
           sigx: SIG {
             logox: logo {
-              childImageSharp {
-                fixed {
-                  srcWebp
-                }
-              }
+              publicURL
             }
           }
           description
