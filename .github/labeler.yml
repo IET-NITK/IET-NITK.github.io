@@ -1,0 +1,20 @@
+- Project Management:
+  - .github/**/*
+  - .gitignore
+  - .prettier*
+- Documentation:
+  - CONTRIBUTE/**/*
+  - README.md
+- Automation Scripts:
+  - scripts/**/*
+- Dependencies:
+  - package.json
+  - package-lock.json
+- Templates:
+  - src/templates/**/*
+- CSS:
+  - src/assets/css/**/*
+- Image Assets:
+  - src/assets/images/**/*
+- Plugins:
+  - gatsby-*
