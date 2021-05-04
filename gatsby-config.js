@@ -88,6 +88,7 @@ module.exports = {
         name: `yaml`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
