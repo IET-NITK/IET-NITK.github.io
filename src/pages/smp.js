@@ -5,6 +5,7 @@ import { newRenderAuthors } from "../components/helper"
 import { Link } from "gatsby"
 import { graphql, navigate } from "gatsby"
 import ReactMarkdown from "react-markdown"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const SMP = ({ data, location }) => {
   const { smp } = data
@@ -52,14 +53,14 @@ const SMP = ({ data, location }) => {
                             {newRenderAuthors(e2.members, "")}
                           </span>
                           <br />
-                          <a
+                          <OutboundLink
                             target="_blank"
                             rel="noreferrer"
                             className="btn btn-primary btn-sm mt-2"
                             href={e2.url}
                           >
                             Course Curriculum
-                          </a>
+                          </OutboundLink>
                         </p>
                       </div>
                     </React.Fragment>
@@ -91,7 +92,7 @@ const SMP = ({ data, location }) => {
           }}
         >
           <h2>Sign up for a Course Now!</h2>
-          <a
+          <OutboundLink
             href={data.smp_basic.form_url}
             target="_blank"
             rel="noreferrer"
@@ -99,7 +100,7 @@ const SMP = ({ data, location }) => {
             type="button"
           >
             Registration Form
-          </a>
+          </OutboundLink>
         </div>
       ) : null}
       {data.smp_basic.faq ? (

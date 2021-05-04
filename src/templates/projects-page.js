@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { graphql } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Project = ({ data, pathname, pageContext }) => {
   return (
@@ -57,23 +58,23 @@ const Project = ({ data, pathname, pageContext }) => {
                 <div className="col-lg-6 text-right">
                   {new URL(data.projectsYaml.url).hostname ===
                   "github.com" ? (
-                    <a
+                    <OutboundLink
                       target="_blank"
                       rel="noreferrer"
                       href={data.projectsYaml.url}
                       className="btn btn-outline-dark"
                     >
                       <i className="fa fa-github mr-2" /> Repository URL
-                    </a>
+                    </OutboundLink>
                   ) : (
-                    <a
+                    <OutboundLink
                       target="_blank"
                       rel="noreferrer"
                       href={data.projectsYaml.url}
                       className="btn btn-primary"
                     >
                       <i className="fa fa-link" /> Project Link
-                    </a>
+                    </OutboundLink>
                   )}
                 </div>
               </div>

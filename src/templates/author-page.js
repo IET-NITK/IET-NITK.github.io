@@ -4,6 +4,7 @@ import SearchEngineOps from "../components/seo"
 import { graphql, Link } from "gatsby"
 import { RenderAuthors } from "../components/helper"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 const RenderArticles = ({ articles, element, index }) => (
   <div
     key={index}
@@ -118,7 +119,7 @@ const Author = ({ data, location }) => {
                           ) : null}
                           {member_details.social &&
                           member_details.social.facebook ? (
-                            <a
+                            <OutboundLink
                               target="_blank"
                               rel="noreferrer"
                               className="mr-1 ml-1"
@@ -126,11 +127,11 @@ const Author = ({ data, location }) => {
                             >
                               &nbsp;
                               <i className="fa fa-facebook" />
-                            </a>
+                            </OutboundLink>
                           ) : null}
                           {member_details.social &&
                           member_details.social.linkedin ? (
-                            <a
+                            <OutboundLink
                               target="_blank"
                               rel="noreferrer"
                               className="mr-1 ml-1"
@@ -138,11 +139,11 @@ const Author = ({ data, location }) => {
                             >
                               &nbsp;
                               <i className="fa fa-linkedin" />
-                            </a>
+                            </OutboundLink>
                           ) : null}
                           {member_details.social &&
                           member_details.social.github ? (
-                            <a
+                            <OutboundLink
                               target="_blank"
                               rel="noreferrer"
                               className="mr-1 ml-1"
@@ -150,7 +151,7 @@ const Author = ({ data, location }) => {
                             >
                               &nbsp;
                               <i className="fa fa-github" />
-                            </a>
+                            </OutboundLink>
                           ) : null}
                         </p>
                       </div>

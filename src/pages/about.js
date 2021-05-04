@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import Img_Beach from "../assets/img/beach.jpg"
 import { Nav, NavDropdown, OverlayTrigger, Tooltip } from "react-bootstrap"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const KEY_ALUMNI = "Alumni"
 const KEY_EXEC_MEMBERS = "Executive Members 2021"
@@ -58,7 +59,7 @@ const MemberDetails = ({ author, index }) => {
               </OverlayTrigger>
             ) : null}
             {author.social && author.social.facebook ? (
-              <a
+              <OutboundLink
                 target="_blank"
                 rel="noreferrer"
                 className="mr-1 ml-1"
@@ -66,10 +67,10 @@ const MemberDetails = ({ author, index }) => {
               >
                 &nbsp;
                 <i className={`fa fa-facebook ${color_text}`} />
-              </a>
+              </OutboundLink>
             ) : null}
             {author.social && author.social.linkedin ? (
-              <a
+              <OutboundLink
                 target="_blank"
                 rel="noreferrer"
                 className="mr-1 ml-1"
@@ -77,10 +78,10 @@ const MemberDetails = ({ author, index }) => {
               >
                 &nbsp;
                 <i className={`fa fa-linkedin ${color_text}`} />
-              </a>
+              </OutboundLink>
             ) : null}
             {author.social && author.social.github ? (
-              <a
+              <OutboundLink
                 target="_blank"
                 rel="noreferrer"
                 className="mr-1 ml-1"
@@ -88,7 +89,7 @@ const MemberDetails = ({ author, index }) => {
               >
                 &nbsp;
                 <i className={`fa fa-github ${color_text}`} />
-              </a>
+              </OutboundLink>
             ) : null}
           </div>
         </div>

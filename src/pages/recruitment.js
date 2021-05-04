@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { graphql, navigate } from "gatsby"
 import { SIGShowcase } from "../components/SIGShowcase"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Recruitments = ({ location, data }) => {
   const {sigdata, rec_questions, siglogo}= data;
@@ -40,13 +41,13 @@ const Recruitments = ({ location, data }) => {
           }}
         >
           <h2>Fill the Application Forms Now</h2>
-          <a
+          <OutboundLink
             href="https://forms.gle/TjVQ7YFAFZWQaVSV6"
             className="btn btn-light btn-lg ml-5"
             type="button"
           >
             Join Us
-          </a>
+          </OutboundLink>
         </div>
         <section className="clean-block clean-faq dark">
           <div className="container">
