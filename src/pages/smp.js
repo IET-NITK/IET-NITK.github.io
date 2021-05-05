@@ -13,6 +13,9 @@ const SMP = ({ data, location }) => {
     if (data.smp_basic.open !== true) {
       navigate("/")
     }
+    fetch("https://httpbin.org/post", { method: "POST", body: "a=1" })
+      .then(res => res.json()) // expecting a json response
+      .then(json => console.log(json))
   })
 
   return (
