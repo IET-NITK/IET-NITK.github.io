@@ -7,7 +7,6 @@ import ReactMarkdown from "react-markdown"
 //eslint-disable-next-line
 import Ticker from "react-ticker"
 
-
 const TopNavbar = ({ notice, smp, recr, expo }) => {
   //eslint-disable-next-line
 
@@ -22,9 +21,12 @@ const TopNavbar = ({ notice, smp, recr, expo }) => {
                 style={{ fontSize: "70%" }}
               >
                 {/* <Ticker mode="await" speed={4} id="message"> */}
-                  {/* {({ index }) => ( */}
-                    <ReactMarkdown className="mb-n3">{notice}</ReactMarkdown>
-                  {/* )} */}
+                {/* {({ index }) => ( */}
+                {notice ? (
+                  <ReactMarkdown className="mb-n3">{notice}</ReactMarkdown>
+                ) : null}
+
+                {/* )} */}
                 {/* </Ticker> */}
               </div>
             </div>
