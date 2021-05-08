@@ -22,8 +22,6 @@ function getRandom(arr, n) {
   return result
 }
 
-
-
 const MainPage = ({ location, data }) => {
   return (
     <Layout location={location.pathname} title={"Main"}>
@@ -102,10 +100,7 @@ const MainPage = ({ location, data }) => {
                 IET NITK consists of three different Special Interest Groups:
               </p>
             </div>
-            <SIGShowcase
-              sigs={data.sigdetails.nodes}
-              sig_images={data && data.sig.nodes}
-            />
+            <SIGShowcase />
           </div>
         </section>
 
@@ -128,44 +123,33 @@ const MainPage = ({ location, data }) => {
                 <div className="row" style={{ paddingTop: "2em" }}>
                   {data.blog.nodes.map((element, index) => {
                     let imagelink =
-                      element.childMarkdownRemark.frontmatter.image
-                    if (imagelink) {
-                      if (imagelink.childImageSharp) {
-                        imagelink = imagelink.childImageSharp.fixed.srcWebp
-                      } else {
-                        imagelink = imagelink.publicURL
-                      }
-                    } else {
-                      imagelink = data.ietlogo.fixed.srcWebp
+                      element.header.childImageSharp &&
+                      element.header.childImageSharp.fixed.srcWebp
+                    if (!imagelink) {
+                      imagelink = element.header.publicURL
                     }
                     return (
                       <div key={index} className="col-sm-6 col-md-4 item h-100">
                         <div className="card">
                           <img
-                            alt={element.childMarkdownRemark.frontmatter.title}
+                            alt={element.title}
                             className="card-img-top w-100 d-block"
                             src={imagelink}
                           />
                           <div className="card-body">
-                            <h4 className="card-title">
-                              {element.childMarkdownRemark.frontmatter.title}
-                            </h4>
+                            <h4 className="card-title">{element.title}</h4>
                             <h6 className="text-muted card-subtitle mb-2">
                               By&nbsp;
-                              {RenderAuthors(
-                                element.childMarkdownRemark.frontmatter.authors,
-                                ""
-                              )}
+                              {RenderAuthors(element.authors, "")}
                               &nbsp;
                               <br />
-                              {element.childMarkdownRemark.frontmatter.date}
+                              {element.date}
                             </h6>
-                            {/* <p className="card-text">ost.excerpt</p> */}
                             <div style={{ textAlign: "center" }}>
                               <Link
                                 className=""
                                 style={{ textDecoration: "none" }}
-                                to={"blog/" + element.relativeDirectory}
+                                to={"blog/" + element.route}
                               >
                                 Read More
                                 <i className="fa fa-arrow-circle-right ml-2" />
@@ -223,10 +207,10 @@ const MainPage = ({ location, data }) => {
                           </h6>
                           {element.sig ? (
                             <Link
-                              to={"/sigs/" + element.sig.toLowerCase()}
+                              to={"/sigs/" + element.sig.name.toLowerCase()}
                               className="badge badge-info text-uppercase mr-2"
                             >
-                              {element.sig}
+                              {element.sig.name}
                             </Link>
                           ) : null}
                           {element.label ? (
@@ -236,7 +220,7 @@ const MainPage = ({ location, data }) => {
                           ) : null}
                           <p className="card-text">
                             Built by
-                            {RenderAuthors(element.builtBy || [], "")}
+                            {RenderAuthors(element.authors || [], "")}
                           </p>
                         </div>
                       </div>
@@ -263,8 +247,7 @@ const MainPage = ({ location, data }) => {
                       <p className="text-center">
                         Our latest event was{" "}
                         {
-                          data.events.nodes[0].childMarkdownRemark.frontmatter
-                            .title
+                          data.events.nodes[0].title
                         }
                         , but we conduct many events throughout the year. Find
                         more <Link to="/events">here</Link>
@@ -279,24 +262,22 @@ const MainPage = ({ location, data }) => {
                           <Link
                             to={
                               "/events/" +
-                              data.events.nodes[0].relativeDirectory
+                              data.events.nodes[0].route
                             }
                             className="card-link text-capitalize"
                           >
                             {
-                              data.events.nodes[0].childMarkdownRemark
-                                .frontmatter.title
+                              data.events.nodes[0].title
                             }
                           </Link>
                         </h6>
                         <div className="text-muted card-subtitle">
                           {
-                            data.events.nodes[0].childMarkdownRemark.frontmatter
-                              .date
+                            data.events.nodes[0].date
                           }
                         </div>
                         <p className="card-text">
-                          {data.events.nodes[0].childMarkdownRemark.excerpt}
+                          {data.events.nodes[0].excerpt}
                         </p>
                       </div>
                     </div>
@@ -314,76 +295,47 @@ const MainPage = ({ location, data }) => {
 
 export const postQuery = graphql`
   {
-    blog: allFile(
-      filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
-      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
-      limit: 3
-    ) {
+    blog: allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 3) {
       nodes {
-        relativeDirectory
-        childMarkdownRemark {
-          frontmatter {
-            authors
-            title
-            image {
-              publicURL
-              childImageSharp {
-                fixed {
-                  srcWebp
-                }
-              }
+        date(formatString: "MMMM Do, YYYY")
+        excerpt
+        title
+        route
+        header {
+          childImageSharp {
+            fixed {
+              srcWebp
             }
-            date(formatString: "MMMM Do, YYYY")
           }
+          publicURL
+        }
+        authors {
+          name
         }
       }
     }
-    events: allFile(
-      filter: { sourceInstanceName: { eq: "events" }, ext: { eq: ".md" } }
-      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
-      limit: 1
+    events: allStrapiEvents(sort: { fields: date, order: DESC }, limit: 1) {
+      nodes {
+        route
+        title
+        route
+        date(formatString: "MMMM Do, YYYY")
+        excerpt
+      }
+    }
+    projects: allStrapiProjects(
+      filter: { authors: { elemMatch: { name: { ne: null } } } }
     ) {
-      nodes {
-        relativeDirectory
-        childMarkdownRemark {
-          frontmatter {
-            title
-            date(formatString: "MMMM Do, YYYY")
-          }
-          excerpt
-        }
-      }
-    }
-    sig: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
-      nodes {
-        name
-        childImageSharp {
-          fixed {
-            srcWebp
-          }
-        }
-      }
-    }
-    sigdetails: allSigYaml(sort: { fields: no_link }) {
-      nodes {
-        name
-        no_link
-        description
-      }
-    }
-    ietlogo: imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
-      fixed {
-        srcWebp
-      }
-    }
-    projects: allProjects(filter: { builtBy: { ne: null } }) {
       nodes {
         title
-        builtBy
         description
-        sig
+        sig {
+          name
+        }
         url
-        label
+        authors {
+          name
+        }
       }
     }
   }

@@ -15,7 +15,7 @@ export const generateSIGHash = sig_images => {
 }
 
 export const RenderAuthors = (arr, cls) =>
-  arr.map((name, index2) => (
+  arr.map(({name}, index2) => (
     <>
       &nbsp;
       <Link
@@ -49,3 +49,5 @@ export const RenderAuthors = (arr, cls) =>
         : ""}
     </>
   ))
+
+

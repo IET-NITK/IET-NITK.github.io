@@ -4,7 +4,8 @@ import SearchEngineOps from "../components/seo"
 import { graphql, Link } from "gatsby"
 import { RenderAuthors } from "../components/helper"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+
+
 const RenderArticles = ({ articles, element, index }) => (
   <div
     key={index}
@@ -36,7 +37,7 @@ const RenderProject = ({
   title,
   SIG,
   description,
-  builtBy,
+  authors,
   ongoing,
   year,
   label,
@@ -63,16 +64,16 @@ const RenderProject = ({
           ) : null}
           {sig ? (
             <Link
-              to={"/sigs/" + sig.toLowerCase()}
+              to={"/sigs/" + sig.name.toLowerCase()}
               className="badge badge-info text-uppercase"
             >
-              {sig}
+              {sig.name}
             </Link>
           ) : null}
           <div className="info">
             <span className="text-muted">
               By
-              {RenderAuthors(builtBy, "")}
+              {RenderAuthors(authors, "")}
             </span>
           </div>
           <p> {description} </p>
@@ -102,6 +103,17 @@ const Author = ({ data, location }) => {
                   <div className="card">
                     <div className="card-body">
                       <div className="text-center mt-4">
+                        <div class="text-center">
+                          {member_details.image ? (
+                            <img
+                              src={`https://drive.google.com/thumbnail?id=${new URL(
+                                member_details.image
+                              ).searchParams.get("id")}`}
+                              class="img-fluid rounded  mb-5"
+                              alt={member_details.name}
+                            />
+                          ) : null}
+                        </div>
                         <h5 className="text-primary">{member_details.name}</h5>
                         <h6>{member_details.position}</h6>
                         <p>
@@ -111,7 +123,12 @@ const Author = ({ data, location }) => {
                               placement="bottom"
                               delay={{ show: 250, hide: 400 }}
                               overlay={props => (
-                                <Tooltip {...props}>{member_details.social.email.replace("@"," [at] ").split(".").join(" [dot] ")}</Tooltip>
+                                <Tooltip {...props}>
+                                  {member_details.social.email
+                                    .replace("@", " [at] ")
+                                    .split(".")
+                                    .join(" [dot] ")}
+                                </Tooltip>
                               )}
                             >
                               <i className="fa fa-envelope text-primary" />
@@ -119,7 +136,7 @@ const Author = ({ data, location }) => {
                           ) : null}
                           {member_details.social &&
                           member_details.social.facebook ? (
-                            <OutboundLink
+                            <a
                               target="_blank"
                               rel="noreferrer"
                               className="mr-1 ml-1"
@@ -127,11 +144,11 @@ const Author = ({ data, location }) => {
                             >
                               &nbsp;
                               <i className="fa fa-facebook" />
-                            </OutboundLink>
+                            </a>
                           ) : null}
                           {member_details.social &&
                           member_details.social.linkedin ? (
-                            <OutboundLink
+                            <a
                               target="_blank"
                               rel="noreferrer"
                               className="mr-1 ml-1"
@@ -139,11 +156,11 @@ const Author = ({ data, location }) => {
                             >
                               &nbsp;
                               <i className="fa fa-linkedin" />
-                            </OutboundLink>
+                            </a>
                           ) : null}
                           {member_details.social &&
                           member_details.social.github ? (
-                            <OutboundLink
+                            <a
                               target="_blank"
                               rel="noreferrer"
                               className="mr-1 ml-1"
@@ -151,7 +168,7 @@ const Author = ({ data, location }) => {
                             >
                               &nbsp;
                               <i className="fa fa-github" />
-                            </OutboundLink>
+                            </a>
                           ) : null}
                         </p>
                       </div>
@@ -211,29 +228,31 @@ const Author = ({ data, location }) => {
 
 export const postQuery = graphql`
   query($pathSlug: [String]) {
-    member_details: strapiMembers(name: {in: $pathSlug}) {
+    member_details: strapiMembers(name: { in: $pathSlug }) {
       name
       position
+      image
       passoutYr
-      social: contacts {
+      contacts {
         email
         facebook
         github
         linkedin
       }
     }
-    member_projects: allProjects(
-      filter: { builtBy: { in: $pathSlug } }
-      sort: { fields: title }
+    member_projects: allStrapiProjects(
+      filter: { authors: { elemMatch: { name: { in: $pathSlug } } } }
     ) {
       nodes {
-        builtBy
         title
-        sig
-        year
-        label
         description
+        sig {
+          name
+        }
         url
+        authors {
+          name
+        }
       }
     }
     member_reports: allFile(

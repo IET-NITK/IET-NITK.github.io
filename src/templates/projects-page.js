@@ -3,28 +3,29 @@ import React from "react"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { graphql } from "gatsby"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Project = ({ data, pathname, pageContext }) => {
   return (
     <Layout location={pathname && pathname.location}>
-      <SearchEngineOps title={data.projectsYaml.title + " @" + data.projectsYaml.sig} />
+      <SearchEngineOps
+        title={data.projects.title + " @" + data.projects.sig.name}
+      />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading row">
               <div className="col-lg-9 col-md-9">
                 <h2 className="text-primary" style={{ paddingTop: "1em" }}>
-                  {data.projectsYaml.title}
+                  {data.projects.title}
                 </h2>
-                <p>{data.projectsYaml.description}</p>
+                <p>{data.projects.description}</p>
               </div>
 
               <div className="col-lg-3 col-md-3 text-right">
-                <Link to={"/sigs/" + data.projectsYaml.sig.toLowerCase()}>
+                <Link to={"/sigs/" + data.projects.sig.name.toLowerCase()}>
                   <img
-                    src={data.sig_logo.childImageSharp.fixed.srcWebp}
-                    alt={data.projectsYaml.sig}
+                    src={data.projects.sig.logo.childImageSharp.fixed.srcWebp}
+                    alt={data.projects.sig.name}
                     className="sig-logo"
                     style={{ maxWidth: "200px" }}
                   />
@@ -32,49 +33,49 @@ const Project = ({ data, pathname, pageContext }) => {
               </div>
             </div>
             <div className="block-content">
-              {data.projectsYaml.label ? (
+              {data.projects.label ? (
                 <div className="mb-2 badge badge-primary">
-                  {data.projectsYaml.label}
+                  {data.projects.label}
                 </div>
               ) : null}
               <div className="row">
                 <div className="col-lg-6">
                   <h4>Built by</h4>
                   <ul>
-                    {data.projectsYaml.builtBy &&
-                      data.projectsYaml.builtBy.map((e, i) => (
+                    {data.projects.authors &&
+                      data.projects.authors.map(({ name }, i) => (
                         <li key={i}>
                           <Link
                             to={
-                              "/members/" + e.toLowerCase().split(" ").join("")
+                              "/members/" +
+                              name.toLowerCase().split(" ").join("")
                             }
                           >
-                            {e}
+                            {name}
                           </Link>
                         </li>
                       ))}
                   </ul>
                 </div>
                 <div className="col-lg-6 text-right">
-                  {new URL(data.projectsYaml.url).hostname ===
-                  "github.com" ? (
-                    <OutboundLink
+                  {new URL(data.projects.url).hostname === "github.com" ? (
+                    <a
                       target="_blank"
                       rel="noreferrer"
-                      href={data.projectsYaml.url}
+                      href={data.projects.url}
                       className="btn btn-outline-dark"
                     >
                       <i className="fa fa-github mr-2" /> Repository URL
-                    </OutboundLink>
+                    </a>
                   ) : (
-                    <OutboundLink
+                    <a
                       target="_blank"
                       rel="noreferrer"
-                      href={data.projectsYaml.url}
+                      href={data.projects.url}
                       className="btn btn-primary"
                     >
                       <i className="fa fa-link" /> Project Link
-                    </OutboundLink>
+                    </a>
                   )}
                 </div>
               </div>
@@ -134,23 +135,25 @@ const Project = ({ data, pathname, pageContext }) => {
 }
 
 export const postQuery = graphql`
-  query($pathSlug: String!, $sig: String) {
-    projectsYaml: projects(title: { eq: $pathSlug }) {
-      sig
-      title
-      year
-      description
-      url
-      builtBy
-      label
-      ongoing
-    }
-    sig_logo: file(sourceInstanceName: { eq: "sig_logo" }, name: { eq: $sig }) {
-      childImageSharp {
-        fixed {
-          srcWebp
+  query($pathSlug: String!) {
+    projects: strapiProjects(title: { eq: $pathSlug }) {
+      authors {
+        name
+      }
+      sig {
+        name
+        logo {
+          childImageSharp {
+            fixed {
+              srcWebp
+            }
+          }
         }
       }
+      url
+      title
+      description
+      ongoing
     }
   }
 `

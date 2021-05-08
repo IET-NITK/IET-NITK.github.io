@@ -3,12 +3,11 @@ import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { graphql, navigate } from "gatsby"
 import { SIGShowcase } from "../components/SIGShowcase"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import ReactMarkdown from "react-markdown"
 
 const Recruitments = ({ location, data }) => {
-  const {sigdata, rec_questions, siglogo}= data;
-  useEffect(()=>{
-    if(data.site_data.siteMetadata.join.allow!==true){
+  useEffect(() => {
+    if (data.rec_questions.open !== true) {
       navigate("/")
     }
   })
@@ -25,11 +24,7 @@ const Recruitments = ({ location, data }) => {
                 others! Check out where we're recruiting:
               </p>
             </div>
-            <SIGShowcase
-              sigs={sigdata.nodes}
-              hide_link={false}
-              sig_images={siglogo.nodes}
-            />
+            <SIGShowcase hide_link={true} />
           </div>
         </section>
         <div
@@ -41,13 +36,13 @@ const Recruitments = ({ location, data }) => {
           }}
         >
           <h2>Fill the Application Forms Now</h2>
-          <OutboundLink
+          <a
             href="https://forms.gle/TjVQ7YFAFZWQaVSV6"
             className="btn btn-light btn-lg ml-5"
             type="button"
           >
             Join Us
-          </OutboundLink>
+          </a>
         </div>
         <section className="clean-block clean-faq dark">
           <div className="container">
@@ -58,16 +53,8 @@ const Recruitments = ({ location, data }) => {
 
             <div className="block-content">
               <div className="faq-item">
-                {rec_questions.nodes.map((e, i) => (
-                  <>
-                    <b className="question mb-0">{e.question}</b>
-                    <div className="answer mt-0 mb-2">{e.answer}</div>
-                  </>
-                ))}
+                <ReactMarkdown skipHtml={true}>{data.rec_questions.FAQ}</ReactMarkdown>
               </div>
-              <p className="text-primary mt-5">
-                Please stay tuned to our social media pages for updates.
-              </p>
             </div>
           </div>
         </section>
@@ -78,35 +65,23 @@ const Recruitments = ({ location, data }) => {
 
 export const postQuery = graphql`
   {
-    siglogo: allFile(filter: { sourceInstanceName: { eq: "sig_logo" } }) {
+    sigdata: allStrapiSigs(sort: { order: ASC, fields: no_link }) {
       nodes {
         name
-        childImageSharp {
-          fixed {
-            srcWebp
+        description
+        no_link
+        logo {
+          childImageSharp {
+            fixed {
+              srcWebp
+            }
           }
         }
       }
     }
-    sigdata: allSigYaml(sort: { fields: no_link }) {
-      nodes {
-        name
-        description
-      }
-    }
-    site_data: site {
-      siteMetadata {
-        join {
-          allow
-          link
-        }
-      }
-    }
-    rec_questions: allRecrfaqYaml {
-      nodes {
-        answer
-        question
-      }
+    rec_questions: strapiRecruitmentFaq {
+      FAQ
+      open
     }
   }
 `

@@ -105,16 +105,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-firestore-easy`,
-      options: {
-        adminCredential: {
-          credential: require("./credentials.json"), //See details for this option
-          databaseURL: "https://ietnitk-web-default-rtdb.firebaseio.com",
-        },
-        collections: ["members", "projects"],
-      },
-    },
+
     {
       resolve: "gatsby-plugin-rollbar",
       options: {

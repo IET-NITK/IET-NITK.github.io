@@ -5,28 +5,29 @@ import { Disqus } from "gatsby-plugin-disqus"
 import { RenderAuthors } from "../components/helper"
 import SearchEngineOps from "../components/seo"
 import { ShareButtons } from "../components/partials/social"
+import ReactMarkdown from "react-markdown"
 
 const PreviewOther = ({ post, isPrevious }) => {
   if (post)
     return (
-      <div className="m-4">
+      <div className={`m-4 text-${isPrevious===true ? 'left':'right'}`}>
         <b>
           {isPrevious === true ? "Previous Post: " : "Next Up: "}
-          <Link to={"/blog/" + post.relativeDirectory}>
-            {post.childMarkdownRemark.frontmatter.title}
+          <Link to={"/blog/" + post.route}>
+            {post.title}
           </Link>
         </b>
         <div className="post-info">
           <span>
             By&nbsp;
             <b>
-              {RenderAuthors(post.childMarkdownRemark.frontmatter.authors, "")}
+              {RenderAuthors(post.authors, "")}
             </b>
           </span>
           <br />
-          <span>{post.childMarkdownRemark.frontmatter.date}</span>
+          <span>{post.date}</span>
         </div>
-        {post.childMarkdownRemark.excerpt}
+        {post.excerpt}
       </div>
     )
   else return null
@@ -35,21 +36,19 @@ const PreviewOther = ({ post, isPrevious }) => {
 const BlogArticle = ({ data, location }) => {
   return (
     <Layout>
-      <SearchEngineOps title={data.post.childMarkdownRemark.frontmatter.title} />
+      <SearchEngineOps title={data.post.title} />
       <main className="page blog-post">
         <section className="clean-block clean-post dark">
           <div className="container">
             <div className="block-content">
-              {data.post.childMarkdownRemark.frontmatter.displayOnBlog ===
+              {data.post.displayOnBlog ===
               false ? null : (
                 <>
                   <div
                     className="post-image"
                     style={{
                       backgroundImage: `url('${
-                        data.post.childMarkdownRemark.frontmatter.image &&
-                        data.post.childMarkdownRemark.frontmatter.image
-                          .publicURL
+                        data.post.header.childImageSharp.fixed.srcWebp
                       }')`,
                       backgroundAttachment: "fixed",
                       backgroundRepeat: "no-repeat",
@@ -59,56 +58,51 @@ const BlogArticle = ({ data, location }) => {
               )}
 
               <div className="post-body">
-                <h3 className="pt-4">{data.post.childMarkdownRemark.frontmatter.title}</h3>
+                <h3 className="pt-4">{data.post.title}</h3>
                 <div className="post-info">
-                  {data.post.childMarkdownRemark.timeToRead} minute read
-                  <br />
                   <span>
                     By&nbsp;
                     <b>
                       {RenderAuthors(
-                        data.post.childMarkdownRemark.frontmatter.authors,
+                        data.post.authors,
                         ""
                       )}
                     </b>
                   </span>
-                  -<span>{data.post.childMarkdownRemark.frontmatter.date}</span>
+                  -<span>{data.post.date}</span>
                   <br />
                   <ShareButtons
                     url={location.href}
-                    title={data.post.childMarkdownRemark.frontmatter.title}
-                    author={data.post.childMarkdownRemark.frontmatter.authors}
+                    title={data.post.title}
+                    author={data.post.authors}
                   />
                 </div>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.post.childMarkdownRemark.html,
-                  }}
-                />
+                <ReactMarkdown skipHtml={true}>{data.post.content}</ReactMarkdown>
+
                 <span>
                   Written by&nbsp;
                   <b>
                     {RenderAuthors(
-                      data.post.childMarkdownRemark.frontmatter.authors,
+                      data.post.authors,
                       ""
                     )}
                     <br />
-                    on {data.post.childMarkdownRemark.frontmatter.date}
+                    on {data.post.date}
                   </b>
                 </span>
                 <br />
                 <ShareButtons
                   url={location.href}
-                  title={data.post.childMarkdownRemark.frontmatter.title}
-                  author={data.post.childMarkdownRemark.frontmatter.authors}
+                  title={data.post.title}
+                  author={data.post.authors}
                 />
               </div>
               <div className="post-body pt-4 pb-4">
                 <Disqus
                   config={{
                     url: location.href,
-                    identifier: data.post.childMarkdownRemark.id,
-                    title: data.post.childMarkdownRemark.frontmatter.title+" | IET NITK",
+                    identifier: data.post.id,
+                    title: data.post.title+" | IET NITK",
                   }}
                 />
               </div>
@@ -130,69 +124,53 @@ const BlogArticle = ({ data, location }) => {
 }
 
 export const postQuery = graphql`
-  query($pathSlug: String!, $articleDate: Date!) {
-    post: file(
-      sourceInstanceName: { eq: "blog" }
-      extension: { eq: "md" }
-      relativeDirectory: { eq: $pathSlug }
-    ) {
-      childMarkdownRemark {
-        frontmatter {
-          authors
-          date(formatString: "MMMM Do, YYYY")
-          title
-          displayOnBlog
-          image {
-            publicURL
+  query($pathSlug: String!, $date: Date!) {
+    post:   strapiBlogs(route: {eq: $pathSlug}) {
+      authors {
+        name
+      }
+      header {
+        childImageSharp {
+          fixed {
+            srcWebp
           }
         }
-        html
-        id
-        timeToRead
       }
+      id
+      content
+      date(formatString: "MMMM Do, YYYY")
+      displayOnBlog
+      excerpt
+      title
     }
-    before: allFile(
-      filter: {
-        sourceInstanceName: { eq: "blog" }
-        ext: { eq: ".md" }
-        childMarkdownRemark: { frontmatter: { date: { lt: $articleDate } } }
-      }
-      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
+    before: allStrapiBlogs(
+      sort: {fields: date, order: DESC}
+      filter: {date: {lt: $date}}
       limit: 1
     ) {
       nodes {
-        relativeDirectory
-        
-        childMarkdownRemark {
-          frontmatter {
-            date(formatString: "MMMM Do, YYYY")
-            title
-            authors
-          }
-          excerpt
+        route
+        title
+        date(formatString: "MMMM Do, YYYY")
+        excerpt
+        authors {
+          name
         }
       }
     }
 
-    after: allFile(
-      filter: {
-        sourceInstanceName: { eq: "blog" }
-        ext: { eq: ".md" }
-        childMarkdownRemark: { frontmatter: { date: { gt: $articleDate } } }
-      }
-      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
+    after: allStrapiBlogs(
+      sort: {fields: date, order: DESC}
+      filter: {date: {gt: $date}}
       limit: 1
     ) {
       nodes {
-        relativeDirectory
-        childMarkdownRemark {
-          frontmatter {
-            date(formatString: "MMMM Do, YYYY")
-            title
-            displayOnBlog
-            authors
-          }
-          excerpt
+        route
+        title
+        date(formatString: "MMMM Do, YYYY")
+        excerpt
+        authors {
+          name
         }
       }
     }

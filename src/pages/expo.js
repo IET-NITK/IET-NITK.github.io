@@ -7,27 +7,24 @@ import SearchEngineOps from "../components/seo"
 
 const Expo = ({ data, location }) => {
   useEffect(() => {
-    if (data.site_data.siteMetadata.expo.allow !== true) {
+    if (data.expo.open !== true) {
       navigate("/")
     }
   })
   return (
     <Layout location={location.pathname} title={"Main"}>
-      <SearchEngineOps title="Expo 2021" />
+      <SearchEngineOps title={`Expo ${new Date().getFullYear()}`} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-primary">IET NITK @ Expo 2021</h2>
+              <h2 className="text-primary">IET NITK @ Expo {new Date().getFullYear()}</h2>
               <p>
-                Expo '21 is a club-wide project showcase showing the best of the
+                Expo '{String(new Date().getFullYear()).slice(2)} is a club-wide project showcase showing the best of the
                 products made by NITK. Here's some of ours.
               </p>
             </div>
             <div className="block-content">
-              {/* <div className="card mb-4">
-                <div className="card-body">Cipher Rovisp Torsion</div>
-              </div> */}
               <PaginationComponent
                 max={10}
                 list={data.projects.nodes}
@@ -47,7 +44,7 @@ const Expo = ({ data, location }) => {
                     {element.builtBy ? (
                       <p>
                         Built by
-                        {RenderAuthors(element.builtBy || [], "")}
+                        {RenderAuthors(element.authors, "")}
                       </p>
                     ) : null}
 
@@ -76,23 +73,20 @@ const Expo = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
-    site_data: site {
-      siteMetadata {
-        expo {
-          allow
-        }
-      }
+    expo: strapiExpo {
+      open
     }
-    projects: allProjects(
-      filter: { builtBy: {}, label: { eq: "Expo 2021" } }
-      sort: { fields: title, order: ASC }
-    ) {
+    projects:   allStrapiProjects(sort: {fields: title, order: DESC}) {
       nodes {
         title
         description
-        sig
-        builtBy
+        sig {
+          name
+        }
         url
+        authors {
+          name
+        }
       }
     }
   }

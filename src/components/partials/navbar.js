@@ -16,19 +16,19 @@ const TopNavbar = ({ notice, smp, recr, expo }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9 col-md-7 col-sm-12">
-              <div
-                className="alert alert-warning m-0 text-center"
-                style={{ fontSize: "70%" }}
-              >
-                {/* <Ticker mode="await" speed={4} id="message"> */}
-                {/* {({ index }) => ( */}
-                {notice ? (
+              {notice ? (
+                <div
+                  className="alert alert-warning m-0 text-center"
+                  style={{ fontSize: "70%" }}
+                >
+                  {/* <Ticker mode="await" speed={4} id="message"> */}
+                  {/* {({ index }) => ( */}
                   <ReactMarkdown className="mb-n3">{notice}</ReactMarkdown>
-                ) : null}
 
-                {/* )} */}
-                {/* </Ticker> */}
-              </div>
+                  {/* )} */}
+                  {/* </Ticker> */}
+                </div>
+              ) : null}
             </div>
             <div className="col-lg-3 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link

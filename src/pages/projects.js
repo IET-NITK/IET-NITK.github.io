@@ -20,9 +20,6 @@ const Projects = ({ data, location }) => {
               </p>
             </div>
             <div className="block-content">
-              {/* <div className="card mb-4">
-                <div className="card-body">Cipher Rovisp Torsion</div>
-              </div> */}
               <PaginationComponent
                 max={10}
                 filterBy="sig"
@@ -32,21 +29,21 @@ const Projects = ({ data, location }) => {
                   <div key={index} className="clean-blog-post">
                     <h3 className="text-capitalize">{element.title}</h3>
                     {element.label ? (
-                      <div className="badge badge-primary mr-2 ">{element.label}</div>
+                      <div className="badge badge-primary mr-2 ">
+                        {element.label}
+                      </div>
                     ) : null}
-                    {element.sig ? (
-                      <Link
-                        to={"/sigs/" + element.sig.toLowerCase()}
-                        className="badge badge-info text-uppercase"
-                      >
-                        {element.sig}
-                      </Link>
-                    ) : null}
+                    <Link
+                      to={"/sigs/" + element.sig.name.toLowerCase()}
+                      className="badge badge-info text-uppercase"
+                    >
+                      {element.sig.name}
+                    </Link>
                     <p>{element.description || ""}</p>
-                    {element.builtBy ? (
+                    {element.authors ? (
                       <p>
                         Built by
-                        {RenderAuthors(element.builtBy || [], "")}
+                        {RenderAuthors(element.authors || [], "")}
                       </p>
                     ) : null}
                     {element.url ? (
@@ -74,17 +71,17 @@ const Projects = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
-    projects: allProjects(
-      filter: { builtBy: {} }
-      sort: { fields: builtBy }
-    ) {
+    projects: allStrapiProjects(sort: { fields: authors, order: DESC }) {
       nodes {
         title
         description
-        sig
-        builtBy
-        label
+        sig {
+          name
+        }
         url
+        authors {
+          name
+        }
       }
     }
   }
