@@ -76,11 +76,7 @@ export const XNavbar = props => {
             about: strapiAboutClub {
               message: topnavbar_marquee
             }
-            site {
-              siteMetadata {
-                noticeBoard
-              }
-            }
+
             imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
               fixed {
                 srcWebp

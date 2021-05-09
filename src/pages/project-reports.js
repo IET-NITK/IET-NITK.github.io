@@ -1,8 +1,8 @@
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import React from "react"
-import { RenderAuthors } from "../components/helper"
+// import { RenderAuthors } from "../components/helper"
 import Layout from "../components/layout"
-import PaginationComponent from "../components/partials/pagination"
+// import PaginationComponent from "../components/partials/pagination"
 import SearchEngineOps from "../components/seo"
 
 const ProjectReports = ({ data, location }) => {
@@ -24,7 +24,7 @@ const ProjectReports = ({ data, location }) => {
               {/* <div className="card mb-4">
                 <div className="card-body">Cipher Rovisp Torsion</div>
               </div> */}
-              <PaginationComponent
+              {/* <PaginationComponent
                 max={10}
                 noneMessage="No project reports here. Come back soon!"
                 list={data.allFile.nodes}
@@ -72,7 +72,7 @@ const ProjectReports = ({ data, location }) => {
                     </Link>
                   </div>
                 )}
-              />
+              /> */}
             </div>
           </div>
         </section>
@@ -92,15 +92,7 @@ export const postQuery = graphql`
       nodes {
         relativeDirectory
         sourceInstanceName
-        childMarkdownRemark {
-          frontmatter {
-            title
-            projectName
-            sig
-            authors
-            date
-          }
-        }
+        
       }
     }
   }

@@ -3,10 +3,6 @@ module.exports = {
   siteMetadata: {
     title: `IET NITK`,
     author: `Nirmal Khedkar`,
-    description: `To inspire, inform and influence the global engineering community, supporting technology innovation to meet the needs of society. We are IET NITK.`,
-    noticeBoard: [
-      "Registrations for PATN Open! Click **[here](/events/patn)** to know more and **[here](https://bit.ly/3u7IufJ)** to register!",
-    ],
     contactDetails: [
       {
         name: "Skanda Upadhyay",
@@ -15,17 +11,6 @@ module.exports = {
     ],
     contactEmail: "iet@nitk.edu.in",
     siteUrl: `https://iet.nitk.ac.in/`,
-    smp: {
-      allow: false,
-      link: "",
-    },
-    join: {
-      allow: false,
-      link: "",
-    },
-    expo: {
-      allow: false,
-    },
   },
 
   plugins: [
@@ -54,40 +39,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/events`,
-        name: `events`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/assets/img/siglogo`,
-        name: `sig_logo`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/src/assets/img`,
         name: `weblogo`,
       },
     },
 
     `gatsby-transformer-yaml`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./content/yml`,
-        name: `yaml`,
-      },
-    },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

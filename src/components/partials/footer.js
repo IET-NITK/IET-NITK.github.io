@@ -9,12 +9,11 @@ export const Footer = props => {
         query {
           site {
             buildTime(formatString: "MMMM Do, YYYY")
-            siteMetadata {
-              title
-              description
-            }
           }
-          sigs: allStrapiSigs(filter: {}, sort: {fields: no_link}) {
+          about: strapiAboutClub {
+            footer
+          }
+          sigs: allStrapiSigs(filter: {}, sort: { fields: no_link }) {
             nodes {
               name
               no_link
@@ -22,7 +21,7 @@ export const Footer = props => {
           }
         }
       `}
-      render={({ site, sigs }) => (
+      render={({ site, about, sigs }) => (
         <div
           className="footer-dark"
           style={{
@@ -78,8 +77,8 @@ export const Footer = props => {
                 </div>
                 <div className="col-md-6 item text">
                   <div className="mobile-center-laptop-right">
-                    <h3>{site.siteMetadata.title}</h3>
-                    <p>{site.siteMetadata.description}</p>
+                    <h3>IET NITK</h3>
+                    <p>{about.footer}</p>
                   </div>
                 </div>
                 <div className="col item social">
@@ -125,7 +124,11 @@ export const Footer = props => {
                   >
                     <i className="fa fa-instagram" />
                   </OutboundLink>
-                  <OutboundLink target="_blank" rel="noreferrer" href="/feed.xml">
+                  <OutboundLink
+                    target="_blank"
+                    rel="noreferrer"
+                    href="/feed.xml"
+                  >
                     <i className="fa fa-rss" />
                   </OutboundLink>
                 </div>

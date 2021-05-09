@@ -48,7 +48,7 @@ const BlogArticle = ({ data, location }) => {
                     className="post-image"
                     style={{
                       backgroundImage: `url('${
-                        data.post.header.childImageSharp.fixed.srcWebp
+                        data.post.header.publicURL
                       }')`,
                       backgroundAttachment: "fixed",
                       backgroundRepeat: "no-repeat",
@@ -130,11 +130,7 @@ export const postQuery = graphql`
         name
       }
       header {
-        childImageSharp {
-          fixed {
-            srcWebp
-          }
-        }
+        publicURL
       }
       id
       content

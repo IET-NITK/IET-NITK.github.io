@@ -58,7 +58,8 @@ const Project = ({ data, pathname, pageContext }) => {
                   </ul>
                 </div>
                 <div className="col-lg-6 text-right">
-                  {new URL(data.projects.url).hostname === "github.com" ? (
+                  
+                  {data.projects.url && new URL(data.projects.url).hostname === "github.com" ? (
                     <a
                       target="_blank"
                       rel="noreferrer"

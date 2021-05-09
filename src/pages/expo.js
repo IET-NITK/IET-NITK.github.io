@@ -35,13 +35,13 @@ const Expo = ({ data, location }) => {
                     <h3 className="text-capitalize">{element.title}</h3>
                     <div className="info">
                       <span className="text-muted">
-                        <Link to={"/sigs/" + element.sig.toLowerCase()}>
-                          {element.sig}
+                        <Link to={"/sigs/" + element.sig.name.toLowerCase()}>
+                          {element.sig.name}
                         </Link>
                       </span>
                     </div>
                     {element.description || ""}
-                    {element.builtBy ? (
+                    {element.authors ? (
                       <p>
                         Built by
                         {RenderAuthors(element.authors, "")}
