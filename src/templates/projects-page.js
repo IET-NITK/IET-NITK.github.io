@@ -23,12 +23,14 @@ const Project = ({ data, pathname, pageContext }) => {
 
               <div className="col-lg-3 col-md-3 text-right">
                 <Link to={"/sigs/" + data.projects.sig.name.toLowerCase()}>
-                  <img
-                    src={data.projects.sig.logo.childImageSharp.fixed.srcWebp}
-                    alt={data.projects.sig.name}
-                    className="sig-logo"
-                    style={{ maxWidth: "200px" }}
-                  />
+                  {data.projects.sig.logo ? (
+                    <img
+                      src={data.projects.sig.logo.childImageSharp.fixed.srcWebp}
+                      alt={data.projects.sig.name}
+                      className="sig-logo"
+                      style={{ maxWidth: "200px" }}
+                    />
+                  ) : null}
                 </Link>
               </div>
             </div>
@@ -58,8 +60,8 @@ const Project = ({ data, pathname, pageContext }) => {
                   </ul>
                 </div>
                 <div className="col-lg-6 text-right">
-                  
-                  {data.projects.url && new URL(data.projects.url).hostname === "github.com" ? (
+                  {data.projects.url &&
+                  new URL(data.projects.url).hostname === "github.com" ? (
                     <a
                       target="_blank"
                       rel="noreferrer"
