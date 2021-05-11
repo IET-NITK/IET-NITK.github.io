@@ -19,11 +19,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install NPM Packages
         run: npm install
-      - name: Get secrets
-        shell: bash
-        env:
-          BACKEND_TOKEN: ${{ secrets.BACKEND_TOKEN }}
-        run: echo $BACKEND_TOKEN > credentials.json
+      # - name: Get secrets
+      #   shell: bash
+      #   env:
+      #     BACKEND_TOKEN: ${{ secrets.BACKEND_TOKEN }}
+      #   run: echo $BACKEND_TOKEN > credentials.json
       - name: Build script
         run: npm run build
       - name: Pass on build directory
@@ -53,3 +53,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: public
           cname: iet.nitk.ac.in
+  contrib-readme-job:
+    runs-on: ubuntu-latest
+    name: Contributor Bot
+    steps:
+        - name: Contribute List
+          uses: akhilmhdh/contributors-readme-action@v2.1.2
+          env:
+              GITHUB_TOKEN: ${{ secrets.IET_PAT }}
+          with:
+            columns_per_row: 4
