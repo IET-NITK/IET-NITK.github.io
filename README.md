@@ -17,6 +17,20 @@ We're really grateful for the contributions of the following people:
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/renovate-bot">
+            <img src="https://avatars.githubusercontent.com/u/25180681?v=4" width="100;" alt="renovate-bot"/>
+            <br />
+            <sub><b>WhiteSource Renovate</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/ImgBotApp">
+            <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="100;" alt="ImgBotApp"/>
+            <br />
+            <sub><b>Imgbot</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/Madhan-Kumar22">
             <img src="https://avatars.githubusercontent.com/u/59618245?v=4" width="100;" alt="Madhan-Kumar22"/>
             <br />
@@ -30,4 +44,14 @@ We're really grateful for the contributions of the following people:
 We're making use of these brilliant bots to aid our work:
 
 <!-- readme: bots -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/renovate[bot]">
+            <img src="https://avatars.githubusercontent.com/in/2740?v=4" width="100;" alt="renovate[bot]"/>
+            <br />
+            <sub><b>Renovate[bot]</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: bots -end -->
