@@ -4,7 +4,7 @@
 
 
 ## Contributors
-Obviously, the content of the website is thanks to every single current or alumni member of IET NITK (see them all (here)[]). But we do have a lot of skillfull people who've built the framework and the structure where that content is displayed, and we're really grateful to them:
+Obviously, the content of the website is thanks to every single current or alumni member of IET NITK (see them all [here](https://iet.nitk.ac.in/about/)). But we do have a lot of skillfull people who've built the framework and the structure where that content is displayed, and we're really grateful to them:
 
 <!-- readme: contributors -start -->
 <table>
