@@ -39,8 +39,8 @@ const Blog = ({ data, location }) => {
                           />
                         </div>
                         <div className="col-lg-7">
-                          <h3>
-                            {element.title}
+                          <h3 className="text-capitalize">
+                            {element.title.toLowerCase()}
                           </h3>
                           <div className="info">
                             <span className="text-muted">
@@ -55,7 +55,7 @@ const Blog = ({ data, location }) => {
                           </div>
                           <p>{element.excerpt}</p>
                           <Link
-                            to={"/blog/" + element.route}
+                            to={"/blog/" + element.route.toLowerCase()}
                             className="btn btn-outline-primary btn-sm"
                             type="button"
                           >

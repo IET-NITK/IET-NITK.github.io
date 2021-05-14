@@ -15,7 +15,7 @@ export const generateSIGHash = sig_images => {
 }
 
 export const RenderAuthors = (arr, cls) =>
-  arr.map(({name}, index2) => (
+  arr.map(({ name }, index2) => (
     <>
       &nbsp;
       <Link
@@ -32,8 +32,8 @@ export const RenderAuthors = (arr, cls) =>
     </>
   ))
 
-  export const newRenderAuthors = (arr, cls) =>
-  arr.map(({name}, index2) => (
+export const newRenderAuthors = (arr, cls) =>
+  arr.map(({ name }, index2) => (
     <>
       &nbsp;
       <Link
@@ -50,4 +50,7 @@ export const RenderAuthors = (arr, cls) =>
     </>
   ))
 
-
+export const niceFormat = name =>
+  name.toLowerCase().replace(/^\w|\s\w/g, function (letter) {
+    return letter.toUpperCase()
+  })
