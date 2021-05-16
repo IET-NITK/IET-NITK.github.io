@@ -119,7 +119,7 @@ const MainPage = ({ location, data }) => {
                     }
                     return (
                       <div key={index} className="col-sm-6 col-md-4 item h-100">
-                        <div className="card">
+                        <div className="card clean-blog-card">
                           <img
                             alt={element.title}
                             className="card-img-top w-100 d-block"
@@ -128,22 +128,21 @@ const MainPage = ({ location, data }) => {
                           <div className="card-body">
                             <h4 className="card-title">{element.title}</h4>
                             <h6 className="text-muted card-subtitle mb-2">
-                              By&nbsp;
-                              {RenderAuthors(element.authors, "")}
-                              &nbsp;
-                              <br />
-                              {element.date}
+                              <footer className="blockquote-footer">
+                                {RenderAuthors(element.authors || [], "")}
+                                {", "}
+                                {element.date}
+                              </footer>
                             </h6>
-                            <div style={{ textAlign: "center" }}>
-                              <Link
-                                className=""
-                                style={{ textDecoration: "none" }}
-                                to={"blog/" + element.route}
-                              >
-                                Read More
-                                <i className="fa fa-arrow-circle-right ml-2" />
-                              </Link>
-                            </div>
+                          </div>
+                          <div className="clean-blog-footer">
+                            <Link
+                              className="btn btn-sm"
+                              style={{ textDecoration: "none" }}
+                              to={"blog/" + element.route}
+                            >
+                              Read More
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -174,7 +173,7 @@ const MainPage = ({ location, data }) => {
                 <div className="articles row" style={{ paddingTop: "2em" }}>
                   {getRandom(data.projects.nodes, 4).map((element, index) => (
                     <div key={index} className="col-lg-6 col-md-6 mt-4">
-                      <div className="card h-100">
+                      <div className="card h-100 clean-card">
                         <div className="card-body">
                           <h6 className="card-title">
                             {element.url ? (
@@ -242,7 +241,7 @@ const MainPage = ({ location, data }) => {
                   </div>
                   {/* {data.events.nodes.map((element, index) => ( */}
                   <div className="col-lg-6 col-md-6 mt-4">
-                    <div className="card h-100">
+                    <div className="card h-100 clean-card">
                       <div className="card-body">
                         <h6 className="card-title">
                           <Link
