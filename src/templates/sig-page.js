@@ -20,7 +20,7 @@ const SIG = ({ pageContext, pathname, data }) => {
                   src={sig_details.logo.childImageSharp.fixed.srcWebp}
                   alt={sig_details.name}
                   className="sig-logo"
-                  style={{ maxWidth: "200px" }}
+                  style={{ maxWidth: "200px", paddingTop: "4em"}}
                 />
               </Link>
               <p>{sig_details.description}</p>

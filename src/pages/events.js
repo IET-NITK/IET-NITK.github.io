@@ -12,7 +12,7 @@ const Events = ({ data, location }) => {
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-primary">Events @ IET NITK</h2>
+              <h2 className="text-primary" style={{paddingTop: "3em"}}>Events @ IET NITK</h2>
               <p>
                 We hold many events throughtout the year, here's a glimpse of it
                 all

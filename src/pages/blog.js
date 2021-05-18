@@ -12,7 +12,7 @@ const Blog = ({ data, location }) => {
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">
-            <div className="block-heading">
+            <div className="block-heading" style={{paddingTop: "9em"}}>
               <h2 className="text-primary">Official IET-NITK Blog</h2>
               <p>
                 We post cool stuff. Subscribe to our Newsletter to stay updated!

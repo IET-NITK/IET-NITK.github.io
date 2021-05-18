@@ -30,7 +30,7 @@ class Contact extends React.Component {
               <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="contact" />
               <div className="block-heading">
-                <h2 className="text-primary">Say Hi!</h2>
+                <h2 className="text-primary" style={{paddingTop: "3em"}}>Say Hi!</h2>
                 <p>For any assistance, contact us at:</p>
               </div>
               <div style={{ textAlign: "center" }}>

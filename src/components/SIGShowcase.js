@@ -30,7 +30,7 @@ export const SIGShowcase = ({ hide_link }) => {
                 style={{ marginBottom: "1em" }}
               >
                 <div className="clean-pricing-item" style={{ height: "100%" }}>
-                  <div style={{ width: "100%" }}>
+                  <div style={{ width: "100%"}}>
                     <img
                       alt=""
                       src={s.logo.childImageSharp.fixed.srcWebp}

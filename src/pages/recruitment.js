@@ -18,7 +18,7 @@ const Recruitments = ({ location, data }) => {
         <section className="clean-block about-us">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-primary">We're Looking For You!</h2>
+              <h2 className="text-primary" style={{paddingTop: "3em"}}>We're Looking For You!</h2>
               <p>
                 IET NITK is looking for smart people willing to reach out to
                 others! Check out where we're recruiting:

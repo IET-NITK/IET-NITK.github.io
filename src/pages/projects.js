@@ -13,7 +13,7 @@ const Projects = ({ data, location }) => {
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-primary">Projects @ IET NITK</h2>
+              <h2 className="text-primary" style={{paddingTop: "3em"}}>Projects @ IET NITK</h2>
               <p>
                 We do many projects throughtout the year, here's a glimpse of it
                 all
