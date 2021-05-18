@@ -1,4 +1,6 @@
-
+:root {
+  --primary-color: #803391;
+}
 body {
   margin: 0;
   font-family: Montserrat, sans-serif!important;
@@ -13,10 +15,6 @@ body {
 /* bootstrap class */
 .btn-sm {
   border-radius: 0;
-  padding: 5px 15px;
-}
-.card-title {
-  font-weight: bold;
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -318,7 +316,7 @@ body {
 
 .clean-card {
   background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+  box-shadow: 0px 0px 32px 0px rgba(221,230,237,0.4);
   border: none;
   border-radius: 0 !important;
 }
@@ -332,7 +330,10 @@ body {
   height: 500px;
 }
 .clean-blog-card img {
-  height: 300px;
+  display: block;
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
   border-radius: 0;
 }
 .clean-blog-card .card-body h4 {
@@ -346,14 +347,19 @@ body {
 .clean-blog-footer a {
   text-transform: uppercase;
   margin: 5px 10px;
-  padding: 10px 15px;
+  padding: 10px 20px;
   font-size: 0.8rem;
   letter-spacing: 1.5px;
   border: 1px solid #803391;
 }
 .clean-blog-footer a:hover {
-  background: #803391;
+  background: var(--primary-color);
   color: #fff;
+}
+.project-auther-name {
+  font-size: .8rem;
+  white-space:nowrap;
+  font-weight: bold;
 }
 
 article {

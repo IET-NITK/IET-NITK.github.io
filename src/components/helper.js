@@ -32,6 +32,27 @@ export const RenderAuthors = (arr, cls) =>
     </>
   ))
 
+export const RenderAuthorsName = (arr, cls) =>
+  arr.map(({ name }, index2) => (
+    <>
+      <Link
+        className="my-3 pr-3"
+        key={"x" + index2}
+        to={"/members/" + name.toLowerCase().split(" ").join("")}
+      >
+        <span class="project-auther-name">#{name}</span>
+      </Link>
+      {""}
+    </>
+  ))
+
+export const RenderProjectDescription = (element, len=100) => {
+  if (element != null && element.length >= len) {
+    return element.substring(0, len) + '...';
+  }
+  return element;
+}
+
 export const newRenderAuthors = (arr, cls) =>
   arr.map(({ name }, index2) => (
     <>

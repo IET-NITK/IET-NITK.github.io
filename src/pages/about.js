@@ -38,9 +38,13 @@ const MemberDetails = ({ author, index }) => {
           <Link
             to={`/members/${author.name.toLowerCase().split(" ").join("")}`}
           >
-            <h5 className={`card-title text-capitalize ${color_text}`}>{author.name}</h5>
+            <h5 className={`card-title text-capitalize ${color_text}`}>
+              {author.name}
+            </h5>
           </Link>
-          <p className={`card-text text-capitalize ${color_text}`}>{author.position}</p>
+          <p className={`card-text text-capitalize ${color_text}`}>
+            {author.position}
+          </p>
           <div className="icon">
             {author.social && author.social.email ? (
               <OverlayTrigger
@@ -120,22 +124,20 @@ const About = ({ location, data }) => {
       <main className="page">
         <section className="clean-block about-us">
           <div className="container" style={{ marginTop: "5em" }}>
-            <div className=" clean-card" style={{ boxShadow: "0px!important" }}>
-              <div className="card-body info">
-                <div className="card-text">
-                  <div className="row justify-content-center">
-                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                      <img
-                        alt=""
-                        src={Img_Beach}
-                        style={{ width: "100%", height: "auto" }}
-                      />
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                      <h2 className="text-primary">About Us</h2>
+            <div className="card-body info">
+              <div className="card-text">
+                <div className="row justify-content-center">
+                  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <img
+                      alt=""
+                      src={Img_Beach}
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                  </div>
+                  <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <h2 className="text-primary">About Us</h2>
 
-                      <p>{data.about.info}</p>
-                    </div>
+                    <p>{data.about.info}</p>
                   </div>
                 </div>
               </div>
@@ -204,8 +206,7 @@ export default About
 
 export const postQuery = graphql`
   {
-
-    members: allStrapiMembers(sort: {order: ASC, fields: rank}) {
+    members: allStrapiMembers(sort: { order: ASC, fields: rank }) {
       nodes {
         alumni
         passoutYr

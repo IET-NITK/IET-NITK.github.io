@@ -3,7 +3,11 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
-import { RenderAuthors } from "../components/helper"
+import {
+  RenderAuthors,
+  RenderAuthorsName,
+  RenderProjectDescription,
+} from "../components/helper"
 import video from "../../static/home.mp4"
 import { SIGShowcase } from "../components/SIGShowcase"
 import ReactMarkdown from "react-markdown"
@@ -206,10 +210,14 @@ const MainPage = ({ location, data }) => {
                               {element.label}
                             </div>
                           ) : null}
-                          <p className="card-text">
-                            Built by
-                            {RenderAuthors(element.authors || [], "")}
-                          </p>
+                          <div className="mb-3">
+                            <div className="text-muted">
+                              {RenderProjectDescription(element.description, 100)}
+                            </div>
+                          </div>
+                          <div className="card-text">
+                            {RenderAuthorsName(element.authors || [], "")}
+                          </div>
                         </div>
                       </div>
                     </div>
