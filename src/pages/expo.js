@@ -6,11 +6,13 @@ import PaginationComponent from "../components/partials/pagination"
 import SearchEngineOps from "../components/seo"
 
 const Expo = ({ data, location }) => {
+  /*
   useEffect(() => {
     if (data.expo.open !== true) {
       navigate("/")
     }
   })
+  */
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SearchEngineOps title={`Expo ${new Date().getFullYear()}`} />
@@ -18,7 +20,7 @@ const Expo = ({ data, location }) => {
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-primary">IET NITK @ Expo {new Date().getFullYear()}</h2>
+              <h2 className="text-primary" style={{paddingTop: "3em"}}>IET NITK @ Expo {new Date().getFullYear()}</h2>
               <p>
                 Expo '{String(new Date().getFullYear()).slice(2)} is a club-wide project showcase showing the best of the
                 products made by NITK. Here's some of ours.

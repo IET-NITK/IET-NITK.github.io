@@ -131,11 +131,12 @@ const About = ({ location, data }) => {
                     <img
                       alt=""
                       src={Img_Beach}
-                      style={{ width: "100%", height: "auto" }}
+                      style={{ width: "100%", height: "auto"}}
+                      className="mt-5"
                     />
                   </div>
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <h2 className="text-primary">About Us</h2>
+                    <h2 className="text-primary mt-5">About Us</h2>
 
                     <p>{data.about.info}</p>
                   </div>

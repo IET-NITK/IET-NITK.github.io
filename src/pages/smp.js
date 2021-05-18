@@ -14,7 +14,6 @@ const SMP = ({ data, location }) => {
       navigate("/")
     }
   })
-
   return (
     <Layout location={location.pathname}>
       {data.smp_basic.open !== true ? null : (
