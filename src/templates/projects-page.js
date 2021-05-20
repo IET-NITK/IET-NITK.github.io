@@ -5,7 +5,7 @@ import SearchEngineOps from "../components/seo"
 import { graphql } from "gatsby"
 import Glimpse from "../components/partials/glimpse"
 
-const Project = ({ data, pathname, pageContext }) => {
+const Project = ({ data, pathname, pageContext, uri }) => {
   return (
     <Layout location={pathname && pathname.location}>
       <SearchEngineOps
@@ -134,7 +134,7 @@ const Project = ({ data, pathname, pageContext }) => {
           </div>
         </section>
       </main>
-      <Glimpse/>
+      <Glimpse currentRoute={uri} />
     </Layout>
   )
 }

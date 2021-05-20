@@ -19,6 +19,7 @@ export const RenderAuthors = (arr, cls) =>
     <>
       &nbsp;
       <Link
+      className={cls}
         key={"x" + index2}
         to={"/members/" + name.toLowerCase().split(" ").join("")}
       >
@@ -46,11 +47,11 @@ export const RenderAuthorsName = (arr, cls) =>
     </>
   ))
 
-export const RenderProjectDescription = (element, len=100) => {
+export const RenderProjectDescription = (element, len = 100) => {
   if (element != null && element.length >= len) {
-    return element.substring(0, len) + '...';
+    return element.substring(0, len) + "..."
   }
-  return element;
+  return element
 }
 
 export const newRenderAuthors = (arr, cls) =>
@@ -75,3 +76,17 @@ export const niceFormat = name =>
   name.toLowerCase().replace(/^\w|\s\w/g, function (letter) {
     return letter.toUpperCase()
   })
+
+export function getRandom(arr, n) {
+  var result = new Array(n),
+    len = arr.length,
+    taken = new Array(len)
+  if (n > len)
+    throw new RangeError("getRandom: more elements taken than available")
+  while (n--) {
+    var x = Math.floor(Math.random() * len)
+    result[n] = arr[x in taken ? taken[x] : x]
+    taken[x] = --len in taken ? taken[len] : len
+  }
+  return result
+}

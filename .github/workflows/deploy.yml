@@ -56,6 +56,7 @@ jobs:
   contrib-readme-job:
     runs-on: ubuntu-latest
     name: Contributor Bot
+    if: github.ref=='refs/heads/daddy'
     steps:
         - name: Contribute List
           uses: akhilmhdh/contributors-readme-action@v2.1.2

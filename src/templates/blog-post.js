@@ -30,7 +30,7 @@ const PreviewOther = ({ post, isPrevious }) => {
   else return null
 }
 
-const BlogArticle = ({ data, location }) => {
+const BlogArticle = ({ data, location, uri }) => {
   return (
     <Layout>
       <SearchEngineOps title={niceFormat(data.post.title)} />
@@ -107,7 +107,7 @@ const BlogArticle = ({ data, location }) => {
           </div>
         </section>
       </main>
-      <Glimpse/>
+      <Glimpse  currentRoute={uri} />
     </Layout>
   )
 }

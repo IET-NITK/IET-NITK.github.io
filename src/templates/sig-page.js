@@ -7,7 +7,7 @@ import { RenderAuthors } from "../components/helper"
 import PaginationComponent from "../components/partials/pagination"
 import Glimpse from "../components/partials/glimpse"
 
-const SIG = ({ pageContext, pathname, data }) => {
+const SIG = ({ pageContext, pathname, data, uri }) => {
   const { sig_details, sig_projects } = data
   return (
     <Layout location={pathname && pathname.location}>
@@ -74,7 +74,7 @@ const SIG = ({ pageContext, pathname, data }) => {
           </div>
         </section>
       </main>
-      <Glimpse/>
+      <Glimpse currentRoute={uri} />
     </Layout>
   )
 }

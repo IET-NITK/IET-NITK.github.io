@@ -5,7 +5,7 @@ import SearchEngineOps from "../components/seo"
 import Glimpse from "../components/partials/glimpse"
 import ReactMarkdown from "react-markdown"
 
-const BlogArticle = ({ data }) => {
+const BlogArticle = ({ data, uri }) => {
   return (
     <Layout>
       <SearchEngineOps
@@ -33,7 +33,7 @@ const BlogArticle = ({ data }) => {
           </div>
         </section>
       </main>
-      <Glimpse/>
+      <Glimpse currentRoute={uri} />
     </Layout>
   )
 }

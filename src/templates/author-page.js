@@ -82,12 +82,8 @@ const RenderProject = ({
   )
 }
 
-const Author = ({ data, location }) => {
-  const {
-    member_details,
-    member_projects,
-    member_articles
-  } = data
+const Author = ({ data, location, uri }) => {
+  const { member_details, member_projects, member_articles } = data
 
   return (
     <Layout location={location.pathname}>
@@ -220,13 +216,13 @@ const Author = ({ data, location }) => {
           </div>
         </section>
       </main>
-      <Glimpse/>
+      <Glimpse currentRoute={uri} />
     </Layout>
   )
 }
 
 export const postQuery = graphql`
-  query($pathSlug: String) {
+  query ($pathSlug: String) {
     member_details: strapiMembers(name: { in: [$pathSlug] }) {
       name
       position
@@ -255,8 +251,8 @@ export const postQuery = graphql`
       }
     }
     member_articles: allStrapiBlogs(
-      sort: {fields: date, order: DESC}
-      filter: {authors: {elemMatch: {name: {in: [$pathSlug]}}}}
+      sort: { fields: date, order: DESC }
+      filter: { authors: { elemMatch: { name: { in: [$pathSlug] } } } }
     ) {
       nodes {
         title
