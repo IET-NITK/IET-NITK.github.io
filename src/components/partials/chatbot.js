@@ -6,7 +6,6 @@ import config from "../ChatBot/config"
 import MessageParser from "../ChatBot/MessageParser"
 import ActionProvider from "../ChatBot/ActionProvider"
 
-import "../ChatBot/app.css";
 
 import ButtonIcon  from "../ChatBot/robot.js";
 
