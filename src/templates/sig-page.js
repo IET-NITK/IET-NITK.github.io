@@ -8,8 +8,7 @@ import PaginationComponent from "../components/partials/pagination"
 import Glimpse from "../components/partials/glimpse"
 
 const SIG = ({ pageContext, pathname, data }) => {
-  const { sig_details, sig_logo, sig_projects } = data
-
+  const { sig_details, sig_projects } = data
   return (
     <Layout location={pathname && pathname.location}>
       <SearchEngineOps title={sig_details.name} />
@@ -19,7 +18,7 @@ const SIG = ({ pageContext, pathname, data }) => {
             <div className="block-heading">
               <Link to={"/sigs/" + sig_details.name.toLowerCase()}>
                 <img
-                  src={sig_logo.childImageSharp.fixed.srcWebp}
+                  src={sig_details.logo.childImageSharp.fixed.srcWebp}
                   alt={sig_details.name}
                   className="sig-logo"
                   style={{ maxWidth: "200px" }}
@@ -36,7 +35,7 @@ const SIG = ({ pageContext, pathname, data }) => {
                     <div className="row">
                       <div className="col-lg-12">
                         <h3>
-                          {element.builtBy && element.url ? (
+                          {element.authors && element.url ? (
                             <Link
                               to={
                                 "/projects/" +
@@ -54,12 +53,12 @@ const SIG = ({ pageContext, pathname, data }) => {
                             {element.label}
                           </div>
                         ) : null}
-                        {element.builtBy !== null ? (
+                        {element.authors !== null ? (
                           <>
                             <div className="info">
                               <span className="text-muted">
                                 By
-                                {RenderAuthors(element.builtBy, "")}
+                                {RenderAuthors(element.authors, "")}
                               </span>
                             </div>
                           </>
@@ -83,32 +82,30 @@ const SIG = ({ pageContext, pathname, data }) => {
 export default SIG
 
 export const postQuery = graphql`
-  query x($pathSlug: String!) {
-    sig_logo: file(
-      sourceInstanceName: { eq: "sig_logo" }
-      name: { eq: $pathSlug }
+  query sigpage($pathSlug: String!) {
+    sig_projects: allStrapiProjects(
+      filter: { sig: { name: { eq: $pathSlug } } }
+      sort: { fields: authors___name }
     ) {
-      childImageSharp {
-        fixed {
-          srcWebp
+      nodes {
+        description
+        title
+        url
+        authors {
+          name
         }
       }
     }
-    sig_projects: allProjects(
-      filter: { sig: { eq: $pathSlug } }
-      sort: { fields: builtBy }
-    ) {
-      nodes {
-        title
-        url
-        builtBy
-        label
-        description
-      }
-    }
-    sig_details: sigYaml(name: { eq: $pathSlug }) {
+    sig_details: strapiSigs(name: { eq: $pathSlug }) {
       name
       description
+      logo {
+        childImageSharp {
+          fixed {
+            srcWebp
+          }
+        }
+      }
     }
   }
 `

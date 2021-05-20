@@ -14,19 +14,19 @@ const RenderArticles = ({ articles, element, index }) => (
     <div className="row">
       <div className="col-lg-12">
         <h3>
-          <Link className="btn-link" to={"/blog/" + element.relativeDirectory}>
-            {element.childMarkdownRemark.frontmatter.title}
+          <Link className="btn-link" to={"/blog/" + element.route}>
+            {element.title}
           </Link>
         </h3>
         <div className="info">
           <span className="text-muted">
             By
-            {RenderAuthors(element.childMarkdownRemark.frontmatter.authors, "")}
+            {RenderAuthors(element.authors, "")}
             <br />
             {element.birthTime}
           </span>
         </div>
-        <p> {element.childMarkdownRemark.excerpt} </p>
+        <p> {element.excerpt} </p>
       </div>
     </div>
   </div>
@@ -36,7 +36,7 @@ const RenderProject = ({
   title,
   SIG,
   description,
-  builtBy,
+  authors,
   ongoing,
   year,
   label,
@@ -63,16 +63,16 @@ const RenderProject = ({
           ) : null}
           {sig ? (
             <Link
-              to={"/sigs/" + sig.toLowerCase()}
+              to={"/sigs/" + sig.name.toLowerCase()}
               className="badge badge-info text-uppercase"
             >
-              {sig}
+              {sig.name}
             </Link>
           ) : null}
           <div className="info">
             <span className="text-muted">
               By
-              {RenderAuthors(builtBy, "")}
+              {RenderAuthors(authors, "")}
             </span>
           </div>
           <p> {description} </p>
@@ -86,8 +86,7 @@ const Author = ({ data, location }) => {
   const {
     member_details,
     member_projects,
-    member_articles,
-    member_reports,
+    member_articles
   } = data
 
   return (
@@ -102,6 +101,17 @@ const Author = ({ data, location }) => {
                   <div className="card">
                     <div className="card-body">
                       <div className="text-center mt-4">
+                        <div class="text-center">
+                          {member_details.image ? (
+                            <img
+                              src={`https://drive.google.com/thumbnail?id=${new URL(
+                                member_details.image
+                              ).searchParams.get("id")}`}
+                              class="img-fluid rounded  mb-5"
+                              alt={member_details.name}
+                            />
+                          ) : null}
+                        </div>
                         <h5 className="text-primary">{member_details.name}</h5>
                         <h6>{member_details.position}</h6>
                         <p>
@@ -111,7 +121,12 @@ const Author = ({ data, location }) => {
                               placement="bottom"
                               delay={{ show: 250, hide: 400 }}
                               overlay={props => (
-                                <Tooltip {...props}>{member_details.social.email.replace("@"," [at] ").split(".").join(" [dot] ")}</Tooltip>
+                                <Tooltip {...props}>
+                                  {member_details.social.email
+                                    .replace("@", " [at] ")
+                                    .split(".")
+                                    .join(" [dot] ")}
+                                </Tooltip>
                               )}
                             >
                               <i className="fa fa-envelope text-primary" />
@@ -194,9 +209,9 @@ const Author = ({ data, location }) => {
                       <div className="card-title">
                         <h4>Project Reports</h4>
                       </div>
-                      {member_reports.nodes.map((e, i) => (
+                      {/* {member_reports.nodes.map((e, i) => (
                         <RenderArticles element={e} index={i} />
-                      ))}
+                      ))} */}
                     </div>
                   </div>
                 </div>
@@ -211,69 +226,46 @@ const Author = ({ data, location }) => {
 }
 
 export const postQuery = graphql`
-  query($pathSlug: [String]) {
-    member_details: members(name: { in: $pathSlug }) {
+  query($pathSlug: String) {
+    member_details: strapiMembers(name: { in: [$pathSlug] }) {
       name
       position
+      image
       passoutYr
-      social {
+      contacts {
         email
+        facebook
         github
         linkedin
-        facebook
       }
     }
-    member_projects: allProjects(
-      filter: { builtBy: { in: $pathSlug } }
-      sort: { fields: title }
+    member_projects: allStrapiProjects(
+      filter: { authors: { elemMatch: { name: { in: [$pathSlug] } } } }
     ) {
       nodes {
-        builtBy
         title
-        sig
-        year
-        label
         description
+        sig {
+          name
+        }
         url
-      }
-    }
-    member_reports: allFile(
-      filter: {
-        childMarkdownRemark: { frontmatter: { authors: { in: $pathSlug } } }
-        sourceInstanceName: { eq: "project-reports" }
-        extension: { eq: "md" }
-      }
-      sort: { fields: childMarkdownRemark___frontmatter___title }
-    ) {
-      nodes {
-        childMarkdownRemark {
-          frontmatter {
-            authors
-            date(formatString: "MMMM Do, YYYY")
-            title
-          }
-          excerpt
+        authors {
+          name
         }
       }
     }
-    member_articles: allFile(
-      filter: {
-        childMarkdownRemark: { frontmatter: { authors: { in: $pathSlug } } }
-        sourceInstanceName: { eq: "blog" }
-        extension: { eq: "md" }
-      }
-      sort: { fields: childMarkdownRemark___frontmatter___title }
+    member_articles: allStrapiBlogs(
+      sort: {fields: date, order: DESC}
+      filter: {authors: {elemMatch: {name: {in: [$pathSlug]}}}}
     ) {
       nodes {
-        relativeDirectory
-        childMarkdownRemark {
-          frontmatter {
-            authors
-            date(formatString: "MMMM Do, YYYY")
-            title
-          }
-          excerpt
+        title
+        authors {
+          name
         }
+        excerpt
+        date(formatString: "MMMM Do, YYYY")
+        route
       }
     }
   }

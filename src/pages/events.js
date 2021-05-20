@@ -23,20 +23,20 @@ const Events = ({ data, location }) => {
                 max={5}
 
                 noneMessage="No event reports here. Come back soon!"
-                list={data.allFile.nodes}
+                list={data.events.nodes}
                 item={(element, index) => (
                   <div key={index} className="clean-blog-post">
                     <div className="row">
                       <div className="col-lg-7">
-                        <h3>{element.childMarkdownRemark.frontmatter.title}</h3>
+                        <h3>{element.title}</h3>
                         <div className="info">
                           <span className="text-muted">
-                            {element.childMarkdownRemark.frontmatter.date}
+                            {element.date}
                           </span>
                         </div>
-                        <p>{element.childMarkdownRemark.excerpt}</p>
+                        <p>{element.excerpt}</p>
                         <Link
-                          to={"/events/" + element.relativeDirectory}
+                          to={"/events/" + element.route}
                           className="btn btn-outline-primary btn-sm"
                           type="button"
                         >
@@ -57,22 +57,12 @@ const Events = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
-    allFile(
-      filter: { sourceInstanceName: { eq: "events" }, ext: { eq: ".md" } }
-      sort: {
-        fields: childMarkdownRemark___frontmatter___date
-        order: DESC
-      }
-    ) {
+    events:   allStrapiEvents(sort: {fields: date, order: DESC}) {
       nodes {
-        relativeDirectory
-        childMarkdownRemark {
-          excerpt(format: PLAIN)
-          frontmatter {
-            date(formatString: "MMMM Do, YYYY")
-            title
-          }
-        }
+        date(formatString: "MMMM Do, YYYY")
+        title
+        excerpt
+        route
       }
     }
   }

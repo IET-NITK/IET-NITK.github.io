@@ -1,36 +1,65 @@
 # IET NITK's Official Website Repository
 [![](https://github.com/IET-NITK/IET-NITK.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/IET-NITK/IET-NITK.github.io/actions/workflows/deploy.yml)
-## Contributing Guidelines
-
-The content on the website can be divided into 4:
-- Blogs (find this under `content/blog`). 
-- Events (find this under `content/events`).
-- Project Reports (find this under `content/project-reports`).
-- SIG, member, projects, recruitment and SMP data (find this under `content/yml`).
-
-Note: 
-- All documentation regarding Blogs, Events and Project Reports can be found [here](CONTRIBUTE/WRITE.md).
-- All documentation regarding maintaining SIG, member, projects, recruitment and SMP data can be found [here](CONTRIBUTE/DATA.md)
-
-Any changes you have, download them and send it to [any one of the project contributors](https://github.com/IET-NITK/ietnitk#contributors-).
 
 
-## Contributors to this Repository ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+## Contributors
+Obviously, the content of the website is thanks to every single current or alumni member of IET NITK (see them all [here](https://iet.nitk.ac.in/about/)). But we do have a lot of skillfull people who've built the framework and the structure where that content is displayed, and we're really grateful to them:
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+<!-- readme: contributors -start -->
 <table>
-  <tr>
-    <td align="center"><a href="http://nirmalhk7.tech"><img src="https://avatars2.githubusercontent.com/u/25480443?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nirmal Khedkar</b></sub></a><br /><a href="#blog-nirmalhk7" title="Blogposts">📝</a></td>
-  </tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/nirmalhk7">
+            <img src="https://avatars.githubusercontent.com/u/25480443?v=4" width="100;" alt="nirmalhk7"/>
+            <br />
+            <sub><b>Nirmal Khedkar</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/renovate-bot">
+            <img src="https://avatars.githubusercontent.com/u/25180681?v=4" width="100;" alt="renovate-bot"/>
+            <br />
+            <sub><b>WhiteSource Renovate</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/gaurav-chaurasia">
+            <img src="https://avatars.githubusercontent.com/u/54330985?v=4" width="100;" alt="gaurav-chaurasia"/>
+            <br />
+            <sub><b>Gaurav Chaurasia</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/ImgBotApp">
+            <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="100;" alt="ImgBotApp"/>
+            <br />
+            <sub><b>Imgbot</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/Madhan-Kumar22">
+            <img src="https://avatars.githubusercontent.com/u/59618245?v=4" width="100;" alt="Madhan-Kumar22"/>
+            <br />
+            <sub><b>Madhan-Kumar22</b></sub>
+        </a>
+    </td></tr>
 </table>
+<!-- readme: contributors -end -->
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+### Bots we use
+We're making use of these brilliant bots to aid our work:
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+<!-- readme: bots -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/renovate[bot]">
+            <img src="https://avatars.githubusercontent.com/in/2740?v=4" width="100;" alt="renovate[bot]"/>
+            <br />
+            <sub><b>Renovate[bot]</b></sub>
+        </a>
+    </td></tr>
+</table>
+<!-- readme: bots -end -->

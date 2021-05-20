@@ -21,53 +21,41 @@ const Blog = ({ data, location }) => {
             <div className="block-content">
               <PaginationComponent
                 max={5}
-                list={data.allFile.nodes}
+                list={data.blogs.nodes}
                 item={(element, inx) => {
-                  let imagelink = element.childMarkdownRemark.frontmatter.image
-                  if(imagelink){
-                    if(imagelink.childImageSharp){
-                      imagelink= imagelink.childImageSharp.fixed.srcWebp
-                    } else {
-                      imagelink= imagelink.publicURL
-                    }
-                  } else {
-                    imagelink = data.ietlogo.fixed.srcWebp
+                  let imagelink = element.header.childImageSharp && element.header.childImageSharp.fixed.srcWebp
+                  if(!imagelink){
+                    imagelink= element.header.publicURL
                   }
                   return (
                     <div key={inx} className="clean-blog-post">
                       <div className="row">
                         <div className="col-lg-5">
                           <img
-                            alt={element.childMarkdownRemark.frontmatter.title}
+                            alt={element.title}
                             className="rounded img-fluid"
                             src={imagelink}
                             style={{ width: "100%", height: "auto" }}
                           />
                         </div>
                         <div className="col-lg-7">
-                          <h3
-                            data-toggle="tooltip"
-                            title={
-                              element.childMarkdownRemark.timeToRead +
-                              " minute read"
-                            }
-                          >
-                            {element.childMarkdownRemark.frontmatter.title}
+                          <h3 className="text-capitalize">
+                            {element.title.toLowerCase()}
                           </h3>
                           <div className="info">
                             <span className="text-muted">
                               By&nbsp;
                               {RenderAuthors(
-                                element.childMarkdownRemark.frontmatter.authors,
+                                element.authors,
                                 ""
                               )}
                               <br />
-                              {element.childMarkdownRemark.frontmatter.date}
+                              {element.date}
                             </span>
                           </div>
-                          <p>{element.childMarkdownRemark.excerpt}</p>
+                          <p>{element.excerpt}</p>
                           <Link
-                            to={"/blog/" + element.relativeDirectory}
+                            to={"/blog/" + element.route.toLowerCase()}
                             className="btn btn-outline-primary btn-sm"
                             type="button"
                           >
@@ -89,33 +77,22 @@ const Blog = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
-    ietlogo: imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
-      fixed {
-        srcWebp
-      }
-    }
-    allFile(
-      filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
-      sort: { fields: childMarkdownRemark___frontmatter___date, order: DESC }
-    ) {
+    blogs: allStrapiBlogs(sort: { fields: date, order: DESC }) {
       nodes {
-        relativeDirectory
-        childMarkdownRemark {
-          timeToRead
-          excerpt(format: PLAIN)
-          frontmatter {
-            authors
-            title
-            image {
-              publicURL
-              childImageSharp {
-                fixed {
-                  srcWebp
-                }
-              }
+        date(formatString: "MMMM Do, YYYY")
+        excerpt
+        title
+        route
+        header {
+          childImageSharp {
+            fixed {
+              srcWebp
             }
-            date(formatString: "MMMM Do, YYYY")
           }
+          publicURL
+        }
+        authors {
+          name
         }
       }
     }

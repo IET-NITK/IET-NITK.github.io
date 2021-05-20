@@ -20,20 +20,34 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   try {
     graphql(`
       query {
-        members:   allMembers {
+        members: allStrapiMembers {
           nodes {
             link: name
+            date: updated_at
           }
         }
-        projects: allProjects(filter: { url: { ne: null } }) {
+        projects: allStrapiProjects {
           nodes {
             link: title
-            sig
+            date: updated_at
           }
         }
-        sigs: allSigYaml(filter: { no_link: { ne: true } }) {
+        sigs: allStrapiSigs(filter: { no_link: { eq: false } }) {
           nodes {
             link: name
+            date: updated_at
+          }
+        }
+        events: allStrapiEvents {
+          nodes {
+            link: route
+            date
+          }
+        }
+        blog: allStrapiBlogs {
+          nodes {
+            link: route
+            date
           }
         }
       }
@@ -46,7 +60,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             component: templateHash[key],
             context: {
               pathSlug: e.link,
-              sig: e.sig || null
+              sig: e.sig || null,
+              date: e.date
             },
           })
         })
@@ -54,73 +69,5 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   } catch {
     throw Error("Error in generating pages for Authors/Projects/SIGs")
-  }
-
-  
-  try {
-    graphql(`
-      query {
-        allFile(
-          filter: { sourceInstanceName: { eq: "blog" }, ext: { eq: ".md" } }
-        ) {
-          nodes {
-            relativeDirectory
-            childMarkdownRemark {
-              frontmatter {
-                date
-              }
-            }
-          }
-        }
-      }
-    `).then(result => {
-      let titleArray = result.data.allFile.nodes
-      titleArray.forEach(element => {
-        console.log("Blog:", "Endpoint for " + lcrs(element.relativeDirectory))
-        // eslint-disable-next-line
-        createPage({
-          path: "blog/" + lcrs(element.relativeDirectory),
-          component: templateHash.blog,
-          context: {
-            pathSlug: element.relativeDirectory,
-            articleDate: element.childMarkdownRemark.frontmatter.date,
-          },
-        })
-      })
-    })
-  } catch {
-    throw Error("Error in generating pages for Blogs")
-  }
-
-  try {
-    graphql(`
-      query {
-        allFile(
-          filter: { sourceInstanceName: { eq: "events" }, ext: { eq: ".md" } }
-        ) {
-          nodes {
-            relativeDirectory
-          }
-        }
-      }
-    `).then(result => {
-      let titleArray = result.data.allFile.nodes
-      titleArray.forEach(element => {
-        console.log(
-          "Events:",
-          "Endpoint for " + lcrs(element.relativeDirectory)
-        )
-        // eslint-disable-next-line
-        createPage({
-          path: "events/" + lcrs(element.relativeDirectory),
-          component: templateHash.events,
-          context: {
-            pathSlug: element.relativeDirectory,
-          },
-        })
-      })
-    })
-  } catch {
-    throw Error("Error in generating pages for Blogs")
   }
 }

@@ -15,7 +15,7 @@ export const generateSIGHash = sig_images => {
 }
 
 export const RenderAuthors = (arr, cls) =>
-  arr.map((name, index2) => (
+  arr.map(({ name }, index2) => (
     <>
       &nbsp;
       <Link
@@ -31,3 +31,47 @@ export const RenderAuthors = (arr, cls) =>
         : ""}
     </>
   ))
+
+export const RenderAuthorsName = (arr, cls) =>
+  arr.map(({ name }, index2) => (
+    <>
+      <Link
+        className="my-3 pr-3"
+        key={"x" + index2}
+        to={"/members/" + name.toLowerCase().split(" ").join("")}
+      >
+        <span class="project-auther-name">#{name}</span>
+      </Link>
+      {""}
+    </>
+  ))
+
+export const RenderProjectDescription = (element, len=100) => {
+  if (element != null && element.length >= len) {
+    return element.substring(0, len) + '...';
+  }
+  return element;
+}
+
+export const newRenderAuthors = (arr, cls) =>
+  arr.map(({ name }, index2) => (
+    <>
+      &nbsp;
+      <Link
+        key={"x" + index2}
+        to={"/members/" + name.toLowerCase().split(" ").join("")}
+      >
+        {name}
+      </Link>
+      {index2 + 2 === arr.length
+        ? " and"
+        : index2 + 1 !== arr.length
+        ? ","
+        : ""}
+    </>
+  ))
+
+export const niceFormat = name =>
+  name.toLowerCase().replace(/^\w|\s\w/g, function (letter) {
+    return letter.toUpperCase()
+  })

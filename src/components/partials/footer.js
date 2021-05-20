@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 export const Footer = props => {
   return (
@@ -8,12 +9,11 @@ export const Footer = props => {
         query {
           site {
             buildTime(formatString: "MMMM Do, YYYY")
-            siteMetadata {
-              title
-              description
-            }
           }
-          allSigYaml(sort: { fields: no_link }) {
+          about: strapiAboutClub {
+            footer
+          }
+          sigs: allStrapiSigs(filter: {}, sort: { fields: no_link }) {
             nodes {
               name
               no_link
@@ -21,7 +21,7 @@ export const Footer = props => {
           }
         }
       `}
-      render={({ site, allSigYaml }) => (
+      render={({ site, about, sigs }) => (
         <div
           className="footer-dark"
           style={{
@@ -62,7 +62,7 @@ export const Footer = props => {
                 <div className="col-sm-6 col-md-3 item">
                   <h3>Special Interest Groups</h3>
                   <ul>
-                    {allSigYaml.nodes.map((e, i) => (
+                    {sigs.nodes.map((e, i) => (
                       <li key={i}>
                         {e.no_link === true ? (
                           e.name
@@ -77,68 +77,72 @@ export const Footer = props => {
                 </div>
                 <div className="col-md-6 item text">
                   <div className="mobile-center-laptop-right">
-                    <h3>{site.siteMetadata.title}</h3>
-                    <p>{site.siteMetadata.description}</p>
+                    <h3>IET NITK</h3>
+                    <p>{about.footer}</p>
                   </div>
                 </div>
                 <div className="col item social">
-                  <a
+                  <OutboundLink
                     target="_blank"
                     rel="noreferrer"
                     href="https://www.facebook.com/ietnitk"
                   >
                     <i className="fa fa-facebook" />
-                  </a>
-                  <a
+                  </OutboundLink>
+                  <OutboundLink
                     target="_blank"
                     rel="noreferrer"
                     href="https://www.linkedin.com/company/ietnitk/"
                   >
                     <i className="fa fa-linkedin" />
-                  </a>
-                  <a
+                  </OutboundLink>
+                  <OutboundLink
                     target="_blank"
                     rel="noreferrer"
                     href="https://www.github.com/IET-NITK"
                   >
                     <i className="fa fa-github" />
-                  </a>
-                  <a
+                  </OutboundLink>
+                  <OutboundLink
                     target="_blank"
                     rel="noreferrer"
                     href="https://t.me/IET_NITK"
                   >
                     <i className="fa fa-telegram" />
-                  </a>
-                  <a
+                  </OutboundLink>
+                  <OutboundLink
                     target="_blank"
                     rel="noreferrer"
                     href="https://www.youtube.com/c/IETNITK"
                   >
                     <i className="fa fa-youtube" />
-                  </a>
-                  <a
+                  </OutboundLink>
+                  <OutboundLink
                     target="_blank"
                     rel="noreferrer"
                     href="https://www.instagram.com/ietnitk"
                   >
                     <i className="fa fa-instagram" />
-                  </a>
-                  <a target="_blank" rel="noreferrer" href="/feed.xml">
+                  </OutboundLink>
+                  <OutboundLink
+                    target="_blank"
+                    rel="noreferrer"
+                    href="/feed.xml"
+                  >
                     <i className="fa fa-rss" />
-                  </a>
+                  </OutboundLink>
                 </div>
               </div>
               <p className="copyright">
                 <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK |&nbsp;
-                <a
+                <OutboundLink
                   target="_blank"
                   rel="noreferrer"
                   className="text-white"
                   href="https://nirmalhk7.tech"
                 >
                   Made by Nirmal Khedkar
-                </a>
+                </OutboundLink>
                 <br />
                 Last updated on: {site.buildTime}
               </p>

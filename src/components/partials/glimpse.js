@@ -13,12 +13,6 @@ export const Glimpse = props => {
               description
             }
           }
-          allSigYaml(sort: { fields: no_link }) {
-            nodes {
-              name
-              no_link
-            }
-          }
         }
       `}
       render={({ site, allSigYaml }) => (
