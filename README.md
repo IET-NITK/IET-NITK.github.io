@@ -36,8 +36,7 @@ Obviously, the content of the website is thanks to every single current or alumn
             <br />
             <sub><b>Imgbot</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Madhan-Kumar22">
             <img src="https://avatars.githubusercontent.com/u/59618245?v=4" width="100;" alt="Madhan-Kumar22"/>
