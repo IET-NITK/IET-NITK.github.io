@@ -39,7 +39,9 @@ const getRandomThings = (arr, n, currentRoute) => {
   )
 }
 export const Glimpse = ({ currentRoute }) => {
-  const { width } = useWindowSize()
+  if (typeof window === "undefined") {
+    return <p>Server Render</p>
+  }
   return (
     <StaticQuery
       query={graphql`
@@ -120,7 +122,7 @@ export const Glimpse = ({ currentRoute }) => {
                   <Splide
                     style={{ height: "13em" }}
                     options={{
-                      perPage: width<800?1:2,
+                      perPage: 2,
                       gap: "2rem",
                       type: "loop",
                       keyboard: true,

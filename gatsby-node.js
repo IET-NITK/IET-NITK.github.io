@@ -61,7 +61,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             context: {
               pathSlug: e.link,
               sig: e.sig || null,
-              date: e.date
+              date: e.date,
             },
           })
         })
@@ -69,5 +69,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   } catch {
     throw Error("Error in generating pages for Authors/Projects/SIGs")
+  }
+}
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  // With SSR enabled during development, we capture this
+  // in development and during production build.
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /@splidejs/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
   }
 }
