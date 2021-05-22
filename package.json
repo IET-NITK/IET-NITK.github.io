@@ -8,7 +8,7 @@
     "url": "https://github.com/IET-NITK/iet-nitk.github.io/issues"
   },
   "dependencies": {
-    "@splidejs/react-splide": "^0.4.4",
+    "@splidejs/react-splide": "0.4.4",
     "bootstrap": "4.6.0",
     "font-awesome": "4.7.0",
     "gatsby": "3.5.1",
