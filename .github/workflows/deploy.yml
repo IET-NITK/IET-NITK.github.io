@@ -1,10 +1,10 @@
-name: Deployment and Testing Workflow
+name: DnT Workflow
 
 on:
   # Trigger the workflow on push or pull request,
   # but only for the daddy branch
   schedule:
-    - cron: '30 18 * * *'
+    - cron: '0 */6 * * *'
   push:
     branches:
       - daddy
