@@ -44,8 +44,8 @@ const BlogArticle = ({ data, location, uri }) => {
                     className="post-image"
                     style={{
                       backgroundImage: `url('${data.post.header.publicURL}')`,
-                      backgroundAttachment: "fixed",
                       backgroundRepeat: "no-repeat",
+                      backgroundSize: "100% 100%",
                     }}
                   />
                 </>
@@ -107,13 +107,13 @@ const BlogArticle = ({ data, location, uri }) => {
           </div>
         </section>
       </main>
-      <Glimpse  currentRoute={uri} />
+      <Glimpse currentRoute={uri} />
     </Layout>
   )
 }
 
 export const postQuery = graphql`
-  query($pathSlug: String!, $date: Date!) {
+  query ($pathSlug: String!, $date: Date!) {
     post: strapiBlogs(route: { eq: $pathSlug }) {
       authors {
         name
