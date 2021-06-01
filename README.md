@@ -44,6 +44,14 @@ Obviously, the content of the website is thanks to every single current or alumn
             <sub><b>Madhan-Kumar22</b></sub>
         </a>
     </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/rj-since-2000">
+            <img src="https://avatars.githubusercontent.com/u/68644104?v=4" width="100;" alt="rj-since-2000"/>
+            <br />
+            <sub><b>Rajan Jaiswal</b></sub>
+        </a>
+    </td></tr>
 </table>
 <!-- readme: contributors -end -->
 
