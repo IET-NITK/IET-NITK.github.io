@@ -1,8 +1,6 @@
 name: DnT Workflow
 
 on:
-  # Trigger the workflow on push or pull request,
-  # but only for the daddy branch
   schedule:
     - cron: '0 */12 * * *'
   push:
