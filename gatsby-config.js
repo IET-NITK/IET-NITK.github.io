@@ -79,7 +79,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "https://ietnitk-cms.herokuapp.com",
+        apiURL: "https://octaweb.herokuapp.com",
         contentTypes: ["Blogs", "Events", "Members","Project-Reports","SMPS", "SIGS", "Projects"],
         singleTypes: [
           `recruitment-faq`,
