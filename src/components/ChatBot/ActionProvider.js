@@ -1,9 +1,7 @@
 // ActionProvider  code
 import React from "react"
 import { graphql, Link } from "gatsby"
-// import { useHistory } from "react-router-dom";
 
-// const history = useHistory();
 class ActionProvider {
     constructor(createChatBotMessage, setStateFunc, createClientMessage) {
       this.createChatBotMessage = createChatBotMessage;
