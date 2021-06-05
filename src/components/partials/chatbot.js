@@ -8,6 +8,7 @@ import ActionProvider from "../ChatBot/ActionProvider"
 
 
 import ButtonIcon  from "../ChatBot/robot.js";
+import "../ChatBot/app.css";
 
 function ChatBot() {
     const [showChatbot, toggleChatbot] = useState(false);
