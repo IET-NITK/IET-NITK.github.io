@@ -45,8 +45,6 @@
     "typeface-montserrat": "1.1.13"
   },
   "devDependencies": {
-    "babel-jest": "26.6.3",
-    "babel-preset-gatsby": "1.6.0",
     "babel-jest": "27.0.2",
     "babel-preset-gatsby": "1.6.0",
     "husky": "6.0.0",
@@ -55,7 +53,9 @@
     "lint-staged": "11.0.0",
     "node-sass": "5.0.0",
     "postcss": "8.3.0",
-    "prettier": "2.3.1"
+    "prettier": "2.3.1",
+    "react-chatbot-kit": "^1.1.20",
+    "react-util-kit": "0.0.15"
   },
   "homepage": "https://iet.nitk.ac.in",
   "keywords": [
