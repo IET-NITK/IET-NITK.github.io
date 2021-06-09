@@ -1,7 +1,7 @@
 import React from "react"
 import XNavbar from "./partials/navbar"
 import Footer from "./partials/footer"
-import ChatBot from "./partials/chatbot"
+import MyChatBot from "./partials/chatbot"
 
 
 const Layout = ({ location, title, children }) => {
@@ -22,8 +22,8 @@ const Layout = ({ location, title, children }) => {
           Subscribe
         </button>
       </div> */}
-      <div id = "chatbot">
-      <ChatBot />
+      <div name = "chatbot">
+      <MyChatBot />
       </div>
       <div id="wrapper-footer">
         <Footer />

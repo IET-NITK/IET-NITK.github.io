@@ -10,9 +10,8 @@ import ActionProvider from "../ChatBot/ActionProvider"
 import ButtonIcon  from "../ChatBot/robot.js";
 import "../ChatBot/app.css";
 
-function ChatBot() {
+function MyChatBot() {
     const [showChatbot, toggleChatbot] = useState(false);
-  
     return (
         <div className = "cont">
           <div className="app-chatbot-container">
@@ -38,4 +37,4 @@ function ChatBot() {
           );
 }
 
-export default ChatBot
+export default MyChatBot
