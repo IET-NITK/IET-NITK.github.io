@@ -34,8 +34,8 @@ export const Footer = props => {
             <div className="container">
               <div className="row">
                 <div className="col-sm-6 col-md-3 item">
-                  <h3>Important Links</h3>
-                  <ul>
+                  <h3 className="mt-4 mb-3">Important Links</h3>
+                  <ul className="footer-list">
                     <li>
                       <Link to="/">Home</Link>
                     </li>
@@ -60,8 +60,8 @@ export const Footer = props => {
                   </ul>
                 </div>
                 <div className="col-sm-6 col-md-3 item">
-                  <h3>Special Interest Groups</h3>
-                  <ul>
+                  <h3 className="mt-4 mb-3">Special Interest Groups</h3>
+                  <ul className="footer-list">
                     {sigs.nodes.map((e, i) => (
                       <li key={i}>
                         {e.no_link === true ? (
@@ -77,8 +77,8 @@ export const Footer = props => {
                 </div>
                 <div className="col-md-6 item text">
                   <div className="mobile-center-laptop-right">
-                    <h3>IET NITK</h3>
-                    <p>{about.footer}</p>
+                    <h3 className="mt-4 mb-3">IET NITK</h3>
+                    <p className="footer-list">{about.footer}</p>
                   </div>
                 </div>
                 <div className="col item social">
@@ -141,7 +141,7 @@ export const Footer = props => {
                   className="text-white"
                   href="https://github.com/IET-NITK/IET-NITK.github.io#contributors"
                 >
-                  Made by IET NITK Web Team 
+                  Made by IET NITK Web Team
                 </OutboundLink>
                 <br />
                 Last updated on: {site.buildTime}

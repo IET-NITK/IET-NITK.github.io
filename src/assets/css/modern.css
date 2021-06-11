@@ -482,6 +482,17 @@ span {
   margin-bottom: 0;
 }
 
+.footer-list {
+  margin: 16px 0;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+.footer-list li {
+  margin: 16px 0;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
 /* -------------------------------- XNavbar --------------------------------------- */
 
 .topbar:hover {
