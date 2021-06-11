@@ -139,9 +139,9 @@ export const Footer = props => {
                   target="_blank"
                   rel="noreferrer"
                   className="text-white"
-                  href="https://nirmalhk7.tech"
+                  href="https://github.com/IET-NITK/IET-NITK.github.io#contributors"
                 >
-                  Made by Nirmal Khedkar
+                  Made by IET NITK Web Team 
                 </OutboundLink>
                 <br />
                 Last updated on: {site.buildTime}
