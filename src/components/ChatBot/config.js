@@ -1,9 +1,11 @@
 // Config starter code
-import { createChatBotMessage } from "react-chatbot-kit";
-
+var chat;
+if(typeof window !== "undefined"){
+  chat=require("react-chatbot-kit").createChatBotMessage;
+}
 const config = {
     botName: "IET Bot",
-  initialMessages: [createChatBotMessage(`Welcome to IET NITK, how may I help you?`)],
+  initialMessages: [chat && chat(`Welcome to IET NITK, how may I help you?`)],
   customStyles: {
     botMessageBox: {
       backgroundColor: "#332450",

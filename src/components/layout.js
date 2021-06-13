@@ -23,7 +23,7 @@ const Layout = ({ location, title, children }) => {
         </button>
       </div> */}
       <div name = "chatbot">
-      <MyChatBot />
+      {typeof window !== "undefined" ? <MyChatBot/>:null}
       </div>
       <div id="wrapper-footer">
         <Footer />

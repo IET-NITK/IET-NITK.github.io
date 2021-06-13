@@ -75,15 +75,25 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   // With SSR enabled during development, we capture this
   // in development and during production build.
+  let ignoredRules = []
   if (stage === "build-html" || stage === "develop-html") {
+    ignoredRules.push({
+      test: /@splidejs/,
+      use: loaders.null(),
+    })
+
+
+  }
+  if (stage === "build-html") {
+    ignoredRules.push({
+      test: /react-chatbot-kit/,
+      use: loaders.null(),
+    })
+  }
+  if(ignoredRules.length>0){
     actions.setWebpackConfig({
       module: {
-        rules: [
-          {
-            test: /@splidejs/,
-            use: loaders.null(),
-          },
-        ],
+        rules: ignoredRules,
       },
     })
   }

@@ -1,6 +1,6 @@
 // ActionProvider  code
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 
 class ActionProvider {
     constructor(createChatBotMessage, setStateFunc, createClientMessage) {
