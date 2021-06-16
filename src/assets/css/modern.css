@@ -1,5 +1,8 @@
 :root {
   --primary-color: #803391;
+  --dark-primary-color: #53274E;
+  --bluish-shadow: 0px 0px 32px 0px rgba(221, 230, 237, 0.4);
+  --clean-shadow: 0 3px 5px rgba(0,0,0,0.1);
 }
 body {
   margin: 0;
@@ -49,7 +52,6 @@ body {
 }
 
 .article-list h2 {
-  font-weight: bold;
   margin-bottom: 1.2rem !important;
   padding-top: 40px;
   color: inherit;
@@ -327,14 +329,14 @@ body {
 
 .clean-card {
   background-color: #ffffff;
-  box-shadow: 0px 0px 32px 0px rgba(221, 230, 237, 0.4);
+  box-shadow: var(--clean-shadow);
   border: none;
   border-radius: 0 !important;
 }
 
 .clean-blog-card {
   background-color: #ffffff;
-  box-shadow: 0px 0px 32px 0px rgba(221, 230, 237, 0.4);
+  box-shadow: var(--bluish-shadow);
   border: none;
   border-radius: 0 !important;
   text-align: left;
@@ -437,7 +439,8 @@ span {
 }
 
 .footer-dark ul a:hover {
-  opacity: 0.8;
+  opacity: 1;
+  border-bottom: 1px solid var(--primary-color);
 }
 
 @media (max-width: 767px) {
@@ -462,10 +465,6 @@ span {
   margin-bottom: 0;
 }
 
-.footer-dark .item.social {
-  text-align: center;
-}
-
 @media (max-width: 991px) {
   .footer-dark .item.social {
     text-align: center;
@@ -488,12 +487,11 @@ span {
 }
 
 .footer-dark .item.social > a:hover {
-  opacity: 0.9;
+  opacity: 1;
+  box-shadow: 0 0 0 1px var(--primary-color);
 }
 
 .footer-dark .copyright {
-  text-align: center;
-  padding-top: 24px;
   opacity: 0.3;
   font-size: 13px;
   margin-bottom: 0;
@@ -510,6 +508,10 @@ span {
   font-size: 14px;
 }
 
+.bottom-footer {
+  background: rgb(33, 33, 36);
+  padding: 2.5em 0;
+}
 /* -------------------------------- XNavbar --------------------------------------- */
 
 .topbar:hover {

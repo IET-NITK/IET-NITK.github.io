@@ -201,6 +201,9 @@ a {
   .mobile-center-laptop-right {
     text-align: center;
   }
+  .mobile-center-laptop-left {
+    text-align: center;
+  }
   .mobile-invisible {
     display: none;
   }
@@ -211,6 +214,9 @@ a {
 @media only screen and (min-width: 1050px) {
   .mobile-center-laptop-right {
     text-align: right;
+  }
+  .mobile-center-laptop-left {
+    text-align: left;
   }
 }
 

@@ -32,6 +32,7 @@ const MemberDetails = ({ author, index }) => {
     >
       <div
         className={`h-100 card clean-card text-center  ${color_bg}`}
+        style={{ boxShadow: "0px 0px 32px 0px rgba(221, 230, 237, 0.4)" }}
         id={author.name}
       >
         <div className="card-body info">

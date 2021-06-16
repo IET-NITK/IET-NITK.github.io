@@ -156,7 +156,7 @@ const MainPage = ({ location, data }) => {
                   <h2 className="text-primary section-heading">Our Projects</h2>
                   <p className="section-description">
                     we have projects from many different domains of interest and
-                    we love doing our projects! {" "}
+                    we love doing our projects!{" "}
                     <Link to="/projects">
                       <img alt="IET" src={IconLink} className="mr-2" />
                       Find More
@@ -223,7 +223,10 @@ const MainPage = ({ location, data }) => {
           <div className="container">
             <div className="article-list">
               <div className="container">
-                <div className="articles row" style={{ paddingTop: "2em" }}>
+                <div
+                  className="articles row align-items-center"
+                  style={{ paddingTop: "2em" }}
+                >
                   <div className="col-lg-6 col-md-6">
                     <div className="intro">
                       <h2 className="text-primary section-heading">
@@ -241,7 +244,7 @@ const MainPage = ({ location, data }) => {
                   </div>
                   {/* {data.events.nodes.map((element, index) => ( */}
                   <div className="col-lg-6 col-md-6 mt-4">
-                    <div className="card h-100 clean-card">
+                    <div className="card clean-card">
                       <div className="card-body">
                         <h6 className="card-title">
                           <Link
