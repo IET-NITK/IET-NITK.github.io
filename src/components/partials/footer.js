@@ -25,17 +25,18 @@ export const Footer = props => {
         <div
           className="footer-dark"
           style={{
-            backgroundColor: "#2d3e50",
+            backgroundColor: "rgba(42, 42, 46, 1)",
             color: "white",
             padding: "1.5em 0em",
+            paddingBottom: "0",
           }}
         >
           <footer>
             <div className="container">
-              <div className="row">
+              <div className="row mb-3">
                 <div className="col-sm-6 col-md-3 item">
-                  <h3>Important Links</h3>
-                  <ul>
+                  <h3 className="mt-4 mb-3">Important Links</h3>
+                  <ul className="footer-list">
                     <li>
                       <Link to="/">Home</Link>
                     </li>
@@ -60,8 +61,8 @@ export const Footer = props => {
                   </ul>
                 </div>
                 <div className="col-sm-6 col-md-3 item">
-                  <h3>Special Interest Groups</h3>
-                  <ul>
+                  <h3 className="mt-4 mb-3">Special Interest Groups</h3>
+                  <ul className="footer-list">
                     {sigs.nodes.map((e, i) => (
                       <li key={i}>
                         {e.no_link === true ? (
@@ -77,75 +78,82 @@ export const Footer = props => {
                 </div>
                 <div className="col-md-6 item text">
                   <div className="mobile-center-laptop-right">
-                    <h3>IET NITK</h3>
-                    <p>{about.footer}</p>
+                    <h3 className="mt-4 mb-3">IET NITK</h3>
+                    <p className="footer-list">{about.footer}</p>
                   </div>
                 </div>
-                <div className="col item social">
-                  <OutboundLink
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.facebook.com/ietnitk"
-                  >
-                    <i className="fa fa-facebook" />
-                  </OutboundLink>
-                  <OutboundLink
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.linkedin.com/company/ietnitk/"
-                  >
-                    <i className="fa fa-linkedin" />
-                  </OutboundLink>
-                  <OutboundLink
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.github.com/IET-NITK"
-                  >
-                    <i className="fa fa-github" />
-                  </OutboundLink>
-                  <OutboundLink
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://t.me/IET_NITK"
-                  >
-                    <i className="fa fa-telegram" />
-                  </OutboundLink>
-                  <OutboundLink
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.youtube.com/c/IETNITK"
-                  >
-                    <i className="fa fa-youtube" />
-                  </OutboundLink>
-                  <OutboundLink
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.instagram.com/ietnitk"
-                  >
-                    <i className="fa fa-instagram" />
-                  </OutboundLink>
-                  <OutboundLink
-                    target="_blank"
-                    rel="noreferrer"
-                    href="/feed.xml"
-                  >
-                    <i className="fa fa-rss" />
-                  </OutboundLink>
+              </div>
+            </div>
+            <div className="my-0 bottom-footer">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-6 copyright mobile-center-laptop-left">
+                    <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK
+                    |&nbsp;
+                    <OutboundLink
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-white"
+                      href="https://github.com/IET-NITK/IET-NITK.github.io#contributors"
+                    >
+                      Made by IET NITK Web Team
+                    </OutboundLink>
+                    <br />
+                    Last updated on: {site.buildTime}
+                  </div>
+                  <div className="col-md-6 item social mobile-center-laptop-right">
+                    <OutboundLink
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.facebook.com/ietnitk"
+                    >
+                      <i className="fa fa-facebook" />
+                    </OutboundLink>
+                    <OutboundLink
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.linkedin.com/company/ietnitk/"
+                    >
+                      <i className="fa fa-linkedin" />
+                    </OutboundLink>
+                    <OutboundLink
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.github.com/IET-NITK"
+                    >
+                      <i className="fa fa-github" />
+                    </OutboundLink>
+                    <OutboundLink
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://t.me/IET_NITK"
+                    >
+                      <i className="fa fa-telegram" />
+                    </OutboundLink>
+                    <OutboundLink
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.youtube.com/c/IETNITK"
+                    >
+                      <i className="fa fa-youtube" />
+                    </OutboundLink>
+                    <OutboundLink
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.instagram.com/ietnitk"
+                    >
+                      <i className="fa fa-instagram" />
+                    </OutboundLink>
+                    <OutboundLink
+                      target="_blank"
+                      rel="noreferrer"
+                      href="/feed.xml"
+                    >
+                      <i className="fa fa-rss" />
+                    </OutboundLink>
+                  </div>
                 </div>
               </div>
-              <p className="copyright">
-                <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK |&nbsp;
-                <OutboundLink
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-white"
-                  href="https://nirmalhk7.tech"
-                >
-                  Made by Nirmal Khedkar
-                </OutboundLink>
-                <br />
-                Last updated on: {site.buildTime}
-              </p>
             </div>
           </footer>
         </div>

@@ -118,7 +118,6 @@ export const XNavbar = props => {
               bg="white"
               expand="lg"
               className=" clean-navbar"
-              style={{ borderBottom: "1px solid #c2c2c2" }}
             >
               <div className="container">
                 <Navbar.Brand className="navbar-brand logo" href="/">

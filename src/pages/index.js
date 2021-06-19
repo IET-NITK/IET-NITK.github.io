@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import Img_IETUpview from "../assets/img/iet-upview.jpg"
+import IconLink from "../assets/img/link.svg"
 import {
   getRandom,
   RenderAuthors,
@@ -91,15 +92,15 @@ const MainPage = ({ location, data }) => {
             <div className="article-list">
               <div className="container">
                 <div className="intro">
-                  <h2
-                    className="text-primary text-center"
-                    style={{ fontWeight: "500" }}
-                  >
+                  <h2 className="text-primary section-heading">
                     Latest Articles
                   </h2>
-                  <p className="text-center">
+                  <p className="section-description">
                     We love to write! Check out more of our stuff on{" "}
-                    <Link to="/blog">the IET Blog</Link>
+                    <Link to="/blog">
+                      <img alt="IET" src={IconLink} className="mr-2" />
+                      the IET Blog
+                    </Link>
                   </p>
                 </div>
                 <div className="row" style={{ paddingTop: "2em" }}>
@@ -152,15 +153,14 @@ const MainPage = ({ location, data }) => {
             <div className="article-list">
               <div className="container">
                 <div className="intro">
-                  <h2
-                    className="text-primary text-center"
-                    style={{ fontWeight: "500", paddingBottom: "-1em" }}
-                  >
-                    Our Projects
-                  </h2>
-                  <p className="text-center">
-                    We love doing our projects! Find more{" "}
-                    <Link to="/projects">here</Link>
+                  <h2 className="text-primary section-heading">Our Projects</h2>
+                  <p className="section-description">
+                    we have projects from many different domains of interest and
+                    we love doing our projects!{" "}
+                    <Link to="/projects">
+                      <img alt="IET" src={IconLink} className="mr-2" />
+                      Find More
+                    </Link>
                   </p>
                 </div>
                 <div className="articles row" style={{ paddingTop: "2em" }}>
@@ -201,7 +201,10 @@ const MainPage = ({ location, data }) => {
                           ) : null}
                           <div className="mb-3">
                             <div className="text-muted">
-                              {RenderProjectDescription(element.description, 100)}
+                              {RenderProjectDescription(
+                                element.description,
+                                100
+                              )}
                             </div>
                           </div>
                           <div className="card-text">
@@ -220,25 +223,28 @@ const MainPage = ({ location, data }) => {
           <div className="container">
             <div className="article-list">
               <div className="container">
-                <div className="articles row" style={{ paddingTop: "2em" }}>
-                  <div className="col-lg-6 col-md-6 mt-4">
+                <div
+                  className="articles row align-items-center"
+                  style={{ paddingTop: "2em" }}
+                >
+                  <div className="col-lg-6 col-md-6">
                     <div className="intro">
-                      <h2
-                        className="text-primary text-center"
-                        style={{ fontWeight: "500", paddingBottom: "-1em" }}
-                      >
+                      <h2 className="text-primary section-heading">
                         Our Events
                       </h2>
-                      <p className="text-center">
+                      <p className="section-description">
                         Our latest event was {data.events.nodes[0].title}, but
                         we conduct many events throughout the year. Find more{" "}
-                        <Link to="/events">here</Link>
+                        <Link to="/events">
+                          <img alt="IET" src={IconLink} className="mr-2" />
+                          Find More
+                        </Link>
                       </p>
                     </div>
                   </div>
                   {/* {data.events.nodes.map((element, index) => ( */}
                   <div className="col-lg-6 col-md-6 mt-4">
-                    <div className="card h-100 clean-card">
+                    <div className="card clean-card">
                       <div className="card-body">
                         <h6 className="card-title">
                           <Link
