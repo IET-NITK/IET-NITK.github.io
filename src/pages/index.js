@@ -155,8 +155,7 @@ const MainPage = ({ location, data }) => {
                 <div className="intro">
                   <h2 className="text-primary section-heading">Our Projects</h2>
                   <p className="section-description">
-                    we have projects from many different domains of interest and
-                    we love doing our projects!{" "}
+                    We have projects from many different domains of interest. We love doing our projects!{" "}
                     <Link to="/projects">
                       <img alt="IET" src={IconLink} className="mr-2" />
                       Find More
@@ -264,6 +263,35 @@ const MainPage = ({ location, data }) => {
                     </div>
                   </div>
                   {/* ))} */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="clean-block about-us">
+          <div className="container">
+            <div className="article-list">
+              <div className="container">
+                <div
+                  className="articles row align-items-center"
+                  style={{ paddingTop: "2em" }}
+                >
+                  <div className="col-lg-6 col-md-6">
+                    <div className="intro">
+                      <h2 className="text-primary section-heading">
+                        IET NITK Women In Tech
+                      </h2>
+                      <p className="section-description">
+                      Women in Tech is an international organization with a double mission: to close the gender gap and to help women embrace technology. Find more{" "}
+                        <Link to="/wit">
+                          <img alt="IET" src={IconLink} className="mr-2" />
+                          Find More
+                        </Link>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-lg-6 col-md-6 mt-4">
+                  </div>
                 </div>
               </div>
             </div>

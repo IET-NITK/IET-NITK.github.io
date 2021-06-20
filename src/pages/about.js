@@ -1,107 +1,15 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
-import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import Img_Beach from "../assets/img/beach.jpg"
-import { Nav, NavDropdown, OverlayTrigger, Tooltip } from "react-bootstrap"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { Nav, NavDropdown } from "react-bootstrap"
+import { MemberDetails } from "../components/partials/member"
 
 const KEY_ALUMNI = "Alumni"
 const KEY_EXEC_MEMBERS = "Executive Members 2021"
 const KEY_CURR_CORE = "Core 2021"
 
-const MemberDetails = ({ author, index }) => {
-  let color_bg =
-    author.position !== "Executive Member" && author.alumni !== true
-      ? "bg-gradient-primary"
-      : author.alumni !== true
-      ? ""
-      : "bg-gradient-alumni"
-  let color_text =
-    author.position !== "Executive Member" || author.alumni === true
-      ? "text-light"
-      : ""
-  return (
-    <div
-      to={`/members/${author.name.toLowerCase().split(" ").join("")}`}
-      className="col-sm-6 col-md-4 col-lg-3"
-      style={{ paddingBottom: "3em" }}
-      id={author.name}
-      key={index}
-    >
-      <div
-        className={`h-100 card clean-card text-center  ${color_bg}`}
-        style={{ boxShadow: "0px 0px 32px 0px rgba(221, 230, 237, 0.4)" }}
-        id={author.name}
-      >
-        <div className="card-body info">
-          <Link
-            to={`/members/${author.name.toLowerCase().split(" ").join("")}`}
-          >
-            <h5 className={`card-title text-capitalize ${color_text}`}>
-              {author.name}
-            </h5>
-          </Link>
-          <p className={`card-text text-capitalize ${color_text}`}>
-            {author.position}
-          </p>
-          <div className="icon">
-            {author.social && author.social.email ? (
-              <OverlayTrigger
-                placement="bottom"
-                delay={{ show: 250, hide: 400 }}
-                overlay={props => (
-                  <Tooltip {...props}>
-                    {author.social.email
-                      .replace("@", " [at] ")
-                      .split(".")
-                      .join(" [dot] ")}
-                  </Tooltip>
-                )}
-              >
-                <i className={`fa fa-envelope ${color_text}`} />
-              </OverlayTrigger>
-            ) : null}
-            {author.social && author.social.facebook ? (
-              <OutboundLink
-                target="_blank"
-                rel="noreferrer"
-                className="mr-1 ml-1"
-                href={"https://www.facebook.com/" + author.social.facebook}
-              >
-                &nbsp;
-                <i className={`fa fa-facebook ${color_text}`} />
-              </OutboundLink>
-            ) : null}
-            {author.social && author.social.linkedin ? (
-              <OutboundLink
-                target="_blank"
-                rel="noreferrer"
-                className="mr-1 ml-1"
-                href={"https://www.linkedin.com/in/" + author.social.linkedin}
-              >
-                &nbsp;
-                <i className={`fa fa-linkedin ${color_text}`} />
-              </OutboundLink>
-            ) : null}
-            {author.social && author.social.github ? (
-              <OutboundLink
-                target="_blank"
-                rel="noreferrer"
-                className="mr-1 ml-1"
-                href={"https://www.github.com/" + author.social.github}
-              >
-                &nbsp;
-                <i className={`fa fa-github ${color_text}`} />
-              </OutboundLink>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const About = ({ location, data }) => {
   const [category, setCategory] = useState(KEY_CURR_CORE)
@@ -193,7 +101,13 @@ const About = ({ location, data }) => {
 
             <div className="row justify-content-center">
               {members_hsx[category].map((author, index) => (
+                    <div
+                    className="col-sm-6 col-md-4 col-lg-3"
+                    style={{ paddingBottom: "3em" }}
+                    // id={author.name}
+                  >
                 <MemberDetails author={author} key={index} />
+                </div>
               ))}
             </div>
           </div>

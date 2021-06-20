@@ -5,6 +5,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css"
 import _ from "lodash"
 
+// eslint-disable-next-line
 function useWindowSize() {
   const isSSR = typeof window !== "undefined"
   const [windowSize, setWindowSize] = React.useState({
