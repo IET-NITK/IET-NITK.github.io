@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 export const SIGShowcase = ({ hide_link }) => {
   return (
@@ -10,6 +11,7 @@ export const SIGShowcase = ({ hide_link }) => {
             nodes {
               name
               description
+              no_link
               logo {
                 childImageSharp {
                   fixed {
@@ -51,6 +53,14 @@ export const SIGShowcase = ({ hide_link }) => {
                   >
                     Read More
                   </Link>
+                ) : null}
+                {!hide_link && s.name==="Inkheart" ? (
+                  <OutboundLink
+                    href={`sigs/${s.name.toLowerCase()}`}
+                    className="btn btn-outline-primary btn-block"
+                  >
+                    Go to InkHeart Blog
+                  </OutboundLink>
                 ) : null}
               </div>
             </div>
