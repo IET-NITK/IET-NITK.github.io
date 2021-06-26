@@ -22,7 +22,6 @@ const Projects = ({ data, location }) => {
             <div className="block-content">
               <PaginationComponent
                 max={10}
-                filterBy="sig"
                 filterLabel="Filter by SIG"
                 list={data.projects.nodes}
                 item={(element, index) => (

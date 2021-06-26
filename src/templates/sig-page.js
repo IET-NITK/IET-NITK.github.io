@@ -18,7 +18,7 @@ const SIG = ({ pageContext, pathname, data, uri }) => {
             <div className="block-heading">
               <Link to={"/sigs/" + sig_details.name.toLowerCase()}>
                 <img
-                  src={sig_details.logo.childImageSharp.fixed.srcWebp}
+                  src={sig_details.logo.localFile.childImageSharp.fixed.srcWebp}
                   alt={sig_details.name}
                   className="sig-logo"
                   style={{ maxWidth: "200px" }}
@@ -100,9 +100,11 @@ export const postQuery = graphql`
       name
       description
       logo {
-        childImageSharp {
-          fixed {
-            srcWebp
+        localFile {
+          childImageSharp {
+            fixed {
+              srcWebp
+            }
           }
         }
       }

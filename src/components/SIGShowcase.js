@@ -13,9 +13,11 @@ export const SIGShowcase = ({ hide_link }) => {
               description
               no_link
               logo {
-                childImageSharp {
-                  fixed {
-                    srcWebp
+                localFile {
+                  childImageSharp {
+                    fixed {
+                      srcWebp
+                    }
                   }
                 }
               }
@@ -35,7 +37,7 @@ export const SIGShowcase = ({ hide_link }) => {
                 <div style={{ width: "100%" }}>
                   <img
                     alt=""
-                    src={s.logo.childImageSharp.fixed.srcWebp}
+                    src={s.logo.localFile.childImageSharp.fixed.srcWebp}
                     style={{
                       width: "150px",
                       height: "auto!important",

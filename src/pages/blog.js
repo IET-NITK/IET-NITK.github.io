@@ -23,9 +23,9 @@ const Blog = ({ data, location }) => {
                 max={5}
                 list={data.blogs.nodes}
                 item={(element, inx) => {
-                  let imagelink = element.header.childImageSharp && element.header.childImageSharp.fixed.srcWebp
+                  let imagelink = element.header.localFile.childImageSharp && element.header.localFile.childImageSharp.fixed.srcWebp
                   if(!imagelink){
-                    imagelink= element.header.publicURL
+                    imagelink= element.header.localFile.publicURL
                   }
                   return (
                     <div key={inx} className="clean-blog-post">
@@ -84,12 +84,14 @@ export const postQuery = graphql`
         title
         route
         header {
-          childImageSharp {
-            fixed {
-              srcWebp
+          localFile{
+            childImageSharp {
+              fixed {
+                srcWebp
+              }
             }
+            publicURL
           }
-          publicURL
         }
         authors {
           name
