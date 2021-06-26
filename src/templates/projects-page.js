@@ -26,7 +26,7 @@ const Project = ({ data, pathname, pageContext, uri }) => {
                 <Link to={"/sigs/" + data.projects.sig.name.toLowerCase()}>
                   {data.projects.sig.logo ? (
                     <img
-                      src={data.projects.sig.logo.childImageSharp.fixed.srcWebp}
+                      src={data.projects.sig.logo.localFile.childImageSharp.fixed.srcWebp}
                       alt={data.projects.sig.name}
                       className="sig-logo"
                       style={{ maxWidth: "200px" }}
@@ -148,11 +148,13 @@ export const postQuery = graphql`
       sig {
         name
         logo {
-          childImageSharp {
-            fixed {
-              srcWebp
+          localFile{
+            childImageSharp {
+              fixed {
+                srcWebp
+              }
             }
-          }
+           }
         }
       }
       url

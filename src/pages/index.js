@@ -106,10 +106,10 @@ const MainPage = ({ location, data }) => {
                 <div className="row" style={{ paddingTop: "2em" }}>
                   {data.blog.nodes.map((element, index) => {
                     let imagelink =
-                      element.header.childImageSharp &&
-                      element.header.childImageSharp.fixed.srcWebp
+                      element.header.localFile.childImageSharp &&
+                      element.header.localFile.childImageSharp.fixed.srcWebp
                     if (!imagelink) {
-                      imagelink = element.header.publicURL
+                      imagelink = element.header.localFile.publicURL
                     }
                     return (
                       <div key={index} className="col-sm-6 col-md-4 item h-100">
@@ -314,12 +314,15 @@ export const postQuery = graphql`
         title
         route
         header {
-          childImageSharp {
-            fixed {
-              srcWebp
+          localFile{
+            publicURL
+            childImageSharp {
+              fixed {
+                srcWebp
+              }
             }
           }
-          publicURL
+
         }
         authors {
           name

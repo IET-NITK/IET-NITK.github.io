@@ -41,7 +41,7 @@ const PaginationComponent = ({
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {state.filterCategories &&
-              state.filterCategories.map((ex, i) => (
+              state.filterCategories.map(({ex}, i) => (
                 <Dropdown.Item
                   name={ex}
                   key={i}

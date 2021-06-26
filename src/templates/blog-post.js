@@ -43,7 +43,7 @@ const BlogArticle = ({ data, location, uri }) => {
                   <div
                     className="post-image"
                     style={{
-                      backgroundImage: `url('${data.post.header.publicURL}')`,
+                      backgroundImage: `url('${data.post.header.localFile.publicURL}')`,
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "100% 100%",
                     }}
@@ -119,7 +119,9 @@ export const postQuery = graphql`
         name
       }
       header {
-        publicURL
+        localFile{
+          publicURL
+        }
       }
       id
       content

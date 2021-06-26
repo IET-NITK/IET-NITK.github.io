@@ -80,7 +80,7 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: "https://octaweb.herokuapp.com",
-        contentTypes: ["Blogs", "Events", "Members","Project-Reports","SMPS", "SIGS", "Projects"],
+        collectionTypes: ["Blogs", "Events", "Members","Project-Reports","SMPS", "SIGS", "Projects"],
         singleTypes: [
           `recruitment-faq`,
           `about-club`,

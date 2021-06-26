@@ -65,20 +65,6 @@ const Recruitments = ({ location, data }) => {
 
 export const postQuery = graphql`
   {
-    sigdata: allStrapiSigs(sort: { order: ASC, fields: no_link }) {
-      nodes {
-        name
-        description
-        no_link
-        logo {
-          childImageSharp {
-            fixed {
-              srcWebp
-            }
-          }
-        }
-      }
-    }
     rec_questions: strapiRecruitmentFaq {
       FAQ
       open
