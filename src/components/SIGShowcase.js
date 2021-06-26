@@ -58,7 +58,7 @@ export const SIGShowcase = ({ hide_link }) => {
                 ) : null}
                 {!hide_link && s.name==="Inkheart" ? (
                   <OutboundLink
-                    href={`sigs/${s.name.toLowerCase()}`}
+                    href="https://ietinkheartblog.wordpress.com"
                     className="btn btn-outline-primary btn-block"
                   >
                     Go to InkHeart Blog
