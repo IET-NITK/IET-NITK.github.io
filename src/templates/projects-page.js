@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { graphql } from "gatsby"
 import Glimpse from "../components/partials/glimpse"
+import { lcrs } from "../components/helper"
 
 const Project = ({ data, pathname, pageContext, uri }) => {
   return (
@@ -51,8 +52,7 @@ const Project = ({ data, pathname, pageContext, uri }) => {
                           <Link
                             to={
                               "/members/" +
-                              name.toLowerCase().split(" ").join("")
-                            }
+                              lcrs(name)}
                           >
                             {name}
                           </Link>

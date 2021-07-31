@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
-import { RenderAuthors } from "../components/helper"
+import { lcrs, RenderAuthors } from "../components/helper"
 import PaginationComponent from "../components/partials/pagination"
 import Glimpse from "../components/partials/glimpse"
 
@@ -39,8 +39,7 @@ const SIG = ({ pageContext, pathname, data, uri }) => {
                             <Link
                               to={
                                 "/projects/" +
-                                element.title.toLowerCase().split(" ").join("")
-                              }
+                                lcrs(element.title)}
                             >
                               {element.title}
                             </Link>

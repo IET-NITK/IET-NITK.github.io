@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
 import { graphql, Link } from "gatsby"
-import { RenderAuthors } from "../components/helper"
+import { lcrs, RenderAuthors } from "../components/helper"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
 import Glimpse from "../components/partials/glimpse"
 const RenderArticles = ({ articles, element, index }) => (
@@ -14,7 +14,7 @@ const RenderArticles = ({ articles, element, index }) => (
     <div className="row">
       <div className="col-lg-12">
         <h3>
-          <Link className="btn-link" to={"/blog/" + element.route}>
+          <Link className="btn-link" to={"/blog/" + lcrs(element.route)}>
             {element.title}
           </Link>
         </h3>
@@ -49,7 +49,7 @@ const RenderProject = ({
         <div className="col-lg-12">
           <h3>
             {url ? (
-              <Link to={"/projects/" + title.toLowerCase().split(" ").join("")}>
+              <Link to={"/projects/" + lcrs(title)}>
                 {title} {year ? `(${year})` : null}
               </Link>
             ) : (
@@ -63,7 +63,7 @@ const RenderProject = ({
           ) : null}
           {sig ? (
             <Link
-              to={"/sigs/" + sig.name.toLowerCase()}
+              to={"/sigs/" + lcrs(sig.name)}
               className="badge badge-info text-uppercase"
             >
               {sig.name}

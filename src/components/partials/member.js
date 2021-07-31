@@ -2,6 +2,7 @@ import React from "react"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 import { Link } from "gatsby"
 import { OverlayTrigger, Tooltip } from "react-bootstrap"
+import { lcrs } from "../helper"
 
 export const MemberDetails = ({ author }) => {
   let color_bg =
@@ -23,7 +24,7 @@ export const MemberDetails = ({ author }) => {
       >
         <div className="card-body info">
           <Link
-            to={`/members/${author.name.toLowerCase().split(" ").join("")}`}
+            to={`/members/${lcrs(author.name)}`}
           >
             <h5 className={`card-title text-capitalize ${color_text}`}>
               {author.name}

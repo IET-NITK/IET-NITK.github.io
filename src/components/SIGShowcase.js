@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { lcrs } from "./helper"
 
 export const SIGShowcase = ({ hide_link }) => {
   return (
@@ -50,7 +51,7 @@ export const SIGShowcase = ({ hide_link }) => {
                 <p>{s.description}</p>
                 {!s.no_link && !hide_link ? (
                   <Link
-                    to={`sigs/${s.name.toLowerCase()}`}
+                    to={`sigs/${lcrs(s.name)}`}
                     className="btn btn-outline-primary btn-block"
                   >
                     Read More

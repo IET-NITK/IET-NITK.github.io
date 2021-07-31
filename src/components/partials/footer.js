@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { lcrs } from "../helper"
 
 export const Footer = props => {
   return (
@@ -68,7 +69,7 @@ export const Footer = props => {
                         {e.no_link === true ? (
                           e.name
                         ) : (
-                          <Link to={`/sigs/${e.name.toLowerCase()}`}>
+                          <Link to={`/sigs/${lcrs(e.name)}`}>
                             {e.name}
                           </Link>
                         )}

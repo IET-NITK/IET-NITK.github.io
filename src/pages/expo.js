@@ -1,6 +1,6 @@
 import { graphql, Link, navigate } from "gatsby"
 import React, { useEffect } from "react"
-import { RenderAuthors } from "../components/helper"
+import { lcrs, RenderAuthors } from "../components/helper"
 import Layout from "../components/layout"
 import PaginationComponent from "../components/partials/pagination"
 import SearchEngineOps from "../components/seo"
@@ -52,8 +52,7 @@ const Expo = ({ data, location }) => {
                       <Link
                         to={
                           "/projects/" +
-                          element.title.toLowerCase().split(" ").join("")
-                        }
+                          lcrs(element.title)}
                         className="btn btn-outline-primary btn-sm"
                         type="button"
                       >

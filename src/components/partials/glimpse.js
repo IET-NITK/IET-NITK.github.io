@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, Link, StaticQuery } from "gatsby"
-import { RenderAuthors } from "../helper"
+import { lcrs, RenderAuthors } from "../helper"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css"
 import _ from "lodash"
@@ -32,7 +32,7 @@ const getRandomThings = (arr, n, currentRoute) => {
   return _.sampleSize(
     arr.filter(
       e =>
-        e.name.toLowerCase().split(" ").join("") !== currentRoute &&
+        lcrs(e.name) !== currentRoute &&
         e.route !== currentRoute &&
         e.route !== currentRoute
     ),
@@ -104,7 +104,7 @@ export const Glimpse = ({ currentRoute }) => {
                 <div className="col-lg-3 col-md-4  mt-5 mb-5">
                   {getRandomThings(sigs.nodes, 1, currentRoute).map((e, i) => (
                     <Link
-                      to={"/sigs/" + e.name.toLowerCase()}
+                      to={"/sigs/" + lcrs(e.name)}
                       key={i}
                       class="card bg-primary text-white text-decoration-none"
                       style={{ height: "15em" }}
@@ -153,7 +153,7 @@ export const Glimpse = ({ currentRoute }) => {
                               to={
                                 id === "Projects"
                                   ? "/projects/" +
-                                    e.name.toLowerCase().split(" ").join("")
+                                    lcrs(e.name)
                                   : `/${id.slice(0, -1).toLowerCase()}/${
                                       e.route
                                     }`

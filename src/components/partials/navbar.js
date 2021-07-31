@@ -6,6 +6,7 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 import ReactMarkdown from "react-markdown"
 //eslint-disable-next-line
 import Ticker from "react-ticker"
+import { lcrs } from "../helper"
 
 const TopNavbar = ({ notice, smp, recr, expo }) => {
   //eslint-disable-next-line
@@ -150,7 +151,7 @@ export const XNavbar = props => {
                         <NavDropdown.Item
                           className="nav-link"
                           key={index}
-                          href={"/sigs/" + element.name.toLowerCase()}
+                          href={"/sigs/" + lcrs(element.name)}
                         >
                           {element.name}
                         </NavDropdown.Item>

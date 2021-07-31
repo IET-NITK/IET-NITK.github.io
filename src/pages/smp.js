@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SearchEngineOps from "../components/seo"
-import { newRenderAuthors } from "../components/helper"
+import { lcrs, newRenderAuthors } from "../components/helper"
 import { Link } from "gatsby"
 import { graphql, navigate } from "gatsby"
 import ReactMarkdown from "react-markdown"
@@ -40,7 +40,7 @@ const SMP = ({ data, location }) => {
                   <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-12">
                       <h3 id={e.fieldValue} className="smp-signames">
-                        <Link to={"/sigs/" + e.fieldValue.toLowerCase()}>
+                        <Link to={"/sigs/" + lcrs(e.fieldValue)}>
                           {e.fieldValue}
                         </Link>
                       </h3>
@@ -71,7 +71,7 @@ const SMP = ({ data, location }) => {
                     </div>
 
                     <div className="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
-                      <Link to={"/sigs/" + e.fieldValue.toLowerCase()}>
+                      <Link to={"/sigs/" + lcrs(e.fieldValue)}>
                         <img
                           className="mobile-invisible smp-logo"
                           style={{ maxWidth: "150px", paddingTop: "2em" }}

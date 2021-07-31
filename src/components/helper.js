@@ -1,18 +1,10 @@
 import { Link } from "gatsby"
 import React from "react"
 
-export const redirectController = control => {
-  if (!control) {
-  }
+export const lcrs = (link) => {
+  return link.toLowerCase().split(" ").join("")
 }
-export const generateSIGHash = sig_images => {
-  let img_hash = {}
-  sig_images &&
-    sig_images.forEach(element => {
-      img_hash[element.name] = element.childImageSharp.fixed.srcWebp
-    })
-  return img_hash
-}
+
 
 export const RenderAuthors = (arr, cls) =>
   arr.map(({ name }, index2) => (
@@ -21,7 +13,7 @@ export const RenderAuthors = (arr, cls) =>
       <Link
       className={cls}
         key={"x" + index2}
-        to={"/members/" + name.toLowerCase().split(" ").join("")}
+        to={"/members/" + lcrs(name)}
       >
         {name}
       </Link>
@@ -39,7 +31,7 @@ export const RenderAuthorsName = (arr, cls) =>
       <Link
         className="pr-3"
         key={"x" + index2}
-        to={"/members/" + name.toLowerCase().split(" ").join("")}
+        to={"/members/" + lcrs(name)}
         style={{ display: "inline-block" }}
       >
         <span class="project-auther-name"> {name} </span>
@@ -61,7 +53,7 @@ export const newRenderAuthors = (arr, cls) =>
       &nbsp;
       <Link
         key={"x" + index2}
-        to={"/members/" + name.toLowerCase().split(" ").join("")}
+        to={"/members/" + lcrs(name)}
       >
         {name}
       </Link>

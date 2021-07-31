@@ -6,6 +6,7 @@ import Img_IETUpview from "../assets/img/iet-upview.jpg"
 import IconLink from "../assets/img/link.svg"
 import {
   getRandom,
+  lcrs,
   RenderAuthors,
   RenderAuthorsName,
   RenderProjectDescription,
@@ -99,7 +100,7 @@ const MainPage = ({ location, data }) => {
                     We love to write! Check out more of our stuff on{" "}
                     <Link to="/blog">
                       <img alt="IET" src={IconLink} className="mr-2" />
-                      the IET Blog
+                      The IETNITK Blog
                     </Link>
                   </p>
                 </div>
@@ -133,7 +134,7 @@ const MainPage = ({ location, data }) => {
                             <Link
                               className="btn btn-sm"
                               style={{ textDecoration: "none" }}
-                              to={"blog/" + element.route}
+                              to={"blog/" + lcrs(element.route)}
                             >
                               Read More
                             </Link>
@@ -171,11 +172,7 @@ const MainPage = ({ location, data }) => {
                             {element.url ? (
                               <Link
                                 to={
-                                  "/projects/" +
-                                  element.title
-                                    .toLowerCase()
-                                    .split(" ")
-                                    .join("")
+                                  "/projects/" + lcrs(element.title)
                                 }
                                 className="card-link text-capitalize"
                               >
@@ -241,7 +238,6 @@ const MainPage = ({ location, data }) => {
                       </p>
                     </div>
                   </div>
-                  {/* {data.events.nodes.map((element, index) => ( */}
                   <div className="col-lg-6 col-md-6 mt-4">
                     <div className="card clean-card">
                       <div className="card-body">
