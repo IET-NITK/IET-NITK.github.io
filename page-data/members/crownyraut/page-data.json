@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-author-page-js","path":"/members/crownyraut","result":{"data":{"member_details":{"name":"Crowny Raut","position":"Inkheart coordinator","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Crowny Raut","sig":null,"date":"2021-05-08T06:36:00.172Z"}},"staticQueryHashes":["1681770253","3346060996","362689041","940918685"]}
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/members/crownyraut",
+    "result": {"data":{"member_details":{"name":"Crowny Raut","position":"Inkheart coordinator","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Crowny Raut","sig":null,"date":"2021-05-08T06:36:00.172Z"}},
+    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}

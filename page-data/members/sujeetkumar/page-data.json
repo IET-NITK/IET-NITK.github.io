@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-author-page-js","path":"/members/sujeetkumar","result":{"data":{"member_details":{"name":"Sujeet Kumar","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Sujeet Kumar","sig":null,"date":"2021-05-08T06:21:51.234Z"}},"staticQueryHashes":["1681770253","3346060996","362689041","940918685"]}
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/members/sujeetkumar",
+    "result": {"data":{"member_details":{"name":"Sujeet Kumar","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Sujeet Kumar","sig":null,"date":"2021-05-08T06:21:51.234Z"}},
+    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}

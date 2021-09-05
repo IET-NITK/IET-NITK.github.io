@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-projects-page-js","path":"/projects/aerodynamiceffectsoncyclists","result":{"data":{"projects":{"authors":[],"sig":{"name":"Torsion","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/7bcc14be5187e958ac7fdc0738eefda6/1f5c5/Torsion_90760b2382.webp"}}}}},"url":null,"title":"Aerodynamic effects on cyclists","description":null,"ongoing":false}},"pageContext":{"pathSlug":"Aerodynamic effects on cyclists","sig":null,"date":"2021-05-01T13:59:14.640Z"}},"staticQueryHashes":["1681770253","3346060996","362689041","940918685"]}
+{
+    "componentChunkName": "component---src-templates-projects-page-js",
+    "path": "/projects/aerodynamiceffectsoncyclists",
+    "result": {"data":{"projects":{"authors":[],"sig":{"name":"Torsion","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/7bcc14be5187e958ac7fdc0738eefda6/1f5c5/Torsion_90760b2382.webp"}}}}},"url":null,"title":"Aerodynamic effects on cyclists","description":null,"ongoing":false}},"pageContext":{"pathSlug":"Aerodynamic effects on cyclists","sig":null,"date":"2021-05-01T13:59:14.640Z"}},
+    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}

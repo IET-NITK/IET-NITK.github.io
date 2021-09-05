@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-events-post-js","path":"/events/virtualtalk","result":{"data":{"event":{"title":" Virtual Talk on Career options after BTech for ECE & EEE students !!  ","updated_at":"July 1st, 2021","description":"\n  \n","date":"July 4th, 2021"}},"pageContext":{"pathSlug":"virtualtalk","sig":null,"date":"2021-07-04"}},"staticQueryHashes":["1681770253","3346060996","362689041","940918685"]}
+{
+    "componentChunkName": "component---src-templates-events-post-js",
+    "path": "/events/virtualtalk",
+    "result": {"data":{"event":{"title":" Virtual Talk on Career options after BTech for ECE & EEE students !!  ","updated_at":"July 1st, 2021","description":"\n  \n","date":"July 4th, 2021"}},"pageContext":{"pathSlug":"virtualtalk","sig":null,"date":"2021-07-04"}},
+    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}

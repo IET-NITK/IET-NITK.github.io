@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-author-page-js","path":"/members/adithyaraob","result":{"data":{"member_details":{"name":"Adithya Rao B","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"b.adithyarao@gmail.com","facebook":"Adithya Rao B","github":"ProtoRao","linkedin":"Adithya Rao B"}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Adithya Rao B","sig":null,"date":"2021-05-08T05:56:09.760Z"}},"staticQueryHashes":["1681770253","3346060996","362689041","940918685"]}
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/members/adithyaraob",
+    "result": {"data":{"member_details":{"name":"Adithya Rao B","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"b.adithyarao@gmail.com","facebook":"Adithya Rao B","github":"ProtoRao","linkedin":"Adithya Rao B"}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Adithya Rao B","sig":null,"date":"2021-05-08T05:56:09.760Z"}},
+    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}

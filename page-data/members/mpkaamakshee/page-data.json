@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-author-page-js","path":"/members/mpkaamakshee","result":{"data":{"member_details":{"name":"M P Kaamakshee","position":"Project and Publicity Coordinators (2019)","image":null,"passoutYr":2019,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"M P Kaamakshee","sig":null,"date":"2021-04-29T13:15:36.016Z"}},"staticQueryHashes":["1681770253","3346060996","362689041","940918685"]}
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/members/mpkaamakshee",
+    "result": {"data":{"member_details":{"name":"M P Kaamakshee","position":"Project and Publicity Coordinators (2019)","image":null,"passoutYr":2019,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"M P Kaamakshee","sig":null,"date":"2021-04-29T13:15:36.016Z"}},
+    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}

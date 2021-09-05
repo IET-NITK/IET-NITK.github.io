@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-author-page-js","path":"/members/shivanip","result":{"data":{"member_details":{"name":"Shivani P","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"shivanip772@gmail.com","facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Shivani P","sig":null,"date":"2021-05-08T06:15:23.371Z"}},"staticQueryHashes":["1681770253","3346060996","362689041","940918685"]}
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/members/shivanip",
+    "result": {"data":{"member_details":{"name":"Shivani P","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"shivanip772@gmail.com","facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Shivani P","sig":null,"date":"2021-05-08T06:15:23.371Z"}},
+    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}

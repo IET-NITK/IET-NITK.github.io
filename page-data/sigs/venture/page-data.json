@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-sig-page-js","path":"/sigs/venture","result":{"data":{"sig_projects":{"nodes":[]},"sig_details":{"name":"Venture","description":"We're interested in exploring the fields of finance, business and management.","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/69b9f63ee8e78792dcc76861d1ec7587/1f5c5/venture_e584562f9c.webp"}}}}}},"pageContext":{"pathSlug":"Venture","sig":null,"date":"2021-07-25T10:58:20.099Z"}},"staticQueryHashes":["1681770253","3346060996","362689041","940918685"]}
+{
+    "componentChunkName": "component---src-templates-sig-page-js",
+    "path": "/sigs/venture",
+    "result": {"data":{"sig_projects":{"nodes":[]},"sig_details":{"name":"Venture","description":"We're interested in exploring the fields of finance, business and management.","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/69b9f63ee8e78792dcc76861d1ec7587/1f5c5/venture_e584562f9c.webp"}}}}}},"pageContext":{"pathSlug":"Venture","sig":null,"date":"2021-07-25T10:58:20.099Z"}},
+    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}

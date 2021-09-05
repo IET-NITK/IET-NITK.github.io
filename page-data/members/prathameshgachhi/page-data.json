@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-author-page-js","path":"/members/prathameshgachhi","result":{"data":{"member_details":{"name":"Prathamesh Gachhi","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"prathameshgachhi123@gmail.com","facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Prathamesh Gachhi","sig":null,"date":"2021-05-08T06:09:13.017Z"}},"staticQueryHashes":["1681770253","3346060996","362689041","940918685"]}
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/members/prathameshgachhi",
+    "result": {"data":{"member_details":{"name":"Prathamesh Gachhi","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"prathameshgachhi123@gmail.com","facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Prathamesh Gachhi","sig":null,"date":"2021-05-08T06:09:13.017Z"}},
+    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
