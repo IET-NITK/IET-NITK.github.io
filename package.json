@@ -52,7 +52,7 @@
     "lint-staged": "11.1.2",
     "node-sass": "5.0.0",
     "postcss": "8.3.5",
-    "prettier": "2.3.2"
+    "prettier": "2.4.0"
   },
   "homepage": "https://iet.nitk.ac.in",
   "keywords": [
