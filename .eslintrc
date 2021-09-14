@@ -18,8 +18,8 @@
     "eslint:recommended", // use recommended configs
     "plugin:sonarjs/recommended",
 
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended"
   ],
   "rules": {
     "arrow-parens": "error",
