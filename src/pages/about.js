@@ -1,32 +1,32 @@
-import React, { useState } from "react"
-import Layout from "../components/layout"
-import SearchEngineOps from "../components/seo"
-import { graphql } from "gatsby"
-import Img_Beach from "../assets/img/beach.jpg"
-import { Nav, NavDropdown } from "react-bootstrap"
-import { MemberDetails } from "../components/partials/member"
+import React, { useState } from "react";
+import Layout from "../components/layout";
+import SearchEngineOps from "../components/seo";
+import { graphql } from "gatsby";
+import Img_Beach from "../assets/img/beach.jpg";
+import { Nav, NavDropdown } from "react-bootstrap";
+import { MemberDetails } from "../components/partials/member";
 
-const KEY_ALUMNI = "Alumni"
-const KEY_EXEC_MEMBERS = "Executive Members 2021"
-const KEY_CURR_CORE = "Core 2021"
+const KEY_ALUMNI = "Alumni";
+const KEY_EXEC_MEMBERS = "Executive Members 2021";
+const KEY_CURR_CORE = "Core 2021";
 
 
 const About = ({ location, data }) => {
-  const [category, setCategory] = useState(KEY_CURR_CORE)
-  let members_hsx = {
+  const [category, setCategory] = useState(KEY_CURR_CORE);
+  const members_hsx = {
     [KEY_CURR_CORE]: data.members.nodes.filter(
-      mem => mem.position !== "Executive Member" && mem.alumni !== true
+      (mem) => mem.position !== "Executive Member" && mem.alumni !== true
     ),
     [KEY_EXEC_MEMBERS]: data.members.nodes.filter(
-      mem => mem.position === "Executive Member" && mem.alumni !== true
+      (mem) => mem.position === "Executive Member" && mem.alumni !== true
     ),
-  }
+  };
   data.passouts.group.map(
-    e =>
-      (members_hsx[KEY_ALUMNI + "-" + e.fieldValue] = data.members.nodes.filter(
-        mem => mem.alumni === true && mem.passoutYr === parseInt(e.fieldValue)
+    (e) =>
+      (members_hsx[`${KEY_ALUMNI  }-${  e.fieldValue}`] = data.members.nodes.filter(
+        (mem) => mem.alumni === true && mem.passoutYr === parseInt(e.fieldValue)
       ))
-  )
+  );
   return (
     <Layout location={location.pathname} title={"About Us"}>
       <SearchEngineOps title="About Us" />
@@ -59,22 +59,22 @@ const About = ({ location, data }) => {
               <h2 className="text-primary">Our Family</h2>
             </div>
             <Nav
-              className="mb-5"
-              variant="pills"
-              justify={true}
               activeKey={category}
+              className="mb-5"
+              justify
+              variant="pills"
             >
               <NavDropdown
                 title={
                   category.split("-").length > 1
-                    ? "Batch of " + category.split("-")[1]
+                    ? `Batch of ${  category.split("-")[1]}`
                     : KEY_ALUMNI
                 }
               >
-                {data.passouts.group.map(e => (
+                {data.passouts.group.map((e) => (
                   <NavDropdown.Item
-                    onClick={() => setCategory(KEY_ALUMNI + "-" + e.fieldValue)}
                     eventKey={e.fieldValue}
+                    onClick={() => setCategory(`${KEY_ALUMNI  }-${  e.fieldValue}`)}
                   >
                     Batch of {e.fieldValue}
                   </NavDropdown.Item>
@@ -82,8 +82,8 @@ const About = ({ location, data }) => {
               </NavDropdown>
               <Nav.Item>
                 <Nav.Link
-                  onClick={() => setCategory(KEY_CURR_CORE)}
                   eventKey={KEY_CURR_CORE}
+                  onClick={() => setCategory(KEY_CURR_CORE)}
                 >
                   {KEY_CURR_CORE}
                 </Nav.Link>
@@ -91,8 +91,8 @@ const About = ({ location, data }) => {
               <Nav.Item>
                 <Nav.Link
                   eventKey={KEY_EXEC_MEMBERS}
-                  title={KEY_EXEC_MEMBERS}
                   onClick={() => setCategory(KEY_EXEC_MEMBERS)}
+                  title={KEY_EXEC_MEMBERS}
                 >
                   {KEY_EXEC_MEMBERS}
                 </Nav.Link>
@@ -114,10 +114,10 @@ const About = ({ location, data }) => {
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
-export default About
+export default About;
 
 export const postQuery = graphql`
   {
@@ -144,4 +144,4 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;

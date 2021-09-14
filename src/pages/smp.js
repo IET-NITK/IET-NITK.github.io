@@ -1,26 +1,26 @@
-import React, { useEffect } from "react"
-import Layout from "../components/layout"
-import SearchEngineOps from "../components/seo"
-import { lcrs, newRenderAuthors } from "../components/helper"
-import { Link } from "gatsby"
-import { graphql, navigate } from "gatsby"
-import ReactMarkdown from "react-markdown"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import React, { useEffect } from "react";
+import Layout from "../components/layout";
+import SearchEngineOps from "../components/seo";
+import { lcrs, newrenderAuthors } from "../components/helper";
+import { Link } from "gatsby";
+import { graphql, navigate } from "gatsby";
+import ReactMarkdown from "react-markdown";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const SMP = ({ data, location }) => {
-  const { smp } = data
+  const { smp } = data;
   useEffect(() => {
     if (data.smp_basic.open !== true) {
-      navigate("/")
+      navigate("/");
     }
-  })
+  });
 
   return (
     <Layout location={location.pathname}>
       {data.smp_basic.open !== true ? null : (
         <>
           {" "}
-          <SearchEngineOps title={"SMP " + new Date().getFullYear()} />
+          <SearchEngineOps title={`SMP ${  new Date().getFullYear()}`} />
           <main className="page">
             <section className="clean-block about-us">
               <div className="container">
@@ -39,8 +39,8 @@ const SMP = ({ data, location }) => {
                 <React.Fragment key={i}>
                   <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-12">
-                      <h3 id={e.fieldValue} className="smp-signames">
-                        <Link to={"/sigs/" + lcrs(e.fieldValue)}>
+                      <h3 className="smp-signames" id={e.fieldValue}>
+                        <Link to={`/sigs/${  lcrs(e.fieldValue)}`}>
                           {e.fieldValue}
                         </Link>
                       </h3>
@@ -53,14 +53,14 @@ const SMP = ({ data, location }) => {
                               <br />
                               <span className="text-muted">
                                 <strong>Mentors:</strong>
-                                {newRenderAuthors(e2.members, "")}
+                                {newrenderAuthors(e2.members, "")}
                               </span>
                               <br />
                               <OutboundLink
-                                target="_blank"
-                                rel="noreferrer"
                                 className="btn btn-primary btn-sm mt-2"
                                 href={e2.url}
+                                rel="noreferrer"
+                                target="_blank"
                               >
                                 Course Curriculum
                               </OutboundLink>
@@ -71,12 +71,12 @@ const SMP = ({ data, location }) => {
                     </div>
 
                     <div className="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
-                      <Link to={"/sigs/" + lcrs(e.fieldValue)}>
+                      <Link to={`/sigs/${  lcrs(e.fieldValue)}`}>
                         <img
-                          className="mobile-invisible smp-logo"
-                          style={{ maxWidth: "150px", paddingTop: "2em" }}
-                          src={e.nodes[0].sigx.logox.localFile.publicURL}
                           alt={e.fieldValue}
+                          className="mobile-invisible smp-logo"
+                          src={e.nodes[0].sigx.logox.localFile.publicURL}
+                          style={{ maxWidth: "150px", paddingTop: "2em" }}
                         />
                       </Link>
                     </div>
@@ -96,10 +96,10 @@ const SMP = ({ data, location }) => {
             >
               <h2>Sign up for a Course Now!</h2>
               <OutboundLink
-                href={data.smp_basic.form_url}
-                target="_blank"
-                rel="noreferrer"
                 className="btn btn-light btn-lg mt-5"
+                href={data.smp_basic.form_url}
+                rel="noreferrer"
+                target="_blank"
                 type="button"
               >
                 Registration Form
@@ -128,8 +128,8 @@ const SMP = ({ data, location }) => {
         </>
       )}
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -161,6 +161,6 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default SMP
+export default SMP;

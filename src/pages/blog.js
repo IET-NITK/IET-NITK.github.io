@@ -1,9 +1,9 @@
-import { graphql, Link } from "gatsby"
-import React from "react"
-import Layout from "../components/layout"
-import SearchEngineOps from "../components/seo"
-import { RenderAuthors } from "../components/helper"
-import PaginationComponent from "../components/partials/pagination"
+import { graphql, Link } from "gatsby";
+import React from "react";
+import Layout from "../components/layout";
+import SearchEngineOps from "../components/seo";
+import { renderAuthors } from "../components/helper";
+import PaginationComponent from "../components/partials/pagination";
 
 const Blog = ({ data, location }) => {
   return (
@@ -20,15 +20,13 @@ const Blog = ({ data, location }) => {
             </div>
             <div className="block-content">
               <PaginationComponent
-                max={5}
-                list={data.blogs.nodes}
                 item={(element, inx) => {
-                  let imagelink = element.header.localFile.childImageSharp && element.header.localFile.childImageSharp.fixed.srcWebp
+                  let imagelink = element.header.localFile.childImageSharp && element.header.localFile.childImageSharp.fixed.srcWebp;
                   if(!imagelink){
-                    imagelink= element.header.localFile.publicURL
+                    imagelink= element.header.localFile.publicURL;
                   }
                   return (
-                    <div key={inx} className="clean-blog-post">
+                    <div className="clean-blog-post" key={inx}>
                       <div className="row">
                         <div className="col-lg-5">
                           <img
@@ -45,7 +43,7 @@ const Blog = ({ data, location }) => {
                           <div className="info">
                             <span className="text-muted">
                               By&nbsp;
-                              {RenderAuthors(
+                              {renderAuthors(
                                 element.authors,
                                 ""
                               )}
@@ -55,8 +53,8 @@ const Blog = ({ data, location }) => {
                           </div>
                           <p>{element.excerpt}</p>
                           <Link
-                            to={"/blog/" + element.route.toLowerCase()}
                             className="btn btn-outline-primary btn-sm"
+                            to={`/blog/${  element.route.toLowerCase()}`}
                             type="button"
                           >
                             Read More
@@ -64,16 +62,18 @@ const Blog = ({ data, location }) => {
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 }}
+                list={data.blogs.nodes}
+                max={5}
               />
             </div>
           </div>
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -99,6 +99,6 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Blog
+export default Blog;

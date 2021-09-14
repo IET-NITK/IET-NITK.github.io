@@ -26,6 +26,7 @@
     "gatsby-remark-smartypants": "4.8.0",
     "gatsby-source-filesystem": "3.11.0",
     "gatsby-source-firestore-easy": "1.0.0",
+    "gatsby-source-rss-feed": "^1.2.2",
     "gatsby-source-strapi": "1.0.2",
     "gatsby-transformer-remark": "4.8.0",
     "gatsby-transformer-sharp": "3.11.0",
@@ -44,8 +45,10 @@
     "typeface-montserrat": "1.1.13"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "babel-jest": "27.0.6",
     "babel-preset-gatsby": "1.11.0",
+    "eslint-plugin-sonarjs": "^0.10.0",
     "husky": "7.0.1",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.0.6",
@@ -76,6 +79,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "lint": "npx eslint . --fix"
   }
 }

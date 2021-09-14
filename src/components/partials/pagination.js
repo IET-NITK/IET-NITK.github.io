@@ -1,11 +1,11 @@
-import React, { useState } from "react"
-import Dropdown from "react-bootstrap/Dropdown"
+import React, { useState } from "react";
+import Dropdown from "react-bootstrap/Dropdown";
 
 function scrollTop() {
   if (document.body.scrollTop !== 0) {
-    document.body.scrollTop = 0
+    document.body.scrollTop = 0;
   } else {
-    document.documentElement.scrollTop = 0
+    document.documentElement.scrollTop = 0;
   }
 }
 const PaginationComponent = ({
@@ -20,11 +20,11 @@ const PaginationComponent = ({
     pno: 1,
     list_state: list,
     filterType: null,
-    filterCategories: [...new Set(list.map(e => e[filterBy]))],
-  })
+    filterCategories: [...new Set(list.map((e) => e[filterBy]))],
+  });
 
   if (state.list_state && state.list_state.length === 0) {
-    return <div className="text-center">{noneMessage}</div>
+    return <div className="text-center">{noneMessage}</div>;
   }
 
   return (
@@ -33,9 +33,9 @@ const PaginationComponent = ({
         <Dropdown>
           <Dropdown.Toggle
             className="mr-4"
-            variant="outline-primary"
-            id={"dropdown-" + filterBy}
+            id={`dropdown-${  filterBy}`}
             size="sm"
+            variant="outline-primary"
           >
             {state.filterType ? state.filterType : filterLabel}
           </Dropdown.Toggle>
@@ -43,13 +43,13 @@ const PaginationComponent = ({
             {state.filterCategories &&
               state.filterCategories.map(({ex}, i) => (
                 <Dropdown.Item
-                  name={ex}
                   key={i}
-                  onClick={event =>
+                  name={ex}
+                  onClick={(event) =>
                     setState({
                       ...state,
-                      list_state: list.filter(e => {
-                        return e[filterBy] === event.target.name
+                      list_state: list.filter((e) => {
+                        return e[filterBy] === event.target.name;
                       }),
                       filterType: event.target.name,
                     })
@@ -60,12 +60,12 @@ const PaginationComponent = ({
               ))}
             {state.filterType ? (
               <Dropdown.Item
-                onClick={event => {
+                onClick={(event) => {
                   setState({
                     ...state,
                     list_state: list,
                     filterType: null,
-                  })
+                  });
                 }}
               >
                 Clear Filters
@@ -95,8 +95,8 @@ const PaginationComponent = ({
             <button
               className="page-link"
               onClick={() => {
-                scrollTop()
-                setState({ ...state, pno: state.pno - 1 })
+                scrollTop();
+                setState({ ...state, pno: state.pno - 1 });
               }}
             >
               Previous
@@ -111,11 +111,11 @@ const PaginationComponent = ({
                 <button
                   className="page-link"
                   data-toggle="tooltip"
-                  title={`Page ${i + 1}`}
                   onClick={() => {
-                    scrollTop()
-                    setState({ ...state, pno: i + 1 })
+                    scrollTop();
+                    setState({ ...state, pno: i + 1 });
                   }}
+                  title={`Page ${i + 1}`}
                 >
                   {i + 1}
                 </button>
@@ -132,8 +132,8 @@ const PaginationComponent = ({
             <button
               className="page-link"
               onClick={() => {
-                scrollTop()
-                setState({ ...state, pno: state.pno + 1 })
+                scrollTop();
+                setState({ ...state, pno: state.pno + 1 });
               }}
             >
               Next
@@ -142,7 +142,7 @@ const PaginationComponent = ({
         </ul>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default PaginationComponent
+export default PaginationComponent;

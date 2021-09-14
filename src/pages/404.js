@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 
-import Layout from "../components/layout"
-import SearchEngineOps from "../components/seo"
+import Layout from "../components/layout";
+import SearchEngineOps from "../components/seo";
 
 const NotFoundPage = ({ data, location }) => {
   return (
@@ -16,20 +16,20 @@ const NotFoundPage = ({ data, location }) => {
               <p>We do a lot of stuff, but unfortunately not on this page :)</p>
             </div>
             <input
-              type="text"
+              className="form-control form-control-lg"
               id="c_name"
               name="name"
               // onChange={this.onChangeHandle}
-              className="form-control form-control-lg"
+              type="text"
             />
           </div>
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
 export const pageQuery = graphql`
   query {
@@ -39,4 +39,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

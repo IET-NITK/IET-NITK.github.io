@@ -1,12 +1,12 @@
-import { Link, StaticQuery } from "gatsby"
-import React from "react"
+import { Link, StaticQuery } from "gatsby";
+import React from "react";
 
-import { graphql } from "gatsby"
-import { Navbar, Nav, NavDropdown } from "react-bootstrap"
-import ReactMarkdown from "react-markdown"
+import { graphql } from "gatsby";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import ReactMarkdown from "react-markdown";
 //eslint-disable-next-line
 import Ticker from "react-ticker"
-import { lcrs } from "../helper"
+import { lcrs } from "../helper";
 
 const TopNavbar = ({ notice, smp, recr, expo }) => {
   //eslint-disable-next-line
@@ -33,30 +33,30 @@ const TopNavbar = ({ notice, smp, recr, expo }) => {
             </div>
             <div className="col-lg-3 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link
-                to="/recruitment"
-                role="button"
                 className={`btn btn-outline-primary btn-sm mr-3 ${
                   recr !== true ? "disabled" : ""
                 }`}
+                role="button"
+                to="/recruitment"
               >
                 Join IET NITK
               </Link>
 
               {expo !== true ? (
                 <Link
-                  to="/smp"
-                  role="button"
                   className={`btn btn-primary btn-sm mr-3 ${
                     smp !== true ? "disabled" : ""
                   }`}
+                  role="button"
+                  to="/smp"
                 >
                   SMP {new Date().getFullYear()}
                 </Link>
               ) : (
                 <Link
-                  to="/expo"
-                  role="button"
                   className="btn btn-sm mr-3 btn-primary"
+                  role="button"
+                  to="/expo"
                 >
                   NITK Expo {new Date().getFullYear()}
                 </Link>
@@ -66,12 +66,11 @@ const TopNavbar = ({ notice, smp, recr, expo }) => {
         </div>
       </div>
     </div>
-  )
-}
-export const XNavbar = props => {
+  );
+};
+export const XNavbar = (props) => {
   return (
-    <>
-      <StaticQuery
+    <StaticQuery
         query={graphql`
           query {
             about: strapiAboutClub {
@@ -110,22 +109,22 @@ export const XNavbar = props => {
         }) => (
           <div className="fixed-top" id="navbar">
             <TopNavbar
-              notice={about.message}
-              smp={smp_open.open}
-              recr={recr_open.open}
               expo={expo_open.open}
+              notice={about.message}
+              recr={recr_open.open}
+              smp={smp_open.open}
             />
             <Navbar
               bg="white"
-              expand="lg"
               className=" clean-navbar"
+              expand="lg"
             >
               <div className="container">
                 <Navbar.Brand className="navbar-brand logo" href="/">
                   <img
+                    alt="Institute of Engineering and Technology, NITK Surathkal Division"
                     src={imageSharp.fixed.srcWebp}
                     style={{ height: "auto", maxHeight: "2.5em" }}
-                    alt="Institute of Engineering and Technology, NITK Surathkal Division"
                   />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -150,8 +149,8 @@ export const XNavbar = props => {
                       {sigdetails.nodes.map((element, index) => (
                         <NavDropdown.Item
                           className="nav-link"
+                          href={`/sigs/${  lcrs(element.name)}`}
                           key={index}
-                          href={"/sigs/" + lcrs(element.name)}
                         >
                           {element.name}
                         </NavDropdown.Item>
@@ -166,9 +165,8 @@ export const XNavbar = props => {
             </Navbar>
           </div>
         )}
-      ></StaticQuery>
-    </>
-  )
-}
+       />
+  );
+};
 
-export default XNavbar
+export default XNavbar;

@@ -1,7 +1,7 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from "react";
+import Layout from "../components/layout";
 
-export const Project = props => {
+export const Project = (props) => {
   return (
     <Layout>
       {/* <main className="page blog-post">
@@ -12,7 +12,7 @@ export const Project = props => {
                 <h3>{current.frontmatter.title}</h3>
                 <div className="post-info">
                   <span>
-                    By <b>{RenderAuthors(current.frontmatter.authors, "")}</b>
+                    By <b>{renderAuthors(current.frontmatter.authors, "")}</b>
                   </span>
                   -
                   <span>
@@ -23,7 +23,7 @@ export const Project = props => {
                 <span>
                   Written by&nbsp;
                   <b>
-                    {RenderAuthors(current.frontmatter.authors, "")}
+                    {renderAuthors(current.frontmatter.authors, "")}
                     <br />
                     on {moment(blog.node.birthtime).format("Do MMMM, YYYY")}
                   </b>
@@ -34,7 +34,7 @@ export const Project = props => {
         </section>
       </main> */}
     </Layout>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;

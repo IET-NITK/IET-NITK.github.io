@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql, Link, StaticQuery } from "gatsby"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
-import { lcrs } from "../helper"
+import React from "react";
+import { graphql, Link, StaticQuery } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+import { lcrs } from "../helper";
 
-export const Footer = props => {
+export const Footer = (props) => {
   return (
     <StaticQuery
       query={graphql`
@@ -92,10 +92,10 @@ export const Footer = props => {
                     <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK
                     |&nbsp;
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       className="text-white"
                       href="https://github.com/IET-NITK/IET-NITK.github.io#contributors"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       Made by IET NITK Web Team
                     </OutboundLink>
@@ -104,51 +104,51 @@ export const Footer = props => {
                   </div>
                   <div className="col-md-6 item social mobile-center-laptop-right">
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.facebook.com/ietnitk"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-facebook" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.linkedin.com/company/ietnitk/"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-linkedin" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.github.com/IET-NITK"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-github" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://t.me/IET_NITK"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-telegram" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.youtube.com/c/IETNITK"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-youtube" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.instagram.com/ietnitk"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-instagram" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="/feed.xml"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-rss" />
                     </OutboundLink>
@@ -160,7 +160,7 @@ export const Footer = props => {
         </div>
       )}
     />
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

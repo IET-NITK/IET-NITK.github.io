@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 const SearchEngineOps = ({ description, lang, meta, title }) => {
   const { site_details, logo } = useStaticQuery(
@@ -25,18 +25,16 @@ const SearchEngineOps = ({ description, lang, meta, title }) => {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site_details.siteMetadata.description
-  const defaultTitle = site_details.siteMetadata?.title
+  const metaDescription = description || site_details.siteMetadata.description;
+  const defaultTitle = site_details.siteMetadata?.title;
   
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: `title`,
@@ -67,23 +65,25 @@ const SearchEngineOps = ({ description, lang, meta, title }) => {
           content: `article`,
         },
       ].concat(meta)}
+      title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
     >
-      <link rel="icon" href={logo.publicURL} />
+      <link href={logo.publicURL} rel="icon" />
     </Helmet>
-  )
-}
+  );
+};
 
 SearchEngineOps.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 SearchEngineOps.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-}
+};
 
-export default SearchEngineOps
+export default SearchEngineOps;

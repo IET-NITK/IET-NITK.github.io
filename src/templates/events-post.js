@@ -1,9 +1,9 @@
-import React from "react"
-import Layout from "../components/layout"
-import { graphql } from "gatsby"
-import SearchEngineOps from "../components/seo"
-import Glimpse from "../components/partials/glimpse"
-import ReactMarkdown from "react-markdown"
+import React from "react";
+import Layout from "../components/layout";
+import { graphql } from "gatsby";
+import SearchEngineOps from "../components/seo";
+import Glimpse from "../components/partials/glimpse";
+import ReactMarkdown from "react-markdown";
 
 const BlogArticle = ({ data, uri }) => {
   return (
@@ -35,8 +35,8 @@ const BlogArticle = ({ data, uri }) => {
       </main>
       <Glimpse currentRoute={uri} />
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   query($pathSlug: String!) {
@@ -47,6 +47,6 @@ export const postQuery = graphql`
       date(formatString: "MMMM Do, YYYY")
     }
   }
-`
+`;
 
-export default BlogArticle
+export default BlogArticle;

@@ -1,8 +1,8 @@
-import { graphql, Link } from "gatsby"
-import React from "react"
-import Layout from "../components/layout"
-import PaginationComponent from "../components/partials/pagination"
-import SearchEngineOps from "../components/seo"
+import { graphql, Link } from "gatsby";
+import React from "react";
+import Layout from "../components/layout";
+import PaginationComponent from "../components/partials/pagination";
+import SearchEngineOps from "../components/seo";
 
 const Events = ({ data, location }) => {
   return (
@@ -20,12 +20,8 @@ const Events = ({ data, location }) => {
             </div>
             <div className="block-content">
               <PaginationComponent
-                max={5}
-
-                noneMessage="No event reports here. Come back soon!"
-                list={data.events.nodes}
                 item={(element, index) => (
-                  <div key={index} className="clean-blog-post">
+                  <div className="clean-blog-post" key={index}>
                     <div className="row">
                       <div className="col-lg-7">
                         <h3>{element.title}</h3>
@@ -36,8 +32,8 @@ const Events = ({ data, location }) => {
                         </div>
                         <p>{element.excerpt}</p>
                         <Link
-                          to={"/events/" + element.route}
                           className="btn btn-outline-primary btn-sm"
+                          to={`/events/${  element.route}`}
                           type="button"
                         >
                           Read More 
@@ -46,14 +42,18 @@ const Events = ({ data, location }) => {
                     </div>
                   </div>
                 )}
+
+                list={data.events.nodes}
+                max={5}
+                noneMessage="No event reports here. Come back soon!"
               />
             </div>
           </div>
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -66,6 +66,6 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Events
+export default Events;

@@ -1,9 +1,9 @@
-import { graphql } from "gatsby"
-import React from "react"
-// import { RenderAuthors } from "../components/helper"
-import Layout from "../components/layout"
+import { graphql } from "gatsby";
+import React from "react";
+// import { renderAuthors } from "../components/helper"
+import Layout from "../components/layout";
 // import PaginationComponent from "../components/partials/pagination"
-import SearchEngineOps from "../components/seo"
+import SearchEngineOps from "../components/seo";
 
 const ProjectReports = ({ data, location }) => {
   return (
@@ -49,7 +49,7 @@ const ProjectReports = ({ data, location }) => {
                       {element.childMarkdownRemark.frontmatter.authors ? (
                         <p>
                           Built by
-                          {RenderAuthors(
+                          {renderAuthors(
                             element.childMarkdownRemark.frontmatter.authors ||
                               [],
                             ""
@@ -78,8 +78,8 @@ const ProjectReports = ({ data, location }) => {
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -96,6 +96,6 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default ProjectReports
+export default ProjectReports;
