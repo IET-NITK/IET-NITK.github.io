@@ -31,7 +31,7 @@
     "gatsby-transformer-sharp": "3.12.0",
     "gatsby-transformer-yaml": "3.12.0",
     "gh-pages": "3.2.3",
-    "graphql": "15.5.1",
+    "graphql": "15.5.3",
     "prismjs": "1.24.1",
     "react": "17.0.2",
     "react-bootstrap": "1.6.3",
