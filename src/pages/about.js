@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/layout";
 import SearchEngineOps from "../components/seo";
 import { graphql } from "gatsby";
-import Img_Beach from "../assets/img/beach.jpg";
+import imgBeach from "../assets/img/beach.jpg";
 import { Nav, NavDropdown } from "react-bootstrap";
 import { MemberDetails } from "../components/partials/member";
 
@@ -13,7 +13,7 @@ const KEY_CURR_CORE = "Core 2021";
 
 const About = ({ location, data }) => {
   const [category, setCategory] = useState(KEY_CURR_CORE);
-  const members_hsx = {
+  const membersHash = {
     [KEY_CURR_CORE]: data.members.nodes.filter(
       (mem) => mem.position !== "Executive Member" && mem.alumni !== true
     ),
@@ -22,9 +22,9 @@ const About = ({ location, data }) => {
     ),
   };
   data.passouts.group.map(
-    (e) =>
-      (members_hsx[`${KEY_ALUMNI  }-${  e.fieldValue}`] = data.members.nodes.filter(
-        (mem) => mem.alumni === true && mem.passoutYr === parseInt(e.fieldValue)
+    (element) =>
+      (membersHash[`${KEY_ALUMNI  }-${  element.fieldValue}`] = data.members.nodes.filter(
+        (mem) => mem.alumni === true && mem.passoutYr === parseInt(element.fieldValue)
       ))
   );
   return (
@@ -39,7 +39,7 @@ const About = ({ location, data }) => {
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <img
                       alt=""
-                      src={Img_Beach}
+                      src={imgBeach}
                       style={{ width: "100%", height: "auto" }}
                     />
                   </div>
@@ -71,12 +71,13 @@ const About = ({ location, data }) => {
                     : KEY_ALUMNI
                 }
               >
-                {data.passouts.group.map((e) => (
+                {data.passouts.group.map((element) => (
                   <NavDropdown.Item
-                    eventKey={e.fieldValue}
-                    onClick={() => setCategory(`${KEY_ALUMNI  }-${  e.fieldValue}`)}
+                  eventKey={element.fieldValue}
+                    key={element.fieldValue}
+                    onClick={() => setCategory(`${KEY_ALUMNI  }-${  element.fieldValue}`)}
                   >
-                    Batch of {e.fieldValue}
+                    Batch of {element.fieldValue}
                   </NavDropdown.Item>
                 ))}
               </NavDropdown>
@@ -100,9 +101,10 @@ const About = ({ location, data }) => {
             </Nav>
 
             <div className="row justify-content-center">
-              {members_hsx[category].map((author, index) => (
+              {membersHash[category].map((author, index) => (
                     <div
                     className="col-sm-6 col-md-4 col-lg-3"
+                    key={index}
                     style={{ paddingBottom: "3em" }}
                     // id={author.name}
                   >

@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "../components/layout";
 import SearchEngineOps from "../components/seo";
 import { lcrs, newrenderAuthors } from "../components/helper";
-import { Link } from "gatsby";
-import { graphql, navigate } from "gatsby";
+import { Link, graphql, navigate } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 
@@ -19,7 +18,6 @@ const SMP = ({ data, location }) => {
     <Layout location={location.pathname}>
       {data.smp_basic.open !== true ? null : (
         <>
-          {" "}
           <SearchEngineOps title={`SMP ${  new Date().getFullYear()}`} />
           <main className="page">
             <section className="clean-block about-us">
@@ -35,17 +33,17 @@ const SMP = ({ data, location }) => {
           </main>
           <div className="site-section pb-5" style={{ paddingTop: "1em" }}>
             <div className="container">
-              {smp.group.map((e, i) => (
-                <React.Fragment key={i}>
+              {smp.group.map((smpGroup, ind) => (
+                <React.Fragment key={ind}>
                   <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-12">
-                      <h3 className="smp-signames" id={e.fieldValue}>
-                        <Link to={`/sigs/${  lcrs(e.fieldValue)}`}>
-                          {e.fieldValue}
+                      <h3 className="smp-signames" id={smpGroup.fieldValue}>
+                        <Link to={`/sigs/${  lcrs(smpGroup.fieldValue)}`}>
+                          {smpGroup.fieldValue}
                         </Link>
                       </h3>
-                      {e.nodes.map((e2, i) => (
-                        <React.Fragment key={i}>
+                      {smpGroup.nodes.map((e2) => (
+                        <React.Fragment key={e2.title}>
                           <h5 id={smp.title}>{e2.title}</h5>
                           <div className="pb-5">
                             <p>
@@ -71,17 +69,17 @@ const SMP = ({ data, location }) => {
                     </div>
 
                     <div className="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
-                      <Link to={`/sigs/${  lcrs(e.fieldValue)}`}>
+                      <Link to={`/sigs/${  lcrs(smpGroup.fieldValue)}`}>
                         <img
-                          alt={e.fieldValue}
+                          alt={smpGroup.fieldValue}
                           className="mobile-invisible smp-logo"
-                          src={e.nodes[0].sigx.logox.localFile.publicURL}
+                          src={smpGroup.nodes[0].sigx.logox.localFile.publicURL}
                           style={{ maxWidth: "150px", paddingTop: "2em" }}
                         />
                       </Link>
                     </div>
                   </div>
-                  {i !== smp.group.length - 1 ? <hr /> : null}
+                  {ind !== smp.group.length - 1 ? <hr /> : null}
                 </React.Fragment>
               ))}
             </div>

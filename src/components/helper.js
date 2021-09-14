@@ -25,7 +25,7 @@ export const renderAuthors = (arr, cls) =>
     </>
   ));
 
-export const renderAuthorsName = (arr, cls) =>
+export const renderAuthorsName = (arr) =>
   arr.map(({ name }, index2) => (
     <>
       <Link
@@ -40,14 +40,14 @@ export const renderAuthorsName = (arr, cls) =>
     </>
   ));
 
-export const RenderProjectDescription = (element, len = 100) => {
-  if (element != null && element.length >= len) {
+export const renderProjectDescription = (element, len = 100) => {
+  if (element !== null && element.length >= len) {
     return `${element.substring(0, len)  }...`;
   }
   return element;
 };
 
-export const newrenderAuthors = (arr, cls) =>
+export const newrenderAuthors = (arr) =>
   arr.map(({ name }, index2) => (
     <>
       &nbsp;
@@ -70,16 +70,16 @@ export const niceFormat = (name) =>
     return letter.toUpperCase();
   });
 
-export function getRandom(arr, n) {
-  let result = new Array(n),
-    len = arr.length,
-    taken = new Array(len);
-  if (n > len)
+export function getRandom(arr, num) {
+  const result = new Array(num);
+  let arrLen = arr.length;
+  const taken = new Array(arrLen);
+  if (num > arrLen)
     throw new RangeError("getRandom: more elements taken than available");
-  while (n--) {
-    const x = Math.floor(Math.random() * len);
-    result[n] = arr[x in taken ? taken[x] : x];
-    taken[x] = --len in taken ? taken[len] : len;
+  while (num--) {
+    const item = Math.floor(Math.random() * arrLen);
+    result[num] = arr[item in taken ? taken[item] : item];
+    taken[item] = --arrLen in taken ? taken[arrLen] : arrLen;
   }
   return result;
 }

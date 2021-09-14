@@ -2,14 +2,14 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import SearchEngineOps from "../components/seo";
-import Img_IETUpview from "../assets/img/iet-upview.jpg";
+import ietUpview from "../assets/img/iet-upview.jpg";
 import IconLink from "../assets/img/link.svg";
 import {
   getRandom,
   lcrs,
   renderAuthors,
   renderAuthorsName,
-  RenderProjectDescription,
+  renderProjectDescription,
 } from "../components/helper";
 import video from "../../static/home.mp4";
 import { SIGShowcase } from "../components/SIGShowcase";
@@ -59,7 +59,7 @@ const MainPage = ({ location, data }) => {
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <img
                   alt="IET"
-                  src={Img_IETUpview}
+                  src={ietUpview}
                   style={{
                     width: "100%",
                     height: "auto",
@@ -197,7 +197,7 @@ const MainPage = ({ location, data }) => {
                           ) : null}
                           <div className="mb-3">
                             <div className="text-muted">
-                              {RenderProjectDescription(
+                              {renderProjectDescription(
                                 element.description,
                                 100
                               )}

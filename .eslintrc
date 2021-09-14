@@ -7,7 +7,8 @@
   },
   "globals": {
     "document": "readonly",
-    "window": "readonly"
+    "window": "readonly",
+    "Set":true
 },
   "env": {
     "node": true // defines things like process.env when generating through node

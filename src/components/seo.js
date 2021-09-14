@@ -11,10 +11,10 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 const SearchEngineOps = ({ description, lang, meta, title }) => {
-  const { site_details, logo } = useStaticQuery(
+  const { siteDetails, logo } = useStaticQuery(
     graphql`
       query {
-        site_details: site {
+        siteDetails: site {
           siteMetadata {
             title
             description
@@ -27,8 +27,8 @@ const SearchEngineOps = ({ description, lang, meta, title }) => {
     `
   );
 
-  const metaDescription = description || site_details.siteMetadata.description;
-  const defaultTitle = site_details.siteMetadata?.title;
+  const metaDescription = description || siteDetails.siteMetadata.description;
+  const defaultTitle = siteDetails.siteMetadata?.title;
   
   return (
     <Helmet

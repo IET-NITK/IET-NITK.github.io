@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SearchEngineOps from "../components/seo";
 
-const NotFoundPage = ({ data, location }) => {
+const NotFoundPage = ({  location }) => {
   return (
     <Layout location={location.pathname}>
       <SearchEngineOps title="404" />

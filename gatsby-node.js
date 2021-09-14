@@ -1,12 +1,9 @@
 const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
-const fs = require("fs");
-const yaml = require("js-yaml");
 
 const lcrs = (name) => {
   return name.toLowerCase().split(" ").join("");
 };
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const templateHash = {
@@ -53,15 +50,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     `).then((result) => {
       Object.keys(result.data).forEach((key) => {
-        result.data[key].nodes.forEach((e) => {
-          console.log(`${key}:`, `Endpoint for ${lcrs(e.link)}`);
+        result.data[key].nodes.forEach((element) => {
+          console.log(`${key}:`, `Endpoint for ${lcrs(element.link)}`);
           createPage({
-            path: `${key}/${lcrs(e.link)}`,
+            path: `${key}/${lcrs(element.link)}`,
             component: templateHash[key],
             context: {
-              pathSlug: e.link,
-              sig: e.sig || null,
-              date: e.date,
+              pathSlug: element.link,
+              sig: element.sig || null,
+              date: element.date,
             },
           });
         });

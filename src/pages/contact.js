@@ -9,9 +9,9 @@ class Contact extends React.Component {
     email: "",
     message: "",
   }
-  onChangeHandle = (e) => {
+  onChangeHandle = (event) => {
     this.setState({
-      [e.target.id]: e.target.value,
+      [event.target.id]: event.target.value,
     });
   }
   render() {
@@ -35,11 +35,11 @@ class Contact extends React.Component {
               </div>
               <div style={{ textAlign: "center" }}>
                 {this.props.data.site.siteMetadata.contactDetails.map(
-                  (e, i) => (
-                    <>
-                      <h4 className="card-title">{e.name}</h4>
-                      <p className="card-text">{e.number}</p>
-                    </>
+                  (contact, ind) => (
+                    <React.Fragment key={ind}>
+                      <h4 className="card-title">{contact.name}</h4>
+                      <p className="card-text">{contact.number}</p>
+                    </React.Fragment>
                   )
                 )}
                 <br />

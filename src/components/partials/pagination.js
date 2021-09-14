@@ -18,18 +18,19 @@ const PaginationComponent = ({
 }) => {
   const [state, setState] = useState({
     pno: 1,
-    list_state: list,
+    listState: list,
     filterType: null,
-    filterCategories: [...new Set(list.map((e) => e[filterBy]))],
+    // eslint-ignore-next-line
+    filterCategories: [...new Set(list.map((element) => element[filterBy]))],
   });
 
-  if (state.list_state && state.list_state.length === 0) {
+  if (state.listState && state.listState.length === 0) {
     return <div className="text-center">{noneMessage}</div>;
   }
 
   return (
     <>
-      {filterBy && state.list_state ? (
+      {filterBy && state.listState ? (
         <Dropdown>
           <Dropdown.Toggle
             className="mr-4"
@@ -41,15 +42,15 @@ const PaginationComponent = ({
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {state.filterCategories &&
-              state.filterCategories.map(({ex}, i) => (
+              state.filterCategories.map(({ex}, index) => (
                 <Dropdown.Item
-                  key={i}
+                  key={index}
                   name={ex}
                   onClick={(event) =>
                     setState({
                       ...state,
-                      list_state: list.filter((e) => {
-                        return e[filterBy] === event.target.name;
+                      listState: list.filter((element) => {
+                        return element[filterBy] === event.target.name;
                       }),
                       filterType: event.target.name,
                     })
@@ -60,10 +61,10 @@ const PaginationComponent = ({
               ))}
             {state.filterType ? (
               <Dropdown.Item
-                onClick={(event) => {
+                onClick={() => {
                   setState({
                     ...state,
-                    list_state: list,
+                    listState: list,
                     filterType: null,
                   });
                 }}
@@ -72,7 +73,7 @@ const PaginationComponent = ({
               </Dropdown.Item>
             ) : null}
           </Dropdown.Menu>
-          {state.list_state.length} Items
+          {state.listState.length} Items
           <hr />
         </Dropdown>
       ) : null}
@@ -85,8 +86,8 @@ const PaginationComponent = ({
         </>
       ) : null}
 
-      {state.list_state &&
-        state.list_state
+      {state.listState &&
+        state.listState
           .slice((state.pno - 1) * max, (state.pno - 1) * max + max)
           .map(item)}
       <nav aria-label="Page navigation example">
@@ -102,29 +103,29 @@ const PaginationComponent = ({
               Previous
             </button>
           </li>
-          {state.list_state &&
-            [...Array(Math.ceil(state.list_state.length / max))].map((e, i) => (
+          {state.listState &&
+            [...Array(Math.ceil(state.listState.length / max))].map((element, index) => (
               <li
-                className={`page-item ${state.pno === i + 1 ? "active" : ""}`}
-                key={i}
+                className={`page-item ${state.pno === index + 1 ? "active" : ""}`}
+                key={index}
               >
                 <button
                   className="page-link"
                   data-toggle="tooltip"
                   onClick={() => {
                     scrollTop();
-                    setState({ ...state, pno: i + 1 });
+                    setState({ ...state, pno: index + 1 });
                   }}
-                  title={`Page ${i + 1}`}
+                  title={`Page ${index + 1}`}
                 >
-                  {i + 1}
+                  {index + 1}
                 </button>
               </li>
             ))}
           <li
             className={`page-item ${
-              state.list_state &&
-              state.pno === Math.ceil(state.list_state.length / max)
+              state.listState &&
+              state.pno === Math.ceil(state.listState.length / max)
                 ? "disabled"
                 : ""
             }`}

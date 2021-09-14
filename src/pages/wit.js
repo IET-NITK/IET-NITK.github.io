@@ -24,9 +24,9 @@ const Events = ({ data, location }) => {
           </div>
           <div className="container">
             <div className="row">
-              {data.members.nodes.map((e, i) => (
-                <div className="col-lg-6 col-md-6 mt-4">
-                  <MemberDetails author={e} index={i}/>
+              {data.members.nodes.map((member, ind) => (
+                <div className="col-lg-6 col-md-6 mt-4" key={ind}>
+                  <MemberDetails author={member}/>
                 </div>
               ))}
             </div>

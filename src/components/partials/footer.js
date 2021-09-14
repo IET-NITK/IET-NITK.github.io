@@ -3,7 +3,7 @@ import { graphql, Link, StaticQuery } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import { lcrs } from "../helper";
 
-export const Footer = (props) => {
+export const Footer = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -64,13 +64,13 @@ export const Footer = (props) => {
                 <div className="col-sm-6 col-md-3 item">
                   <h3 className="mt-4 mb-3">Special Interest Groups</h3>
                   <ul className="footer-list">
-                    {sigs.nodes.map((e, i) => (
-                      <li key={i}>
-                        {e.no_link === true ? (
-                          e.name
+                    {sigs.nodes.map((sig, index) => (
+                      <li key={index}>
+                        {sig.no_link === true ? (
+                          sig.name
                         ) : (
-                          <Link to={`/sigs/${lcrs(e.name)}`}>
-                            {e.name}
+                          <Link to={`/sigs/${lcrs(sig.name)}`}>
+                            {sig.name}
                           </Link>
                         )}
                       </li>

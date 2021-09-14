@@ -22,6 +22,8 @@ jobs:
       #   env:
       #     BACKEND_TOKEN: ${{ secrets.BACKEND_TOKEN }}
       #   run: echo $BACKEND_TOKEN > credentials.json
+      - name: Lint check
+        run: npx eslint . --fix --max-warnings
       - name: Build script
         run: npm run build
       - name: Pass on build directory

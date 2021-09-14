@@ -5,7 +5,7 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { lcrs } from "../helper";
 
 export const MemberDetails = ({ author }) => {
-  const color_bg =
+  const bgColor =
     author.position !== "Executive Member" && author.alumni !== true
       ? "bg-gradient-primary"
       : author.alumni !== true
@@ -18,7 +18,7 @@ export const MemberDetails = ({ author }) => {
   return (
 
       <div
-        className={`h-100 card clean-card text-center  ${color_bg}`}
+        className={`h-100 card clean-card text-center  ${bgColor}`}
         id={author.name}
         style={{ boxShadow: "0px 0px 32px 0px rgba(221, 230, 237, 0.4)" }}
       >

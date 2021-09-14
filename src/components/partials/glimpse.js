@@ -3,7 +3,7 @@ import { graphql, Link, StaticQuery } from "gatsby";
 import { lcrs, renderAuthors } from "../helper";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css";
-import _ from "lodash";
+import lodash from "lodash";
 
 // eslint-disable-next-line
 function useWindowSize() {
@@ -28,15 +28,15 @@ function useWindowSize() {
   return windowSize;
 }
 
-const getRandomThings = (arr, n, currentRoute) => {
-  return _.sampleSize(
+const getRandomThings = (arr, num, currentRoute) => {
+  return lodash.sampleSize(
     arr.filter(
-      (e) =>
-        lcrs(e.name) !== currentRoute &&
-        e.route !== currentRoute &&
-        e.route !== currentRoute
+      (element) =>
+        lcrs(element.name) !== currentRoute &&
+        element.route !== currentRoute &&
+        element.route !== currentRoute
     ),
-    n
+    num
   );
 };
 export const Glimpse = ({ currentRoute }) => {
@@ -102,16 +102,16 @@ export const Glimpse = ({ currentRoute }) => {
               </h5>
               <div className="row">
                 <div className="col-lg-3 col-md-4  mt-5 mb-5">
-                  {getRandomThings(sigs.nodes, 1, currentRoute).map((e, i) => (
+                  {getRandomThings(sigs.nodes, 1, currentRoute).map((element, index) => (
                     <Link
                       class="card bg-primary text-white text-decoration-none"
-                      key={i}
+                      key={index}
                       style={{ height: "15em" }}
-                      to={`/sigs/${  lcrs(e.name)}`}
+                      to={`/sigs/${  lcrs(element.name)}`}
                     >
                       <div className="card-body">
-                        <h5 className="card-title">{e.name}</h5>
-                        <p className="card-text">{e.description}</p>
+                        <h5 className="card-title">{element.name}</h5>
+                        <p className="card-text">{element.description}</p>
                       </div>
                       {/* <Link to="/" class="card-footer text-muted">
                       2 days ago
@@ -141,10 +141,10 @@ export const Glimpse = ({ currentRoute }) => {
                       [...blogs.nodes, ...events.nodes, ...projects.nodes],
                       20,
                       currentRoute
-                    ).map((e, i) => {
-                      const id = e.id.split("_")[0];
+                    ).map((element, index) => {
+                      const id = element.id.split("lodash")[0];
                       return (
-                        <SplideSlide key={i} style={{ height: "15em" }}>
+                        <SplideSlide key={index} style={{ height: "15em" }}>
                           <div
                             className="card bg-primary"
                             style={{ height: "15em" }}
@@ -154,13 +154,13 @@ export const Glimpse = ({ currentRoute }) => {
                               to={
                                 id === "Projects"
                                   ? `/projects/${ 
-                                    lcrs(e.name)}`
+                                    lcrs(element.name)}`
                                   : `/${id.slice(0, -1).toLowerCase()}/${
-                                      e.route
+                                      element.route
                                     }`
                               }
                             >
-                              <h5 className="card-title">{e.name}</h5>
+                              <h5 className="card-title">{element.name}</h5>
                               <h6 className="card-subtitle mb-2 text-muted text-decoration-none">
                                 {id === "Blogs"
                                   ? "Blog "
@@ -170,16 +170,16 @@ export const Glimpse = ({ currentRoute }) => {
                               </h6>
                               <div className="card-text ">
                                 {id === "Events"
-                                  ? _.truncate(e.excerpt, {
+                                  ? lodash.truncate(element.excerpt, {
                                       length: 200,
                                     })
                                   : null}
                               </div>
                             </Link>
-                            {e.authors ? (
+                            {element.authors ? (
                               <div className="card-footer text-muted">
                                 By
-                                {renderAuthors(e.authors, "text-muted")}
+                                {renderAuthors(element.authors, "text-muted")}
                               </div>
                             ) : null}
                           </div>

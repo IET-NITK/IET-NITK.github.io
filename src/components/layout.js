@@ -2,7 +2,7 @@ import React from "react";
 import XNavbar from "./partials/navbar";
 import Footer from "./partials/footer";
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, children }) => {
   return (
     <div className="site">
       <div id="wrapper-navbar">

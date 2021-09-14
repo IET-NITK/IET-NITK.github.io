@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 // import PaginationComponent from "../components/partials/pagination"
 import SearchEngineOps from "../components/seo";
 
-const ProjectReports = ({ data, location }) => {
+const ProjectReports = ({ location }) => {
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SearchEngineOps title="Project Reports" />

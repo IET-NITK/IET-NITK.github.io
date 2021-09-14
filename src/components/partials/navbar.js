@@ -1,11 +1,8 @@
-import { Link, StaticQuery } from "gatsby";
+import { Link, StaticQuery, graphql } from "gatsby";
 import React from "react";
-
-import { graphql } from "gatsby";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 //eslint-disable-next-line
-import Ticker from "react-ticker"
 import { lcrs } from "../helper";
 
 const TopNavbar = ({ notice, smp, recr, expo }) => {
@@ -68,7 +65,7 @@ const TopNavbar = ({ notice, smp, recr, expo }) => {
     </div>
   );
 };
-export const XNavbar = (props) => {
+export const XNavbar = () => {
   return (
     <StaticQuery
         query={graphql`
@@ -82,13 +79,13 @@ export const XNavbar = (props) => {
                 srcWebp
               }
             }
-            smp_open: strapiSummerPrograms {
+            smpOpen: strapiSummerPrograms {
               open
             }
-            recr_open: strapiRecruitmentFaq {
+            recruitmentOpen: strapiRecruitmentFaq {
               open
             }
-            expo_open: strapiExpo {
+            expoOpen: strapiExpo {
               open
             }
             sigdetails: allStrapiSigs(filter: { no_link: { eq: false } }) {
@@ -100,19 +97,18 @@ export const XNavbar = (props) => {
         `}
         render={({
           sigdetails,
-          site,
           imageSharp,
-          smp_open,
-          recr_open,
-          expo_open,
+          smpOpen,
+          recruitmentOpen,
+          expoOpen,
           about,
         }) => (
           <div className="fixed-top" id="navbar">
             <TopNavbar
-              expo={expo_open.open}
+              expo={expoOpen.open}
               notice={about.message}
-              recr={recr_open.open}
-              smp={smp_open.open}
+              recr={recruitmentOpen.open}
+              smp={smpOpen.open}
             />
             <Navbar
               bg="white"

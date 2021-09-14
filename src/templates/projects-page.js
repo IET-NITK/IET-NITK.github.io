@@ -1,12 +1,11 @@
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import SearchEngineOps from "../components/seo";
-import { graphql } from "gatsby";
 import Glimpse from "../components/partials/glimpse";
 import { lcrs } from "../components/helper";
 
-const Project = ({ data, pathname, pageContext, uri }) => {
+const Project = ({ data, pathname, uri }) => {
   return (
     <Layout location={pathname && pathname.location}>
       <SearchEngineOps
@@ -47,8 +46,8 @@ const Project = ({ data, pathname, pageContext, uri }) => {
                   <h4>Built by</h4>
                   <ul>
                     {data.projects.authors &&
-                      data.projects.authors.map(({ name }, i) => (
-                        <li key={i}>
+                      data.projects.authors.map(({ name }) => (
+                        <li key={name}>
                           <Link
                             to={
                               `/members/${ 

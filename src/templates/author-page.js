@@ -5,7 +5,7 @@ import { graphql, Link } from "gatsby";
 import { lcrs, renderAuthors } from "../components/helper";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Glimpse from "../components/partials/glimpse";
-const RenderArticles = ({ articles, element, index }) => (
+const RenderArticles = ({ element, index }) => (
   <div
     className="clean-blog-post"
     key={index}
@@ -34,10 +34,8 @@ const RenderArticles = ({ articles, element, index }) => (
 
 const RenderProject = ({
   title,
-  SIG,
   description,
   authors,
-  ongoing,
   year,
   label,
   sig,
@@ -83,7 +81,7 @@ const RenderProject = ({
 };
 
 const Author = ({ data, location, uri }) => {
-  const { memberDetails, memberProjects, member_articles } = data;
+  const { memberDetails, memberProjects, memberArticles } = data;
 
   return (
     <Layout location={location.pathname}>
@@ -178,8 +176,8 @@ const Author = ({ data, location, uri }) => {
                       <div className="card-title">
                         <h4>Projects</h4>
                       </div>
-                      {memberProjects.nodes.map((e, i) => (
-                        <RenderProject {...e} />
+                      {memberProjects.nodes.map((project, index) => (
+                        <RenderProject {...project} key={index} />
                       ))}
                     </div>
                   </div>
@@ -191,8 +189,8 @@ const Author = ({ data, location, uri }) => {
                       <div className="card-title">
                         <h4>Blog Articles</h4>
                       </div>
-                      {member_articles.nodes.map((e, i) => (
-                        <RenderArticles element={e} index={i} />
+                      {memberArticles.nodes.map((article, ind) => (
+                        <RenderArticles element={article} key={ind} />
                       ))}
                     </div>
                   </div>
@@ -250,7 +248,7 @@ export const postQuery = graphql`
         }
       }
     }
-    member_articles: allStrapiBlogs(
+    memberArticles: allStrapiBlogs(
       sort: { fields: date, order: DESC }
       filter: { authors: { elemMatch: { name: { in: [$pathSlug] } } } }
     ) {
