@@ -1,27 +1,27 @@
-import React from "react"
-import Layout from "../components/layout"
-import SearchEngineOps from "../components/seo"
-import { graphql, Link } from "gatsby"
-import { RenderAuthors } from "../components/helper"
-import { OverlayTrigger, Tooltip } from "react-bootstrap"
-import Glimpse from "../components/partials/glimpse"
-const RenderArticles = ({ articles, element, index }) => (
+import React from "react";
+import Layout from "../components/layout";
+import SearchEngineOps from "../components/seo";
+import { graphql, Link } from "gatsby";
+import { lcrs, renderAuthors } from "../components/helper";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import Glimpse from "../components/partials/glimpse";
+const RenderArticles = ({ element, index }) => (
   <div
-    key={index}
     className="clean-blog-post"
+    key={index}
     style={{ paddingBottom: "35px" }}
   >
     <div className="row">
       <div className="col-lg-12">
         <h3>
-          <Link className="btn-link" to={"/blog/" + element.route}>
+          <Link className="btn-link" to={`/blog/${  lcrs(element.route)}`}>
             {element.title}
           </Link>
         </h3>
         <div className="info">
           <span className="text-muted">
             By
-            {RenderAuthors(element.authors, "")}
+            {renderAuthors(element.authors, "")}
             <br />
             {element.birthTime}
           </span>
@@ -30,14 +30,12 @@ const RenderArticles = ({ articles, element, index }) => (
       </div>
     </div>
   </div>
-)
+);
 
 const RenderProject = ({
   title,
-  SIG,
   description,
   authors,
-  ongoing,
   year,
   label,
   sig,
@@ -49,7 +47,7 @@ const RenderProject = ({
         <div className="col-lg-12">
           <h3>
             {url ? (
-              <Link to={"/projects/" + title.toLowerCase().split(" ").join("")}>
+              <Link to={`/projects/${  lcrs(title)}`}>
                 {title} {year ? `(${year})` : null}
               </Link>
             ) : (
@@ -63,8 +61,8 @@ const RenderProject = ({
           ) : null}
           {sig ? (
             <Link
-              to={"/sigs/" + sig.name.toLowerCase()}
               className="badge badge-info text-uppercase"
+              to={`/sigs/${  lcrs(sig.name)}`}
             >
               {sig.name}
             </Link>
@@ -72,22 +70,22 @@ const RenderProject = ({
           <div className="info">
             <span className="text-muted">
               By
-              {RenderAuthors(authors, "")}
+              {renderAuthors(authors, "")}
             </span>
           </div>
           <p> {description} </p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Author = ({ data, location, uri }) => {
-  const { member_details, member_projects, member_articles } = data
+  const { memberDetails, memberProjects, memberArticles } = data;
 
   return (
     <Layout location={location.pathname}>
-      <SearchEngineOps title={"About " + member_details.name} />
+      <SearchEngineOps title={`About ${  memberDetails.name}`} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container-fluid">
@@ -97,68 +95,68 @@ const Author = ({ data, location, uri }) => {
                   <div className="card">
                     <div className="card-body">
                       <div className="text-center mt-4">
-                        <div class="text-center">
-                          {member_details.image ? (
+                        <div className="text-center">
+                          {memberDetails.image ? (
                             <img
+                              alt={memberDetails.name}
+                              className="img-fluid rounded  mb-5"
                               src={`https://drive.google.com/thumbnail?id=${new URL(
-                                member_details.image
+                                memberDetails.image
                               ).searchParams.get("id")}`}
-                              class="img-fluid rounded  mb-5"
-                              alt={member_details.name}
                             />
                           ) : null}
                         </div>
-                        <h5 className="text-primary">{member_details.name}</h5>
-                        <h6>{member_details.position}</h6>
+                        <h5 className="text-primary">{memberDetails.name}</h5>
+                        <h6>{memberDetails.position}</h6>
                         <p>
-                          {member_details.social &&
-                          member_details.social.email ? (
+                          {memberDetails.social &&
+                          memberDetails.social.email ? (
                             <OverlayTrigger
-                              placement="bottom"
                               delay={{ show: 250, hide: 400 }}
-                              overlay={props => (
+                              overlay={(props) => (
                                 <Tooltip {...props}>
-                                  {member_details.social.email
+                                  {memberDetails.social.email
                                     .replace("@", " [at] ")
                                     .split(".")
                                     .join(" [dot] ")}
                                 </Tooltip>
                               )}
+                              placement="bottom"
                             >
                               <i className="fa fa-envelope text-primary" />
                             </OverlayTrigger>
                           ) : null}
-                          {member_details.social &&
-                          member_details.social.facebook ? (
+                          {memberDetails.social &&
+                          memberDetails.social.facebook ? (
                             <a
-                              target="_blank"
-                              rel="noreferrer"
                               className="mr-1 ml-1"
-                              href={`https://www.facebook.com/${member_details.social.facebook}`}
+                              href={`https://www.facebook.com/${memberDetails.social.facebook}`}
+                              rel="noreferrer"
+                              target="_blank"
                             >
                               &nbsp;
                               <i className="fa fa-facebook" />
                             </a>
                           ) : null}
-                          {member_details.social &&
-                          member_details.social.linkedin ? (
+                          {memberDetails.social &&
+                          memberDetails.social.linkedin ? (
                             <a
-                              target="_blank"
-                              rel="noreferrer"
                               className="mr-1 ml-1"
-                              href={`https://www.linkedin.com/in/${member_details.social.linkedin}`}
+                              href={`https://www.linkedin.com/in/${memberDetails.social.linkedin}`}
+                              rel="noreferrer"
+                              target="_blank"
                             >
                               &nbsp;
                               <i className="fa fa-linkedin" />
                             </a>
                           ) : null}
-                          {member_details.social &&
-                          member_details.social.github ? (
+                          {memberDetails.social &&
+                          memberDetails.social.github ? (
                             <a
-                              target="_blank"
-                              rel="noreferrer"
                               className="mr-1 ml-1"
-                              href={`https://www.github.com/${member_details.social.github}`}
+                              href={`https://www.github.com/${memberDetails.social.github}`}
+                              rel="noreferrer"
+                              target="_blank"
                             >
                               &nbsp;
                               <i className="fa fa-github" />
@@ -178,8 +176,8 @@ const Author = ({ data, location, uri }) => {
                       <div className="card-title">
                         <h4>Projects</h4>
                       </div>
-                      {member_projects.nodes.map((e, i) => (
-                        <RenderProject {...e} />
+                      {memberProjects.nodes.map((project, index) => (
+                        <RenderProject {...project} key={index} />
                       ))}
                     </div>
                   </div>
@@ -191,8 +189,8 @@ const Author = ({ data, location, uri }) => {
                       <div className="card-title">
                         <h4>Blog Articles</h4>
                       </div>
-                      {member_articles.nodes.map((e, i) => (
-                        <RenderArticles element={e} index={i} />
+                      {memberArticles.nodes.map((article, ind) => (
+                        <RenderArticles element={article} key={ind} />
                       ))}
                     </div>
                   </div>
@@ -218,12 +216,12 @@ const Author = ({ data, location, uri }) => {
       </main>
       <Glimpse currentRoute={uri} />
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   query ($pathSlug: String) {
-    member_details: strapiMembers(name: { in: [$pathSlug] }) {
+    memberDetails: strapiMembers(name: { in: [$pathSlug] }) {
       name
       position
       image
@@ -235,7 +233,7 @@ export const postQuery = graphql`
         linkedin
       }
     }
-    member_projects: allStrapiProjects(
+    memberProjects: allStrapiProjects(
       filter: { authors: { elemMatch: { name: { in: [$pathSlug] } } } }
     ) {
       nodes {
@@ -250,7 +248,7 @@ export const postQuery = graphql`
         }
       }
     }
-    member_articles: allStrapiBlogs(
+    memberArticles: allStrapiBlogs(
       sort: { fields: date, order: DESC }
       filter: { authors: { elemMatch: { name: { in: [$pathSlug] } } } }
     ) {
@@ -265,5 +263,5 @@ export const postQuery = graphql`
       }
     }
   }
-`
-export default Author
+`;
+export default Author;

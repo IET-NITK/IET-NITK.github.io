@@ -1,15 +1,15 @@
-import { Link } from "gatsby"
-import React from "react"
-import Layout from "../components/layout"
-import SearchEngineOps from "../components/seo"
-import { graphql } from "gatsby"
-import Glimpse from "../components/partials/glimpse"
+import { Link, graphql } from "gatsby";
+import React from "react";
+import Layout from "../components/layout";
+import SearchEngineOps from "../components/seo";
+import Glimpse from "../components/partials/glimpse";
+import { lcrs } from "../components/helper";
 
-const Project = ({ data, pathname, pageContext, uri }) => {
+const Project = ({ data, pathname, uri }) => {
   return (
     <Layout location={pathname && pathname.location}>
       <SearchEngineOps
-        title={data.projects.title + " @" + data.projects.sig.name}
+        title={`${data.projects.title  } @${  data.projects.sig.name}`}
       />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
@@ -23,12 +23,12 @@ const Project = ({ data, pathname, pageContext, uri }) => {
               </div>
 
               <div className="col-lg-3 col-md-3 text-right">
-                <Link to={"/sigs/" + data.projects.sig.name.toLowerCase()}>
+                <Link to={`/sigs/${  data.projects.sig.name.toLowerCase()}`}>
                   {data.projects.sig.logo ? (
                     <img
-                      src={data.projects.sig.logo.localFile.childImageSharp.fixed.srcWebp}
                       alt={data.projects.sig.name}
                       className="sig-logo"
+                      src={data.projects.sig.logo.localFile.childImageSharp.fixed.srcWebp}
                       style={{ maxWidth: "200px" }}
                     />
                   ) : null}
@@ -46,13 +46,12 @@ const Project = ({ data, pathname, pageContext, uri }) => {
                   <h4>Built by</h4>
                   <ul>
                     {data.projects.authors &&
-                      data.projects.authors.map(({ name }, i) => (
-                        <li key={i}>
+                      data.projects.authors.map(({ name }) => (
+                        <li key={name}>
                           <Link
                             to={
-                              "/members/" +
-                              name.toLowerCase().split(" ").join("")
-                            }
+                              `/members/${ 
+                              lcrs(name)}`}
                           >
                             {name}
                           </Link>
@@ -64,19 +63,19 @@ const Project = ({ data, pathname, pageContext, uri }) => {
                   {data.projects.url &&
                   new URL(data.projects.url).hostname === "github.com" ? (
                     <a
-                      target="_blank"
-                      rel="noreferrer"
-                      href={data.projects.url}
                       className="btn btn-outline-dark"
+                      href={data.projects.url}
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-github mr-2" /> Repository URL
                     </a>
                   ) : (
                     <a
-                      target="_blank"
-                      rel="noreferrer"
-                      href={data.projects.url}
                       className="btn btn-primary"
+                      href={data.projects.url}
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-link" /> Project Link
                     </a>
@@ -117,7 +116,7 @@ const Project = ({ data, pathname, pageContext, uri }) => {
                         <div className="info">
                           <span className="text-muted">
                             By
-                            {RenderAuthors(
+                            {renderAuthors(
                               element.childMarkdownRemark.frontmatter.authors,
                               ""
                             )}
@@ -136,8 +135,8 @@ const Project = ({ data, pathname, pageContext, uri }) => {
       </main>
       <Glimpse currentRoute={uri} />
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   query($pathSlug: String!) {
@@ -163,6 +162,6 @@ export const postQuery = graphql`
       ongoing
     }
   }
-`
+`;
 
-export default Project
+export default Project;

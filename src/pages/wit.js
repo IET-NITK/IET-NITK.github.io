@@ -1,8 +1,8 @@
-import { graphql } from "gatsby"
-import React from "react"
-import Layout from "../components/layout"
-import { MemberDetails } from "../components/partials/member"
-import SearchEngineOps from "../components/seo"
+import { graphql } from "gatsby";
+import React from "react";
+import Layout from "../components/layout";
+import { MemberDetails } from "../components/partials/member";
+import SearchEngineOps from "../components/seo";
 
 const Events = ({ data, location }) => {
   return (
@@ -24,9 +24,9 @@ const Events = ({ data, location }) => {
           </div>
           <div className="container">
             <div className="row">
-              {data.members.nodes.map((e, i) => (
-                <div className="col-lg-6 col-md-6 mt-4">
-                  <MemberDetails author={e} index={i}/>
+              {data.members.nodes.map((member, ind) => (
+                <div className="col-lg-6 col-md-6 mt-4" key={ind}>
+                  <MemberDetails author={member}/>
                 </div>
               ))}
             </div>
@@ -34,8 +34,8 @@ const Events = ({ data, location }) => {
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -56,6 +56,6 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Events
+export default Events;

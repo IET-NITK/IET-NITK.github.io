@@ -1,8 +1,9 @@
-import React from "react"
-import { graphql, Link, StaticQuery } from "gatsby"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import React from "react";
+import { graphql, Link, StaticQuery } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+import { lcrs } from "../helper";
 
-export const Footer = props => {
+export const Footer = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -63,13 +64,13 @@ export const Footer = props => {
                 <div className="col-sm-6 col-md-3 item">
                   <h3 className="mt-4 mb-3">Special Interest Groups</h3>
                   <ul className="footer-list">
-                    {sigs.nodes.map((e, i) => (
-                      <li key={i}>
-                        {e.no_link === true ? (
-                          e.name
+                    {sigs.nodes.map((sig, index) => (
+                      <li key={index}>
+                        {sig.no_link === true ? (
+                          sig.name
                         ) : (
-                          <Link to={`/sigs/${e.name.toLowerCase()}`}>
-                            {e.name}
+                          <Link to={`/sigs/${lcrs(sig.name)}`}>
+                            {sig.name}
                           </Link>
                         )}
                       </li>
@@ -91,10 +92,10 @@ export const Footer = props => {
                     <i className="fa fa-heart heartbeat" /> &nbsp; IET NITK
                     |&nbsp;
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       className="text-white"
                       href="https://github.com/IET-NITK/IET-NITK.github.io#contributors"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       Made by IET NITK Web Team
                     </OutboundLink>
@@ -103,51 +104,51 @@ export const Footer = props => {
                   </div>
                   <div className="col-md-6 item social mobile-center-laptop-right">
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.facebook.com/ietnitk"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-facebook" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.linkedin.com/company/ietnitk/"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-linkedin" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.github.com/IET-NITK"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-github" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://t.me/IET_NITK"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-telegram" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.youtube.com/c/IETNITK"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-youtube" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="https://www.instagram.com/ietnitk"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-instagram" />
                     </OutboundLink>
                     <OutboundLink
-                      target="_blank"
-                      rel="noreferrer"
                       href="/feed.xml"
+                      rel="noreferrer"
+                      target="_blank"
                     >
                       <i className="fa fa-rss" />
                     </OutboundLink>
@@ -159,7 +160,7 @@ export const Footer = props => {
         </div>
       )}
     />
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

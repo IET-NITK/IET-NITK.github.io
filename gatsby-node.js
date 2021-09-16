@@ -1,13 +1,10 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
-const fs = require("fs")
-const yaml = require("js-yaml")
+const path = require(`path`);
 
-const lcrs = name => {
-  return name.toLowerCase().split(" ").join("")
-}
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+const lcrs = (name) => {
+  return name.toLowerCase().split(" ").join("");
+};
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   const templateHash = {
     members: path.resolve(`./src/templates/author-page.js`),
@@ -16,7 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     blog: path.resolve("./src/templates/blog-post.js"),
     events: path.resolve("./src/templates/events-post.js"),
     sigs: path.resolve(`./src/templates/sig-page.js`),
-  }
+  };
   try {
     graphql(`
       query {
@@ -51,26 +48,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-    `).then(result => {
-      Object.keys(result.data).forEach(key => {
-        result.data[key].nodes.forEach(e => {
-          console.log(`${key}:`, `Endpoint for ${lcrs(e.link)}`)
+    `).then((result) => {
+      Object.keys(result.data).forEach((key) => {
+        result.data[key].nodes.forEach((element) => {
+          console.log(`${key}:`, `Endpoint for ${lcrs(element.link)}`);
           createPage({
-            path: `${key}/${lcrs(e.link)}`,
+            path: `${key}/${lcrs(element.link)}`,
             component: templateHash[key],
             context: {
-              pathSlug: e.link,
-              sig: e.sig || null,
-              date: e.date,
+              pathSlug: element.link,
+              sig: element.sig || null,
+              date: element.date,
             },
-          })
-        })
-      })
-    })
+          });
+        });
+      });
+    });
   } catch {
-    throw Error("Error in generating pages for Authors/Projects/SIGs")
+    throw Error("Error in generating pages for Authors/Projects/SIGs");
   }
-}
+};
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   // With SSR enabled during development, we capture this
@@ -85,6 +82,6 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           },
         ],
       },
-    })
+    });
   }
-}
+};

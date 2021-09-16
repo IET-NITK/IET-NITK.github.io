@@ -1,18 +1,19 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import SearchEngineOps from "../components/seo"
-import Img_IETUpview from "../assets/img/iet-upview.jpg"
-import IconLink from "../assets/img/link.svg"
+import React from "react";
+import { graphql, Link } from "gatsby";
+import Layout from "../components/layout";
+import SearchEngineOps from "../components/seo";
+import ietUpview from "../assets/img/iet-upview.jpg";
+import IconLink from "../assets/img/link.svg";
 import {
   getRandom,
-  RenderAuthors,
-  RenderAuthorsName,
-  RenderProjectDescription,
-} from "../components/helper"
-import video from "../../static/home.mp4"
-import { SIGShowcase } from "../components/SIGShowcase"
-import ReactMarkdown from "react-markdown"
+  lcrs,
+  renderAuthors,
+  renderAuthorsName,
+  renderProjectDescription,
+} from "../components/helper";
+import video from "../../static/home.mp4";
+import { SIGShowcase } from "../components/SIGShowcase";
+import ReactMarkdown from "react-markdown";
 // import
 
 
@@ -34,15 +35,15 @@ const MainPage = ({ location, data }) => {
             }}
           />
           <video
-            loop={true}
+            autoPlay
+            id="hero-video"
+            loop
+            muted
             style={{
               width: "100%",
               zIndex: "1",
               backgroundColor: "black",
             }}
-            autoPlay={true}
-            muted={true}
-            id="hero-video"
           >
             <source src={video} type="video/mp4" />
             Your browser does not support HTML video.
@@ -58,7 +59,7 @@ const MainPage = ({ location, data }) => {
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <img
                   alt="IET"
-                  src={Img_IETUpview}
+                  src={ietUpview}
                   style={{
                     width: "100%",
                     height: "auto",
@@ -67,8 +68,8 @@ const MainPage = ({ location, data }) => {
                 />
               </div>
               <ReactMarkdown
-                skipHtml={true}
                 className="col-lg-6 col-md-6 col-sm-12 col-xs-12"
+                skipHtml
               >
                 {data.about.main}
               </ReactMarkdown>
@@ -98,8 +99,8 @@ const MainPage = ({ location, data }) => {
                   <p className="section-description">
                     We love to write! Check out more of our stuff on{" "}
                     <Link to="/blog">
-                      <img alt="IET" src={IconLink} className="mr-2" />
-                      the IET Blog
+                      <img alt="IET" className="mr-2" src={IconLink} />
+                      The IETNITK Blog
                     </Link>
                   </p>
                 </div>
@@ -107,12 +108,12 @@ const MainPage = ({ location, data }) => {
                   {data.blog.nodes.map((element, index) => {
                     let imagelink =
                       element.header.localFile.childImageSharp &&
-                      element.header.localFile.childImageSharp.fixed.srcWebp
+                      element.header.localFile.childImageSharp.fixed.srcWebp;
                     if (!imagelink) {
-                      imagelink = element.header.localFile.publicURL
+                      imagelink = element.header.localFile.publicURL;
                     }
                     return (
-                      <div key={index} className="col-sm-6 col-md-4 item h-100">
+                      <div className="col-sm-6 col-md-4 item h-100" key={index}>
                         <div className="card clean-blog-card">
                           <img
                             alt={element.title}
@@ -123,7 +124,7 @@ const MainPage = ({ location, data }) => {
                             <h4 className="card-title">{element.title}</h4>
                             <h6 className="text-muted card-subtitle mb-2">
                               <footer className="blockquote-footer">
-                                {RenderAuthors(element.authors || [], "")}
+                                {renderAuthors(element.authors || [], "")}
                                 {", "}
                                 {element.date}
                               </footer>
@@ -133,14 +134,14 @@ const MainPage = ({ location, data }) => {
                             <Link
                               className="btn btn-sm"
                               style={{ textDecoration: "none" }}
-                              to={"blog/" + element.route}
+                              to={`blog/${  lcrs(element.route)}`}
                             >
                               Read More
                             </Link>
                           </div>
                         </div>
                       </div>
-                    )
+                    );
                   })}
                 </div>
               </div>
@@ -157,27 +158,23 @@ const MainPage = ({ location, data }) => {
                   <p className="section-description">
                     We have projects from many different domains of interest. We love doing our projects!{" "}
                     <Link to="/projects">
-                      <img alt="IET" src={IconLink} className="mr-2" />
+                      <img alt="IET" className="mr-2" src={IconLink} />
                       Find More
                     </Link>
                   </p>
                 </div>
                 <div className="articles row" style={{ paddingTop: "2em" }}>
                   {getRandom(data.projects.nodes, 4).map((element, index) => (
-                    <div key={index} className="col-lg-6 col-md-6 mt-4">
+                    <div className="col-lg-6 col-md-6 mt-4" key={index}>
                       <div className="card h-100 clean-card">
                         <div className="card-body">
                           <h6 className="card-title">
                             {element.url ? (
                               <Link
-                                to={
-                                  "/projects/" +
-                                  element.title
-                                    .toLowerCase()
-                                    .split(" ")
-                                    .join("")
-                                }
                                 className="card-link text-capitalize"
+                                to={
+                                  `/projects/${  lcrs(element.title)}`
+                                }
                               >
                                 {element.title}
                               </Link>
@@ -187,8 +184,8 @@ const MainPage = ({ location, data }) => {
                           </h6>
                           {element.sig ? (
                             <Link
-                              to={"/sigs/" + element.sig.name.toLowerCase()}
                               className="badge badge-info text-uppercase mr-2"
+                              to={`/sigs/${  element.sig.name.toLowerCase()}`}
                             >
                               {element.sig.name}
                             </Link>
@@ -200,14 +197,14 @@ const MainPage = ({ location, data }) => {
                           ) : null}
                           <div className="mb-3">
                             <div className="text-muted">
-                              {RenderProjectDescription(
+                              {renderProjectDescription(
                                 element.description,
                                 100
                               )}
                             </div>
                           </div>
                           <div className="card-text">
-                            {RenderAuthorsName(element.authors || [], "")}
+                            {renderAuthorsName(element.authors || [], "")}
                           </div>
                         </div>
                       </div>
@@ -235,20 +232,19 @@ const MainPage = ({ location, data }) => {
                         Our latest event was {data.events.nodes[0].title}, but
                         we conduct many events throughout the year. Find more{" "}
                         <Link to="/events">
-                          <img alt="IET" src={IconLink} className="mr-2" />
+                          <img alt="IET" className="mr-2" src={IconLink} />
                           Find More
                         </Link>
                       </p>
                     </div>
                   </div>
-                  {/* {data.events.nodes.map((element, index) => ( */}
                   <div className="col-lg-6 col-md-6 mt-4">
                     <div className="card clean-card">
                       <div className="card-body">
                         <h6 className="card-title">
                           <Link
-                            to={"/events/" + data.events.nodes[0].route}
                             className="card-link text-capitalize"
+                            to={`/events/${  data.events.nodes[0].route}`}
                           >
                             {data.events.nodes[0].title}
                           </Link>
@@ -284,14 +280,13 @@ const MainPage = ({ location, data }) => {
                       <p className="section-description">
                       Women in Tech is an international organization with a double mission: to close the gender gap and to help women embrace technology. Find more{" "}
                         <Link to="/wit">
-                          <img alt="IET" src={IconLink} className="mr-2" />
+                          <img alt="IET" className="mr-2" src={IconLink} />
                           Find More
                         </Link>
                       </p>
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6 mt-4">
-                  </div>
+                  <div className="col-lg-6 col-md-6 mt-4" />
                 </div>
               </div>
             </div>
@@ -299,8 +294,8 @@ const MainPage = ({ location, data }) => {
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -354,5 +349,5 @@ export const postQuery = graphql`
       }
     }
   }
-`
-export default MainPage
+`;
+export default MainPage;

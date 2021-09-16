@@ -1,8 +1,9 @@
-import React from "react"
-import { graphql, Link, StaticQuery } from "gatsby"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import React from "react";
+import { graphql, Link, StaticQuery } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+import { lcrs } from "./helper";
 
-export const SIGShowcase = ({ hide_link }) => {
+export const SIGShowcase = ({ hideLink }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -27,17 +28,17 @@ export const SIGShowcase = ({ hide_link }) => {
       `}
       render={({ sigs }) => (
         <div className="row justify-content-center">
-          {sigs.nodes.map((s, i) => (
+          {sigs.nodes.map((sig, index) => (
             <div
-              key={i}
               className="col-md-5 col-lg-4"
+              key={index}
               style={{ marginBottom: "1em" }}
             >
               <div className="clean-pricing-item" style={{ height: "100%" }}>
                 <div style={{ width: "100%" }}>
                   <img
                     alt=""
-                    src={s.logo.localFile.childImageSharp.fixed.srcWebp}
+                    src={sig.logo.localFile.childImageSharp.fixed.srcWebp}
                     style={{
                       width: "150px",
                       height: "auto!important",
@@ -47,19 +48,19 @@ export const SIGShowcase = ({ hide_link }) => {
                     }}
                   />
                 </div>
-                <p>{s.description}</p>
-                {!s.no_link && !hide_link ? (
+                <p>{sig.description}</p>
+                {!sig.no_link && !hideLink ? (
                   <Link
-                    to={`sigs/${s.name.toLowerCase()}`}
                     className="btn btn-outline-primary btn-block"
+                    to={`sigs/${lcrs(sig.name)}`}
                   >
                     Read More
                   </Link>
                 ) : null}
-                {!hide_link && s.name==="Inkheart" ? (
+                {!hideLink && sig.name==="Inkheart" ? (
                   <OutboundLink
-                    href="https://ietinkheartblog.wordpress.com"
                     className="btn btn-outline-primary btn-block"
+                    href="https://ietinkheartblog.wordpress.com"
                   >
                     Go to InkHeart Blog
                   </OutboundLink>
@@ -70,5 +71,5 @@ export const SIGShowcase = ({ hide_link }) => {
         </div>
       )}
     />
-  )
-}
+  );
+};

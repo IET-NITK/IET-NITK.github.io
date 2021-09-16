@@ -1,47 +1,47 @@
-import React from "react"
-import { graphql, Link, StaticQuery } from "gatsby"
-import { RenderAuthors } from "../helper"
-import { Splide, SplideSlide } from "@splidejs/react-splide"
-import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css"
-import _ from "lodash"
+import React from "react";
+import { graphql, Link, StaticQuery } from "gatsby";
+import { lcrs, renderAuthors } from "../helper";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css";
+import lodash from "lodash";
 
 // eslint-disable-next-line
 function useWindowSize() {
-  const isSSR = typeof window !== "undefined"
+  const isSSR = typeof window !== "undefined";
   const [windowSize, setWindowSize] = React.useState({
     width: isSSR ? 1200 : window.innerWidth,
     height: isSSR ? 800 : window.innerHeight,
-  })
+  });
 
   function changeWindowSize() {
-    setWindowSize({ width: window.innerWidth, height: window.innerHeight })
+    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
   }
 
   React.useEffect(() => {
-    window.addEventListener("resize", changeWindowSize)
+    window.addEventListener("resize", changeWindowSize);
 
     return () => {
-      window.removeEventListener("resize", changeWindowSize)
-    }
-  }, [])
+      window.removeEventListener("resize", changeWindowSize);
+    };
+  }, []);
 
-  return windowSize
+  return windowSize;
 }
 
-const getRandomThings = (arr, n, currentRoute) => {
-  return _.sampleSize(
+const getRandomThings = (arr, num, currentRoute) => {
+  return lodash.sampleSize(
     arr.filter(
-      e =>
-        e.name.toLowerCase().split(" ").join("") !== currentRoute &&
-        e.route !== currentRoute &&
-        e.route !== currentRoute
+      (element) =>
+        lcrs(element.name) !== currentRoute &&
+        element.route !== currentRoute &&
+        element.route !== currentRoute
     ),
-    n
-  )
-}
+    num
+  );
+};
 export const Glimpse = ({ currentRoute }) => {
   if (typeof window === "undefined") {
-    return <p>Server Render</p>
+    return <p>Server Render</p>;
   }
   return (
     <StaticQuery
@@ -102,16 +102,16 @@ export const Glimpse = ({ currentRoute }) => {
               </h5>
               <div className="row">
                 <div className="col-lg-3 col-md-4  mt-5 mb-5">
-                  {getRandomThings(sigs.nodes, 1, currentRoute).map((e, i) => (
+                  {getRandomThings(sigs.nodes, 1, currentRoute).map((element, index) => (
                     <Link
-                      to={"/sigs/" + e.name.toLowerCase()}
-                      key={i}
                       class="card bg-primary text-white text-decoration-none"
+                      key={index}
                       style={{ height: "15em" }}
+                      to={`/sigs/${  lcrs(element.name)}`}
                     >
-                      <div class="card-body">
-                        <h5 class="card-title">{e.name}</h5>
-                        <p className="card-text">{e.description}</p>
+                      <div className="card-body">
+                        <h5 className="card-title">{element.name}</h5>
+                        <p className="card-text">{element.description}</p>
                       </div>
                       {/* <Link to="/" class="card-footer text-muted">
                       2 days ago
@@ -121,7 +121,6 @@ export const Glimpse = ({ currentRoute }) => {
                 </div>
                 <div className="col-lg-9 col-md-8  mt-5 mb-5">
                   <Splide
-                    style={{ height: "13em" }}
                     options={{
                       perPage: 2,
                       gap: "2rem",
@@ -136,65 +135,66 @@ export const Glimpse = ({ currentRoute }) => {
                       pagination: false,
                       hasAutoplayProgress: true,
                     }}
+                    style={{ height: "13em" }}
                   >
                     {getRandomThings(
                       [...blogs.nodes, ...events.nodes, ...projects.nodes],
                       20,
                       currentRoute
-                    ).map((e, i) => {
-                      const id = e.id.split("_")[0]
+                    ).map((element, index) => {
+                      const id = element.id.split("lodash")[0];
                       return (
-                        <SplideSlide style={{ height: "15em" }} key={i}>
+                        <SplideSlide key={index} style={{ height: "15em" }}>
                           <div
-                            class="card bg-primary"
+                            className="card bg-primary"
                             style={{ height: "15em" }}
                           >
                             <Link
+                              class="card-body text-white text-decoration-none"
                               to={
                                 id === "Projects"
-                                  ? "/projects/" +
-                                    e.name.toLowerCase().split(" ").join("")
+                                  ? `/projects/${ 
+                                    lcrs(element.name)}`
                                   : `/${id.slice(0, -1).toLowerCase()}/${
-                                      e.route
+                                      element.route
                                     }`
                               }
-                              class="card-body text-white text-decoration-none"
                             >
-                              <h5 class="card-title">{e.name}</h5>
-                              <h6 class="card-subtitle mb-2 text-muted text-decoration-none">
+                              <h5 className="card-title">{element.name}</h5>
+                              <h6 className="card-subtitle mb-2 text-muted text-decoration-none">
                                 {id === "Blogs"
                                   ? "Blog "
                                   : id === "Events"
                                   ? "Events "
                                   : "Project "}
                               </h6>
-                              <div class="card-text ">
+                              <div className="card-text ">
                                 {id === "Events"
-                                  ? _.truncate(e.excerpt, {
+                                  ? lodash.truncate(element.excerpt, {
                                       length: 200,
                                     })
                                   : null}
                               </div>
                             </Link>
-                            {e.authors ? (
-                              <div class="card-footer text-muted">
+                            {element.authors ? (
+                              <div className="card-footer text-muted">
                                 By
-                                {RenderAuthors(e.authors, "text-muted")}
+                                {renderAuthors(element.authors, "text-muted")}
                               </div>
                             ) : null}
                           </div>
                         </SplideSlide>
-                      )
+                      );
                     })}
                   </Splide>
                 </div>
               </div>
             </div>
           </div>
-        )
+        );
       }}
     />
-  )
-}
+  );
+};
 
-export default Glimpse
+export default Glimpse;

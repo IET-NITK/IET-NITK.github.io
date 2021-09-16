@@ -1,46 +1,42 @@
-import React from "react"
-import Layout from "../components/layout"
-import SearchEngineOps from "../components/seo"
-import { Link } from "gatsby"
-import { graphql } from "gatsby"
-import { RenderAuthors } from "../components/helper"
-import PaginationComponent from "../components/partials/pagination"
-import Glimpse from "../components/partials/glimpse"
+import React from "react";
+import Layout from "../components/layout";
+import SearchEngineOps from "../components/seo";
+import { Link, graphql } from "gatsby";
+import { lcrs, renderAuthors } from "../components/helper";
+import PaginationComponent from "../components/partials/pagination";
+import Glimpse from "../components/partials/glimpse";
 
-const SIG = ({ pageContext, pathname, data, uri }) => {
-  const { sig_details, sig_projects } = data
+const SIG = ({ pathname, data, uri }) => {
+  const { sigDetails, sigProjects } = data;
   return (
     <Layout location={pathname && pathname.location}>
-      <SearchEngineOps title={sig_details.name} />
+      <SearchEngineOps title={sigDetails.name} />
       <main className="page blog-post-list">
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <Link to={"/sigs/" + sig_details.name.toLowerCase()}>
+              <Link to={`/sigs/${  sigDetails.name.toLowerCase()}`}>
                 <img
-                  src={sig_details.logo.localFile.childImageSharp.fixed.srcWebp}
-                  alt={sig_details.name}
+                  alt={sigDetails.name}
                   className="sig-logo"
+                  src={sigDetails.logo.localFile.childImageSharp.fixed.srcWebp}
                   style={{ maxWidth: "200px" }}
                 />
               </Link>
-              <p>{sig_details.description}</p>
+              <p>{sigDetails.description}</p>
             </div>
             <div className="block-content">
               <PaginationComponent
-                max={10}
-                list={sig_projects.nodes}
                 item={(element, index) => (
-                  <div key={index} className="clean-blog-post">
+                  <div className="clean-blog-post" key={index}>
                     <div className="row">
                       <div className="col-lg-12">
                         <h3>
                           {element.authors && element.url ? (
                             <Link
                               to={
-                                "/projects/" +
-                                element.title.toLowerCase().split(" ").join("")
-                              }
+                                `/projects/${ 
+                                lcrs(element.title)}`}
                             >
                               {element.title}
                             </Link>
@@ -54,14 +50,12 @@ const SIG = ({ pageContext, pathname, data, uri }) => {
                           </div>
                         ) : null}
                         {element.authors !== null ? (
-                          <>
-                            <div className="info">
+                          <div className="info">
                               <span className="text-muted">
                                 By
-                                {RenderAuthors(element.authors, "")}
+                                {renderAuthors(element.authors, "")}
                               </span>
                             </div>
-                          </>
                         ) : null}
 
                         <p> {element.description} </p>
@@ -69,6 +63,8 @@ const SIG = ({ pageContext, pathname, data, uri }) => {
                     </div>
                   </div>
                 )}
+                list={sigProjects.nodes}
+                max={10}
               />
             </div>
           </div>
@@ -76,14 +72,14 @@ const SIG = ({ pageContext, pathname, data, uri }) => {
       </main>
       <Glimpse currentRoute={uri} />
     </Layout>
-  )
-}
+  );
+};
 
-export default SIG
+export default SIG;
 
 export const postQuery = graphql`
   query sigpage($pathSlug: String!) {
-    sig_projects: allStrapiProjects(
+    sigProjects: allStrapiProjects(
       filter: { sig: { name: { eq: $pathSlug } } }
       sort: { fields: authors___name }
     ) {
@@ -96,7 +92,7 @@ export const postQuery = graphql`
         }
       }
     }
-    sig_details: strapiSigs(name: { eq: $pathSlug }) {
+    sigDetails: strapiSigs(name: { eq: $pathSlug }) {
       name
       description
       logo {
@@ -110,4 +106,4 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;

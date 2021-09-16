@@ -1,9 +1,9 @@
-import { graphql, Link } from "gatsby"
-import React from "react"
-import { RenderAuthors } from "../components/helper"
-import Layout from "../components/layout"
-import PaginationComponent from "../components/partials/pagination"
-import SearchEngineOps from "../components/seo"
+import { graphql, Link } from "gatsby";
+import React from "react";
+import { lcrs, renderAuthors } from "../components/helper";
+import Layout from "../components/layout";
+import PaginationComponent from "../components/partials/pagination";
+import SearchEngineOps from "../components/seo";
 
 const Projects = ({ data, location }) => {
   return (
@@ -21,11 +21,9 @@ const Projects = ({ data, location }) => {
             </div>
             <div className="block-content">
               <PaginationComponent
-                max={10}
                 filterLabel="Filter by SIG"
-                list={data.projects.nodes}
                 item={(element, index) => (
-                  <div key={index} className="clean-blog-post">
+                  <div className="clean-blog-post" key={index}>
                     <h3 className="text-capitalize">{element.title}</h3>
                     {element.label ? (
                       <div className="badge badge-primary mr-2 ">
@@ -33,8 +31,8 @@ const Projects = ({ data, location }) => {
                       </div>
                     ) : null}
                     <Link
-                      to={"/sigs/" + element.sig.name.toLowerCase()}
                       className="badge badge-info text-uppercase"
+                      to={`/sigs/${  element.sig.name.toLowerCase()}`}
                     >
                       {element.sig.name}
                     </Link>
@@ -42,16 +40,15 @@ const Projects = ({ data, location }) => {
                     {element.authors ? (
                       <p>
                         Built by
-                        {RenderAuthors(element.authors || [], "")}
+                        {renderAuthors(element.authors || [], "")}
                       </p>
                     ) : null}
                     {element.url ? (
                       <Link
-                        to={
-                          "/projects/" +
-                          element.title.toLowerCase().split(" ").join("")
-                        }
                         className="btn btn-outline-primary btn-sm"
+                        to={
+                          `/projects/${ 
+                          lcrs(element.title)}`}
                         type="button"
                       >
                         Read More
@@ -59,14 +56,16 @@ const Projects = ({ data, location }) => {
                     ) : null}
                   </div>
                 )}
+                list={data.projects.nodes}
+                max={10}
               />
             </div>
           </div>
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -84,6 +83,6 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Projects
+export default Projects;

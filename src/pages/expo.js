@@ -1,16 +1,16 @@
-import { graphql, Link, navigate } from "gatsby"
-import React, { useEffect } from "react"
-import { RenderAuthors } from "../components/helper"
-import Layout from "../components/layout"
-import PaginationComponent from "../components/partials/pagination"
-import SearchEngineOps from "../components/seo"
+import { graphql, Link, navigate } from "gatsby";
+import React, { useEffect } from "react";
+import { lcrs, renderAuthors } from "../components/helper";
+import Layout from "../components/layout";
+import PaginationComponent from "../components/partials/pagination";
+import SearchEngineOps from "../components/seo";
 
 const Expo = ({ data, location }) => {
   useEffect(() => {
     if (data.expo.open !== true) {
-      navigate("/")
+      navigate("/");
     }
-  })
+  });
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SearchEngineOps title={`Expo ${new Date().getFullYear()}`} />
@@ -26,16 +26,14 @@ const Expo = ({ data, location }) => {
             </div>
             <div className="block-content">
               <PaginationComponent
-                max={10}
-                list={data.projects.nodes}
                 filterBy="sig"
                 filterLabel="Filter by SIG"
                 item={(element, index) => (
-                  <div key={index} className="clean-blog-post">
+                  <div className="clean-blog-post" key={index}>
                     <h3 className="text-capitalize">{element.title}</h3>
                     <div className="info">
                       <span className="text-muted">
-                        <Link to={"/sigs/" + element.sig.name.toLowerCase()}>
+                        <Link to={`/sigs/${  element.sig.name.toLowerCase()}`}>
                           {element.sig.name}
                         </Link>
                       </span>
@@ -44,17 +42,16 @@ const Expo = ({ data, location }) => {
                     {element.authors ? (
                       <p>
                         Built by
-                        {RenderAuthors(element.authors, "")}
+                        {renderAuthors(element.authors, "")}
                       </p>
                     ) : null}
 
                     {element.url ? (
                       <Link
-                        to={
-                          "/projects/" +
-                          element.title.toLowerCase().split(" ").join("")
-                        }
                         className="btn btn-outline-primary btn-sm"
+                        to={
+                          `/projects/${ 
+                          lcrs(element.title)}`}
                         type="button"
                       >
                         Read More
@@ -62,14 +59,16 @@ const Expo = ({ data, location }) => {
                     ) : null}
                   </div>
                 )}
+                list={data.projects.nodes}
+                max={10}
               />
             </div>
           </div>
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -90,5 +89,5 @@ export const postQuery = graphql`
       }
     }
   }
-`
-export default Expo
+`;
+export default Expo;

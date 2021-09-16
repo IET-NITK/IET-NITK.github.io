@@ -1,16 +1,16 @@
-import React, { useEffect } from "react"
-import Layout from "../components/layout"
-import SearchEngineOps from "../components/seo"
-import { graphql, navigate } from "gatsby"
-import { SIGShowcase } from "../components/SIGShowcase"
-import ReactMarkdown from "react-markdown"
+import React, { useEffect } from "react";
+import Layout from "../components/layout";
+import SearchEngineOps from "../components/seo";
+import { graphql, navigate } from "gatsby";
+import { SIGShowcase } from "../components/SIGShowcase";
+import ReactMarkdown from "react-markdown";
 
 const Recruitments = ({ location, data }) => {
   useEffect(() => {
     if (data.rec_questions.open !== true) {
-      navigate("/")
+      navigate("/");
     }
-  })
+  });
   return (
     <Layout location={location.pathname}>
       <SearchEngineOps title="Join Us!" />
@@ -24,7 +24,7 @@ const Recruitments = ({ location, data }) => {
                 others! Check out where we're recruiting:
               </p>
             </div>
-            <SIGShowcase hide_link={true} />
+            <SIGShowcase hide_link />
           </div>
         </section>
         <div
@@ -37,8 +37,8 @@ const Recruitments = ({ location, data }) => {
         >
           <h2>Fill the Application Forms Now</h2>
           <a
-            href="https://forms.gle/TjVQ7YFAFZWQaVSV6"
             className="btn btn-light btn-lg ml-5"
+            href="https://forms.gle/TjVQ7YFAFZWQaVSV6"
             type="button"
           >
             Join Us
@@ -53,15 +53,15 @@ const Recruitments = ({ location, data }) => {
 
             <div className="block-content">
               <div className="faq-item">
-                <ReactMarkdown skipHtml={true}>{data.rec_questions.FAQ}</ReactMarkdown>
+                <ReactMarkdown skipHtml>{data.rec_questions.FAQ}</ReactMarkdown>
               </div>
             </div>
           </div>
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -70,6 +70,6 @@ export const postQuery = graphql`
       open
     }
   }
-`
+`;
 
-export default Recruitments
+export default Recruitments;
