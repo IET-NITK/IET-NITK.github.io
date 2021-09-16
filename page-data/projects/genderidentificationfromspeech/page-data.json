@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-projects-page-js",
     "path": "/projects/genderidentificationfromspeech",
     "result": {"data":{"projects":{"authors":[{"name":"M.Govardhan"},{"name":"Venkat Rohit Merugu"}],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":"https://github.com/venkatrohit219/gender-detection-from-speech","title":"Gender Identification from Speech","description":"Building a model to identify whether given speech is uttered by male or female","ongoing":false}},"pageContext":{"pathSlug":"Gender Identification from Speech","sig":null,"date":"2021-05-01T14:12:20.118Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

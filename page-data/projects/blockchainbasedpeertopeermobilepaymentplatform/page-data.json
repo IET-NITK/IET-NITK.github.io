@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-projects-page-js",
     "path": "/projects/blockchainbasedpeertopeermobilepaymentplatform",
     "result": {"data":{"projects":{"authors":[],"sig":{"name":"Venture","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/69b9f63ee8e78792dcc76861d1ec7587/1f5c5/venture_e584562f9c.webp"}}}}},"url":null,"title":"Blockchain based Peer to Peer Mobile Payment Platform","description":null,"ongoing":false}},"pageContext":{"pathSlug":"Blockchain based Peer to Peer Mobile Payment Platform","sig":null,"date":"2021-09-15T04:47:00.366Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

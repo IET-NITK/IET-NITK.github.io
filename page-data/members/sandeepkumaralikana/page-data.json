@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/sandeepkumaralikana",
-    "result": {"data":{"member_details":{"name":"Sandeep Kumar Alikana","position":"Secretary (2019)","image":null,"passoutYr":2019,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Sandeep Kumar Alikana","sig":null,"date":"2021-04-29T13:15:36.183Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "result": {"data":{"memberDetails":{"name":"Sandeep Kumar Alikana","position":"Secretary (2019)","image":null,"passoutYr":2019,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Sandeep Kumar Alikana","sig":null,"date":"2021-04-29T13:15:36.183Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

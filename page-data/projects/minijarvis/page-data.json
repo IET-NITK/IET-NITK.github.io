@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-projects-page-js",
     "path": "/projects/minijarvis",
     "result": {"data":{"projects":{"authors":[{"name":"Ram Janam Yadav"},{"name":"Nithin L N"},{"name":"Saurabh Gole"}],"sig":{"name":"Rovisp","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c3c40a5ac3ed0ce2afe51e782577fbb4/1f5c5/Rovisp_3895cc018d.webp"}}}}},"url":null,"title":"Mini Jarvis","description":"Home automation demo using a Google voice assistant applet.","ongoing":false}},"pageContext":{"pathSlug":"Mini Jarvis","sig":null,"date":"2021-05-01T14:20:46.568Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/tarunsaipanguluru",
-    "result": {"data":{"member_details":{"name":"Tarunsai Panguluru","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"pangulurutarunsai@gmail.com","facebook":null,"github":null,"linkedin":"tarun-sai-panguluru-904a211a2"}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[{"title":"21st Century's Weapon","authors":[{"name":"Tarunsai Panguluru"}],"excerpt":"What do you think is the best weapon in the 21st century? ","date":"May 24th, 2021","route":"ModernWeapon"}]}},"pageContext":{"pathSlug":"Tarunsai Panguluru","sig":null,"date":"2021-04-29T13:15:51.495Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "result": {"data":{"memberDetails":{"name":"Tarunsai Panguluru","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"pangulurutarunsai@gmail.com","facebook":null,"github":null,"linkedin":"tarun-sai-panguluru-904a211a2"}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[{"title":"21st Century's Weapon","authors":[{"name":"Tarunsai Panguluru"}],"excerpt":"What do you think is the best weapon in the 21st century? ","date":"May 24th, 2021","route":"ModernWeapon"}]}},"pageContext":{"pathSlug":"Tarunsai Panguluru","sig":null,"date":"2021-04-29T13:15:51.495Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/likhithad",
-    "result": {"data":{"member_details":{"name":"Likhitha D","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[{"title":"The Future of Automotive Industry","authors":[{"name":"Likhitha D"}],"excerpt":"Imagination is certainly a gift to humankind. While many of us have been dreaming of having ...","date":"December 8th, 2020","route":"future-auto"}]}},"pageContext":{"pathSlug":"Likhitha D","sig":null,"date":"2021-05-08T06:03:44.182Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "result": {"data":{"memberDetails":{"name":"Likhitha D","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[{"title":"The Future of Automotive Industry","authors":[{"name":"Likhitha D"}],"excerpt":"Imagination is certainly a gift to humankind. While many of us have been dreaming of having ...","date":"December 8th, 2020","route":"future-auto"}]}},"pageContext":{"pathSlug":"Likhitha D","sig":null,"date":"2021-05-08T06:03:44.182Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

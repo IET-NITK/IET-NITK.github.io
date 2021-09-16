@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/dhruvagja",
-    "result": {"data":{"member_details":{"name":"Dhruv Agja","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"dhruvagja8808@gmail.com","facebook":null,"github":"dhruv8808agja","linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Dhruv Agja","sig":null,"date":"2021-05-08T06:02:04.497Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "result": {"data":{"memberDetails":{"name":"Dhruv Agja","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"dhruvagja8808@gmail.com","facebook":null,"github":"dhruv8808agja","linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Dhruv Agja","sig":null,"date":"2021-05-08T06:02:04.497Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

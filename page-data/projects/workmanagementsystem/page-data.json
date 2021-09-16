@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-projects-page-js",
     "path": "/projects/workmanagementsystem",
     "result": {"data":{"projects":{"authors":[],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":null,"title":"Work Management System","description":null,"ongoing":false}},"pageContext":{"pathSlug":"Work Management System","sig":null,"date":"2021-09-15T05:01:59.346Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

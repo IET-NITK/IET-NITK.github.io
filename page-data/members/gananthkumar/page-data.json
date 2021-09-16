@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/gananthkumar",
-    "result": {"data":{"member_details":{"name":"G Ananth Kumar","position":"Executive Member","image":null,"passoutYr":2019,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"G Ananth Kumar","sig":null,"date":"2021-04-29T13:15:32.729Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "result": {"data":{"memberDetails":{"name":"G Ananth Kumar","position":"Executive Member","image":null,"passoutYr":2019,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"G Ananth Kumar","sig":null,"date":"2021-04-29T13:15:32.729Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/mvaishnavi",
-    "result": {"data":{"member_details":{"name":"M Vaishnavi","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"vaishnavimolagavalli@gmail.com","facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"M Vaishnavi","sig":null,"date":"2021-05-08T06:05:33.282Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "result": {"data":{"memberDetails":{"name":"M Vaishnavi","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"vaishnavimolagavalli@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"M Vaishnavi","sig":null,"date":"2021-05-08T06:05:33.282Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

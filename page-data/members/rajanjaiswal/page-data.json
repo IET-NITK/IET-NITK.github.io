@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/rajanjaiswal",
-    "result": {"data":{"member_details":{"name":"Rajan Jaiswal","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[{"title":"Web Security and User Tracking","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/rj-since-2000/IETC-2020","authors":[{"name":"Varsha P"},{"name":"Satyam Jyotsana Gargee"},{"name":"Rajan Jaiswal"}]}]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Rajan Jaiswal","sig":null,"date":"2021-04-29T13:15:55.737Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "result": {"data":{"memberDetails":{"name":"Rajan Jaiswal","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Web Security and User Tracking","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/rj-since-2000/IETC-2020","authors":[{"name":"Varsha P"},{"name":"Satyam Jyotsana Gargee"},{"name":"Rajan Jaiswal"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Rajan Jaiswal","sig":null,"date":"2021-04-29T13:15:55.737Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

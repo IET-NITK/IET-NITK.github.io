@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/aashishprateek",
-    "result": {"data":{"member_details":{"name":"Aashish Prateek","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"member_projects":{"nodes":[{"title":"Access your phone from anywhere without Internet","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Somesh Kartikeya"},{"name":"Aashish Prateek"},{"name":"Maheshwari Mihir Premjibhai"}]}]},"member_articles":{"nodes":[]}},"pageContext":{"pathSlug":"Aashish Prateek","sig":null,"date":"2021-04-29T13:15:55.408Z"}},
-    "staticQueryHashes": ["1681770253","3346060996","362689041","940918685"]}
+    "result": {"data":{"memberDetails":{"name":"Aashish Prateek","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Access your phone from anywhere without Internet","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Somesh Kartikeya"},{"name":"Aashish Prateek"},{"name":"Maheshwari Mihir Premjibhai"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Aashish Prateek","sig":null,"date":"2021-04-29T13:15:55.408Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}
