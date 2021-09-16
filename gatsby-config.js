@@ -93,13 +93,13 @@ module.exports = {
         queryLimit: 10000,
       },
     },
-    process.env.podcast && {
-      resolve: `gatsby-source-rss-feed`,
-      options: {
-        url: process.env.podcast,
-        name: `podcast`
-      }
-    }
+    // process.env.podcast && {
+    //   resolve: `gatsby-source-rss-feed`,
+    //   options: {
+    //     url: process.env.podcast,
+    //     name: `podcast`
+    //   }
+    // }
     // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {
