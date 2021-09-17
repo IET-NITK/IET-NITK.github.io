@@ -5,12 +5,12 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
-const SearchEngineOps = ({ description, lang, meta, title }) => {
+const SearchEngineOps = ({ description, lang, meta, title, yoyo }) => {
   const { siteDetails, logo } = useStaticQuery(
     graphql`
       query {
@@ -20,16 +20,19 @@ const SearchEngineOps = ({ description, lang, meta, title }) => {
             description
           }
         }
-        logo: file(name: {eq: "logo"}, sourceInstanceName: {eq: "weblogo"}) {
+        logo: file(
+          name: { eq: "logo" }
+          sourceInstanceName: { eq: "weblogo" }
+        ) {
           publicURL
         }
       }
     `
-  );
+  )
 
-  const metaDescription = description || siteDetails.siteMetadata.description;
-  const defaultTitle = siteDetails.siteMetadata?.title;
-  
+  const metaDescription = description || siteDetails.siteMetadata.description
+  const defaultTitle = siteDetails.siteMetadata?.title
+
   return (
     <Helmet
       htmlAttributes={{
@@ -69,21 +72,25 @@ const SearchEngineOps = ({ description, lang, meta, title }) => {
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
     >
       <link href={logo.publicURL} rel="icon" />
+      <script src="https://cdn.jsdelivr.net/npm/tripetto-runner-foundation"></script>
+      <script src="https://cdn.jsdelivr.net/npm/tripetto-runner-autoscroll"></script>
+      <script src="https://cdn.jsdelivr.net/npm/tripetto-services"></script>
+
     </Helmet>
-  );
-};
+  )
+}
 
 SearchEngineOps.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-};
+}
 
 SearchEngineOps.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-};
+}
 
-export default SearchEngineOps;
+export default SearchEngineOps

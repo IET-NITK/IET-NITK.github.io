@@ -1,6 +1,7 @@
-
-
-module.exports = {
+require("dotenv").config({
+  path: `.env`,
+})
+const config = {
   pathPrefix: process.env.PATH_PREFIX || "",
   siteMetadata: {
     title: `IET NITK`,
@@ -82,7 +83,15 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: "https://octaweb.herokuapp.com",
-        collectionTypes: ["Blogs", "Events", "Members","Project-Reports","SMPS", "SIGS", "Projects"],
+        collectionTypes: [
+          "Blogs",
+          "Events",
+          "Members",
+          "Project-Reports",
+          "SMPS",
+          "SIGS",
+          "Projects",
+        ],
         singleTypes: [
           `recruitment-faq`,
           `about-club`,
@@ -93,13 +102,6 @@ module.exports = {
         queryLimit: 10000,
       },
     },
-    // process.env.podcast && {
-    //   resolve: `gatsby-source-rss-feed`,
-    //   options: {
-    //     url: process.env.podcast,
-    //     name: `podcast`
-    //   }
-    // }
     // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {
@@ -117,4 +119,16 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-};
+}
+
+if (process.env.podcast) {
+  config.plugins.push({
+    resolve: `gatsby-source-rss-feed`,
+    options: {
+      url: process.env.podcast,
+      name: `podcast`,
+    },
+  })
+}
+
+module.exports = config

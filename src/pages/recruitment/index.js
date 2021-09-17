@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Layout from "../components/layout";
-import SearchEngineOps from "../components/seo";
-import { graphql, navigate } from "gatsby";
-import { SIGShowcase } from "../components/SIGShowcase";
+import Layout from "../../components/layout";
+import SearchEngineOps from "../../components/seo";
+import { graphql, Link, navigate } from "gatsby";
+import { SIGShowcase } from "../../components/SIGShowcase";
 import ReactMarkdown from "react-markdown";
 
 const Recruitments = ({ location, data }) => {
@@ -36,13 +36,8 @@ const Recruitments = ({ location, data }) => {
           }}
         >
           <h2>Fill the Application Forms Now</h2>
-          <a
-            className="btn btn-light btn-lg ml-5"
-            href="https://forms.gle/TjVQ7YFAFZWQaVSV6"
-            type="button"
-          >
-            Join Us
-          </a>
+          <Link  
+            className="btn btn-light btn-lg ml-5" to="/recruitment/form">Join</Link>
         </div>
         <section className="clean-block clean-faq dark">
           <div className="container">

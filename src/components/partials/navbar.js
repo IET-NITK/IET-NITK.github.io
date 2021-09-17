@@ -1,9 +1,10 @@
-import { Link, StaticQuery, graphql } from "gatsby";
-import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-import ReactMarkdown from "react-markdown";
+import { Link, StaticQuery, graphql } from "gatsby"
+import React from "react"
+import { Navbar, Nav, NavDropdown } from "react-bootstrap"
+import ReactMarkdown from "react-markdown"
+import Ticker from "react-ticker"
 //eslint-disable-next-line
-import { lcrs } from "../helper";
+import { lcrs } from "../helper"
 
 const TopNavbar = ({ notice, smp, recr, expo }) => {
   //eslint-disable-next-line
@@ -14,19 +15,20 @@ const TopNavbar = ({ notice, smp, recr, expo }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9 col-md-7 col-sm-12">
-              {notice ? (
+              {/* {notice ? (
                 <div
                   className="alert alert-warning m-0 text-center"
                   style={{ fontSize: "70%" }}
                 >
-                  {/* <Ticker mode="await" speed={4} id="message"> */}
-                  {/* {({ index }) => ( */}
-                  <ReactMarkdown className="mb-n3">{notice}</ReactMarkdown>
-
-                  {/* )} */}
-                  {/* </Ticker> */}
+                  <Ticker mode="await" speed={5} id="message">
+                    {({ index }) => (
+                      <>
+                      <ReactMarkdown className="mb-n3">{notice+"\t"+"hey"}</ReactMarkdown>
+                      </>
+                    )}
+                  </Ticker>
                 </div>
-              ) : null}
+              ) : null} */}
             </div>
             <div className="col-lg-3 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link
@@ -63,106 +65,102 @@ const TopNavbar = ({ notice, smp, recr, expo }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 export const XNavbar = () => {
   return (
     <StaticQuery
-        query={graphql`
-          query {
-            about: strapiAboutClub {
-              message: topnavbar_marquee
-            }
+      query={graphql`
+        query {
+          about: strapiAboutClub {
+            message: topnavbar_marquee
+          }
 
-            imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
-              fixed {
-                srcWebp
-              }
-            }
-            smpOpen: strapiSummerPrograms {
-              open
-            }
-            recruitmentOpen: strapiRecruitmentFaq {
-              open
-            }
-            expoOpen: strapiExpo {
-              open
-            }
-            sigdetails: allStrapiSigs(filter: { no_link: { eq: false } }) {
-              nodes {
-                name
-              }
+          imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
+            fixed {
+              srcWebp
             }
           }
-        `}
-        render={({
-          sigdetails,
-          imageSharp,
-          smpOpen,
-          recruitmentOpen,
-          expoOpen,
-          about,
-        }) => (
-          <div className="fixed-top" id="navbar">
-            <TopNavbar
-              expo={expoOpen.open}
-              notice={about.message}
-              recr={recruitmentOpen.open}
-              smp={smpOpen.open}
-            />
-            <Navbar
-              bg="white"
-              className=" clean-navbar"
-              expand="lg"
-            >
-              <div className="container">
-                <Navbar.Brand className="navbar-brand logo" href="/">
-                  <img
-                    alt="Institute of Engineering and Technology, NITK Surathkal Division"
-                    src={imageSharp.fixed.srcWebp}
-                    style={{ height: "auto", maxHeight: "2.5em" }}
-                  />
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="ml-auto">
-                    <Nav.Link className="nav-link" href="/">
-                      Home
-                    </Nav.Link>
-                    <Nav.Link className="nav-link" href="/about">
-                      About Us
-                    </Nav.Link>
-                    <Nav.Link className="nav-link" href="/events">
-                      Events
-                    </Nav.Link>
-                    <Nav.Link className="nav-link" href="/projects">
-                      Projects
-                    </Nav.Link>
-                    <Nav.Link className="nav-link" href="/blog">
-                      Blog
-                    </Nav.Link>
-                    <NavDropdown title="SIGs">
-                      {sigdetails.nodes.map((element, index) => (
-                        <NavDropdown.Item
-                          className="nav-link"
-                          href={`/sigs/${  lcrs(element.name)}`}
-                          key={index}
-                        >
-                          {element.name}
-                        </NavDropdown.Item>
-                      ))}
-                    </NavDropdown>
-                    <Nav.Link className="nav-link" href="/contact">
-                      Contact Us
-                    </Nav.Link>
-                  </Nav>
-                </Navbar.Collapse>
-              </div>
-            </Navbar>
-          </div>
-        )}
-       />
-  );
-};
+          smpOpen: strapiSummerPrograms {
+            open
+          }
+          recruitmentOpen: strapiRecruitmentFaq {
+            open
+          }
+          expoOpen: strapiExpo {
+            open
+          }
+          sigdetails: allStrapiSigs(filter: { no_link: { eq: false } }) {
+            nodes {
+              name
+            }
+          }
+        }
+      `}
+      render={({
+        sigdetails,
+        imageSharp,
+        smpOpen,
+        recruitmentOpen,
+        expoOpen,
+        about,
+      }) => (
+        <div className="fixed-top" id="navbar">
+          <TopNavbar
+            expo={expoOpen.open}
+            notice={"Our recruitment forms are open, please find them here."}
+            recr={recruitmentOpen.open}
+            smp={smpOpen.open}
+          />
+          <Navbar bg="white" className=" clean-navbar" expand="lg">
+            <div className="container">
+              <Navbar.Brand className="navbar-brand logo" href="/">
+                <img
+                  alt="Institute of Engineering and Technology, NITK Surathkal Division"
+                  src={imageSharp.fixed.srcWebp}
+                  style={{ height: "auto", maxHeight: "2.5em" }}
+                />
+              </Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="ml-auto">
+                  <Nav.Link className="nav-link" href="/">
+                    Home
+                  </Nav.Link>
+                  <Nav.Link className="nav-link" href="/about">
+                    About Us
+                  </Nav.Link>
+                  <Nav.Link className="nav-link" href="/events">
+                    Events
+                  </Nav.Link>
+                  <Nav.Link className="nav-link" href="/projects">
+                    Projects
+                  </Nav.Link>
+                  <Nav.Link className="nav-link" href="/blog">
+                    Blog
+                  </Nav.Link>
+                  <NavDropdown title="SIGs">
+                    {sigdetails.nodes.map((element, index) => (
+                      <NavDropdown.Item
+                        className="nav-link"
+                        href={`/sigs/${lcrs(element.name)}`}
+                        key={index}
+                      >
+                        {element.name}
+                      </NavDropdown.Item>
+                    ))}
+                  </NavDropdown>
+                  <Nav.Link className="nav-link" href="/contact">
+                    Contact Us
+                  </Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </div>
+          </Navbar>
+        </div>
+      )}
+    />
+  )
+}
 
-export default XNavbar;
+export default XNavbar

@@ -1,14 +1,16 @@
-import React from "react";
-import XNavbar from "./partials/navbar";
-import Footer from "./partials/footer";
+import React from "react"
+import XNavbar from "./partials/navbar"
+import Footer from "./partials/footer"
 
-const Layout = ({ location, children }) => {
+const Layout = ({ location, children, showFooter = true }) => {
   return (
     <div className="site">
       <div id="wrapper-navbar">
         <XNavbar />
       </div>
-      <div style={{ paddingTop: `${location === "/" ? "0em" : "3em"}` }} />
+      {showFooter ? (
+        <div style={{ paddingTop: `${location === "/" ? "0em" : "3em"}` }} />
+      ) : null}
       <div className="site-content">{children}</div>
       {/* <div
         className="clean-block add-on newsletter-sign-up blue"
@@ -20,11 +22,13 @@ const Layout = ({ location, children }) => {
           Subscribe
         </button>
       </div> */}
-      <div id="wrapper-footer">
-        <Footer />
-      </div>
+      {showFooter ? (
+        <div id="wrapper-footer">
+          <Footer />
+        </div>
+      ) : null}
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

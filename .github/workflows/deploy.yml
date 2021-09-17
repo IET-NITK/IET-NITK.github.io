@@ -17,11 +17,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install NPM Packages
         run: npm install
-      # - name: Get secrets
-      #   shell: bash
-      #   env:
-      #     BACKEND_TOKEN: ${{ secrets.BACKEND_TOKEN }}
-      #   run: echo $BACKEND_TOKEN > credentials.json
+      - name: Create env file
+        run: |
+          cat << EOF >> .env
+          GATSBY_RECRUITMENT_TRIPETTO=${{ secrets.GATSBY_RECRUITMENT_TRIPETTO }}
+          GATSBY_WIT_PODCAST=${{ secrets.GATSBY_WIT_PODCAST }}
+          EOF
       - name: Lint check
         run: npx eslint . --fix --max-warnings=0
       - name: Build script
