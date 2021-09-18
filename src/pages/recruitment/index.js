@@ -1,16 +1,16 @@
-import React, { useEffect } from "react"
-import Layout from "../../components/layout"
-import SearchEngineOps from "../../components/seo"
-import { graphql, Link, navigate } from "gatsby"
-import { SIGShowcase } from "../../components/SIGShowcase"
-import ReactMarkdown from "react-markdown"
+import React, { useEffect } from "react";
+import Layout from "../../components/layout";
+import SearchEngineOps from "../../components/seo";
+import { graphql, Link, navigate } from "gatsby";
+import { SIGShowcase } from "../../components/SIGShowcase";
+import ReactMarkdown from "react-markdown";
 
 const Recruitments = ({ location, data }) => {
   useEffect(() => {
     if (data.rec_questions.open !== true) {
-      navigate("/")
+      navigate("/");
     }
-  })
+  });
   return (
     <Layout location={location.pathname}>
       <SearchEngineOps title="Join Us!" />
@@ -55,8 +55,8 @@ const Recruitments = ({ location, data }) => {
         </section>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const postQuery = graphql`
   {
@@ -65,6 +65,6 @@ export const postQuery = graphql`
       open
     }
   }
-`
+`;
 
-export default Recruitments
+export default Recruitments;
