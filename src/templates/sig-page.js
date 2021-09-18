@@ -49,7 +49,7 @@ const SIG = ({ pathname, data, uri }) => {
                             {element.label}
                           </div>
                         ) : null}
-                        {element.authors !== null ? (
+                        {element.authors.length ? (
                           <div className="info">
                               <span className="text-muted">
                                 By
