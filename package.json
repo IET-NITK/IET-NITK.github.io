@@ -42,6 +42,9 @@
     "react-markdown": "7.0.0",
     "react-share": "4.4.0",
     "react-ticker": "1.2.2",
+    "tripetto-runner-autoscroll": "^5.4.1",
+    "tripetto-runner-foundation": "^6.2.5",
+    "tripetto-services": "^2.0.0",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13"
   },

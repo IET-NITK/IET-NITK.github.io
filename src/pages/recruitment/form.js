@@ -1,36 +1,42 @@
 import { navigate } from "gatsby";
 import React from "react";
-
+import { run } from "tripetto-runner-autoscroll";
 import Layout from "../../components/layout";
 import SearchEngineOps from "../../components/seo";
 import "../../assets/css/form.css";
+import Services from "tripetto-services";
 
 const RecruitmentForm = ({ location }) => {
   React.useEffect(() => {
-    try {
-      const tripetto =
-        TripettoServices &&
-        TripettoServices.init({
-          token:
-          process.env.GATSBY_RECRUITMENT_TRIPETTO,
-        });
-      tripetto &&
-        TripettoAutoscroll &&
-        TripettoAutoscroll.run({
-          element: document.getElementById("tripetto"),
-          definition: tripetto.definition,
-          styles: tripetto.styles,
-          l10n: tripetto.l10n,
-          locale: tripetto.locale,
-          translations: tripetto.translations,
-          attachments: tripetto.attachments,
-          onSubmit: tripetto.onSubmit,
-          snapshot: tripetto.snapshot,
-          onPause: tripetto.onPause,
-          persistent: true,
-        });
-    } catch (exception) {
-      console.log("Navigating");
+    try{
+      const {
+        definition,
+        styles,
+        l10n,
+        locale,
+        translations,
+        snapshot,
+        attachments,
+        onSubmit,
+        onPause,
+      } = Services.init({ token: process.env.GATSBY_RECRUITMENT_TRIPETTO });
+      run({
+        element:
+          document.getElementById(
+            "tripetto"
+          ),
+        definition,
+        styles,
+        l10n,
+        locale,
+        translations,
+        attachments,
+        onSubmit,
+        snapshot,
+        onPause,
+        persistent: true,
+      });
+    } catch(exception) {
       navigate("/recruitment/form");
     }
   });

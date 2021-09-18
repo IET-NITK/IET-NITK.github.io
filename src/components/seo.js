@@ -72,10 +72,6 @@ const SearchEngineOps = ({ description, lang, meta, title }) => {
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
     >
       <link href={logo.publicURL} rel="icon" />
-      <script src="https://cdn.jsdelivr.net/npm/tripetto-runner-foundation" />
-      <script src="https://cdn.jsdelivr.net/npm/tripetto-runner-autoscroll" />
-      <script src="https://cdn.jsdelivr.net/npm/tripetto-services" />
-
     </Helmet>
   );
 };
