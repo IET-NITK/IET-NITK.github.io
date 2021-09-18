@@ -1,6 +1,6 @@
-import React from "react"
-import XNavbar from "./partials/navbar"
-import Footer from "./partials/footer"
+import React from "react";
+import XNavbar from "./partials/navbar";
+import Footer from "./partials/footer";
 
 const Layout = ({ location, children, showFooter = true }) => {
   return (
@@ -28,7 +28,7 @@ const Layout = ({ location, children, showFooter = true }) => {
         </div>
       ) : null}
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

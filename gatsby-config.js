@@ -1,6 +1,6 @@
 require("dotenv").config({
   path: `.env`,
-})
+});
 const config = {
   pathPrefix: process.env.PATH_PREFIX || "",
   siteMetadata: {
@@ -119,7 +119,7 @@ const config = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
 
 if (process.env.podcast) {
   config.plugins.push({
@@ -128,7 +128,7 @@ if (process.env.podcast) {
       url: process.env.podcast,
       name: `podcast`,
     },
-  })
+  });
 }
 
-module.exports = config
+module.exports = config;

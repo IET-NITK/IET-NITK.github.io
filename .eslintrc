@@ -8,7 +8,9 @@
   "globals": {
     "document": "readonly",
     "window": "readonly",
-    "Set":true
+    "Set":true,
+    "TripettoServices":true,
+    "TripettoAutoscroll":true
 },
   "env": {
     "node": true // defines things like process.env when generating through node

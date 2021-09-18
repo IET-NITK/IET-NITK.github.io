@@ -1,12 +1,12 @@
-import { Link, StaticQuery, graphql } from "gatsby"
-import React from "react"
-import { Navbar, Nav, NavDropdown } from "react-bootstrap"
-import ReactMarkdown from "react-markdown"
-import Ticker from "react-ticker"
+import { Link, StaticQuery, graphql } from "gatsby";
+import React from "react";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+// import ReactMarkdown from "react-markdown";
+// import Ticker from "react-ticker";
 //eslint-disable-next-line
 import { lcrs } from "../helper"
 
-const TopNavbar = ({ notice, smp, recr, expo }) => {
+const TopNavbar = ({ smp, recr, expo }) => {
   //eslint-disable-next-line
 
   return (
@@ -65,8 +65,8 @@ const TopNavbar = ({ notice, smp, recr, expo }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 export const XNavbar = () => {
   return (
     <StaticQuery
@@ -103,7 +103,6 @@ export const XNavbar = () => {
         smpOpen,
         recruitmentOpen,
         expoOpen,
-        about,
       }) => (
         <div className="fixed-top" id="navbar">
           <TopNavbar
@@ -160,7 +159,7 @@ export const XNavbar = () => {
         </div>
       )}
     />
-  )
-}
+  );
+};
 
-export default XNavbar
+export default XNavbar;
