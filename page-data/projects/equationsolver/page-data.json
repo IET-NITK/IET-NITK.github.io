@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-projects-page-js",
+    "path": "/projects/equationsolver",
+    "result": {"data":{"projects":{"authors":[{"name":"Dolly Gupta"},{"name":"Lalit Nagar"}],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":null,"title":"Equation Solver","description":"Train a deep learning model to recognise handwritten equations from images and then give the result after solving the equations. ","ongoing":true}},"pageContext":{"pathSlug":"Equation Solver","sig":null,"date":"2021-09-18T10:32:37.798Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

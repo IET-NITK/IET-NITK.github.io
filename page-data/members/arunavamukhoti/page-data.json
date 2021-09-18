@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/arunavamukhoti",
-    "result": {"data":{"memberDetails":{"name":"Arunava Mukhoti","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"arunava.mukhoti@gmail.com","facebook":null,"github":"amukh18 ","linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Arunava Mukhoti","sig":null,"date":"2021-04-29T13:15:48.133Z"}},
+    "result": {"data":{"memberDetails":{"name":"Arunava Mukhoti","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"arunava.mukhoti@gmail.com","facebook":null,"github":"amukh18 ","linkedin":null}},"memberProjects":{"nodes":[{"title":"Image Colorization","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Arunava Mukhoti"},{"name":"Varanshu Garg"},{"name":"Indhu Lekha Annam"},{"name":"Diksha Negi"},{"name":"Marmik Mundada"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Arunava Mukhoti","sig":null,"date":"2021-04-29T13:15:48.133Z"}},
     "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

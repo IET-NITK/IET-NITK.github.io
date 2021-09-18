@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-projects-page-js",
+    "path": "/projects/recommendationsystem",
+    "result": {"data":{"projects":{"authors":[{"name":"Jagan Babu Korra"}],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":null,"title":"Recommendation System","description":null,"ongoing":true}},"pageContext":{"pathSlug":"Recommendation System","sig":null,"date":"2021-09-18T10:30:14.210Z"}},
+    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

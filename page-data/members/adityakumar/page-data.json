@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/adityakumar",
-    "result": {"data":{"memberDetails":{"name":"Aditya Kumar","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Aditya Kumar","sig":null,"date":"2021-04-29T13:15:54.626Z"}},
+    "result": {"data":{"memberDetails":{"name":"Aditya Kumar","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Handwriting Generation","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Sachin Pandey"},{"name":"Aditya Kumar"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Aditya Kumar","sig":null,"date":"2021-04-29T13:15:54.626Z"}},
     "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}
