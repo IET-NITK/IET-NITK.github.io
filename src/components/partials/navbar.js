@@ -32,7 +32,7 @@ const TopNavbar = ({ smp, recr, expo }) => {
             </div>
             <div className="col-lg-3 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link
-                className={`btn btn-outline-primary btn-sm mr-3 ${
+                className={`btn btn-primary btn-sm mr-3 ${
                   recr !== true ? "disabled" : ""
                 }`}
                 role="button"
