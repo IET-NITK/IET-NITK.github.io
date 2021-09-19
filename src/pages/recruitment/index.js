@@ -13,7 +13,7 @@ const Recruitments = ({ location, data }) => {
   });
   return (
     <Layout location={location.pathname}>
-      <SearchEngineOps title="Join Us!" />
+      <SearchEngineOps title={`Recruitments ${new Date().getFullYear()}`} />
       <main className="page faq-page">
         <section className="clean-block about-us">
           <div className="container">
@@ -35,8 +35,8 @@ const Recruitments = ({ location, data }) => {
             marginTop: "2em",
           }}
         >
-          <Link className="btn btn-light btn-lg ml-5" to="/recruitment/form">
-            Fill the Application Forms Now
+          <Link className="btn btn-light btn-lg" to="/recruitment/form">
+            Fill the Application Form Now
           </Link>
         </div>
         <section className="clean-block clean-faq dark">

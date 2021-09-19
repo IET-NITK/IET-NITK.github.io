@@ -4,7 +4,7 @@ browserslist  4.0.0 - 4.16.4
 Severity: moderate
 Regular Expression Denial of Service - https://npmjs.com/advisories/1747
 fix available via `npm audit fix --force`
-Will install gatsby-plugin-react-helmet@3.10.0, which is a breaking change
+Will install gatsby-plugin-google-analytics@2.11.0, which is a breaking change
 node_modules/react-dev-utils/node_modules/browserslist
   react-dev-utils  >=6.0.0-next.03604a46
   Depends on vulnerable versions of browserslist
@@ -83,7 +83,7 @@ glob-parent  <5.1.2
 Severity: moderate
 Regular expression denial of service - https://npmjs.com/advisories/1751
 fix available via `npm audit fix --force`
-Will install gatsby-plugin-react-helmet@3.10.0, which is a breaking change
+Will install gatsby-plugin-google-analytics@2.11.0, which is a breaking change
 node_modules/webpack-dev-server/node_modules/glob-parent
   chokidar  1.0.0-rc1 - 2.1.8
   Depends on vulnerable versions of glob-parent
@@ -194,7 +194,7 @@ trim  <0.0.3
 Severity: high
 Regular Expression Denial of Service in trim - https://npmjs.com/advisories/1700
 fix available via `npm audit fix --force`
-Will install gatsby-plugin-react-helmet@3.10.0, which is a breaking change
+Will install gatsby-plugin-google-analytics@2.11.0, which is a breaking change
 node_modules/trim
   remark-parse  <=8.0.3
   Depends on vulnerable versions of trim
