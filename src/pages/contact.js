@@ -45,7 +45,7 @@ class Contact extends React.Component {
                 <br />
                 Email: {this.props.data.site.siteMetadata.contactEmail}
               </div>
-              <div className="block-heading">
+              {/* <div className="block-heading">
                 <p>You can also reach us out here:</p>
               </div>
               <div className="form-group">
@@ -88,6 +88,7 @@ class Contact extends React.Component {
                   />
                 </div>
               </div>
+         */}
             </form>
           </section>
         </main>

@@ -43,7 +43,7 @@ const RecruitmentForm = ({ location }) => {
   const currentYear= new Date().getFullYear();
   return (
     <Layout location={location} showFooter={false}>
-      <SearchEngineOps title={`Recruitments Form ${currentYear}`} description={`We are open for recruitments! Fill in our ${currentYear} recruitments form now!`} />
+      <SearchEngineOps description={`We are open for recruitments! Fill in our ${currentYear} recruitments form now!`} title={`Recruitments Form ${currentYear}`} />
       <div>
         <div className="container vh-100" id="tripetto" />
       </div>

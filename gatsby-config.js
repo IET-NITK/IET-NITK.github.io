@@ -8,8 +8,8 @@ const config = {
     author: `Nirmal Khedkar`,
     contactDetails: [
       {
-        name: "Skanda Upadhyay",
-        number: "9481141528",
+        name: "Laksh Sadhwani",
+        number: "9893008641",
       },
     ],
     contactEmail: "iet@nitk.edu.in",

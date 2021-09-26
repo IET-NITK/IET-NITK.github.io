@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import Layout from "../components/layout";
-import SearchEngineOps from "../components/seo";
-import { lcrs, newrenderAuthors } from "../components/helper";
+import Layout from "../../components/layout";
+import SearchEngineOps from "../../components/seo";
+import { lcrs, newrenderAuthors } from "../../components/helper";
 import { Link, graphql, navigate } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
