@@ -75,7 +75,6 @@ export const XNavbar = () => {
           about: strapiAboutClub {
             message: topnavbar_marquee
           }
-
           imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
             fixed {
               srcWebp
@@ -139,15 +138,11 @@ export const XNavbar = () => {
                     Blog
                   </Nav.Link>
                   <NavDropdown title="SIGs">
-                    {sigdetails.nodes.map((element, index) => (
-                      <NavDropdown.Item
-                        className="nav-link"
-                        href={`/sigs/${lcrs(element.name)}`}
-                        key={index}
-                      >
-                        {element.name}
-                      </NavDropdown.Item>
-                    ))}
+                  <NavDropdown.Item className="nav-link" href="/sigs/cipher">Cipher</NavDropdown.Item>
+                  <NavDropdown.Item className="nav-link" href="/sigs/rovisp">Rovisp</NavDropdown.Item>
+                  <NavDropdown.Item className="nav-link" href="/sigs/torsion">Torsion</NavDropdown.Item> 
+                  <NavDropdown.Item className="nav-link" href="/sigs/venture">Venture</NavDropdown.Item> 
+                  <NavDropdown.Item className="nav-link" href="https://ietinkheartblog.wordpress.com/">Inkheart</NavDropdown.Item> 
                   </NavDropdown>
                   <Nav.Link className="nav-link" href="/contact">
                     Contact Us
