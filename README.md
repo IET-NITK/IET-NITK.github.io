@@ -31,17 +31,17 @@ Obviously, the content of the website is thanks to every single current or alumn
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/ImgBotApp">
-            <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="100;" alt="ImgBotApp"/>
-            <br />
-            <sub><b>Imgbot</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/Madhan-Kumar22">
             <img src="https://avatars.githubusercontent.com/u/59618245?v=4" width="100;" alt="Madhan-Kumar22"/>
             <br />
             <sub><b>Madhan-Kumar22</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/ImgBotApp">
+            <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="100;" alt="ImgBotApp"/>
+            <br />
+            <sub><b>Imgbot</b></sub>
         </a>
     </td></tr>
 <tr>
