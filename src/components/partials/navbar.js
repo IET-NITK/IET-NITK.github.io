@@ -97,7 +97,6 @@ export const XNavbar = () => {
         }
       `}
       render={({
-        sigdetails,
         imageSharp,
         smpOpen,
         recruitmentOpen,
