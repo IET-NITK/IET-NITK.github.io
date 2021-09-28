@@ -89,11 +89,7 @@ export const XNavbar = () => {
           expoOpen: strapiExpo {
             open
           }
-          sigdetails: allStrapiSigs(filter: { no_link: { eq: false } }) {
-            nodes {
-              name
-            }
-          }
+          
         }
       `}
       render={({
