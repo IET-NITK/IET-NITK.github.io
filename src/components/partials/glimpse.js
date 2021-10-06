@@ -4,6 +4,7 @@ import { lcrs, renderAuthors } from "../helper";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css";
 import lodash from "lodash";
+import TransitionLink from "gatsby-plugin-transition-link"
 
 // eslint-disable-next-line
 function useWindowSize() {
@@ -103,7 +104,7 @@ export const Glimpse = ({ currentRoute }) => {
               <div className="row">
                 <div className="col-lg-3 col-md-4  mt-5 mb-5">
                   {getRandomThings(sigs.nodes, 1, currentRoute).map((element, index) => (
-                    <Link
+                    <TransitionLink
                       class="card bg-primary text-white text-decoration-none"
                       key={index}
                       style={{ height: "15em" }}
@@ -116,7 +117,7 @@ export const Glimpse = ({ currentRoute }) => {
                       {/* <Link to="/" class="card-footer text-muted">
                       2 days ago
                     </Link> */}
-                    </Link>
+                    </TransitionLink>
                   ))}
                 </div>
                 <div className="col-lg-9 col-md-8  mt-5 mb-5">
@@ -149,7 +150,7 @@ export const Glimpse = ({ currentRoute }) => {
                             className="card bg-primary"
                             style={{ height: "15em" }}
                           >
-                            <Link
+                            <TransitionLink
                               class="card-body text-white text-decoration-none"
                               to={
                                 id === "Projects"
@@ -175,7 +176,7 @@ export const Glimpse = ({ currentRoute }) => {
                                     })
                                   : null}
                               </div>
-                            </Link>
+                            </TransitionLink>
                             {element.authors ? (
                               <div className="card-footer text-muted">
                                 By

@@ -1,6 +1,6 @@
 import React from "react";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
-import { Link } from "gatsby";
+import TransitionLink from "gatsby-plugin-transition-link"
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { lcrs } from "../helper";
 
@@ -23,13 +23,13 @@ export const MemberDetails = ({ author }) => {
         style={{ boxShadow: "0px 0px 32px 0px rgba(221, 230, 237, 0.4)" }}
       >
         <div className="card-body info">
-          <Link
+          <TransitionLink
             to={`/members/${lcrs(author.name)}`}
           >
             <h5 className={`card-title text-capitalize ${colorText}`}>
               {author.name}
             </h5>
-          </Link>
+          </TransitionLink>
           <p className={`card-text text-capitalize ${colorText}`}>
             {author.position}
           </p>

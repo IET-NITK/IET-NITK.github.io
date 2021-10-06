@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import SearchEngineOps from "../components/seo";
 import Glimpse from "../components/partials/glimpse";
 import { lcrs } from "../components/helper";
+import TransitionLink from "gatsby-plugin-transition-link"
 
 const Project = ({ data, pathname, uri }) => {
   return (
@@ -23,7 +24,7 @@ const Project = ({ data, pathname, uri }) => {
               </div>
 
               <div className="col-lg-3 col-md-3 text-right">
-                <Link to={`/sigs/${  data.projects.sig.name.toLowerCase()}`}>
+                <TransitionLink to={`/sigs/${  data.projects.sig.name.toLowerCase()}`}>
                   {data.projects.sig.logo ? (
                     <img
                       alt={data.projects.sig.name}
@@ -32,7 +33,7 @@ const Project = ({ data, pathname, uri }) => {
                       style={{ maxWidth: "200px" }}
                     />
                   ) : null}
-                </Link>
+                </TransitionLink>
               </div>
             </div>
             <div className="block-content">
@@ -48,13 +49,13 @@ const Project = ({ data, pathname, uri }) => {
                     {data.projects.authors &&
                       data.projects.authors.map(({ name }) => (
                         <li key={name}>
-                          <Link
+                          <TransitionLink
                             to={
                               `/members/${ 
                               lcrs(name)}`}
                           >
                             {name}
-                          </Link>
+                          </TransitionLink>
                         </li>
                       ))}
                   </ul>

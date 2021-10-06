@@ -5,6 +5,7 @@ import { lcrs, newrenderAuthors } from "../../components/helper";
 import { Link, graphql, navigate } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import TransitionLink from "gatsby-plugin-transition-link"
 
 const SMP = ({ data, location }) => {
   const { smp } = data;
@@ -38,9 +39,9 @@ const SMP = ({ data, location }) => {
                   <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-12">
                       <h3 className="smp-signames" id={smpGroup.fieldValue}>
-                        <Link to={`/sigs/${  lcrs(smpGroup.fieldValue)}`}>
+                        <TransitionLink to={`/sigs/${  lcrs(smpGroup.fieldValue)}`}>
                           {smpGroup.fieldValue}
-                        </Link>
+                        </TransitionLink>
                       </h3>
                       {smpGroup.nodes.map((e2) => (
                         <React.Fragment key={e2.title}>

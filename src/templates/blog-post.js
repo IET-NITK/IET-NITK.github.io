@@ -7,6 +7,7 @@ import SearchEngineOps from "../components/seo";
 import { ShareButtons } from "../components/partials/social";
 import Glimpse from "../components/partials/glimpse";
 import ReactMarkdown from "react-markdown";
+import TransitionLink from "gatsby-plugin-transition-link"
 
 const PreviewOther = ({ post, isPrevious }) => {
   if (post)
@@ -14,7 +15,7 @@ const PreviewOther = ({ post, isPrevious }) => {
       <div className={`m-4 text-${isPrevious === true ? "left" : "right"}`}>
         <b>
           {isPrevious === true ? "Previous Post: " : "Next Up: "}
-          <Link to={`/blog/${  post.route}`}>{niceFormat(post.title)}</Link>
+          <TransitionLink to={`/blog/${  post.route}`}>{niceFormat(post.title)}</TransitionLink>
         </b>
         <div className="post-info">
           <span>

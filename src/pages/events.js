@@ -31,13 +31,13 @@ const Events = ({ data, location }) => {
                           </span>
                         </div>
                         <p>{element.excerpt}</p>
-                        <Link
+                        <TransitionLink
                           className="btn btn-outline-primary btn-sm"
                           to={`/events/${  element.route}`}
                           type="button"
                         >
                           Read More 
-                        </Link>
+                        </TransitionLink>
                       </div>
                     </div>
                   </div>

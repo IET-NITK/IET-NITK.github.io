@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import { lcrs } from "../helper";
+import TransitionLink from "gatsby-plugin-transition-link"
 
 export const Footer = () => {
   return (
@@ -39,25 +40,25 @@ export const Footer = () => {
                   <h3 className="mt-4 mb-3">Important Links</h3>
                   <ul className="footer-list">
                     <li>
-                      <Link to="/">Home</Link>
+                      <TransitionLink to="/">Home</TransitionLink>
                     </li>
                     <li>
-                      <Link to="/about">About Us</Link>
+                      <TransitionLink to="/about">About Us</TransitionLink>
                     </li>
                     <li>
-                      <Link to="/events">Events</Link>
+                      <TransitionLink to="/events">Events</TransitionLink>
                     </li>
                     <li>
-                      <Link to="/projects">Projects</Link>
+                      <TransitionLink to="/projects">Projects</TransitionLink>
                     </li>
                     <li>
-                      <Link to="/project-reports">Project Reports</Link>
+                      <TransitionLink to="/project-reports">Project Reports</TransitionLink>
                     </li>
                     <li>
-                      <Link to="/blog">Blog</Link>
+                      <TransitionLink to="/blog">Blog</TransitionLink>
                     </li>
                     <li>
-                      <Link to="/contact">Say Hi!</Link>
+                      <TransitionLink to="/contact">Say Hi!</TransitionLink>
                     </li>
                   </ul>
                 </div>
@@ -69,9 +70,9 @@ export const Footer = () => {
                         {sig.no_link === true ? (
                           sig.name
                         ) : (
-                          <Link to={`/sigs/${lcrs(sig.name)}`}>
+                          <TransitionLink to={`/sigs/${lcrs(sig.name)}`}>
                             {sig.name}
-                          </Link>
+                          </TransitionLink>
                         )}
                       </li>
                     ))}

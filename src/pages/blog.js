@@ -52,13 +52,13 @@ const Blog = ({ data, location }) => {
                             </span>
                           </div>
                           <p>{element.excerpt}</p>
-                          <Link
+                          <TransitionLink
                             className="btn btn-outline-primary btn-sm"
                             to={`/blog/${  element.route.toLowerCase()}`}
                             type="button"
                           >
                             Read More
-                          </Link>
+                          </TransitionLink>
                         </div>
                       </div>
                     </div>

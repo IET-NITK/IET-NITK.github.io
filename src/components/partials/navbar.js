@@ -1,4 +1,5 @@
 import { Link, StaticQuery, graphql } from "gatsby";
+import TransitionLink from "gatsby-plugin-transition-link"
 import React from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 // import ReactMarkdown from "react-markdown";
@@ -31,7 +32,7 @@ const TopNavbar = ({ smp, recr, expo }) => {
               ) : null} */}
             </div>
             <div className="col-lg-3 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
-              <Link
+              <TransitionLink
                 className={`btn btn-primary btn-sm mr-3 ${
                   recr !== true ? "disabled" : ""
                 }`}
@@ -39,10 +40,10 @@ const TopNavbar = ({ smp, recr, expo }) => {
                 to="/recruitment"
               >
                 Join IET NITK
-              </Link>
+              </TransitionLink>
 
               {expo !== true ? (
-                <Link
+                <TransitionLink
                   className={`btn btn-primary btn-sm mr-3 ${
                     smp !== true ? "disabled" : ""
                   }`}
@@ -50,15 +51,15 @@ const TopNavbar = ({ smp, recr, expo }) => {
                   to="/smp"
                 >
                   SMP {new Date().getFullYear()}
-                </Link>
+                </TransitionLink>
               ) : (
-                <Link
+                <TransitionLink
                   className="btn btn-sm mr-3 btn-primary"
                   role="button"
                   to="/expo"
                 >
                   NITK Expo {new Date().getFullYear()}
-                </Link>
+                </TransitionLink>
               )}
             </div>
           </div>

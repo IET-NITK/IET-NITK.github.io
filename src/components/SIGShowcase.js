@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import { lcrs } from "./helper";
+import TransitionLink from "gatsby-plugin-transition-link"
 
 export const SIGShowcase = ({ hideLink }) => {
   return (
@@ -50,12 +51,12 @@ export const SIGShowcase = ({ hideLink }) => {
                 </div>
                 <p>{sig.description}</p>
                 {!sig.no_link && !hideLink ? (
-                  <Link
+                  <TransitionLink
                     className="btn btn-outline-primary btn-block"
                     to={`/sigs/${lcrs(sig.name)}`}
                   >
                     Read More
-                  </Link>
+                  </TransitionLink>
                 ) : null}
                 {!hideLink && sig.name==="Inkheart" ? (
                   <OutboundLink

@@ -5,6 +5,7 @@ import { Link, graphql } from "gatsby";
 import { lcrs, renderAuthors } from "../components/helper";
 import PaginationComponent from "../components/partials/pagination";
 import Glimpse from "../components/partials/glimpse";
+import TransitionLink from "gatsby-plugin-transition-link"
 
 const SIG = ({ pathname, data, uri }) => {
   const { sigDetails, sigProjects } = data;
@@ -15,14 +16,14 @@ const SIG = ({ pathname, data, uri }) => {
         <section className="clean-block clean-blog-list dark">
           <div className="container">
             <div className="block-heading">
-              <Link to={`/sigs/${  sigDetails.name.toLowerCase()}`}>
+              <TransitionLink to={`/sigs/${  sigDetails.name.toLowerCase()}`}>
                 <img
                   alt={sigDetails.name}
                   className="sig-logo"
                   src={sigDetails.logo.localFile.childImageSharp.fixed.srcWebp}
                   style={{ maxWidth: "200px" }}
                 />
-              </Link>
+              </TransitionLink>
               <p>{sigDetails.description}</p>
             </div>
             <div className="block-content">
@@ -33,13 +34,13 @@ const SIG = ({ pathname, data, uri }) => {
                       <div className="col-lg-12">
                         <h3>
                           {element.authors && element.url ? (
-                            <Link
+                            <TransitionLink
                               to={
                                 `/projects/${ 
                                 lcrs(element.title)}`}
                             >
                               {element.title}
-                            </Link>
+                            </TransitionLink>
                           ) : (
                             element.title
                           )}

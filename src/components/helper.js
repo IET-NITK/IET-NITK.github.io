@@ -1,85 +1,78 @@
-import { Link } from "gatsby";
-import React from "react";
+import TransitionLink from "gatsby-plugin-transition-link"
+import React from "react"
 
-export const lcrs = (link) => {
-  return link.toLowerCase().split(" ").join("");
-};
-
+export const lcrs = link => {
+  return link.toLowerCase().split(" ").join("")
+}
 
 export const renderAuthors = (arr, cls) =>
   arr.map(({ name }, index2) => (
     <>
       &nbsp;
-      <Link
-      className={cls}
-        key={`x${  index2}`}
-        to={`/members/${  lcrs(name)}`}
+      <TransitionLink
+        className={cls}
+        key={`x${index2}`}
+        to={`/members/${lcrs(name)}`}
       >
         {name}
-      </Link>
+      </TransitionLink>
       {index2 + 2 === arr.length
         ? " and"
         : index2 + 1 !== arr.length
         ? ","
         : ""}
     </>
-  ));
+  ))
 
-export const renderAuthorsName = (arr) =>
+export const renderAuthorsName = arr =>
   arr.map(({ name }, index2) => (
-    <>
-      <Link
-        className="pr-3"
-        key={`x${  index2}`}
-        style={{ display: "inline-block" }}
-        to={`/members/${  lcrs(name)}`}
-      >
-        <span className="project-auther-name"> {name} </span>
-      </Link>
-      {""}
-    </>
-  ));
+    <TransitionLink
+      className="pr-3"
+      key={`x${index2}`}
+      style={{ display: "inline-block" }}
+      to={`/members/${lcrs(name)}`}
+    >
+      <span className="project-auther-name"> {name} </span>
+    </TransitionLink>
+  ))
 
 export const renderProjectDescription = (element, len = 100) => {
   if (element !== null && element.length >= len) {
-    return `${element.substring(0, len)  }...`;
+    return `${element.substring(0, len)}...`
   }
-  return element;
-};
+  return element
+}
 
-export const newrenderAuthors = (arr) =>
+export const newrenderAuthors = arr =>
   arr.map(({ name }, index2) => (
     <>
       &nbsp;
-      <Link
-        key={`x${  index2}`}
-        to={`/members/${  lcrs(name)}`}
-      >
+      <TransitionLink key={`x${index2}`} to={`/members/${lcrs(name)}`}>
         {name}
-      </Link>
+      </TransitionLink>
       {index2 + 2 === arr.length
         ? " and"
         : index2 + 1 !== arr.length
         ? ","
         : ""}
     </>
-  ));
+  ))
 
-export const niceFormat = (name) =>
-  name.toLowerCase().replace(/^\w|\s\w/g, (letter) => {
-    return letter.toUpperCase();
-  });
+export const niceFormat = name =>
+  name.toLowerCase().replace(/^\w|\s\w/g, letter => {
+    return letter.toUpperCase()
+  })
 
 export function getRandom(arr, num) {
-  const result = new Array(num);
-  let arrLen = arr.length;
-  const taken = new Array(arrLen);
+  const result = new Array(num)
+  let arrLen = arr.length
+  const taken = new Array(arrLen)
   if (num > arrLen)
-    throw new RangeError("getRandom: more elements taken than available");
+    throw new RangeError("getRandom: more elements taken than available")
   while (num--) {
-    const item = Math.floor(Math.random() * arrLen);
-    result[num] = arr[item in taken ? taken[item] : item];
-    taken[item] = --arrLen in taken ? taken[arrLen] : arrLen;
+    const item = Math.floor(Math.random() * arrLen)
+    result[num] = arr[item in taken ? taken[item] : item]
+    taken[item] = --arrLen in taken ? taken[arrLen] : arrLen
   }
-  return result;
+  return result
 }

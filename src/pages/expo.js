@@ -1,4 +1,5 @@
 import { graphql, Link, navigate } from "gatsby";
+import TransitionLink from "gatsby-plugin-transition-link"
 import React, { useEffect } from "react";
 import { lcrs, renderAuthors } from "../components/helper";
 import Layout from "../components/layout";
@@ -33,9 +34,9 @@ const Expo = ({ data, location }) => {
                     <h3 className="text-capitalize">{element.title}</h3>
                     <div className="info">
                       <span className="text-muted">
-                        <Link to={`/sigs/${  element.sig.name.toLowerCase()}`}>
+                        <TransitionLink to={`/sigs/${  element.sig.name.toLowerCase()}`}>
                           {element.sig.name}
-                        </Link>
+                        </TransitionLink>
                       </span>
                     </div>
                     {element.description || ""}
@@ -47,7 +48,7 @@ const Expo = ({ data, location }) => {
                     ) : null}
 
                     {element.url ? (
-                      <Link
+                      <TransitionLink
                         className="btn btn-outline-primary btn-sm"
                         to={
                           `/projects/${ 
@@ -55,7 +56,7 @@ const Expo = ({ data, location }) => {
                         type="button"
                       >
                         Read More
-                      </Link>
+                      </TransitionLink>
                     ) : null}
                   </div>
                 )}

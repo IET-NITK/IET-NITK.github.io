@@ -5,6 +5,7 @@ import { graphql, Link } from "gatsby";
 import { lcrs, renderAuthors } from "../components/helper";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import Glimpse from "../components/partials/glimpse";
+import TransitionLink from "gatsby-plugin-transition-link"
 const RenderArticles = ({ element, index }) => (
   <div
     className="clean-blog-post"
@@ -14,9 +15,9 @@ const RenderArticles = ({ element, index }) => (
     <div className="row">
       <div className="col-lg-12">
         <h3>
-          <Link className="btn-link" to={`/blog/${  lcrs(element.route)}`}>
+          <TransitionLink className="btn-link" to={`/blog/${  lcrs(element.route)}`}>
             {element.title}
-          </Link>
+          </TransitionLink>
         </h3>
         <div className="info">
           <span className="text-muted">
@@ -47,9 +48,9 @@ const RenderProject = ({
         <div className="col-lg-12">
           <h3>
             {url ? (
-              <Link to={`/projects/${  lcrs(title)}`}>
+              <TransitionLink to={`/projects/${  lcrs(title)}`}>
                 {title} {year ? `(${year})` : null}
-              </Link>
+              </TransitionLink>
             ) : (
               <>
                 {title} {year ? `(${year})` : null}
@@ -60,12 +61,12 @@ const RenderProject = ({
             <div className="badge badge-primary mr-2">{label}</div>
           ) : null}
           {sig ? (
-            <Link
+            <TransitionLink
               className="badge badge-info text-uppercase"
               to={`/sigs/${  lcrs(sig.name)}`}
             >
               {sig.name}
-            </Link>
+            </TransitionLink>
           ) : null}
           <div className="info">
             <span className="text-muted">
