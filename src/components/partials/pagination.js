@@ -34,7 +34,7 @@ const PaginationComponent = ({
         <Dropdown>
           <Dropdown.Toggle
             className="mr-4"
-            id={`dropdown-${  filterBy}`}
+            id={`dropdown-${filterBy}`}
             size="sm"
             variant="outline-primary"
           >
@@ -42,7 +42,7 @@ const PaginationComponent = ({
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {state.filterCategories &&
-              state.filterCategories.map(({ex}, index) => (
+              state.filterCategories.map(({ ex }, index) => (
                 <Dropdown.Item
                   key={index}
                   name={ex}
@@ -100,28 +100,32 @@ const PaginationComponent = ({
                 setState({ ...state, pno: state.pno - 1 });
               }}
             >
-              Previous
+              <i className="fa pt-0 mr-2 fa-angle-double-left" /> Previous
             </button>
           </li>
           {state.listState &&
-            [...Array(Math.ceil(state.listState.length / max))].map((element, index) => (
-              <li
-                className={`page-item ${state.pno === index + 1 ? "active" : ""}`}
-                key={index}
-              >
-                <button
-                  className="page-link"
-                  data-toggle="tooltip"
-                  onClick={() => {
-                    scrollTop();
-                    setState({ ...state, pno: index + 1 });
-                  }}
-                  title={`Page ${index + 1}`}
+            [...Array(Math.ceil(state.listState.length / max))].map(
+              (element, index) => (
+                <li
+                  className={`page-item ${
+                    state.pno === index + 1 ? "active" : ""
+                  }`}
+                  key={index}
                 >
-                  {index + 1}
-                </button>
-              </li>
-            ))}
+                  <button
+                    className="page-link"
+                    data-toggle="tooltip"
+                    onClick={() => {
+                      scrollTop();
+                      setState({ ...state, pno: index + 1 });
+                    }}
+                    title={`Page ${index + 1}`}
+                  >
+                    {index + 1}
+                  </button>
+                </li>
+              )
+            )}
           <li
             className={`page-item ${
               state.listState &&
@@ -137,7 +141,7 @@ const PaginationComponent = ({
                 setState({ ...state, pno: state.pno + 1 });
               }}
             >
-              Next
+              Next <i className="fa pt-0 ml-2 fa-angle-double-right" />
             </button>
           </li>
         </ul>

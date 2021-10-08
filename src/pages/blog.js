@@ -58,6 +58,7 @@ const Blog = ({ data, location }) => {
                             type="button"
                           >
                             Read More
+                            <i className="fa fa-angle-right ml-2"/>
                           </Link>
                         </div>
                       </div>
