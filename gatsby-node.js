@@ -7,12 +7,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const templateHash = {
-    members: path.resolve(`./src/templates/author-page.js`),
-    projectreports: path.resolve("./src/templates/report-page.js"),
-    projects: path.resolve(`./src/templates/projects-page.js`),
-    blog: path.resolve("./src/templates/blog-post.js"),
-    events: path.resolve("./src/templates/events-post.js"),
-    sigs: path.resolve(`./src/templates/sig-page.js`),
+    members: path.resolve(`./src/templates/author-page.tsx`),
+    projectreports: path.resolve("./src/templates/report-page.tsx"),
+    projects: path.resolve(`./src/templates/projects-page.tsx`),
+    blog: path.resolve("./src/templates/blog-post.tsx"),
+    events: path.resolve("./src/templates/events-post.tsx"),
+    sigs: path.resolve(`./src/templates/sig-page.tsx`),
   };
   try {
     graphql(`
