@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/amalmajunuvidya",
-    "result": {"data":{"memberDetails":{"name":"Amal Majunu Vidya","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Virtual Try-On","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/aakashabhi/Virtual-Try-On","authors":[{"name":"Amal Majunu Vidya"},{"name":"V Madhan Kumar"},{"name":"M.T.Aakash Chandra"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Amal Majunu Vidya","sig":null,"date":"2021-04-29T13:15:53.967Z"}},
+    "result": {"data":{"memberDetails":{"name":"Amal Majunu Vidya","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Virtual Try-On","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/aakashabhi/Virtual-Try-On","authors":[{"name":"V Madhan Kumar"},{"name":"Amal Majunu Vidya"},{"name":"M.T.Aakash Chandra"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Amal Majunu Vidya","sig":null,"date":"2021-04-29T13:15:53.967Z"}},
     "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

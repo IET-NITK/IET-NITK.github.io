@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/naveenkumar",
-    "result": {"data":{"memberDetails":{"name":"Naveen Kumar","position":"Executive Member","image":null,"passoutYr":2020,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"YouTube Transcript Summarizer","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Naveen Kumar"},{"name":"Feyaz Baker"},{"name":"Suyash Satish Chintawar"},{"name":"Sahana"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Naveen Kumar","sig":null,"date":"2021-04-29T13:15:42.987Z"}},
+    "result": {"data":{"memberDetails":{"name":"Naveen Kumar","position":"Executive Member","image":null,"passoutYr":2020,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"YouTube Transcript Summarizer","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Sahana"},{"name":"Feyaz Baker"},{"name":"Suyash Satish Chintawar"},{"name":"Naveen Kumar"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Naveen Kumar","sig":null,"date":"2021-04-29T13:15:42.987Z"}},
     "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-projects-page-js",
     "path": "/projects/handwritinggeneration",
-    "result": {"data":{"projects":{"authors":[{"name":"Sachin Pandey"},{"name":"Aditya Kumar"}],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":null,"title":"Handwriting Generation","description":null,"ongoing":true}},"pageContext":{"pathSlug":"Handwriting Generation","sig":null,"date":"2021-09-18T10:29:25.813Z"}},
+    "result": {"data":{"projects":{"authors":[{"name":"Aditya Kumar"},{"name":"Sachin Pandey"}],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":null,"title":"Handwriting Generation","description":null,"ongoing":true}},"pageContext":{"pathSlug":"Handwriting Generation","sig":null,"date":"2021-09-18T10:29:25.813Z"}},
     "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-projects-page-js",
     "path": "/projects/audiofingerprinting",
-    "result": {"data":{"projects":{"authors":[{"name":"Sharuf Baig"},{"name":"K Snehith Bhagavan"}],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":null,"title":"Audio Fingerprinting","description":null,"ongoing":false}},"pageContext":{"pathSlug":"Audio Fingerprinting","sig":null,"date":"2021-09-18T10:33:14.091Z"}},
+    "result": {"data":{"projects":{"authors":[{"name":"K Snehith Bhagavan"},{"name":"Sharuf Baig"}],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":null,"title":"Audio Fingerprinting","description":null,"ongoing":false}},"pageContext":{"pathSlug":"Audio Fingerprinting","sig":null,"date":"2021-09-18T10:33:14.091Z"}},
     "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

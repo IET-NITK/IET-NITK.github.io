@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/varanshugarg",
-    "result": {"data":{"memberDetails":{"name":"Varanshu Garg","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Image Colorization","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Arunava Mukhoti"},{"name":"Varanshu Garg"},{"name":"Indhu Lekha Annam"},{"name":"Diksha Negi"},{"name":"Marmik Mundada"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Varanshu Garg","sig":null,"date":"2021-04-29T13:15:54.737Z"}},
+    "result": {"data":{"memberDetails":{"name":"Varanshu Garg","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Image Colorization","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Marmik Mundada"},{"name":"Arunava Mukhoti"},{"name":"Diksha Negi"},{"name":"Indhu Lekha Annam"},{"name":"Varanshu Garg"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Varanshu Garg","sig":null,"date":"2021-04-29T13:15:54.737Z"}},
     "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}

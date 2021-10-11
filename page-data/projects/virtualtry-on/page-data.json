@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-projects-page-js",
     "path": "/projects/virtualtry-on",
-    "result": {"data":{"projects":{"authors":[{"name":"Amal Majunu Vidya"},{"name":"V Madhan Kumar"},{"name":"M.T.Aakash Chandra"}],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":"https://github.com/aakashabhi/Virtual-Try-On","title":"Virtual Try-On","description":null,"ongoing":true}},"pageContext":{"pathSlug":"Virtual Try-On","sig":null,"date":"2021-05-01T14:33:57.460Z"}},
+    "result": {"data":{"projects":{"authors":[{"name":"V Madhan Kumar"},{"name":"Amal Majunu Vidya"},{"name":"M.T.Aakash Chandra"}],"sig":{"name":"Cipher","logo":{"localFile":{"childImageSharp":{"fixed":{"srcWebp":"/static/c5844ab334a4a1435ef1970a20dae837/1f5c5/Cipher_ddb0d04e8e.webp"}}}}},"url":"https://github.com/aakashabhi/Virtual-Try-On","title":"Virtual Try-On","description":null,"ongoing":true}},"pageContext":{"pathSlug":"Virtual Try-On","sig":null,"date":"2021-05-01T14:33:57.460Z"}},
     "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}
