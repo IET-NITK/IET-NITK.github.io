@@ -48,7 +48,7 @@ export interface IContact {
 	};
 };
 
-export interface IEvent {
+export interface IWit {
 	location: Location;
 	data: {
 		events: {

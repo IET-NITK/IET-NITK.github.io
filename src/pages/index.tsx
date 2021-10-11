@@ -17,8 +17,6 @@ import ReactMarkdown from "react-markdown";
 import { IMainPage } from "../types/pages";
 // import
 
-
-
 const MainPage: React.FC<IMainPage> = ({ location, data }) => {
   return (
     <Layout location={location.pathname} title={"Main"}>
@@ -135,7 +133,7 @@ const MainPage: React.FC<IMainPage> = ({ location, data }) => {
                             <Link
                               className="btn btn-sm"
                               style={{ textDecoration: "none" }}
-                              to={`blog/${  lcrs(element.route)}`}
+                              to={`blog/${lcrs(element.route)}`}
                             >
                               Read More
                             </Link>
@@ -157,7 +155,8 @@ const MainPage: React.FC<IMainPage> = ({ location, data }) => {
                 <div className="intro">
                   <h2 className="text-primary section-heading">Our Projects</h2>
                   <p className="section-description">
-                    We have projects from many different domains of interest. We love doing our projects!{" "}
+                    We have projects from many different domains of interest. We
+                    love doing our projects!{" "}
                     <Link to="/projects">
                       <img alt="IET" className="mr-2" src={IconLink} />
                       Find More
@@ -173,9 +172,7 @@ const MainPage: React.FC<IMainPage> = ({ location, data }) => {
                             {element.url ? (
                               <Link
                                 className="card-link text-capitalize"
-                                to={
-                                  `/projects/${  lcrs(element.title)}`
-                                }
+                                to={`/projects/${lcrs(element.title)}`}
                               >
                                 {element.title}
                               </Link>
@@ -186,7 +183,7 @@ const MainPage: React.FC<IMainPage> = ({ location, data }) => {
                           {element.sig ? (
                             <Link
                               className="badge badge-info text-uppercase mr-2"
-                              to={`/sigs/${  element.sig.name.toLowerCase()}`}
+                              to={`/sigs/${element.sig.name.toLowerCase()}`}
                             >
                               {element.sig.name}
                             </Link>
@@ -245,7 +242,7 @@ const MainPage: React.FC<IMainPage> = ({ location, data }) => {
                         <h6 className="card-title">
                           <Link
                             className="card-link text-capitalize"
-                            to={`/events/${  data.events.nodes[0].route}`}
+                            to={`/events/${data.events.nodes[0].route}`}
                           >
                             {data.events.nodes[0].title}
                           </Link>
@@ -279,7 +276,9 @@ const MainPage: React.FC<IMainPage> = ({ location, data }) => {
                         IET NITK Women In Tech
                       </h2>
                       <p className="section-description">
-                      Women in Tech is an international organization with a double mission: to close the gender gap and to help women embrace technology. Find more{" "}
+                        Women in Tech is an international organization with a
+                        double mission: to close the gender gap and to help
+                        women embrace technology.
                         <Link to="/wit">
                           <img alt="IET" className="mr-2" src={IconLink} />
                           Find More
@@ -310,7 +309,7 @@ export const postQuery = graphql`
         title
         route
         header {
-          localFile{
+          localFile {
             publicURL
             childImageSharp {
               fixed {
@@ -318,7 +317,6 @@ export const postQuery = graphql`
               }
             }
           }
-
         }
         authors {
           name

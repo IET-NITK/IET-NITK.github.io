@@ -14,7 +14,7 @@ const TopNavbar: React.FC<ITopNavbar> = ({ smp, recr, expo }) => {
       <div className="py-2 bg-light">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-9 col-md-7 col-sm-12">
+            <div className="col-lg-8 col-md-7 col-sm-12">
               {/* {notice ? (
                 <div
                   className="alert alert-warning m-0 text-center"
@@ -30,7 +30,7 @@ const TopNavbar: React.FC<ITopNavbar> = ({ smp, recr, expo }) => {
                 </div>
               ) : null} */}
             </div>
-            <div className="col-lg-3 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
+            <div className="col-lg-4 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link
                 className={`btn btn-primary btn-sm mr-3 ${
                   recr !== true ? "disabled" : ""
@@ -49,7 +49,7 @@ const TopNavbar: React.FC<ITopNavbar> = ({ smp, recr, expo }) => {
                   role="button"
                   to="/smp"
                 >
-                  SMP {new Date().getFullYear()}
+                  <i className="fa fa-chalkboard"/> SMP {new Date().getFullYear()}
                 </Link>
               ) : (
                 <Link
@@ -57,7 +57,7 @@ const TopNavbar: React.FC<ITopNavbar> = ({ smp, recr, expo }) => {
                   role="button"
                   to="/expo"
                 >
-                  NITK Expo {new Date().getFullYear()}
+                <i className="fa pt-0 mr-2 fa-calendar"/>  NITK Expo {new Date().getFullYear()}
                 </Link>
               )}
             </div>
