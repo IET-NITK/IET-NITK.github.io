@@ -65,7 +65,7 @@ We're making use of these brilliant bots to aid our work:
         <a href="https://github.com/renovate[bot]">
             <img src="https://avatars.githubusercontent.com/in/2740?v=4" width="100;" alt="renovate[bot]"/>
             <br />
-            <sub><b>Renovate[bot]</b></sub>
+            <sub><b>renovate[bot]</b></sub>
         </a>
     </td></tr>
 </table>
