@@ -121,11 +121,11 @@ const config = {
   ],
 };
 
-if (process.env.podcast) {
+if (process.env.GATSBY_WIT_PODCAST) {
   config.plugins.push({
     resolve: `gatsby-source-rss-feed`,
     options: {
-      url: process.env.podcast,
+      url: process.env.GATSBY_WIT_PODCAST,
       name: `podcast`,
     },
   });
