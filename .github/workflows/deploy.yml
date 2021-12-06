@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install NPM Packages
-        run: npm install
       - run: node --version
       - run: npm --version
+      - name: Install NPM Packages
+        run: npm install
       - name: Use Node.js 14.16.1
         uses: actions/setup-node@v2
         with: 
