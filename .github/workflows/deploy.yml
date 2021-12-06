@@ -19,8 +19,6 @@ jobs:
         uses: actions/setup-node@v2
         with: 
           node-version: 14.16.1
-      - run: node --version
-      - run: npm --version
       - name: Install NPM Packages
         run: npm install
       - name: Create env file
