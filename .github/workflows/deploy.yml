@@ -42,20 +42,16 @@ jobs:
     needs: test
     if: github.ref=='refs/heads/daddy'
     steps:
-      - name: Download hello world file
+      - name: Download artifacts
         uses: actions/download-artifact@v2
         with:
           name: public
           path: public
-      - name: Set up git
-        run: |
-          git config --global user.email "iet@nitk.edu.in"
-          git config --global user.name "IET NITK"
       # Runs a set of commands using the runners shell
-      - name: Deploy script
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.IET_PAT }}
           publish_dir: public
           cname: iet.nitk.ac.in
   contrib-readme-job:
