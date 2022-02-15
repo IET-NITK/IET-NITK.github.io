@@ -51,9 +51,13 @@ jobs:
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.IET_PAT }}
+          personal_token: ${{ secrets.IET_PAT }}
           publish_dir: public
           cname: iet.nitk.ac.in
+          user_name: 'ietnitk[bot]'
+          allow_empty_commit: true
+          user_email: 'ietnitk[bot]@users.noreply.github.com'
+          
   contrib-readme-job:
     runs-on: ubuntu-latest
     name: Contributor Bot
