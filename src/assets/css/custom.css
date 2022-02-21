@@ -163,6 +163,7 @@ main {
   margin-right: auto;
   justify-content: center;
   display: flex;
+  width:100%;
 }
 #myBtn {
   display: none;
