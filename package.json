@@ -93,5 +93,28 @@
     "clean": "gatsby clean",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "lint": "npx eslint . --fix"
+  },
+  "renovate":{
+    "timezone": "Asia/Kolkata",
+    "extends": [
+      "config:base"
+    ],
+    "schedule": [
+      "every weekend"
+    ],
+    "packageRules": [
+      {
+        "matchDepTypes": ["devDependencies"],
+        "addLabels": ["dev"],
+        "prPriority": 5
+        
+      },
+      {
+        "matchDepTypes": ["optionalDependencies"],
+        "addLabels": ["optional"],
+        "prPriority": 4
+      }
+    ]
   }
+  
 }
