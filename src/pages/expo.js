@@ -1,7 +1,6 @@
 import { graphql, Link, navigate } from "gatsby";
 import React, { useEffect } from "react";
 import { lcrs, renderAuthors } from "../elements/helper";
-import Layout from "../layouts/main";
 import PaginationComponent from "../elements/pagination";
 import SearchEngineOps from "../elements/seo";
 import InformationLayout from "../layouts/information";

@@ -1,8 +1,6 @@
 import React from "react";
-import Layout from "../layouts/main";
 import { graphql } from "gatsby";
 import SearchEngineOps from "../elements/seo";
-import Glimpse from "../elements/glimpse";
 import ReactMarkdown from "react-markdown";
 import ArticleLayout from "../layouts/article";
 

@@ -3,7 +3,6 @@ import SearchEngineOps from "../elements/seo";
 import { Link, graphql } from "gatsby";
 import { lcrs, renderAuthors } from "../elements/helper";
 import PaginationComponent from "../elements/pagination";
-import Glimpse from "../elements/glimpse";
 import InformationLayout from "../layouts/information";
 
 const SIG = ({ pathname, data, uri }) => {

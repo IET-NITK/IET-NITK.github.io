@@ -1,7 +1,6 @@
 import { Link, graphql } from "gatsby";
 import React from "react";
 import SearchEngineOps from "../elements/seo";
-import Glimpse from "../elements/glimpse";
 import { lcrs } from "../elements/helper";
 import InformationLayout from "../layouts/information";
 

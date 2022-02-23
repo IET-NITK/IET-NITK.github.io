@@ -3,7 +3,6 @@ import SearchEngineOps from "../elements/seo";
 import { graphql, Link } from "gatsby";
 import { lcrs, renderAuthors } from "../elements/helper";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import Glimpse from "../elements/glimpse";
 import InformationLayout from "../layouts/information";
 const RenderArticles = ({ element, index }) => (
   <div
@@ -84,7 +83,7 @@ const Author = ({ data, location, uri }) => {
   const { memberDetails, memberProjects, memberArticles } = data;
 
   return (
-    <InformationLayout location={location.pathname}>
+    <InformationLayout location={location.pathname} uri={uri}>
       <SearchEngineOps title={`About ${  memberDetails.name}`} />
             <div className="block-content">
               <div className="row">
