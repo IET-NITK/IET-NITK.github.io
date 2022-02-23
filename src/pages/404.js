@@ -1,16 +1,12 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-import Layout from "../components/layout";
-import SearchEngineOps from "../components/seo";
+import SearchEngineOps from "../elements/seo";
+import InformationLayout from "../layouts/information";
 
 const NotFoundPage = ({  location }) => {
   return (
-    <Layout location={location.pathname}>
+    <InformationLayout location={location.pathname}>
       <SearchEngineOps title="404" />
-      <main className="page blog-post-list">
-        <section className="clean-block clean-blog-list dark">
-          <div className="container">
             <div className="block-heading">
               <h2 className="text-primary">Sorry, thats a 404!</h2>
               <p>We do a lot of stuff, but unfortunately not on this page :)</p>
@@ -22,10 +18,7 @@ const NotFoundPage = ({  location }) => {
               // onChange={this.onChangeHandle}
               type="text"
             />
-          </div>
-        </section>
-      </main>
-    </Layout>
+    </InformationLayout>
   );
 };
 

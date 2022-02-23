@@ -4,7 +4,7 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 // import ReactMarkdown from "react-markdown";
 // import Ticker from "react-ticker";
 //eslint-disable-next-line
-import { lcrs } from "../helper"
+import { lcrs } from "./helper"
 
 const TopNavbar = ({ smp, recr, expo }) => {
   //eslint-disable-next-line

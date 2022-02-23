@@ -1,40 +1,32 @@
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../layouts/main";
 import { graphql } from "gatsby";
-import SearchEngineOps from "../components/seo";
-import Glimpse from "../components/partials/glimpse";
+import SearchEngineOps from "../elements/seo";
+import Glimpse from "../elements/glimpse";
 import ReactMarkdown from "react-markdown";
+import ArticleLayout from "../layouts/article";
 
-const BlogArticle = ({ data, uri }) => {
+const EventArticle = ({ data, uri }) => {
   return (
-    <Layout>
+    <ArticleLayout uri={uri}>
       <SearchEngineOps
         title={data.event.title}
       />
-      <main className="page blog-post">
-        <section className="clean-block clean-post dark">
-          <div className="container">
-            <div className="block-content">
-              <div className="post-body">
-                <h3>{data.event.title}</h3>
-                <div className="post-info">
-                  <span>
-                    {data.event.date}
-                  </span>
-                </div>
-                <ReactMarkdown>
-                  {data.event.description}
-                </ReactMarkdown>
-                <span>
-                Last updated on {data.event.updated_at}
-              </span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Glimpse currentRoute={uri} />
-    </Layout>
+      <div className="post-body">
+        <h3>{data.event.title}</h3>
+        <div className="post-info">
+          <span>
+            {data.event.date}
+          </span>
+        </div>
+        <ReactMarkdown>
+          {data.event.description}
+        </ReactMarkdown>
+        <span>
+          Last updated on {data.event.updated_at}
+        </span>
+      </div>
+    </ArticleLayout>
   );
 };
 
@@ -49,4 +41,4 @@ export const postQuery = graphql`
   }
 `;
 
-export default BlogArticle;
+export default EventArticle;

@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../components/layout";
-import SearchEngineOps from "../components/seo";
+import Layout from "../layouts/main";
+import SearchEngineOps from "../elements/seo";
 import { graphql } from "gatsby";
 
 class Contact extends React.Component {
@@ -45,50 +45,7 @@ class Contact extends React.Component {
                 <br />
                 Email: {this.props.data.site.siteMetadata.contactEmail}
               </div>
-              {/* <div className="block-heading">
-                <p>You can also reach us out here:</p>
-              </div>
-              <div className="form-group">
-                <label htmlFor="firstName">Full Name</label>
-                <input
-                  className="form-control form-control-lg"
-                  id="c_name"
-                  name="name"
-                  onChange={this.onChangeHandle}
-                  type="text"
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="c_email">Email Address</label>
-                <input
-                  className="form-control form-control-lg"
-                  id="c_email"
-                  name="email"
-                  onChange={this.onChangeHandle}
-                  type="text"
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="c_message">Message</label>
-                <textarea
-                  className="form-control"
-                  cols="30"
-                  id="c_message"
-                  name="message"
-                  onChange={this.onChangeHandle}
-                  rows="10"
-                />
-              </div>
-              <div className="row" style={{ marginBottom: "2em" }}>
-                <div className="col-12">
-                  <input
-                    className="btn btn-primary btn-lg px-5"
-                    type="submit"
-                    value="Send Message"
-                  />
-                </div>
-              </div>
-         */}
+        
             </form>
           </section>
         </main>

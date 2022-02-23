@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../components/layout";
-import SearchEngineOps from "../components/seo";
+import SearchEngineOps from "../elements/seo";
 import { graphql, Link } from "gatsby";
-import { lcrs, renderAuthors } from "../components/helper";
+import { lcrs, renderAuthors } from "../elements/helper";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import Glimpse from "../components/partials/glimpse";
+import Glimpse from "../elements/glimpse";
+import InformationLayout from "../layouts/information";
 const RenderArticles = ({ element, index }) => (
   <div
     className="clean-blog-post"
@@ -84,11 +84,8 @@ const Author = ({ data, location, uri }) => {
   const { memberDetails, memberProjects, memberArticles } = data;
 
   return (
-    <Layout location={location.pathname}>
+    <InformationLayout location={location.pathname}>
       <SearchEngineOps title={`About ${  memberDetails.name}`} />
-      <main className="page blog-post-list">
-        <section className="clean-block clean-blog-list dark">
-          <div className="container-fluid">
             <div className="block-content">
               <div className="row">
                 <div className="col-lg-3 col-md-3 col-sm-12">
@@ -211,11 +208,7 @@ const Author = ({ data, location, uri }) => {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <Glimpse currentRoute={uri} />
-    </Layout>
+    </InformationLayout>
   );
 };
 

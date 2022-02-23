@@ -1,17 +1,14 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
-import Layout from "../components/layout";
-import SearchEngineOps from "../components/seo";
-import { renderAuthors } from "../components/helper";
-import PaginationComponent from "../components/partials/pagination";
+import SearchEngineOps from "../elements/seo";
+import { renderAuthors } from "../elements/helper";
+import PaginationComponent from "../elements/pagination";
+import InformationLayout from "../layouts/information";
 
 const Blog = ({ data, location }) => {
   return (
-    <Layout location={location.pathname} title={"Main"}>
+    <InformationLayout location={location.pathname} title={"Main"}>
       <SearchEngineOps title="Blog" />
-      <main className="page blog-post-list">
-        <section className="clean-block clean-blog-list dark">
-          <div className="container">
             <div className="block-heading">
               <h2 className="text-primary">Official IET-NITK Blog</h2>
               <p>
@@ -69,10 +66,7 @@ const Blog = ({ data, location }) => {
                 max={5}
               />
             </div>
-          </div>
-        </section>
-      </main>
-    </Layout>
+    </InformationLayout>
   );
 };
 
@@ -101,5 +95,4 @@ export const postQuery = graphql`
     }
   }
 `;
-
 export default Blog;

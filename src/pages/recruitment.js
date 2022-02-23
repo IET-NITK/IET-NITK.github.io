@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import Layout from "../../components/layout";
-import SearchEngineOps from "../../components/seo";
+import Layout from "../layouts/main";
+import SearchEngineOps from "../elements/seo";
 import { graphql, Link, navigate } from "gatsby";
-import { SIGShowcase } from "../../components/SIGShowcase";
+import { SIGShowcase } from "../elements/SIGShowcase";
 import ReactMarkdown from "react-markdown";
 
 const Recruitments = ({ location, data }) => {

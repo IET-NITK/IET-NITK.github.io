@@ -1,16 +1,13 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
-import Layout from "../components/layout";
-import PaginationComponent from "../components/partials/pagination";
-import SearchEngineOps from "../components/seo";
+import PaginationComponent from "../elements/pagination";
+import SearchEngineOps from "../elements/seo";
+import InformationLayout from "../layouts/information";
 
 const Events = ({ data, location }) => {
   return (
-    <Layout location={location.pathname} title={"Main"}>
+    <InformationLayout location={location.pathname} title={"Main"}>
       <SearchEngineOps title="Events" />
-      <main className="page blog-post-list">
-        <section className="clean-block clean-blog-list dark">
-          <div className="container">
             <div className="block-heading">
               <h2 className="text-primary">Events @ IET NITK</h2>
               <p>
@@ -48,10 +45,7 @@ const Events = ({ data, location }) => {
                 noneMessage="No event reports here. Come back soon!"
               />
             </div>
-          </div>
-        </section>
-      </main>
-    </Layout>
+    </InformationLayout>
   );
 };
 

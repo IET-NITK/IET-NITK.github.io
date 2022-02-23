@@ -1,9 +1,9 @@
 import { navigate } from "gatsby";
 import React from "react";
 import { run } from "tripetto-runner-autoscroll";
-import Layout from "../../components/layout";
-import SearchEngineOps from "../../components/seo";
-import "../../assets/css/form.css";
+import Layout from "../../layouts/main";
+import SearchEngineOps from "../../elements/seo";
+// import "../../assets/stylesheets/form.css";
 import Services from "tripetto-services";
 
 const RecruitmentForm = ({ location }) => {

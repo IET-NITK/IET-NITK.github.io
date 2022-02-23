@@ -1,9 +1,9 @@
 import { graphql } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React from "react";
-import Layout from "../components/layout";
-import { MemberDetails } from "../components/partials/member";
-import SearchEngineOps from "../components/seo";
+import Layout from "../layouts/main";
+import { MemberDetails } from "../elements/member";
+import SearchEngineOps from "../elements/seo";
 
 const wit = ({ data, location }) => {
   return (

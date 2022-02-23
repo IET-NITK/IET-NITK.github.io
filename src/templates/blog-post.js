@@ -1,12 +1,11 @@
 import React from "react";
-import Layout from "../components/layout";
 import { graphql, Link } from "gatsby";
 import { Disqus } from "gatsby-plugin-disqus";
-import { niceFormat, renderAuthors } from "../components/helper";
-import SearchEngineOps from "../components/seo";
-import { ShareButtons } from "../components/partials/social";
-import Glimpse from "../components/partials/glimpse";
+import { niceFormat, renderAuthors } from "../elements/helper";
+import SearchEngineOps from "../elements/seo";
+import { ShareButtons } from "../elements/social";
 import ReactMarkdown from "react-markdown";
+import ArticleLayout from "../layouts/article";
 
 const PreviewOther = ({ post, isPrevious }) => {
   if (post)
@@ -32,12 +31,9 @@ const PreviewOther = ({ post, isPrevious }) => {
 
 const BlogArticle = ({ data, location, uri }) => {
   return (
-    <Layout>
+    <ArticleLayout uri={uri}>
       <SearchEngineOps title={niceFormat(data.post.title)} />
-      <main className="page blog-post">
-        <section className="clean-block clean-post dark">
-          <div className="container">
-            <div className="block-content">
+
               {data.post.displayOnBlog === false ? null : (
                 <div
                     className="post-image"
@@ -101,12 +97,7 @@ const BlogArticle = ({ data, location, uri }) => {
                   <PreviewOther post={data.after.nodes[0]} />
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Glimpse currentRoute={uri} />
-    </Layout>
+    </ArticleLayout>
   );
 };
 

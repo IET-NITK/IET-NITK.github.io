@@ -1,19 +1,17 @@
 import { Link, graphql } from "gatsby";
 import React from "react";
-import Layout from "../components/layout";
-import SearchEngineOps from "../components/seo";
-import Glimpse from "../components/partials/glimpse";
-import { lcrs } from "../components/helper";
+import SearchEngineOps from "../elements/seo";
+import Glimpse from "../elements/glimpse";
+import { lcrs } from "../elements/helper";
+import InformationLayout from "../layouts/information";
 
 const Project = ({ data, pathname, uri }) => {
   return (
-    <Layout location={pathname && pathname.location}>
+    <InformationLayout location={pathname && pathname.location} uri={uri}>
       <SearchEngineOps
         title={`${data.projects.title  } @${  data.projects.sig.name}`}
       />
-      <main className="page blog-post-list">
-        <section className="clean-block clean-blog-list dark">
-          <div className="container">
+
             <div className="block-heading row">
               <div className="col-lg-9 col-md-9">
                 <h2 className="text-primary" style={{ paddingTop: "1em" }}>
@@ -82,59 +80,9 @@ const Project = ({ data, pathname, uri }) => {
                   )}
                 </div>
               </div>
-              {/* {data.allFile && data.allFile.nodes.length !== 0 ? (
-                <>
-                  <hr />
-                  <h4>Project Reports</h4>
-                </>
-              ) : null} */}
-
-              {/* {data.allFile &&
-                data.allFile.nodes.map((element, index) => (
-                  <div key={index} className="clean-blog-post">
-                    <div className="row">
-                      <div className="col-lg-12">
-                        <h3>
-                          <Link
-                            className="btn-link"
-                            to={
-                              "/projects/" +
-                              data.projectsYaml.title
-                                .toLowerCase()
-                                .split(" ")
-                                .join("") +
-                              "/" +
-                              element.childMarkdownRemark.frontmatter.title
-                                .toLowerCase()
-                                .split(" ")
-                                .join("")
-                            }
-                          >
-                            {element.childMarkdownRemark.frontmatter.title}
-                          </Link>
-                        </h3>
-                        <div className="info">
-                          <span className="text-muted">
-                            By
-                            {renderAuthors(
-                              element.childMarkdownRemark.frontmatter.authors,
-                              ""
-                            )}
-                            <br />
-                            {moment(element.birthTime).format("Do MMMM, YYYY")}
-                          </span>
-                        </div>
-                        <p> {element.childMarkdownRemark.excerpt} </p>
-                      </div>
-                    </div>
-                  </div>
-                ))} */}
             </div>
-          </div>
-        </section>
-      </main>
-      <Glimpse currentRoute={uri} />
-    </Layout>
+
+    </InformationLayout>
   );
 };
 

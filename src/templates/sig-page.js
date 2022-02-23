@@ -1,19 +1,16 @@
 import React from "react";
-import Layout from "../components/layout";
-import SearchEngineOps from "../components/seo";
+import SearchEngineOps from "../elements/seo";
 import { Link, graphql } from "gatsby";
-import { lcrs, renderAuthors } from "../components/helper";
-import PaginationComponent from "../components/partials/pagination";
-import Glimpse from "../components/partials/glimpse";
+import { lcrs, renderAuthors } from "../elements/helper";
+import PaginationComponent from "../elements/pagination";
+import Glimpse from "../elements/glimpse";
+import InformationLayout from "../layouts/information";
 
 const SIG = ({ pathname, data, uri }) => {
   const { sigDetails, sigProjects } = data;
   return (
-    <Layout location={pathname && pathname.location}>
+    <InformationLayout location={pathname && pathname.location} uri={uri}>
       <SearchEngineOps title={sigDetails.name} />
-      <main className="page blog-post-list">
-        <section className="clean-block clean-blog-list dark">
-          <div className="container">
             <div className="block-heading">
               <Link to={`/sigs/${  sigDetails.name.toLowerCase()}`}>
                 <img
@@ -67,11 +64,7 @@ const SIG = ({ pathname, data, uri }) => {
                 max={10}
               />
             </div>
-          </div>
-        </section>
-      </main>
-      <Glimpse currentRoute={uri} />
-    </Layout>
+    </InformationLayout>
   );
 };
 

@@ -1,17 +1,16 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
-import { lcrs, renderAuthors } from "../components/helper";
-import Layout from "../components/layout";
-import PaginationComponent from "../components/partials/pagination";
-import SearchEngineOps from "../components/seo";
+import { lcrs, renderAuthors } from "../elements/helper";
+import Layout from "../layouts/main";
+import PaginationComponent from "../elements/pagination";
+import SearchEngineOps from "../elements/seo";
+import InformationLayout from "../layouts/information";
 
 const Projects = ({ data, location }) => {
   return (
-    <Layout location={location.pathname} title={"Main"}>
+    <InformationLayout location={location.pathname} title={"Main"}>
       <SearchEngineOps title="Projects" />
-      <main className="page blog-post-list">
-        <section className="clean-block clean-blog-list dark">
-          <div className="container">
+      
             <div className="block-heading">
               <h2 className="text-primary">Projects @ IET NITK</h2>
               <p>
@@ -60,10 +59,8 @@ const Projects = ({ data, location }) => {
                 max={10}
               />
             </div>
-          </div>
-        </section>
-      </main>
-    </Layout>
+
+    </InformationLayout>
   );
 };
 

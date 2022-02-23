@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
-import { lcrs, renderAuthors } from "../helper";
+import { lcrs, renderAuthors } from "./helper";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css";
-import lodash from "lodash";
+import { sampleSize, truncate } from "lodash";
 
 // eslint-disable-next-line
 function useWindowSize() {
@@ -29,7 +29,7 @@ function useWindowSize() {
 }
 
 const getRandomThings = (arr, num, currentRoute) => {
-  return lodash.sampleSize(
+  return sampleSize(
     arr.filter(
       (element) =>
         lcrs(element.name) !== currentRoute &&
@@ -39,6 +39,7 @@ const getRandomThings = (arr, num, currentRoute) => {
     num
   );
 };
+
 export const Glimpse = ({ currentRoute }) => {
   if (typeof window === "undefined") {
     return <p>Server Render</p>;
@@ -170,7 +171,7 @@ export const Glimpse = ({ currentRoute }) => {
                               </h6>
                               <div className="card-text ">
                                 {id === "Events"
-                                  ? lodash.truncate(element.excerpt, {
+                                  ? truncate(element.excerpt, {
                                       length: 200,
                                     })
                                   : null}

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Layout from "../components/layout";
-import SearchEngineOps from "../components/seo";
+import Layout from "../layouts/main";
+import SearchEngineOps from "../elements/seo";
 import { graphql } from "gatsby";
 import imgBeach from "../assets/img/beach.jpg";
 import { Nav, NavDropdown } from "react-bootstrap";
-import { MemberDetails } from "../components/partials/member";
+import { MemberDetails } from "../elements/member";
 
 const KEY_ALUMNI = "Alumni";
 const KEY_EXEC_MEMBERS = "Executive Members 2021";

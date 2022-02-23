@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import Layout from "../../components/layout";
-import SearchEngineOps from "../../components/seo";
-import { lcrs, newrenderAuthors } from "../../components/helper";
+import Layout from "../layouts/main";
+import SearchEngineOps from "../elements/seo";
+import { lcrs, newrenderAuthors } from "../elements/helper";
 import { Link, graphql, navigate } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
@@ -16,9 +16,9 @@ const SMP = ({ data, location }) => {
 
   return (
     <Layout location={location.pathname}>
+    <SearchEngineOps title={`SMP ${  new Date().getFullYear()}`} />
       {data.smp_basic.open !== true ? null : (
         <>
-          <SearchEngineOps title={`SMP ${  new Date().getFullYear()}`} />
           <main className="page">
             <section className="clean-block about-us">
               <div className="container">
