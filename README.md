@@ -32,7 +32,7 @@ Project README taken from https://github.com/othneildrew/Best-README-Template, w
   <h3 align="center">Official IET NITK Website</h3>
 
   <p align="center">
-    Our group has grown exponentially over the years, and to keep a track of and spread our activities, we have built this website. 
+    One place to explore everything built by IET NITK 💪✨✨
     <br />
     <a href="https://github.com/IET-NITK/IET-NITK.github.io/wiki"><strong>Explore the docs »</strong></a>
     <br />
@@ -75,7 +75,7 @@ Project README taken from https://github.com/othneildrew/Best-README-Template, w
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+Our group has grown exponentially over the years, and to keep a track of and spread our activities, we have built this website. 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
