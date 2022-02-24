@@ -165,26 +165,6 @@ main {
   display: flex;
   width:100%;
 }
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 50px;
-  right: 0px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #803391;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  -webkit-transition: width 1.5s; /* For Safari 3.1 to 6.0 */
-  transition: width 1.5s;
-}
-
-#myBtn:hover {
-  background-color: #ee7520;
-}
 
 a {
   outline: none;

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Layout from "../layouts/main";
+import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
 import { lcrs, newrenderAuthors } from "../elements/helper";
 import { Link, graphql, navigate } from "gatsby";

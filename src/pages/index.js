@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import Layout from "../layouts/main";
+import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
 import ietUpview from "../assets/img/iet-upview.jpg";
 import IconLink from "../assets/img/link.svg";

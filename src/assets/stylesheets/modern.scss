@@ -1,0 +1,399 @@
+@import "_theme";
+
+body {
+  margin: 0;
+  font-family: $font-family-sans-serif !important;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+/* bootstrap class */
+.btn-sm {
+  border-radius: 0;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #fff !important;
+}
+#navbar {
+  z-index: 100000000;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+
+.clean-navbar {
+	box-shadow: 0px 0px 32px 0px rgba(221, 230, 237, 0.4);
+	.navbar-nav {
+		.nav-link {
+			font-weight: 600;
+			padding-right: 2rem !important;
+			font-size: 0.8rem;
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+
+.article-list {
+  color: #313437;
+  background-color: #fff;
+  p {
+    color: #7d8285;
+  }
+  h2 {
+    margin-bottom: 1.2rem !important;
+    padding-top: 40px;
+    color: inherit;
+  }
+  .intro {
+    font-size: 16px;
+    max-width: 500px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .articles {
+    padding-bottom: 40px;
+  }
+  .item {
+    padding-top: 50px;
+    min-height: 425px;
+    text-align: center;
+    .name {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 20px;
+      color: inherit;
+    }
+    .description {
+      font-size: 14px;
+      margin-top: 15px;
+      margin-bottom: 0;
+    }
+    .action {
+      font-size: 24px;
+      width: 24px;
+      margin: 22px auto 0;
+      line-height: 1;
+      display: block;
+      color: #4f86c3;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+      text-decoration: none;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .article-list {
+    h2 {
+      margin-bottom: 25px;
+      padding-top: 25px;
+      font-size: 24px;
+    }
+  }
+}
+
+.section-heading {
+  margin-top: 50px;
+  padding: 10px 20px !important;
+  border-left: 2px solid;
+}
+
+.section-description {
+	a {
+		display: block;
+		max-width: 250px;
+		margin-top: 20px;
+		color: #2e2e2e;
+		&:hover {
+			text-decoration: none;
+			opacity: 0.5;
+		}
+	}
+}
+
+
+.clean-block {
+	padding-bottom: 50px;
+	.block-heading {
+		padding-top: 50px;
+		margin-bottom: 40px;
+		text-align: center;
+		p {
+			text-align: center;
+			max-width: 420px;
+			margin: auto;
+			opacity: 0.7;
+		}
+		h1 {
+			margin-bottom: 1.2rem;
+		}
+		h2 {
+			margin-bottom: 1.2rem;
+		}
+		h3 {
+			margin-bottom: 1.2rem;
+		}
+	}
+	.block-content {
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+		background-color: #fff;
+		padding: 40px;
+	}
+	.content {
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+		background-color: #fff;
+	}
+}
+
+.clean-block.dark {
+	background-color: #f6f6f6;
+	.block-heading {
+		p {
+			opacity: 0.8;
+		}
+	}
+}
+
+.clean-block.blue {
+	background-color: map-get($map: $theme-colors, $key: "primary");
+	color: #fff;
+	input {
+		border: none;
+	}
+}
+
+.clean-block.clean-hero {
+	position: relative;
+	text-align: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding-bottom: 0;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: currentColor;
+		z-index: 1;
+	}
+	.text {
+		max-width: 640px;
+		color: #fff;
+		z-index: 2;
+		padding: 40px 15px;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+	}
+	h2 {
+		margin-bottom: 30px;
+	}
+	p {
+		font-size: 18px;
+		margin-bottom: 30px;
+	}
+}
+
+
+
+.clean-blog-post {
+	padding-bottom: 70px;
+	h3 {
+		font-size: 1.3em;
+		font-weight: 600;
+		padding-top: 17px;
+	}
+	p {
+		font-size: 0.95em;
+	}
+	.info {
+		padding: 5px 0 12px;
+		font-size: 0.9em;
+		span {
+			&:not(:last-child) {
+				margin-right: 7px;
+			}
+		}
+		a {
+			color: inherit;
+		}
+	}
+}
+
+.clean-pricing-item {
+	.heading {
+		text-align: center;
+		padding-bottom: 10px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	background-color: #fff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+	border-top: 2px solid map-get($map: $theme-colors, $key: "primary");
+	padding: 30px;
+	overflow: hidden;
+	position: relative;
+	button {
+		font-weight: 600;
+	}
+	p {
+		text-align: center;
+		margin-top: 20px;
+		opacity: 0.7;
+	}
+}
+
+.clean-block.clean-pricing {
+	.col-md-5 {
+		&:not(:last-child) {
+			.item {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+
+/*Blog article*/
+.clean-block.clean-post {
+  padding-top: 100px;
+}
+.clean-block.clean-post .block-content {
+  padding: 0;
+}
+.clean-block.clean-post .post-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.clean-block.clean-post .post-body {
+  padding: 70px 50px;
+  font-size: 0.9em;
+}
+.clean-block.clean-post .post-body h3 {
+  font-weight: 600;
+}
+.clean-block.clean-post .post-body p {
+  margin-bottom: 30px;
+}
+.clean-block.clean-post .post-body .post-info {
+  padding: 20px 0;
+}
+.clean-block.clean-post .post-body .post-info span {
+  color: map-get($map: $theme-colors, $key: "primary");
+}
+.clean-block.clean-post .post-body .post-info span:not(:last-child) {
+  margin-right: 40px;
+}
+.clean-block.clean-post .post-body h4 {
+  font-weight: 600;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.clean-card {
+  background-color: white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 0 !important;
+}
+
+.clean-blog-card {
+	background-color: white;
+	box-shadow: 0px 0px 32px 0px rgba(221, 230, 237, 0.4);
+	border: none;
+	border-radius: 0 !important;
+	text-align: left;
+	height: 500px;
+	img {
+		display: block;
+		width: 100%;
+		height: 18rem;
+		object-fit: cover;
+		border-radius: 0;
+	}
+	.card-body {
+		h4 {
+			font-weight: bold;
+		}
+	}
+}
+
+// TODO Segregate to index.js
+.clean-blog-footer {
+	background: none;
+	border: none;
+	padding: 20px 10px;
+	a {
+		text-transform: uppercase;
+		margin: 5px 10px;
+		padding: 10px 20px;
+		font-size: 0.8rem;
+		letter-spacing: 1.5px;
+		border: 1px solid map-get($map: $theme-colors, $key: "primary");
+		&:hover {
+			background: map-get($map: $theme-colors, $key: "primary");
+			color: #fff;
+		}
+	}
+}
+
+
+// TODO Segregate to helper.js
+.project-author-name {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+article {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+p {
+  flex: 1;
+  line-height: 1.4;
+}
+span {
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 10px 0;
+}
+
+/* ------------------------------Footer------------------------------------------ */
+
+/* -------------------------------- XNavbar --------------------------------------- */
+
+.topbar:hover {
+  color: #803393;
+}

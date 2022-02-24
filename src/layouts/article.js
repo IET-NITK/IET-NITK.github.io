@@ -1,6 +1,6 @@
 import React from "react";
 import Glimpse from "../elements/glimpse";
-import Layout from "./main";
+import Layout from "./main/main";
 
 const ArticleLayout = ({ location, children, showFooter = true, uri }) => {
   return (

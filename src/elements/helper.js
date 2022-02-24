@@ -34,7 +34,7 @@ export const renderAuthorsName = (arr) =>
         style={{ display: "inline-block" }}
         to={`/members/${  lcrs(name)}`}
       >
-        <span className="project-auther-name"> {name} </span>
+        <span className="project-author-name"> {name} </span>
       </Link>
       {""}
     </>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from "../layouts/main";
+import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
 import { graphql } from "gatsby";
 import imgBeach from "../assets/img/beach.jpg";

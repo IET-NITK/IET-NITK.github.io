@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../layouts/main";
+import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
 import { graphql } from "gatsby";
 
