@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
-import ietUpview from "../assets/img/iet-upview.jpg";
+import { StaticImage } from "gatsby-plugin-image";
 import IconLink from "../assets/img/link.svg";
 import {
   getRandom,
@@ -56,9 +56,11 @@ const MainPage = ({ location, data }) => {
             </div>
             <div className="row">
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <img
+                <StaticImage
                   alt="IET"
-                  src={ietUpview}
+                  placeholder="blurred"
+
+      src={"../assets/img/iet-upview.jpg"}
                   style={{
                     width: "100%",
                     height: "auto",

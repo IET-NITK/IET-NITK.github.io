@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Layout from "../layouts/main/main";
+import { StaticImage } from "gatsby-plugin-image";
+
 import SearchEngineOps from "../elements/seo";
 import { graphql } from "gatsby";
-import imgBeach from "../assets/img/beach.jpg";
 import { Nav, NavDropdown } from "react-bootstrap";
 import { MemberDetails } from "../elements/member";
 
@@ -37,9 +38,10 @@ const About = ({ location, data }) => {
               <div className="card-text">
                 <div className="row justify-content-center">
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <img
+                    <StaticImage
                       alt=""
-                      src={imgBeach}
+                      placeholder=""
+                      src={"../assets/img/beach.jpg"}
                       style={{ width: "100%", height: "auto" }}
                     />
                   </div>

@@ -67,6 +67,7 @@ const config = {
     },
     `gatsby-plugin-react-helmet`,
 
+    `gatsby-plugin-image`,
     {
       resolve: "gatsby-plugin-rollbar",
       options: {
