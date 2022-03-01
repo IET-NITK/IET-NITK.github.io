@@ -58,9 +58,8 @@ const MainPage = ({ location, data }) => {
               <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <StaticImage
                   alt="IET"
-                  placeholder="blurred"
-
-      src={"../assets/img/iet-upview.jpg"}
+                  placeholder="tracedSVG"
+                  src={"../assets/img/iet-upview.jpg"}
                   style={{
                     width: "100%",
                     height: "auto",
@@ -70,7 +69,7 @@ const MainPage = ({ location, data }) => {
               </div>
               <ReactMarkdown
                 className="col-lg-6 col-md-6 col-sm-12 col-xs-12"
-                
+
               >
                 {data.about.main}
               </ReactMarkdown>
@@ -104,7 +103,7 @@ const MainPage = ({ location, data }) => {
           </div>
           <div className="row" style={{ paddingTop: "2em" }}>
             {data.blog.nodes.map((element, index) => {
-              
+
               return (
                 <div className="col-sm-6 col-md-4 item h-100" key={index}>
                   <div className="card clean-blog-card">

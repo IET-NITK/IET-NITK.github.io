@@ -25,6 +25,9 @@ const config = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
+              withWebp: true,
+              withAvif: true,
+              tracedSVG: true
             },
           },
           {
@@ -68,18 +71,6 @@ const config = {
     `gatsby-plugin-react-helmet`,
 
     `gatsby-plugin-image`,
-    {
-      resolve: "gatsby-plugin-rollbar",
-      options: {
-        accessToken: "3aee484e0ba14579aaec98a9ef64224c",
-        // For all configuration options, see https://docs.rollbar.com/docs/rollbarjs-configuration-reference
-        captureUncaught: true,
-        captureUnhandledRejections: true,
-        payload: {
-          environment: "production",
-        },
-      },
-    },
     {
       resolve: "gatsby-source-strapi",
       options: {

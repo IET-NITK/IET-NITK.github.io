@@ -40,7 +40,7 @@ const About = ({ location, data }) => {
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <StaticImage
                       alt="Random beach picture"
-                      placeholder=""
+                      placeholder="tracedSVG"
                       src={"../assets/img/beach.jpg"}
                       style={{ width: "100%", height: "auto" }}
                     />

@@ -2,8 +2,8 @@ import React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
 import { lcrs, renderAuthors } from "./helper";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css";
-import { sampleSize, truncate } from "lodash";
+import sampleSize from "lodash/sampleSize";
+import truncate from "lodash/truncate";
 
 // eslint-disable-next-line
 function useWindowSize() {
@@ -105,7 +105,7 @@ export const Glimpse = ({ currentRoute }) => {
                 <div className="col-lg-3 col-md-4  mt-5 mb-5">
                   {getRandomThings(sigs.nodes, 1, currentRoute).map((element, index) => (
                     <Link
-                      class="card bg-primary text-white text-decoration-none"
+                      className="card bg-primary text-white text-decoration-none"
                       key={index}
                       style={{ height: "15em" }}
                       to={`/sigs/${  lcrs(element.name)}`}
@@ -114,7 +114,7 @@ export const Glimpse = ({ currentRoute }) => {
                         <h5 className="card-title">{element.name}</h5>
                         <p className="card-text">{element.description}</p>
                       </div>
-                      {/* <Link to="/" class="card-footer text-muted">
+                      {/* <Link to="/" className="card-footer text-muted">
                       2 days ago
                     </Link> */}
                     </Link>
@@ -151,7 +151,7 @@ export const Glimpse = ({ currentRoute }) => {
                             style={{ height: "15em" }}
                           >
                             <Link
-                              class="card-body text-white text-decoration-none"
+                              className="card-body text-white text-decoration-none"
                               to={
                                 id === "Projects"
                                   ? `/projects/${ 

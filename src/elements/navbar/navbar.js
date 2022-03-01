@@ -109,6 +109,7 @@ export const XNavbar = () => {
               <Navbar.Brand className="navbar-brand logo" href="/">
                 <StaticImage
                   alt="Institute of Engineering and Technology, NITK Surathkal Division"
+                  placeholder="blurred"
                   src="../../assets/img/logo-wide-1.png"
                   width="63"
                 />

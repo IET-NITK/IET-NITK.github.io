@@ -86,5 +86,5 @@ export function getRandom(arr, num) {
 
 export const commonMdProps={
   h1: "h3",
-  h2: "h3" 
-}
+  h2: "h3"
+};
