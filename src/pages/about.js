@@ -39,7 +39,7 @@ const About = ({ location, data }) => {
                 <div className="row justify-content-center">
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <StaticImage
-                      alt=""
+                      alt="Random beach picture"
                       placeholder=""
                       src={"../assets/img/beach.jpg"}
                       style={{ width: "100%", height: "auto" }}

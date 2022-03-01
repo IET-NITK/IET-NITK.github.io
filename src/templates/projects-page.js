@@ -3,6 +3,7 @@ import React from "react";
 import SearchEngineOps from "../elements/seo";
 import { lcrs } from "../elements/helper";
 import InformationLayout from "../layouts/information";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const Project = ({ data, pathname, uri }) => {
   return (
@@ -22,10 +23,10 @@ const Project = ({ data, pathname, uri }) => {
               <div className="col-lg-3 col-md-3 text-right">
                 <Link to={`/sigs/${  data.projects.sig.name.toLowerCase()}`}>
                   {data.projects.sig.logo ? (
-                    <img
+                    <GatsbyImage
                       alt={data.projects.sig.name}
                       className="sig-logo"
-                      src={data.projects.sig.logo.localFile.childImageSharp.fixed.srcWebp}
+                      image={getImage(data.projects.sig.logo.localFile)}
                       style={{ maxWidth: "200px" }}
                     />
                   ) : null}
@@ -96,9 +97,8 @@ export const postQuery = graphql`
         logo {
           localFile{
             childImageSharp {
-              fixed {
-                srcWebp
-              }
+              gatsbyImageData(width: 200,placeholder: BLURRED)
+   
             }
            }
         }

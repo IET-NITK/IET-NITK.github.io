@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import SearchEngineOps from "../elements/seo";
 import ReactMarkdown from "react-markdown";
 import ArticleLayout from "../layouts/article";
+import { commonMdProps } from "../elements/helper";
 
 const EventArticle = ({ data, uri }) => {
   return (
@@ -17,7 +18,7 @@ const EventArticle = ({ data, uri }) => {
             {data.event.date}
           </span>
         </div>
-        <ReactMarkdown>
+        <ReactMarkdown  components={commonMdProps}>
           {data.event.description}
         </ReactMarkdown>
         <span>

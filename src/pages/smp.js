@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
-import { lcrs, newrenderAuthors } from "../elements/helper";
+import { lcrs, newrenderAuthors, commonMdProps } from "../elements/helper";
 import { Link, graphql, navigate } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 
 const SMP = ({ data, location }) => {
   const { smp } = data;
@@ -70,10 +72,10 @@ const SMP = ({ data, location }) => {
 
                     <div className="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
                       <Link to={`/sigs/${  lcrs(smpGroup.fieldValue)}`}>
-                        <img
+                        <GatsbyImage
                           alt={smpGroup.fieldValue}
                           className="mobile-invisible smp-logo"
-                          src={smpGroup.nodes[0].sigx.logox.localFile.publicURL}
+                          image={getImage(smpGroup.nodes[0].sigx.logox.localFile)}
                           style={{ maxWidth: "150px", paddingTop: "2em" }}
                         />
                       </Link>
@@ -115,7 +117,7 @@ const SMP = ({ data, location }) => {
                 </div>
 
                 <div className="block-content">
-                  <ReactMarkdown>{data.smp_basic.faq}</ReactMarkdown>
+                  <ReactMarkdown  components={commonMdProps}>{data.smp_basic.faq}</ReactMarkdown>
                   <p className="text-primary mt-5">
                     Please stay tuned to our social media pages for updates.
                   </p>
@@ -145,7 +147,9 @@ export const postQuery = graphql`
           sigx: SIG {
             logox: logo {
               localFile {
-                publicURL
+                childImageSharp {
+                  gatsbyImageData(width: 150, placeholder: BLURRED)
+                }
               }
             }
           }

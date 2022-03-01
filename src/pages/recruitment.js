@@ -4,6 +4,7 @@ import SearchEngineOps from "../elements/seo";
 import { graphql, Link, navigate } from "gatsby";
 import { SIGShowcase } from "../elements/SIGShowcase";
 import ReactMarkdown from "react-markdown";
+import { commonMdProps } from "../elements/helper";
 
 const Recruitments = ({ location, data }) => {
   useEffect(() => {
@@ -48,7 +49,7 @@ const Recruitments = ({ location, data }) => {
 
             <div className="block-content">
               <div className="faq-item">
-                <ReactMarkdown skipHtml>{data.rec_questions.FAQ}</ReactMarkdown>
+                <ReactMarkdown  components={commonMdProps}>{data.rec_questions.FAQ}</ReactMarkdown>
               </div>
             </div>
           </div>

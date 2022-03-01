@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import IconLink from "../assets/img/link.svg";
 import {
   getRandom,
@@ -70,7 +70,7 @@ const MainPage = ({ location, data }) => {
               </div>
               <ReactMarkdown
                 className="col-lg-6 col-md-6 col-sm-12 col-xs-12"
-                skipHtml
+                
               >
                 {data.about.main}
               </ReactMarkdown>
@@ -104,19 +104,14 @@ const MainPage = ({ location, data }) => {
           </div>
           <div className="row" style={{ paddingTop: "2em" }}>
             {data.blog.nodes.map((element, index) => {
-              let imagelink =
-                element.header.localFile.childImageSharp &&
-                element.header.localFile.childImageSharp.fixed.srcWebp;
-              if (!imagelink) {
-                imagelink = element.header.localFile.publicURL;
-              }
+              
               return (
                 <div className="col-sm-6 col-md-4 item h-100" key={index}>
                   <div className="card clean-blog-card">
-                    <img
+                    <GatsbyImage
                       alt={element.title}
                       className="card-img-top w-100 d-block"
-                      src={imagelink}
+                      image={getImage(element.header.localFile)}
                     />
                     <div className="card-body">
                       <h4 className="card-title">{element.title}</h4>
@@ -289,11 +284,8 @@ export const postQuery = graphql`
         route
         header {
           localFile {
-            publicURL
             childImageSharp {
-              fixed {
-                srcWebp
-              }
+              gatsbyImageData(height: 288, placeholder: BLURRED)
             }
           }
         }

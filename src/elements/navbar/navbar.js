@@ -4,7 +4,7 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 // import ReactMarkdown from "react-markdown";
 // import Ticker from "react-ticker";
 //eslint-disable-next-line
-import { lcrs } from "../helper"
+import { StaticImage } from "gatsby-plugin-image"
 
 const TopNavbar = ({ smp, recr, expo }) => {
   //eslint-disable-next-line
@@ -76,11 +76,6 @@ export const XNavbar = () => {
           about: strapiAboutClub {
             message: topnavbar_marquee
           }
-          imageSharp(fixed: { originalName: { eq: "logo-wide-1.png" } }) {
-            fixed {
-              srcWebp
-            }
-          }
           smpOpen: strapiSummerPrograms {
             open
           }
@@ -98,7 +93,6 @@ export const XNavbar = () => {
         }
       `}
       render={({
-        imageSharp,
         smpOpen,
         recruitmentOpen,
         expoOpen,
@@ -113,10 +107,10 @@ export const XNavbar = () => {
           <Navbar bg="white" className=" clean-navbar" expand="lg">
             <div className="container">
               <Navbar.Brand className="navbar-brand logo" href="/">
-                <img
+                <StaticImage
                   alt="Institute of Engineering and Technology, NITK Surathkal Division"
-                  src={imageSharp.fixed.srcWebp}
-                  style={{ height: "auto", maxHeight: "2.5em" }}
+                  src="../../assets/img/logo-wide-1.png"
+                  width="63"
                 />
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />

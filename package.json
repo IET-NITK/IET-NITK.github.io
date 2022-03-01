@@ -17,7 +17,6 @@
     "bootstrap": "4.6.1",
     "font-awesome": "4.7.0",
     "gatsby": "4.8.0",
-    "gatsby-image": "3.11.0",
     "gatsby-plugin-disqus": "1.2.3",
     "gatsby-plugin-google-analytics": "4.8.0",
     "gatsby-plugin-image": "^2.8.1",

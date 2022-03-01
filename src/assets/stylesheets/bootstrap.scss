@@ -6,22 +6,37 @@
 @import "../../../node_modules/bootstrap/scss/mixins";
 // import customization
 
-
-
-
-
-
 $enable-gradients: true;
 
-$pagination-active-bg: map-get($map: $theme-colors, $key: "primary");
-$pagination-color: map-get($map: $theme-colors, $key: "primary");
-$pagination-hover-color: map-get($map: $theme-colors, $key: "primary");
-$dropdown-link-color: map-get($map: $theme-colors, $key: "primary");
-$link-color: map-get($map: $theme-colors, $key: "primary");
-$dropdown-link-active-bg: map-get($map: $theme-colors, $key: "primary");
-$component-active-bg: map-get($map: $theme-colors, $key: "primary");
+$pagination-active-bg: map-get(
+    $map: $theme-colors,
+    $key: "primary",
+);
+$pagination-color: map-get(
+    $map: $theme-colors,
+    $key: "primary",
+);
+$pagination-hover-color: map-get(
+    $map: $theme-colors,
+    $key: "primary",
+);
+$dropdown-link-color: map-get(
+    $map: $theme-colors,
+    $key: "primary",
+);
+$link-color: map-get(
+    $map: $theme-colors,
+    $key: "primary",
+);
+$dropdown-link-active-bg: map-get(
+    $map: $theme-colors,
+    $key: "primary",
+);
+$component-active-bg: map-get(
+    $map: $theme-colors,
+    $key: "primary",
+);
 // $pagination-color: #803391;
-
 
 // finally, import Bootstrap to set the changes!
 @import "../../../node_modules/bootstrap/scss/bootstrap";

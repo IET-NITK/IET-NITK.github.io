@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import { lcrs, renderAuthors } from "../elements/helper";
 import PaginationComponent from "../elements/pagination";
 import InformationLayout from "../layouts/information";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const SIG = ({ pathname, data, uri }) => {
   const { sigDetails, sigProjects } = data;
@@ -12,10 +13,10 @@ const SIG = ({ pathname, data, uri }) => {
       <SearchEngineOps title={sigDetails.name} />
             <div className="block-heading">
               <Link to={`/sigs/${  sigDetails.name.toLowerCase()}`}>
-                <img
+                <GatsbyImage
                   alt={sigDetails.name}
                   className="sig-logo"
-                  src={sigDetails.logo.localFile.childImageSharp.fixed.srcWebp}
+                  image={getImage(sigDetails.logo.localFile)}
                   style={{ maxWidth: "200px" }}
                 />
               </Link>
@@ -90,9 +91,8 @@ export const postQuery = graphql`
       logo {
         localFile {
           childImageSharp {
-            fixed {
-              srcWebp
-            }
+            gatsbyImageData(width: 200, placeholder: BLURRED)
+          
           }
         }
       }

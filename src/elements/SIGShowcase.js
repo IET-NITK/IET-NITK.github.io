@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import { lcrs } from "./helper";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 export const SIGShowcase = ({ hideLink }) => {
   return (
@@ -16,9 +17,8 @@ export const SIGShowcase = ({ hideLink }) => {
               logo {
                 localFile {
                   childImageSharp {
-                    fixed {
-                      srcWebp
-                    }
+                    gatsbyImageData(width: 150, placeholder: BLURRED)
+                    
                   }
                 }
               }
@@ -36,9 +36,9 @@ export const SIGShowcase = ({ hideLink }) => {
             >
               <div className="clean-pricing-item" style={{ height: "100%" }}>
                 <div style={{ width: "100%" }}>
-                  <img
-                    alt=""
-                    src={sig.logo.localFile.childImageSharp.fixed.srcWebp}
+                  <GatsbyImage
+                    alt={sig.name}
+                    image={getImage(sig.logo.localFile)}
                     style={{
                       width: "150px",
                       height: "auto!important",
