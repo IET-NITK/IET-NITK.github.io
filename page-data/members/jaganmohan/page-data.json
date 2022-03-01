@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/jaganmohan",
     "result": {"data":{"memberDetails":{"name":"Jagan Mohan","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Smart Aid for Blind","description":null,"sig":{"name":"Rovisp"},"url":null,"authors":[{"name":"Jagan Mohan"},{"name":"Pratigya Ranjan"},{"name":"Ravi Gocher"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Jagan Mohan","sig":null,"date":"2021-05-08T06:02:43.167Z"}},
-    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

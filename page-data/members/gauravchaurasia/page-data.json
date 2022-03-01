@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/gauravchaurasia",
     "result": {"data":{"memberDetails":{"name":"Gaurav Chaurasia","position":"Cipher lead","image":"https://drive.google.com/open?id=1Gpx2D1ud6rvSeFrhJ_xD6l345P3LSKlP","passoutYr":2022,"contacts":{"email":"gaurav.181cv155@nitk.edu.in","facebook":"gkc.fb","github":"gaurav-chaurasia","linkedin":"gaurav-chaurasia"}},"memberProjects":{"nodes":[{"title":"Experiencing Homes in VR","description":"A computer vision and deep learning based project that enables the user to try on spectacles, watches and other accessories virtually.","sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Rhevanth M"},{"name":"Marmik Mundada"},{"name":"Krishna Poojitha Vantakula"},{"name":"Verupaka Yashwanth Reddy"},{"name":"Gaurav Chaurasia"},{"name":"Sowmya G"},{"name":"Sachin Pandey"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Gaurav Chaurasia","sig":null,"date":"2021-05-08T06:39:51.244Z"}},
-    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/bhavithreddy",
     "result": {"data":{"memberDetails":{"name":"Bhavith Reddy","position":"Executive Member","image":null,"passoutYr":2020,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Bhavith Reddy","sig":null,"date":"2021-04-29T13:15:42.024Z"}},
-    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

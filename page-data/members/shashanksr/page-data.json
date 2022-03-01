@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/shashanksr",
     "result": {"data":{"memberDetails":{"name":"Shashank S R","position":"Medium lead","image":null,"passoutYr":2022,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Shashank S R","sig":null,"date":"2021-05-08T06:30:13.872Z"}},
-    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

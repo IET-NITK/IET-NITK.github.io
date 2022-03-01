@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/vmadhankumar",
     "result": {"data":{"memberDetails":{"name":"V Madhan Kumar","position":"Assistant Webmaster","image":"https://drive.google.com/open?id=1Cbe5NEOKEYeU4X9GhH9GINNhYaXtFtbY","passoutYr":2023,"contacts":{"email":"madhankumar.191cs260@nitk.edu.in","facebook":null,"github":"Madhan-Kumar22","linkedin":"madhan-kumar-v-0b0a07131"}},"memberProjects":{"nodes":[{"title":"Virtual Try-On","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/aakashabhi/Virtual-Try-On","authors":[{"name":"V Madhan Kumar"},{"name":"Amal Majunu Vidya"},{"name":"M.T.Aakash Chandra"}]}]},"memberArticles":{"nodes":[{"title":"The Art of Slow Texting","authors":[{"name":"V Madhan Kumar"}],"excerpt":"A few weeks ago, I was texting my friend, who would take hours to respond ...","date":"February 28th, 2021","route":"slow-texting"}]}},"pageContext":{"pathSlug":"V Madhan Kumar","sig":null,"date":"2021-05-08T06:35:25.578Z"}},
-    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

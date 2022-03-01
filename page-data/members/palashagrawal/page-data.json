@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/members/palashagrawal",
     "result": {"data":{"memberDetails":{"name":"Palash Agrawal","position":"Co-Convenor","image":null,"passoutYr":2021,"contacts":{"email":"agrawalpalash643@gmail.com","facebook":null,"github":null,"linkedin":"linkedin.com/in/palash-agrawal-016"}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Palash Agrawal","sig":null,"date":"2021-05-08T05:50:14.408Z"}},
-    "staticQueryHashes": ["1289866192","1681770253","3546218355","362689041"]}
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
