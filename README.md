@@ -107,9 +107,9 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
+- Node v14
 ### Installation
-
+- As with any NodeJS project, run `npm install`.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>

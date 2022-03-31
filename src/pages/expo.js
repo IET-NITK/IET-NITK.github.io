@@ -1,4 +1,5 @@
 import { graphql, Link, navigate } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React, { useEffect } from "react";
 import { lcrs, renderAuthors } from "../elements/helper";
 import PaginationComponent from "../elements/pagination";
@@ -16,10 +17,19 @@ const Expo = ({ data, location }) => {
       <SearchEngineOps title={`Expo ${new Date().getFullYear()}`} />
 
       <div className="block-heading">
-        <h2 className="text-primary">IET NITK @ Expo {new Date().getFullYear()}</h2>
+        <OutboundLink
+          className="avengers h6"
+          href="https://www.youtube.com/watch?v=W54Y0cn78NY"
+        >
+          I Love you 3000
+        </OutboundLink>
+        <h2 className="text-primary">
+          IET NITK @ Expo {new Date().getFullYear()}
+        </h2>
         <p>
-          Expo '{String(new Date().getFullYear()).slice(2)} is a club-wide project showcase showing the best of the
-          products made by NITK. Here's some of ours.
+          Expo '{String(new Date().getFullYear()).slice(2)} is a club-wide
+          project showcase showing the best of the products made by NITK. Here's
+          some of ours.
         </p>
       </div>
       <div className="block-content">
@@ -47,8 +57,7 @@ const Expo = ({ data, location }) => {
               {element.url ? (
                 <Link
                   className="btn btn-outline-primary btn-sm"
-                  to={
-                    `/projects/${lcrs(element.title)}`}
+                  to={`/projects/${lcrs(element.title)}`}
                   type="button"
                 >
                   Read More
@@ -60,7 +69,6 @@ const Expo = ({ data, location }) => {
           max={10}
         />
       </div>
-
     </InformationLayout>
   );
 };
@@ -70,7 +78,7 @@ export const postQuery = graphql`
     expo: strapiExpo {
       open
     }
-    projects:   allStrapiProjects(sort: {fields: title, order: DESC}) {
+    projects: allStrapiProjects(sort: { fields: title, order: DESC }) {
       nodes {
         title
         description

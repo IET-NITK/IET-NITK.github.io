@@ -237,3 +237,22 @@ blockquote span {
   font-weight: bold;
   margin-top: 1em;
 }
+
+@font-face {
+  font-family: transformers;
+  src: url(../fonts/transformers.ttf);
+}
+
+.transformers {
+  font-family: transformers;
+}
+
+@font-face {
+  font-family: avengers;
+  src: url(../fonts/avengers.ttf);
+}
+
+.avengers {
+  font-family: avengers;
+  text-transform: uppercase;
+}

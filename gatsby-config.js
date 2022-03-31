@@ -27,7 +27,7 @@ const config = {
               maxWidth: 630,
               withWebp: true,
               withAvif: true,
-              tracedSVG: true
+              tracedSVG: true,
             },
           },
           {
@@ -100,14 +100,12 @@ const config = {
   ],
 };
 
-if (process.env.GATSBY_WIT_PODCAST) {
-  config.plugins.push({
-    resolve: `gatsby-source-rss-feed`,
-    options: {
-      url: process.env.GATSBY_WIT_PODCAST,
-      name: `podcast`,
-    },
-  });
-}
+config.plugins.push({
+  resolve: `gatsby-source-rss-feed`,
+  options: {
+    url: process.env.GATSBY_WIT_PODCAST,
+    name: `podcast`,
+  },
+});
 
 module.exports = config;

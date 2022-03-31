@@ -19,7 +19,11 @@ const Recruitments = ({ location, data }) => {
         <section className="clean-block about-us">
           <div className="container">
             <div className="block-heading">
-              <h2 className="text-primary">We're Looking For You!</h2>
+              I send this message to any future candidates taking refuge within
+              the campus
+              <h2 className="text-primary transformers">
+                We are here. We are waiting.
+              </h2>
               <p>
                 IET NITK is looking for smart people willing to reach out to
                 others! Check out where we're recruiting:
@@ -36,6 +40,10 @@ const Recruitments = ({ location, data }) => {
             marginTop: "2em",
           }}
         >
+          We may not be worlds apart, but like us, there's more to you than
+          meets the eye.
+          <br />
+          <br />
           <Link className="btn btn-light btn-lg" to="/recruitment/form">
             Fill the Application Form Now
           </Link>
@@ -49,7 +57,9 @@ const Recruitments = ({ location, data }) => {
 
             <div className="block-content">
               <div className="faq-item">
-                <ReactMarkdown  components={commonMdProps}>{data.rec_questions.FAQ}</ReactMarkdown>
+                <ReactMarkdown components={commonMdProps}>
+                  {data.rec_questions.FAQ}
+                </ReactMarkdown>
               </div>
             </div>
           </div>

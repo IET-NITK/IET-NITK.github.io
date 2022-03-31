@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import { navigate, useLocation } from "@reach/router";
 
 function scrollTop() {
   if (document.body.scrollTop !== 0) {
@@ -16,6 +17,8 @@ const PaginationComponent = ({
   filterBy,
   filterLabel,
 }) => {
+  const location = useLocation();
+  console.log(location);
   const [state, setState] = useState({
     pno: 1,
     listState: list,
@@ -117,6 +120,9 @@ const PaginationComponent = ({
                     data-toggle="tooltip"
                     onClick={() => {
                       scrollTop();
+                      if (typeof window !== "undefined") {
+                        document.location.search=`?p=${index+1}`;
+                      }
                       setState({ ...state, pno: index + 1 });
                     }}
                     title={`Page ${index + 1}`}
