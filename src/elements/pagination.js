@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
-import { navigate, useLocation } from "@reach/router";
+import { useLocation } from "@reach/router";
 
 function scrollTop() {
   if (document.body.scrollTop !== 0) {
