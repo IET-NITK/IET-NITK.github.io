@@ -1,0 +1,11 @@
+@font-face {
+    font-family: avengers;
+    src: url(../fonts/avengers.ttf);
+  }
+  
+  .avengers {
+    font-family: avengers;
+    text-transform: uppercase;
+  }
+  
+  

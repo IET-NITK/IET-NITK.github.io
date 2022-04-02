@@ -1,0 +1,24 @@
+@import "../../assets/stylesheets/theme";
+
+
+.clean_pricing_item {
+	.heading {
+		text-align: center;
+		padding-bottom: 10px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	background-color: #fff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
+	border-top: 2px solid map-get($map: $theme-colors, $key: "primary");
+	padding: 30px;
+	overflow: hidden;
+	position: relative;
+	button {
+		font-weight: 600;
+	}
+	p {
+		text-align: center;
+		margin-top: 20px;
+		opacity: 0.7;
+	}
+}
