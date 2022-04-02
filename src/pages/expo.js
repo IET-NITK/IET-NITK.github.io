@@ -8,7 +8,7 @@ import InformationLayout from "../layouts/information";
 
 const Expo = ({ data, location }) => {
   useEffect(() => {
-    if (data.expo.open !== true) {
+    if (data.expo.open !== true && process.env.NODE_ENV !== "development") {
       navigate("/");
     }
   });
@@ -35,6 +35,7 @@ const Expo = ({ data, location }) => {
       <div className="block-content">
         <PaginationComponent
           filterBy="sig"
+          filterFunction={(element) => element.sig.name}
           filterLabel="Filter by SIG"
           item={(element, index) => (
             <div className="clean-blog-post" key={index}>

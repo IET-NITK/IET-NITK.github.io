@@ -16,8 +16,8 @@ exports.createPages = async ({ graphql, actions }) => {
   };
   try {
     graphql(`
-      query {
-        members: allStrapiMembers {
+      query jnjn($memberYear: Int){
+        members: allStrapiMembers(filter: {passoutYr: {gte: $memberYear}}) {
           nodes {
             link: name
             date: updated_at
@@ -48,7 +48,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-    `).then((result) => {
+    `,{memberYear: (new Date().getFullYear())-1}).then((result) => {
       Object.keys(result.data).forEach((key) => {
         result.data[key].nodes.forEach((element) => {
           console.log(`${key}:`, `Endpoint for ${lcrs(element.link)}`);

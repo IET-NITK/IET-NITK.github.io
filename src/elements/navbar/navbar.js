@@ -4,11 +4,13 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 // import ReactMarkdown from "react-markdown";
 // import Ticker from "react-ticker";
 //eslint-disable-next-line
-import { StaticImage } from "gatsby-plugin-image"
+import * as style from "./navbar.module.scss";
+import { StaticImage } from "gatsby-plugin-image";
 
 const TopNavbar = ({ smp, recr, expo }) => {
   //eslint-disable-next-line
 
+  console.log(style);
   return (
     <div id="topContent">
       <div className="py-2 bg-light">
@@ -32,8 +34,8 @@ const TopNavbar = ({ smp, recr, expo }) => {
             </div>
             <div className="col-lg-4 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link
-                className={`btn btn-primary btn-sm mr-3 ${
-                  recr !== true ? "disabled" : ""
+                className={`btn btn-sm mr-3  ${
+                  recr !== true ? "btn-primary disabled" : style.glowing
                 }`}
                 role="button"
                 to="/recruitment"
@@ -41,10 +43,10 @@ const TopNavbar = ({ smp, recr, expo }) => {
                 Join IET NITK
               </Link>
 
-              {expo !== true ? (
+              {expo === true ? (
                 <Link
-                  className={`btn btn-primary btn-sm mr-3 ${
-                    smp !== true ? "disabled" : ""
+                  className={`btn btn-sm mr-3 ${
+                    smp !== true ? "btn-primary disabled" : style.glowing
                   }`}
                   role="button"
                   to="/smp"
@@ -53,11 +55,11 @@ const TopNavbar = ({ smp, recr, expo }) => {
                 </Link>
               ) : (
                 <Link
-                  className="btn btn-sm mr-3 btn-primary"
+                  className={`btn btn-sm mr-3  ${style.glowing}`}
                   role="button"
                   to="/expo"
                 >
-                <i className="fa pt-0 mr-2 fa-calendar"/>  NITK Expo {new Date().getFullYear()}
+                <i className="fa pt-0 mr-2 fa-calendar"/>  IET Expo {new Date().getFullYear()}
                 </Link>
               )}
               

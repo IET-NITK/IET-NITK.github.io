@@ -11,7 +11,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 const SMP = ({ data, location }) => {
   const { smp } = data;
   useEffect(() => {
-    if (data.smp_basic.open !== true) {
+    if (data.smp_basic.open !== true && process.env.NODE_ENV!=="development") {
       navigate("/");
     }
   });

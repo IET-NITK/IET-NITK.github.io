@@ -28,16 +28,8 @@ function useWindowSize() {
   return windowSize;
 }
 
-const getRandomThings = (arr, num, currentRoute) => {
-  return sampleSize(
-    arr.filter(
-      (element) =>
-        lcrs(element.name) !== currentRoute &&
-        element.route !== currentRoute &&
-        element.route !== currentRoute
-    ),
-    num
-  );
+const getRandomThings = (arr, num) => {
+  return sampleSize(arr, num);
 };
 
 export const Glimpse = ({ currentRoute }) => {
@@ -95,6 +87,13 @@ export const Glimpse = ({ currentRoute }) => {
         }
       `}
       render={({ sigs, blogs, events, projects }) => {
+        const [state] = React.useState({
+          sigs: getRandomThings(sigs.nodes, 1),
+          rest: getRandomThings(
+            [...blogs.nodes, ...events.nodes, ...projects.nodes],
+            20
+          )
+        });
         return (
           <div className="bg-primary text-light pt-4 pb-4">
             <div className="container">
@@ -103,12 +102,12 @@ export const Glimpse = ({ currentRoute }) => {
               </h5>
               <div className="row">
                 <div className="col-lg-3 col-md-4  mt-5 mb-5">
-                  {getRandomThings(sigs.nodes, 1, currentRoute).map((element, index) => (
+                  {state.sigs.map((element, index) => (
                     <Link
-                      className="card bg-primary text-white text-decoration-none"
+                      className="card bg-white text-primary text-decoration-none"
                       key={index}
                       style={{ height: "15em" }}
-                      to={`/sigs/${  lcrs(element.name)}`}
+                      to={`/sigs/${lcrs(element.name)}`}
                     >
                       <div className="card-body">
                         <h5 className="card-title">{element.name}</h5>
@@ -138,37 +137,34 @@ export const Glimpse = ({ currentRoute }) => {
                     }}
                     style={{ height: "13em" }}
                   >
-                    {getRandomThings(
-                      [...blogs.nodes, ...events.nodes, ...projects.nodes],
-                      20,
-                      currentRoute
-                    ).map((element, index) => {
-                      const id = element.id.split("lodash")[0];
+                    {state.rest.map((element) => {
+                      const id = element.id.split("lodash")[0].split("_")[0];
                       return (
-                        <SplideSlide key={index} style={{ height: "15em" }}>
+                        <SplideSlide key={id} style={{ height: "15em" }}>
                           <div
-                            className="card bg-primary"
+                            className="card bg-white"
                             style={{ height: "15em" }}
                           >
                             <Link
-                              className="card-body text-white text-decoration-none"
+                              className="card-body text-primary text-decoration-none"
                               to={
                                 id === "Projects"
-                                  ? `/projects/${ 
-                                    lcrs(element.name)}`
+                                  ? `/projects/${lcrs(element.name)}`
                                   : `/${id.slice(0, -1).toLowerCase()}/${
                                       element.route
                                     }`
                               }
                             >
                               <h5 className="card-title">{element.name}</h5>
-                              <h6 className="card-subtitle mb-2 text-muted text-decoration-none">
+                              <span className="badge badge-info">
+                                {" "}
                                 {id === "Blogs"
                                   ? "Blog "
                                   : id === "Events"
                                   ? "Events "
                                   : "Project "}
-                              </h6>
+                              </span>
+
                               <div className="card-text ">
                                 {id === "Events"
                                   ? truncate(element.excerpt, {
@@ -178,9 +174,9 @@ export const Glimpse = ({ currentRoute }) => {
                               </div>
                             </Link>
                             {element.authors ? (
-                              <div className="card-footer text-muted">
+                              <div className="card-footer text-primary">
                                 By
-                                {renderAuthors(element.authors, "text-muted")}
+                                {renderAuthors(element.authors, "text-primary")}
                               </div>
                             ) : null}
                           </div>

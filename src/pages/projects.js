@@ -19,6 +19,8 @@ const Projects = ({ data, location }) => {
             </div>
             <div className="block-content">
               <PaginationComponent
+          filterBy="sig"
+                filterFunction={(element) => element.sig.name}
                 filterLabel="Filter by SIG"
                 item={(element, index) => (
                   <div className="clean-blog-post" key={index}>

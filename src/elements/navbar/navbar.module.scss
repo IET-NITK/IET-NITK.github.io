@@ -1,1 +1,32 @@
-@import "../../assets/stylesheets/theme"; 
+@import "../../assets/stylesheets/theme";
+
+@keyframes glowing {
+  0% {
+    background-color: map-get($map: $theme-colors, $key: "primary");
+    box-shadow: 0 0 5px map-get($map: $theme-colors, $key: "primary");
+  }
+  50% {
+    background-color: lighten(
+      map-get($map: $theme-colors, $key: "primary"),
+      20
+    );
+    box-shadow: 0 0 20px
+      lighten(map-get($map: $theme-colors, $key: "primary"), 20);
+  }
+  100% {
+    background-color: map-get($map: $theme-colors, $key: "primary");
+    box-shadow: 0 0 5px map-get($map: $theme-colors, $key: "primary");
+  }
+}
+
+.glowing {
+  animation: glowing 1300ms infinite;
+  color: white;
+}
+
+.glowing:hover {
+  color: white;
+  background-color: map-get($map: $theme-colors, $key: "primary");
+  box-shadow: 0 0 5px map-get($map: $theme-colors, $key: "primary");
+  animation: none;
+}

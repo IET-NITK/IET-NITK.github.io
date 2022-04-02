@@ -15,6 +15,7 @@ const PaginationComponent = ({
   item,
   noneMessage,
   filterBy,
+  filterFunction,
   filterLabel,
 }) => {
   const location = useLocation();
@@ -24,7 +25,7 @@ const PaginationComponent = ({
     listState: list,
     filterType: null,
     // eslint-ignore-next-line
-    filterCategories: [...new Set(list.map((element) => element[filterBy]))],
+    filterCategories: [...new Set(list.map((element) => filterFunction && filterFunction(element)))],
   });
 
   if (state.listState && state.listState.length === 0) {
@@ -45,7 +46,7 @@ const PaginationComponent = ({
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {state.filterCategories &&
-              state.filterCategories.map(({ ex }, index) => (
+              state.filterCategories.map((ex, index) => (
                 <Dropdown.Item
                   key={index}
                   name={ex}
@@ -53,7 +54,7 @@ const PaginationComponent = ({
                     setState({
                       ...state,
                       listState: list.filter((element) => {
-                        return element[filterBy] === event.target.name;
+                        return filterFunction(element) === event.target.name;
                       }),
                       filterType: event.target.name,
                     })

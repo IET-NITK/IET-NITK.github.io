@@ -8,7 +8,7 @@ import { commonMdProps } from "../elements/helper";
 
 const Recruitments = ({ location, data }) => {
   useEffect(() => {
-    if (data.rec_questions.open !== true) {
+    if (data.rec_questions.open !== true && process.env.NODE_ENV!=="development") {
       navigate("/");
     }
   });
