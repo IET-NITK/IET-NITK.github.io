@@ -43,7 +43,7 @@ const TopNavbar = ({ smp, recr, expo }) => {
                 Join IET NITK
               </Link>
 
-              {expo === true ? (
+              {expo !== true ? (
                 <Link
                   className={`btn btn-sm mr-3 ${
                     smp !== true ? "btn-primary disabled" : style.glowing
@@ -59,7 +59,7 @@ const TopNavbar = ({ smp, recr, expo }) => {
                   role="button"
                   to="/expo"
                 >
-                <i className="fa pt-0 mr-2 fa-calendar"/>  IET Expo {new Date().getFullYear()}
+                <i className="fa pt-0 mr-2 fa-edge"/>  IET Expo {new Date().getFullYear()}
                 </Link>
               )}
               

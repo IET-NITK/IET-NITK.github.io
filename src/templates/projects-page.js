@@ -4,6 +4,7 @@ import SearchEngineOps from "../elements/seo";
 import { lcrs } from "../elements/helper";
 import InformationLayout from "../layouts/information";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ProjectURL from "../elements/projecturl";
 
 const Project = ({ data, pathname, uri }) => {
   return (
@@ -58,26 +59,7 @@ const Project = ({ data, pathname, uri }) => {
                   </ul>
                 </div>
                 <div className="col-lg-6 text-right">
-                  {data.projects.url &&
-                  new URL(data.projects.url).hostname === "github.com" ? (
-                    <a
-                      className="btn btn-outline-dark"
-                      href={data.projects.url}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <i className="fa fa-github mr-2" /> Repository URL
-                    </a>
-                  ) : (
-                    <a
-                      className="btn btn-primary"
-                      href={data.projects.url}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <i className="fa fa-link" /> Project Link
-                    </a>
-                  )}
+                  <ProjectURL url={data.projects.url}/>
                 </div>
               </div>
             </div>

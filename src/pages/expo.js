@@ -3,6 +3,7 @@ import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React, { useEffect } from "react";
 import { lcrs, renderAuthors } from "../elements/helper";
 import PaginationComponent from "../elements/pagination";
+import ProjectURL from "../elements/projecturl";
 import SearchEngineOps from "../elements/seo";
 import InformationLayout from "../layouts/information";
 
@@ -55,15 +56,15 @@ const Expo = ({ data, location }) => {
                 </p>
               ) : null}
 
-              {element.url ? (
-                <Link
-                  className="btn btn-outline-primary btn-sm"
-                  to={`/projects/${lcrs(element.title)}`}
-                  type="button"
-                >
-                  Read More
-                </Link>
-              ) : null}
+              <ProjectURL customClass="btn-sm mr-2" url={element.url} />
+              <Link
+                className="btn btn-outline-primary btn-sm"
+                to={`/projects/${lcrs(element.title)}`}
+                type="button"
+              >
+                <i className="fa fa-info mr-2" />
+                Read More
+              </Link>
             </div>
           )}
           list={data.projects.nodes}

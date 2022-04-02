@@ -32,7 +32,7 @@ const getRandomThings = (arr, num) => {
   return sampleSize(arr, num);
 };
 
-export const Glimpse = ({ currentRoute }) => {
+export const Glimpse = () => {
   if (typeof window === "undefined") {
     return <p>Server Render</p>;
   }
@@ -92,7 +92,7 @@ export const Glimpse = ({ currentRoute }) => {
           rest: getRandomThings(
             [...blogs.nodes, ...events.nodes, ...projects.nodes],
             20
-          )
+          ),
         });
         return (
           <div className="bg-primary text-light pt-4 pb-4">
@@ -150,9 +150,9 @@ export const Glimpse = ({ currentRoute }) => {
                               to={
                                 id === "Projects"
                                   ? `/projects/${lcrs(element.name)}`
-                                  : `/${id.slice(0, -1).toLowerCase()}/${
+                                  : `/${id.slice(0, -1).toLowerCase()}/${lcrs(
                                       element.route
-                                    }`
+                                    )}`
                               }
                             >
                               <h5 className="card-title">{element.name}</h5>
