@@ -106,7 +106,7 @@ export const XNavbar = () => {
             recr={recruitmentOpen.open}
             smp={smpOpen.open}
           />
-          <Navbar bg="white" className=" clean-navbar" expand="lg">
+          <Navbar bg="white" className={style.clean_navbar} expand="lg">
             <div className="container">
               <Navbar.Brand className="navbar-brand logo" href="/">
                 <StaticImage

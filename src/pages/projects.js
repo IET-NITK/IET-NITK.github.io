@@ -1,6 +1,6 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
-import { lcrs, renderAuthors } from "../elements/helper";
+import { lcrs, renderAuthors } from "../elements/helper/helper.js";
 import PaginationComponent from "../elements/pagination";
 import ProjectURL from "../elements/projecturl";
 import SearchEngineOps from "../elements/seo";

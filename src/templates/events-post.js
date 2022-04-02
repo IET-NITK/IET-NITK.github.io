@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import SearchEngineOps from "../elements/seo";
 import ReactMarkdown from "react-markdown";
 import ArticleLayout from "../layouts/article";
-import { commonMdProps } from "../elements/helper";
+import { commonMdProps } from "../elements/helper/helper.js";
 
 const EventArticle = ({ data, uri }) => {
   return (

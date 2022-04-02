@@ -1,24 +1,27 @@
 import React, { useEffect } from "react";
 import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
-import { lcrs, newrenderAuthors, commonMdProps } from "../elements/helper";
+import { lcrs, newrenderAuthors, commonMdProps } from "../elements/helper/helper.js";
 import { Link, graphql, navigate } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import * as style from "../assets/stylesheets/smp.module.css";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
 
 const SMP = ({ data, location }) => {
   const { smp } = data;
   useEffect(() => {
-    if (data.smp_basic.open !== true && process.env.NODE_ENV!=="development") {
+    if (
+      data.smp_basic.open !== true &&
+      process.env.NODE_ENV !== "development"
+    ) {
       navigate("/");
     }
   });
 
   return (
     <Layout location={location.pathname}>
-    <SearchEngineOps title={`SMP ${  new Date().getFullYear()}`} />
+      <SearchEngineOps title={`SMP ${new Date().getFullYear()}`} />
       {data.smp_basic.open !== true ? null : (
         <>
           <main className="page">
@@ -39,8 +42,11 @@ const SMP = ({ data, location }) => {
                 <React.Fragment key={ind}>
                   <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-12">
-                      <h3 className="smp-signames" id={smpGroup.fieldValue}>
-                        <Link to={`/sigs/${  lcrs(smpGroup.fieldValue)}`}>
+                      <h3
+                        className={style.smp_signames}
+                        id={smpGroup.fieldValue}
+                      >
+                        <Link to={`/sigs/${lcrs(smpGroup.fieldValue)}`}>
                           {smpGroup.fieldValue}
                         </Link>
                       </h3>
@@ -70,12 +76,16 @@ const SMP = ({ data, location }) => {
                       ))}
                     </div>
 
-                    <div className="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
-                      <Link to={`/sigs/${  lcrs(smpGroup.fieldValue)}`}>
+                    <div
+                      className={`col-lg-6 col-md-4 hidden-sm hidden-xs ${style.smp_logo_div}`}
+                    >
+                      <Link to={`/sigs/${lcrs(smpGroup.fieldValue)}`}>
                         <GatsbyImage
                           alt={smpGroup.fieldValue}
-                          className="mobile-invisible smp-logo"
-                          image={getImage(smpGroup.nodes[0].sigx.logox.localFile)}
+                          className={`${style.mobile_invisible} ${style.smp_logo}`}
+                          image={getImage(
+                            smpGroup.nodes[0].sigx.logox.localFile
+                          )}
                           style={{ maxWidth: "150px", paddingTop: "2em" }}
                         />
                       </Link>
@@ -117,7 +127,9 @@ const SMP = ({ data, location }) => {
                 </div>
 
                 <div className="block-content">
-                  <ReactMarkdown  components={commonMdProps}>{data.smp_basic.faq}</ReactMarkdown>
+                  <ReactMarkdown components={commonMdProps}>
+                    {data.smp_basic.faq}
+                  </ReactMarkdown>
                   <p className="text-primary mt-5">
                     Please stay tuned to our social media pages for updates.
                   </p>

@@ -2,7 +2,7 @@ import React from "react";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import { Link } from "gatsby";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
-import { lcrs } from "./helper";
+import { lcrs } from "./helper/helper";
 
 export const MemberDetails = ({ author }) => {
   const bgColor =

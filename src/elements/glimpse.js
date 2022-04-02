@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
-import { lcrs, renderAuthors } from "./helper";
+import { lcrs, renderAuthors } from "./helper/helper";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import sampleSize from "lodash/sampleSize";
 import truncate from "lodash/truncate";

@@ -1,7 +1,7 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
 import SearchEngineOps from "../elements/seo";
-import { renderAuthors } from "../elements/helper";
+import { renderAuthors } from "../elements/helper/helper.js";
 import PaginationComponent from "../elements/pagination";
 import InformationLayout from "../layouts/information";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";

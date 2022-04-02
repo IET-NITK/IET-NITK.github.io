@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import { Disqus } from "gatsby-plugin-disqus";
-import { commonMdProps, niceFormat, renderAuthors } from "../elements/helper";
+import { commonMdProps, niceFormat, renderAuthors } from "../elements/helper/helper.js";
 import SearchEngineOps from "../elements/seo";
 import { ShareButtons } from "../elements/social";
 import ReactMarkdown from "react-markdown";

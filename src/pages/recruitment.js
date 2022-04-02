@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
 import { graphql, Link, navigate } from "gatsby";
-import { SIGShowcase } from "../elements/SIGShowcase";
+import { SIGShowcase } from "../elements/sigshowcase/SIGShowcase";
 import ReactMarkdown from "react-markdown";
-import { commonMdProps } from "../elements/helper";
+import { commonMdProps } from "../elements/helper/helper.js";
+import * as styles from "../assets/stylesheets/recruitment.module.css";
 
 const Recruitments = ({ location, data }) => {
   useEffect(() => {
@@ -21,7 +22,7 @@ const Recruitments = ({ location, data }) => {
             <div className="block-heading">
               I send this message to any future candidates taking refuge within
               the campus
-              <h2 className="text-primary transformers">
+              <h2 className={`text-primary ${styles.transformers}`}>
                 We are here. We are waiting.
               </h2>
               <p>

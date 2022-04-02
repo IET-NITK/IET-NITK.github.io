@@ -10,11 +10,12 @@ import {
   renderAuthors,
   renderAuthorsName,
   renderProjectDescription,
-} from "../elements/helper";
+} from "../elements/helper/helper.js";
 import video from "../../static/home.mp4";
-import { SIGShowcase } from "../elements/SIGShowcase";
+import { SIGShowcase } from "../elements/sigshowcase/SIGShowcase";
 import ReactMarkdown from "react-markdown";
-import SectionLayout from "../layouts/section";
+import SectionLayout from "../layouts/section/section";
+import * as style from "../assets/stylesheets/index.module.scss";
 // import
 
 const MainPage = ({ location, data }) => {
@@ -51,7 +52,7 @@ const MainPage = ({ location, data }) => {
 
         <section className="clean-block about-us" id="about-us">
           <div className="container">
-            <div className="block-heading mobile-marginx2">
+            <div className={`block-heading ${style.mobile_marginx2}`}>
               <h2 className="text-primary">Who are we?</h2>
             </div>
             <div className="row">
@@ -67,10 +68,7 @@ const MainPage = ({ location, data }) => {
                   }}
                 />
               </div>
-              <ReactMarkdown
-                className="col-lg-6 col-md-6 col-sm-12 col-xs-12"
-
-              >
+              <ReactMarkdown className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 {data.about.main}
               </ReactMarkdown>
             </div>
@@ -90,10 +88,10 @@ const MainPage = ({ location, data }) => {
 
         <SectionLayout>
           <div className="intro">
-            <h2 className="text-primary section-heading">
+            <h2 className={`text-primary ${style.section_heading}`}>
               Latest Articles
             </h2>
-            <p className="section-description">
+            <p className={style.section_description}>
               We love to write! Check out more of our stuff on{" "}
               <Link to="/blog">
                 <img alt="IET" className="mr-2" src={IconLink} />
@@ -103,10 +101,9 @@ const MainPage = ({ location, data }) => {
           </div>
           <div className="row" style={{ paddingTop: "2em" }}>
             {data.blog.nodes.map((element, index) => {
-
               return (
                 <div className="col-sm-6 col-md-4 item h-100" key={index}>
-                  <div className="card clean-blog-card">
+                  <div className={`card ${style.clean_blog_card}`}>
                     <GatsbyImage
                       alt={element.title}
                       className="card-img-top w-100 d-block"
@@ -122,7 +119,7 @@ const MainPage = ({ location, data }) => {
                         </footer>
                       </h6>
                     </div>
-                    <div className="clean-blog-footer">
+                    <div className={style.clean_blog_footer}>
                       <Link
                         className="btn btn-sm"
                         style={{ textDecoration: "none" }}
@@ -140,10 +137,12 @@ const MainPage = ({ location, data }) => {
 
         <SectionLayout>
           <div className="intro">
-            <h2 className="text-primary section-heading">Our Projects</h2>
-            <p className="section-description">
-              We have projects from many different domains of interest. We
-              love doing our projects!{" "}
+            <h2 className={`text-primary ${style.section_heading}`}>
+              Our Projects
+            </h2>
+            <p className={style.section_description}>
+              We have projects from many different domains of interest. We love
+              doing our projects!{" "}
               <Link to="/projects">
                 <img alt="IET" className="mr-2" src={IconLink} />
                 Find More
@@ -182,10 +181,7 @@ const MainPage = ({ location, data }) => {
                     ) : null}
                     <div className="mb-3">
                       <div className="text-muted">
-                        {renderProjectDescription(
-                          element.description,
-                          100
-                        )}
+                        {renderProjectDescription(element.description, 100)}
                       </div>
                     </div>
                     <div className="card-text">
@@ -205,12 +201,12 @@ const MainPage = ({ location, data }) => {
           >
             <div className="col-lg-6 col-md-6">
               <div className="intro">
-                <h2 className="text-primary section-heading">
+                <h2 className={`text-primary ${style.section_heading}`}>
                   Our Events
                 </h2>
-                <p className="section-description">
-                  Our latest event was {data.events.nodes[0].title}, but
-                  we conduct many events throughout the year. Find more{" "}
+                <p className={style.section_description}>
+                  Our latest event was {data.events.nodes[0].title}, but we
+                  conduct many events throughout the year. Find more{" "}
                   <Link to="/events">
                     <img alt="IET" className="mr-2" src={IconLink} />
                     Find More
@@ -232,9 +228,7 @@ const MainPage = ({ location, data }) => {
                   <div className="text-muted card-subtitle">
                     {data.events.nodes[0].date}
                   </div>
-                  <p className="card-text">
-                    {data.events.nodes[0].excerpt}
-                  </p>
+                  <p className="card-text">{data.events.nodes[0].excerpt}</p>
                 </div>
               </div>
             </div>
@@ -248,13 +242,13 @@ const MainPage = ({ location, data }) => {
           >
             <div className="col-lg-6 col-md-6">
               <div className="intro">
-                <h2 className="text-primary section-heading">
+                <h2 className={`text-primary ${style.section_heading}`}>
                   IET NITK Women In Tech
                 </h2>
-                <p className="section-description">
-                  Women in Tech is an international organization with a
-                  double mission: to close the gender gap and to help
-                  women embrace technology.
+                <p className={style.section_description}>
+                  Women in Tech is an international organization with a double
+                  mission: to close the gender gap and to help women embrace
+                  technology.
                   <Link to="/wit">
                     <img alt="IET" className="mr-2" src={IconLink} />
                     Find More

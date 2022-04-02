@@ -1,11 +1,12 @@
 import { graphql, Link, navigate } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React, { useEffect } from "react";
-import { lcrs, renderAuthors } from "../elements/helper";
+import { lcrs, renderAuthors } from "../elements/helper/helper.js";
 import PaginationComponent from "../elements/pagination";
 import ProjectURL from "../elements/projecturl";
 import SearchEngineOps from "../elements/seo";
 import InformationLayout from "../layouts/information";
+import * as style from "../assets/stylesheets/expo.module.css";
 
 const Expo = ({ data, location }) => {
   useEffect(() => {
@@ -19,7 +20,7 @@ const Expo = ({ data, location }) => {
 
       <div className="block-heading">
         <OutboundLink
-          className="avengers h6"
+          className={`${style.avengers} h6`}
           href="https://www.youtube.com/watch?v=W54Y0cn78NY"
         >
           I Love you 3000

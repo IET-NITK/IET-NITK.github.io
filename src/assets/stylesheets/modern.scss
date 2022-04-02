@@ -30,100 +30,11 @@ body {
 }
 
 
-.clean-navbar {
-	box-shadow: 0px 0px 32px 0px rgba(221, 230, 237, 0.4);
-	.navbar-nav {
-		.nav-link {
-			font-weight: 600;
-			padding-right: 2rem !important;
-			font-size: 0.8rem;
-			text-transform: uppercase;
-		}
-	}
-}
 
 
 
-.article-list {
-  color: #313437;
-  background-color: #fff;
-  p {
-    color: #7d8285;
-  }
-  h2 {
-    margin-bottom: 1.2rem !important;
-    padding-top: 40px;
-    color: inherit;
-  }
-  .intro {
-    font-size: 16px;
-    max-width: 500px;
-    p {
-      margin-bottom: 0;
-    }
-  }
-  .articles {
-    padding-bottom: 40px;
-  }
-  .item {
-    padding-top: 50px;
-    min-height: 425px;
-    text-align: center;
-    .name {
-      font-weight: bold;
-      font-size: 16px;
-      margin-top: 20px;
-      color: inherit;
-    }
-    .description {
-      font-size: 14px;
-      margin-top: 15px;
-      margin-bottom: 0;
-    }
-    .action {
-      font-size: 24px;
-      width: 24px;
-      margin: 22px auto 0;
-      line-height: 1;
-      display: block;
-      color: #4f86c3;
-      opacity: 0.85;
-      transition: opacity 0.2s;
-      text-decoration: none;
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
-}
-@media (max-width: 767px) {
-  .article-list {
-    h2 {
-      margin-bottom: 25px;
-      padding-top: 25px;
-      font-size: 24px;
-    }
-  }
-}
 
-.section-heading {
-  margin-top: 50px;
-  padding: 10px 20px !important;
-  border-left: 2px solid;
-}
 
-.section-description {
-	a {
-		display: block;
-		max-width: 250px;
-		margin-top: 20px;
-		color: #2e2e2e;
-		&:hover {
-			text-decoration: none;
-			opacity: 0.5;
-		}
-	}
-}
 
 
 .clean-block {
@@ -240,27 +151,7 @@ body {
 	}
 }
 
-.clean-pricing-item {
-	.heading {
-		text-align: center;
-		padding-bottom: 10px;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	}
-	background-color: #fff;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.075);
-	border-top: 2px solid map-get($map: $theme-colors, $key: "primary");
-	padding: 30px;
-	overflow: hidden;
-	position: relative;
-	button {
-		font-weight: 600;
-	}
-	p {
-		text-align: center;
-		margin-top: 20px;
-		opacity: 0.7;
-	}
-}
+
 
 .clean-block.clean-pricing {
 	.col-md-5 {
@@ -316,53 +207,11 @@ body {
   border-radius: 0 !important;
 }
 
-.clean-blog-card {
-	background-color: white;
-	box-shadow: 0px 0px 32px 0px rgba(221, 230, 237, 0.4);
-	border: none;
-	border-radius: 0 !important;
-	text-align: left;
-	height: 500px;
-	img {
-		display: block;
-		width: 100%;
-		height: 18rem;
-		object-fit: cover;
-		border-radius: 0;
-	}
-	.card-body {
-		h4 {
-			font-weight: bold;
-		}
-	}
-}
+
 
 // TODO Segregate to index.js
-.clean-blog-footer {
-	background: none;
-	border: none;
-	padding: 20px 10px;
-	a {
-		text-transform: uppercase;
-		margin: 5px 10px;
-		padding: 10px 20px;
-		font-size: 0.8rem;
-		letter-spacing: 1.5px;
-		border: 1px solid map-get($map: $theme-colors, $key: "primary");
-		&:hover {
-			background: map-get($map: $theme-colors, $key: "primary");
-			color: #fff;
-		}
-	}
-}
 
 
-// TODO Segregate to helper.js
-.project-author-name {
-  font-size: 0.8rem;
-  white-space: nowrap;
-  font-weight: bold;
-}
 
 article {
   padding: 20px;

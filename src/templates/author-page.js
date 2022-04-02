@@ -1,7 +1,7 @@
 import React from "react";
 import SearchEngineOps from "../elements/seo";
 import { graphql, Link } from "gatsby";
-import { lcrs, renderAuthors } from "../elements/helper";
+import { lcrs, renderAuthors } from "../elements/helper/helper.js";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import InformationLayout from "../layouts/information";
 const RenderArticles = ({ element, index }) => (
