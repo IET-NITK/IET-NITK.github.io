@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/rajeev",
-    "result": {"data":{"memberDetails":{"name":"Rajeev","position":"Torsion SIG Head (2020)","image":null,"passoutYr":2020,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Rajeev","sig":null,"date":"2021-04-29T13:15:44.582Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

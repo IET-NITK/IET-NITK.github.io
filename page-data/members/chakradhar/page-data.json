@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/chakradhar",
-    "result": {"data":{"memberDetails":{"name":"Chakradhar","position":"Executive Member","image":null,"passoutYr":2020,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Chakradhar","sig":null,"date":"2021-04-29T13:15:40.300Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

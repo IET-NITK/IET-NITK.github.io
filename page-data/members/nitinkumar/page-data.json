@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/nitinkumar",
-    "result": {"data":{"memberDetails":{"name":"Nitin Kumar","position":"Torsion SIG Head (2019)","image":null,"passoutYr":2019,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Nitin Kumar","sig":null,"date":"2021-04-29T13:15:35.935Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
