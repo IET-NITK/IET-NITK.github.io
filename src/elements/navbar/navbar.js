@@ -6,7 +6,6 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 //eslint-disable-next-line
 import * as style from "./navbar.module.scss";
 import { StaticImage } from "gatsby-plugin-image";
-import Ticker from "react-ticker";
 import ReactMarkdown from "react-markdown";
 
 const TopNavbar = ({ smp, recr, expo, notice }) => {
