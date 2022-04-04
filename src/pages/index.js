@@ -7,7 +7,6 @@ import IconLink from "../assets/img/link.svg";
 import {
   getRandom,
   lcrs,
-  OnBrowser,
   renderAuthors,
   renderAuthorsName,
   renderProjectDescription,
