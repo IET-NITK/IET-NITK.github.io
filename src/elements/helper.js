@@ -5,16 +5,11 @@ export const lcrs = (link) => {
   return link.toLowerCase().split(" ").join("");
 };
 
-
 export const renderAuthors = (arr, cls) =>
   arr.map(({ name }, index2) => (
     <>
       &nbsp;
-      <Link
-      className={cls}
-        key={`x${  index2}`}
-        to={`/members/${  lcrs(name)}`}
-      >
+      <Link className={cls} key={`x${index2}`} to={`/members/${lcrs(name)}`}>
         {name}
       </Link>
       {index2 + 2 === arr.length
@@ -30,9 +25,9 @@ export const renderAuthorsName = (arr) =>
     <>
       <Link
         className="pr-3"
-        key={`x${  index2}`}
+        key={`x${index2}`}
         style={{ display: "inline-block" }}
-        to={`/members/${  lcrs(name)}`}
+        to={`/members/${lcrs(name)}`}
       >
         <span className="project-author-name"> {name} </span>
       </Link>
@@ -42,19 +37,23 @@ export const renderAuthorsName = (arr) =>
 
 export const renderProjectDescription = (element, len = 100) => {
   if (element !== null && element.length >= len) {
-    return `${element.substring(0, len)  }...`;
+    return `${element.substring(0, len)}...`;
   }
   return element;
+};
+
+export const OnBrowser = ({ children }) => {
+  if (typeof window === "undefined") {
+    return <p>Server Render</p>;
+  }
+  return children;
 };
 
 export const newrenderAuthors = (arr) =>
   arr.map(({ name }, index2) => (
     <>
       &nbsp;
-      <Link
-        key={`x${  index2}`}
-        to={`/members/${  lcrs(name)}`}
-      >
+      <Link key={`x${index2}`} to={`/members/${lcrs(name)}`}>
         {name}
       </Link>
       {index2 + 2 === arr.length
@@ -84,7 +83,7 @@ export function getRandom(arr, num) {
   return result;
 }
 
-export const commonMdProps={
+export const commonMdProps = {
   h1: "h3",
-  h2: "h3"
+  h2: "h3",
 };

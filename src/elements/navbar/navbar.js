@@ -6,31 +6,38 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 //eslint-disable-next-line
 import * as style from "./navbar.module.scss";
 import { StaticImage } from "gatsby-plugin-image";
+import Ticker from "react-ticker";
+import ReactMarkdown from "react-markdown";
 
-const TopNavbar = ({ smp, recr, expo }) => {
+const TopNavbar = ({ smp, recr, expo, notice }) => {
   //eslint-disable-next-line
 
-  console.log(style);
   return (
     <div id="topContent">
       <div className="py-2 bg-light">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-8 col-md-7 col-sm-12">
-              {/* {notice ? (
+              {notice ? (
                 <div
-                  className="alert alert-warning m-0 text-center"
+                  className="alert alert-warning m-0"
                   style={{ fontSize: "70%" }}
                 >
-                  <Ticker mode="await" speed={5} id="message">
+                  {/* <Ticker speed={5}>
                     {({ index }) => (
                       <>
-                      <ReactMarkdown className="mb-n3">{notice+"\t"+"hey"}</ReactMarkdown>
+                        <ReactMarkdown className="mb-n3">
+                          {notice+"\t".repeat(10)}
+                        </ReactMarkdown>
+                        {"\t".repeat(10)}
                       </>
                     )}
-                  </Ticker>
+                  </Ticker> */}
+                  <ReactMarkdown className="mb-n3">
+                    {notice + "\t".repeat(10)}
+                  </ReactMarkdown>
                 </div>
-              ) : null} */}
+              ) : null}
             </div>
             <div className="col-lg-4 col-md-5 col-sm-12 text-right mt-3 mt-md-0">
               <Link
@@ -51,7 +58,8 @@ const TopNavbar = ({ smp, recr, expo }) => {
                   role="button"
                   to="/smp"
                 >
-                  <i className="fa fa-chalkboard"/> SMP {new Date().getFullYear()}
+                  <i className="fa fa-chalkboard" /> SMP{" "}
+                  {new Date().getFullYear()}
                 </Link>
               ) : (
                 <Link
@@ -59,10 +67,10 @@ const TopNavbar = ({ smp, recr, expo }) => {
                   role="button"
                   to="/expo"
                 >
-                <i className="fa pt-0 mr-2 fa-edge"/>  IET Expo {new Date().getFullYear()}
+                  <i className="fa pt-0 mr-2 fa-edge" /> IET Expo{" "}
+                  {new Date().getFullYear()}
                 </Link>
               )}
-              
             </div>
           </div>
         </div>
@@ -94,15 +102,11 @@ export const XNavbar = () => {
           }
         }
       `}
-      render={({
-        smpOpen,
-        recruitmentOpen,
-        expoOpen,
-      }) => (
+      render={({ smpOpen, recruitmentOpen, about, expoOpen }) => (
         <div className="fixed-top" id="navbar">
           <TopNavbar
             expo={expoOpen.open}
-            notice={"Our recruitment forms are open, please find them here."}
+            notice={about.message}
             recr={recruitmentOpen.open}
             smp={smpOpen.open}
           />
@@ -135,11 +139,24 @@ export const XNavbar = () => {
                     Blog
                   </Nav.Link>
                   <NavDropdown title="SIGs">
-                  <NavDropdown.Item className="nav-link" href="/sigs/cipher">Cipher</NavDropdown.Item>
-                  <NavDropdown.Item className="nav-link" href="/sigs/rovisp">Rovisp</NavDropdown.Item>
-                  <NavDropdown.Item className="nav-link" href="/sigs/torsion">Torsion</NavDropdown.Item> 
-                  <NavDropdown.Item className="nav-link" href="/sigs/venture">Venture</NavDropdown.Item> 
-                  <NavDropdown.Item className="nav-link" href="https://ietinkheartblog.wordpress.com/">Inkheart</NavDropdown.Item> 
+                    <NavDropdown.Item className="nav-link" href="/sigs/cipher">
+                      Cipher
+                    </NavDropdown.Item>
+                    <NavDropdown.Item className="nav-link" href="/sigs/rovisp">
+                      Rovisp
+                    </NavDropdown.Item>
+                    <NavDropdown.Item className="nav-link" href="/sigs/torsion">
+                      Torsion
+                    </NavDropdown.Item>
+                    <NavDropdown.Item className="nav-link" href="/sigs/venture">
+                      Venture
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      className="nav-link"
+                      href="https://ietinkheartblog.wordpress.com/"
+                    >
+                      Inkheart
+                    </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link className="nav-link" href="/contact">
                     Contact Us

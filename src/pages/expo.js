@@ -57,14 +57,25 @@ const Expo = ({ data, location }) => {
               ) : null}
 
               <ProjectURL customClass="btn-sm mr-2" url={element.url} />
-              <Link
-                className="btn btn-outline-primary btn-sm"
-                to={`/projects/${lcrs(element.title)}`}
-                type="button"
-              >
-                <i className="fa fa-info mr-2" />
-                Read More
-              </Link>
+              {!element.project_report ? (
+                <Link
+                  className="btn btn-outline-secondary btn-sm"
+                  to={`/projects/${lcrs(element.title)}`}
+                  type="button"
+                >
+                  <i className="fa fa-info mr-2" />
+                  Know More
+                </Link>
+              ) : (
+                <Link
+                  className="btn btn-primary btn-sm"
+                  to={`/projects/${lcrs(element.title)}`}
+                  type="button"
+                >
+                  <i className="fa fa-info mr-2" />
+                  Read in Detail
+                </Link>
+              )}
             </div>
           )}
           list={data.projects.nodes}
@@ -83,6 +94,9 @@ export const postQuery = graphql`
     projects: allStrapiProjects(sort: { fields: title, order: DESC }) {
       nodes {
         title
+        project_report {
+          project
+        }
         description
         sig {
           name

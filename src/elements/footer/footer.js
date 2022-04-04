@@ -43,7 +43,6 @@ export const Footer = () => {
                     { label: "About Us", route: "/about" },
                     { label: "Events", route: "/events" },
                     { label: "Projects", route: "/projects" },
-                    { label: "Projects Report", route: "/project-reports" },
                     { label: "Blog", route: "/blog" },
                     { label: "Say Hi", route: "/contact" }].map(({ label, route }) => (
                       <li key={route}>

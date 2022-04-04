@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../layouts/main/main";
 import SearchEngineOps from "../elements/seo";
@@ -7,6 +7,7 @@ import IconLink from "../assets/img/link.svg";
 import {
   getRandom,
   lcrs,
+  OnBrowser,
   renderAuthors,
   renderAuthorsName,
   renderProjectDescription,
@@ -18,6 +19,10 @@ import SectionLayout from "../layouts/section";
 // import
 
 const MainPage = ({ location, data }) => {
+  const [state]=useState({
+    projects: getRandom(data.projects.nodes, 4)
+  });
+  
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SearchEngineOps title="We are IET NITK" />
@@ -59,7 +64,7 @@ const MainPage = ({ location, data }) => {
                 <StaticImage
                   alt="IET"
                   placeholder="tracedSVG"
-                  src={"../assets/img/iet-upview.jpg"}
+                  src={"../assets/img/iet-upview.jpeg"}
                   style={{
                     width: "100%",
                     height: "auto",
@@ -103,7 +108,6 @@ const MainPage = ({ location, data }) => {
           </div>
           <div className="row" style={{ paddingTop: "2em" }}>
             {data.blog.nodes.map((element, index) => {
-
               return (
                 <div className="col-sm-6 col-md-4 item h-100" key={index}>
                   <div className="card clean-blog-card">
@@ -151,7 +155,7 @@ const MainPage = ({ location, data }) => {
             </p>
           </div>
           <div className="articles row" style={{ paddingTop: "2em" }}>
-            {getRandom(data.projects.nodes, 4).map((element, index) => (
+            {state.projects.map((element, index) => (
               <div className="col-lg-6 col-md-6 mt-4" key={index}>
                 <div className="card h-100 clean-card">
                   <div className="card-body">
@@ -209,7 +213,7 @@ const MainPage = ({ location, data }) => {
                   Our Events
                 </h2>
                 <p className="section-description">
-                  Our latest event was {data.events.nodes[0].title}, but
+                  Our latest event was "{data.events.nodes[0].title}", but
                   we conduct many events throughout the year. Find more{" "}
                   <Link to="/events">
                     <img alt="IET" className="mr-2" src={IconLink} />

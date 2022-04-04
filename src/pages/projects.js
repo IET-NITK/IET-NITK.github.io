@@ -49,7 +49,7 @@ const Projects = ({ data, location }) => {
                 type="button"
               >
                 <i className="fa fa-info mr-2" />
-                Read More
+                Know More
               </Link>
             </div>
           )}
