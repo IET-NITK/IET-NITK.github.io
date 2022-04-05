@@ -162,7 +162,7 @@ const MainPage = ({ location, data }) => {
                       {element.url ? (
                         <Link
                           className="card-link text-capitalize"
-                          to={`/projects/${lcrs(element.title)}`}
+                          to={`/project/${lcrs(element.title)}`}
                         >
                           {element.title}
                         </Link>
@@ -173,7 +173,7 @@ const MainPage = ({ location, data }) => {
                     {element.sig ? (
                       <Link
                         className="badge badge-info text-uppercase mr-2"
-                        to={`/sigs/${element.sig.name.toLowerCase()}`}
+                        to={`/sig/${element.sig.name.toLowerCase()}`}
                       >
                         {element.sig.name}
                       </Link>
@@ -227,7 +227,7 @@ const MainPage = ({ location, data }) => {
                   <h6 className="card-title">
                     <Link
                       className="card-link text-capitalize"
-                      to={`/events/${data.events.nodes[0].route}`}
+                      to={`/event/${data.events.nodes[0].route}`}
                     >
                       {data.events.nodes[0].title}
                     </Link>
@@ -307,6 +307,7 @@ export const postQuery = graphql`
     }
     projects: allStrapiProjects(
       filter: { authors: { elemMatch: { name: { ne: null } } } }
+      sort: {fields: [project_report___project, description, url, title], order: [ASC,ASC,ASC,ASC]}
     ) {
       nodes {
         title

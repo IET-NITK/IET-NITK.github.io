@@ -1,9 +1,8 @@
-import { graphql, Link, navigate } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React, { useEffect } from "react";
-import { lcrs, renderAuthors } from "../elements/helper";
 import PaginationComponent from "../elements/pagination";
-import ProjectURL from "../elements/projecturl";
+import ProjectElement from "../elements/projectElement";
 import SearchEngineOps from "../elements/seo";
 import InformationLayout from "../layouts/information";
 
@@ -39,44 +38,14 @@ const Expo = ({ data, location }) => {
           filterFunction={(element) => element.sig.name}
           filterLabel="Filter by SIG"
           item={(element, index) => (
-            <div className="clean-blog-post" key={index}>
-              <h3 className="text-capitalize">{element.title}</h3>
-              <div className="info">
-                <span className="text-muted">
-                  <Link to={`/sigs/${element.sig.name.toLowerCase()}`}>
-                    {element.sig.name}
-                  </Link>
-                </span>
-              </div>
-              {element.description || ""}
-              {element.authors ? (
-                <p>
-                  Built by
-                  {renderAuthors(element.authors, "")}
-                </p>
-              ) : null}
-
-              <ProjectURL customClass="btn-sm mr-2" url={element.url} />
-              {!element.project_report ? (
-                <Link
-                  className="btn btn-outline-secondary btn-sm"
-                  to={`/projects/${lcrs(element.title)}`}
-                  type="button"
-                >
-                  <i className="fa fa-info mr-2" />
-                  Know More
-                </Link>
-              ) : (
-                <Link
-                  className="btn btn-primary btn-sm"
-                  to={`/projects/${lcrs(element.title)}`}
-                  type="button"
-                >
-                  <i className="fa fa-info mr-2" />
-                  Read in Detail
-                </Link>
-              )}
-            </div>
+            <ProjectElement
+              authors={element.authors}
+              description={element.description}
+              key={index}
+              projectReport={element.project_report}
+              signame={element.sig.name}
+              title={element.title}
+            />
           )}
           list={data.projects.nodes}
           max={10}
@@ -91,7 +60,13 @@ export const postQuery = graphql`
     expo: strapiExpo {
       open
     }
-    projects: allStrapiProjects(sort: { fields: title, order: DESC }) {
+    projects: allStrapiProjects(
+      filter: {onDisplayForExpo: {eq: true}}
+      sort: {
+        fields: [project_report___project, description, url, title]
+        order: [ASC, ASC, ASC, ASC]
+      }
+    ) {
       nodes {
         title
         project_report {

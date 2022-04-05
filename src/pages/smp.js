@@ -40,7 +40,7 @@ const SMP = ({ data, location }) => {
                   <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-12">
                       <h3 className="smp-signames" id={smpGroup.fieldValue}>
-                        <Link to={`/sigs/${  lcrs(smpGroup.fieldValue)}`}>
+                        <Link to={`/sig/${  lcrs(smpGroup.fieldValue)}`}>
                           {smpGroup.fieldValue}
                         </Link>
                       </h3>
@@ -71,7 +71,7 @@ const SMP = ({ data, location }) => {
                     </div>
 
                     <div className="col-lg-6 col-md-4 hidden-sm hidden-xs smp-logo-div">
-                      <Link to={`/sigs/${  lcrs(smpGroup.fieldValue)}`}>
+                      <Link to={`/sig/${  lcrs(smpGroup.fieldValue)}`}>
                         <GatsbyImage
                           alt={smpGroup.fieldValue}
                           className="mobile-invisible smp-logo"
@@ -88,7 +88,7 @@ const SMP = ({ data, location }) => {
           </div>
           {data.smp_basic.form_url ? (
             <div
-              className="clean-block bg-primary text-center text-light"
+              className="clean-block bg-gradient-primary text-center text-light"
               style={{
                 padding: "30px 0px",
                 marginTop: "2em",

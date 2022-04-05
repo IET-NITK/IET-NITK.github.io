@@ -138,16 +138,16 @@ export const XNavbar = () => {
                     Blog
                   </Nav.Link>
                   <NavDropdown title="SIGs">
-                    <NavDropdown.Item className="nav-link" href="/sigs/cipher">
+                    <NavDropdown.Item className="nav-link" href="/sig/cipher">
                       Cipher
                     </NavDropdown.Item>
-                    <NavDropdown.Item className="nav-link" href="/sigs/rovisp">
+                    <NavDropdown.Item className="nav-link" href="/sig/rovisp">
                       Rovisp
                     </NavDropdown.Item>
-                    <NavDropdown.Item className="nav-link" href="/sigs/torsion">
+                    <NavDropdown.Item className="nav-link" href="/sig/torsion">
                       Torsion
                     </NavDropdown.Item>
-                    <NavDropdown.Item className="nav-link" href="/sigs/venture">
+                    <NavDropdown.Item className="nav-link" href="/sig/venture">
                       Venture
                     </NavDropdown.Item>
                     <NavDropdown.Item

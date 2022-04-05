@@ -9,7 +9,7 @@ export const renderAuthors = (arr, cls) =>
   arr.map(({ name }, index2) => (
     <>
       &nbsp;
-      <Link className={cls} key={`x${index2}`} to={`/members/${lcrs(name)}`}>
+      <Link className={cls} key={`x${index2}`} to={`/member/${lcrs(name)}`}>
         {name}
       </Link>
       {index2 + 2 === arr.length
@@ -27,7 +27,7 @@ export const renderAuthorsName = (arr) =>
         className="pr-3"
         key={`x${index2}`}
         style={{ display: "inline-block" }}
-        to={`/members/${lcrs(name)}`}
+        to={`/member/${lcrs(name)}`}
       >
         <span className="project-author-name"> {name} </span>
       </Link>
@@ -53,7 +53,7 @@ export const newrenderAuthors = (arr) =>
   arr.map(({ name }, index2) => (
     <>
       &nbsp;
-      <Link key={`x${index2}`} to={`/members/${lcrs(name)}`}>
+      <Link key={`x${index2}`} to={`/member/${lcrs(name)}`}>
         {name}
       </Link>
       {index2 + 2 === arr.length

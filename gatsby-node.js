@@ -7,35 +7,34 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const templateHash = {
-    members: path.resolve(`./src/templates/author-page.js`),
-    projectreports: path.resolve("./src/templates/report-page.js"),
-    projects: path.resolve(`./src/templates/projects-page.js`),
+    member: path.resolve(`./src/templates/author-page.js`),
+    project: path.resolve(`./src/templates/projects-page.js`),
     blog: path.resolve("./src/templates/blog-post.js"),
-    events: path.resolve("./src/templates/events-post.js"),
-    sigs: path.resolve(`./src/templates/sig-page.js`),
+    event: path.resolve("./src/templates/events-post.js"),
+    sig: path.resolve(`./src/templates/sig-page.js`),
   };
   try {
     graphql(`
       query jnjn($memberYear: Int){
-        members: allStrapiMembers(filter: {passoutYr: {gte: $memberYear}}) {
+        member: allStrapiMembers(filter: {passoutYr: {gte: $memberYear}}) {
           nodes {
             link: name
             date: updated_at
           }
         }
-        projects: allStrapiProjects {
+        project: allStrapiProjects {
           nodes {
             link: title
             date: updated_at
           }
         }
-        sigs: allStrapiSigs(filter: { no_link: { eq: false } }) {
+        sig: allStrapiSigs(filter: { no_link: { eq: false } }) {
           nodes {
             link: name
             date: updated_at
           }
         }
-        events: allStrapiEvents {
+        event: allStrapiEvents {
           nodes {
             link: route
             date

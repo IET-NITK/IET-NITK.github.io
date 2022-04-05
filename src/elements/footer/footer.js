@@ -59,7 +59,7 @@ export const Footer = () => {
                         {sig.no_link === true ? (
                           sig.name
                         ) : (
-                          <Link to={`/sigs/${lcrs(sig.name)}`}>
+                          <Link to={`/sig/${lcrs(sig.name)}`}>
                             {sig.name}
                           </Link>
                         )}

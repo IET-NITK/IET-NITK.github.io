@@ -1,12 +1,7 @@
 import { Link, graphql } from "gatsby";
 import React from "react";
 import SearchEngineOps from "../elements/seo";
-import {
-  commonMdProps,
-  lcrs,
-  niceFormat,
-  renderAuthors,
-} from "../elements/helper";
+import { commonMdProps, lcrs } from "../elements/helper";
 import InformationLayout from "../layouts/information";
 import ReactMarkdown from "react-markdown";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -29,7 +24,7 @@ const Project = ({ data, pathname, uri, location }) => {
         </div>
 
         <div className="col-lg-3 col-md-3 text-right">
-          <Link to={`/sigs/${data.projects.sig.name.toLowerCase()}`}>
+          <Link to={`/sig/${data.projects.sig.name.toLowerCase()}`}>
             {data.projects.sig.logo ? (
               <GatsbyImage
                 alt={data.projects.sig.name}
@@ -52,7 +47,7 @@ const Project = ({ data, pathname, uri, location }) => {
               {data.projects.authors &&
                 data.projects.authors.map(({ name }) => (
                   <li key={name}>
-                    <Link to={`/members/${lcrs(name)}`}>{name}</Link>
+                    <Link to={`/member/${lcrs(name)}`}>{name}</Link>
                   </li>
                 ))}
             </ul>
@@ -61,21 +56,12 @@ const Project = ({ data, pathname, uri, location }) => {
             <ProjectURL url={data.projects.url} />
           </div>
         </div>
-        <hr />
         {data.projects.report ? (
           <>
+            <hr />
             <h1 className="text-bold text-primary">Detailed Project Report</h1>
 
-            <div className="post-body">
-              <h3 className="pt-4">{niceFormat(data.projects.title)}</h3>
-              <div className="post-info mb-5">
-                <span>
-                  By&nbsp;
-                  <b>{renderAuthors(data.projects.authors, "")}</b>
-                </span>
-                -&nbsp;<span>{data.projects.report.date}</span>
-                <br />
-              </div>
+            <div className="post-body mt-5">
               <ReactMarkdown components={commonMdProps}>
                 {data.projects.report.content}
               </ReactMarkdown>
@@ -87,7 +73,7 @@ const Project = ({ data, pathname, uri, location }) => {
               <br />
               <ShareButtons
                 author={data.projects.authors}
-                title={data.projects.title}
+                title={`Detailed report: ${data.projects.title} from ${data.projects.sig.name} IET NITK`}
                 url={location.href}
               />
             </div>

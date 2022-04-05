@@ -46,7 +46,7 @@ const RenderProject = ({
         <div className="col-lg-12">
           <h3>
             {url ? (
-              <Link to={`/projects/${  lcrs(title)}`}>
+              <Link to={`/project/${  lcrs(title)}`}>
                 {title} {year ? `(${year})` : null}
               </Link>
             ) : (
@@ -61,7 +61,7 @@ const RenderProject = ({
           {sig ? (
             <Link
               className="badge badge-info text-uppercase"
-              to={`/sigs/${  lcrs(sig.name)}`}
+              to={`/sig/${  lcrs(sig.name)}`}
             >
               {sig.name}
             </Link>
@@ -226,7 +226,8 @@ export const postQuery = graphql`
       }
     }
     memberProjects: allStrapiProjects(
-      filter: { authors: { elemMatch: { name: { in: [$pathSlug] } } } }
+      filter: { authors: { elemMatch: { name: { in: [$pathSlug] } } } },
+      sort: {fields: [project_report___project, description, url, title], order: [ASC,ASC,ASC,ASC]}
     ) {
       nodes {
         title

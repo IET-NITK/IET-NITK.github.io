@@ -96,7 +96,7 @@ export const Glimpse = () => {
             ),
           });
           return (
-            <div className="bg-primary text-light pt-4 pb-4">
+            <div className="bg-gradient-primary text-light pt-4 pb-4">
               <div className="container">
                 <h5>
                   <strong>Glimpse @ IET NITK</strong>
@@ -105,18 +105,15 @@ export const Glimpse = () => {
                   <div className="col-lg-3 col-md-4  mt-5 mb-5">
                     {state.sigs.map((element, index) => (
                       <Link
-                        className="card bg-white text-primary text-decoration-none"
+                        className="card bg-gradient-white text-primary text-decoration-none"
                         key={index}
                         style={{ height: "15em" }}
-                        to={`/sigs/${lcrs(element.name)}`}
+                        to={`/sig/${lcrs(element.name)}`}
                       >
                         <div className="card-body">
                           <h5 className="card-title">{element.name}</h5>
                           <p className="card-text">{element.description}</p>
                         </div>
-                        {/* <Link to="/" className="card-footer text-muted">
-                      2 days ago
-                    </Link> */}
                       </Link>
                     ))}
                   </div>
@@ -143,14 +140,14 @@ export const Glimpse = () => {
                         return (
                           <SplideSlide key={id} style={{ height: "15em" }}>
                             <div
-                              className="card bg-white"
+                              className="card bg-gradient-white"
                               style={{ height: "15em" }}
                             >
                               <Link
                                 className="card-body text-primary text-decoration-none"
                                 to={
                                   id === "Projects"
-                                    ? `/projects/${lcrs(element.name)}`
+                                    ? `/project/${lcrs(element.name)}`
                                     : `/${id.slice(0, -1).toLowerCase()}/${lcrs(
                                         element.route
                                       )}`
@@ -162,7 +159,7 @@ export const Glimpse = () => {
                                   {id === "Blogs"
                                     ? "Blog "
                                     : id === "Events"
-                                    ? "Events "
+                                    ? "Event "
                                     : "Project "}
                                 </span>
 

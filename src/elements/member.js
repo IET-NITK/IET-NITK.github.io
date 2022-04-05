@@ -24,7 +24,7 @@ export const MemberDetails = ({ author }) => {
       >
         <div className="card-body info">
           <Link
-            to={`/members/${lcrs(author.name)}`}
+            to={`/member/${lcrs(author.name)}`}
           >
             <h5 className={`card-title text-capitalize ${colorText}`}>
               {author.name}

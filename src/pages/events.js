@@ -30,7 +30,7 @@ const Events = ({ data, location }) => {
                         <p>{element.excerpt}</p>
                         <Link
                           className="btn btn-outline-primary btn-sm"
-                          to={`/events/${  element.route}`}
+                          to={`/event/${  element.route}`}
                           type="button"
                         >
                           Read More 

@@ -52,7 +52,7 @@ export const SIGShowcase = ({ hideLink }) => {
                 {!sig.no_link && !hideLink ? (
                   <Link
                     className="btn btn-outline-primary btn-block"
-                    to={`/sigs/${lcrs(sig.name)}`}
+                    to={`/sig/${lcrs(sig.name)}`}
                   >
                     Read More
                   </Link>
