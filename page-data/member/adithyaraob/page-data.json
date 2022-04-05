@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/adithyaraob",
+    "result": {"data":{"memberDetails":{"name":"Adithya Rao B","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"b.adithyarao@gmail.com","facebook":"Adithya Rao B","github":"ProtoRao","linkedin":"Adithya Rao B"}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Adithya Rao B","sig":null,"date":"2021-05-08T05:56:09.760Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/sudhanshshekhersingh",
+    "result": {"data":{"memberDetails":{"name":"Sudhansh Shekher Singh ","position":"Rovisp Lead","image":null,"passoutYr":2021,"contacts":{"email":"sss081098@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Sudhansh Shekher Singh ","sig":null,"date":"2021-05-08T06:18:11.009Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

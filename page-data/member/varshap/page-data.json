@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/varshap",
+    "result": {"data":{"memberDetails":{"name":"Varsha P","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"vasthavip1998@gmail.com","facebook":null,"github":"varshavasthavi","linkedin":null}},"memberProjects":{"nodes":[{"title":"Human Activity Recognition","description":"This project is to build a model that predicts the human activities such as Walking, Walking_Upstairs, Walking_Downstairs, Sitting, Standing or Laying using the data recorded through accelerometer and gyroscope sensors.","sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Dhanasekhar"},{"name":"Varsha P"}]},{"title":"Web Security and User Tracking","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/rj-since-2000/IETC-2020","authors":[{"name":"Satyam Jyotsana Gargee"},{"name":"Varsha P"},{"name":"Rajan Jaiswal"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Varsha P","sig":null,"date":"2021-05-08T06:20:30.228Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

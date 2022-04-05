@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/vineetha",
+    "result": {"data":{"memberDetails":{"name":"Vineeth A","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Vineeth A","sig":null,"date":"2021-05-08T06:16:37.910Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

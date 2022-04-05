@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/saurabhgole",
-    "result": {"data":{"memberDetails":{"name":"Saurabh Gole","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Mini Jarvis","description":"Home automation demo using a Google voice assistant applet.","sig":{"name":"Rovisp"},"url":null,"authors":[{"name":"Ram Janam Yadav"},{"name":"Nithin L N"},{"name":"Saurabh Gole"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Saurabh Gole","sig":null,"date":"2021-04-29T13:15:55.568Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

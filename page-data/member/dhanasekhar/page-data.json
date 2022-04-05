@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/dhanasekhar",
+    "result": {"data":{"memberDetails":{"name":"Dhanasekhar","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"sekhardhana529@gmail.com","facebook":null,"github":"DhanaSekharM","linkedin":null}},"memberProjects":{"nodes":[{"title":"Human Activity Recognition","description":"This project is to build a model that predicts the human activities such as Walking, Walking_Upstairs, Walking_Downstairs, Sitting, Standing or Laying using the data recorded through accelerometer and gyroscope sensors.","sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Dhanasekhar"},{"name":"Varsha P"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Dhanasekhar","sig":null,"date":"2021-05-08T06:01:08.888Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

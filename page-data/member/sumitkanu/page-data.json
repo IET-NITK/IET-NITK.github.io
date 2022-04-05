@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/sumitkanu",
+    "result": {"data":{"memberDetails":{"name":"Sumit Kanu","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"sumit.171ee245@nitk.edu.in","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Sumit Kanu","sig":null,"date":"2021-05-08T06:20:52.424Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

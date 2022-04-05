@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/adithshekhargatty",
-    "result": {"data":{"memberDetails":{"name":"Adith Shekhar Gatty","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Sudoku Solver","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Adith Shekhar Gatty"},{"name":"Verupaka Yashwanth Reddy"}]},{"title":"Face to Emoji","description":"An emotion classifier that uses Resnet model it predicts 7 different emotions and according to that displays the appropriate emoji","sig":{"name":"Cipher"},"url":"https://github.com/DikshaNegi13/face-to-emoji","authors":[{"name":"Adith Shekhar Gatty"},{"name":"Akash Kumar Varanasi"},{"name":"Diksha Negi"},{"name":"Sharuf Baig"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Adith Shekhar Gatty","sig":null,"date":"2021-04-29T13:15:57.199Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

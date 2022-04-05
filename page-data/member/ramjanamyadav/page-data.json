@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/ramjanamyadav",
+    "result": {"data":{"memberDetails":{"name":"Ram Janam Yadav","position":"Executive Member","image":"https://drive.google.com/open?id=1_8MnNY4fEB0htjsDNPLr2V2rgmnS0Fg7","passoutYr":2022,"contacts":{"email":"ramjanamjnvj1972@gmail.com","facebook":"ramjanam.yadav.452b","github":"rampluto","linkedin":"ram-janam-yadav"}},"memberProjects":{"nodes":[{"title":"Mini Jarvis","description":"Home automation demo using a Google voice assistant applet.","sig":{"name":"Rovisp"},"url":null,"authors":[{"name":"Ram Janam Yadav"},{"name":"Nithin L N"},{"name":"Saurabh Gole"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Ram Janam Yadav","sig":null,"date":"2021-04-29T13:15:50.389Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

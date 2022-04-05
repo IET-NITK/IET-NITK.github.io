@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/yuvrajdalia",
-    "result": {"data":{"memberDetails":{"name":"Yuvraj Dalia","position":"Secretary","image":"https://drive.google.com/open?id=1D3LkQvwPvuguftic96H4UE4-VbdfJtEL","passoutYr":2021,"contacts":{"email":"yuvrajdalia98@gmail.com","facebook":null,"github":"yuvrajdalia","linkedin":"yuvraj-dalia"}},"memberProjects":{"nodes":[{"title":"Pose Correction - AI Trainer","description":"An intelligent system for workout posture evaluation with Ensemble Deep Neural Models. It assists the user by providing feedback regarding if the workout posture for a given workout is correct or not.","sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Yuvraj Dalia"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Yuvraj Dalia","sig":null,"date":"2021-05-08T06:16:07.831Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

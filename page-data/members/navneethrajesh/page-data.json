@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/navneethrajesh",
-    "result": {"data":{"memberDetails":{"name":"Navneeth Rajesh","position":"Torsion Lead","image":null,"passoutYr":2021,"contacts":{"email":"navneethrajesh08@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Navneeth Rajesh","sig":null,"date":"2021-05-08T06:06:08.526Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

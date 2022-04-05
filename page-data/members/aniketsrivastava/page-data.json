@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/aniketsrivastava",
-    "result": {"data":{"memberDetails":{"name":"Aniket Srivastava","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":"aiketshri0207@gmail.com","facebook":"Aniket Shrivastava","github":"Aniket-Srivastava-21","linkedin":"Aniket Srivastava"}},"memberProjects":{"nodes":[{"title":"Chess Bot","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Aniket Srivastava"},{"name":"Tarun S Anur"}]},{"title":"Face Mask Detector","description":"Detects that a person is wearing mask or not.","sig":{"name":"Cipher"},"url":"https://github.com/Mihir3101/IETC-2020-Face-Mask","authors":[{"name":"Aniket Srivastava"},{"name":"Maheshwari Mihir Premjibhai"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Aniket Srivastava","sig":null,"date":"2021-04-29T13:15:54.737Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

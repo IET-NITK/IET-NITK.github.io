@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/nirmalkhedkar",
+    "result": {"data":{"memberDetails":{"name":"Nirmal Khedkar","position":"Webmaster and Cipher Lead","image":"https://drive.google.com/open?id=1IrsFQ8iMZJKlrvP3umu8vuq03guvU4dD","passoutYr":2022,"contacts":{"email":"nirmalhk7@gmail.com","facebook":null,"github":"nirmalhk7","linkedin":"nirmalhk7"}},"memberProjects":{"nodes":[{"title":"Visualising Graphs and Trees","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Atul Kumar Singh"},{"name":"Laksh Sadhwani"},{"name":"Nirmal Khedkar"}]},{"title":"OCR for Handwritten Text","description":"An API powered by a neural network model trained to recognize handwritten text from images","sig":{"name":"Cipher"},"url":"https://github.com/nirmalhk7/HandwritingRecognizer","authors":[{"name":"K Snehith Bhagavan"},{"name":"Jayesh Kumar Soni"},{"name":"Uday Kumar"},{"name":"Nirmal Khedkar"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Nirmal Khedkar","sig":null,"date":"2022-03-02T08:15:23.904Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

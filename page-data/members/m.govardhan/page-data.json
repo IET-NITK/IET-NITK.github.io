@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/m.govardhan",
-    "result": {"data":{"memberDetails":{"name":"M.Govardhan","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"marakagovardhanreddy536@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Gender Identification from Speech","description":"Building a model to identify whether given speech is uttered by male or female","sig":{"name":"Cipher"},"url":"https://github.com/venkatrohit219/gender-detection-from-speech","authors":[{"name":"Venkat Rohit Merugu"},{"name":"M.Govardhan"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"M.Govardhan","sig":null,"date":"2021-04-29T13:15:50.655Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

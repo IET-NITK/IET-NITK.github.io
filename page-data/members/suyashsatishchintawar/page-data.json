@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/suyashsatishchintawar",
-    "result": {"data":{"memberDetails":{"name":"Suyash Satish Chintawar","position":"Executive Member","image":"https://drive.google.com/open?id=1ehX0vyFmSSg5_wRY5d2xBkIVFUVRQUlL","passoutYr":2023,"contacts":{"email":"suyash.191it109@nitk.edu.in","facebook":"profile.php?id=100013210511822","github":"Suyash-Chintawar","linkedin":"suyash-chintawar-8944351b3"}},"memberProjects":{"nodes":[{"title":"YouTube Transcript Summarizer","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Feyaz Baker"},{"name":"Suyash Satish Chintawar"},{"name":"Naveen Kumar"},{"name":"Sahana"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Suyash Satish Chintawar","sig":null,"date":"2021-04-29T13:15:56.054Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/indhulekhaannam",
+    "result": {"data":{"memberDetails":{"name":"Indhu Lekha Annam","position":"Executive Member","image":"https://drive.google.com/open?id=1GnGEcZpSQeGHvnhvElHVWbIUAkjgXE3e","passoutYr":2023,"contacts":{"email":"annamindhulekha.191it207@nitk.edu.in","facebook":"indhulekha.annam.7","github":"iamindhu","linkedin":null}},"memberProjects":{"nodes":[{"title":"Chatbot","description":"A real time chat bot is developed to answer queries related to IET.","sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Krishna Poojitha Vantakula"},{"name":"Indhu Lekha Annam"},{"name":"Atul Kumar Singh"}]},{"title":"Image Colorization","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Marmik Mundada"},{"name":"Arunava Mukhoti"},{"name":"Diksha Negi"},{"name":"Indhu Lekha Annam"},{"name":"Varanshu Garg"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Indhu Lekha Annam","sig":null,"date":"2021-04-29T13:15:56.156Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

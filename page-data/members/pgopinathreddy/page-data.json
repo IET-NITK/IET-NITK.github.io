@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/pgopinathreddy",
-    "result": {"data":{"memberDetails":{"name":"P Gopinath Reddy","position":"Torsion lead","image":null,"passoutYr":2022,"contacts":{"email":"palakolanugopinathreddy@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"MHD Propelled Boat","description":"Plasma Physics is not only applicable to earths core and the sun but did you ever wonder that it can propel a boat as a clear energy source of energy. Here we worked on an MHD (Magnetohydrodynamics) boat. An innovation for the future. The basic equations of plasma physics are analysed . Complex CFD simulations alongside a prototype is proposed for MHD boats.","sig":{"name":"Torsion"},"url":null,"authors":[{"name":"P Gopinath Reddy"},{"name":"Vishwa Mohan Tiwari"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"P Gopinath Reddy","sig":null,"date":"2021-05-08T06:28:47.199Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

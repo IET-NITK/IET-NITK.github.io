@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/ksnehithbhagavan",
-    "result": {"data":{"memberDetails":{"name":"K Snehith Bhagavan","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Audio Fingerprinting","description":null,"sig":{"name":"Cipher"},"url":null,"authors":[{"name":"K Snehith Bhagavan"},{"name":"Sharuf Baig"}]},{"title":"OCR for Handwritten Text","description":"An API powered by a neural network model trained to recognize handwritten text from images","sig":{"name":"Cipher"},"url":"https://github.com/nirmalhk7/HandwritingRecognizer","authors":[{"name":"K Snehith Bhagavan"},{"name":"Jayesh Kumar Soni"},{"name":"Uday Kumar"},{"name":"Nirmal Khedkar"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"K Snehith Bhagavan","sig":null,"date":"2021-04-29T13:15:57.066Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/venkatrohitmerugu",
-    "result": {"data":{"memberDetails":{"name":"Venkat Rohit Merugu","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"venkatarohit2012@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Gender Identification from Speech","description":"Building a model to identify whether given speech is uttered by male or female","sig":{"name":"Cipher"},"url":"https://github.com/venkatrohit219/gender-detection-from-speech","authors":[{"name":"Venkat Rohit Merugu"},{"name":"M.Govardhan"}]},{"title":"Street Light Glow","description":"Street lights along highways during night time will be only ON when they detect vehicles on road,otherwise off.","sig":{"name":"Rovisp"},"url":null,"authors":[{"name":"Venkat Rohit Merugu"},{"name":"Rameshwar Dhakad"},{"name":"Sharuf Baig"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Venkat Rohit Merugu","sig":null,"date":"2021-04-29T13:15:52.489Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

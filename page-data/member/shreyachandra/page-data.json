@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/shreyachandra",
+    "result": {"data":{"memberDetails":{"name":"Shreya Chandra","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"chandra.shreyaa@gmail.com","facebook":null,"github":"Shreyachandr","linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[{"title":"What is a zero-day vulnerability?","authors":[{"name":"Shreya Chandra"}],"excerpt":"An interesting dive into the what's, when's and how's of Zero Day Vulnerabilities","date":"September 29th, 2021","route":"zero-day-vln"}]}},"pageContext":{"pathSlug":"Shreya Chandra","sig":null,"date":"2021-04-29T13:15:52.545Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

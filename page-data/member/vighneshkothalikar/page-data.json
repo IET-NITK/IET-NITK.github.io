@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/vighneshkothalikar",
+    "result": {"data":{"memberDetails":{"name":"Vighnesh Kothalikar","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":"vighnesh-kothalikar-7a6312202"}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[{"title":"Entry to the Metaverse: A Virtual World","authors":[{"name":"Vighnesh Kothalikar"},{"name":"Vaishnavi Prakash Kalgutkar"}],"excerpt":"Entry to the Metaverse: A Virtual World","date":"March 13th, 2022","route":"Metaverse"}]}},"pageContext":{"pathSlug":"Vighnesh Kothalikar","sig":null,"date":"2022-03-31T17:15:57.004Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

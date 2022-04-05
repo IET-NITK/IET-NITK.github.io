@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/nithinln",
-    "result": {"data":{"memberDetails":{"name":"Nithin L N","position":"Rovisp coordinator","image":null,"passoutYr":2023,"contacts":{"email":"nithinln.191ec135@nitk.edu.in","facebook":null,"github":null,"linkedin":"https://www.linkedin.com/in/nithin-l-n-1a0282194"}},"memberProjects":{"nodes":[{"title":"Mini Jarvis","description":"Home automation demo using a Google voice assistant applet.","sig":{"name":"Rovisp"},"url":null,"authors":[{"name":"Ram Janam Yadav"},{"name":"Nithin L N"},{"name":"Saurabh Gole"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Nithin L N","sig":null,"date":"2021-05-08T06:34:22.585Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

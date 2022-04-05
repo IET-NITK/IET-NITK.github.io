@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/shlokameena",
+    "result": {"data":{"memberDetails":{"name":"Shloka Meena","position":"Executive Member","image":"https://drive.google.com/open?id=19OC7McmQnP8TXhXqnFQdrzYtpUBRkivK","passoutYr":2022,"contacts":{"email":"shloka.meena@gmail.com","facebook":null,"github":null,"linkedin":"https://www.linkedin.com/in/shloka-meena"}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Shloka Meena","sig":null,"date":"2021-04-29T13:15:50.023Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/brijrajsingh",
+    "result": {"data":{"memberDetails":{"name":"Brij Raj Singh","position":"Executive Member","image":null,"passoutYr":2021,"contacts":{"email":"singhbrijraj29@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Brij Raj Singh","sig":null,"date":"2021-05-08T05:57:11.980Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

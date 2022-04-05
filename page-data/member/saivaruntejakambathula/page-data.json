@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/saivaruntejakambathula",
+    "result": {"data":{"memberDetails":{"name":"Sai Varun Teja Kambathula","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Sai Varun Teja Kambathula","sig":null,"date":"2021-04-29T13:15:55.568Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/naveenshenoy",
+    "result": {"data":{"memberDetails":{"name":"Naveen Shenoy","position":"Executive Member","image":"https://drive.google.com/open?id=1NtQBQf3SROEDqmbDN6PWUJMBYnNPrnu1","passoutYr":2023,"contacts":{"email":"naveenshenoy10@gmail.com","facebook":null,"github":"Naveen-1001","linkedin":"naveen-1001"}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Naveen Shenoy","sig":null,"date":"2021-04-29T13:15:56.321Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

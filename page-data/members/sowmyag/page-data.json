@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/sowmyag",
-    "result": {"data":{"memberDetails":{"name":"Sowmya G","position":"Torsion lead and Women in Tech coordinator","image":"https://drive.google.com/open?id=1Jjifdtjyje9cN5KI_VP5fK_HJW3ih8NP","passoutYr":2022,"contacts":{"email":"sowmyag.181mt046@nitk.edu.in","facebook":"Sowmya G","github":"sowmyag123","linkedin":"Sowmya G"}},"memberProjects":{"nodes":[{"title":"Experiencing Homes in VR","description":"A computer vision and deep learning based project that enables the user to try on spectacles, watches and other accessories virtually.","sig":{"name":"Cipher"},"url":null,"authors":[{"name":"Rhevanth M"},{"name":"Marmik Mundada"},{"name":"Krishna Poojitha Vantakula"},{"name":"Verupaka Yashwanth Reddy"},{"name":"Gaurav Chaurasia"},{"name":"Sowmya G"},{"name":"Sachin Pandey"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Sowmya G","sig":null,"date":"2021-06-20T09:09:43.996Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

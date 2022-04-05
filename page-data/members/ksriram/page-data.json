@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-author-page-js",
-    "path": "/members/ksriram",
-    "result": {"data":{"memberDetails":{"name":"K Sriram","position":"Executive Member","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[{"title":"The First Microprocessor: Intel 4004","authors":[{"name":"K Sriram"}],"excerpt":"An Overview of World's First Microprocessor - INTEL 4004","date":"December 6th, 2021","route":"INTEL_4004"}]}},"pageContext":{"pathSlug":"K Sriram","sig":null,"date":"2021-04-29T13:15:55.210Z"}},
-    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
