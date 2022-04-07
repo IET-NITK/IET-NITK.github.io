@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/mnaveenkumar",
+    "result": {"data":{"memberDetails":{"name":"M Naveen Kumar","position":"Cipher Lead  (2019)","image":null,"passoutYr":2020,"contacts":{"email":"mnaveenkumar2009@gmail.com","facebook":"lookdownthisistheurlofmytimeline","github":"mnaveenkumar2009","linkedin":"m-naveen-kumar"}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"M Naveen Kumar","sig":null,"date":"2021-04-29T13:15:42.407Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

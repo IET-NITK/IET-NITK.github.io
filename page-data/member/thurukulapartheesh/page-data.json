@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/thurukulapartheesh",
+    "result": {"data":{"memberDetails":{"name":"Thurukula Partheesh","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Design and Analysis of Baja Roll cage","description":"3 different models are designed using Catia and are analyzed using Ansys workbench for determining strength enough to sustain any impact and protect the driver and other vehicle components.","sig":{"name":"Torsion"},"url":null,"authors":[{"name":"Naveen Patidar"},{"name":"Pragyanshree Sahoo"},{"name":"Thurukula Partheesh"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Thurukula Partheesh","sig":null,"date":"2022-04-06T17:11:18.319Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

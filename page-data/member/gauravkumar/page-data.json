@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/gauravkumar",
+    "result": {"data":{"memberDetails":{"name":"Gaurav Kumar","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"YouTube Transcript Summarizer","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/YT-Transcript-Summarizer","authors":[{"name":"Feyaz Baker"},{"name":"Venkat Rohit Merugu"},{"name":"Suyash Satish Chintawar"},{"name":"Naveen Kumar"},{"name":"Gaurav Kumar"},{"name":"Sahana"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Gaurav Kumar","sig":null,"date":"2022-04-06T17:51:57.163Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

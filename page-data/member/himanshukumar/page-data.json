@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/himanshukumar",
+    "result": {"data":{"memberDetails":{"name":"Himanshu Kumar","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Handwriting Generation","description":"We convert typed text into natural human handwriting.","sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/HandwritingGeneration","authors":[{"name":"Himanshu Kumar"},{"name":"Sachin Pandey"},{"name":"Eshaan Ganesh Amin"},{"name":"Crowny Raut"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Himanshu Kumar","sig":null,"date":"2022-04-06T17:11:18.217Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

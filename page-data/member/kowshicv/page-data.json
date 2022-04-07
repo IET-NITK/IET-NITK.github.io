@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/kowshicv",
+    "result": {"data":{"memberDetails":{"name":"Kowshic V","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Audio to Sign Language Translator","description":"We build an ML based tool that converts audio to sign language. Conversion of audio to ISL helps the common folks to interact with people with such disabilities without the language barrier, enriching both of their lives.","sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/A2SL-Translator","authors":[{"name":"Ansh Bindlish"},{"name":"Jagan Babu Korra"},{"name":"K Sriram"},{"name":"Kowshic V"},{"name":"Vaishnavi Prakash Kalgutkar"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Kowshic V","sig":null,"date":"2022-04-06T17:51:57.088Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

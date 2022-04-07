@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/mbsaiaditya",
+    "result": {"data":{"memberDetails":{"name":"MB Sai Aditya","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Equation Solver","description":"Train a deep learning model to recognise handwritten equations from images and then give the result after solving the equations. ","sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/HandwrittenEquationSolver","authors":[{"name":"Lalit Nagar"},{"name":"Dolly Gupta"},{"name":"MB Sai Aditya"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"MB Sai Aditya","sig":null,"date":"2022-04-06T17:11:17.502Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

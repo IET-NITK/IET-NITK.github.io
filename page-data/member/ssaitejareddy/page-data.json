@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/ssaitejareddy",
+    "result": {"data":{"memberDetails":{"name":"S Saiteja reddy","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Impact of thermal insulation and cool roofs in India","description":"We explore the impact of thermal insulation and cool roofs on  residential buildings in India.","sig":{"name":"Torsion"},"url":null,"authors":[{"name":"D.Chaitanya lakshmi"},{"name":"S Saiteja reddy"},{"name":"Suhas Reddy"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"S Saiteja reddy","sig":null,"date":"2022-04-06T17:11:18.292Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

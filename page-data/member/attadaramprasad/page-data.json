@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/attadaramprasad",
+    "result": {"data":{"memberDetails":{"name":"Attada Ramprasad","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Audio Fingerprinting","description":"Audio fingerprinting is the process of representing an audio signal in a compact way by extracting relevant features of the audio content. Here, we use hash fingerprints to match audio from a collection in our database.","sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/AudioFingerprinting","authors":[{"name":"Attada Ramprasad"},{"name":"Sharuf Baig"},{"name":"Pooja Gayathri Kanala"},{"name":"K Snehith Bhagavan"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Attada Ramprasad","sig":null,"date":"2022-04-06T17:11:17.507Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

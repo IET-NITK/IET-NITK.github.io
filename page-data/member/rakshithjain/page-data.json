@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/rakshithjain",
+    "result": {"data":{"memberDetails":{"name":"Rakshith Jain","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Access your phone from anywhere without Internet (MyHelper)","description":"Use your phone from anywhere without an internet connection","sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/MyHelper","authors":[{"name":"Satyam Jyotsana Gargee"},{"name":"Rakshith Jain"},{"name":"Maheshwari Mihir Premjibhai"},{"name":"Somesh Kartikeya"},{"name":"Aashish Prateek"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Rakshith Jain","sig":null,"date":"2022-04-06T17:11:18.144Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

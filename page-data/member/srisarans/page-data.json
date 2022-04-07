@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/srisarans",
+    "result": {"data":{"memberDetails":{"name":"Sri Saran S","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Design and Simulation analysis of a Leaf spring suspension","description":"The main aim of the present work is to optimize the material \nselection for the leaf spring. For this modeling of leaf spring is \ndone in Creo 2.0 with selected dimensions and static analysis \nis done in ANSYS 14.0 for selected design parameters. \nObtained results are compared graphically to achieve the main \nobjective of research. i.e. best material selection for the leaf \nspring","sig":{"name":"Torsion"},"url":null,"authors":[{"name":"Nitish Kumar Kattimani"},{"name":"Raj Raushan Singh"},{"name":"Sri Saran S"},{"name":"Sushil A Shende"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Sri Saran S","sig":null,"date":"2022-04-06T17:11:18.295Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

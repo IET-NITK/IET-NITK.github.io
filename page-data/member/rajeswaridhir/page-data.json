@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/rajeswaridhir",
+    "result": {"data":{"memberDetails":{"name":"Rajeswari Dhir","position":"Executive Member","image":null,"passoutYr":2019,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Rajeswari Dhir","sig":null,"date":"2021-04-29T13:15:37.343Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

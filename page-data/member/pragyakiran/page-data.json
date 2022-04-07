@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/pragyakiran",
+    "result": {"data":{"memberDetails":{"name":"Pragya Kiran","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Sudoku Solver","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/SudokuSolver","authors":[{"name":"Monika Agarwal"},{"name":"Adith Shekhar Gatty"},{"name":"Verupaka Yashwanth Reddy"},{"name":"Pragya Kiran"},{"name":"Raunak Somani"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Pragya Kiran","sig":null,"date":"2022-04-06T17:11:17.507Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
