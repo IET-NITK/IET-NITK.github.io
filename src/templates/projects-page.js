@@ -94,16 +94,8 @@ export const postQuery = graphql`
   query ($pathSlug: String!) {
     projects: strapiProjects(title: { eq: $pathSlug }) {
       report: project_report {
-        project
         content: body
         date: updated_at(formatString: "MMMM Do, YYYY")
-        header {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(width: 1000, placeholder: BLURRED)
-            }
-          }
-        }
       }
       authors {
         name
