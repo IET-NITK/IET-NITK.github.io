@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/crownyraut",
-    "result": {"data":{"memberDetails":{"name":"Crowny Raut","position":"Inkheart coordinator","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Crowny Raut","sig":null,"date":"2021-05-08T06:36:00.172Z"}},
+    "result": {"data":{"memberDetails":{"name":"Crowny Raut","position":"Inkheart coordinator","image":null,"passoutYr":2023,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[{"title":"Handwriting Generation","description":"We convert typed text into natural human handwriting.","sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/HandwritingGeneration","authors":[{"name":"Himanshu Kumar"},{"name":"Sachin Pandey"},{"name":"Eshaan Ganesh Amin"},{"name":"Crowny Raut"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Crowny Raut","sig":null,"date":"2021-05-08T06:36:00.172Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
