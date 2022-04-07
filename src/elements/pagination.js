@@ -121,9 +121,6 @@ const PaginationComponent = ({
                     data-toggle="tooltip"
                     onClick={() => {
                       scrollTop();
-                      if (typeof window !== "undefined") {
-                        document.location.search=`?p=${index+1}`;
-                      }
                       setState({ ...state, pno: index + 1 });
                     }}
                     title={`Page ${index + 1}`}

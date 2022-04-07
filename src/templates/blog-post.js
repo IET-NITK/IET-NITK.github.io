@@ -7,6 +7,7 @@ import { ShareButtons } from "../elements/social";
 import ReactMarkdown from "react-markdown";
 import ArticleLayout from "../layouts/article";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import remarkGfm from "remark-gfm";
 
 const PreviewOther = ({ post, isPrevious }) => {
   if (post)
@@ -61,7 +62,8 @@ const BlogArticle = ({ data, location, uri }) => {
             url={location.href}
           />
         </div>
-        <ReactMarkdown components={commonMdProps}>
+        <ReactMarkdown components={commonMdProps} 
+                remarkPlugins={[remarkGfm]}>
           {data.post.content}
         </ReactMarkdown>
 

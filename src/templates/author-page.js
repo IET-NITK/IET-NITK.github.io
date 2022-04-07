@@ -227,7 +227,7 @@ export const postQuery = graphql`
     }
     memberProjects: allStrapiProjects(
       filter: { authors: { elemMatch: { name: { in: [$pathSlug] } } } },
-      sort: {fields: [project_report___project, description, url, title], order: [ASC,ASC,ASC,ASC]}
+      sort: {fields: [project_report___id, description, url, title], order: [ASC,ASC,ASC,ASC]}
     ) {
       nodes {
         title

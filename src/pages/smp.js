@@ -6,6 +6,7 @@ import { Link, graphql, navigate } from "gatsby";
 import ReactMarkdown from "react-markdown";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import remarkGfm from "remark-gfm";
 
 
 const SMP = ({ data, location }) => {
@@ -117,7 +118,8 @@ const SMP = ({ data, location }) => {
                 </div>
 
                 <div className="block-content">
-                  <ReactMarkdown  components={commonMdProps}>{data.smp_basic.faq}</ReactMarkdown>
+                  <ReactMarkdown 
+                components={commonMdProps} remarkPlugins={[remarkGfm]}>{data.smp_basic.faq}</ReactMarkdown>
                   <p className="text-primary mt-5">
                     Please stay tuned to our social media pages for updates.
                   </p>

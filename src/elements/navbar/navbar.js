@@ -7,6 +7,7 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import * as style from "./navbar.module.scss";
 import { StaticImage } from "gatsby-plugin-image";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const TopNavbar = ({ smp, recr, expo, notice }) => {
   //eslint-disable-next-line
@@ -32,7 +33,8 @@ const TopNavbar = ({ smp, recr, expo, notice }) => {
                       </>
                     )}
                   </Ticker> */}
-                  <ReactMarkdown className="mb-n3">
+                  <ReactMarkdown className="mb-n3" 
+                remarkPlugins={[remarkGfm]}>
                     {notice + "\t".repeat(10)}
                   </ReactMarkdown>
                 </div>
@@ -128,6 +130,19 @@ export const XNavbar = () => {
                   <Nav.Link className="nav-link" href="/about">
                     About Us
                   </Nav.Link>
+                  <NavDropdown title="SIGs">
+                    {["Cipher", "Rovisp", "Torsion", "Venture"].map((sig) => (
+                      <NavDropdown.Item className="nav-link" href={`/sig/${sig.toLowerCase()}`} key={sig}>
+                        {sig}
+                      </NavDropdown.Item>
+                    ))}
+                    <NavDropdown.Item
+                      className="nav-link"
+                      href="https://ietinkheartblog.wordpress.com/"
+                    >
+                      Inkheart
+                    </NavDropdown.Item>
+                  </NavDropdown>
                   <Nav.Link className="nav-link" href="/events">
                     Events
                   </Nav.Link>
@@ -137,26 +152,6 @@ export const XNavbar = () => {
                   <Nav.Link className="nav-link" href="/blog">
                     Blog
                   </Nav.Link>
-                  <NavDropdown title="SIGs">
-                    <NavDropdown.Item className="nav-link" href="/sig/cipher">
-                      Cipher
-                    </NavDropdown.Item>
-                    <NavDropdown.Item className="nav-link" href="/sig/rovisp">
-                      Rovisp
-                    </NavDropdown.Item>
-                    <NavDropdown.Item className="nav-link" href="/sig/torsion">
-                      Torsion
-                    </NavDropdown.Item>
-                    <NavDropdown.Item className="nav-link" href="/sig/venture">
-                      Venture
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      className="nav-link"
-                      href="https://ietinkheartblog.wordpress.com/"
-                    >
-                      Inkheart
-                    </NavDropdown.Item>
-                  </NavDropdown>
                   <Nav.Link className="nav-link" href="/contact">
                     Contact Us
                   </Nav.Link>

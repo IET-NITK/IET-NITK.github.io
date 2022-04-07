@@ -30,6 +30,7 @@ const SIG = ({ pathname, data, uri }) => {
               description={element.description}
               key={index}
               label={element.label}
+              projectReport={element.project_report}
               title={element.title}
               url={element.url}
             />
@@ -48,12 +49,15 @@ export const postQuery = graphql`
   query sigpage($pathSlug: String!) {
     sigProjects: allStrapiProjects(
       filter: { sig: { name: { eq: $pathSlug } } }
-      sort: {fields: [project_report___project, description, url, title], order: [ASC,ASC,ASC,ASC]}
+      sort: {fields: [project_report___id, description, url, title], order: [ASC,ASC,ASC,ASC]}
     ) {
       nodes {
         description
         title
         url
+        project_report {
+          project
+        }
         authors {
           name
         }

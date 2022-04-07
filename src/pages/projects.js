@@ -27,6 +27,7 @@ const Projects = ({ data, location }) => {
               description={element.description}
               key={index}
               label={element.label}
+              projectReport={element.project_report}
               signame={element.sig.name}
               title={element.title}
               url={element.url}
@@ -42,10 +43,13 @@ const Projects = ({ data, location }) => {
 
 export const postQuery = graphql`
   {
-    projects: allStrapiProjects(sort: {fields: [project_report___project, description, url, title], order: [ASC,ASC,ASC,ASC]}) {
+    projects: allStrapiProjects(sort: {fields: [project_report___id, description, url, title], order: [ASC,ASC,ASC,ASC]}) {
       nodes {
         title
         description
+        project_report {
+          project
+        }
         sig {
           name
         }

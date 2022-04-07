@@ -15,8 +15,8 @@ exports.createPages = async ({ graphql, actions }) => {
   };
   try {
     graphql(`
-      query jnjn($memberYear: Int){
-        member: allStrapiMembers(filter: {passoutYr: {gte: $memberYear}}) {
+      query jnjn{
+        member: allStrapiMembers {
           nodes {
             link: name
             date: updated_at

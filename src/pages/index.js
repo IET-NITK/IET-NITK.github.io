@@ -15,13 +15,14 @@ import video from "../../static/home.mp4";
 import { SIGShowcase } from "../elements/SIGShowcase";
 import ReactMarkdown from "react-markdown";
 import SectionLayout from "../layouts/section";
+import remarkGfm from "remark-gfm";
 // import
 
 const MainPage = ({ location, data }) => {
-  const [state]=useState({
-    projects: getRandom(data.projects.nodes, 4)
+  const [state] = useState({
+    projects: getRandom(data.projects.nodes, 4),
   });
-  
+
   return (
     <Layout location={location.pathname} title={"Main"}>
       <SearchEngineOps title="We are IET NITK" />
@@ -73,7 +74,7 @@ const MainPage = ({ location, data }) => {
               </div>
               <ReactMarkdown
                 className="col-lg-6 col-md-6 col-sm-12 col-xs-12"
-
+                remarkPlugins={[remarkGfm]}
               >
                 {data.about.main}
               </ReactMarkdown>
@@ -94,9 +95,7 @@ const MainPage = ({ location, data }) => {
 
         <SectionLayout>
           <div className="intro">
-            <h2 className="text-primary section-heading">
-              Latest Articles
-            </h2>
+            <h2 className="text-primary section-heading">Latest Articles</h2>
             <p className="section-description">
               We love to write! Check out more of our stuff on{" "}
               <Link to="/blog">
@@ -145,8 +144,8 @@ const MainPage = ({ location, data }) => {
           <div className="intro">
             <h2 className="text-primary section-heading">Our Projects</h2>
             <p className="section-description">
-              We have projects from many different domains of interest. We
-              love doing our projects!{" "}
+              We have projects from many different domains of interest. We love
+              doing our projects!{" "}
               <Link to="/projects">
                 <img alt="IET" className="mr-2" src={IconLink} />
                 Find More
@@ -185,10 +184,7 @@ const MainPage = ({ location, data }) => {
                     ) : null}
                     <div className="mb-3">
                       <div className="text-muted">
-                        {renderProjectDescription(
-                          element.description,
-                          100
-                        )}
+                        {renderProjectDescription(element.description, 100)}
                       </div>
                     </div>
                     <div className="card-text">
@@ -208,12 +204,10 @@ const MainPage = ({ location, data }) => {
           >
             <div className="col-lg-6 col-md-6">
               <div className="intro">
-                <h2 className="text-primary section-heading">
-                  Our Events
-                </h2>
+                <h2 className="text-primary section-heading">Our Events</h2>
                 <p className="section-description">
-                  Our latest event was "{data.events.nodes[0].title}", but
-                  we conduct many events throughout the year. Find more{" "}
+                  Our latest event was "{data.events.nodes[0].title}", but we
+                  conduct many events throughout the year. Find more{" "}
                   <Link to="/events">
                     <img alt="IET" className="mr-2" src={IconLink} />
                     Find More
@@ -235,9 +229,7 @@ const MainPage = ({ location, data }) => {
                   <div className="text-muted card-subtitle">
                     {data.events.nodes[0].date}
                   </div>
-                  <p className="card-text">
-                    {data.events.nodes[0].excerpt}
-                  </p>
+                  <p className="card-text">{data.events.nodes[0].excerpt}</p>
                 </div>
               </div>
             </div>
@@ -255,9 +247,9 @@ const MainPage = ({ location, data }) => {
                   IET NITK Women In Tech
                 </h2>
                 <p className="section-description">
-                  Women in Tech is an international organization with a
-                  double mission: to close the gender gap and to help
-                  women embrace technology.
+                  Women in Tech is an international organization with a double
+                  mission: to close the gender gap and to help women embrace
+                  technology.
                   <Link to="/wit">
                     <img alt="IET" className="mr-2" src={IconLink} />
                     Find More
@@ -307,7 +299,10 @@ export const postQuery = graphql`
     }
     projects: allStrapiProjects(
       filter: { authors: { elemMatch: { name: { ne: null } } } }
-      sort: {fields: [project_report___project, description, url, title], order: [ASC,ASC,ASC,ASC]}
+      sort: {
+        fields: [project_report___id, description, url, title]
+        order: [ASC, ASC, ASC, ASC]
+      }
     ) {
       nodes {
         title

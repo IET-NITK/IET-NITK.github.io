@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ProjectURL from "../elements/projecturl";
 import { ShareButtons } from "../elements/social";
+import remarkGfm from "remark-gfm";
 
 const Project = ({ data, pathname, uri, location }) => {
   return (
@@ -62,7 +63,10 @@ const Project = ({ data, pathname, uri, location }) => {
             <h1 className="text-bold text-primary">Detailed Project Report</h1>
 
             <div className="post-body mt-5">
-              <ReactMarkdown components={commonMdProps}>
+              <ReactMarkdown
+                components={commonMdProps}
+                remarkPlugins={[remarkGfm]}
+              >
                 {data.projects.report.content}
               </ReactMarkdown>
 

@@ -45,6 +45,7 @@ const Expo = ({ data, location }) => {
               projectReport={element.project_report}
               signame={element.sig.name}
               title={element.title}
+              url={element.url}
             />
           )}
           list={data.projects.nodes}
@@ -63,7 +64,7 @@ export const postQuery = graphql`
     projects: allStrapiProjects(
       filter: {onDisplayForExpo: {eq: true}}
       sort: {
-        fields: [project_report___project, description, url, title]
+        fields: [project_report___id, description, url, title]
         order: [ASC, ASC, ASC, ASC]
       }
     ) {

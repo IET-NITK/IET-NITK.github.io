@@ -4,6 +4,7 @@ import SearchEngineOps from "../elements/seo";
 import ReactMarkdown from "react-markdown";
 import ArticleLayout from "../layouts/article";
 import { commonMdProps } from "../elements/helper";
+import remarkGfm from "remark-gfm";
 
 const EventArticle = ({ data, uri }) => {
   return (
@@ -18,7 +19,8 @@ const EventArticle = ({ data, uri }) => {
             {data.event.date}
           </span>
         </div>
-        <ReactMarkdown  components={commonMdProps}>
+        <ReactMarkdown  components={commonMdProps} 
+                remarkPlugins={[remarkGfm]}>
           {data.event.description}
         </ReactMarkdown>
         <span>

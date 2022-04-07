@@ -5,6 +5,7 @@ import { graphql, Link, navigate } from "gatsby";
 import { SIGShowcase } from "../elements/SIGShowcase";
 import ReactMarkdown from "react-markdown";
 import { commonMdProps } from "../elements/helper";
+import remarkGfm from "remark-gfm";
 
 const Recruitments = ({ location, data }) => {
   useEffect(() => {
@@ -57,7 +58,8 @@ const Recruitments = ({ location, data }) => {
 
             <div className="block-content">
               <div className="faq-item">
-                <ReactMarkdown components={commonMdProps}>
+                <ReactMarkdown 
+                components={commonMdProps} remarkPlugins={[remarkGfm]}>
                   {data.rec_questions.FAQ}
                 </ReactMarkdown>
               </div>
