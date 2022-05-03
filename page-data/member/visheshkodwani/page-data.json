@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/visheshkodwani",
-    "result": {"data":{"memberDetails":{"name":"Vishesh Kodwani","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"visheshkodwani786@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Vishesh Kodwani","sig":null,"date":"2021-04-29T13:15:52.509Z"}},
+    "result": {"data":{"memberDetails":{"name":"Vishesh Kodwani","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"visheshkodwani786@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Vishesh Kodwani","sig":null,"date":"2022-05-02T16:46:50.517Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

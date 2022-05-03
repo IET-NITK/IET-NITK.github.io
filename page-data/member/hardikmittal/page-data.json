@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/hardikmittal",
-    "result": {"data":{"memberDetails":{"name":"Hardik Mittal","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"hardikmittal171100@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Hardik Mittal","sig":null,"date":"2021-04-29T13:15:50.125Z"}},
+    "result": {"data":{"memberDetails":{"name":"Hardik Mittal","position":"Executive Member","image":null,"passoutYr":2022,"contacts":{"email":"hardikmittal171100@gmail.com","facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Hardik Mittal","sig":null,"date":"2022-05-02T16:35:42.244Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
