@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/lavanyamudupu",
+    "result": {"data":{"memberDetails":{"name":"Lavanya Mudupu","position":"Inkheart Coordinator ","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Lavanya Mudupu","sig":null,"date":"2022-05-03T17:39:35.847Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

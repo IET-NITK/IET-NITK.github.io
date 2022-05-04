@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/akhilreddy",
+    "result": {"data":{"memberDetails":{"name":"Akhil Reddy","position":"PR Manager","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Akhil Reddy","sig":null,"date":"2022-05-03T17:35:39.614Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

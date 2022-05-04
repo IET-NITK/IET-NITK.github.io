@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/shagunkumar",
+    "result": {"data":{"memberDetails":{"name":"Shagun Kumar","position":"Treasurer ","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Shagun Kumar","sig":null,"date":"2022-05-03T17:32:27.852Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

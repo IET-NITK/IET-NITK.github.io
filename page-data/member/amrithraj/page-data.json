@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/amrithraj",
+    "result": {"data":{"memberDetails":{"name":"Amrith Raj","position":"Torsion SIG Coordinator","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Amrith Raj","sig":null,"date":"2022-05-03T18:04:49.281Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
