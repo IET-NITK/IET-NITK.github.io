@@ -181,6 +181,13 @@ Obviously, the content on the website is thanks to every single current or alumn
             <br />
             <sub><b>Rajan Jaiswal</b></sub>
         </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/iet-nitk-575025">
+            <img src="https://avatars.githubusercontent.com/u/77975565?v=4" width="100;" alt="iet-nitk-575025"/>
+            <br />
+            <sub><b>iet-nitk-575025</b></sub>
+        </a>
     </td></tr>
 </table>
 <!-- readme: contributors -end -->
