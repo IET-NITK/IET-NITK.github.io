@@ -40,7 +40,7 @@ const SMP = ({ data, location }) => {
                 marginTop: "2em",
               }}
             >
-              <h2>Sign up for a Course Now!</h2>
+              <h2>Sign up for a SMP Now!</h2>
               <OutboundLink
                 className="btn btn-light btn-lg mt-5"
                 href={data.smp_basic.form_url}
