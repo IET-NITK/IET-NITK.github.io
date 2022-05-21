@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/aarshmahajan",
+    "result": {"data":{"memberDetails":{"name":"Aarsh Mahajan","position":"Executive Member","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Aarsh Mahajan","sig":null,"date":"2022-05-20T19:00:44.976Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

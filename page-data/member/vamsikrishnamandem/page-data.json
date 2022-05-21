@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/vamsikrishnamandem",
+    "result": {"data":{"memberDetails":{"name":"Vamsi Krishna Mandem","position":"Executive Member","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Vamsi Krishna Mandem","sig":null,"date":"2022-05-20T18:54:07.036Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

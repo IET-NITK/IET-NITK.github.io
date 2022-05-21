@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/chekurivenkatasunilkumar",
+    "result": {"data":{"memberDetails":{"name":"Chekuri Venkata Sunil Kumar","position":"Executive Member","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Chekuri Venkata Sunil Kumar","sig":null,"date":"2022-05-20T18:43:41.270Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
