@@ -32,10 +32,32 @@ const SMP = ({ data, location }) => {
                   <p>{data.smp_basic.description}</p>
                 </div>
               </div>
+            {data.smp_basic.form_url ? (
+            <div
+              className="clean-block bg-gradient-primary text-center text-light"
+              style={{
+                padding: "30px 0px",
+                marginTop: "2em",
+              }}
+            >
+              <h2>Sign up for a Course Now!</h2>
+              <OutboundLink
+                className="btn btn-light btn-lg mt-5"
+                href={data.smp_basic.form_url}
+                rel="noreferrer"
+                target="_blank"
+                type="button"
+              >
+                Registration Form
+              </OutboundLink>
+            </div>
+          ) : null}
             </section>
           </main>
+              
           <div className="site-section pb-5" style={{ paddingTop: "1em" }}>
             <div className="container">
+
               {smp.group.map((smpGroup, ind) => (
                 <React.Fragment key={ind}>
                   <div className="row">
@@ -65,6 +87,7 @@ const SMP = ({ data, location }) => {
                               >
                                 Course Curriculum
                               </OutboundLink>
+
                             </p>
                           </div>
                         </React.Fragment>
