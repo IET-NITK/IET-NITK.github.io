@@ -57,7 +57,7 @@ const TopNavbar = ({ smp, recr, expo, notice }) => {
                     smp !== true ? "btn-primary disabled" : style.glowing
                   }`}
                   role="button"
-                  to="https://tripetto.app/run/5Y6ZFUULPL"
+                  to="/smp"
                 >
                   <i className="fa fa-chalkboard" /> SMP{" "}
                   {new Date().getFullYear()}
