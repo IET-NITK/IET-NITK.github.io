@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-author-page-js",
+    "path": "/member/kancharlalekha",
+    "result": {"data":{"memberDetails":{"name":"Kancharla Lekha","position":"Executive Member","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Kancharla Lekha","sig":null,"date":"2022-05-21T12:58:32.199Z"}},
+    "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
