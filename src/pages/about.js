@@ -8,8 +8,8 @@ import { Nav, NavDropdown } from "react-bootstrap";
 import { MemberDetails } from "../elements/member";
 
 const KEY_ALUMNI = "Alumni";
-const KEY_EXEC_MEMBERS = "Executive Members 2021";
-const KEY_CURR_CORE = "Core 2021";
+const KEY_EXEC_MEMBERS = "Executive Members 2022";
+const KEY_CURR_CORE = "Core 2022";
 
 
 const About = ({ location, data }) => {
