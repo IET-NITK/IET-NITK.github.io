@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/shuvroghosh",
-    "result": {"data":{"memberDetails":{"name":"Shuvro Ghosh","position":"Executive Member","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Shuvro Ghosh","sig":null,"date":"2022-05-21T12:56:54.317Z"}},
+    "result": {"data":{"memberDetails":{"name":"Shuvro Ghosh","position":"Rovisp Coordinator","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Shuvro Ghosh","sig":null,"date":"2022-05-29T08:17:13.768Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

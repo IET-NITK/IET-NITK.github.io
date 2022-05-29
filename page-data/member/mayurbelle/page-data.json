@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/mayurbelle",
-    "result": {"data":{"memberDetails":{"name":"Mayur Belle","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Design and simulation analysis of two wheeled robot","description":"We designed a two wheeled robot and analyzed the factors affected by robot if it is carrying any load.","sig":{"name":"Torsion"},"url":null,"authors":[{"name":"Harhikrishnan S"},{"name":"Rachana P J"},{"name":"Mayur Belle"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Mayur Belle","sig":null,"date":"2022-04-06T17:11:18.285Z"}},
+    "result": {"data":{"memberDetails":{"name":"Mayur Belle","position":"Executive Member","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Design and simulation analysis of two wheeled robot","description":"We designed a two wheeled robot and analyzed the factors affected by robot if it is carrying any load.","sig":{"name":"Torsion"},"url":null,"authors":[{"name":"Rachana P J"},{"name":"Harhikrishnan S"},{"name":"Mayur Belle"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Mayur Belle","sig":null,"date":"2022-04-06T17:11:18.285Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
