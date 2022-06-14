@@ -161,20 +161,27 @@ Obviously, the content on the website is thanks to every single current or alumn
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/iet-nitk-575025">
+            <img src="https://avatars.githubusercontent.com/u/77975565?v=4" width="100;" alt="iet-nitk-575025"/>
+            <br />
+            <sub><b>iet-nitk-575025</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/gaurav-chaurasia">
             <img src="https://avatars.githubusercontent.com/u/54330985?v=4" width="100;" alt="gaurav-chaurasia"/>
             <br />
             <sub><b>Gaurav Chaurasia</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/ImgBotApp">
             <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="100;" alt="ImgBotApp"/>
             <br />
             <sub><b>Imgbot</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/rj-since-2000">
             <img src="https://avatars.githubusercontent.com/u/68644104?v=4" width="100;" alt="rj-since-2000"/>
