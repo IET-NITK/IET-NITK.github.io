@@ -8,8 +8,12 @@ const config = {
     author: `Nirmal Khedkar`,
     contactDetails: [
       {
-        name: "Laksh Sadhwani",
-        number: "9893008641",
+        name: "Marmik Mundada (Convenor)",
+        number: "8378994789",
+      },
+      {
+        name: "Mohammed Ibrahim (Joint Convenor)",
+        number: "7349493680",
       },
     ],
     contactEmail: "iet@nitk.edu.in",
