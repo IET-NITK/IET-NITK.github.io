@@ -152,6 +152,9 @@ export const XNavbar = () => {
                   <Nav.Link className="nav-link" href="/blog">
                     Blog
                   </Nav.Link>
+                  <Nav.Link className="nav-link" href="/wit">
+                    WIT
+                  </Nav.Link>
                   <Nav.Link className="nav-link" href="/contact">
                     Contact Us
                   </Nav.Link>
