@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/pragyakiran",
-    "result": {"data":{"memberDetails":{"name":"Pragya Kiran","position":"WIT Coordinator","image":null,"passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Sudoku Solver","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/SudokuSolver","authors":[{"name":"Monika Agarwal"},{"name":"Verupaka Yashwanth Reddy"},{"name":"Adith Shekhar Gatty"},{"name":"Raunak Somani"},{"name":"Pragya Kiran"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Pragya Kiran","sig":null,"date":"2022-05-29T08:24:00.256Z"}},
+    "result": {"data":{"memberDetails":{"name":"Pragya Kiran","position":"WIT Coordinator","image":"https://drive.google.com/thumbnail?id=1boRcjpM1LbFLRkWq6pIgO8mO3Khsz7mJ","passoutYr":null,"contacts":null},"memberProjects":{"nodes":[{"title":"Sudoku Solver","description":null,"sig":{"name":"Cipher"},"url":"https://github.com/IET-NITK/SudokuSolver","authors":[{"name":"Monika Agarwal"},{"name":"Verupaka Yashwanth Reddy"},{"name":"Adith Shekhar Gatty"},{"name":"Raunak Somani"},{"name":"Pragya Kiran"}]}]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Pragya Kiran","sig":null,"date":"2022-07-02T12:57:47.955Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

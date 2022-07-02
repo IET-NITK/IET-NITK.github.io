@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/chiragr",
-    "result": {"data":{"memberDetails":{"name":"Chirag R","position":"Inkheart SIG coordinator","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Chirag R","sig":null,"date":"2022-05-03T18:04:16.649Z"}},
+    "result": {"data":{"memberDetails":{"name":"Chirag R","position":"Inkheart SIG coordinator","image":"https://drive.google.com/thumbnail?id=1qATmoo1EZga7tPr44j-ddZnZn5-MeHm3","passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Chirag R","sig":null,"date":"2022-07-02T12:52:47.398Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

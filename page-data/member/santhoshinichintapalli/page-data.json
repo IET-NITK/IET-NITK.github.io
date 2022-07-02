@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/santhoshinichintapalli",
-    "result": {"data":{"memberDetails":{"name":"Santhoshini Chintapalli","position":"PR Manager","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Santhoshini Chintapalli","sig":null,"date":"2022-05-03T17:41:40.917Z"}},
+    "result": {"data":{"memberDetails":{"name":"Santhoshini Chintapalli","position":"PR Manager","image":"https://drive.google.com/thumbnail?id=1aaGqt29I5HHd55RY_wRi4RfNHP9dhWdk","passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Santhoshini Chintapalli","sig":null,"date":"2022-07-02T13:08:27.105Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/draghavi",
-    "result": {"data":{"memberDetails":{"name":"D Raghavi ","position":"Inkheart SIG Head","image":null,"passoutYr":2023,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"D Raghavi ","sig":null,"date":"2022-05-03T17:36:58.213Z"}},
+    "result": {"data":{"memberDetails":{"name":"D Raghavi ","position":"Inkheart SIG Head","image":"https://drive.google.com/thumbnail?id=1bpQBoxwVu4MZUbwIELg8vW6Cn72QVq0Y","passoutYr":2023,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"D Raghavi ","sig":null,"date":"2022-07-02T13:03:12.660Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}

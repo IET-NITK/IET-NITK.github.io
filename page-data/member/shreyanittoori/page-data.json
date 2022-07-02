@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/shreyanittoori",
-    "result": {"data":{"memberDetails":{"name":"Shreya Nittoori ","position":"PR manager ","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Shreya Nittoori ","sig":null,"date":"2022-05-03T17:28:10.055Z"}},
+    "result": {"data":{"memberDetails":{"name":"Shreya Nittoori ","position":"PR manager ","image":"https://drive.google.com/thumbnail?id=14jMMwv4J7N7QbEFqsR1EtB5dL9WsYi8k","passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Shreya Nittoori ","sig":null,"date":"2022-07-02T13:09:14.384Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
