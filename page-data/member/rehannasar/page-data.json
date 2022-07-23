@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/rehannasar",
-    "result": {"data":{"memberDetails":{"name":"Rehan Nasar","position":"Rovisp Coordinator","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[]}},"pageContext":{"pathSlug":"Rehan Nasar","sig":null,"date":"2022-05-21T13:00:58.834Z"}},
+    "result": {"data":{"memberDetails":{"name":"Rehan Nasar","position":"Rovisp Coordinator","image":null,"passoutYr":2024,"contacts":null},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[{"title":"The future of Processors and Computing","authors":[{"name":"Rehan Nasar"}],"excerpt":"The future of Processors and Computing","date":"April 1st, 2021","route":"computing"}]}},"pageContext":{"pathSlug":"Rehan Nasar","sig":null,"date":"2022-05-21T13:00:58.834Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
