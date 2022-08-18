@@ -51,16 +51,19 @@ const TopNavbar = ({ smp, recr, expo, notice }) => {
                 Join IET NITK
               </Link>
 
+
               {expo !== true ? (
                 <Link
                   className={`btn btn-sm mr-3 ${
                     smp !== true ? "btn-primary disabled" : style.glowing
                   }`}
                   role="button"
-                  to="/smp"
+                  to="https://tripetto.app/run/C7NE4FSLTW"
                 >
-                  <i className="fa fa-chalkboard" /> SMP{" "}
-                  {new Date().getFullYear()}
+                  <i className="fa fa-chalkboard" /> GameShow{" "}
+               
+                  {/* <i className="fa fa-chalkboard" /> SMP{" "}
+                  {new Date().getFullYear()} */}
                 </Link>
               ) : (
                 <Link
