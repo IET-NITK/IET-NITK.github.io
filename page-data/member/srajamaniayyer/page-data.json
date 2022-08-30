@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-author-page-js",
     "path": "/member/srajamaniayyer",
-    "result": {"data":{"memberDetails":{"name":"S Rajamani Ayyer","position":"Publicity Joint Coordinator","image":null,"passoutYr":2021,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[{"title":"Audio Production","authors":[{"name":"S Rajamani Ayyer"}],"excerpt":"How is music produced?","date":"December 22nd, 2020","route":"audio"}]}},"pageContext":{"pathSlug":"S Rajamani Ayyer","sig":null,"date":"2021-04-29T13:15:45.690Z"}},
+    "result": {"data":{"memberDetails":{"name":"S Rajamani Ayyer","position":"Publicity Joint Coordinator","image":null,"passoutYr":2021,"contacts":{"email":null,"facebook":null,"github":null,"linkedin":null}},"memberProjects":{"nodes":[]},"memberArticles":{"nodes":[{"title":"Audio Production","authors":[{"name":"S Rajamani Ayyer"}],"excerpt":"How is music produced?","date":"December 22nd, 2020","route":"audio"}]}},"pageContext":{"pathSlug":"S Rajamani Ayyer","sig":null,"date":"2022-08-30T06:44:38.761Z"}},
     "staticQueryHashes": ["1681770253","3546218355","362689041","4192044320"]}
