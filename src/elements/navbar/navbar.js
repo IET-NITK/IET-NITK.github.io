@@ -46,7 +46,7 @@ const TopNavbar = ({ smp, recr, expo, notice }) => {
                   recr !== true ? "btn-primary disabled" : style.glowing
                 }`}
                 role="button"
-                to="https://bit.ly/3WhVLkP"
+                to="https://tripetto.app/run/5Y6ZFUULPL"
               >
                 Join IET NITK
               </Link>
@@ -58,9 +58,9 @@ const TopNavbar = ({ smp, recr, expo, notice }) => {
                     smp !== true ? "btn-primary disabled" : style.glowing
                   }`}
                   role="button"
-                  to="https://tripetto.app/run/C7NE4FSLTW"
+                  to="https://bit.ly/3WhVLkP"
                 >
-                  <i className="fa fa-chalkboard" /> GameShow{" "}
+                  <i className="fa fa-chalkboard" /> Create Future{" "}
                
                   {/* <i className="fa fa-chalkboard" /> SMP{" "}
                   {new Date().getFullYear()} */}
