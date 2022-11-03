@@ -46,7 +46,7 @@ const TopNavbar = ({ smp, recr, expo, notice }) => {
                   recr !== true ? "btn-primary disabled" : style.glowing
                 }`}
                 role="button"
-                to="https://tripetto.app/run/I4PBVJZTBP"
+                to="https://bit.ly/3WhVLkP"
               >
                 Join IET NITK
               </Link>
