@@ -78,6 +78,9 @@ var projects = [
   <p style="max-width:100rem;font-size: 16px;color: grey;">Now-a-days, automobiles consume a large number of fossil fuels. However, the consumption of fossil fuels has brought many serious environmental problems,  to avoid such situations, a compressed air engine of a renewable energy vehicle is introduced. A compressed air engine is a type of motor which does mechanical work by expanding compressed air. Compressed air engine reduces the cost of vehicle production, because there is no need to build a cooling system.
   </p> <br>
   <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Bijeta, Vachana, Sai Priya, Amrith Raj and Satish Kumar.</p> <br>
+  <div class="row-md-12">
+  <a href="https://docs.google.com/presentation/d/1_voYRcZQ3-35Nl63adIbKh272hif9jw7G_Vv8ziGGS0/edit?usp=sharing" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
+</div>
 </div>
 
 </div>`,
@@ -89,6 +92,7 @@ var projects = [
   <p style="max-width:100rem;font-size: 16px;color: grey;">Pressure-Swing Distillation of the azeotrope of ethyl acetate-ethanol-water. The separation process is simulated by DWSIM and the effects of stages, reflux ratio, feed stage are observed and thus optimized.
   </p> <br>
   <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Yash Jangid, Adithi Lavanya, Amresh Prajapathi, Sharan Vinod Kumar and Rohit Singh.</p> <br>
+  <a href="https://docs.google.com/presentation/d/16lkunZagntAmFJjh6_-bkEDX-aKrAGUJauBpgsYlL1s/edit?usp=sharing" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
 </div>
 
 </div>`,
@@ -101,7 +105,7 @@ var projects = [
   </p> <br>
   <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Sreehari P, Vadla Akshitha, Akshat Kumar, Shresta Bhavani, Utkarsh and Kenneth R</p> <br>
   <div class="row-md-12">
-  <a href="https://drive.google.com/file/d/1r02ItLhJCWk4Xu_jG2ArB6dYVu5yG1tr/view?usp=drivesdk" style="text-decoration: none;color:white"> <button class="btn" style="background-color: black;color:white">Project Report</button> </a>
+  <a href="https://drive.google.com/file/d/1r02ItLhJCWk4Xu_jG2ArB6dYVu5yG1tr/view?usp=drivesdk" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
 </div>
 </div>
 </div>`,
@@ -113,6 +117,7 @@ var projects = [
   <p style="max-width:100rem;font-size: 16px;color: grey;">Our present work deals with the analysis of multistorey building subjected to seismic condition.In addition to the dead load and live load, the seismic loads and wind loads are applied and analysis is carried out.The building model is analyzed using IS1893-2002 .
   </p> <br>
   <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Impana, Partheesh, Chaitanya Lakshmi, Sakshi, Manasa and Monu Kumar</p> <br>
+  <a href="https://drive.google.com/file/d/1RlZzZQThl86aoqh_eesoOe7ELKubMXgt/view?usp=sharing" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
 </div>
 </div>`,
 `	<div class="row featurette" style="margin-top: 3em;">
@@ -134,6 +139,8 @@ var projects = [
   <h3 class="featurette-heading fw-normal lh-1"><b>Demonstration of Edge-detection Imaging algorithms using FPGAs
   </b></h3> <br>
   <h5 style="color:grey"><b>ROVISP</b></h5>  <br>
+  <p style="max-width:100rem;font-size: 16px;color: grey;">In this project, an efficient FPGA-based design and implementation of image processing algorithm will be presented using hardware description languages in Xilinx Vivado. The FPGA provides the necessary hardware for image processing algorithms with flexibility to support image processing by using the Sobel gradient algorithms.
+  </p> <br>
   <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Sanganabasu M Herur, Sirisha Sanapathi, Mudavath puja chowhan and Rehan Nasar.</p> <br>
   <div class="row-md-12">
   <a href="https://github.com/sirisha0203/Edge-Detection-FPGA" style="text-decoration: none;color:white"> <button class="btn" style="background-color: black;color:white">Repository URL</button> </a>
