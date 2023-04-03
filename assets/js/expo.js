@@ -61,6 +61,22 @@ var projects = [
 </div>`,
 `	<div class="row featurette" style="margin-top: 3em;">
 <div class="col-md-12" style="margin-top: 1rem;margin-left: 2rem;">
+  <h3 class="featurette-heading fw-normal lh-1"><b>Tetragram (Python based Static Site Generator)
+  </b></h3> <br>
+  <h5 style="color:grey"><b>CIPHER</b></h5>  <br>
+  <p style="max-width:100rem;font-size: 16px;color: grey;">A tool to analyze malicious PE files  and trace there API calls and analyse their network traffic even with encryption. Used static analysis to classify the behaviourof these files. Frontend implementation using Flask
+  </p> <br>
+  <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Malavika Harikumar, Ayush Kumar Singh, Tarun S Hegde, Aditya Sankar and Aashish.</p> <br>
+  <div class="row-md-12">
+  <a href="https://github.com/MBSA-INFINITY/tetragram-backend" style="text-decoration: none;color:white"> <button class="btn" style="background-color: black;color:white">Repository URL</button> </a>
+  <a href="https://docs.google.com/presentation/d/1Vb91JE5xiivSZQT0rXchQSxOhadvou_088xRLrCW7C8/edit?usp=sharing" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
+</div>
+</div>
+
+</div>`
+,
+`	<div class="row featurette" style="margin-top: 3em;">
+<div class="col-md-12" style="margin-top: 1rem;margin-left: 2rem;">
   <h3 class="featurette-heading fw-normal lh-1"><b>Automated Malware Analysis Tool
   </b></h3> <br>
   <h5 style="color:grey"><b>CIPHER</b></h5>  <br>
@@ -272,6 +288,8 @@ var projects = [
   <h3 class="featurette-heading fw-normal lh-1"><b>Blockchain-Based Project
   </b></h3> <br>
   <h5 style="color:grey"><b>VENTURE</b></h5>  <br>
+  <p style="max-width:100rem;font-size: 16px;color: grey;">A tokenized real estate and property management project on the Ethereum blockchain ,a platform that leverages the Ethereum blockchain's smart contract capabilities to create digital tokens that represent ownership in real estate assets. The platform allows users to buy, sell, and trade these tokens, which represent fractional ownership of real estate properties.
+  </p> <br>
   <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Srijan Chandgothia, Utkarsh Kumar Awasthi and Md shadab Alam.</p> <br>
   <div class="row-md-12">
   <a href="https://drive.google.com/drive/folders/1w-BFYz9oa27cP_EX1X5DcvxBp9ys7D-I?usp=share_link" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
