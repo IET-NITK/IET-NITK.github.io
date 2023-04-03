@@ -64,7 +64,8 @@ var projects = [
   <h3 class="featurette-heading fw-normal lh-1"><b>Tetragram (Python based Static Site Generator)
   </b></h3> <br>
   <h5 style="color:grey"><b>CIPHER</b></h5>  <br>
-  <p style="max-width:100rem;font-size: 16px;color: grey;">A tool to analyze malicious PE files  and trace there API calls and analyse their network traffic even with encryption. Used static analysis to classify the behaviourof these files. Frontend implementation using Flask
+  <p style="max-width:100rem;font-size: 16px;color: grey;">The  Project would be focussed on creating a flask
+  based Static Site Generator(SSG). A static site generator is a tool that generates a full static HTML website based on raw data and a set of templates. Essentially, a static site generator automates the task of coding individual HTML pages and gets those pages ready to serve to users ahead of time. 
   </p> <br>
   <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Malavika Harikumar, Ayush Kumar Singh, Tarun S Hegde, Aditya Sankar and Aashish.</p> <br>
   <div class="row-md-12">
