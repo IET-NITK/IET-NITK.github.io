@@ -9,7 +9,6 @@ var projects = [
      <p style="max-width:100rem;font-size: 16px;color: grey;">Train a deep learning model to recognise handwritten equations from images and then give the result after solving the equations.</p> <br>
      <p style="max-width:100rem;font-size: 16px;color: grey;">Built by KOWSHIC V, Dinesh Achalaram Choudhari, Vidit Shahand,Avinash Kandala and Jaheer khan</p> <br>
     <div class="row-md-12">
-       <a href="https://www.overleaf.com/3457819817rqhbvbjbhbrt" style="text-decoration: none;color:white"> <button class="btn" style="background-color: black;color:white">Repository URL</button> </a>
        <a href="https://docs.google.com/presentation/d/1OQJzGcLVpXzgvENTZr3omkS-SKWTAjCyVAMy7_TDY38/edit?usp=sharing" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
     </div>
    </div>
@@ -126,7 +125,7 @@ var projects = [
   <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Kartik Rajendra Rodagi, Mohammed Moin Abubakar and Mrudula U.V</p> <br>
   <div class="row-md-12">
     <a href="https://github.com/kartik5106/Arduino-RFID-Attendance" style="text-decoration: none;color:white"> <button class="btn" style="background-color: black;color:white">Repository URL</button> </a>
-    <a href="https://github.com/kartik5106/Arduino-RFID-Attendance" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
+    <a href="https://docs.google.com/presentation/d/1G9lH09CNre_odTSEqmOhFoZEwFIF3qFRLP7sejUXm1U/edit#slide=id.g17e9cac382a_0_29" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
  </div>
 </div>
 </div>`,
@@ -135,7 +134,11 @@ var projects = [
   <h3 class="featurette-heading fw-normal lh-1"><b>Demonstration of Edge-detection Imaging algorithms using FPGAs
   </b></h3> <br>
   <h5 style="color:grey"><b>ROVISP</b></h5>  <br>
-  <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Sanganabasu M Herur, Sirisha Sanapathi, Mudavath puja chowhan and Rehan Nasar./p> <br>
+  <p style="max-width:100rem;font-size: 16px;color: grey;">Built by Sanganabasu M Herur, Sirisha Sanapathi, Mudavath puja chowhan and Rehan Nasar.</p> <br>
+  <div class="row-md-12">
+  <a href="https://github.com/sirisha0203/Edge-Detection-FPGA" style="text-decoration: none;color:white"> <button class="btn" style="background-color: black;color:white">Repository URL</button> </a>
+  <a href="https://docs.google.com/presentation/d/1azUiVzSB0COboOwb5h6xcYP45GNOUsKD/edit?usp=sharing&ouid=105112715258768792553&rtpof=true&sd=true" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read in Detail</button> </a>
+</div>
 </div>
 </div>`,
 `	<div class="row featurette" style="margin-top: 3em;">
