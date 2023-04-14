@@ -1,6 +1,20 @@
 all_blogs = document.getElementById("all_blogs")
 all_blogs.innerHTML=""
 var blogs = [
+  `<div class="row featurette" style="margin-top: 1rem;">
+    <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="550" height="550" src="../assets/images/blog/indian-football/1.png"/>
+      </div>
+    <div class="col-md-7" style="margin-top: 1rem;">
+      <h3 class="featurette-heading fw-normal lh-1">Indian Football</h3> <br>
+      <h5 style="color:grey"><b>BY  HARI SHARAN AND MANALI</b></h5>
+      <h5 style="color:grey"><b>APRIL 14TH, 2023</b></h5> <br><br>
+      <p>All about ION-THRUSTERS</p> <br>
+     <a href="/blog/indian-football" style="text-decoration: none;color:white"> <button class="btn" style="background-color: purple;color:white">Read More ></button> </a>
+    </div>
+
+
+  </div>`,
  
     `<div class="row featurette" style="margin-top: 1rem;">
     <div class="col-md-5">
