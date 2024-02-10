@@ -12,7 +12,7 @@
     "node": ">= 12.5.0"
   },
   "dependencies": {
-    "@splidejs/react-splide": "0.7.5",
+    "@splidejs/react-splide": "0.7.12",
     "assert": "^2.0.0",
     "bootstrap": "4.6.1",
     "font-awesome": "4.7.0",
