@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --header-height: 1rem;
+  --first-color: hsl(4, 50%, 21%);
+  --title-color: hsl(290, 66%, 39%);
+  --text-color: hsl(291, 52%, 37%);
+  --body-color: hsl(0, 0%, 6%);
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Dancing Script", cursive;
+  --h2-font-size: 1.25rem;
+  --small-font-size: 0.813rem;
+  --font-semi-bold: 600;
+  --z-tooltip: 10;
+  --z-fixed: 100; 
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #f0edf1;
+}
+
+.prose{
+  max-width: 100vw;
+}

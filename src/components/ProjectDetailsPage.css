@@ -1,0 +1,10 @@
+.teal-button {
+  background-color: #008080;
+  color: white;
+  border-color: #008080;
+}
+.teal-button:hover {
+  background-color: #006666;
+  color: white;
+  border-color: #006666;
+}

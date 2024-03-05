@@ -1,0 +1,42 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 18
+    - name: install pnpm
+      run: npm install -g pnpm
+
+    - name: Install dependencies
+      run: pnpm i
+
+    - name: Build the Next.js app
+      run: pnpm run build
+
+    - name: Deploy to mbsa branch
+      run: |
+        git config --global user.email "mbsaiaditya@gmail.com"
+        git config --global user.name "MBSA-INFINITY"
+        git checkout --orphan mbsa
+        ls
+        rm -rf node_modules
+        git add -f out
+        cp -r out/. .
+        git add .
+        git commit -m "Deploy to mbsa branch"
+        git push --force origin mbsa
+
+        
