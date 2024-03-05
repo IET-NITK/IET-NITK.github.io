@@ -24,7 +24,7 @@ jobs:
       run: pnpm i
 
     - name: Build the Next.js app
-      run: pnpm run build
+      run: pnpm run static
 
     - name: Deploy to mbsa branch
       run: |
