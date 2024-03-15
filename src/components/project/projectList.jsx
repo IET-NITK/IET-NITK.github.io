@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import ProjectsPage from "@/components/ProjectsPage";
 import { fetchProjects } from '@/components/api';
+import { useSearchParams } from 'next/navigation'
 
 export default function ProjectList() {
   const [projects, setProjects] = useState([]);
@@ -16,9 +17,16 @@ export default function ProjectList() {
     fetchData();
   }, []);
 
+  const searchParams = useSearchParams()
+ 
+  const tag = searchParams.get('tag')
+
+  console.log(projects);
+  console.log(tag)
+
   return (
     <div>
-      <ProjectsPage projects={projects} />
+      <ProjectsPage projects={projects} tag={tag}/>
     </div>
   );
 }

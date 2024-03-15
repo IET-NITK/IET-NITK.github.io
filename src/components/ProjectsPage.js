@@ -1,5 +1,5 @@
 // ProjectsPage.js
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
 import ReactPaginate from 'react-paginate';
 import './ProjectsPage.css'; // Import your CSS for styling
@@ -7,7 +7,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { useMediaQuery } from "react-responsive";
 
-const ProjectsPage = ({ projects }) => {
+const ProjectsPage = ({ projects, tag }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const bigScreen = useMediaQuery({ minWidth: "1536px" });
   const projectsPerPage = bigScreen ? 8 : 6;
@@ -15,6 +15,10 @@ const ProjectsPage = ({ projects }) => {
   const handlePageClick = (data) => {
     setCurrentPage(data.selected);
   };
+
+  if (tag) {
+    projects = projects.filter(project => project.project_tags.toLowerCase().includes(tag.toLowerCase()))
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);

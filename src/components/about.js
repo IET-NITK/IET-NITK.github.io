@@ -1,9 +1,31 @@
+import Link from "next/link";
+import styles from "./about.module.scss"
+import { BiSolidCalendarEvent } from "react-icons/bi";
+
 export default function About() {
     return (
         <main className="flex flex-col w-full">
-            {/* <section className="bg-[#faf3fd] py-3 flex gap-5 items-center justify-center bg-no-repeat">
-                <span>IET</span> <span>CodeBuddy</span>
-            </section> */}
+            <Link href="/projects?tag=expo24">
+                <section className="bg-[#542568] h-10 cursor-pointer flex justify-center items-center w-screen overflow-hidden relative animate-bounce">
+                    {/* <div className={`${styles.expo} flex gap-3 top-2`}>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                </div>
+                <div className={`${styles.secondary} flex gap-3 top-2`}>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
+                </div> */}
+                    <span className={`font-normal text-white flex items-center gap-1`}><BiSolidCalendarEvent className="w-5 h-5" /> {" "} <span>Project Expo. Check out <span className=" underline underline-offset-2">projects</span></span></span>
+                </section>
+            </Link>
             <section className="bg-[#280c33] bg-[url('/bg.png')] bg-cover h-full p-12">
                 <div className="flex flex-col items-center justify-center mt-2">
                     <h1 className=" text-white flex items-center gap-3 text-3xl font-bold text-center"><span className="bg-[white] w-8 h-1 block">{" "}</span> ABOUT US<span className="bg-[white] w-8 h-1 block">{" "}</span></h1>
@@ -27,7 +49,7 @@ export default function About() {
                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-100 dark:text-white">Global Network and Impact</h5>
                             <p className="mb-3 font-normal text-gray-100 dark:text-gray-400">Affiliated with IET London, a premier professional society with over 168,000 members worldwide, we offer a global knowledge network to facilitate the exchange of ideas and promote the positive impact of science, engineering, and technology. Eminent personalities are invited to conduct lectures for the benefit of club members and those interested in our activities.</p>
                         </div>
-                         <div className="w-full overflow-hidden">
+                        <div className="w-full overflow-hidden">
                             <img className="object-cover rounded-t-lg h-auto md:rounded-r-lg" src="https://images.unsplash.com/photo-1627389955800-4afab384df17?q=80&w=1974&auto=format&fit=crop" alt="" />
                         </div>
                     </div>

@@ -34,14 +34,10 @@ export default function ParticlesAnimation() {
                     value: "#ffffff",
                 },
             },
-            style:{position:"absolute", zIndex: -99},
+            style: { position: "absolute", zIndex: -99 },
             fpsLimit: 120,
             interactivity: {
                 events: {
-                    onClick: {
-                        enable: true,
-                        mode: "push",
-                    },
                     onHover: {
                         enable: true,
                         mode: "repulse",
