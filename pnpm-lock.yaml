@@ -77,6 +77,9 @@ dependencies:
   node-fetch:
     specifier: ^3.3.2
     version: 3.3.2
+  particles.js:
+    specifier: ^2.0.0
+    version: 2.0.0
   postcss:
     specifier: 8.4.27
     version: 8.4.27
@@ -98,6 +101,9 @@ dependencies:
   react-paginate:
     specifier: ^8.2.0
     version: 8.2.0(react@18.2.0)
+  react-particles-js:
+    specifier: ^3.6.0
+    version: 3.6.0(react@18.2.0)(tsparticles@3.3.0)
   react-query:
     specifier: ^3.39.3
     version: 3.39.3(react-dom@18.2.0)(react@18.2.0)
@@ -4340,6 +4346,10 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
+  /particles.js@2.0.0:
+    resolution: {integrity: sha512-8e0JIqkRbMMPlFBnF9f+92hX1s07jdkd3tqB8uHE9L+cwGGjIYjQM7QLgt0FQ5MZp6SFFYYDm/Y48pqK3ZvJOQ==}
+    dev: false
+
   /partof@1.0.0:
     resolution: {integrity: sha512-+TXdhKCySpJDynCxgAPoGVyAkiK3QPusQ63/BdU5t68QcYzyU6zkP/T7F3gkMQBVUYqdWEADKa6Kx5zg8QIKrg==}
     dev: false
@@ -4660,6 +4670,18 @@ packages:
     dependencies:
       prop-types: 15.8.1
       react: 18.2.0
+    dev: false
+
+  /react-particles-js@3.6.0(react@18.2.0)(tsparticles@3.3.0):
+    resolution: {integrity: sha512-gQzUKZgPpjdplhAtskLnn9frLyei6uGuWabNtBGWnr3eZpHXfXJO1F8sedPhO29xfpKixE3HEejwGQAld8K16Q==}
+    deprecated: This package has been deprecated in favor of react-tsparticles.
+    peerDependencies:
+      react: ^16.0.0
+      tsparticles: <2.0.0
+    dependencies:
+      lodash: 4.17.11
+      react: 18.2.0
+      tsparticles: 3.3.0
     dev: false
 
   /react-query@3.39.3(react-dom@18.2.0)(react@18.2.0):

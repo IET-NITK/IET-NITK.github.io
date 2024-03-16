@@ -5,6 +5,7 @@ import Link from "next/link";
 import { IoClose, IoMenu } from "react-icons/io5";
 import styles from "./Navbar.module.css";
 import { useMediaQuery } from "react-responsive";
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,6 +18,14 @@ const Navbar = () => {
             setIsMenuOpen(false);
         }
     };
+
+    function hasProjectPath(str) {
+        const regex = /^\/projects\/.*$/;
+        return regex.test(str);
+      }      
+
+    const pathname = usePathname()
+
     return (
         <header className={styles.header}>
             <nav className={styles.nav}>
@@ -86,7 +95,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 ) : (
-                    <ul className={` ${isMobile ? styles.nav__list : styles.nav__list__web}`}>
+                    <ul className={` ${isMobile ? styles.nav__list : styles.nav__list__web} ${hasProjectPath(pathname) ? 'text-white' : 'text-[--title-color]' }`}>
                         <li className={styles.nav__item}>
                             <Link href="/" className={styles.nav__link} onClick={closeMobileMenu}>
                                 Home

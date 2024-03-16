@@ -5,25 +5,9 @@ import { BiSolidCalendarEvent } from "react-icons/bi";
 export default function About() {
     return (
         <main className="flex flex-col w-full">
-            <Link href="/projects?tag=expo24">
-                <section className="bg-[#542568] h-10 cursor-pointer flex justify-center items-center w-screen overflow-hidden relative animate-bounce">
-                    {/* <div className={`${styles.expo} flex gap-3 top-2`}>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                </div>
-                <div className={`${styles.secondary} flex gap-3 top-2`}>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                    <span className={`w-[130px] font-semibold text-white`}>PROJECT EXPO</span>
-                </div> */}
-                    <span className={`font-normal text-white flex items-center gap-1`}><BiSolidCalendarEvent className="w-5 h-5" /> {" "} <span>Project Expo. Check out <span className=" underline underline-offset-2">projects</span></span></span>
+            <Link href="/expo" className="overflow-hidden animate-bounce">
+                <section className="bg-[#542568] h-10 cursor-pointer flex justify-center items-center w-screen relative">
+                    <span className={`font-normal text-white flex items-center gap-1`}><BiSolidCalendarEvent className="w-5 h-5" /> {" "} <span>Project Expo. Check out <span className="underline underline-offset-2">projects</span></span></span>
                 </section>
             </Link>
             <section className="bg-[#280c33] bg-[url('/bg.png')] bg-cover h-full p-12">
@@ -31,9 +15,6 @@ export default function About() {
                     <h1 className=" text-white flex items-center gap-3 text-3xl font-bold text-center"><span className="bg-[white] w-8 h-1 block">{" "}</span> ABOUT US<span className="bg-[white] w-8 h-1 block">{" "}</span></h1>
                     <p className="text-white text-center text-lg mt-2">The Institute of Engineering Technology - National Institute of Technology Karnataka (IET-NITK) Student Chapter</p>
                 </div>
-                {/* <p className="text-white mt-10 text-center">
-                    The Institute of Engineering Technology - National Institute of Technology Karnataka (IET-NITK) Student Chapter is actively involved in inculcating a passion for innovation and appreciation temperament in the minds of those who have potential to change the future. We conduct workshops and seminars throughout the academic calendar striving to impact relevant skills to the students. Apart from this, we strive to invite eminent personalities to conduct lectures for the benefit of the club members and keeping doors opened for others interested. We are affiliated to IET London, which is one of the world’s leading professional societies for the engineering and technology community, with more than 168,000 members in 150 countries and offices in Europe, North America and Asia-Pacific. The IET provides a global knowledge network to facilitate the exchange of ideas and promote the positive role of science, engineering and technology in the world.
-                </p> */}
                 <div className="flex flex-col items-center m-auto mt-10 max-w-6xl gap-11 ">
                     <div className="flex flex-col items-center bg-[#5c1670] rounded-lg shadow-xl sm:flex-row hover:bg-[#481457] w-full">
                         <div className=" w-full overflow-hidden">
