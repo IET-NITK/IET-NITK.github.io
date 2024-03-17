@@ -7,7 +7,7 @@ export default function About() {
         <main className="flex flex-col w-full">
             <Link href="/expo" className="overflow-hidden animate-bounce">
                 <section className="bg-[#542568] h-10 cursor-pointer flex justify-center items-center w-screen relative">
-                    <span className={`font-normal text-white flex items-center gap-1`}><BiSolidCalendarEvent className="w-5 h-5" /> {" "} <span>Project Expo. Check out <span className="underline underline-offset-2">projects</span></span></span>
+                    <span className={`font-normal text-white flex items-center gap-1`}><BiSolidCalendarEvent className="w-5 h-5" /> {" "} <span>Project Expo'24. Check out <span className="underline underline-offset-2">projects</span></span></span>
                 </section>
             </Link>
             <section className="bg-[#280c33] bg-[url('/bg.png')] bg-cover h-full p-12">

@@ -107,7 +107,7 @@ export default function Footer() {
                             >
                         </p>
                         <p>
-                            <a href="/help" className=" text-neutral-200"
+                            <a href="/contact" className=" text-neutral-200"
                             >Help</a
                             >
                         </p>

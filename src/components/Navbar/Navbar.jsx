@@ -71,6 +71,15 @@ const Navbar = () => {
                                     Projects
                                 </Link>
                             </li>
+                            <li className={styles.nav__item}>
+                                <Link
+                                    href="/expo"
+                                    className={styles.nav__link}
+                                    onClick={closeMobileMenu}
+                                >
+                                    Project Expo
+                                </Link>
+                            </li>
                             {/* <li className={styles.nav__item}>
                                 <Link
                                     href="/teams"
@@ -82,7 +91,7 @@ const Navbar = () => {
                             </li> */}
                             <li className={styles.nav__item}>
                                 <Link
-                                    href="/help"
+                                    href="/contact"
                                     className={styles.nav__link}
                                     onClick={closeMobileMenu}
                                 >
@@ -131,7 +140,16 @@ const Navbar = () => {
                         </li>
                         <li className={styles.nav__item}>
                             <Link
-                                href="/help"
+                                href="/expo"
+                                className={styles.nav__link}
+                                onClick={closeMobileMenu}
+                            >
+                                Project Expo
+                            </Link>
+                        </li>
+                        <li className={styles.nav__item}>
+                            <Link
+                                href="/contact"
                                 className={styles.nav__link}
                                 onClick={closeMobileMenu}
                             >
