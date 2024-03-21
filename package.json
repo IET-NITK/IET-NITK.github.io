@@ -8,7 +8,7 @@
         "start": "next start",
         "lint": "next lint",
         "custom-script": "node script.js",
-        "static": "node script.js && next build && next export && touch ./out/.nojekyll && echo 'mbsaiaditya.github.io' > ./out/CNAME"
+        "static": "node script.js && next build && next export && touch ./out/.nojekyll && echo 'iet.nitk.ac.in' > ./out/CNAME"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.5.1",
