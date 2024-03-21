@@ -27,6 +27,12 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'cipher-background': "url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4')",
+        'torsion-background': "url('https://images.unsplash.com/photo-1595787142842-7404bc60470d')",
+        'venture-background': "url('https://images.unsplash.com/photo-1444653614773-995cb1ef9efa')",
+        'rovisp-background': "url('https://images.unsplash.com/photo-1517420704952-d9f39e95b43e')",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

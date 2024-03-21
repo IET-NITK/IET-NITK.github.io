@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
-import { loadBasic } from "@tsparticles/basic";
 
 export default function ParticlesAnimation() {
 
@@ -34,14 +33,10 @@ export default function ParticlesAnimation() {
                     value: "#ffffff",
                 },
             },
-            style:{position:"absolute", zIndex: -99},
+            style: { position: "absolute", zIndex: -99 },
             fpsLimit: 120,
             interactivity: {
                 events: {
-                    onClick: {
-                        enable: true,
-                        mode: "push",
-                    },
                     onHover: {
                         enable: true,
                         mode: "repulse",

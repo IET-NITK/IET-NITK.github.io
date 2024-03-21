@@ -56,7 +56,6 @@
 }
 
 .nav__link {
-  color: var(--title-color);
   font-weight: var(--font-semi-bold);
   transition: color 0.4s;
 }
