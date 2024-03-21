@@ -5,7 +5,7 @@ const Page = () => {
     return (
         <div>
             <section>
-                <ProjectList img="cipher" sig="Cipher"/>
+                <ProjectList img="cipher" sig="Cipher" tag=""/>
             </section>
         </div>
     );

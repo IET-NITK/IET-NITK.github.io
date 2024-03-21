@@ -5,7 +5,7 @@ import ProjectsPage from "@/components/ProjectsPage";
 import { fetchProjects } from '@/components/api';
 import { useSearchParams } from 'next/navigation'
 
-export default function ProjectList({ img, sig }) {
+export default function ProjectList({ img, sig, tag }) {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function ProjectList({ img, sig }) {
 
   const searchParams = useSearchParams()
 
-  const tag = searchParams.get('tag')
+  // const tag = searchParams.get('tag')
 
   return (
     <div>
