@@ -21,7 +21,7 @@ const ProjectsPage = ({ projects, tag, img, sig }) => {
     setCurrentPage(data.selected);
   };
 
-  if (tag) {
+  if (tag != "") {
     projects = projects.filter(project => project.project_tags.toLowerCase().includes(tag.toLowerCase()))
   }
 
@@ -36,17 +36,24 @@ const ProjectsPage = ({ projects, tag, img, sig }) => {
 
   const indexOfLastProject = (currentPage + 1) * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-  const currentProjects = projects.filter(project => project.project_sig.toLowerCase() == sig.toLowerCase()).filter(project => project.project_year == selectedOption).slice(indexOfFirstProject, indexOfLastProject);
+  let currentProjects
+  if (tag == "expo24") {
+    currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
+  } else {
+    currentProjects = projects.filter(project => project.project_sig.toLowerCase() == sig.toLowerCase()).filter(project => project.project_year == selectedOption).slice(indexOfFirstProject, indexOfLastProject);
+  }
   const pageCount = Math.ceil(projects.length / projectsPerPage);
 
   return (
     <main className='min-h-[90vh] relative'>
-      <section className={`w-full ${img == 'cipher' ? 'bg-cipher-background' : (img == 'venture' ? 'bg-venture-background' : (img == 'rovisp' ? 'bg-rovisp-background' : 'bg-torsion-background'))} bg-cover relative`}>
-        <div className="z-20 w-screen bg-black/60 relative text-center font-semibold text-4xl py-32 flex justify-center text-white mx-auto">
-          {sig} Projects
-        </div>
-      </section>
-      {currentProjects.length > 0 &&
+      {tag != "expo24" &&
+        <section className={`w-full ${img == 'cipher' ? 'bg-cipher-background' : (img == 'venture' ? 'bg-venture-background' : (img == 'rovisp' ? 'bg-rovisp-background' : 'bg-torsion-background'))} bg-cover relative`}>
+          <div className="z-20 w-screen bg-black/60 relative text-center font-semibold text-4xl py-32 flex justify-center text-white mx-auto">
+            {sig} Projects
+          </div>
+        </section>
+      }
+      {(currentProjects.length > 0 && tag != "expo24") &&
         <div className="flex gap-3 flex-col items-center mt-3">
           <div display="flex">
             <ul className="flex p-0 m-0 w-full bg-[#ebe5ec] border-[1px] border-[#71287e] rounded-lg list-none shadow-md">
