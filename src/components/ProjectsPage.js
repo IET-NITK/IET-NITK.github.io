@@ -20,9 +20,11 @@ const ProjectsPage = ({ projects, tag, img, sig }) => {
   const handlePageClick = (data) => {
     setCurrentPage(data.selected);
   };
-
+  
   if (tag != "") {
     projects = projects.filter(project => project.project_tags.toLowerCase().includes(tag.toLowerCase()))
+  } else {
+    projects = projects.filter(project => project.project_sig.toLowerCase() == sig.toLowerCase())
   }
 
   useEffect(() => {
@@ -36,12 +38,8 @@ const ProjectsPage = ({ projects, tag, img, sig }) => {
 
   const indexOfLastProject = (currentPage + 1) * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-  let currentProjects
-  if (tag == "expo24") {
-    currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
-  } else {
-    currentProjects = projects.filter(project => project.project_sig.toLowerCase() == sig.toLowerCase()).filter(project => project.project_year == selectedOption).slice(indexOfFirstProject, indexOfLastProject);
-  }
+
+  const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
   const pageCount = Math.ceil(projects.length / projectsPerPage);
 
   return (
@@ -53,7 +51,7 @@ const ProjectsPage = ({ projects, tag, img, sig }) => {
           </div>
         </section>
       }
-      {(currentProjects.length > 0 && tag != "expo24") &&
+      {false &&
         <div className="flex gap-3 flex-col items-center mt-3">
           <div display="flex">
             <ul className="flex p-0 m-0 w-full bg-[#ebe5ec] border-[1px] border-[#71287e] rounded-lg list-none shadow-md">
