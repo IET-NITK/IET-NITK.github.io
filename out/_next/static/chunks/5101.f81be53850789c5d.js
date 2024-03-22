@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[5101],{5101:function(t,n,a){async function c(t,n=!0){await t.addInteractor("particlesAttract",(async t=>{const{Attractor:n}=await a.e(8418).then(a.bind(a,8418));return new n(t)}),n)}a.d(n,{loadParticlesAttractInteraction:function(){return c}})}}]);

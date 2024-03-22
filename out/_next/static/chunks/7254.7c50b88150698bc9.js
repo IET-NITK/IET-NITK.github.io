@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[7254],{7254:function(e,n,t){async function a(e,n=!0){await e.addParticleUpdater("size",(async()=>{const{SizeUpdater:e}=await t.e(1340).then(t.bind(t,1340));return new e}),n)}t.d(n,{loadSizeUpdater:function(){return a}})}}]);

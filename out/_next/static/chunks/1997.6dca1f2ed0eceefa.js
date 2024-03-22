@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1997],{1997:function(t,e,n){async function a(t,e=!0){await t.addParticleUpdater("destroy",(async e=>{const{DestroyUpdater:a}=await n.e(1466).then(n.bind(n,1466));return new a(t,e)}),e)}n.d(e,{loadDestroyUpdater:function(){return a}})}}]);

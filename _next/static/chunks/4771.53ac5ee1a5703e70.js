@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4771],{4771:function(t,n,e){e.d(n,{SquareDrawer:function(){return s}});const r=Math.sqrt(2);class s{draw(t){!function(t){const{context:n,radius:e}=t,s=e/r,u=2*s;n.rect(-s,-s,u,u)}(t)}getSidesCount(){return 4}}}}]);

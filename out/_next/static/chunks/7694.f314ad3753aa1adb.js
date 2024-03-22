@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[7694],{7694:function(e,t,a){async function n(e,t=!0){const n=e,{EmittersSquareShapeGenerator:r}=await a.e(1314).then(a.bind(a,1314));n.addEmitterShapeGenerator?.("square",new r),await n.refresh(t)}a.d(t,{loadEmittersShapeSquare:function(){return n}})}}]);

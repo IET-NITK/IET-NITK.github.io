@@ -1,0 +1,29 @@
+/* MagnifyCard.css */
+.magnify-card {
+  transition: transform 0.3s;
+}
+
+.magnify-card:hover {
+  transform: scale(1.1);
+}
+
+.teal-button {
+  background-color: #008080;
+  color: white;
+  border-color: #008080;
+}
+.teal-button:hover {
+  background-color: #006666;
+  color: white;
+  border-color: #006666;
+}
+.card-link {
+  color: blue;
+}
+  .card-link:hover {
+      color: blue;
+      text-decoration: none;
+  }
+  .card-link:visited {
+      color: rgb(156,33,124);
+  }

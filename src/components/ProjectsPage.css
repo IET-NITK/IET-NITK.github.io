@@ -1,0 +1,39 @@
+/* ProjectsPage.css */
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination a,
+.pagination span {
+  background-color: #2196F3;
+  color: white !important;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #2196F3;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.pagination a.active,
+.pagination span.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination a:hover,
+.pagination span:hover {
+  background-color: #f8f9fa;
+  color: #2196F3 !important;
+}
