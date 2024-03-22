@@ -11,7 +11,8 @@ export default function ProjectList({ img, sig, tag }) {
   useEffect(() => {
     const fetchData = async () => {
       const projectsData = await fetchProjects();
-      setProjects(projectsData);
+      let reversed = [...projectsData].reverse()
+      setProjects(reversed);
     };
 
     fetchData();
