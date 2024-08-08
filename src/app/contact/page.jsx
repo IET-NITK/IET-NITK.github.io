@@ -29,9 +29,9 @@ export default function Helppage() {
                             </svg>
                         </span>
 
-                        <h2 className="mt-4 text-lg font-medium text-gray-800">Phone</h2>
-                        <p className="mt-2 text-gray-600 dark:text-gray-400">Yash Jangid (Convenor)</p>
-                        <p className="mt-2 text-purple-600 dark:text-purple-400">+91-9867466021</p>
+                        <h2 className="mt-4 text-lg font-medium text-gray-800">Email</h2>
+                        <p className="mt-2 text-gray-600 dark:text-gray-400">Vidit Harin Shah (Convenor)</p>
+                        <p className="mt-2 text-purple-600 dark:text-purple-400">viditshah.211cs264@nitk.edu.in</p>
                     </div>
                     <div className="flex flex-col items-center justify-center text-center">
                         <span className="p-3 text-purple-600 rounded-full bg-purple-100/80">
@@ -40,9 +40,9 @@ export default function Helppage() {
                             </svg>
                         </span>
 
-                        <h2 className="mt-4 text-lg font-medium text-gray-800">Phone</h2>
-                        <p className="mt-2 text-gray-600 dark:text-gray-400">Ansh Bindlish (Joint Convenor)</p>
-                        <p className="mt-2 text-purple-600 dark:text-purple-400">+91-9891350900</p>
+                        <h2 className="mt-4 text-lg font-medium text-gray-800">Email</h2>
+                        <p className="mt-2 text-gray-600 dark:text-gray-400">Druvika Nuthalapati (President)</p>
+                        <p className="mt-2 text-purple-600 dark:text-purple-400">druvikanuthalapati.211ee224@nitk.edu.in</p>
                     </div>
                 </div>
             </div>
