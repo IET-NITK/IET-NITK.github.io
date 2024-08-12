@@ -31,7 +31,7 @@ export default function Helppage() {
 
                         <h2 className="mt-4 text-lg font-medium text-gray-800">Email</h2>
                         <p className="mt-2 text-gray-600 dark:text-gray-400">Vidit Harin Shah (Convenor)</p>
-                        <a href="mailto:viditshah.211cs264@nitk.edu.in" className="mt-2 text-purple-600 dark:text-purple-400">Email</p>
+                        <a href="mailto:viditshah.211cs264@nitk.edu.in" className="mt-2 text-purple-600 dark:text-purple-400">Email</a>
                     </div>
                     <div className="flex flex-col items-center justify-center text-center">
                         <span className="p-3 text-purple-600 rounded-full bg-purple-100/80">
@@ -42,7 +42,7 @@ export default function Helppage() {
 
                         <h2 className="mt-4 text-lg font-medium text-gray-800">Email</h2>
                         <p className="mt-2 text-gray-600 dark:text-gray-400">Druvika Nuthalapati (President)</p>
-                        <a href="mailto:druvikanuthalapati.211ee224@nitk.edu.in" className="mt-2 text-purple-600 dark:text-purple-400">Email</p>
+                        <a href="mailto:druvikanuthalapati.211ee224@nitk.edu.in" className="mt-2 text-purple-600 dark:text-purple-400">Email</a>
                     </div>
                 </div>
             </div>
