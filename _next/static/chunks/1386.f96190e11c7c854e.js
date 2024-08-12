@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1386],{1386:function(e,t,n){n.d(t,{ShapeManager:function(){return a}});const r=new Map;class a{constructor(e){this._engine=e}addShapeGenerator(e,t){this.getShapeGenerator(e)||r.set(e,t)}getShapeGenerator(e){return r.get(e)}getSupportedShapeGenerators(){return r.keys()}}}}]);

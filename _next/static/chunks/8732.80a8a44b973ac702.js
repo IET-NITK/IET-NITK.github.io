@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[8732],{8732:function(n,t,e){async function i(n,t=!0){await n.addInteractor("particlesCollisions",(async n=>{const{Collider:t}=await e.e(3119).then(e.bind(e,3119));return new t(n)}),t)}e.d(t,{loadParticlesCollisionsInteraction:function(){return i}})}}]);

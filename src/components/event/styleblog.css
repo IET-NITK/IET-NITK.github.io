@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Crimson+Text:ital,wght@1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@900&display=swap');
+
+.blogstyle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: 5.4rem;
+}
+
+.blogbody{
+    font-family: "Montserrat", sans-serif;
+
+}

@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "total_count": 5
+  },
+  "items": [
+    {
+      "id": 10,
+      "meta": {
+        "type": "events.EventsPage",
+        "detail_url": "http://localhost/api/v2/pages/10/",
+        "html_url": "http://localhost/events/dare-to-design/",
+        "slug": "dare-to-design",
+        "show_in_menus": false,
+        "seo_title": "",
+        "search_description": "",
+        "first_published_at": "2024-01-29T15:24:26.781796Z",
+        "alias_of": null,
+        "locale": "en"
+      },
+      "title": "DARE TO DESIGN",
+      "event_title": "<p data-block-key=\"esubr\"><b>DARE TO DESIGN</b></p>",
+      "event_slug": "daretodesign",
+      "event_date": "2023-01-14",
+      "event_organizer": "IET NITK",
+      "event_location": "Google Meet",
+      "event_tags": "Design, Webdev",
+      "event_img_url": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "event_body": "# DARE TO DESIGN\r\n\r\n\r\n# Schedule\r\n\r\nFriday, 14th January 2022 - Knowledge Exchange Program on The Basics of Electronics(R,L,C) - 5:00 PM.\r\n\r\nSaturday, 22nd January 2022 - Competition - From 6 PM\r\n\r\n## General FAQ'S Regarding Event\r\n\r\n1. **Who’s eligible?**\r\n\r\n1st and 2nd year Undergraduates all over India.\r\n\r\n2. **Do we have to pay for registering?**\r\n\r\nNo, registration is absolutely free. \r\n\r\n3. **Are teams allowed to participate?**\r\n\r\nNo, it is an individual competition.\r\n\r\n4. **What are the perks of participating?**\r\n\r\n- The top 2 contestants get a chance to win prize money.\r\n\r\n- Top 3 participants will receive commendation certificates.\r\n\r\n5. **When and where?**\r\n\r\nThe KEP is scheduled on 14th January 2022 and the competition on 22st January 2022. It will be conducted virtually.\r\n\r\n6. **Where do I register for it?**\r\n\r\nRegistration link : [https://forms.gle/oAnDSa6jjQqa3SkQA](https://forms.gle/oAnDSa6jjQqa3SkQA)\r\n\r\n7. **What are the topics I need to be good at for Competition?**\r\n\r\n- Basics of R,L,C,RL,RC,RLC circuits and their transient analysis and Frequency Analysis.\r\n\r\n- KEP (Knowledge Exchange Program) on the above topics and practice questions will be provided to boost your confidence for the Competition.\r\n\r\n- More details about the competition will be provided a day before the competition.\r\n\r\n8. **Is Laptop Mandatory for Competition?**\r\n\r\n- LTSpice software will be used for competition. So a laptop will be mandatory.\r\n\r\n- We shall provide a tutorial on how to install and use it.\r\n\r\n9. **Is it mandatory to attend KEP?**\r\n\r\n- KEP is to help you understand the basics of R,L,C circuits and on how to use LTSpice software.\r\n\r\n- It's not mandatory but we recommend everyone to attend it.\r\n\r\n10. **Why there is week gap between KEP and Competition?**\r\n\r\n- After KEP, we are providing time for the registrants to dig deep into topics and understand them well.\r\n\r\n- We will also provide questions for practicing."
+    },
+    {
+      "id": 11,
+      "meta": {
+        "type": "events.EventsPage",
+        "detail_url": "http://localhost/api/v2/pages/11/",
+        "html_url": "http://localhost/events/inkfiesta/",
+        "slug": "inkfiesta",
+        "show_in_menus": false,
+        "seo_title": "",
+        "search_description": "",
+        "first_published_at": "2024-01-29T15:25:29.935217Z",
+        "alias_of": null,
+        "locale": "en"
+      },
+      "title": "INKFIESTA",
+      "event_title": "<p data-block-key=\"3lk34\"><b>INKFIESTA</b></p>",
+      "event_slug": "inkfiesta",
+      "event_date": "2022-01-28",
+      "event_organizer": "NITK",
+      "event_location": "NITK Main Building",
+      "event_tags": "Gaming, Valorant, Brawlallah",
+      "event_img_url": "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "event_body": "# VALOSTORM\r\n\r\nA fun-filled event to bring out the gamer in you and compete to be the best gamer out there. Register in teams of 5 or individually and showcase your gaming talent! Individual registrants will be teamed up with other individual registrants to form teams of 5.\r\n\r\nGame: **Valorant** - A 5v5 Character-based FPS Tactical shooter game\r\n\r\nMode: **Spike Rush** (first team to win 4 rounds wins)\r\n\r\nKnockout tournament (Winning team advances to the next round)\r\n\r\nHosting platform: Valorant ( Download link: [https://playvalorant.com/en-gb/](https://playvalorant.com/en-gb/) )\r\n\r\n**Are you up for the challenge? Registration Link** -[https://bit.ly/Valostorm](https://bit.ly/Valostorm)\r\n\r\n# SEIZE THE NIGHT\r\n\r\nSEIZE THE NIGHT is an event to discover and shine your hidden talent. We present you a stage where you can perform various things such as\r\n\r\n- Skit\r\n- Music\r\n- Stand-up\r\n- Story Telling\r\n- Poem Reciting and many more.\r\n\r\nYou need to fill out the registration form with your details and choose your performance. There will be a panel of judges who will score you according to your presentation, confidence and communication skills. So get ready to amaze everyone with your bag of tricks.\r\n\r\n**Registration Link** - [https://bit.ly/SeizeTheNt](https://bit.ly/SeizeTheNt)\r\n\r\n# DO I MATTER?\r\n\r\nWe will be talking about an introduction to one’s inner journey and what they can do on a regular basis to keep their mental health upright. You can read more about the organization here in the link - [https://www.chanshi.org/](https://www.chanshi.org/)\r\n\r\nThe event goes live on the 30th of January at 11 AM on the Inkheart Youtube Channel. Along with that, a meeting link will be shared, 30 mins prior to the event start.\r\n\r\n**Youtube Channel Link** - [https://bit.ly/InkheartYT](https://bit.ly/InkheartYT)\r\n\r\n**Do join us and have a fun-filled weekend!**"
+    },
+    {
+      "id": 26,
+      "meta": {
+        "type": "events.EventsPage",
+        "detail_url": "http://localhost/api/v2/pages/26/",
+        "html_url": "http://localhost/events/create-the-future-ypcsa-connect/",
+        "slug": "create-the-future-ypcsa-connect",
+        "show_in_menus": false,
+        "seo_title": "",
+        "search_description": "",
+        "first_published_at": "2024-02-28T16:13:42.685129Z",
+        "alias_of": null,
+        "locale": "en"
+      },
+      "title": "CREATE THE FUTURE - YPCSA CONNECT",
+      "event_title": "<p data-block-key=\"gehsm\"> <b>CREATE THE FUTURE - YPCSA CONNECT</b></p>",
+      "event_slug": "create-future",
+      "event_date": "2023-11-02",
+      "event_organizer": "IET NITK",
+      "event_location": "SAC, NITK",
+      "event_tags": "Gaming, Storm",
+      "event_img_url": "https://images.unsplash.com/photo-1546188994-07c34f6e5e1b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "event_body": "# CREATE THE FUTURE - YPCSA CONNECT\r\n\r\n\r\n## Hola Amigos!\r\n\r\nIET NITK in collaboration with IET BLN and IET YPCSA presents **CREATE THE FUTURE - YPCSA CONNECT**\r\n\r\nHave an idea? Learn how to make it purposeful, profitable and patentable by this workshop from **Lokesh Venkatswamy**, CEO and Managing Director of **Innomantra Consulting and Private Ltd.**\r\n\r\nWhat are you waiting for? Develop your mind as the future ELON MUSK and register here : [https://bit.ly/3WhVLkP](https://bit.ly/3WhVLkP)\r\n\r\nParticipate in the competition post the session to bag **Prizes worth Rs.5K**\r\n\r\nSee you all with your great ideas!\r\n\r\n**Date : November 4, 5:30 PM**\r\n\r\n**Venue : Main Seminar Hall**\r\n\r\n![create-future](https://tetragram.codered.cloud/media/images/1.max-800x600.jpg)"
+    },
+    {
+      "id": 27,
+      "meta": {
+        "type": "events.EventsPage",
+        "detail_url": "http://localhost/api/v2/pages/27/",
+        "html_url": "http://localhost/events/innerve-2022/",
+        "slug": "innerve-2022",
+        "show_in_menus": false,
+        "seo_title": "",
+        "search_description": "",
+        "first_published_at": "2024-02-28T16:15:47.988316Z",
+        "alias_of": null,
+        "locale": "en"
+      },
+      "title": "INNERVE 2022",
+      "event_title": "<p data-block-key=\"tf2x4\"><b>INNERVE 2022</b></p>",
+      "event_slug": "innerve-22",
+      "event_date": "2022-02-16",
+      "event_organizer": "IET NITK",
+      "event_location": "Main Building, NITK",
+      "event_tags": "Innerve, Flagship",
+      "event_img_url": "https://images.unsplash.com/photo-1549451371-64aa98a6f660?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "event_body": "# INNERVE 2022 is here!\r\n\r\n\r\nAs said by Matt Mullenweg, Social Media Entrepreneur that **\"Technology is best when it brings people together\"**. This is what we intend to do today. IET presents INNERVE which brings us all together for 4 amazing days where people from various domains gather around to discuss and make ideas happen. Explore and try to find your passion and learn all about business and technology.\r\n\r\nThere will be Knowledge Exchange Programs and fun competitions to test your skills. We have tried to inculcate ideas from various domains so you will definitely find something of your liking ;)\r\n\r\n# **Cipher**\r\n\r\nThe first event is by **CIPHER** where you can learn all about cryptography and steganography. So get ready to wrack your brain for the puzzles. As we know it's not all about ideas **but it's about making ideas happen so we present you with this exciting competition** _ **\"TURING IT\"** _. Inspired by the very famous cryptanalyst ALAN TURING get ready to find your inner turing.\r\n\r\n## Introduction to Cryptography and Steganography\r\n\r\n\r\nAn Introductory KEP covering basic concepts of Cryptography and Steganography by Ramprasad Attada Link: [https://youtu.be/-071dpDyzhk](https://youtu.be/-071dpDyzhk)\r\n\r\n# TURING IT\r\n\r\nA contest where participants find and decrypt hidden messages to score points. Questions asked here will be related to stuff taught in KEP.\r\n\r\n(Open to just 1st and 2nd years)\r\n\r\nDATE: **19 FEB**\r\n\r\nTIME:\r\n\r\n- KEP - **Intro to Cryptography and Steganography - 12PM**\r\n- CONTEST - **3PM**\r\n\r\n# Rovisp\r\n\r\nThe second event we present to you is an amazing **ARDUINO WORKSHOP** by **ROVISP**. Arduino refers to an open-source electronics platform or board and the software used to program it. Arduino is designed to make electronics more accessible to artists, designers, hobbyists and anyone interested in creating interactive objects or environments. So get started with the clink clank of the circuits and introducing electronics to a whole other era because creating and building is what we do.\r\n\r\nDATE: **20 FEB**\r\n\r\nTIME: **Arduino workshop **- 1 PM Link: [https://meet.google.com/ubm-seek-yrg](https://meet.google.com/ubm-seek-yrg)\r\n\r\nSPEAKER: **Nithin L N**\r\n\r\n# Torsion:\r\n\r\nTechnology is an art which converts imagination into reality. We as engineers are very important to society. So our duty is to keep brainstorming and reinventing our ideas. So to convert this into reality we present you these knowledge exchange programs which will take you to the world of this conversion. The basics are the foundation of anything so brush up your basics and kick start this journey with **TORSION**.\r\n\r\n## KEP -1 Concepts of FEA and CFD\r\n\r\nDATE: **21 FEB**\r\n\r\nTIME: **4PM**\r\n\r\nSPEAKERS - **Harikrishnan S and S Sriram** Link: [https://www.youtube.com/watch?v=q06IklIBgTM](https://www.youtube.com/watch?v=q06IklIBgTM)\r\n\r\n## KEP-2- MatCoach: Your Foundation to MatLab\r\n\r\nTIME: **6PM** SPEAKERS - **Naveen and Abin Sibichan** Link: [https://www.youtube.com/watch?v=cOrgZ58bYpo](https://www.youtube.com/watch?v=cOrgZ58bYpo)\r\n\r\n# Venture\r\n\r\nThe last event is for all the business minds out there. Do not worry we got you too! **VENTURE** presents you to a KEP on **ART OF NEGOTIATION** which is very crucial in the business world. So showcase your inner negotiations and charm your way out of this amazing contest where you will apply it like in real life with a twist. You will be in charge of real life football clubs. It all depends on how you communicate. What are you waiting for? Go get 'em!\r\n\r\n**SOCCERSCAPE** - A contest where teams will be in charge of real life football clubs. They will be responsible for buying and selling players with a budget given. The team with the best team at the end of the event will be declared the winner. The focus of the event is to analyze the negotiating skills of the members as they must be in communication with other teams to move players around.\r\n\r\nDATE: **22 FEB**\r\n\r\nTIME: **KEP - Intro to Negotiation - 12PM** Link: [https://youtu.be/aoxFSi97iHs](https://youtu.be/aoxFSi97iHs) **EVENT - Soccerscape - 2PM**\r\n\r\nExcited? So are we!!\r\n\r\nTo register for any of the above events, please fill out the below form: **Register now**: [https://forms.gle/5UgeMeNzbMnrkCvC70](https://forms.gle/5UgeMeNzbMnrkCvC7)"
+    },
+    {
+      "id": 28,
+      "meta": {
+        "type": "events.EventsPage",
+        "detail_url": "http://localhost/api/v2/pages/28/",
+        "html_url": "http://localhost/events/lego-gambit/",
+        "slug": "lego-gambit",
+        "show_in_menus": false,
+        "seo_title": "",
+        "search_description": "",
+        "first_published_at": "2024-02-28T16:17:32.784162Z",
+        "alias_of": null,
+        "locale": "en"
+      },
+      "title": "Lego Gambit",
+      "event_title": "<p data-block-key=\"c279m\"><b>Lego Gambit</b></p>",
+      "event_slug": "lego-gambit",
+      "event_date": "2023-08-19",
+      "event_organizer": "IET NITK",
+      "event_location": "Main Building, NITK",
+      "event_tags": "Coding, Hackathon, Lego",
+      "event_img_url": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "event_body": "# Lego Gambit\r\n\r\n\r\nStressed about the upcoming endsem examinations? Looking for a stress-busting and an entertaining event? Here we are!!\r\n\r\nIET NITK presents the first offline event of the year Lego Gambit.Lego Gambit, an amusing event with a bunch of thrilling rounds which you get to experience on participating in the event Grab your seat for the most fun-filled event that magnifies your mind relaxation\r\n\r\n# **Registration deadline: 19th August, 2022, 11:59PM**\r\n\r\n# **Event date🗓️: 21st August, 2022**\r\n\r\n# AIM \r\nTo provide infotainment in a competitive setting through a trivia gameshow\r\n\r\n# Rules for the Gameshow\r\n- Each team consists of 2 members.\r\n- All teams are put up in a knockout tournament bracket.\r\n- Losing once will result in immediate termination\r\n- 32 teams will be participating in the 1st round, 16 in the next and so on…\r\n- 2 teams will face-off each other in a 20 minute round of 20-25 questions.\r\n- Answering a question correctly will award points\r\n- Each team has 5 hearts. Smashing a heart requires 10 points.\r\n- There is a provision to revive & restore one heart. Restoring a heart requires 15 points.\r\n- There are 2 lifelines in the first round. No lifelines for the rest of the rounds\r\n\r\n> LIFELINES : Call a friend, which requires 3 points & Google 15s search, which requires 7 points.\r\n\r\n# Winning Criteria\r\n\r\n> The first 3 rounds require the teams to try and smash the hearts of opposing teams and eliminate them.The maximum time limit for a round is 20 minutes. In case of tie in the number of hearts at the end of round, a tie breaker question will be asked. As stated above, all games are knockouts and losing even once will result in disqualification from further participation.\r\n\r\n# [REGISTER](https://tripetto.app/run/C7NE4FSLTW)"
+    }
+  ]
+}

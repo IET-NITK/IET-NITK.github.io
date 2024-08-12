@@ -1,0 +1,70 @@
+.bton {
+  background-color: purple;
+  width: fit-content;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.bton:hover {
+  background-color: whitesmoke;
+  color: purple;
+}
+
+.blogCard {
+  width: 320px;
+  height: fit-content;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media screen and (max-width: 350px) {
+  .blogCard {
+    width: 100%;
+  }
+}
+
+.blogCcard:hover {
+  transform: scale(1.02);
+}
+
+.blogDetails {
+  padding: 20px;
+  width: 100%; /* Adjusted width for details */
+  background-color: #f9f9f9;
+  height: 100%;
+}
+
+.blogImage {
+  width: 100%; /* Adjusted width for image */
+  height: auto;
+  background-color: #ddd;
+  background-size: cover;
+  height: 200px;
+}
+
+.head {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.para {
+  color: #555;
+  font-size: small;
+}
+
+.p:last-child {
+  margin-bottom: 0;
+}

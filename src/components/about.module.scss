@@ -1,0 +1,33 @@
+.expo {
+    width: inherit;
+    position: absolute;
+    left: 0%;
+    animation: r 10s linear infinite;
+}
+
+@keyframes r {
+    from {
+        left: 0%;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes secondary {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+.secondary {
+    width: inherit;
+    position: absolute;
+    left: 0%;
+    animation: secondary 10s linear infinite;
+}
